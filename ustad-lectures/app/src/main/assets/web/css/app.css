@@ -559,7 +559,7 @@ button {
   font-size: 1.02rem;
   font-weight: 600;
   color: var(--mut);
-  padding-left: 30px;
+  padding-left: 0;
 }
 .lbl-en {
   align-self: flex-start;
@@ -727,30 +727,30 @@ mjx-container[display='true'] {
 .blk-h {
   background: transparent;
   border: 0;
-  padding: 10px 4px 0;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
+  padding: 12px 8px 4px 36px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  border-radius: 0;
+  border-left: 4px solid var(--acc);
 }
 .blk-h .rtl {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   margin: 0;
-  font-size: 1.22rem;
-  font-weight: 700;
-  color: var(--brand);
-  padding-left: 30px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--mut);
+  padding-left: 0;
 }
 .blk-h::before {
-  content: '';
-  order: 2;
-  flex: 0 0 5px;
-  align-self: stretch;
-  border-radius: 4px;
-  background: var(--acc);
+  content: none;
 }
 .blk-h .blk-play {
-  top: 8px;
-  left: 0;
+  top: 10px;
+  left: 4px;
+}
+.blk-h .en-h {
+  padding-left: 0;
 }
 .fig-b,
 .tbl-b,
