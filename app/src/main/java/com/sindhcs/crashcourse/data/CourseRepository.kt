@@ -84,6 +84,6 @@ object CourseRepository {
     private fun JSONArray.toStringList(): List<String> =
         (0 until length()).map { getString(it) }
 
-    private fun JSONArray.mapObjects(transform: (JSONObject) -> CourseDay): List<CourseDay> =
+    private fun <T> JSONArray.mapObjects(transform: (JSONObject) -> T): List<T> =
         (0 until length()).map { transform(getJSONObject(it)) }
 }
