@@ -1,0 +1,12 @@
+The TTF files in this folder are from Google Fonts and are licensed
+under the SIL Open Font License 1.1:
+
+  Amatic SC
+  Kalam
+  Patrick Hand
+  Architects Daughter
+  Indie Flower
+  Handlee
+  Noto Naskh Arabic
+
+https://scripts.sil.org/OFL
