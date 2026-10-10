@@ -23,7 +23,7 @@ ctx.globalThis = ctx;
 vm.createContext(ctx);
 const load = (f) => vm.runInContext(fs.readFileSync(f, 'utf8'), ctx, { filename: f });
 ['core.js', 'kit.js', 'speech.js'].forEach((f) => load(path.join(web, f)));
-allKeys.forEach((k) => {
+keys.forEach((k) => {
   const f = path.join(web, 'diagrams', k + '.js');
   if (fs.existsSync(f)) load(f);
 });

@@ -112,7 +112,7 @@ Diagram file skeleton:
 ## 5. Quality bar / checklist (the validator enforces most)
 
 * `node tools/validate.js <your-key>` passes with 0 errors (warnings: fix unless justified).
-* `node tools/sheet.js <prefix> /tmp/<key>.png 2 900` and LOOK at the picture (use the Read tool on the png): no overlapping text, clipped shapes,
+* `node tools/sheet.js <key> /tmp/<key>.png 2 900` (renders every diagram in `diagrams/<key>.js`) and LOOK at the picture (use the Read tool on the png): no overlapping text, clipped shapes,
   wrong arrows, tiny text. Fix and re-render until clean.
 * Optional: `NODE_PATH=tools/node_modules node tools/shot.js "#lec=<id>" /tmp/x.png 390 800 scroll:0` screenshots the lecture as it will look on a phone (use `scroll:N` to page down).
 * Facts must match the book. Do not invent definitions, numbers or examples that conflict with it.

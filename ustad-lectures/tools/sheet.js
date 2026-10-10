@@ -1,12 +1,13 @@
 // Renders every registered diagram whose id starts with a prefix onto one contact sheet.
-// Usage: node tools/sheet.js <id-prefix> <out.png> [columns=2] [width=980]
+// Usage: node tools/sheet.js <key e.g. xi-2> <out.png> [columns=2] [width=980]
+// Renders all diagrams registered by js/diagrams/<key>.js
 const puppeteer = require('puppeteer-core');
 const fs = require('fs');
 const path = require('path');
 const web = path.join(__dirname, '../app/src/main/assets/web');
-const [prefix = '', out = '/tmp/sheet.png', cols = '2', width = '980'] = process.argv.slice(2);
+const [key = '', out = '/tmp/sheet.png', cols = '2', width = '980'] = process.argv.slice(2);
 (async () => {
-  const files = fs.readdirSync(path.join(web, 'js/diagrams')).filter((f) => f.endsWith('.js'));
+  const files = [key + '.js'];
   const scripts = ['core.js', 'kit.js'].map((f) => fs.readFileSync(path.join(web, 'js', f), 'utf8'))
     .concat(files.map((f) => fs.readFileSync(path.join(web, 'js/diagrams', f), 'utf8')));
   const css = fs.readFileSync(path.join(web, 'css/app.css'), 'utf8')
@@ -16,7 +17,7 @@ const [prefix = '', out = '/tmp/sheet.png', cols = '2', width = '980'] = process
    .cell{flex:1 1 calc(${100 / +cols}% - 12px);min-width:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;display:flex;flex-direction:column;align-items:center}
    .cell small{color:var(--mut);font:12px monospace;align-self:flex-start}</style></head><body><div class="grid" id="g"></div>
    <script>${scripts.join('\n;\n')}</script>
-   <script>const ids=Object.keys(Diagrams.reg).filter(i=>i.startsWith(${JSON.stringify(prefix)})).sort();
+   <script>const ids=Object.keys(Diagrams.reg);
    document.getElementById('g').innerHTML=ids.map(i=>'<div class="cell"><small>'+i+'</small>'+Diagrams.render(i,{})+'</div>').join('');
    document.title=ids.length;</script></body></html>`;
   const f = '/tmp/sheet_' + process.pid + '.html';
