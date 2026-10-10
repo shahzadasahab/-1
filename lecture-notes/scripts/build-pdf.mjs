@@ -7,7 +7,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const htmlDir = path.join(root, "dist", "html");
 const pdfDir = path.join(root, "dist", "pdf");
-const assetsDir = path.join(root, "assets");
 
 fs.mkdirSync(pdfDir, { recursive: true });
 
