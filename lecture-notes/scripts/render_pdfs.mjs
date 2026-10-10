@@ -29,14 +29,14 @@ try {
     const url = pathToFileURL(path.join(htmlDir, file)).href;
     await page.goto(url, { waitUntil: "load", timeout: 120000 });
     await page.evaluate(async () => {
+      if (document.fonts?.ready) {
+        await document.fonts.ready;
+      }
       if (window.MathJax?.startup?.promise) {
         await window.MathJax.startup.promise;
       }
     });
-    await page.waitForFunction(
-      () => document.fonts ? document.fonts.status === "loaded" : true,
-      { timeout: 15000 }
-    ).catch(() => {});
+    await new Promise((r) => setTimeout(r, 250));
     const out = path.join(pdfDir, file.replace(/\.html$/, ".pdf"));
     await page.pdf({
       path: out,
