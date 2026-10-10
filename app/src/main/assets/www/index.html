@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CS XI–XII Composite Lectures</title>
+  <link rel="stylesheet" href="css/app.css" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"], ["$", "$"]],
+        displayMath: [["\\[", "\\]"], ["$$", "$$"]],
+        processEscapes: true
+      },
+      svg: { fontCache: "global", scale: 1.05 },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="vendor/mathjax/tex-svg.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <button id="backBtn" class="ghost hidden" type="button">Back</button>
+      <div class="brand">
+        <strong id="barTitle">CS Composite</strong>
+        <span id="barSub">English text · Urdu lecture voice</span>
+      </div>
+      <div class="top-actions">
+        <button id="scriptBtn" class="ghost hidden" type="button">Urdu script</button>
+      </div>
+    </header>
+    <main id="view"></main>
+    <div id="player" class="player hidden">
+      <div class="info">
+        <strong id="playerTitle">Urdu lecture</strong>
+        <em id="playerState">Ready</em>
+      </div>
+      <div class="top-actions">
+        <button id="listenBtn" class="gold" type="button">Listen</button>
+        <button id="pdfBtn" class="ghost" type="button">Original PDF</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/catalog.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
