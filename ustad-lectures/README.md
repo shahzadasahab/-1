@@ -7,7 +7,8 @@
 Lecture-wise Computer Science teaching app for the **Class XI and XII** textbooks. Every lecture is delivered the way
 a teacher speaks in a Pakistani classroom:
 
-* **Urdish narration** — descriptive explanation in Urdu script, technical terminology in English.
+* **English on the page, Urdish from the teacher** — headings, leads, key ideas and recaps are written in English; the spoken explanation stays Urdish (Urdu description, English terms).
+* **Urdish narration** — descriptive explanation in Urdu script, technical terminology in English. TTS never reads the English display lines.
 * **Text-to-Speech (TTS)** — each sentence is split into Urdu and English runs; Android `TextToSpeech` switches between an
   Urdu voice (`ur-PK`) and an English voice (`en-IN`/`en-US`) inside one lecture. The sentence being spoken is highlighted and scrolled into view.
 * **MathJax** (bundled, offline, SVG output) for Boolean algebra, Big-O, statistics, neural-network formulas.

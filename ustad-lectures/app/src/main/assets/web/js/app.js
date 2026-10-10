@@ -94,7 +94,7 @@
       '<button class="icon-btn" id="btn-set" aria-label="Settings">' + I.gear + '</button></header>' +
       '<main class="scroll" id="home-scroll">' +
       '<section class="hero"><p class="ur-title">' + inline('السلام علیکم! آج کا **Lecture** منتخب کریں') + '</p>' +
-      '<p>Teacher-style lectures: Urdu explanation, English terminology, MathJax formulas and SVG diagrams, read aloud with TTS.</p>' +
+      '<p>Every lecture shows the idea in English first. Tap play to hear the teacher explain it in Urdish — Urdu description, English terminology. MathJax formulas and SVG diagrams stay offline.</p>' +
       '<div class="row"><div class="stat"><b>' + all.length + '</b>Lectures</div><div class="stat"><b>' + doneCount + '</b>Completed</div>' +
       '<div class="stat"><b>' + Chapters.length + '</b>Chapters</div>' +
       (lastLec
@@ -138,7 +138,7 @@
       let lecs = all;
       if (query) {
         lecs = all.filter((l) =>
-          (l.title + ' ' + (l.titleUr || '') + ' ' + c.en + ' ' + (l.source || '') + ' ' + (l.keywords || []).join(' ')).toLowerCase().includes(query)
+          (l.title + ' ' + (l.titleUr || '') + ' ' + (l.leadEn || '') + ' ' + c.en + ' ' + (l.source || '') + ' ' + (l.keywords || []).join(' ')).toLowerCase().includes(query)
         );
         if (!lecs.length) return;
       }
@@ -213,7 +213,13 @@
 
   function figure(b) {
     const inner = b.svg ? b.svg : Diagrams.render(b.id, b.args);
-    return '<figure class="fig"><div class="fig-svg">' + inner + '</div>' + (b.cap ? '<figcaption class="cap">' + inline(b.cap) + '</figcaption>' : '') + '</figure>';
+    const capEn = b.capEn || (/^[A-Za-z]/.test(b.cap || '') ? b.cap.replace(/\*\*/g, '') : U.headingEn(b.cap || '', ''));
+    const cap = b.cap
+      ? '<figcaption class="cap">' +
+        (capEn && capEn !== b.cap ? '<span class="en-cap" dir="ltr">' + esc(capEn) + '</span>' : '') +
+        '<span>' + inline(b.cap) + '</span></figcaption>'
+      : '';
+    return '<figure class="fig"><div class="fig-svg">' + inner + '</div>' + cap + '</figure>';
   }
 
   /** Builds block HTML while collecting the narration units that go with it. */
@@ -242,43 +248,80 @@
     };
     const wrap = (cls, inner) =>
       '<div class="blk ' + cls + '" data-b="' + bi + '"><button class="blk-play" data-play="' + bi + '" aria-label="Play from here">' + I.play + '</button>' + inner + '</div>';
+    const enLine = (text, cls) => (text ? '<p class="' + (cls || 'en-lead') + '" dir="ltr">' + esc(text) + '</p>' : '');
+    const idea = (text, explicit) => (explicit && /[A-Za-z]/.test(explicit) ? explicit : U.displayEn(text, explicit));
 
     const html = (lec.blocks || []).map((b, i) => {
       bi = i;
       switch (b.t) {
-        case 'h':
-          return wrap('blk-h', '<h3 class="rtl">' + sent(b.ur) + '</h3>');
+        case 'h': {
+          const en = U.headingEn(b.ur, b.en);
+          return wrap('blk-h', (en ? '<h3 class="en-h" dir="ltr">' + esc(en) + '</h3>' : '') + '<p class="rtl h-ur">' + sent(b.ur) + '</p>');
+        }
         case 'say':
-          return wrap('say-b', '<p class="rtl say">' + sent(b.ur) + '</p>');
+          return wrap('say-b', enLine(idea(b.ur, b.en), b.en ? 'en-lead' : 'en-keys') + '<p class="rtl say">' + sent(b.ur) + '</p>');
         case 'points':
         case 'recap': {
           const tag = b.ordered ? 'ol' : 'ul';
-          const ttl = b.title || (b.t === 'recap' ? 'بورڈ سمری (Board Summary)' : '');
-          const head = ttl ? '<p class="rtl ttl">' + sent(ttl) + '</p>' : '';
-          const items = (b.items || []).map((it) => '<li>' + sent(it) + '</li>').join('');
-          return wrap('pts' + (b.t === 'recap' ? ' recap' : ''), head + '<' + tag + ' class="rtl">' + items + '</' + tag + '>');
+          const isRecap = b.t === 'recap';
+          const enTitle = b.enTitle || (isRecap ? 'Board summary' : U.headingEn(b.title || '', b.en));
+          const ttl = b.title || (isRecap ? 'بورڈ سمری' : '');
+          const head = (enTitle ? enLine(enTitle, 'en-h-sm') : '') + (ttl ? '<p class="rtl ttl">' + sent(ttl) + '</p>' : '');
+          const items = (b.items || [])
+            .map((it) => {
+              const ur = typeof it === 'string' ? it : it.ur || '';
+              const line = typeof it === 'object' && it.en ? it.en : U.displayEn(ur);
+              return '<li>' + (line ? '<span class="en-keys" dir="ltr">' + esc(line) + '</span>' : '') + sent(ur) + '</li>';
+            })
+            .join('');
+          return wrap('pts' + (isRecap ? ' recap' : ''), head + '<' + tag + ' class="rtl">' + items + '</' + tag + '>');
         }
         case 'math':
           say(b.say || Speech.texToSpeech(b.tex));
-          return wrap('math', '<div class="tex">\\[' + esc(b.tex) + '\\]</div>' + (b.cap ? '<p class="cap">' + inline(b.cap) + '</p>' : ''));
+          return wrap(
+            'math',
+            enLine(idea(b.say || b.cap || '', b.en), b.en ? 'en-lead' : 'en-keys') +
+              '<div class="tex">\\[' + esc(b.tex) + '\\]</div>' +
+              (b.cap ? '<p class="cap">' + inline(b.cap) + '</p>' : '')
+          );
         case 'diagram':
         case 'svg':
           say(b.say);
-          return wrap('fig-b', figure(b));
+          return wrap('fig-b', enLine(idea(b.say || b.cap || '', b.en), b.en ? 'en-lead' : 'en-keys') + figure(b));
         case 'dgrow':
           say(b.say);
-          return wrap('fig-b', '<div class="dgrow">' + (b.items || []).map(figure).join('') + '</div>');
+          return wrap('fig-b', enLine(idea(b.say || '', b.en), b.en ? 'en-lead' : 'en-keys') + '<div class="dgrow">' + (b.items || []).map(figure).join('') + '</div>');
         case 'table': {
           say(b.say);
+          const enT = b.enTitle || (/^[A-Za-z]/.test(b.title || '') ? String(b.title).replace(/\*\*/g, '') : U.headingEn(b.title || '', b.en));
           const cell = (c) => '<div class="td"><span class="tc">' + inline(c) + '</span></div>';
           const head = b.head ? '<div class="tr th">' + b.head.map(cell).join('') + '</div>' : '';
           const rows = (b.rows || []).map((r) => '<div class="tr">' + r.map(cell).join('') + '</div>').join('');
-          return wrap('tbl-b', (b.title ? '<p class="cap" style="text-align:start">' + inline(b.title) + '</p>' : '') + '<div class="tbl-wrap"><div class="tbl" role="table">' + head + rows + '</div></div>');
+          return wrap(
+            'tbl-b',
+            (enT ? enLine(enT, 'en-h-sm') : '') +
+              (b.title && b.title !== enT ? '<p class="cap" style="text-align:start">' + inline(b.title) + '</p>' : '') +
+              '<div class="tbl-wrap"><div class="tbl" role="table">' + head + rows + '</div></div>'
+          );
         }
         case 'compare': {
           say(b.say);
-          const side = (s) => '<div class="side"><p class="ttl">' + inline(s.title) + '</p><ul>' + (s.items || []).map((x) => '<li>' + inline(x) + '</li>').join('') + '</ul></div>';
-          return wrap('cmp', '<div class="compare">' + side(b.left) + side(b.right) + '</div>');
+          const side = (s) => {
+            const sideEn = s.enTitle || U.headingEn(s.title || '', '');
+            return (
+              '<div class="side">' +
+              (sideEn ? '<p class="en-h-sm" dir="ltr">' + esc(sideEn) + '</p>' : '') +
+              '<p class="ttl">' + inline(s.title) + '</p><ul>' +
+              (s.items || [])
+                .map((x) => {
+                  const line = U.displayEn(x);
+                  return '<li>' + (line ? '<span class="en-keys" dir="ltr">' + esc(line) + '</span>' : '') + inline(x) + '</li>';
+                })
+                .join('') +
+              '</ul></div>'
+            );
+          };
+          return wrap('cmp', enLine(idea(b.say || '', b.en), b.en ? 'en-lead' : 'en-keys') + '<div class="compare">' + side(b.left) + side(b.right) + '</div>');
         }
         case 'terms': {
           const chips = (b.items || [])
@@ -287,20 +330,42 @@
               return '<div class="term snt" data-u="' + id + '"><b>' + esc(t.en) + '</b><span>' + inline(t.ur) + '</span></div>';
             })
             .join('');
-          return wrap('terms-b', '<div class="terms">' + chips + '</div>');
+          return wrap('terms-b', '<p class="en-h-sm" dir="ltr">Key terms</p><div class="terms">' + chips + '</div>');
         }
         case 'steps': {
-          const items = (b.items || []).map((it, k) => '<div class="step"><span class="no">' + (k + 1) + '</span><p class="rtl">' + sent(it) + '</p></div>').join('');
-          return wrap('steps-b', (b.title ? '<p class="rtl ttl" style="margin:0;color:var(--brand);font-weight:700">' + sent(b.title) + '</p>' : '') + '<div class="steps">' + items + '</div>');
+          const items = (b.items || [])
+            .map((it, k) => {
+              const ur = typeof it === 'string' ? it : it.ur || '';
+              const line = typeof it === 'object' && it.en ? it.en : U.displayEn(ur);
+              return '<div class="step"><span class="no">' + (k + 1) + '</span><div class="step-body">' + (line ? '<span class="en-keys" dir="ltr">' + esc(line) + '</span>' : '') + '<p class="rtl">' + sent(ur) + '</p></div></div>';
+            })
+            .join('');
+          const enT = b.enTitle || U.headingEn(b.title || '', b.en);
+          return wrap(
+            'steps-b',
+            (enT ? enLine(enT, 'en-h-sm') : '') +
+              (b.title ? '<p class="rtl ttl" style="margin:0;color:var(--brand);font-weight:700">' + sent(b.title) + '</p>' : '') +
+              '<div class="steps">' + items + '</div>'
+          );
         }
         case 'code': {
           say(b.say);
           const out = b.out ? '<span class="out-ttl">Output</span><pre class="code out" dir="ltr"><code>' + esc(b.out) + '</code></pre>' : '';
-          return wrap('code-b', '<div class="code-wrap"><span class="code-lang">' + esc(b.lang || 'python') + '</span><pre class="code" dir="ltr"><code>' + highlightCode(b.code, b.lang) + '</code></pre>' + out + '</div>');
+          return wrap(
+            'code-b',
+            enLine(idea(b.say || '', b.en), b.en ? 'en-lead' : 'en-keys') +
+              '<div class="code-wrap"><span class="code-lang">' + esc(b.lang || 'python') + '</span><pre class="code" dir="ltr"><code>' + highlightCode(b.code, b.lang) + '</code></pre>' + out + '</div>'
+          );
         }
         case 'note': {
           const k = b.kind || 'tip';
-          return wrap('note k-' + k, '<p class="rtl say">' + sent(b.ur) + '</p><span class="lbl">' + (LABELS[k] || LABELS.tip) + '</span>');
+          const ENL = { tip: 'Tip', warn: 'Warning', exam: 'Exam', example: 'Example', def: 'Definition' };
+          return wrap(
+            'note k-' + k,
+            '<span class="lbl-en" dir="ltr">' + (ENL[k] || 'Tip') + '</span>' +
+              enLine(idea(b.ur, b.en), b.en ? 'en-lead' : 'en-keys') +
+              '<p class="rtl say">' + sent(b.ur) + '</p><span class="lbl">' + (LABELS[k] || LABELS.tip) + '</span>'
+          );
         }
         default:
           return '';
@@ -322,10 +387,14 @@
       lec.quiz
         .map(
           (q, qi) =>
-            '<div class="qz" data-qi="' + qi + '"><div class="q"><p class="rtl">' + inline(q.q) + '</p><button class="mini-btn" data-qspk="' + qi + '" aria-label="Read question">' + I.spk + '</button></div>' +
+            '<div class="qz" data-qi="' + qi + '"><div class="q">' +
+            (q.en || U.displayEn(q.q) ? '<p class="en-lead" dir="ltr">' + esc(q.en || U.displayEn(q.q)) + '</p>' : '') +
+            '<p class="rtl">' + inline(q.q) + '</p><button class="mini-btn" data-qspk="' + qi + '" aria-label="Read question">' + I.spk + '</button></div>' +
             '<div class="opts">' +
             q.opts.map((o, oi) => '<button class="opt" data-oi="' + oi + '"><span class="rtl">' + inline(o) + '</span><span class="l">' + L[oi] + '</span></button>').join('') +
-            '</div><p class="rtl why">' + inline(q.why || '') + '</p></div>'
+            '</div>' +
+            (q.whyEn || U.displayEn(q.why || '') ? '<p class="en-keys" dir="ltr">' + esc(q.whyEn || U.displayEn(q.why || '')) + '</p>' : '') +
+            '<p class="rtl why">' + inline(q.why || '') + '</p></div>'
         )
         .join('') +
       '</section>'
@@ -362,16 +431,32 @@
       '<section class="lec-head"><div class="chips"><span class="chip" style="background:var(--chip' + (ch.color || 0) + ')">Class ' + lec.cls + '</span>' +
       '<span class="chip plain">Chapter ' + lec.ch + '</span><span class="chip plain">Lecture ' + (lec.n || list.findIndex((l) => l.id === id) + 1) + '</span>' +
       '<span class="chip plain">' + (lec.mins || 8) + ' min</span></div>' +
-      '<h2>' + esc(lec.title) + '</h2><p class="ur-h">' + inline(lec.titleUr || '') + '</p>' +
+      '<h2 dir="ltr">' + esc(lec.title) + '</h2><p class="ur-h">' + inline(lec.titleUr || '') + '</p>' +
+      '<p class="en-mode" dir="ltr">Read the English idea. Hear the teacher explain it in Urdish.</p>' +
+      (lec.leadEn ? '<p class="en-lead" dir="ltr">' + esc(lec.leadEn) + '</p>' : '') +
       (lec.source ? '<span class="src">Source: ' + esc(lec.source) + '</span>' : '') +
       (lec.objectives && lec.objectives.length
-        ? '<div class="pts" style="margin-top:4px"><p class="rtl ttl" style="margin:0;color:var(--brand);font-weight:700">آج کے اہداف (Objectives)</p><ul class="rtl">' +
-          lec.objectives.map((o) => '<li>' + inline(o) + '</li>').join('') + '</ul></div>'
+        ? '<div class="pts" style="margin-top:4px"><p class="en-h-sm" dir="ltr">Learning outcomes</p><p class="rtl ttl" style="margin:0;color:var(--brand);font-weight:700">آج کے اہداف</p><ul class="rtl">' +
+          lec.objectives
+            .map((o) => {
+              const line = U.displayEn(o);
+              return '<li>' + (line ? '<span class="en-keys" dir="ltr">' + esc(line) + '</span>' : '') + inline(o) + '</li>';
+            })
+            .join('') +
+          '</ul></div>'
         : '') +
       '</section><div id="voice-warn">' + warn + '</div><section class="blocks" id="blocks">' + body + '</section>' +
       quizHtml(lec) +
       (lec.homework && lec.homework.length
-        ? '<section class="sect hw"><h3>Homework <span class="ur">گھر کا کام</span></h3><ul>' + lec.homework.map((h) => '<li>' + inline(h) + '</li>').join('') + '</ul></section>'
+        ? '<section class="sect hw"><h3>Homework <span class="ur">گھر کا کام</span></h3><ul>' +
+          lec.homework
+            .map((h) => {
+              const line = typeof h === 'object' ? h.en || U.displayEn(h.ur || '') : U.displayEn(h);
+              const ur = typeof h === 'object' ? h.ur || '' : h;
+              return '<li>' + (line ? '<span class="en-keys" dir="ltr">' + esc(line) + '</span>' : '') + inline(ur) + '</li>';
+            })
+            .join('') +
+          '</ul></section>'
         : '') +
       '<div style="display:flex;gap:10px"><button class="btn" id="btn-done" style="flex:1">Mark lecture as completed</button></div>' +
       '<nav class="lec-nav">' +
@@ -640,7 +725,7 @@
       '<div class="row-btns"><button class="btn ghost" id="s-test">Test Urdish voice</button>' +
       (Speech.hasNative ? '<button class="btn ghost" data-vi="install">Install voice data</button><button class="btn ghost" data-vi="settings">TTS settings</button>' : '') +
       '</div></div></div>' +
-      '<p class="cap" style="text-align:start">Ustad Lectures v1.0 &middot; Offline: MathJax, SVG diagrams and fonts are bundled in the app.</p>';
+      '<p class="cap" style="text-align:start">Ustad Lectures v1.0 &middot; English on the page, Urdish from the teacher. Offline: MathJax, SVG diagrams and fonts are bundled in the app.</p>';
     bg.classList.add('open');
     sheetOpen = true;
     $('#s-close').onclick = closeSettings;

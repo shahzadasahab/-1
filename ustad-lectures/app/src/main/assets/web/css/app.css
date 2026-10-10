@@ -486,6 +486,100 @@ button {
 .lec-head h2 {
   margin: 0;
   font-size: 1.2rem;
+  direction: ltr;
+  text-align: left;
+  font-family: var(--font-en);
+}
+.en-h {
+  margin: 0;
+  font-size: 1.12rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  direction: ltr;
+  text-align: left;
+  font-family: var(--font-en);
+  color: var(--ink);
+  padding-left: 30px;
+}
+.en-h-sm {
+  margin: 0 0 2px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  direction: ltr;
+  text-align: left;
+  font-family: var(--font-en);
+  color: var(--brand);
+}
+.en-mode {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  direction: ltr;
+  text-align: left;
+  font-family: var(--font-en);
+  color: var(--brand);
+}
+.en-lead {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  direction: ltr;
+  text-align: left;
+  font-family: var(--font-en);
+  color: var(--ink);
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--card2);
+  border-left: 3px solid var(--brand);
+}
+.en-keys {
+  display: block;
+  margin: 0 0 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  direction: ltr;
+  text-align: left;
+  font-family: var(--font-en);
+  color: var(--brand);
+}
+.en-cap {
+  display: block;
+  font-weight: 700;
+  direction: ltr;
+  text-align: center;
+  font-family: var(--font-en);
+  margin-bottom: 2px;
+}
+.blk-h .rtl.h-ur {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--mut);
+  padding-left: 30px;
+}
+.lbl-en {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mut);
+  font-family: var(--font-en);
+}
+.step-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.step .step-body .rtl {
+  padding-left: 0;
+  margin: 0;
 }
 .lec-head .ur-h {
   margin: 0;

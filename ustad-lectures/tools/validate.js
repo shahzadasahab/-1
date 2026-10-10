@@ -79,6 +79,8 @@ wanted.forEach((l) => {
   if (!l.title || !/[A-Za-z]/.test(l.title)) err(id, 'title (English) required');
   if (!l.titleUr || !AR.test(l.titleUr)) err(id, 'titleUr must be Urdu script');
   AR.lastIndex = 0;
+  if (!l.leadEn || !/[A-Za-z]/.test(l.leadEn)) warn(id, 'leadEn (English overview) missing');
+  else if ((l.leadEn.match(AR) || []).length > 4) err(id, 'leadEn must be English only');
   if (!l.source) warn(id, 'source missing (e.g. "Unit 1 · §1.1.4")');
   if (!(l.mins >= 4 && l.mins <= 20)) warn(id, 'mins should be 4..20');
   if (!Array.isArray(l.objectives) || l.objectives.length < 2) err(id, 'need >= 2 objectives');
@@ -142,7 +144,13 @@ wanted.forEach((l) => {
     const spoken = [];
     if (b.ur) spoken.push(b.ur);
     if (b.say) spoken.push(b.say);
-    if (b.t === 'points' || b.t === 'recap' || b.t === 'steps') spoken.push((b.title || '') + ' ' + (b.items || []).join(' '));
+    if (b.t === 'points' || b.t === 'recap' || b.t === 'steps') {
+      spoken.push(
+        (b.title || '') +
+          ' ' +
+          (b.items || []).map((it) => (typeof it === 'string' ? it : it.ur || it.en || '')).join(' ')
+      );
+    }
     if (b.t === 'terms') spoken.push((b.items || []).map((t) => t.en + ' ' + t.ur).join(' '));
     const sp = spoken.join(' ');
     words += (sp.match(/\S+/g) || []).length;

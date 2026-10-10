@@ -16,7 +16,8 @@ Keys: `xi-1a xi-1b xi-2 xi-3 xi-4 xi-5 xi-6 xii-1 xii-2 xii-3 xii-4 xii-5 xii-6`
   Give the Urdu meaning once in the sentence that introduces it, or in a `terms` block.
 * Tone: a friendly class teacher. Use *بچو، دیکھیں، ذرا سوچیں، یاد رکھیں، آئیے*. Use Pakistani everyday examples
   (chai wala, rickshaw, cricket scoreboard, WhatsApp, JazzCash/Easypaisa, Daraz, school attendance, NADRA, bus stops, load shedding).
-* Text is both displayed AND spoken by TTS, so write sentences that sound natural when read aloud.
+* **Display vs speech:** `title`, `leadEn`, `en`, `enTitle` and recap `{en}` are **English-only display**. The teacher’s spoken explanation is always the Urdish `ur` / `say`. Never transliterate English terms into Urdu script.
+* Text in `ur`/`say` is both displayed AND spoken by TTS, so write sentences that sound natural when read aloud.
   - Short sentences, end every sentence with `۔` or `؟`.
   - **Write numbers in narration as Urdu words** (ایک، دو، تین ...) when they are small counts. Digits are fine inside English terms,
     code, tables and formulas (`say` strings of math/code/table blocks should speak numbers in words).
@@ -33,13 +34,14 @@ Lectures.add({
   cls: 'XI', ch: 2, n: 3,   // must agree with id
   title: 'Sorting Algorithms',            // English title (Latin)
   titleUr: 'سورٹنگ الگورتھمز',               // Urdu title (Urdu script, Latin terms allowed)
+  leadEn: 'English overview of the lecture (display only, never spoken).',
   mins: 9,                  // estimated minutes (narration ~ 110 words/min)
   source: 'Unit 2 · §2.4.1',              // where in the book
   keywords: ['bubble', 'sort'],            // search words
   objectives: ['...', '...'],              // 2-4 Urdish lines (inline markup allowed)
   blocks: [ ... ],                         // 12-24 blocks, see §3
-  quiz: [{ q, opts:[..3-4..], a: 1, why }],// 3-4 MCQs, Urdish, `a` = index of correct option
-  homework: ['...', '...'],                // 1-3 tasks
+  quiz: [{ q, en?, opts:[..3-4..], a: 1, why, whyEn? }],
+  homework: ['...' | {en, ur}],            // 1-3 tasks
 });
 ```
 
@@ -58,8 +60,8 @@ Inline markup inside any text string: `**bold term**`, `` `inline code` ``, `$te
 
 | block | fields | spoken text |
 |---|---|---|
-| `{t:'h', ur}` | section heading | `ur` |
-| `{t:'say', ur}` | teacher paragraph (2-5 sentences) | `ur` |
+| `{t:'h', ur, en?}` | section heading. `en` is English-only display; TTS still reads `ur` | `ur` |
+| `{t:'say', ur, en?}` | teacher paragraph (2-5 sentences). Optional `en` is the English idea the student reads first | `ur` |
 | `{t:'points', title?, items[], ordered?}` | bullet list | title + each item |
 | `{t:'recap', items[]}` | "Board summary" at end | each item |
 | `{t:'steps', title?, items[]}` | numbered steps (algorithm, procedure) | each item |
