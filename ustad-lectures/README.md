@@ -1,5 +1,7 @@
 # Ustad Lectures — Teacher's Lecture-wise APK (Urdish TTS)
 
+**Download (v1.0.0 debug):** [UstadLectures-v1.0.0-debug.apk](https://github.com/shahzadasahab/-1/raw/cursor/teacher-lectures-apk-b9d1/ustad-lectures/releases/UstadLectures-v1.0.0-debug.apk)
+
 Lecture-wise Computer Science teaching app for the **Class XI and XII** textbooks. Every lecture is delivered the way
 a teacher speaks in a Pakistani classroom:
 

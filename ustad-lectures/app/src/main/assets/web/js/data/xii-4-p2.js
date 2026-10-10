@@ -237,3 +237,150 @@ plt.show()`,
   ],
   homework: ['اپنی کلاس کے پندرہ طلبہ کے نمبر لے کر histogram کا Python code لکھیں اور بتائیں کہ زیادہ تر نمبر کس range میں ہیں۔', 'پچھلے ہفتے کی روزانہ study hours اور نیند کے گھنٹوں کا scatter plot بنانے کا code لکھیں۔', 'Histogram اور Bar graph میں دو فرق لکھیں۔'],
 });
+
+Lectures.add({
+  id: 'xii-4-07',
+  cls: 'XII',
+  ch: 4,
+  n: 7,
+  title: 'Descriptive Statistics: Mean, Median & Mode',
+  titleUr: 'ڈسکرپٹو اسٹیٹسٹکس: مین، میڈین اور موڈ',
+  mins: 10,
+  source: 'Unit 4 · §4.6 – 4.6.1',
+  keywords: ['descriptive statistics', 'central tendency', 'mean', 'median', 'mode', 'average', 'outlier'],
+  objectives: [
+    '**Descriptive statistics** اور **central tendency** کی تعریف بیان کر سکیں۔',
+    '**Mean**، **Median** اور **Mode** کو numbers سے نکال سکیں۔',
+    'کسی situation کے لیے درست measure منتخب کر سکیں اور بتا سکیں کہ mean ہمیشہ اچھا کیوں نہیں ہوتا۔',
+  ],
+  blocks: [
+    { t: 'say', ur: 'بچو، پچھلے lectures میں ہم نے data کو graphs میں دیکھا۔ لیکن graph کے ساتھ ساتھ ہمیں ایک یا دو numbers بھی چاہییں جو پورے data کا خلاصہ بتا دیں۔ مثلاً ٹیچر پوری کلاس کی کارکردگی ایک جملے میں بتانا چاہتی ہے۔ یہ کام Descriptive statistics کرتی ہے۔' },
+    { t: 'note', kind: 'def', ur: 'Definition: Descriptive statistics وہ techniques ہیں جو mean، median اور mode جیسے measures سے data کا خلاصہ بیان کرتی ہیں۔ یہ بڑے datasets کو analysis اور موازنے کے لیے آسان بنا دیتی ہیں۔' },
+    { t: 'say', ur: 'کتاب کی مثال دیکھیں۔ ہر طالب علم کے نمبر الگ الگ دیکھنے کے بجائے mean، median یا mode سے پوری کلاس کی کارکردگی جلدی سمجھی جا سکتی ہے۔ ان کے دو گروپ ہیں۔ پہلا گروپ Central tendency کا ہے اور دوسرا Spread کا۔ آج پہلا گروپ پڑھیں گے۔' },
+    { t: 'h', ur: 'Measures of Central Tendency' },
+    { t: 'note', kind: 'def', ur: 'Definition: Measures of central tendency وہ statistical طریقے ہیں جو dataset کی مرکزی یا عام value معلوم کرتے ہیں۔ یہ ایک ہی value دیتے ہیں جو پورے data کی نمائندگی کرے۔ تین عام measures ہیں: mean، median اور mode۔' },
+    { t: 'h', ur: 'Mean' },
+    { t: 'say', ur: '**Mean** کو ہم average بھی کہتے ہیں۔ تمام values کو جمع کریں اور پھر values کی تعداد سے تقسیم کر دیں۔ Mean ہر value کو استعمال کرتا ہے، اس لیے یہ پورے dataset کا خلاصہ بناتا ہے۔' },
+    { t: 'math', tex: '\\text{Mean} = \\frac{\\text{Sum of all values}}{\\text{Number of values}} \\qquad \\bar{x} = \\frac{x_1 + x_2 + \\cdots + x_n}{n}', cap: 'Mean formula', say: 'Mean برابر تمام values کا مجموعہ، تقسیم values کی تعداد۔ علامتوں میں x bar برابر x ایک جمع x دو اور اسی طرح x n تک، تقسیم n۔' },
+    { t: 'math', tex: '\\text{Mean} = \\frac{70 + 80 + 90}{3} = \\frac{240}{3} = 80', cap: 'کتاب کی مثال: تین طلبہ کے نمبر', say: 'تین طلبہ کے نمبر ستر، اسی اور نوے ہیں۔ تینوں کا مجموعہ دو سو چالیس ہے۔ تین پر تقسیم کریں تو mean اسی آتا ہے۔ یہاں تینوں نمبر ایک دوسرے کے قریب ہیں اور کوئی انتہائی value نہیں، اس لیے mean ان کی اچھی نمائندگی کرتا ہے۔' },
+    { t: 'h', ur: 'Median' },
+    { t: 'say', ur: '**Median** وہ درمیانی value ہے جب data کو چھوٹے سے بڑے، یا بڑے سے چھوٹے، ترتیب میں لکھا جائے۔ یہ extreme values سے متاثر نہیں ہوتا۔ اسے سمجھنے کی آسان مثال یہ ہے کہ قطار میں کھڑے لوگوں میں درمیان والا شخص۔' },
+    { t: 'compare', left: { title: 'Odd number of values', items: ['Data کو sort کریں', 'درمیان والی value ہی median ہے'] }, right: { title: 'Even number of values', items: ['Data کو sort کریں', 'دو درمیانی values کا average median ہے'] }, say: 'اگر values کی تعداد طاق ہو تو sort کرنے کے بعد بالکل درمیان والی value median ہے۔ اگر تعداد جفت ہو تو دو درمیانی values کا average median ہوتا ہے۔' },
+    { t: 'note', kind: 'example', ur: 'کتاب کی مثال: Marks 35، 10، 15، 70، 95۔ پہلے sort کریں: 10، 15، 35، 70، 95۔ پانچ values ہیں، اس لیے تیسری value درمیان میں ہے۔ Median برابر پینتیس۔' },
+    { t: 'diagram', id: 'xii4.mean-balance', cap: 'Mean = balance point, Median = middle value', say: 'اس تصویر میں پانچوں نمبر ایک تختے پر رکھے ہیں۔ سب نمبروں کا جمع دو سو پچیس ہے، اس لیے mean پینتالیس ہے۔ یہ وہ نقطہ ہے جہاں تختہ توازن میں رہتا ہے، جیسے جھولا۔ جبکہ median پینتیس ہے، جو پانچ نمبروں میں بیچ والا ہے۔ دونوں الگ ہیں کیونکہ پچانوے بڑا ہے اور mean کو اپنی طرف کھینچتا ہے۔' },
+    { t: 'math', tex: '10,\\ 15,\\ 35,\\ 70 \\;\\Rightarrow\\; \\text{Median} = \\frac{15 + 35}{2} = 25', cap: 'جفت تعداد کی مثال', say: 'اگر ہم پچانوے ہٹا دیں تو چار values بچتی ہیں: دس، پندرہ، پینتیس اور ستر۔ دو درمیانی values پندرہ اور پینتیس ہیں۔ ان کا average پچیس ہے، تو median پچیس ہے۔' },
+    { t: 'h', ur: 'Mode' },
+    { t: 'say', ur: '**Mode** وہ value ہے جو سب سے زیادہ بار آتی ہے۔ کسی dataset میں ایک mode ہو سکتا ہے، ایک سے زیادہ بھی، اور کبھی کوئی mode نہیں ہوتا۔ ایک دکاندار روزانہ پانی کی بوتلیں بیچتا ہے۔ ایک ہفتے کی sales یہ رہیں: بیس، پچیس، بیس، تیس، بیس، پچیس، بیس۔' },
+    { t: 'diagram', id: 'xii4.mode-dots', cap: 'Mode = 20, because 20 bottles were sold most frequently', say: 'ہر دن ایک نقطہ ہے۔ بیس کے اوپر چار نقطے ہیں، پچیس پر دو اور تیس پر صرف ایک۔ سب سے زیادہ بار بیس آیا ہے، اس لیے mode بیس ہے۔' },
+    { t: 'points', title: 'Mode کی اقسام', items: ['ایک mode: صرف ایک value سب سے زیادہ بار آئے۔', 'ایک سے زیادہ mode: مثلاً دو، دو، تین، تین، پانچ میں دو اور تین دونوں mode ہیں۔', 'کوئی mode نہیں: اگر ہر value ایک ہی بار آئے، جیسے ایک، دو، تین۔'] },
+    { t: 'h', ur: 'Python میں تینوں نکالیں' },
+    {
+      t: 'code',
+      lang: 'python',
+      code: `import statistics
+
+marks = [70, 80, 90]
+print("Mean:", statistics.mean(marks))
+
+marks2 = [10, 15, 35, 70, 95]
+print("Median:", statistics.median(marks2))
+
+bottles = [20, 25, 20, 30, 20, 25, 20]
+print("Mode:", statistics.mode(bottles))`,
+      out: 'Mean: 80\nMedian: 35\nMode: 20',
+      say: 'Python کے statistics module میں تینوں کے functions موجود ہیں۔ statistics.mean تینوں نمبروں کا average اسی نکالتا ہے۔ statistics.median sort کر کے درمیانی value پینتیس دیتا ہے۔ statistics.mode سب سے زیادہ بار آنے والی value بیس دیتا ہے۔ یہ code کتاب میں نہیں تھا، مگر انہی مثالوں پر چلتا ہے۔',
+    },
+    { t: 'h', ur: 'Mean ہمیشہ اچھا کیوں نہیں ہوتا؟' },
+    { t: 'say', ur: 'یہ کتاب کا ایک اہم سوال ہے۔ ایک چھوٹی کمپنی میں پانچ ملازمین کی تنخواہیں ہزاروں روپے میں یہ ہیں: پچیس، تیس، بتیس، پینتیس اور چار سو۔ آخری تنخواہ مالک کی ہے۔' },
+    { t: 'diagram', id: 'xii4.balance-salary', cap: 'ایک بہت بڑی salary mean کو بہت اوپر کھینچ لیتی ہے', say: 'تنخواہوں کا مجموعہ پانچ سو بائیس ہے۔ پانچ پر تقسیم کریں تو mean ایک سو چار اعشاریہ چار آتا ہے۔ لیکن پانچ میں سے چار ملازمین پینتیس ہزار یا اس سے کم کماتے ہیں۔ Mean کسی کی بھی عام تنخواہ نہیں بتا رہا۔ جبکہ median بتیس ہے اور حقیقت کے بہت قریب ہے۔' },
+    { t: 'table', title: 'Table 3: Choosing the right measure of central tendency', head: ['Situation', 'Best Measure', 'Reason'], rows: [['Test scores of students', 'Mean', 'سب values استعمال کر کے average نکالتا ہے'], ['Salaries in a company (few very high salaries)', 'Median', 'بہت زیادہ یا بہت کم values سے متاثر نہیں ہوتا'], ['Favorite fruit of students', 'Mode', 'سب سے عام پسند بتاتا ہے']], say: 'کتاب کا Table تین یاد کریں۔ طلبہ کے test scores کے لیے mean بہتر ہے، کیونکہ وہ سب values استعمال کرتا ہے۔ کمپنی کی تنخواہوں کے لیے، جہاں چند تنخواہیں بہت زیادہ ہوں، median بہتر ہے، کیونکہ انتہائی values اس پر اثر نہیں ڈالتیں۔ اور پسندیدہ پھل کے لیے mode ہے، کیونکہ یہ سب سے عام choice بتاتا ہے۔' },
+    { t: 'note', kind: 'exam', ur: 'امتحان میں سوال آتا ہے کہ mean ہمیشہ بہتر measure کیوں نہیں؟ جواب: mean ہر value پر منحصر ہے، اس لیے ایک بہت بڑی یا بہت چھوٹی value اسے اپنی طرف کھینچ لیتی ہے۔ ایسے data میں median بہتر ہے۔ ساتھ تنخواہوں والی مثال لکھیں۔' },
+    { t: 'note', kind: 'tip', ur: 'Class activity: اپنے ہم جماعتوں کے daily screen time کے چھوٹے data کو جمع کریں اور فیصلہ کریں کہ mean، median یا mode میں سے کون سا اسے بہتر بیان کرتا ہے اور کیوں۔' },
+    { t: 'terms', items: [{ en: 'Mean', ur: 'تمام values کا average' }, { en: 'Median', ur: 'sorted data کی درمیانی value' }, { en: 'Mode', ur: 'سب سے زیادہ بار آنے والی value' }, { en: 'Central tendency', ur: 'data کی مرکزی یا عام value' }, { en: 'Extreme value', ur: 'بہت زیادہ بڑی یا چھوٹی value' }] },
+    { t: 'recap', items: ['Mean = مجموعہ تقسیم تعداد، یہ extreme values سے متاثر ہوتا ہے۔', 'Median = sorted data کی درمیانی value، جفت تعداد پر دو درمیانی values کا average۔', 'Mode = سب سے زیادہ بار آنے والی value، ایک، کئی یا کوئی نہیں۔', 'Test scores کے لیے mean، تنخواہوں کے لیے median، پسندیدہ چیز کے لیے mode۔'] },
+  ],
+  quiz: [
+    { q: 'پانچ نمبر 10، 15، 35، 70، 95 کا median کیا ہے؟', opts: ['15', '35', '45', '70'], a: 1, why: 'پانچ sorted values میں تیسری value درمیان میں ہے، یعنی 35۔' },
+    { q: 'کون سا measure extreme values سے سب سے زیادہ متاثر ہوتا ہے؟', opts: ['Median', 'Mode', 'Mean', 'Minimum'], a: 2, why: 'Mean تمام values سے بنتا ہے، اس لیے ایک بہت بڑی value اسے کھینچ لیتی ہے۔' },
+    { q: 'ایک شخص نے سات دن کی sales لکھیں: 20، 25، 20، 30، 20، 25، 20۔ Mode کیا ہے؟', opts: ['20', '25', '30', 'کوئی نہیں'], a: 0, why: 'بیس چار بار آیا ہے، جو سب سے زیادہ ہے۔' },
+    { q: 'پسندیدہ پھل کے survey کے لیے کون سا measure مناسب ہے؟', opts: ['Mean', 'Median', 'Mode', 'Range'], a: 2, why: 'یہاں سب سے عام choice معلوم کرنی ہے، اس کے لیے mode موزوں ہے۔' },
+  ],
+  homework: ['اپنے پانچ دوستوں کی عمروں کا mean، median اور mode نکالیں۔', 'چھ numbers کا ایک dataset بنائیں اور اس کا median نکالیں، جفت تعداد کے اصول کے ساتھ۔', 'ایک مثال دے کر بتائیں کہ mean ہمیشہ اچھا measure کیوں نہیں ہوتا۔'],
+});
+
+Lectures.add({
+  id: 'xii-4-08',
+  cls: 'XII',
+  ch: 4,
+  n: 8,
+  title: 'Measures of Spread: Range, Variance, SD & Quartiles',
+  titleUr: 'اسپریڈ کے پیمانے: رینج، ویریئنس، SD اور کوارٹائلز',
+  mins: 11,
+  source: 'Unit 4 · §4.6.2',
+  keywords: ['spread', 'dispersion', 'range', 'variance', 'standard deviation', 'deviation', 'quartile', 'iqr', 'min', 'max'],
+  objectives: [
+    '**Range** نکال سکیں اور اس کی حد بتا سکیں۔',
+    '**Deviation**، **Variance** اور **Standard deviation** کو formula اور مثال سے سمجھ سکیں۔',
+    '**Min**، **Max**، **Quartiles** اور **IQR** نکال کر box plot سے جوڑ سکیں۔',
+  ],
+  blocks: [
+    { t: 'say', ur: 'بچو، پچھلے lecture میں ہم نے مرکزی value ڈھونڈی، یعنی mean، median اور mode۔ لیکن صرف مرکز جاننا کافی نہیں۔ فرض کریں دو کرکٹرز کا اوسط سکور پچاس ہے۔ ایک ہر میچ میں پینتالیس سے پچپن بناتا ہے اور دوسرا کبھی صفر اور کبھی سو۔ کیا دونوں برابر ہیں؟ بالکل نہیں۔ اسی فرق کو **Spread** ناپتا ہے۔' },
+    { t: 'note', kind: 'def', ur: 'Definition: Measures of spread یا dispersion وہ statistical measures ہیں جو بتاتے ہیں کہ data کی values کسی مرکزی value کے گرد کتنی دور تک پھیلی ہوئی ہیں۔' },
+    { t: 'h', ur: 'Range' },
+    { t: 'say', ur: '**Range** سب سے آسان measure ہے۔ سب سے بڑی value میں سے سب سے چھوٹی value گھٹا دیں۔ اس سے فوراً پتا چل جاتا ہے کہ data کتنا پھیلا ہوا ہے۔' },
+    { t: 'math', tex: '\\text{Range} = \\text{Highest Value} - \\text{Lowest Value}', cap: 'Range formula', say: 'Range برابر Highest value منفی Lowest value۔' },
+    { t: 'diagram', id: 'xii4.range', cap: 'کتاب کی مثال: تین دن میں بیچی گئی notebooks', say: 'ایک دکان نے تین دن میں ایک سو بیس، ایک سو پچاس اور ایک سو اسی notebooks بیچیں۔ سب سے بڑی value ایک سو اسی ہے اور سب سے چھوٹی ایک سو بیس۔ Range برابر ایک سو اسی منفی ایک سو بیس، یعنی ساٹھ۔ اس کا مطلب ہے کہ روزانہ کی sales میں ساٹھ notebooks کا فرق رہا۔' },
+    { t: 'note', kind: 'warn', ur: 'احتیاط: Range صرف سب سے بڑی اور سب سے چھوٹی value دیکھتا ہے۔ بیچ کی values اس میں شامل نہیں ہوتیں۔ اسی لیے یہ صرف ایک تیز اندازہ دیتا ہے۔' },
+    { t: 'h', ur: 'Deviation' },
+    { t: 'say', ur: '**Deviation** کسی data point اور dataset کے mean کے درمیان فرق ہے۔ یہ بتاتا ہے کہ ہر observation اوسط سے کتنی دور ہے۔ اگر value mean سے اوپر ہو تو deviation مثبت ہوتا ہے۔ نیچے ہو تو منفی۔ اور mean کے برابر ہو تو صفر۔' },
+    { t: 'math', tex: '\\text{Deviation} = x_i - \\bar{x}', cap: 'Deviation of one value', say: 'Deviation برابر x i منفی x bar، یعنی value منفی mean۔' },
+    { t: 'points', title: 'کتاب کی مثالیں', items: ['دکان کی اوسط روزانہ sales سو بوتلیں ہیں۔ جس دن ایک سو پانچ ہوئیں، deviation مثبت پانچ۔ جس دن پچانوے ہوئیں، deviation منفی پانچ۔', 'ایک route پر اوسط سفر تیس منٹ ہے۔ ایک دن اٹھائیس منٹ لگے، deviation منفی دو۔ دوسرے دن پینتیس منٹ لگے، deviation مثبت پانچ۔ اس سے traffic کا فرق نظر آتا ہے۔'] },
+    { t: 'diagram', id: 'xii4.deviation', cap: 'Deviation = value − mean (mean = 100)', say: 'اس تصویر میں پانچ دن کی sales ہیں اور mean سو ہے۔ پچاس والے دن deviation منفی پچاس ہے۔ اسی والے دن منفی بیس۔ سو والے دن صفر۔ ایک سو تیس والے دن مثبت تیس اور ایک سو چالیس والے دن مثبت چالیس۔ تیر دکھاتے ہیں کہ ہر دن mean سے کتنا دور ہے۔' },
+    { t: 'h', ur: 'Variance' },
+    { t: 'say', ur: 'اب سوال یہ ہے کہ ایک ہی number میں سارے deviations کیسے سمیٹیں؟ سیدھا جمع کریں تو مثبت اور منفی ایک دوسرے کو ختم کر دیتے ہیں۔ اس لیے ہر deviation کا square لیا جاتا ہے، تاکہ سب مثبت ہو جائیں۔ پھر ان کا average لیتے ہیں۔ اسے **Variance** کہتے ہیں۔' },
+    { t: 'note', kind: 'def', ur: 'Definition: Variance بتاتا ہے کہ data values mean سے کتنی مختلف ہیں۔ چھوٹا variance کا مطلب ہے کہ values mean کے قریب ہیں۔ بڑا variance کا مطلب ہے کہ values زیادہ پھیلی ہوئی ہیں۔' },
+    { t: 'math', tex: '\\sigma^2 = \\frac{1}{n} \\sum_{i=1}^{n} (x_i - \\bar{x})^2', cap: 'Variance formula', say: 'Variance sigma square برابر ایک تقسیم n، ضرب sigma i ایک سے n تک، قوسین میں x i منفی x bar، پوری قوسین کا square۔ یعنی deviations کے squares کا average۔' },
+    { t: 'table', title: 'Variance formula کی علامتیں', head: ['Symbol', 'نام', 'مطلب'], rows: [['σ²', 'Variance', 'mean سے squared deviations کا average'], ['n', 'Number of observations', 'data points کی کل تعداد'], ['Σ', 'Summation', 'بعد والی تمام values جمع کریں'], ['xᵢ', 'Individual value', 'dataset کی ہر observation'], ['x̄', 'Mean', 'تمام observations کا average'], ['(xᵢ − x̄)²', 'Squared deviation', 'منفی ختم کرنے کے لیے square']], say: 'علامتیں یاد کریں۔ sigma square variance ہے۔ n تعداد ہے۔ بڑا sigma جمع کرنے کی علامت ہے۔ x i ہر value ہے۔ x bar mean ہے۔ اور قوسین کا square، squared deviation ہے جو منفی نشان ختم کرتا ہے۔' },
+    { t: 'h', ur: 'Variance کی مثال: کم اور زیادہ' },
+    { t: 'say', ur: 'کتاب میں دو دکانوں کی مثال ہے۔ پہلی دکان نے پانچ دن میں سو، ایک سو دو، ایک سو ایک، ننانوے اور اٹھانوے بوتلیں بیچیں۔ دوسری دکان نے پچاس، اسی، سو، ایک سو تیس اور ایک سو چالیس۔ دونوں کا mean سو ہے۔ لیکن حالت بہت مختلف ہے۔' },
+    { t: 'table', title: 'Variance کا حساب', head: ['Shop', 'Values', 'Deviations', 'Squares', 'Variance'], rows: [['A: consistent', '100, 102, 101, 99, 98', '0, 2, 1, −1, −2', '0, 4, 1, 1, 4 (sum 10)', '10 ÷ 5 = 2'], ['B: fluctuating', '50, 80, 100, 130, 140', '−50, −20, 0, 30, 40', '2500, 400, 0, 900, 1600 (sum 5400)', '5400 ÷ 5 = 1080']], say: 'پہلی دکان کے deviations صفر، دو، ایک، منفی ایک اور منفی دو ہیں۔ ان کے squares کا مجموعہ دس ہے۔ پانچ پر تقسیم کریں تو variance دو۔ دوسری دکان کے deviations منفی پچاس، منفی بیس، صفر، تیس اور چالیس ہیں۔ squares کا مجموعہ پانچ ہزار چار سو ہے۔ پانچ پر تقسیم کریں تو variance ایک ہزار اسی۔ فرق بہت بڑا ہے۔' },
+    { t: 'h', ur: 'Standard Deviation' },
+    { t: 'say', ur: 'Variance کا ایک مسئلہ ہے۔ اس کی unit squared ہو جاتی ہے، یعنی بوتلوں کا square۔ اس لیے variance کا square root لیتے ہیں اور اسے **Standard deviation** کہتے ہیں۔ اس کی unit اصل data والی ہی ہوتی ہے۔' },
+    { t: 'math', tex: '\\sigma = \\sqrt{\\sigma^2} = \\sqrt{\\frac{1}{n}\\sum_{i=1}^{n}(x_i-\\bar{x})^2}', cap: 'Standard deviation', say: 'Standard deviation sigma برابر variance کا square root۔' },
+    { t: 'math', tex: '\\sqrt{2} \\approx 1.41 \\qquad\\qquad \\sqrt{1080} \\approx 32.86', cap: 'دونوں دکانوں کا SD', say: 'پہلی دکان کا standard deviation دو کا square root، یعنی تقریباً ایک اعشاریہ چار ایک۔ دوسری کا ایک ہزار اسی کا square root، یعنی تقریباً بتیس اعشاریہ آٹھ چھ۔' },
+    { t: 'diagram', id: 'xii4.spread-compare', cap: 'ایک جیسا mean، مگر بالکل مختلف spread', say: 'دونوں دکانوں کا mean سو ہے۔ اوپر والی دکان کے نقطے سو کے بالکل قریب جمع ہیں، اس لیے SD چھوٹا ہے۔ نیچے والی دکان کے نقطے دور دور ہیں، اس لیے SD بڑا ہے۔ سایہ دار پٹی mean سے ایک SD کی حد دکھاتی ہے۔' },
+    {
+      t: 'code',
+      lang: 'python',
+      code: `import statistics
+
+shop_a = [100, 102, 101, 99, 98]
+shop_b = [50, 80, 100, 130, 140]
+
+for name, d in [("A", shop_a), ("B", shop_b)]:
+    print(name, "mean:", statistics.mean(d),
+          "range:", max(d) - min(d),
+          "variance:", statistics.pvariance(d),
+          "SD:", round(statistics.pstdev(d), 2))`,
+      out: 'A mean: 100 range: 4 variance: 2 SD: 1.41\nB mean: 100 range: 90 variance: 1080 SD: 32.86',
+      say: 'Python میں pvariance اور pstdev وہی formula استعمال کرتے ہیں جس میں n سے تقسیم ہوتی ہے۔ max منفی min سے range ملتا ہے۔ نتیجے میں دونوں دکانوں کا mean سو ہے، مگر range، variance اور SD میں زمین آسمان کا فرق ہے۔ یہ code کتاب کی مثالوں کی تصدیق کے لیے ہے۔',
+    },
+    { t: 'h', ur: 'Min، Max اور Quartiles' },
+    { t: 'say', ur: 'کتاب میں **Minimum** سب سے چھوٹی value ہے اور **Maximum** سب سے بڑی۔ مثلاً نمبر ستر، اسی، نوے، ساٹھ، پچھتر میں Min ساٹھ ہے اور Max نوے۔ Box plot میں ہم نے Q1، median اور Q3 بھی دیکھے تھے۔ آئیے انہیں نکالنا سیکھیں۔' },
+    { t: 'steps', title: 'Quartiles نکالنے کا طریقہ', items: ['Data کو چھوٹے سے بڑے sort کریں۔', 'Median یعنی Q2 نکالیں۔ یہ data کو دو حصوں میں بانٹتا ہے۔', 'نچلے آدھے حصے کا median Q1 ہے۔', 'اوپر والے آدھے حصے کا median Q3 ہے۔', 'IQR برابر Q3 منفی Q1۔'] },
+    { t: 'diagram', id: 'xii4.quartiles', cap: 'Nine values: Q1 = 40, Q2 = 50, Q3 = 62', say: 'نو sorted values ہیں۔ درمیان والی یعنی پانچویں value پچاس median ہے۔ نچلے حصے کی پانچ values بیس، پینتیس، چالیس، پینتالیس، پچاس کا median چالیس ہے، یہی Q1 ہے۔ اوپر کے حصے کی پانچ values پچاس، چھپن، باسٹھ، اڑسٹھ، ایک سو دس کا median باسٹھ ہے، یہی Q3 ہے۔ یہاں median دونوں حصوں میں گنا گیا ہے۔' },
+    { t: 'math', tex: '\\text{IQR} = Q_3 - Q_1 = 62 - 40 = 22', cap: 'Interquartile range', say: 'IQR برابر Q3 منفی Q1، یعنی باسٹھ منفی چالیس، یعنی بائیس۔ یہ درمیانے پچاس فیصد data کا پھیلاؤ بتاتا ہے۔' },
+    { t: 'diagram', id: 'xii4.boxplot', cap: 'اسی data کا box plot', say: 'اب اسی data کو box plot میں دیکھیں۔ Box بالکل Q1 چالیس سے Q3 باسٹھ تک ہے، یعنی اس کی چوڑائی IQR ہے۔ سرخ لکیر median پچاس ہے۔ ایک سو دس والا نقطہ باقی data سے بہت دور ہے، اس لیے الگ نقطے کے طور پر outlier دکھایا گیا ہے۔ ایک مشہور اصول کے مطابق Q3 میں ڈیڑھ گنا IQR جمع کریں تو جو حد آتی ہے، اس سے اوپر کی value outlier ہوتی ہے۔ یہاں وہ حد پچانوے ہے۔' },
+    { t: 'note', kind: 'tip', ur: 'اسی data کا mean چون ہے اور median پچاس۔ ایک سو دس کی وجہ سے mean اوپر کھنچ گیا ہے۔ IQR پر outlier کا اثر نہیں پڑتا، اس لیے یہ Range سے زیادہ قابل اعتماد spread ہے۔' },
+    { t: 'note', kind: 'exam', ur: 'امتحان کے لیے: Range کا formula، Variance کا formula اور علامتیں، Deviation کی تین حالتیں مثبت، منفی اور صفر، اور دو دکانوں والی مثال ضرور یاد رکھیں۔ چھوٹا variance برابر مستقل data، بڑا variance برابر بہت بدلتا ہوا data۔' },
+    { t: 'terms', items: [{ en: 'Range', ur: 'سب سے بڑی اور چھوٹی value کا فرق' }, { en: 'Deviation', ur: 'value اور mean کا فرق' }, { en: 'Variance', ur: 'squared deviations کا average' }, { en: 'Standard deviation', ur: 'variance کا square root' }, { en: 'Quartile', ur: 'sorted data کو چار حصوں میں بانٹنے والی value' }, { en: 'IQR', ur: 'Q3 منفی Q1' }] },
+    { t: 'recap', items: ['Range = Highest − Lowest، تیز مگر صرف دو values پر مبنی۔', 'Deviation = value − mean، مثبت، منفی یا صفر۔', 'Variance = squared deviations کا average، SD = اس کا square root۔', 'Q1، Q2 اور Q3 data کو چار حصوں میں بانٹتے ہیں، IQR = Q3 − Q1۔'] },
+  ],
+  quiz: [
+    { q: 'تین دن کی sales 120، 150 اور 180 ہیں۔ Range کیا ہے؟', opts: ['30', '60', '150', '180'], a: 1, why: 'Range = 180 − 120 = 60۔' },
+    { q: 'Variance چھوٹا ہونے کا کیا مطلب ہے؟', opts: ['Values mean کے قریب ہیں', 'Values بہت پھیلی ہوئی ہیں', 'Mean صفر ہے', 'Data میں mode نہیں'], a: 0, why: 'چھوٹا variance کا مطلب ہے کہ values mean کے قریب ہیں، یعنی data مستقل ہے۔' },
+    { q: 'Standard deviation کیا ہے؟', opts: ['Variance کا square', 'Variance کا square root', 'Range کا آدھا', 'Mean کا square root'], a: 1, why: 'SD = √variance، اس کی unit اصل data والی ہوتی ہے۔' },
+    { q: 'اوسط سفر 30 منٹ ہو اور ایک دن 35 منٹ لگیں تو deviation کیا ہے؟', opts: ['−5', '+5', '0', '65'], a: 1, why: 'Deviation = 35 − 30 = +5، یعنی value mean سے اوپر ہے۔' },
+  ],
+  homework: ['ڈیٹا 4، 8، 6، 5، 7 کا mean، range، variance اور standard deviation نکالیں۔', 'ڈیٹا 3، 5، 7، 8، 12، 13، 14 کا Q1، median، Q3 اور IQR نکالیں۔', 'دو کرکٹرز کے سکور کی ایسی مثال بنائیں جن کا mean ایک ہو مگر spread مختلف ہو۔'],
+});
