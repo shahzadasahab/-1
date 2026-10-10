@@ -1,40 +1,37 @@
-# Intimacy Guide
+# CS XI & XII 30-Day Crash Course
 
-Bilingual (English & Urdu) couples sex-education app with embedded diagram pictures, imagination postures, voice narration, and PDF export.
+Android reader for the **Computer Science XI and XII 30-Day Crash Course** (New Sindh Curriculum 2026).
+
+- Every booklet page is **embedded as printed** (204-page PDF).
+- Each day has a **Urdu lecture** you can listen to.
+- Exam terms stay **English as-is** on the page and in speech: `Algorithm`, `Logic Gates`, `SDLC`, `Neural Networks`, `MVP`, and the rest are wrapped and spoken with an English voice while the explanation stays Urdu.
 
 ## Download
 
-**Latest (v3.2.1)** — man/woman posture roles + sex education for him & her:
+**Latest (v1.0.0)** — Urdu lectures + English terms as printed:
 
-https://github.com/SyedShahzadAliShah/-1/raw/main/releases/IntimacyHandbook-v3.2.1-debug.apk
+`releases/CS-XI-XII-CrashCourse-v1.0.0-urdu-tts-debug.apk`
 
-Branch copy: https://github.com/SyedShahzadAliShah/-1/raw/cursor/couples-posture-guide-ed65/releases/IntimacyHandbook-v3.2.1-debug.apk
+Uninstall any older app with a different package name first. On the home screen you should see **Version 1.0.0 — Urdu lectures · English terms as printed**.
 
-> **Important:** Uninstall any older version first, then install v3.2.1. On the home screen you should see **"Version 3.2.1 — Man/Woman roles + Sex Ed for Him & Her"** below the subtitle.
+## How to use
 
-## v3.2.1
+1. Install **Urdu** in Android Text-to-speech settings (Google TTS → install Urdu voice).
+2. Open **Computer Science XI** or **XII**.
+3. Open a day. Swipe the original booklet pages.
+4. Tap **Listen lecture**. `{English terms}` are pronounced as written.
+5. Tick the day when the 3-hour block is done.
 
-- **Fix:** Sex Education and chapter lists now display correctly inside the scroll view
-- **Fix:** Version badge on home screen so you can confirm the correct build is installed
-
-## v3.2.0
-
-- **Man & woman roles** — each posture defines the man's and woman's position and guidance
-- **Sex education for him** — 4 chapters on arousal, pleasuring partner, stamina, confidence
-- **Sex education for her** — 4 chapters on arousal, pleasure, comfort, confidence
-- Diagram labels updated to Man/Woman
-
-## v2.4 fixes
-
-- **PDF export fixed** — proper image loading, multi-page pagination, Urdu font embedding, reliable sharing
-- **Upgraded pictures** — 960×600 educational diagrams with Partner A/B labels and position annotations
+Days 1–23 teach, chapter-end days are checkpoints, 24–26 Golden blitz, 27 recap, 28 mock, 29 mark, 30 repair.
 
 ## Build
 
 ```bash
-python3 scripts/generate_posture_pictures.py
+python3 scripts/build_course_json.py
 export ANDROID_HOME=/path/to/android-sdk
 ./gradlew assembleDebug
 ```
 
-## Version 3.2.1
+The debug APK is written to `app/build/outputs/apk/debug/`.
+
+## Version 1.0.0

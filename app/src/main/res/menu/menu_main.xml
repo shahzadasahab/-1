@@ -11,8 +11,7 @@
         android:title="@string/listen"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_export"
-        android:icon="@android:drawable/ic_menu_save"
-        android:title="@string/export_full_guide"
-        app:showAsAction="ifRoom" />
+        android:id="@+id/action_tts_settings"
+        android:title="@string/voice_open_settings"
+        app:showAsAction="never" />
 </menu>

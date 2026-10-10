@@ -1,0 +1,1154 @@
+{
+  "title": "CS XI & XII 30-Day Crash Course",
+  "curriculum": "New Sindh Curriculum 2026",
+  "narration": "ur-en-mixed",
+  "termRule": "English exam terms are wrapped in {braces} and spoken as printed on the booklet pages.",
+  "courses": [
+    {
+      "id": "xi",
+      "title": "Computer Science XI",
+      "titleUr": "کمپیوٹر سائنس XI",
+      "subtitle": "30-Day Crash Course · Days 1–23 teach · 24–30 revise, mock, repair",
+      "introStartPage": 1,
+      "introEndPage": 4,
+      "introScript": "یہ {Computer Science XI} کا تیس دن کا {Crash Course} ہے، {New Sindh Curriculum 2026}۔ دن 1 سے 23 ہر موضوع revision cards کی صورت میں پڑھاتے ہیں۔ ہر باب کا آخری دن timed {Checkpoint} ہے۔ دن 24 سے 26 صرف ★ {Golden blitz} ہے۔ دن 27 recaps، دن 28 {Mock}، دن 29 marking، دن 30 {Repair}۔ ہر تدریسی دن تین گھنٹے: پہلے 15 منٹ کل کا ★ {Golden} زبانی، پھر آج کے کارڈز، پھر {Closed-book drill}، رات کو {Define} · {Explain} · {Example} · {Diagram} · {Working} سے پانچ نمبر۔ پیچھے رہو تو صرف ★ {Golden} کارڈز کرو۔ {Checkpoint} مت چھوڑو۔ نیا باب اس وقت تک نہ شروع کرو جب تک اس باب کی {Golden} تعریف زبانی نہ آئے۔ فون دوسرے کمرے میں رکھو۔ صفحات جوں کے توں دیکھیں، اصطلاحات انگریزی میں ویسی ہی یاد کریں جیسے چھپی ہیں۔",
+      "days": [
+        {
+          "id": "xi-d01",
+          "day": 1,
+          "week": 1,
+          "kind": "Teach",
+          "chapter": "Computer Systems",
+          "focus": "Computer Systems (1/5)",
+          "golden": "Analog and Digital Signals",
+          "startPage": 5,
+          "endPage": 6,
+          "topics": [
+            "Discrete and Continuous Quantities",
+            "Introduction to Digital Systems",
+            "Analog and Digital Signals",
+            "Boolean Algebra"
+          ],
+          "script": "السلام علیکم۔ {Class XI}، دن 01، باب {Computer Systems}۔ آج کا ★ Golden موضوع {Analog and Digital Signals} ہے۔ {Discrete} مقداریں گنی جاتی ہیں، جیسے کلاس میں طلبہ؛ درمیان میں کچھ نہیں۔ {Continuous} مقداریں ناپی جاتی ہیں، جیسے پانی کا درجہ حرارت۔ یاد رکھو: سیڑھیاں {Discrete}، ramp {Continuous}۔ {Digital system} صرف دو قیمتیں استعمال کرتا ہے: 0 یعنی {OFF}، {LOW} یا {FALSE}، اور 1 یعنی {ON}، {HIGH} یا {TRUE}۔ فائدے: {Reliable}، {Accurate}، آسان ڈیزائن، {Programmable}۔ ایک {Bit} بتی کے سوئچ کی طرح ہے — آن یا آف۔ ★ {Signal} وہ بدلتی وولٹیج ہے جو معلومات لے کر جاتی ہے۔ {Analog signals} ہموار {Sine Wave} ہیں، جیسے انسانی آواز۔ {Digital signals} صرف دو سطحیں رکھتی ہیں، {Square Wave}، جیسے قلعے کی دیوار۔ {Analog} شور سے متاثر، {Digital} شور کے خلاف مضبوط۔ امتحان میں جدول اور دونوں لہریں کھینچنا آئے گا۔ {Boolean Algebra} {George Boole} نے بنائی۔ صرف {TRUE} 1 اور {FALSE} 0۔ {AND}، {OR}، {NOT} بنیادی عمل ہیں۔ جال: Boolean میں جمع کا نشان {OR} ہے، جمع نہیں۔ ڈرل: کتاب کے صفحات {Discrete} ہیں؛ 1 کا مطلب {ON}؛ ڈیجیٹل لہریں {Square Wave}؛ بانی {George Boole}۔"
+        },
+        {
+          "id": "xi-d02",
+          "day": 2,
+          "week": 1,
+          "kind": "Teach",
+          "chapter": "Computer Systems",
+          "focus": "Computer Systems (2/5)",
+          "golden": "Logic Gates (Basic Gates: AND, OR, NOT)",
+          "startPage": 7,
+          "endPage": 9,
+          "topics": [
+            "Boolean Operations",
+            "Truth Tables",
+            "Logic Gates (Basic Gates: AND, OR, NOT)",
+            "Universal Logic Gates (NAND and NOR)"
+          ],
+          "script": "دن 02۔ ★ Golden: {Logic Gates (Basic Gates: AND, OR, NOT)}۔ {AND} تب 1 جب تمام inputs 1 ہوں — دو تالے والا دروازہ۔ {OR} تب 1 جب کوئی ایک 1 ہو — دو دروازوں والا کمرہ۔ {NOT} الٹ کر دیتا ہے، inverter۔ {Truth Table} ہر ممکن input اور اس کا output دکھاتی ہے۔ n inputs ہوں تو قطاریں 2 کی طاقت n۔ دو inputs کی چار قطاریں: 00، 01، 10، 11۔ ★ {Logic gates} الیکٹرانک سرکٹس ہیں جو Boolean عمل کرتے ہیں۔ {AND} کی شکل D، {OR} نوک دار، {NOT} مثلث پر bubble۔ شارٹ کٹ: {AND} صرف 11 پر 1؛ {OR} صرف 00 پر 0۔ امتحان: symbol، expression، {Truth Table}۔ {NAND} یعنی {NOT AND}، {NOR} یعنی {NOT OR}۔ دونوں {Universal gates} ہیں — دنیا کا کوئی بھی منطق سرکٹ صرف {NAND} یا صرف {NOR} سے بن سکتا ہے۔ {NAND} {AND} کا الٹ، {NOR} {OR} کا الٹ۔ ڈرل: {OR} کا نشان جمع؛ چار inputs کی table میں 16 قطاریں؛ A=0 B=0 پر {OR} صفر؛ universal اس لیے کہ صرف ان سے پورا سرکٹ بنتا ہے۔"
+        },
+        {
+          "id": "xi-d03",
+          "day": 3,
+          "week": 1,
+          "kind": "Teach",
+          "chapter": "Computer Systems",
+          "focus": "Computer Systems (3/5)",
+          "golden": "Logic Diagrams, Karnaugh Maps (K-Maps)",
+          "startPage": 10,
+          "endPage": 11,
+          "topics": [
+            "Advanced Logic Gates (XOR and XNOR)",
+            "Logic Expressions, Minterms and Maxterms",
+            "Logic Diagrams",
+            "Karnaugh Maps (K-Maps)"
+          ],
+          "script": "دن 03۔ ★ Golden: {Logic Diagrams} اور {Karnaugh Maps (K-Maps)}۔ {XOR} تب 1 جب inputs مختلف ہوں۔ {XNOR} تب 1 جب دونوں یکساں ہوں — مساوات کا گیٹ۔ {Minterm} وہ حاصل ضرب ہے جو ایک قطار میں 1 دیتی ہے؛ {Maxterm} وہ حاصل جمع جو 0 دیتی ہے۔ Expression کو گیٹ کی تصویر بنانا {Logic Diagram} ہے۔ پہلے {NOT}، پھر {AND}، آخر میں {OR} — یا دیا گیا ترتیب۔ ★ {K-Map} {Truth Table} کو خانوں میں سمیٹتی ہے تاکہ سادہ گروپ ملیں۔ پڑوسی خانے صرف ایک {Bit} بدلتے ہیں، {Gray code}۔ گروپ 1، 2، 4، 8 کے طاقتوں میں، جتنا بڑا گروپ اتنی سادہ expression۔ امتحان میں 2 اور 3 variable {K-Map} لازمی ہے۔ صفحے پر diagram اور {K-Map} جوں کے توں نقل کرو، پھر بند کتاب کھینچو۔"
+        },
+        {
+          "id": "xi-d04",
+          "day": 4,
+          "week": 1,
+          "kind": "Teach",
+          "chapter": "Computer Systems",
+          "focus": "Computer Systems (4/5)",
+          "golden": "Software Development Life Cycle (SDLC), The Waterfall Model",
+          "startPage": 12,
+          "endPage": 14,
+          "topics": [
+            "LogiSim Evolution: Simulation Tool",
+            "Building a Circuit in LogiSim",
+            "Software Development Life Cycle (SDLC)",
+            "The Waterfall Model"
+          ],
+          "script": "دن 04۔ پہلے {LogiSim} سے سرکٹ بنا کر چلاؤ: گیٹ رکھو، تار جوڑو، input دے کر output دیکھو۔ یہ مشق ہے، ★ Golden {SDLC} اور {The Waterfall Model} ہیں۔ {Software Development Life Cycle} سافٹ ویئر بنانے کے مرحلے ہیں۔ عام مراحل: {Requirement}، {Design}، {Implementation}، {Testing}، {Deployment}، {Maintenance}۔ ہر مرحلہ اگلے سے پہلے مکمل۔ ★ {Waterfall Model} ایک طرف بہتا پانی ہے: اوپر سے نیچے، واپس مشکل۔ فائدہ: ترتیب صاف، دستاویز مضبوط۔ نقصان: تبدیلی مہنگی، گاہک دیر سے دیکھتا ہے۔ چھوٹے، واضح منصوبوں کے لیے ٹھیک؛ بدلتے تقاضوں کے لیے کمزور۔ پانچ نمبر: تعریف، مراحل کی فہرست، ایک فائدہ، ایک نقصان، ایک مثال۔"
+        },
+        {
+          "id": "xi-d05",
+          "day": 5,
+          "week": 1,
+          "kind": "Checkpoint",
+          "chapter": "Computer Systems",
+          "focus": "Computer Systems (5/5)",
+          "golden": "The Agile Model, Communication Models and the OSI 7-Layer Model",
+          "startPage": 15,
+          "endPage": 18,
+          "topics": [
+            "The Agile Model",
+            "Waterfall vs Agile",
+            "Communication Models and the OSI 7-Layer Model",
+            "TCP/IP Model vs OSI Model",
+            "Checkpoint Test"
+          ],
+          "script": "دن 05 {Checkpoint}۔ ★ Golden: {The Agile Model} اور {OSI 7-Layer Model}۔ {Agile} چھوٹے چکر {Sprint} میں بناتا ہے، عموماً 2 سے 4 ہفتے۔ {Plan}، {Design}، {Build}، {Test}، {Review}، پھر دہراؤ۔ گاہک ہر {Sprint} کے بعد کام دیکھتا ہے۔ {Waterfall} سخت ترتیب؛ {Agile} لچک۔ مواصلات کے ماڈل بتاتے ہیں ڈیٹا کیسے سفر کرتا ہے۔ ★ {OSI 7-Layer Model}: {Physical}، {Data Link}، {Network}، {Transport}، {Session}، {Presentation}، {Application}۔ یاد: Please Do Not Throw Sausage Pizza Away۔ {TCP/IP} چار تہیں: {Network Access}، {Internet}، {Transport}، {Application}۔ {OSI} نمونہ ہے، {TCP/IP} عملی انٹرنیٹ۔ چالیس منٹ کا ٹیسٹ بند کتاب۔ 60 فیصد سے کم تو کل صبح {Golden repair}، نیا باب نہیں۔"
+        },
+        {
+          "id": "xi-d06",
+          "day": 6,
+          "week": 2,
+          "kind": "Teach",
+          "chapter": "Computational Thinking & Algorithm",
+          "focus": "Computational Thinking & Algorithm (1/3)",
+          "golden": "Algorithm, Algorithm vs Pseudocode, Decomposition",
+          "startPage": 19,
+          "endPage": 21,
+          "topics": [
+            "Computational Thinking",
+            "Algorithm",
+            "Algorithm vs Pseudocode",
+            "Decomposition",
+            "Pattern Recognition"
+          ],
+          "script": "دن 06، باب {Computational Thinking & Algorithm}۔ ★ Golden: {Algorithm}، {Algorithm vs Pseudocode}، {Decomposition}۔ {Computational Thinking} مسائل کو کمپیوٹر کے انداز میں توڑنا: {Decomposition}، {Pattern Recognition}، {Abstraction}، {Algorithm}۔ ★ {Algorithm} قدم بہ قدم ہدایات ہیں جو شروع، واضح قدم، اور اختتام رکھتی ہیں۔ کھانا پکانے کی ترکیب الگورتھم کی مثال ہے۔ ★ {Pseudocode} انگریزی نما ڈھانچہ ہے، مخصوص زبان نہیں۔ {Algorithm} سوچ ہے؛ {Pseudocode} اس سوچ کی لکھائی؛ حقیقی کوڈ {Python} وغیرہ۔ ★ {Decomposition} بڑے مسئلے کو چھوٹے حصوں میں توڑنا، جیسے امتحان کی تیاری کو ابواب میں بانٹنا۔ {Pattern Recognition} بار بار آنے والی شکل دیکھنا۔"
+        },
+        {
+          "id": "xi-d07",
+          "day": 7,
+          "week": 2,
+          "kind": "Teach",
+          "chapter": "Computational Thinking & Algorithm",
+          "focus": "Computational Thinking & Algorithm (2/3)",
+          "golden": "Sorting Algorithms: Bubble Sort, Sorting Algorithms: Selection Sort",
+          "startPage": 22,
+          "endPage": 24,
+          "topics": [
+            "Abstraction",
+            "Sorting and Searching Algorithms",
+            "Bubble Sort",
+            "Selection Sort"
+          ],
+          "script": "دن 07۔ {Abstraction} غیر ضروری تفصیل چھپاتا ہے — کار چلاتے ہو، انجن کا ہر پیچ نہیں دیکھتے۔ ★ {Bubble Sort}: پڑوسی جوڑوں کا موازنہ، بڑا سامنے دھکیل دو، آخر تک {Pass}۔ n عناصر پر تقریباً n مربع موازنے۔ سادہ، سست۔ ★ {Selection Sort}: ہر {Pass} میں باقی فہرست کا سب سے چھوٹا چن کر اپنی جگہ لگاؤ۔ بھی n مربع، مگر swaps کم۔ امتحان میں دونوں کے قدم، ایک چھوٹی فہرست پر کام، اور {Time complexity} پوچھتے ہیں۔ صفحے کی جدول جوں کی توں یاد کرو۔"
+        },
+        {
+          "id": "xi-d08",
+          "day": 8,
+          "week": 2,
+          "kind": "Checkpoint",
+          "chapter": "Computational Thinking & Algorithm",
+          "focus": "Computational Thinking & Algorithm (3/3)",
+          "golden": "Searching Algorithms: Binary Search",
+          "startPage": 25,
+          "endPage": 28,
+          "topics": [
+            "Linear Search",
+            "Binary Search",
+            "Evaluation Criteria of Algorithms",
+            "Checkpoint Test"
+          ],
+          "script": "دن 08 {Checkpoint}۔ ★ Golden: {Binary Search}۔ {Linear Search} شروع سے آخر تک ایک ایک دیکھتا ہے — انارکی الماری۔ ترتیب ضروری نہیں۔ بدترین صورت n قدم۔ ★ {Binary Search} صرف ترتیب شدہ فہرست پر۔ درمیان دیکھو: برابر تو مل گیا؛ چھوٹا ہو تو دائیں نصف، بڑا ہو تو بائیں نصف۔ ہر بار آدھا۔ پیچیدگی {O(log n)}۔ الگورتھم جانچو: درستگی، وضاحت، رفتار، یادداشت۔ چالیس منٹ کا باب ٹیسٹ بند کتاب۔ {Binary Search} کی تعریف، شرط، اور مثال لازمی لکھو۔"
+        },
+        {
+          "id": "xi-d09",
+          "day": 9,
+          "week": 2,
+          "kind": "Teach",
+          "chapter": "Programming Fundamentals",
+          "focus": "Programming Fundamentals (1/5)",
+          "golden": "none — still copy every table",
+          "startPage": 29,
+          "endPage": 31,
+          "topics": [
+            "Programming",
+            "Programming Language Types",
+            "Career Growth with Python",
+            "Integrated Development Environment"
+          ],
+          "script": "دن 09، باب {Programming Fundamentals}۔ آج ★ Golden الگ نہیں، ہر جدول نقل کرو۔ {Programming} کمپیوٹر کو ہدایات دینا۔ زبانیں: {Low-level} مشین کے قریب، {High-level} انسان کے قریب جیسے {Python}۔ {Compiled} پہلے مشین کوڈ بناتی ہیں، {Interpreted} لائن بہ لائن چلتی ہیں؛ {Python} interpreted ہے۔ {Python} سادہ نحو، سائنس، ویب، {AI} میں کام۔ {IDE} وہ سافٹ ویئر ہے جہاں لکھتے، چلاتے، غلطی دیکھتے ہو — {VS Code}، {PyCharm}، {IDLE}۔ کل ★ {Variables} اور {Data Types} آئیں گے۔ آج کی لغت زبانی ہو۔"
+        },
+        {
+          "id": "xi-d10",
+          "day": 10,
+          "week": 2,
+          "kind": "Teach",
+          "chapter": "Programming Fundamentals",
+          "focus": "Programming Fundamentals (2/5)",
+          "golden": "Fundamentals of Python Programming, Variables, Data Types in Python, Operators and Operands: Arithmetic and Assignment",
+          "startPage": 32,
+          "endPage": 34,
+          "topics": [
+            "Fundamentals of Python Programming",
+            "Variables",
+            "Data Types in Python",
+            "Input and Output Handling",
+            "Arithmetic and Assignment Operators"
+          ],
+          "script": "دن 10۔ ★ Golden: {Python} کی بنیاد، {Variables}، {Data Types}، {Arithmetic} اور {Assignment}۔ {Python} انڈینٹیشن سے بلاک بناتا ہے۔ نام کیس حساس۔ {print} دکھاتا ہے، {input} پوچھتا ہے۔ {Variable} نام والا ڈبہ۔ {int} عدد، {float} اعشاری، {str} متن، {bool} {True} یا {False}۔ {type()} قسم بتاتا ہے۔ عمل: جمع، تفریق، ضرب، تقسیم، {//} مکمل تقسیم، {%} باقی، {**} طاقت۔ {Assignment} = قیمت رکھتا ہے؛ {+=} پرانی میں جمع۔ {Operand} وہ قیمت جس پر عمل ہو، {Operator} خود عمل۔"
+        },
+        {
+          "id": "xi-d11",
+          "day": 11,
+          "week": 3,
+          "kind": "Teach",
+          "chapter": "Programming Fundamentals",
+          "focus": "Programming Fundamentals (3/5)",
+          "golden": "Relational, Logical and Membership Operators, Bitwise Operators, Control Structures, Selection Statements: if and if-else",
+          "startPage": 35,
+          "endPage": 37,
+          "topics": [
+            "Relational, Logical and Membership Operators",
+            "Bitwise Operators",
+            "Control Structures",
+            "Sequence",
+            "Selection Statements: if and if-else"
+          ],
+          "script": "دن 11۔ ★ Golden: موازنہ، منطقی، {Membership}، {Bitwise}، {Control Structures}، {if} اور {if-else}۔ تقابلی: == != < > <= >= نتیجہ {bool}۔ منطقی: {and} دونوں سچ، {or} کوئی ایک، {not} الٹ۔ {in} اور {not in} رکنیت۔ {Bitwise} {AND} {OR} {XOR} {NOT} شفٹ — بٹس پر۔ {Control structure} تین: {Sequence} سیدھا، {Selection} انتخاب، {Repetition} دہراؤ۔ {if} شرط سچ ہو تو بلاک۔ {if-else} دو راستے۔ امتحان میں فلو چارٹ اور ایک چھوٹا کوڈ دونوں مانگتے ہیں۔"
+        },
+        {
+          "id": "xi-d12",
+          "day": 12,
+          "week": 3,
+          "kind": "Teach",
+          "chapter": "Programming Fundamentals",
+          "focus": "Programming Fundamentals (4/5)",
+          "golden": "Selection Statements: if-elif-else and Nested if, Repetition Statements: the for Loop and range(), The while Loop, break and continue, Nested Loops",
+          "startPage": 38,
+          "endPage": 40,
+          "topics": [
+            "if-elif-else and Nested if",
+            "for Loop and range()",
+            "while Loop",
+            "break and continue",
+            "Nested Loops and for vs while"
+          ],
+          "script": "دن 12۔ ★ Golden: {if-elif-else}، {Nested if}، {for}، {range()}، {while}، {break}، {continue}۔ کئی شرطیں ہوں تو {elif} زنجیر۔ اندر {if} {Nested if}۔ {for} معلوم تکرار: {for i in range(5)}۔ {range(start, stop, step)} stop شامل نہیں۔ {while} جب تک شرط سچ، احتیاط {Infinite loop} سے۔ {break} لوپ توڑتا ہے، {continue} یہ چکر چھوڑ کر اگلا۔ اندر لوپ {Nested}۔ جانیں کب {for}، کب {while} — گنتی معلوم ہو تو {for}، شرط پر رکنا ہو تو {while}۔"
+        },
+        {
+          "id": "xi-d13",
+          "day": 13,
+          "week": 3,
+          "kind": "Checkpoint",
+          "chapter": "Programming Fundamentals",
+          "focus": "Programming Fundamentals (5/5)",
+          "golden": "none — still copy every table",
+          "startPage": 41,
+          "endPage": 44,
+          "topics": [
+            "Libraries in Python",
+            "Built-in Libraries",
+            "Third-Party Libraries",
+            "Debugging Code in Python",
+            "Checkpoint Test"
+          ],
+          "script": "دن 13 {Checkpoint}۔ لائبریریاں تیار اوزار ہیں۔ {Built-in} جیسے {math}، {random} {import} سے آتی ہیں۔ {Third-party} جیسے {numpy} الگ نصب۔ {Debugging}: پیغام پڑھو، لائن دیکھو، {print} سے قیمت چیک کرو، منطقی غلطی الگ، نحوی غلطی الگ۔ چالیس منٹ باب ٹیسٹ۔ {Variable}، {if-else}، {for}، {while}، عمل کے نشان زبانی ہوں۔ 60 فیصد سے کم تو {Golden repair}۔"
+        },
+        {
+          "id": "xi-d14",
+          "day": 14,
+          "week": 3,
+          "kind": "Teach",
+          "chapter": "Data and Analysis",
+          "focus": "Data and Analysis (1/3)",
+          "golden": "Keys and Integrity Constraints",
+          "startPage": 45,
+          "endPage": 46,
+          "topics": [
+            "Data, Information and Database",
+            "Database Management System (DBMS)",
+            "Database Components",
+            "Keys and Integrity Constraints"
+          ],
+          "script": "دن 14، باب {Data and Analysis}۔ {Data} خام حقائق، {Information} پروسیس شدہ فیصلے کی بات۔ {Database} منظم متعلقہ ڈیٹا۔ {DBMS} وہ سافٹ ویئر جو اسے سنبھالے، تکرار کم کرے۔ اجزاء: {Table}، {Record} قطار، {Field} کالم، {Query}، {Form}، {Report}۔ ★ {Keys}: {Primary Key} قطار کی منفرد پہچان، خالی نہیں۔ {Foreign Key} دوسری جدول کے {Primary Key} کی طرف اشارہ۔ {Integrity Constraints} اصول ہیں جو غلط ڈیٹا روکیں: {Entity}، {Referential}، {Domain}۔"
+        },
+        {
+          "id": "xi-d15",
+          "day": 15,
+          "week": 3,
+          "kind": "Teach",
+          "chapter": "Data and Analysis",
+          "focus": "Data and Analysis (2/3)",
+          "golden": "Entity Relationship Model (ER-Model), Referential Integrity",
+          "startPage": 47,
+          "endPage": 49,
+          "topics": [
+            "Entity Relationship Model (ER-Model)",
+            "Referential Integrity",
+            "Relational Schema Development",
+            "Case Study"
+          ],
+          "script": "دن 15۔ ★ Golden: {ER-Model} اور {Referential Integrity}۔ {Entity} حقیقی چیز، {Attribute} اس کی صفت، {Relationship} ربط۔ {ER} ڈایاگرام مستطیل وجود، بیضوی صفت، ہیرے رشتہ۔ {One-to-One}، {One-to-Many}، {Many-to-Many}۔ ★ {Referential Integrity}: {Foreign Key} کی قیمت یا تو خالی یا موجود {Primary Key} سے ملے۔ یتیم ریکارڈ منع۔ {Relational Schema} جدولوں، کنجوں، رشتوں کی لکھائی۔ کیس سٹڈی صفحے پر جوں کی توں کھینچو۔"
+        },
+        {
+          "id": "xi-d16",
+          "day": 16,
+          "week": 4,
+          "kind": "Checkpoint",
+          "chapter": "Data and Analysis",
+          "focus": "Data and Analysis (3/3)",
+          "golden": "Creating Queries in MS Access",
+          "startPage": 50,
+          "endPage": 53,
+          "topics": [
+            "Creation of Tables in Microsoft Access",
+            "Designing Forms",
+            "Creating Queries in MS Access",
+            "Data Reports",
+            "Checkpoint Test"
+          ],
+          "script": "دن 16 {Checkpoint}۔ {MS Access} میں جدول {Design View} سے فیلڈ اور {Data Type}، ایک {Primary Key}۔ {Form} اندراج کی کھڑکی۔ ★ {Query} سوال ہے جو قطار چنتا ہے۔ {Select Query} دکھاتا ہے، معیار سے چھانتا ہے۔ {SQL} میں {SELECT}، {FROM}، {WHERE}۔ رپورٹ چھپی شکل۔ چالیس منٹ ٹیسٹ۔ کنج، {ER}، {Referential Integrity}، {Query} ★ Golden ہیں۔"
+        },
+        {
+          "id": "xi-d17",
+          "day": 17,
+          "week": 4,
+          "kind": "Teach",
+          "chapter": "Application and Impacts of Computing",
+          "focus": "Application and Impacts of Computing (1/3)",
+          "golden": "Artificial Intelligence (AI), Internet of Things (IoT) & Components",
+          "startPage": 54,
+          "endPage": 56,
+          "topics": [
+            "Introduction to Computing Impacts",
+            "Artificial Intelligence (AI)",
+            "Internet of Things (IoT) & Components"
+          ],
+          "script": "دن 17۔ ★ Golden: {Artificial Intelligence (AI)} اور {Internet of Things (IoT)}۔ کمپیوٹنگ صحت، تعلیم، کاروبار، شہر بدل رہی ہے۔ ★ {AI} مشین کو انسانی سوچ کے قریب کام سکھانا: پہچان، فیصلہ، زبان۔ مثال: نقشے کی سفارش، چہرے کی پہچان۔ {Narrow AI} ایک کام؛ عام انسانی {AI} ابھی تحقیق۔ ★ {IoT} وہ چیزیں جو سینسر اور انٹرنیٹ سے آپس میں بات کریں۔ اجزاء: {Sensor}، {Actuator}، {Connectivity}، {Processor}، {User Interface}، کلاؤڈ۔ اسمارٹ پنکھا، اسمارٹ میٹر۔ دونوں اصطلاحیں انگریزی میں جوں کی توں لکھو۔"
+        },
+        {
+          "id": "xi-d18",
+          "day": 18,
+          "week": 4,
+          "kind": "Teach",
+          "chapter": "Application and Impacts of Computing",
+          "focus": "Application and Impacts of Computing (2/3)",
+          "golden": "Information Sources (Primary, Secondary, Tertiary)",
+          "startPage": 57,
+          "endPage": 58,
+          "topics": [
+            "Uses of IoT",
+            "Scope of AI in Education in Pakistan",
+            "Career Connection in IoT and AI",
+            "Information Sources (Primary, Secondary, Tertiary)"
+          ],
+          "script": "دن 18۔ {IoT} کھیتی، صحت، گھر، ٹریفک میں۔ پاکستان کی تعلیم میں {AI} مشق، ترجمہ، حاضری میں مدد دے سکتا ہے، مگر ڈیٹا اور استاد کی تربیت چاہیے۔ ★ {Information Sources}: {Primary} اصل، جیسے انٹرویو، سروے، تجربہ۔ {Secondary} کسی کا خلاصہ، جیسے درسی کتاب، مضمون۔ {Tertiary} فہرست اور انسائیکلوپیڈیا جو دونوں کی رہنمائی کرے۔ امتحان میں تینوں کی تعریف اور ایک ایک مثال۔"
+        },
+        {
+          "id": "xi-d19",
+          "day": 19,
+          "week": 4,
+          "kind": "Checkpoint",
+          "chapter": "Application and Impacts of Computing",
+          "focus": "Application and Impacts of Computing (3/3)",
+          "golden": "Assistive Technologies",
+          "startPage": 59,
+          "endPage": 62,
+          "topics": [
+            "Impacts of Computing in Various Fields",
+            "Assistive Technologies",
+            "Importance of Assistive Technologies",
+            "Career Connection",
+            "Checkpoint Test"
+          ],
+          "script": "دن 19 {Checkpoint}۔ ★ Golden: {Assistive Technologies}۔ کمپیوٹنگ کے مثبت اور منفی اثر لکھنا آئے: رفتار، ملازمت، رازداری۔ ★ {Assistive Technologies} وہ اوزار جو معذوری والے شخص کو کمپیوٹر اور دنیا استعمال کرنے دیں: اسکرین ریڈر، بریل ڈسپلے، آواز سے ٹائپ، سوئچ۔ اہمیت: برابر رسائی، عزت، قانون اور اخلاق۔ چالیس منٹ ٹیسٹ۔ {AI}، {IoT} اجزاء، مصادر کی تین اقسام، {Assistive Technologies}۔"
+        },
+        {
+          "id": "xi-d20",
+          "day": 20,
+          "week": 4,
+          "kind": "Teach",
+          "chapter": "Digital Literacy",
+          "focus": "Digital Literacy (1/4)",
+          "golden": "Types of Data, Data-Collection Strategies, Interviews and Surveys",
+          "startPage": 63,
+          "endPage": 65,
+          "topics": [
+            "Introduction to Digital Literacy",
+            "Digital Literacy in the Information Age",
+            "Types of Data",
+            "Data-Collection Strategies",
+            "Interviews and Surveys"
+          ],
+          "script": "دن 20، باب {Digital Literacy}۔ یہ تلاش، جانچ، اور ڈیٹا سے بات بنانے کی صلاحیت ہے۔ ★ {Types of Data}: {Qualitative} الفاظ اور رائے، {Quantitative} عدد۔ {Primary} خود اکٹھا، {Secondary} پہلے سے موجود۔ ★ حکمت عملی: سوال، مشاہدہ، تجربہ، دستاویز۔ ★ {Interview} گہری بات، کم لوگوں سے۔ {Survey} ایک جیسے سوال، زیادہ لوگوں سے۔ سوال متعصب نہ ہو، نمونہ واضح ہو۔"
+        },
+        {
+          "id": "xi-d21",
+          "day": 21,
+          "week": 5,
+          "kind": "Teach",
+          "chapter": "Digital Literacy",
+          "focus": "Digital Literacy (2/4)",
+          "golden": "Prototypes, Observation and Simulations, Primary and Secondary Data",
+          "startPage": 66,
+          "endPage": 67,
+          "topics": [
+            "Prototypes, Observation and Simulations",
+            "Primary and Secondary Data",
+            "Designing a Data-Collection Plan"
+          ],
+          "script": "دن 21۔ ★ Golden: {Prototypes}، {Observation}، {Simulations}، {Primary} اور {Secondary Data}۔ {Prototype} ابتدائی ماڈل تاکہ خیال آزمایا جائے۔ {Observation} دیکھ کر ریکارڈ۔ {Simulation} نقل تاکہ خطرے کے بغیر سیکھیں۔ {Primary} نیا، مہنگا، درست سوال پر۔ {Secondary} سستا، تیز، مگر مقصد دوسرا ہو سکتا ہے۔ منصوبہ: سوال، آبادی، اوزار، اخلاق، اجازت۔"
+        },
+        {
+          "id": "xi-d22",
+          "day": 22,
+          "week": 5,
+          "kind": "Teach",
+          "chapter": "Digital Literacy",
+          "focus": "Digital Literacy (3/4)",
+          "golden": "Case Study: Digital Inquiry Project, Steps 1 – 3: Advanced Search and Methodology, Steps 4 – 6: Survey Preparation and Primary Data Collection",
+          "startPage": 68,
+          "endPage": 70,
+          "topics": [
+            "Infographics and Reports",
+            "Case Study: Digital Inquiry Project",
+            "Steps 1-3 Advanced Search and Methodology",
+            "Steps 4-6 Survey Preparation and Primary Data Collection"
+          ],
+          "script": "دن 22۔ ★ Golden: {Digital Inquiry Project} اور اس کے پہلے چھ قدم۔ {Infographic} تصویر میں خلاصہ، رپورٹ تفصیل۔ قدم 1 سے 3: سوال، {Advanced Search}، طریقہ کار — کلیدی الفاظ، معتبر ویب، حوالہ۔ قدم 4 سے 6: سروے کے سوال، اجازت، {Primary Data} اکٹھا۔ کیس سٹڈی کے قدم صفحے پر جوں کے توں یاد کرو۔"
+        },
+        {
+          "id": "xi-d23",
+          "day": 23,
+          "week": 5,
+          "kind": "Checkpoint",
+          "chapter": "Digital Literacy",
+          "focus": "Digital Literacy (4/4)",
+          "golden": "Steps 7 – 9: Secondary Data and Spreadsheet Organisation, Steps 10 – 12: Data Analysis, Conclusion and Recommendations, The Final Digital Artefact",
+          "startPage": 71,
+          "endPage": 74,
+          "topics": [
+            "Steps 7-9 Secondary Data and Spreadsheet",
+            "Steps 10-12 Analysis, Conclusion, Recommendations",
+            "The Final Digital Artefact",
+            "Checkpoint Test"
+          ],
+          "script": "دن 23 {Checkpoint}۔ ★ Golden: قدم 7 سے 12 اور {Digital Artefact}۔ 7 سے 9: {Secondary Data}، اسپریڈ شیٹ میں کالم، صفائی، چارٹ۔ 10 سے 12: تجزیہ، نتیجہ، سفارش۔ آخری {Digital Artefact} وہ فائل ہے جو ثبوت، چارٹ اور حوالے جوڑے۔ کیریئر جدول صفحے پر ہے: تحقیق، صحافت، تجزیہ — سب یہی مہارت۔ چالیس منٹ ٹیسٹ۔"
+        },
+        {
+          "id": "xi-d24",
+          "day": 24,
+          "week": 5,
+          "kind": "Golden blitz",
+          "chapter": "Chapters 1–2",
+          "focus": "★ only · Chapters 1–2",
+          "golden": "14 Golden cards",
+          "startPage": 75,
+          "endPage": 81,
+          "topics": [
+            "Analog and Digital Signals",
+            "Logic Gates",
+            "Logic Diagrams",
+            "K-Maps",
+            "SDLC",
+            "Waterfall",
+            "Agile",
+            "OSI 7-Layer",
+            "Algorithm",
+            "Pseudocode",
+            "Decomposition",
+            "Bubble Sort",
+            "Selection Sort",
+            "Binary Search"
+          ],
+          "script": "دن 24 {Golden blitz}، باب 1 اور 2۔ نیا غیر گولڈن موضوع نہیں۔ ہر جدول یاد سے لکھو۔ زبانی سلسلہ: {Analog} ہموار، {Digital} دو سطح۔ {AND} {OR} {NOT}۔ {K-Map} گروپ۔ {SDLC} مراحل۔ {Waterfall} نیچے، {Agile} {Sprint}۔ سات تہہ {OSI}۔ {Algorithm} قدم، {Pseudocode} لکھائی، {Decomposition} توڑ۔ {Bubble} پڑوسی، {Selection} سب سے چھوٹا، {Binary Search} آدھا آدھا، ترتیب لازم۔ ایک ★ موضوع پر پانچ نمبر {Define Explain Example Diagram Working}۔"
+        },
+        {
+          "id": "xi-d25",
+          "day": 25,
+          "week": 6,
+          "kind": "Golden blitz",
+          "chapter": "Chapters 3–4",
+          "focus": "★ only · Chapters 3–4",
+          "golden": "16 Golden cards",
+          "startPage": 82,
+          "endPage": 88,
+          "topics": [
+            "Python fundamentals",
+            "Variables",
+            "Data Types",
+            "Operators",
+            "Control Structures",
+            "if and loops",
+            "Keys and Integrity",
+            "ER-Model",
+            "Referential Integrity",
+            "Queries in MS Access"
+          ],
+          "script": "دن 25 {Golden blitz} باب 3 اور 4۔ {Python} کی قسمیں، عمل، {if} {for} {while} یاد سے کوڈ لکھو۔ {Primary Key} منفرد، {Foreign Key} ربط، {ER} شکل، {Referential Integrity} یتیم ریکارڈ منع، {Query} سوال۔ ہر گولڈن کارڈ کی جدول بند آنکھوں سے۔"
+        },
+        {
+          "id": "xi-d26",
+          "day": 26,
+          "week": 6,
+          "kind": "Golden blitz",
+          "chapter": "Chapters 5–6",
+          "focus": "★ only · Chapters 5–6",
+          "golden": "15 Golden cards",
+          "startPage": 89,
+          "endPage": 95,
+          "topics": [
+            "AI",
+            "IoT & Components",
+            "Information Sources",
+            "Assistive Technologies",
+            "Types of Data",
+            "Data-Collection",
+            "Interviews and Surveys",
+            "Prototypes",
+            "Primary and Secondary Data",
+            "Digital Inquiry steps"
+          ],
+          "script": "دن 26 {Golden blitz} باب 5 اور 6۔ {AI} تعریف، {IoT} اجزاء کی فہرست، مصادر کی تین اقسام مثال سمیت، {Assistive Technologies} ایک آلہ ایک فائدہ۔ ڈیٹا کی اقسام، انٹرویو بمقابلہ سروے، {Prototype}، {Primary} {Secondary}، انکوائری کے بارہ قدم تین تین کے گروپ میں زبانی۔"
+        },
+        {
+          "id": "xi-d27",
+          "day": 27,
+          "week": 6,
+          "kind": "Recap",
+          "chapter": "All chapters",
+          "focus": "Say every chapter recap aloud, book closed",
+          "golden": "All chapters",
+          "startPage": 96,
+          "endPage": 97,
+          "topics": [
+            "Chapter 1 Computer Systems",
+            "Chapter 2 Computational Thinking & Algorithm",
+            "Chapter 3 Programming Fundamentals",
+            "Chapter 4 Data and Analysis",
+            "Chapter 5 Application and Impacts",
+            "Chapter 6 Digital Literacy"
+          ],
+          "script": "دن 27 {Recap}۔ کتاب بند، ہر باب بلند آواز۔ باب 1: مقدار، سگنل، گیٹ، {SDLC}، {OSI}۔ باب 2: سوچ، الگورتھم، ترتیب، تلاش۔ باب 3: {Python}، متغیر، کنٹرول۔ باب 4: ڈیٹا بیس، کنج، {ER}، {Query}۔ باب 5: {AI} {IoT} مصادر امدادی ٹیک۔ باب 6: ڈیجیٹل خواندگی اور انکوائری کے قدم۔ جو رکا، لکھ کر پھر کہو۔"
+        },
+        {
+          "id": "xi-d28",
+          "day": 28,
+          "week": 6,
+          "kind": "Mock",
+          "chapter": "Whole syllabus",
+          "focus": "2 hours 30 minutes · 75 marks · no notes",
+          "golden": "Whole syllabus",
+          "startPage": 98,
+          "endPage": 100,
+          "topics": [
+            "Mock paper hall conditions"
+          ],
+          "script": "دن 28 {Mock}۔ ڈھائی گھنٹے، 75 نمبر، نوٹس نہیں، فون نہیں، دن 29 کی کلید نہیں۔ ہال کی شرط۔ وقت بانٹو: MCQ تیز، گولڈن سوال جدول اور ڈایاگرام سے۔ ختم پر نام اور صفحہ گنو۔"
+        },
+        {
+          "id": "xi-d29",
+          "day": 29,
+          "week": 6,
+          "kind": "Mark",
+          "chapter": "Missed Goldens",
+          "focus": "Mark to the key. List every ★ Golden you missed.",
+          "golden": "Missed Goldens",
+          "startPage": 101,
+          "endPage": 102,
+          "topics": [
+            "Mark the mock",
+            "Repair list of missed Goldens"
+          ],
+          "script": "دن 29 marking۔ کلید سے میل کھاؤ۔ ہر ★ {Golden} جس پر صفر یا آدھا نمبر آیا repair list میں لکھو: موضوع، کیا رہ گیا۔ کل صرف یہی فہرست۔ نیا باب مت کھولو۔"
+        },
+        {
+          "id": "xi-d30",
+          "day": 30,
+          "week": 6,
+          "kind": "Repair",
+          "chapter": "Missed Goldens only",
+          "focus": "Redo the Day 29 list only. Sleep by 10 pm.",
+          "golden": "Missed Goldens only",
+          "startPage": 103,
+          "endPage": 103,
+          "topics": [
+            "Redo Day 29 list",
+            "Sleep by 10 pm"
+          ],
+          "script": "دن 30 {Repair}۔ صرف دن 29 کی فہرست: تعریف کہو، جدول کھینچو، مثال دو۔ شام چھ بجے رک جاؤ۔ دس بجے سو جاؤ۔ نیا موضوع حرام۔ قلم، پیمانہ، اور گولڈن کارڈز سر میں لے کر جاؤ، ہال میں کتاب نہیں۔"
+        }
+      ]
+    },
+    {
+      "id": "xii",
+      "title": "Computer Science XII",
+      "titleUr": "کمپیوٹر سائنس XII",
+      "subtitle": "30-Day Crash Course · HCI, algorithms, Python, AI, entrepreneurship",
+      "introStartPage": 104,
+      "introEndPage": 107,
+      "introScript": "یہ {Computer Science XII} کا تیس دن کا {Crash Course} ہے، {New Sindh Curriculum 2026}۔ باب ایک {Computer Systems (HCI)}، باب دو {Computational Thinking and Algorithms}، باب تین {Programming Fundamentals}، باب چار {Data and Analysis}، باب پانچ {Application and Impacts of Computing}، باب چھ {Entrepreneurship in the Digital Age}۔ طریقہ وہی ہے: تین گھنٹے، ★ {Golden} پہلے، {Checkpoint} مت چھوڑو، آخری ہفتے {Golden blitz}، {Recap}، {Mock}، {Mark}، {Repair}۔ صفحات جوں کے توں ہیں۔ لیکچر اردو میں ہے، اصطلاحات جیسے {HCI}، {Trace Tables}، {Big O Notation}، {MVP} انگریزی میں ویسی ہی بولی جائیں گی۔",
+      "days": [
+        {
+          "id": "xii-d01",
+          "day": 1,
+          "week": 1,
+          "kind": "Teach",
+          "chapter": "Computer Systems (HCI)",
+          "focus": "Computer Systems (HCI) (1/4)",
+          "golden": "Applications of HCI (Domains of Life)",
+          "startPage": 108,
+          "endPage": 110,
+          "topics": [
+            "Fundamentals of Human-Computer Interaction",
+            "Traditional Interaction and Natural Interaction",
+            "Applications of HCI (Domains of Life)"
+          ],
+          "script": "السلام علیکم۔ {Class XII} دن 01، باب {Computer Systems (HCI)}۔ {HCI} انسان اور کمپیوٹر کے درمیان بات چیت کا علم ہے۔ روایتی تعامل کی بورڈ ماؤس؛ {Natural Interaction} چھونا، بولنا، اشارہ۔ ★ {Applications of HCI} چار روزمرہ میدان: {healthcare}، {banking}، {education}، {networking}۔ صحت میں ریکارڈ، بینک میں ایپ، کلاس میں بورڈ، میسج میں چیٹ — سب انٹرفیس ہے۔ امتحان میں چار میدان اور ایک ایک مثال۔"
+        },
+        {
+          "id": "xii-d02",
+          "day": 2,
+          "week": 1,
+          "kind": "Teach",
+          "chapter": "Computer Systems (HCI)",
+          "focus": "Computer Systems (HCI) (2/4)",
+          "golden": "Importance of HCI",
+          "startPage": 111,
+          "endPage": 112,
+          "topics": [
+            "Types of User Interaction",
+            "Interface Types, Environment and Feedback",
+            "Importance of HCI",
+            "Accessibility Principles"
+          ],
+          "script": "دن 02۔ تعامل: کمانڈ، مینو، فارم، قدرتی۔ انٹرفیس، ماحول، {Feedback} — نظام جواب دے۔ ★ {Importance of HCI}: مشین قریب اور قابلِ استعمال بنے، پیچیدہ ٹیک روزمرہ اوزار بنے۔ غلط {HCI} غلط دوا، غلط رقم۔ {Accessibility} سب کے لیے: تضاد، بڑا متن، کی بورڈ، اسکرین ریڈر۔"
+        },
+        {
+          "id": "xii-d03",
+          "day": 3,
+          "week": 1,
+          "kind": "Teach",
+          "chapter": "Computer Systems (HCI)",
+          "focus": "Computer Systems (HCI) (3/4)",
+          "golden": "Human-Computer Interaction Problems, User Interface Design (UI vs UX)",
+          "startPage": 113,
+          "endPage": 115,
+          "topics": [
+            "Need Analysis for Interface Design",
+            "Human-Computer Interaction Problems",
+            "Methods for Improving HCI",
+            "User Interface Design (UI vs UX)"
+          ],
+          "script": "دن 03۔ ★ Golden: مسائل اور {UI vs UX}۔ ضرورت کا تجزیہ: صارف کون، کام کیا، رکاوٹ کیا۔ مسائل: الجھا مینو، چھوٹا بٹن، کم {Feedback}، سست جواب، زبان مشکل۔ بہتری: صارف کی جانچ، سادہ لیبل، مستقل رنگ۔ ★ {UI} دکھائی دینے والے بٹن رنگ آئیکن — کپڑے۔ {UX} پورا سفر — دن کیسا گزرا۔ امتحان: فرق اور مثال۔ بٹن {UI} ہے؛ فارم تین منٹ میں جمع ہو جانا {UX} ہے۔"
+        },
+        {
+          "id": "xii-d04",
+          "day": 4,
+          "week": 1,
+          "kind": "Checkpoint",
+          "chapter": "Computer Systems (HCI)",
+          "focus": "Computer Systems (HCI) (4/4)",
+          "golden": "Testing Methods (Usability, A/B, Automated)",
+          "startPage": 116,
+          "endPage": 119,
+          "topics": [
+            "Wireframing, Figma and Prototypes",
+            "Test and Evaluate HCI",
+            "Testing Methods (Usability, A/B, Automated)",
+            "Checkpoint Test"
+          ],
+          "script": "دن 04 {Checkpoint}۔ {Wireframe} سادہ خانے، {Figma} سے {Prototype}۔ ★ تین جانچ: {Usability} وقت شدہ کام — صارف کر سکتا ہے؟ {A/B} دو نسخے، کون جیتا؟ {Automated} بوٹ ٹوٹا لنک اور کم تضاد ڈھونڈے۔ آٹھ نمبر پر سات قطار جدول۔ چالیس منٹ ٹیسٹ۔"
+        },
+        {
+          "id": "xii-d05",
+          "day": 5,
+          "week": 1,
+          "kind": "Teach",
+          "chapter": "Computational Thinking & Algorithms",
+          "focus": "Computational Thinking & Algorithms (1/5)",
+          "golden": "Trace Tables, Comparing Trace Tables and Stepwise Reasoning",
+          "startPage": 120,
+          "endPage": 122,
+          "topics": [
+            "Analyze algorithms for correctness",
+            "Trace Tables",
+            "Stepwise Reasoning",
+            "Comparing Trace Tables"
+          ],
+          "script": "دن 05۔ الگورتھم کی درستگی جانچنی ہے۔ ★ {Trace Table} ہر قدم پر متغیر کی قیمت لکھتی ہے۔ کالم نام، قطاریں قدم۔ {Stepwise Reasoning} الفاظ میں کیوں یہ قدم۔ دونوں کا موازنہ: جدول نمبر دکھاتی ہے، استدلال وجہ۔ امتحان میں دیے کوڈ کی {Trace Table} بھرو۔"
+        },
+        {
+          "id": "xii-d06",
+          "day": 6,
+          "week": 2,
+          "kind": "Teach",
+          "chapter": "Computational Thinking & Algorithms",
+          "focus": "Computational Thinking & Algorithms (2/5)",
+          "golden": "Number of Steps (Big O Notation)",
+          "startPage": 123,
+          "endPage": 125,
+          "topics": [
+            "Modularity",
+            "Readability",
+            "Assess Algorithm Efficiency",
+            "Number of Steps (Big O Notation)",
+            "Number of Conditions"
+          ],
+          "script": "دن 06۔ {Modularity} حصوں میں توڑنا، {Readability} پڑھنے کے لائق نام۔ کارکردگی: وقت اور یادداشت۔ ★ {Big O Notation} بدترین بڑھنے کی شرح۔ {O(1)} مستقل، {O(n)} لکیری، {O(n^2)} مربع جیسے {Bubble Sort}، {O(log n)} جیسے {Binary Search}۔ شرطوں کی گنتی بھی لاگت ہے۔ امتحان میں دیے لوپ کی {Big O} بتاؤ۔"
+        },
+        {
+          "id": "xii-d07",
+          "day": 7,
+          "week": 2,
+          "kind": "Teach",
+          "chapter": "Computational Thinking & Algorithms",
+          "focus": "Computational Thinking & Algorithms (3/5)",
+          "golden": "Concept of Data Structure",
+          "startPage": 126,
+          "endPage": 128,
+          "topics": [
+            "Number of Repetitions",
+            "The Efficiency Evaluation Framework",
+            "Refinements",
+            "Concept of Data Structure"
+          ],
+          "script": "دن 07۔ تکرار کی گنتی لوپ سے۔ {Efficiency Evaluation Framework}: درستگی، وضاحت، قدم، یادداشت، پھر بہتری۔ ★ {Data Structure} ڈیٹا رکھنے کا منظم طریقہ۔ انتخاب الگورتھم کی رفتار بدل دیتا ہے۔ فہرست، ڈھیر، قطار — کل تفصیل۔ آج تعریف: نام، ترتیب، آپریشن۔"
+        },
+        {
+          "id": "xii-d08",
+          "day": 8,
+          "week": 2,
+          "kind": "Teach",
+          "chapter": "Computational Thinking & Algorithms",
+          "focus": "Computational Thinking & Algorithms (4/5)",
+          "golden": "Linear Data Structures: Stack, Linear Data Structures: Queue",
+          "startPage": 129,
+          "endPage": 131,
+          "topics": [
+            "Linked List",
+            "Stack",
+            "Queue"
+          ],
+          "script": "دن 08۔ {Linked List} گرہ اور اگلے کا اشارہ، درمیان میں داخل آسان۔ ★ {Stack} {LIFO} — آخر میں آیا پہلے نکلے۔ {Push} رکھو، {Pop} نکالو، {Peek} دیکھو۔ مثال: ان ڈو، پلیٹوں کا ڈھیر۔ ★ {Queue} {FIFO} — پہلے آیا پہلے نکلے۔ {Enqueue} پیچھے، {Dequeue} آگے۔ مثال: ٹکٹ لائن، پرنٹر۔ امتحان میں دونوں کا فرق اور ڈایاگرام۔"
+        },
+        {
+          "id": "xii-d09",
+          "day": 9,
+          "week": 2,
+          "kind": "Checkpoint",
+          "chapter": "Computational Thinking & Algorithms",
+          "focus": "Computational Thinking & Algorithms (5/5)",
+          "golden": "none — still copy every table",
+          "startPage": 132,
+          "endPage": 135,
+          "topics": [
+            "Operations on Data Structures",
+            "Identify data structures in scenarios",
+            "Trace data retrieval in Array, List",
+            "Checkpoint Test"
+          ],
+          "script": "دن 09 {Checkpoint}۔ آپریشن: {Insert}، {Delete}، {Search}، {Traverse}، {Update}۔ منظر میں پہچانو: آخر سے ان ڈو {Stack}، لائن {Queue}، ترتیب اشاریہ {Array}۔ {Array} اور List سے قدر نکالنے کی {Trace} صفحے پر کرو۔ چالیس منٹ ٹیسٹ۔ {Trace Table}، {Big O}، {Stack}، {Queue} لازمی۔"
+        },
+        {
+          "id": "xii-d10",
+          "day": 10,
+          "week": 2,
+          "kind": "Teach",
+          "chapter": "Programming Fundamentals",
+          "focus": "Programming Fundamentals (1/4)",
+          "golden": "Lists (Ordered, Mutable, Methods), Tuples (Ordered, Immutable), Dictionaries (Key-Value Pairs)",
+          "startPage": 136,
+          "endPage": 139,
+          "topics": [
+            "Data Structures in Python",
+            "Lists",
+            "Tuples",
+            "Sets",
+            "Dictionaries"
+          ],
+          "script": "دن 10۔ ★ Golden: {List}، {Tuple}، {Dictionary}۔ {List} مرتب، {Mutable}، مربع بریکٹ۔ {append} {insert} {remove} {sort}۔ {Tuple} مرتب، {Immutable}، گول بریکٹ — تبدیل نہیں، ریکارڈ کے لیے۔ {Set} غیر مرتب منفرد۔ ★ {Dictionary} {Key-Value Pairs}، curly braces۔ کلید منفرد، قدر کچھ بھی۔ {student['name']}۔ امتحان میں تینوں کا فرق جدول۔"
+        },
+        {
+          "id": "xii-d11",
+          "day": 11,
+          "week": 3,
+          "kind": "Teach",
+          "chapter": "Programming Fundamentals",
+          "focus": "Programming Fundamentals (2/4)",
+          "golden": "Functions in Python",
+          "startPage": 140,
+          "endPage": 142,
+          "topics": [
+            "Common Built-in Functions",
+            "Activity: Student Attendance System",
+            "Activity: Word tools",
+            "Functions in Python"
+          ],
+          "script": "دن 11۔ {min} {max} {len} {sum} تیار افعال۔ سرگرمیوں میں حاضری اور الفاظ۔ ★ {Function} نام والا بلاک، {def} سے۔ پیرامیٹر ان پٹ، جسم کام، بار بار بلاؤ۔ فائدہ: {Decomposition}، کم تکرار، جانچ آسان۔ خالی جسم میں {pass}۔"
+        },
+        {
+          "id": "xii-d12",
+          "day": 12,
+          "week": 3,
+          "kind": "Teach",
+          "chapter": "Programming Fundamentals",
+          "focus": "Programming Fundamentals (3/4)",
+          "golden": "File Handling and Operations (Modes r, w, a)",
+          "startPage": 143,
+          "endPage": 144,
+          "topics": [
+            "Functions with Return Values",
+            "Arithmetic Calculator Using Functions",
+            "Scope of Local and Global Variables",
+            "File Handling and Operations (Modes r, w, a)"
+          ],
+          "script": "دن 12۔ {return} جواب باہر بھیجتا ہے۔ کیلکولیٹر افعال میں توڑو۔ {Local} فنکشن کے اندر، {Global} باہر؛ اندر والا باہر نہیں بدلتا جب تک {global} نہ کہو۔ ★ فائل موڈ: {r} پڑھنا، فائل ہونی چاہیے۔ {w} لکھنا، پرانی مٹے۔ {a} آخر میں جوڑنا۔ {read} {write} {close} یاد رکھو۔ کل {with} آئے گا۔"
+        },
+        {
+          "id": "xii-d13",
+          "day": 13,
+          "week": 3,
+          "kind": "Checkpoint",
+          "chapter": "Programming Fundamentals",
+          "focus": "Programming Fundamentals (4/4)",
+          "golden": "The with Statement (Context Manager)",
+          "startPage": 145,
+          "endPage": 148,
+          "topics": [
+            "The with Statement (Context Manager)",
+            "Errors and Exceptions (Try-Except)",
+            "Mini File Handling",
+            "Checkpoint Test"
+          ],
+          "script": "دن 13 {Checkpoint}۔ ★ {with} {Context Manager} فائل خود بند کرتا ہے، بھول نہیں ہوتی: {with open('data.txt') as f}۔ {try} خطرناک کام، {except} غلطی پکڑو تاکہ پروگرام نہ گرے۔ چالیس منٹ ٹیسٹ: {List Tuple Dictionary}، {def}، موڈ {r w a}، {with}۔"
+        },
+        {
+          "id": "xii-d14",
+          "day": 14,
+          "week": 3,
+          "kind": "Teach",
+          "chapter": "Data and Analysis",
+          "focus": "Data and Analysis (1/2)",
+          "golden": "Data Sources and Database Connection, Pandas and DataFrames, Handling Missing Values (NaN)",
+          "startPage": 149,
+          "endPage": 150,
+          "topics": [
+            "Concept of Data Analysis",
+            "Data Sources and Database Connection",
+            "Creating a SQLite Database in Python",
+            "Pandas and DataFrames",
+            "Handling Missing Values (NaN)"
+          ],
+          "script": "دن 14۔ تجزیہ: صفائی، خلاصہ، فیصلہ۔ ★ ماخذ اور کنکشن: {CSV}، {SQLite}، {API}۔ {Python} میں {sqlite3} سے ڈیٹا بیس۔ ★ {Pandas} کا {DataFrame} جدول ہے۔ {read_csv}، سر، قطار۔ ★ خالی جگہ {NaN}۔ {dropna} ہٹاؤ، {fillna} بھرو۔ امتحان میں تینوں گولڈن ایک ساتھ آ سکتے ہیں۔"
+        },
+        {
+          "id": "xii-d15",
+          "day": 15,
+          "week": 3,
+          "kind": "Checkpoint",
+          "chapter": "Data and Analysis",
+          "focus": "Data and Analysis (2/2)",
+          "golden": "Data Visualization and Types of Graphs, Descriptive Statistics",
+          "startPage": 151,
+          "endPage": 154,
+          "topics": [
+            "Data Organization and Representation",
+            "Data Visualization and Types of Graphs",
+            "Descriptive Statistics",
+            "Career Opportunities",
+            "Checkpoint Test"
+          ],
+          "script": "دن 15 {Checkpoint}۔ ★ چارٹ: {Bar} موازنہ، {Line} وقت، {Pie} حصہ، {Histogram} پھیلاؤ، {Scatter} تعلق۔ غلط چارٹ غلط کہانی۔ ★ {Descriptive Statistics}: {mean} اوسط، {median} درمیانی، {mode} سب سے عام، {range}، {min} {max}۔ کیریئر: تجزیہ کار، تحقیق۔ چالیس منٹ ٹیسٹ۔"
+        },
+        {
+          "id": "xii-d16",
+          "day": 16,
+          "week": 4,
+          "kind": "Teach",
+          "chapter": "Application and Impacts of Computing",
+          "focus": "Application and Impacts of Computing (1/4)",
+          "golden": "Neural Networks (NN), Components of Neural Networks",
+          "startPage": 155,
+          "endPage": 157,
+          "topics": [
+            "Machine Learning, Neural Networks and Deep Learning",
+            "Machine Learning (ML)",
+            "Neural Networks (NN)",
+            "Deep Learning",
+            "Components of Neural Networks"
+          ],
+          "script": "دن 16۔ {AI} بڑا چھتا، اس میں {Machine Learning}، اس میں {Deep Learning}۔ {ML} مثالوں سے قاعدہ سیکھتا ہے۔ ★ {Neural Network} دماغ کے نیوران کی نقل۔ ★ اجزاء: {Input layer}، {Hidden layers}، {Output layer}، {Weights}، {Bias}، {Activation function}، {Loss}، {Training}۔ نیوران: وزنی جمع جمع {bias}، پھر activation۔ {Deep} یعنی کئی hidden تہیں۔ آٹھ نام ایک ایک سطر امتحان کا گولڈن سوال۔"
+        },
+        {
+          "id": "xii-d17",
+          "day": 17,
+          "week": 4,
+          "kind": "Teach",
+          "chapter": "Application and Impacts of Computing",
+          "focus": "Application and Impacts of Computing (2/4)",
+          "golden": "Secure Collaboration (Authentication, MFA, Access Control)",
+          "startPage": 158,
+          "endPage": 160,
+          "topics": [
+            "Components of Deep Learning",
+            "Future of AI, NN and DL in Pakistan",
+            "Applications of Neural Networks",
+            "Secure Collaboration (Authentication, MFA, Access Control)"
+          ],
+          "script": "دن 17۔ {Deep Learning} کے جز: بہت ڈیٹا، {GPU}، تہیں، تربیت۔ پاکستان میں صحت، زراعت، زبان کے مواقع۔ استعمال: تصویر، آواز، سفارش۔ ★ {Secure Collaboration}: {Authentication} تم کون — پاس ورڈ۔ {MFA} دوسرا ثبوت، جیسے کوڈ۔ {Access Control} تم کیا کر سکتے ہو — طالب علم دیکھے، ایڈمن بدلے۔ تین اصطلاحیں الگ رکھو۔"
+        },
+        {
+          "id": "xii-d18",
+          "day": 18,
+          "week": 4,
+          "kind": "Teach",
+          "chapter": "Application and Impacts of Computing",
+          "focus": "Application and Impacts of Computing (3/4)",
+          "golden": "Common Security Threats (Malware, Phishing, DoS)",
+          "startPage": 161,
+          "endPage": 163,
+          "topics": [
+            "Data Protection (Encryption, Passwords, Backup, Firewall)",
+            "Common Security Threats (Malware, Phishing, DoS)",
+            "Identifying Security Threats",
+            "Apply Mitigation Techniques"
+          ],
+          "script": "دن 18۔ حفاظت: {Encryption} بدل کر بھیجو، مضبوط پاس ورڈ، {Backup}، {Firewall}۔ ★ دھمکیاں: {Malware} نقصان دہ پروگرام، {Phishing} جعلی پیغام سے راز چوری، {DoS} سروس دبا کر گرا دینا — نتیجے کے دن یا ای ٹیسٹ پر۔ پہچانو: عجیب لنک، اچانک سستی، انجان منسلکہ۔ روک: اپ ڈیٹ، مشکوک لنک نہ کھولو، نقل، {MFA}۔"
+        },
+        {
+          "id": "xii-d19",
+          "day": 19,
+          "week": 4,
+          "kind": "Checkpoint",
+          "chapter": "Application and Impacts of Computing",
+          "focus": "Application and Impacts of Computing (4/4)",
+          "golden": "Functions of Equity and Equal Access",
+          "startPage": 164,
+          "endPage": 167,
+          "topics": [
+            "Equity and Equal Access in Digital Collaboration",
+            "Functions of Equity and Equal Access",
+            "Collaboration Tools",
+            "Checkpoint Test"
+          ],
+          "script": "دن 19 {Checkpoint}۔ ★ {Functions of Equity and Equal Access}: سب کو جگہ، مختلف سیکھنے کے انداز — ویڈیو متن آواز، کمزور انٹرنیٹ والوں کا خیال، احترام۔ چار عنوان ترتیب سے 5 سے 8 نمبر۔ اوزار: مشترکہ دستاویز، میٹ، چیٹ — مگر رسائی برابر۔ چالیس منٹ ٹیسٹ۔"
+        },
+        {
+          "id": "xii-d20",
+          "day": 20,
+          "week": 4,
+          "kind": "Teach",
+          "chapter": "Entrepreneurship in the Digital Age",
+          "focus": "Entrepreneurship in the Digital Age (1/4)",
+          "golden": "Entrepreneurship in the Digital Age, Prototype",
+          "startPage": 168,
+          "endPage": 170,
+          "topics": [
+            "Entrepreneur and Entrepreneurship",
+            "Entrepreneurship in the Digital Age",
+            "Local Examples of Digital Entrepreneurship",
+            "From Problem to Business Idea",
+            "Prototype"
+          ],
+          "script": "دن 20، باب {Entrepreneurship in the Digital Age}۔ {Entrepreneur} مسئلہ دیکھ کر کاروبار بناتا ہے۔ ★ ڈیجیٹل دور: ایپ، ادائیگی، سوشل، گھر بیٹھے منڈی۔ مقامی مثالیں جدول 6.1 پر جوں کی توں۔ مسئلہ سے خیال: کس کا درد، کیا حل۔ ★ {Prototype} خیال کا پہلا چھوتا ماڈل — کاغذی سکرین یا کارڈ بورڈ — سیکھنے کے لیے، کمال کے لیے نہیں۔"
+        },
+        {
+          "id": "xii-d21",
+          "day": 21,
+          "week": 5,
+          "kind": "Teach",
+          "chapter": "Entrepreneurship in the Digital Age",
+          "focus": "Entrepreneurship in the Digital Age (2/4)",
+          "golden": "Prototype Development Cycle, Minimum Viable Product (MVP)",
+          "startPage": 171,
+          "endPage": 173,
+          "topics": [
+            "Types of Prototypes",
+            "Prototype Development Cycle",
+            "Class Activity: Create a Prototype",
+            "Minimum Viable Product (MVP)",
+            "Difference between Prototype and MVP"
+          ],
+          "script": "دن 21۔ اقسام: کاغذی، ڈیجیٹل، کام کرتا نمونہ۔ fidelity یعنی کتنا حقیقی لگے۔ ★ {Prototype Development Cycle}: بناؤ، دکھاؤ، سنو، بدلواؤ — {iteration}۔ ★ {MVP} وہ سب سے چھوٹی اصل چیز جو مشتری استعمال کر کے سکھائے۔ {Prototype} سیکھنے کا ماڈل ہو سکتا ہے جعلی؛ {MVP} حقیقی مگر تنگ۔ فرق امتحان میں جدول۔"
+        },
+        {
+          "id": "xii-d22",
+          "day": 22,
+          "week": 5,
+          "kind": "Teach",
+          "chapter": "Entrepreneurship in the Digital Age",
+          "focus": "Entrepreneurship in the Digital Age (3/4)",
+          "golden": "none — still copy every table",
+          "startPage": 174,
+          "endPage": 175,
+          "topics": [
+            "Identifying the Riskiest Assumption",
+            "Developing an MVP",
+            "Case Study: MVP for a Canteen Pre-Order System",
+            "Testing an MVP"
+          ],
+          "script": "دن 22۔ سب سے خطرناک مفروضہ وہ دعویٰ ہے جس کے جھوٹے ہونے پر پورا خیال گرتا ہے۔ پہلے اسی کو جانچو۔ کیس: کینٹین پری آرڈر۔ یاد: 5 items، 3 days، 20 minutes — پانچ آئٹم، تین دن ٹیسٹ، آرڈر بند۔ کاغذی {Prototype}، پھر {Google Form} {MVP}، رائے، بہتری۔ {MVP} جانچ: کیا آرڈر آیا، کیا وقت بچا، کیا الجھن ہوئی۔"
+        },
+        {
+          "id": "xii-d23",
+          "day": 23,
+          "week": 5,
+          "kind": "Checkpoint",
+          "chapter": "Entrepreneurship in the Digital Age",
+          "focus": "Entrepreneurship in the Digital Age (4/4)",
+          "golden": "Beachhead Market",
+          "startPage": 176,
+          "endPage": 179,
+          "topics": [
+            "Beachhead Market",
+            "Complete Student Project",
+            "Ethical and Safe Use of Digital Tools",
+            "Career",
+            "Checkpoint Test"
+          ],
+          "script": "دن 23 {Checkpoint}۔ ★ {Beachhead Market} پہلی چھوٹی مخصوص منڈی جہاں پہلے جیتو، سمندر نہیں، ساحل کا ٹکڑا۔ مثال: پورا شہر نہیں، ایک اسکول کی کینٹین۔ پروجیکٹ مکمل کرو۔ اخلاق: اجازت، ڈیٹا کی حفاظت، جھوٹی تعریف نہیں۔ کیریئر جدول: صارف سمجھو، مفروضہ جانچو، چھوٹا شروع۔ چالیس منٹ ٹیسٹ۔"
+        },
+        {
+          "id": "xii-d24",
+          "day": 24,
+          "week": 5,
+          "kind": "Golden blitz",
+          "chapter": "Chapters 1–2",
+          "focus": "★ only · Chapters 1–2",
+          "golden": "11 Golden cards",
+          "startPage": 180,
+          "endPage": 185,
+          "topics": [
+            "Applications of HCI",
+            "Importance of HCI",
+            "HCI Problems",
+            "UI vs UX",
+            "Testing Methods",
+            "Trace Tables",
+            "Big O Notation",
+            "Data Structure",
+            "Stack",
+            "Queue"
+          ],
+          "script": "دن 24 {Golden blitz} باب 1 اور 2۔ چار میدان {HCI}، اہمیت، مسائل، {UI} کپڑے {UX} پورا دن، تین ٹیسٹ تصویریں۔ {Trace Table} بھرو، {Big O} بتاؤ، {Stack LIFO} {Queue FIFO} کھینچو۔ نیا غیر گولڈن نہیں۔"
+        },
+        {
+          "id": "xii-d25",
+          "day": 25,
+          "week": 6,
+          "kind": "Golden blitz",
+          "chapter": "Chapters 3–4",
+          "focus": "★ only · Chapters 3–4",
+          "golden": "11 Golden cards",
+          "startPage": 186,
+          "endPage": 190,
+          "topics": [
+            "Lists",
+            "Tuples",
+            "Dictionaries",
+            "Functions",
+            "File modes r w a",
+            "with statement",
+            "Data sources",
+            "Pandas DataFrames",
+            "NaN",
+            "Graphs",
+            "Descriptive Statistics"
+          ],
+          "script": "دن 25 {Golden blitz} باب 3 اور 4۔ تین ڈھانچے کا فرق، {def}، فائل موڈ، {with}۔ {Pandas} {DataFrame}، {NaN} علاج، چارٹ انتخاب، اوسط میڈین موڈ۔ ہر جدول یاد سے۔"
+        },
+        {
+          "id": "xii-d26",
+          "day": 26,
+          "week": 6,
+          "kind": "Golden blitz",
+          "chapter": "Chapters 5–6",
+          "focus": "★ only · Chapters 5–6",
+          "golden": "10 Golden cards",
+          "startPage": 191,
+          "endPage": 196,
+          "topics": [
+            "Neural Networks",
+            "NN Components",
+            "Secure Collaboration",
+            "Malware Phishing DoS",
+            "Equity and Equal Access",
+            "Digital Entrepreneurship",
+            "Prototype",
+            "Prototype Cycle",
+            "MVP",
+            "Beachhead Market"
+          ],
+          "script": "دن 26 {Golden blitz} باب 5 اور 6۔ نیٹ ورک کے آٹھ جز، {Authentication MFA Access Control}، تین دھمکیاں، برابری کے چار عنوان۔ {Prototype} چکر، {MVP} فرق، {Beachhead Market} ساحل۔"
+        },
+        {
+          "id": "xii-d27",
+          "day": 27,
+          "week": 6,
+          "kind": "Recap",
+          "chapter": "All chapters",
+          "focus": "Say every chapter recap aloud, book closed",
+          "golden": "All chapters",
+          "startPage": 197,
+          "endPage": 198,
+          "topics": [
+            "HCI recap",
+            "Algorithms and Data Structures",
+            "Python structures functions files",
+            "Data and Analysis",
+            "AI Security Collaboration",
+            "Entrepreneurship"
+          ],
+          "script": "دن 27 کتاب بند recap۔ باب 1 {HCI} جانچ اور رسائی۔ باب 2 ٹرِیس، {Big O}، {Stack} {Queue}۔ باب 3 فہرست ٹوپل ڈکشنری فنکشن فائل۔ باب 4 {Pandas} چارٹ شماریات۔ باب 5 {AI} سیکیورٹی برابری۔ باب 6 خیال، نمونہ، {MVP}، ساحلی منڈی۔"
+        },
+        {
+          "id": "xii-d28",
+          "day": 28,
+          "week": 6,
+          "kind": "Mock",
+          "chapter": "Whole syllabus",
+          "focus": "2 hours 30 minutes · 75 marks · no notes",
+          "golden": "Whole syllabus",
+          "startPage": 199,
+          "endPage": 201,
+          "topics": [
+            "Mock paper hall conditions"
+          ],
+          "script": "دن 28 {Mock}۔ ڈھائی گھنٹے، 75 نمبر، نوٹس نہیں۔ خود انویجیلیٹ۔ گولڈن سوال جدول اور مثال سے۔ دن 29 کی کلید نہیں دیکھنی۔"
+        },
+        {
+          "id": "xii-d29",
+          "day": 29,
+          "week": 6,
+          "kind": "Mark",
+          "chapter": "Missed Goldens",
+          "focus": "Mark to the key. List every ★ Golden you missed.",
+          "golden": "Missed Goldens",
+          "startPage": 202,
+          "endPage": 203,
+          "topics": [
+            "Mark the mock",
+            "Repair list"
+          ],
+          "script": "دن 29 marking۔ کلید سے میل کھاؤ۔ ہر ★ {Golden} جس پر صفر یا آدھا آیا {Repair list} میں لکھو۔ {Wireframe} یا {Accessibility} رہ گیا ہو تو جدول دوبارہ۔ کل صرف یہی فہرست۔"
+        },
+        {
+          "id": "xii-d30",
+          "day": 30,
+          "week": 6,
+          "kind": "Repair",
+          "chapter": "Missed Goldens only",
+          "focus": "Redo the Day 29 list only. Sleep by 10 pm.",
+          "golden": "Missed Goldens only",
+          "startPage": 204,
+          "endPage": 204,
+          "topics": [
+            "Redo Day 29 list",
+            "Sleep by 10 pm"
+          ],
+          "script": "دن 30 {Repair}۔ صرف دن 29 کی {Repair list}: تعریف کہو، جدول کھینچو۔ شام چھ بجے رک، دس بجے سو۔ نیا {Chapter} نہیں۔ ★ {Golden} کارڈز سر میں، ہال میں کتاب نہیں۔ اللہ حافظ۔"
+        }
+      ]
+    }
+  ]
+}
