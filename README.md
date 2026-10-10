@@ -10,7 +10,9 @@ Android reader for the **Computer Science XI and XII 30-Day Crash Course** (New 
 
 **Latest (v1.0.0)** — Urdu lectures + English terms as printed:
 
-`releases/CS-XI-XII-CrashCourse-v1.0.0-urdu-tts-debug.apk`
+https://github.com/shahzadasahab/-1/raw/cursor/cs-crash-course-urdu-tts-66df/releases/CS-XI-XII-CrashCourse-v1.0.0-urdu-tts-debug.apk
+
+Repo copy: `releases/CS-XI-XII-CrashCourse-v1.0.0-urdu-tts-debug.apk`
 
 Uninstall any older app with a different package name first. On the home screen you should see **Version 1.0.0 — Urdu lectures · English terms as printed**.
 
