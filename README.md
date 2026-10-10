@@ -1,40 +1,35 @@
-# Intimacy Guide
+# CS XI–XII Composite
 
-Bilingual (English & Urdu) couples sex-education app with embedded diagram pictures, imagination postures, voice narration, and PDF export.
+All-in-one offline Android reader for the Sindh / BIEK Computer Science teacher notes:
+
+- Class XI bilingual lectures
+- Class XII bilingual lectures
+- Class XI Q&A masterpiece
+- Class XII Q&A masterpiece
+
+English text stays on screen. Device TTS speaks classroom-style **Urdu lectures**. Formulas render with **embedded MathJax SVG**. The shell is **Flexbox**. The four source PDFs are bundled and can be opened page-by-page.
 
 ## Download
 
-**Latest (v3.2.1)** — man/woman posture roles + sex education for him & her:
+After the debug APK is built it lives in `releases/CSComposite-v1.0.0-debug.apk`.
 
-https://github.com/SyedShahzadAliShah/-1/raw/main/releases/IntimacyHandbook-v3.2.1-debug.apk
+## Features
 
-Branch copy: https://github.com/SyedShahzadAliShah/-1/raw/cursor/couples-posture-guide-ed65/releases/IntimacyHandbook-v3.2.1-debug.apk
-
-> **Important:** Uninstall any older version first, then install v3.2.1. On the home screen you should see **"Version 3.2.1 — Man/Woman roles + Sex Ed for Him & Her"** below the subtitle.
-
-## v3.2.1
-
-- **Fix:** Sex Education and chapter lists now display correctly inside the scroll view
-- **Fix:** Version badge on home screen so you can confirm the correct build is installed
-
-## v3.2.0
-
-- **Man & woman roles** — each posture defines the man's and woman's position and guidance
-- **Sex education for him** — 4 chapters on arousal, pleasuring partner, stamina, confidence
-- **Sex education for her** — 4 chapters on arousal, pleasure, comfort, confidence
-- Diagram labels updated to Man/Woman
-
-## v2.4 fixes
-
-- **PDF export fixed** — proper image loading, multi-page pagination, Urdu font embedding, reliable sharing
-- **Upgraded pictures** — 960×600 educational diagrams with Partner A/B labels and position annotations
+- English lecture notes and exam Q&A, cleaned from the four source PDFs
+- Urdu explaining-lecture scripts for every topic
+- Embedded MathJax 3 `tex-svg` (no network)
+- Flexbox home, chapter, and topic layout
+- Original PDF page viewer via Android `PdfRenderer`
+- Works offline; Urdu voice uses the system TTS engine (`ur-PK` when installed)
 
 ## Build
 
 ```bash
-python3 scripts/generate_posture_pictures.py
-export ANDROID_HOME=/path/to/android-sdk
+python3 scripts/generate_catalog.py
+export ANDROID_HOME=/home/ubuntu/android-sdk
 ./gradlew assembleDebug
 ```
 
-## Version 3.2.1
+Regenerate `app/src/main/assets/www/js/catalog.js` whenever the source PDFs change.
+
+## Version 1.0.0
