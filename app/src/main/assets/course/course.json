@@ -183,7 +183,7 @@
             "Career Growth with Python",
             "Integrated Development Environment"
           ],
-          "script": "دن 09، باب {Programming Fundamentals}۔ آج ★ Golden الگ نہیں، ہر جدول نقل کرو۔ {Programming} کمپیوٹر کو ہدایات دینا۔ زبانیں: {Low-level} مشین کے قریب، {High-level} انسان کے قریب جیسے {Python}۔ {Compiled} پہلے مشین کوڈ بناتی ہیں، {Interpreted} لائن بہ لائن چلتی ہیں؛ {Python} interpreted ہے۔ {Python} سادہ نحو، سائنس، ویب، {AI} میں کام۔ {IDE} وہ سافٹ ویئر ہے جہاں لکھتے، چلاتے، غلطی دیکھتے ہو — {VS Code}، {PyCharm}، {IDLE}۔ کل ★ {Variables} اور {Data Types} آئیں گے۔ آج کی لغت زبانی ہو۔",
+          "script": "دن 09، باب {Programming Fundamentals}۔ آج ★ Golden الگ نہیں، ہر جدول نقل کرو۔ {Programming} کمپیوٹر کو ہدایات دینا۔ زبانیں: {Low-level} مشین کے قریب، {High-level} انسان کے قریب جیسے {Python}۔ {Compiled} پہلے مشین کوڈ بناتی ہیں، {Interpreted} لائن بہ لائن چلتی ہیں؛ {Python} interpreted ہے۔ {Python} سادہ نحو، سائنس، ویب، {AI} میں کام۔ {IDE} وہ سافٹ ویئر ٹول ہے جہاں پروگرامر کوڈ ایک ہی جگہ لکھتا، چلاتا اور سنبھالتا ہے۔ مثال {Visual Studio Code (VS Code)}۔ خصوصیات کا یادداشتی لفظ {ESARD}: {Editor}، {Syntax highlighting}، {Auto-completion}، {Run}، {Debugger}۔ کل ★ {Variables} اور {Data Types} آئیں گے۔ آج کی لغت زبانی ہو۔",
           "displayText": "Day 09 of 30 · Week 2 · Teach\nChapter: Programming Fundamentals\nFocus: Programming Fundamentals (1/5)\n★ Golden: none — still copy every table\nBooklet pages 29–31 (as printed).\n\nToday's cards:\n• Programming\n• Programming Language Types\n• Career Growth with Python\n• Integrated Development Environment\n\nRead the embedded pages as printed. English exam terms stay exactly as written."
         },
         {
@@ -321,7 +321,7 @@
             "Data Reports",
             "Checkpoint Test"
           ],
-          "script": "دن 16 {Checkpoint}۔ {MS Access} میں جدول {Design View} سے فیلڈ اور {Data Type}، ایک {Primary Key}۔ {Form} اندراج کی کھڑکی۔ ★ {Query} سوال ہے جو قطار چنتا ہے۔ {Select Query} دکھاتا ہے، معیار سے چھانتا ہے۔ {SQL} میں {SELECT}، {FROM}، {WHERE}۔ رپورٹ چھپی شکل۔ چالیس منٹ ٹیسٹ۔ کنج، {ER}، {Referential Integrity}، {Query} ★ Golden ہیں۔",
+          "script": "دن 16 {Checkpoint}۔ {MS Access} میں ڈیٹا ٹائپ کریں تو {Access} خود {Data Type} اندازہ لگاتا ہے۔ {AutoNumber} خود منفرد ترتیب وار نمبر بھرتا ہے، بہترین {Primary Key}۔ {Form} ڈیٹا بھرنے کی کھڑکی ہے۔ ★ {Query} اصل جدولوں کو بدلے بغیر ڈیٹا نکالتا، چھانتا اور تجزیہ کرتا ہے۔ {Create} ٹیب سے {Query Design}۔ جمع شدہ نتائج کے لیے {Totals} پر کلک کریں تاکہ {Total} قطار ظاہر ہو۔ رپورٹ چھپی شکل۔ چالیس منٹ ٹیسٹ۔ کنج، {ER}، {Referential Integrity}، {Query} ★ Golden ہیں۔",
           "displayText": "Day 16 of 30 · Week 4 · Checkpoint\nChapter: Data and Analysis\nFocus: Data and Analysis (3/3)\n★ Golden: Creating Queries in MS Access\nBooklet pages 50–53 (as printed).\n\nToday's cards:\n• Creation of Tables in Microsoft Access\n• Designing Forms\n• Creating Queries in MS Access\n• Data Reports\n• Checkpoint Test\n\nRead the embedded pages as printed. English exam terms stay exactly as written."
         },
         {
@@ -339,7 +339,7 @@
             "Artificial Intelligence (AI)",
             "Internet of Things (IoT) & Components"
           ],
-          "script": "دن 17۔ ★ Golden: {Artificial Intelligence (AI)} اور {Internet of Things (IoT)}۔ کمپیوٹنگ صحت، تعلیم، کاروبار، شہر بدل رہی ہے۔ ★ {AI} مشین کو انسانی سوچ کے قریب کام سکھانا: پہچان، فیصلہ، زبان۔ مثال: نقشے کی سفارش، چہرے کی پہچان۔ {Narrow AI} ایک کام؛ عام انسانی {AI} ابھی تحقیق۔ ★ {IoT} وہ چیزیں جو سینسر اور انٹرنیٹ سے آپس میں بات کریں۔ اجزاء: {Sensor}، {Actuator}، {Connectivity}، {Processor}، {User Interface}، کلاؤڈ۔ اسمارٹ پنکھا، اسمارٹ میٹر۔ دونوں اصطلاحیں انگریزی میں جوں کی توں لکھو۔",
+          "script": "دن 17۔ ★ Golden: {Artificial Intelligence (AI)} اور {Internet of Things (IoT)}۔ کمپیوٹنگ صحت، تعلیم، کاروبار، شہر بدل رہی ہے۔ ★ {Artificial Intelligence (AI)} کمپیوٹر سسٹم کی وہ صلاحیت ہے کہ وہ ایسے کام کرے جن میں عام طور پر انسانی سوچ لگتی ہے، جیسے چہرے پہچاننا، زبان سمجھنا اور فیصلے کرنا۔ یادداشتی جملہ: {Eyes – Sort – Brain – Do}۔ {IoT} آنکھیں ہے، {Analytics} چھانٹتا ہے، {AI} دماغ ہے، اور {actuator} عمل کرتا ہے۔ ★ {IoT} وہ چیزیں جو سینسر اور انٹرنیٹ سے آپس میں بات کریں۔ اجزاء: {Sensor}، {Actuator}، {Connectivity}، {Processor}، {User Interface}، کلاؤڈ۔ اسمارٹ پنکھا، اسمارٹ میٹر۔ دونوں اصطلاحیں انگریزی میں جوں کی توں لکھو۔",
           "displayText": "Day 17 of 30 · Week 4 · Teach\nChapter: Application and Impacts of Computing\nFocus: Application and Impacts of Computing (1/3)\n★ Golden: Artificial Intelligence (AI), Internet of Things (IoT) & Components\nBooklet pages 54–56 (as printed).\n\nToday's cards:\n• Introduction to Computing Impacts\n• Artificial Intelligence (AI)\n• Internet of Things (IoT) & Components\n\nRead the embedded pages as printed. English exam terms stay exactly as written."
         },
         {

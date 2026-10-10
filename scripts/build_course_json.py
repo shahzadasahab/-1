@@ -199,7 +199,7 @@ XI = [
         T(
             "دن 09، باب {Programming Fundamentals}۔ آج ★ Golden الگ نہیں، ہر جدول نقل کرو۔",
             "{Programming} کمپیوٹر کو ہدایات دینا۔ زبانیں: {Low-level} مشین کے قریب، {High-level} انسان کے قریب جیسے {Python}۔ {Compiled} پہلے مشین کوڈ بناتی ہیں، {Interpreted} لائن بہ لائن چلتی ہیں؛ {Python} interpreted ہے۔",
-            "{Python} سادہ نحو، سائنس، ویب، {AI} میں کام۔ {IDE} وہ سافٹ ویئر ہے جہاں لکھتے، چلاتے، غلطی دیکھتے ہو — {VS Code}، {PyCharm}، {IDLE}۔",
+            "{Python} سادہ نحو، سائنس، ویب، {AI} میں کام۔ {IDE} وہ سافٹ ویئر ٹول ہے جہاں پروگرامر کوڈ ایک ہی جگہ لکھتا، چلاتا اور سنبھالتا ہے۔ مثال {Visual Studio Code (VS Code)}۔ خصوصیات کا یادداشتی لفظ {ESARD}: {Editor}، {Syntax highlighting}، {Auto-completion}، {Run}، {Debugger}۔",
             "کل ★ {Variables} اور {Data Types} آئیں گے۔ آج کی لغت زبانی ہو۔",
         ),
     ),
@@ -274,8 +274,8 @@ XI = [
         "Creating Queries in MS Access", 50, 53,
         ["Creation of Tables in Microsoft Access", "Designing Forms", "Creating Queries in MS Access", "Data Reports", "Checkpoint Test"],
         T(
-            "دن 16 {Checkpoint}۔ {MS Access} میں جدول {Design View} سے فیلڈ اور {Data Type}، ایک {Primary Key}۔ {Form} اندراج کی کھڑکی۔",
-            "★ {Query} سوال ہے جو قطار چنتا ہے۔ {Select Query} دکھاتا ہے، معیار سے چھانتا ہے۔ {SQL} میں {SELECT}، {FROM}، {WHERE}۔ رپورٹ چھپی شکل۔",
+            "دن 16 {Checkpoint}۔ {MS Access} میں ڈیٹا ٹائپ کریں تو {Access} خود {Data Type} اندازہ لگاتا ہے۔ {AutoNumber} خود منفرد ترتیب وار نمبر بھرتا ہے، بہترین {Primary Key}۔ {Form} ڈیٹا بھرنے کی کھڑکی ہے۔",
+            "★ {Query} اصل جدولوں کو بدلے بغیر ڈیٹا نکالتا، چھانتا اور تجزیہ کرتا ہے۔ {Create} ٹیب سے {Query Design}۔ جمع شدہ نتائج کے لیے {Totals} پر کلک کریں تاکہ {Total} قطار ظاہر ہو۔ رپورٹ چھپی شکل۔",
             "چالیس منٹ ٹیسٹ۔ کنج، {ER}، {Referential Integrity}، {Query} ★ Golden ہیں۔",
         ),
     ),
@@ -286,7 +286,7 @@ XI = [
         T(
             "دن 17۔ ★ Golden: {Artificial Intelligence (AI)} اور {Internet of Things (IoT)}۔",
             "کمپیوٹنگ صحت، تعلیم، کاروبار، شہر بدل رہی ہے۔",
-            "★ {AI} مشین کو انسانی سوچ کے قریب کام سکھانا: پہچان، فیصلہ، زبان۔ مثال: نقشے کی سفارش، چہرے کی پہچان۔ {Narrow AI} ایک کام؛ عام انسانی {AI} ابھی تحقیق۔",
+            "★ {Artificial Intelligence (AI)} کمپیوٹر سسٹم کی وہ صلاحیت ہے کہ وہ ایسے کام کرے جن میں عام طور پر انسانی سوچ لگتی ہے، جیسے چہرے پہچاننا، زبان سمجھنا اور فیصلے کرنا۔ یادداشتی جملہ: {Eyes – Sort – Brain – Do}۔ {IoT} آنکھیں ہے، {Analytics} چھانٹتا ہے، {AI} دماغ ہے، اور {actuator} عمل کرتا ہے۔",
             "★ {IoT} وہ چیزیں جو سینسر اور انٹرنیٹ سے آپس میں بات کریں۔ اجزاء: {Sensor}، {Actuator}، {Connectivity}، {Processor}، {User Interface}، کلاؤڈ۔ اسمارٹ پنکھا، اسمارٹ میٹر۔ دونوں اصطلاحیں انگریزی میں جوں کی توں لکھو۔",
         ),
     ),
