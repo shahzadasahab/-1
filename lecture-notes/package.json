@@ -1,0 +1,13 @@
+{
+  "name": "intermediate-cs-lecture-notes",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:html": "node scripts/build-html.mjs",
+    "build:pdf": "node scripts/build-pdf.mjs",
+    "build": "npm run build:html && npm run build:pdf"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.0"
+  }
+}

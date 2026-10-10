@@ -37,4 +37,11 @@ export ANDROID_HOME=/path/to/android-sdk
 ./gradlew assembleDebug
 ```
 
+## Intermediate CS lecture notes (PDF)
+
+Teach-yourself notes for **XI & XII Computer Science** (MathJax, SVG diagrams, flexbox layout):
+
+- Source & build: [`lecture-notes/`](lecture-notes/)
+- Ready-made PDFs: [`releases/lecture-notes/`](releases/lecture-notes/)
+
 ## Version 3.2.1

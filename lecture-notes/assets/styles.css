@@ -1,0 +1,259 @@
+@page {
+  size: A4;
+  margin: 14mm 12mm 16mm 12mm;
+}
+
+:root {
+  --ink: #1a2332;
+  --muted: #4a5568;
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+  --success: #059669;
+  --success-soft: #d1fae5;
+  --warn: #d97706;
+  --warn-soft: #fef3c7;
+  --border: #e2e8f0;
+  --card: #f8fafc;
+  --xi: #7c3aed;
+  --xii: #0d9488;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10.5pt;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  line-height: 1.45;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent-soft) 0%, #fff 55%);
+  border: 1px solid var(--border);
+  margin-bottom: 1.25rem;
+}
+
+.cover-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge-xi {
+  background: #ede9fe;
+  color: var(--xi);
+}
+
+.badge-xii {
+  background: #ccfbf1;
+  color: var(--xii);
+}
+
+.badge-ty {
+  background: var(--accent);
+  color: #fff;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.65rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.flex-grid > * {
+  flex: 1 1 220px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+}
+
+.card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  color: var(--accent);
+}
+
+.card ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.card li {
+  margin: 0.15rem 0;
+}
+
+.section {
+  margin: 1.1rem 0;
+  break-inside: avoid-page;
+}
+
+.section h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.5rem;
+}
+
+.section h3 {
+  margin: 0.75rem 0 0.35rem;
+  font-size: 1rem;
+}
+
+p {
+  margin: 0.4rem 0;
+}
+
+.diagram-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.75rem 0;
+  padding: 0.65rem;
+  background: #fff;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+}
+
+.diagram-wrap svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.diagram-caption {
+  flex: 1 1 180px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin: 0.5rem 0;
+}
+
+table.data th,
+table.data td {
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.5rem;
+  text-align: left;
+}
+
+table.data th {
+  background: var(--accent-soft);
+}
+
+.callout {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  margin: 0.6rem 0;
+  font-size: 0.9rem;
+}
+
+.callout-remember {
+  background: var(--success-soft);
+  border-left: 4px solid var(--success);
+}
+
+.callout-try {
+  background: var(--warn-soft);
+  border-left: 4px solid var(--warn);
+}
+
+.callout-exam {
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+}
+
+.callout strong {
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.two-col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.two-col > div {
+  flex: 1 1 45%;
+  min-width: 200px;
+}
+
+code,
+pre {
+  font-family: "Consolas", "Ubuntu Mono", monospace;
+  font-size: 0.82rem;
+}
+
+pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+
+footer.page-foot {
+  margin-top: 1.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-break {
+  break-before: page;
+}
