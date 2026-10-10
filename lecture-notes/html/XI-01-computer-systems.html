@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Teach Yourself · XI Unit 1 · Computer Systems</title>
+<link rel="stylesheet" href="../assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="../assets/mathjax/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+
+<section class="cover">
+  <div>
+    <div class="cover-kicker"><span>Teach Yourself Lecture Notes</span><span>Class XI · Intermediate</span></div>
+    <h1>Unit 1<br>Computer Systems</h1>
+    <p class="subtitle">Digital logic · LogiSim · SDLC · OSI &amp; TCP/IP</p>
+    <div class="badge-row">
+      <span class="badge">Boolean algebra</span>
+      <span class="badge">Logic gates</span>
+      <span class="badge">K-maps</span>
+      <span class="badge">Waterfall vs Agile</span>
+      <span class="badge">7-layer OSI</span>
+    </div>
+    <div class="cover-box" style="margin-top:14px;">
+      <strong>How to use this booklet.</strong> Read one section, redraw every SVG from memory, then attempt the self-check before turning the page. Formulas are written in MathJax so you see the same notation an examiner expects.
+    </div>
+  </div>
+  <div class="cover-meta">
+    Intermediate Computer Science · Self-study companion to the official textbook · Flexbox notes with embedded SVG diagrams
+  </div>
+</section>
+
+<div class="running"><span>XI · Unit 1 · Computer Systems</span><span>Teach Yourself</span></div>
+
+<h2>0. What this unit is really about</h2>
+<p>Three stories share one chapter. First, computers think in only two voltages — ON and OFF — and Boolean algebra is the mathematics of those two states. Second, software is not “typed until it works”; it is built through a life cycle. Third, networks do not shout raw bits at each other; they wrap messages in layers. If you can move fluently among bits, gates, sprints, and packets, you understand how a modern computer system lives.</p>
+
+<div class="callout why"><div class="mark">Why it matters</div><div>Every later unit — Python, databases, IoT, HCI — sits on this foundation. A logic error in a gate, a skipped test in Waterfall, or a missing transport checksum all produce the same result: a system that looks finished and then fails.</div></div>
+
+<div class="card-row">
+  <div class="card"><div class="label">You will be able to</div>
+    <ul>
+      <li>Separate analog from digital, continuous from discrete</li>
+      <li>Write Boolean expressions and truth tables</li>
+      <li>Draw and simplify logic circuits (including K-maps)</li>
+      <li>Compare Waterfall and Agile with the Al-Noor cases</li>
+      <li>Map OSI’s seven layers onto TCP/IP’s four</li>
+    </ul>
+  </div>
+  <div class="card gold"><div class="label">Exam habits</div>
+    <ul>
+      <li>Always state $0=\text{LOW/FALSE}$ and $1=\text{HIGH/TRUE}$</li>
+      <li>Precedence: parentheses $\to$ NOT $\to$ AND $\to$ OR</li>
+      <li>K-map columns use Gray code: $00,01,11,10$</li>
+      <li>Name the data unit at each layer (segment, packet, frame, bits)</li>
+    </ul>
+  </div>
+</div>
+
+<h2>1. Discrete vs continuous, analog vs digital</h2>
+<p>A <strong>discrete</strong> quantity takes separate countable values (students in a room, books on a shelf). A <strong>continuous</strong> quantity can sit anywhere in a range (temperature, height, speed). The stairs-versus-ramp picture is the whole idea: stairs force you onto fixed treads; a ramp lets you stop at $1.73\,\text{m}$ just as easily as at $1.5\,\text{m}$.</p>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stairs versus ramp and analog versus digital waves">
+      <rect width="720" height="210" fill="#fffdf8"/>
+      <text x="20" y="22" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0b6b6e" font-weight="700">Discrete (stairs / digital)</text>
+      <text x="380" y="22" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#0b6b6e" font-weight="700">Continuous (ramp / analog)</text>
+      <path d="M20 170 H70 V140 H110 V110 H150 V80 H190 V50 H230" fill="none" stroke="#10263f" stroke-width="3"/>
+      <circle cx="70" cy="170" r="4" fill="#b8891f"/>
+      <circle cx="110" cy="140" r="4" fill="#b8891f"/>
+      <circle cx="150" cy="110" r="4" fill="#b8891f"/>
+      <circle cx="190" cy="80" r="4" fill="#b8891f"/>
+      <path d="M380 170 L640 50" fill="none" stroke="#10263f" stroke-width="3"/>
+      <circle cx="430" cy="155" r="4" fill="#0b6b6e"/>
+      <circle cx="500" cy="122" r="4" fill="#0b6b6e"/>
+      <circle cx="580" cy="82" r="4" fill="#0b6b6e"/>
+      <text x="20" y="198" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#4a5564">Only allowed levels — like bits 0 and 1</text>
+      <text x="380" y="198" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#4a5564">Any height on the slope — like a voltage wave</text>
+    </svg>
+  </div>
+  <figcaption>Figure 1. Stairs force discrete steps; a ramp is continuous. Digital systems choose the stairs.</figcaption>
+</figure>
+
+<p>A <strong>digital system</strong> uses only two values, called <strong>bits</strong>:</p>
+<div class="formula">\[ 0 = \text{OFF / LOW / FALSE}, \qquad 1 = \text{ON / HIGH / TRUE} \]</div>
+<p>Why industry chose this poverty of values: noise rarely flips a solid HIGH into a solid LOW; copies stay exact; designers handle two states, not infinite voltages; software can reprogram the same hardware.</p>
+
+<div class="two-col">
+  <div>
+    <h3>Analog signal</h3>
+    <p>A <strong>signal</strong> is a function that carries information. Analog signals vary smoothly over a continuous range — voice, guitar strings, mercury thermometers, old telephone voltages. Their graph is a sine-like wave. They are easily damaged by noise.</p>
+  </div>
+  <div>
+    <h3>Digital signal</h3>
+    <p>Digital signals jump between HIGH and LOW, drawing a square wave. Computer buses, USB, HDMI, and internet packets are digital. Reliability is high because a slightly dented pulse is still recognized as $1$ or $0$.</p>
+  </div>
+</div>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="200" fill="#fff"/>
+      <text x="20" y="22" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#10263f" font-weight="700">Analog (smooth)</text>
+      <text x="380" y="22" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#10263f" font-weight="700">Digital (square)</text>
+      <line x1="20" y1="110" x2="330" y2="110" stroke="#d8d0c2"/>
+      <line x1="380" y1="110" x2="690" y2="110" stroke="#d8d0c2"/>
+      <path d="M20 110 C50 40,90 180,120 110 S190 40,220 110 S290 180,330 110" fill="none" stroke="#0b6b6e" stroke-width="2.5"/>
+      <path d="M380 150 H420 V70 H500 V150 H560 V70 H640 V150 H690" fill="none" stroke="#c45c26" stroke-width="2.5"/>
+      <text x="20" y="188" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#4a5564">Infinite values between peaks</text>
+      <text x="380" y="188" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#4a5564">Only HIGH (1) and LOW (0)</text>
+    </svg>
+  </div>
+  <figcaption>Figure 2. Wave shapes you must be able to sketch in an exam.</figcaption>
+</figure>
+
+<table>
+  <caption>Table 1. Analog versus digital at a glance</caption>
+  <tr><th>Feature</th><th>Analog</th><th>Digital</th></tr>
+  <tr><td>Nature</td><td>Continuous</td><td>Discrete</td></tr>
+  <tr><td>Unit</td><td>Physical quantity (voltage, frequency)</td><td>Bit ($0$ or $1$)</td></tr>
+  <tr><td>Wave</td><td>Smooth / sine</td><td>Square</td></tr>
+  <tr><td>Values</td><td>Infinite in a range</td><td>Two levels</td></tr>
+  <tr><td>Noise</td><td>Easily corrupted</td><td>Resistant</td></tr>
+  <tr><td>Examples</td><td>Voice, vinyl, mercury thermometer</td><td>PC, smartphone, digital watch</td></tr>
+</table>
+
+<h2>2. Boolean algebra — the algebra of true and false</h2>
+<p>George Boole (1850s) built a mathematics with only two constants. A <strong>variable</strong> such as $A,B,C$ holds $0$ or $1$. An <strong>expression</strong> combines variables with AND, OR, and NOT. This is the language of every logic gate and of every <code>if</code> condition you will later write in Python.</p>
+
+<div class="card-row">
+  <div class="card">
+    <div class="label">AND · conjunction</div>
+    <h4>$Y = A \cdot B$ &nbsp;or&nbsp; $Y = A \land B$</h4>
+    <p>Output is $1$ only when <em>all</em> inputs are $1$. Door with two locks: both must open.</p>
+    <table>
+      <tr><th>$A$</th><th>$B$</th><th>$A\cdot B$</th></tr>
+      <tr><td>0</td><td>0</td><td>0</td></tr>
+      <tr><td>0</td><td>1</td><td>0</td></tr>
+      <tr><td>1</td><td>0</td><td>0</td></tr>
+      <tr><td>1</td><td>1</td><td>1</td></tr>
+    </table>
+  </div>
+  <div class="card gold">
+    <div class="label">OR · disjunction</div>
+    <h4>$Y = A + B$ &nbsp;or&nbsp; $Y = A \lor B$</h4>
+    <p>Output is $1$ when <em>any</em> input is $1$. Room with two doors: either door lets you in.</p>
+    <table>
+      <tr><th>$A$</th><th>$B$</th><th>$A+B$</th></tr>
+      <tr><td>0</td><td>0</td><td>0</td></tr>
+      <tr><td>0</td><td>1</td><td>1</td></tr>
+      <tr><td>1</td><td>0</td><td>1</td></tr>
+      <tr><td>1</td><td>1</td><td>1</td></tr>
+    </table>
+  </div>
+  <div class="card idea">
+    <div class="label">NOT · complement (unary)</div>
+    <h4>$Y = A'$ &nbsp;or&nbsp; $Y = \overline{A}$</h4>
+    <p>Inverts one input. Light switch: ON $\leftrightarrow$ dark? No — think of a <em>normally-on</em> lamp that is dark when the switch bit is $1$.</p>
+    <table>
+      <tr><th>$A$</th><th>$\overline{A}$</th></tr>
+      <tr><td>0</td><td>1</td></tr>
+      <tr><td>1</td><td>0</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="callout watch"><div class="mark">Watch</div><div>In Boolean algebra the symbol $+$ is OR, not ordinary plus. $1+1=1$, never $2$. The product $A\cdot B$ is AND. If a question writes $Y=A+B\cdot C$, AND happens first, so $Y=A+(B\cdot C)$.</div></div>
+
+<h3>2.1 Truth tables from $n$ inputs</h3>
+<p>A table with $n$ input variables has exactly $2^n$ rows. List inputs in binary counting order so you never skip a combination.</p>
+<div class="formula">\[ \text{rows} = 2^n \qquad (n=2 \Rightarrow 4,\; n=3 \Rightarrow 8,\; n=4 \Rightarrow 16) \]</div>
+
+<h2>3. Logic gates — hardware that obeys Boolean laws</h2>
+<p>A gate is a circuit with one or more inputs and one output. Learn the shape, the expression, and the English rule together.</p>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" aria-label="Seven standard logic gates">
+      <rect width="720" height="260" fill="#fff"/>
+      <!-- AND -->
+      <text x="50" y="18" font-size="12" font-family="IBM Plex Sans, sans-serif" font-weight="700" fill="#10263f">AND</text>
+      <line x1="10" y1="40" x2="40" y2="40" stroke="#10263f" stroke-width="2"/>
+      <line x1="10" y1="70" x2="40" y2="70" stroke="#10263f" stroke-width="2"/>
+      <path d="M40 28 H68 A22 22 0 0 1 68 82 H40 Z" fill="#e6f3f3" stroke="#0b6b6e" stroke-width="2"/>
+      <line x1="90" y1="55" x2="120" y2="55" stroke="#10263f" stroke-width="2"/>
+      <text x="4" y="44" font-size="10">A</text><text x="4" y="74" font-size="10">B</text>
+      <!-- OR -->
+      <text x="190" y="18" font-size="12" font-family="IBM Plex Sans, sans-serif" font-weight="700" fill="#10263f">OR</text>
+      <path d="M170 28 Q198 55 170 82 Q200 70 230 55 Q200 40 170 28" fill="#e6f3f3" stroke="#0b6b6e" stroke-width="2"/>
+      <line x1="150" y1="40" x2="182" y2="40" stroke="#10263f" stroke-width="2"/>
+      <line x1="150" y1="70" x2="182" y2="70" stroke="#10263f" stroke-width="2"/>
+      <line x1="230" y1="55" x2="260" y2="55" stroke="#10263f" stroke-width="2"/>
+      <!-- NOT -->
+      <text x="330" y="18" font-size="12" font-family="IBM Plex Sans, sans-serif" font-weight="700" fill="#10263f">NOT</text>
+      <polygon points="300,30 350,55 300,80" fill="#f8efd6" stroke="#b8891f" stroke-width="2"/>
+      <circle cx="358" cy="55" r="6" fill="#fff" stroke="#b8891f" stroke-width="2"/>
+      <line x1="275" y1="55" x2="300" y2="55" stroke="#10263f" stroke-width="2"/>
+      <line x1="364" y1="55" x2="395" y2="55" stroke="#10263f" stroke-width="2"/>
+      <!-- NAND -->
+      <text x="50" y="128" font-size="12" font-family="IBM Plex Sans, sans-serif" font-weight="700" fill="#10263f">NAND</text>
+      <line x1="10" y1="150" x2="40" y2="150" stroke="#10263f" stroke-width="2"/>
+      <line x1="10" y1="180" x2="40" y2="180" stroke="#10263f" stroke-width="2"/>
+      <path d="M40 138 H68 A22 22 0 0 1 68 192 H40 Z" fill="#e8eef8" stroke="#2a4d8f" stroke-width="2"/>
+      <circle cx="98" cy="165" r="6" fill="#fff" stroke="#2a4d8f" stroke-width="2"/>
+      <line x1="104" y1="165" x2="130" y2="165" stroke="#10263f" stroke-width="2"/>
+      <!-- NOR -->
+      <text x="190" y="128" font-size="12" font-family="IBM Plex Sans, sans-serif" font-weight="700" fill="#10263f">NOR</text>
+      <path d="M170 138 Q198 165 170 192 Q200 180 230 165 Q200 150 170 138" fill="#e8eef8" stroke="#2a4d8f" stroke-width="2"/>
+      <circle cx="238" cy="165" r="6" fill="#fff" stroke="#2a4d8f" stroke-width="2"/>
+      <line x1="150" y1="150" x2="182" y2="150" stroke="#10263f" stroke-width="2"/>
+      <line x1="150" y1="180" x2="182" y2="180" stroke="#10263f" stroke-width="2"/>
+      <line x1="244" y1="165" x2="270" y2="165" stroke="#10263f" stroke-width="2"/>
+      <!-- XOR -->
+      <text x="330" y="128" font-size="12" font-family="IBM Plex Sans, sans-serif" font-weight="700" fill="#10263f">XOR</text>
+      <path d="M310 138 Q338 165 310 192" fill="none" stroke="#0b6b6e" stroke-width="2"/>
+      <path d="M318 138 Q346 165 318 192 Q348 180 378 165 Q348 150 318 138" fill="#e6f3f3" stroke="#0b6b6e" stroke-width="2"/>
+      <line x1="290" y1="150" x2="328" y2="150" stroke="#10263f" stroke-width="2"/>
+      <line x1="290" y1="180" x2="328" y2="180" stroke="#10263f" stroke-width="2"/>
+      <line x1="378" y1="165" x2="410" y2="165" stroke="#10263f" stroke-width="2"/>
+      <!-- XNOR -->
+      <text x="500" y="128" font-size="12" font-family="IBM Plex Sans, sans-serif" font-weight="700" fill="#10263f">XNOR</text>
+      <path d="M480 138 Q508 165 480 192" fill="none" stroke="#8a3b12" stroke-width="2"/>
+      <path d="M488 138 Q516 165 488 192 Q518 180 548 165 Q518 150 488 138" fill="#f8ece4" stroke="#8a3b12" stroke-width="2"/>
+      <circle cx="556" cy="165" r="6" fill="#fff" stroke="#8a3b12" stroke-width="2"/>
+      <line x1="460" y1="150" x2="498" y2="150" stroke="#10263f" stroke-width="2"/>
+      <line x1="460" y1="180" x2="498" y2="180" stroke="#10263f" stroke-width="2"/>
+      <line x1="562" y1="165" x2="600" y2="165" stroke="#10263f" stroke-width="2"/>
+      <text x="20" y="230" font-size="11" fill="#4a5564" font-family="IBM Plex Sans, sans-serif">Bubble on the output = inversion. Extra curve on XOR/XNOR = “exclusive”.</text>
+      <text x="20" y="248" font-size="11" fill="#4a5564" font-family="IBM Plex Sans, sans-serif">NAND and NOR are universal: any circuit can be built from only NAND, or only NOR.</text>
+    </svg>
+  </div>
+  <figcaption>Figure 3. Standard IEEE/ANSI gate outlines. Practise these until you can draw them in 30 seconds.</figcaption>
+</figure>
+
+<table>
+  <caption>Table 2. Gate identities you must memorise</caption>
+  <tr><th>Gate</th><th>Expression</th><th>$Y=1$ when</th><th>Everyday picture</th></tr>
+  <tr><td>AND</td><td>$Y=A\cdot B$</td><td>All inputs $1$</td><td>Car starts: key AND start button</td></tr>
+  <tr><td>OR</td><td>$Y=A+B$</td><td>Any input $1$</td><td>Alarm: front OR back door</td></tr>
+  <tr><td>NOT</td><td>$Y=\overline{A}$</td><td>Input is $0$</td><td>Inverter / opposite lamp</td></tr>
+  <tr><td>NAND</td><td>$Y=\overline{A\cdot B}$</td><td>Any input $0$</td><td>Universal gate</td></tr>
+  <tr><td>NOR</td><td>$Y=\overline{A+B}$</td><td>All inputs $0$</td><td>Universal gate</td></tr>
+  <tr><td>XOR</td><td>$Y=A\oplus B=\overline{A}B+A\overline{B}$</td><td>Inputs differ</td><td>Two-way staircase light</td></tr>
+  <tr><td>XNOR</td><td>$Y=\overline{A\oplus B}=AB+\overline{A}\,\overline{B}$</td><td>Inputs same</td><td>Equality detector</td></tr>
+</table>
+
+<h3>3.1 Worked circuit: $Y = A\cdot B + C$</h3>
+<p>Precedence says AND first. Draw an AND of $A$ and $B$, then OR that result with $C$. For three variables the truth table has $8$ rows. The output is $1$ whenever the product $AB$ is $1$, or $C$ is $1$.</p>
+<div class="formula">\[ Y = (A \cdot B) + C \]</div>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg">
+      <rect width="520" height="180" fill="#fff"/>
+      <text x="8" y="48" font-size="12">A</text>
+      <text x="8" y="88" font-size="12">B</text>
+      <text x="8" y="148" font-size="12">C</text>
+      <line x1="22" y1="44" x2="70" y2="44" stroke="#10263f" stroke-width="2"/>
+      <line x1="22" y1="84" x2="70" y2="84" stroke="#10263f" stroke-width="2"/>
+      <path d="M70 28 H100 A28 28 0 0 1 100 100 H70 Z" fill="#e6f3f3" stroke="#0b6b6e" stroke-width="2"/>
+      <line x1="128" y1="64" x2="200" y2="64" stroke="#10263f" stroke-width="2"/>
+      <line x1="22" y1="144" x2="200" y2="144" stroke="#10263f" stroke-width="2"/>
+      <path d="M200 48 Q240 90 200 156 Q250 130 300 104 Q250 78 200 48" fill="#f8efd6" stroke="#b8891f" stroke-width="2"/>
+      <line x1="300" y1="104" x2="380" y2="104" stroke="#10263f" stroke-width="2"/>
+      <text x="390" y="108" font-size="14" font-weight="700" fill="#10263f">Y</text>
+      <text x="78" y="70" font-size="10" fill="#0b6b6e">AND</text>
+      <text x="230" y="108" font-size="10" fill="#8a3b12">OR</text>
+    </svg>
+  </div>
+  <figcaption>Figure 4. Logic diagram for $Y=A\cdot B+C$. Always AND the product terms, then OR them (SOP style).</figcaption>
+</figure>
+
+<h3>3.2 Canonical forms — minterms and maxterms</h3>
+<p>A <strong>minterm</strong> is an AND of every variable (complemented if that variable is $0$ in the row). You write one minterm for each row where $Y=1$, then OR them. That is the <strong>sum of products (SOP)</strong>.</p>
+<p>A <strong>maxterm</strong> is an OR of every variable (complemented if that variable is $1$ in the row). You write one maxterm for each row where $Y=0$, then AND them. That is the <strong>product of sums (POS)</strong>.</p>
+<p>For two variables:</p>
+<div class="formula">\[
+\begin{align*}
+m_0 &= \overline{A}\,\overline{B},& m_1&=\overline{A}B,& m_2&=A\overline{B},& m_3&=AB \\
+M_0 &= A+B,& M_1&=A+\overline{B},& M_2&=\overline{A}+B,& M_3&=\overline{A}+\overline{B}
+\end{align*}
+\]</div>
+<p>If $Y=1$ only on rows $(0,1)$ and $(1,1)$, then SOP is $Y=\overline{A}B + AB$, which simplifies to $Y=B$.</p>
+
+<h2>4. Karnaugh maps — seeing simplification</h2>
+<p>Maurice Karnaugh (1953) arranged truth-table $1$s so that neighbouring cells differ by one bit (<strong>Gray code</strong>). You circle groups whose size is a power of two: $1,2,4,8,\ldots$ Wrap around the edges; overlapping is allowed; bigger groups give simpler expressions.</p>
+
+<div class="two-col">
+  <div>
+    <h4>2-variable map</h4>
+    <figure>
+      <div class="diagram-frame">
+        <svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="260" height="180" fill="#fff"/>
+          <text x="70" y="20" font-size="12">$B=0$</text>
+          <text x="160" y="20" font-size="12">$B=1$</text>
+          <rect x="60" y="30" width="80" height="60" fill="#e6f3f3" stroke="#10263f"/>
+          <rect x="140" y="30" width="80" height="60" fill="#fff" stroke="#10263f"/>
+          <rect x="60" y="90" width="80" height="60" fill="#e6f3f3" stroke="#10263f"/>
+          <rect x="140" y="90" width="80" height="60" fill="#e6f3f3" stroke="#10263f"/>
+          <text x="90" y="65" font-size="14">1</text>
+          <text x="170" y="65" font-size="14">0</text>
+          <text x="90" y="125" font-size="14">1</text>
+          <text x="170" y="125" font-size="14">1</text>
+          <text x="8" y="65" font-size="12">$A=0$</text>
+          <text x="8" y="125" font-size="12">$A=1$</text>
+          <rect x="56" y="86" width="168" height="68" fill="none" stroke="#b8891f" stroke-width="2" rx="8"/>
+        </svg>
+      </div>
+      <figcaption>Group the three $1$s as $A$ (bottom row) plus $B$ wait — here the pair of bottom $1$s and the left column give $Y=A+\overline{B}$ depending on cells. Always read which variable stays constant inside a circle.</figcaption>
+    </figure>
+  </div>
+  <div>
+    <h4>Worked 3-variable collapse</h4>
+    <p>Given
+    \[ Y=\overline{A}\,\overline{B}C + \overline{A}BC + A\overline{B}C + ABC \]
+    every minterm contains $C$ and the pairs cover both $A$ and $B$. The whole map of $1$s is the single group “$C$ is $1$”:</p>
+    <div class="formula">\[ Y = C \]</div>
+    <p>Gray-code column order for three variables is $BC = 00,01,11,10$ — never $00,01,10,11$. Adjacent cells, including the wrap from last column to first, differ by one bit.</p>
+  </div>
+</div>
+
+<div class="self-check">
+  <h4>Self-check 1 — Boolean fluency</h4>
+  <ol>
+    <li>Write the truth table of $Y=\overline{A}+B$.</li>
+    <li>Why is NAND called universal?</li>
+    <li>Simplify $Y=A\overline{B}+AB$ by inspection (no K-map required).</li>
+  </ol>
+  <div class="answer"><strong>Answers.</strong> (1) $Y=0$ only when $A=1,B=0$; otherwise $1$. (2) Any Boolean function can be built using only NAND gates (NOT $= \mathrm{NAND}(A,A)$; AND $= \overline{\mathrm{NAND}}$; OR via De Morgan). (3) $Y=A(\overline{B}+B)=A\cdot 1=A$.</div>
+</div>
+
+<h2>5. LogiSim Evolution — from paper to a live circuit</h2>
+<p>LogiSim Evolution is the course simulation tool. You need Java 21+ (Adoptium) and the Windows <code>.msi</code> from the project’s GitHub releases. Files use the <code>.circ</code> extension.</p>
+<div class="card-row">
+  <div class="card"><div class="label">Interface</div>Explorer (gate library) · canvas · Attribute Table · Simulate / Poke tool</div>
+  <div class="card"><div class="label">Wiring rule</div>Wires are horizontal or vertical only. A green circle appears when a pin will accept a connection.</div>
+  <div class="card"><div class="label">Colours</div>Bright green $=1$, dark green $=0$. Input pins are squares you toggle; output pins are circles.</div>
+</div>
+<div class="step"><div class="n">1</div><div>File $\to$ New, save as <code>AND_gate.circ</code>.</div></div>
+<div class="step"><div class="n">2</div><div>Place an AND gate, two input pins ($A$, $B$) on the left, one output pin ($Y$) on the right.</div></div>
+<div class="step"><div class="n">3</div><div>Wire pins to the gate. Use the Poke tool to toggle $A$ and $B$ and confirm $Y=A\cdot B$.</div></div>
+<div class="step"><div class="n">4</div><div>Extension lab: build $Y=A\cdot B+C$ (Figure 4) and tick all eight input combinations against your truth table.</div></div>
+
+<h2>6. Software Development Life Cycle (SDLC)</h2>
+<p>Building software is like building a house: you do not pour concrete and then ask how many bedrooms. The SDLC is the agreed sequence of phases, each with a deliverable. It gives clear goals, planned work, quality checks, risk control, documentation, and a shared language for the team.</p>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 130" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="130" fill="#fff"/>
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 Z" fill="#10263f"/>
+        </marker>
+      </defs>
+      <g font-family="IBM Plex Sans, sans-serif" font-size="11" text-anchor="middle">
+        <rect x="10" y="35" width="100" height="50" rx="6" fill="#10263f"/>
+        <text x="60" y="65" fill="#fff">1 Analysis</text>
+        <rect x="130" y="35" width="100" height="50" rx="6" fill="#0b6b6e"/>
+        <text x="180" y="65" fill="#fff">2 Design</text>
+        <rect x="250" y="35" width="110" height="50" rx="6" fill="#2a4d8f"/>
+        <text x="305" y="65" fill="#fff">3 Coding</text>
+        <rect x="380" y="35" width="100" height="50" rx="6" fill="#b8891f"/>
+        <text x="430" y="65" fill="#fff">4 Testing</text>
+        <rect x="500" y="35" width="100" height="50" rx="6" fill="#1f6b45"/>
+        <text x="550" y="65" fill="#fff">5 Deploy</text>
+        <rect x="620" y="35" width="90" height="50" rx="6" fill="#8a3b12"/>
+        <text x="665" y="65" fill="#fff">6 Maintain</text>
+      </g>
+      <line x1="110" y1="60" x2="128" y2="60" stroke="#10263f" marker-end="url(#arr)"/>
+      <line x1="230" y1="60" x2="248" y2="60" stroke="#10263f" marker-end="url(#arr)"/>
+      <line x1="360" y1="60" x2="378" y2="60" stroke="#10263f" marker-end="url(#arr)"/>
+      <line x1="480" y1="60" x2="498" y2="60" stroke="#10263f" marker-end="url(#arr)"/>
+      <line x1="600" y1="60" x2="618" y2="60" stroke="#10263f" marker-end="url(#arr)"/>
+    </svg>
+  </div>
+  <figcaption>Figure 5. Six SDLC phases. In Waterfall the arrow is one-way; in Agile you repeat a short version of this arrow every sprint.</figcaption>
+</figure>
+
+<table>
+  <caption>Table 3. What each phase actually produces</caption>
+  <tr><th>Phase</th><th>You do</th><th>Typical deliverable</th></tr>
+  <tr><td>Requirement analysis</td><td>Interview users, freeze needs</td><td>SRS (Software Requirements Specification)</td></tr>
+  <tr><td>System design</td><td>Architecture, database, screens</td><td>HLD / LLD, ER diagrams, wireframes</td></tr>
+  <tr><td>Implementation</td><td>Write code, use Git, review</td><td>Source code</td></tr>
+  <tr><td>Testing</td><td>Unit, integration, system, UAT</td><td>Test report, defect log</td></tr>
+  <tr><td>Deployment</td><td>Direct, phased, pilot, or parallel</td><td>Live system</td></tr>
+  <tr><td>Maintenance</td><td>Corrective, adaptive, perfective, preventive</td><td>Patches and new versions</td></tr>
+</table>
+
+<div class="card-row">
+  <div class="card"><div class="label">Black-box test</div>No look at the source. Feed inputs, check outputs. Good for UAT and “does it match the SRS?”</div>
+  <div class="card"><div class="label">White-box test</div>You read the code: branches, loops, conditions. Good for unit tests and finding hidden paths.</div>
+  <div class="card idea"><div class="label">Deployment styles</div>Direct (big bang) · phased rollout · pilot group · parallel run with the old system still alive.</div>
+</div>
+
+<h3>6.1 Waterfall — finish a phase, then lock it</h3>
+<p>Work flows downhill. You do not climb back to analysis once design has started. Documentation is heavy. Change is expensive. Use it when requirements are stable, the technology is known, and the project is small enough to plan in advance.</p>
+
+<h3>6.2 Agile / Scrum — a working slice every sprint</h3>
+<p>Work is cut into <strong>sprints</strong> of $2$–$4$ weeks. Each sprint plans, codes, tests, reviews, and ships a usable increment. The <strong>product backlog</strong> is a living list of <strong>user stories</strong> (“As a student, I want…”). Daily standups keep blockers visible. Requirements are allowed to evolve.</p>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="520" height="200" fill="#fff"/>
+      <circle cx="260" cy="105" r="70" fill="none" stroke="#0b6b6e" stroke-width="3"/>
+      <text x="260" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#10263f">Sprint</text>
+      <text x="260" y="118" text-anchor="middle" font-size="11" fill="#0b6b6e">2 weeks</text>
+      <text x="260" y="28" text-anchor="middle" font-size="11">Plan</text>
+      <text x="430" y="90" text-anchor="middle" font-size="11">Daily standup</text>
+      <text x="400" y="175" text-anchor="middle" font-size="11">Build &amp; test</text>
+      <text x="120" y="175" text-anchor="middle" font-size="11">Review</text>
+      <text x="90" y="90" text-anchor="middle" font-size="11">Retrospective</text>
+    </svg>
+  </div>
+  <figcaption>Figure 6. Scrum cycle. The output of every lap is working software plus feedback, not a thicker document.</figcaption>
+</figure>
+
+<h3>6.3 Twin case studies — Al-Noor High School</h3>
+<div class="two-col">
+  <div class="card">
+    <div class="label">Waterfall · Library LMS</div>
+    <p>1,200 students, 80 teachers, $\approx 2{,}400$ books. Paper register replaced by a desktop LMS: Python 3.10, Tkinter, SQLite, offline Windows. Team of 2 developers + tester + PM, six months. Requirements signed in the SRS and then <strong>frozen</strong>. Tables: STUDENTS, BOOKS, LOANS. Fourteen-day loans and overdue alerts.</p>
+    <p><em>Why Waterfall?</em> Needs were clear, deadline fixed, team small, complexity low, documentation required.</p>
+  </div>
+  <div class="card gold">
+    <div class="label">Agile · Student mobile app</div>
+    <p>Flutter (Android + iOS). 5 sprints $\times$ 2 weeks. 3 developers + UI designer + tester. Backlog began with timetable, results, absence SMS, library reserve; bus tracking stayed low priority. Sprint 3 lost SMS and switched to email. Version 1 shipped 5 of 10 stories. Unexplained absences fell about $45\%$.</p>
+    <p><em>Why Agile?</em> Unclear start, many stakeholders, changing mobile platforms, school wanted a demo in weeks not months.</p>
+  </div>
+</div>
+
+<table>
+  <caption>Table 4. Same school, two models — the comparison examiners love</caption>
+  <tr><th>Dimension</th><th>Waterfall LMS</th><th>Agile mobile app</th></tr>
+  <tr><td>Requirements</td><td>Fixed at the start</td><td>Evolving backlog</td></tr>
+  <tr><td>Client contact</td><td>Start and end</td><td>Every sprint review</td></tr>
+  <tr><td>First working build</td><td>$\approx 6$ months</td><td>$\approx 2$ weeks</td></tr>
+  <tr><td>Change request</td><td>Painful / often refused</td><td>Parked for the next sprint</td></tr>
+  <tr><td>Testing</td><td>Its own late phase</td><td>Continuous inside the sprint</td></tr>
+  <tr><td>Documentation</td><td>Heavy SRS and design packs</td><td>Light; working software is the proof</td></tr>
+</table>
+
+<h2>7. How machines talk — OSI and TCP/IP</h2>
+<p>A <strong>communication model</strong> is a layered set of rules, like a postal system: you write a letter (application), seal an envelope (presentation/session), the post office sorts by city (network), vans move bags (data link), and trucks roll on roads (physical). Nobody on the road needs to read your letter.</p>
+
+<h3>7.1 OSI — seven layers (ISO, 1984)</h3>
+<p>Mnemonic, bottom to top: <strong>Please Do Not Throw Sausage Pizza Away</strong> — Physical, Data link, Network, Transport, Session, Presentation, Application.</p>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="320" fill="#fff"/>
+      <g font-family="IBM Plex Sans, sans-serif" font-size="12">
+        <rect x="20" y="12" width="420" height="38" fill="#10263f"/><text x="30" y="36" fill="#fff">7 Application — HTTP, HTTPS, FTP, SMTP, DNS, IMAP</text>
+        <rect x="20" y="54" width="420" height="38" fill="#2a4d8f"/><text x="30" y="78" fill="#fff">6 Presentation — SSL/TLS, JPEG, MP3, ASCII, Unicode</text>
+        <rect x="20" y="96" width="420" height="38" fill="#0b6b6e"/><text x="30" y="120" fill="#fff">5 Session — NetBIOS, RPC, checkpoints, dialogs</text>
+        <rect x="20" y="138" width="420" height="38" fill="#b8891f"/><text x="30" y="162" fill="#fff">4 Transport — TCP (reliable) / UDP (fast) · ports 80, 443</text>
+        <rect x="20" y="180" width="420" height="38" fill="#1f6b45"/><text x="30" y="204" fill="#fff">3 Network — IP, ICMP, ARP, RIP, OSPF, BGP</text>
+        <rect x="20" y="222" width="420" height="38" fill="#8a3b12"/><text x="30" y="246" fill="#fff">2 Data link — Ethernet, Wi-Fi, PPP, MAC, CRC · frames</text>
+        <rect x="20" y="264" width="420" height="38" fill="#1c2430"/><text x="30" y="288" fill="#fff">1 Physical — cables, hubs, NIC, Cat5/6 · raw bits</text>
+      </g>
+      <text x="460" y="36" font-size="11" fill="#4a5564">Data</text>
+      <text x="460" y="78" font-size="11" fill="#4a5564">Data</text>
+      <text x="460" y="120" font-size="11" fill="#4a5564">Data</text>
+      <text x="460" y="162" font-size="11" fill="#4a5564">Segment</text>
+      <text x="460" y="204" font-size="11" fill="#4a5564">Packet</text>
+      <text x="460" y="246" font-size="11" fill="#4a5564">Frame</text>
+      <text x="460" y="288" font-size="11" fill="#4a5564">Bits</text>
+      <text x="560" y="160" font-size="12" fill="#10263f" font-weight="700">PDU</text>
+      <text x="560" y="178" font-size="11" fill="#4a5564">(data unit</text>
+      <text x="560" y="194" font-size="11" fill="#4a5564">at that layer)</text>
+    </svg>
+  </div>
+  <figcaption>Figure 7. OSI stack and the protocol data unit (PDU) name you must attach to each layer.</figcaption>
+</figure>
+
+<p><strong>Encapsulation</strong> (sending): each layer adds its header as the message walks down the stack. <strong>Decapsulation</strong> (receiving): headers are peeled off on the way up. Remember the data-unit chant:</p>
+<div class="formula">\[ \text{Data} \;\to\; \text{Segment} \;\to\; \text{Packet} \;\to\; \text{Frame} \;\to\; \text{Bits} \]</div>
+
+<table>
+  <caption>Table 5. TCP versus UDP (both live at Layer 4)</caption>
+  <tr><th></th><th>TCP</th><th>UDP</th></tr>
+  <tr><td>Connection</td><td>Connection-oriented, handshake</td><td>Connectionless</td></tr>
+  <tr><td>Reliability</td><td>Acknowledgements, retransmission</td><td>Best effort, no retry</td></tr>
+  <tr><td>Speed</td><td>Slower, ordered</td><td>Faster, may lose or reorder</td></tr>
+  <tr><td>Use</td><td>Web, email, file transfer</td><td>Live video, games, DNS queries</td></tr>
+</table>
+
+<h3>7.2 TCP/IP — the model that actually runs the Internet</h3>
+<p>Four layers, born in the US Department of Defense in the 1970s. It is an implementation model, not just a teaching diagram.</p>
+<table>
+  <caption>Table 6. TCP/IP mapped onto OSI</caption>
+  <tr><th>TCP/IP</th><th>OSI layers</th><th>Example protocols</th></tr>
+  <tr><td>Application</td><td>7 + 6 + 5</td><td>HTTP, DNS, FTP, SMTP</td></tr>
+  <tr><td>Transport</td><td>4</td><td>TCP, UDP</td></tr>
+  <tr><td>Internet</td><td>3</td><td>IPv4, IPv6, ICMP, ARP</td></tr>
+  <tr><td>Network Access</td><td>2 + 1</td><td>Ethernet, Wi-Fi, MAC, copper/fibre</td></tr>
+</table>
+
+<div class="self-check">
+  <h4>Self-check 2 — Systems thinking</h4>
+  <ol>
+    <li>A school wants a fees system with a law-fixed report format and a six-month deadline. Waterfall or Agile? Why?</li>
+    <li>Which OSI layer adds port numbers? Which adds IP addresses? Which adds MAC addresses?</li>
+    <li>A video call prefers UDP. Give one reason in one sentence.</li>
+  </ol>
+  <div class="answer"><strong>Answers.</strong> (1) Waterfall — requirements are legally frozen and the scope is known. (2) Transport (ports), Network (IP), Data link (MAC). (3) A late packet is useless in a live call; UDP skips retransmission so the picture stays timely.</div>
+</div>
+
+<div class="recap">
+  <h3>Recap — pin these twelve lines</h3>
+  <ol>
+    <li>Discrete / digital = stairs; continuous / analog = ramp.</li>
+    <li>$0$ is LOW/FALSE; $1$ is HIGH/TRUE.</li>
+    <li>AND needs all $1$s; OR needs any $1$; NOT flips one bit.</li>
+    <li>$+$ is OR. $1+1=1$. Precedence: NOT, then AND, then OR.</li>
+    <li>Rows in a truth table $=2^n$.</li>
+    <li>NAND and NOR are universal gates. XOR is “different”; XNOR is “same”.</li>
+    <li>SOP from minterms ($Y=1$ rows); POS from maxterms ($Y=0$ rows).</li>
+    <li>K-maps use Gray code; group $2^n$ cells; wrap the edges.</li>
+    <li>SDLC: analyse, design, code, test, deploy, maintain.</li>
+    <li>Al-Noor library = Waterfall; Al-Noor app = Agile/Scrum.</li>
+    <li>OSI 7 layers; PDU chant: data, segment, packet, frame, bits.</li>
+    <li>TCP/IP folds OSI $7$–$5$ into Application and $2$–$1$ into Network Access.</li>
+  </ol>
+</div>
+
+<div class="footer-note"><span>Teach Yourself Lecture Notes · Intermediate CS · Unit 1</span><span>Redraw Figure 3 and Figure 7 from memory tonight.</span></div>
+</div>
+</body>
+</html>

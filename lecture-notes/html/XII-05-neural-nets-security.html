@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Teach Yourself · XII Unit 5 · Neural Networks, Security &amp; Equity</title>
+<link rel="stylesheet" href="../assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="../assets/mathjax/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+
+<section class="cover">
+  <div>
+    <div class="cover-kicker"><span>Teach Yourself Lecture Notes</span><span>Class XII · Intermediate</span></div>
+    <h1>Unit 5<br>Applications and Impacts<br>of Computing</h1>
+    <p class="subtitle">Machine learning · neural nets · deep learning · threats · equity</p>
+    <div class="badge-row">
+      <span class="badge">Layers &amp; weights</span>
+      <span class="badge">Phishing &amp; 2FA</span>
+      <span class="badge">Encryption</span>
+      <span class="badge">Equal access vs equity</span>
+    </div>
+  </div>
+  <div class="cover-meta">A phone that unlocks a face is impressive. A class that can name the threat model is safer.</div>
+</section>
+
+<div class="running"><span>XII · Unit 5 · Neural Nets &amp; Security</span><span>Teach Yourself</span></div>
+
+<h2>1. Three nested ideas</h2>
+<table>
+  <caption>Table 1. Do not treat these as synonyms</caption>
+  <tr><th>Term</th><th>Role</th></tr>
+  <tr><td>Machine learning</td><td>The field: a model studies data and then predicts or decides</td></tr>
+  <tr><td>Neural network</td><td>One kind of model — layers of nodes inspired by (not copying) a brain</td></tr>
+  <tr><td>Deep learning</td><td>A method: train a neural net that has <em>many</em> hidden layers</td></tr>
+</table>
+<p>Face unlock, speech assistants, photo search, shopping recommendations, medical imaging, translation — all sit on this stack. Pakistan’s National AI Policy conversation (2025 in the textbook) is the local “why we bother”.</p>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="200" fill="#fff"/>
+      <text x="40" y="24" font-size="12" font-weight="700">Input</text>
+      <text x="300" y="24" font-size="12" font-weight="700">Hidden layers</text>
+      <text x="600" y="24" font-size="12" font-weight="700">Output</text>
+      <circle cx="60" cy="60" r="12" fill="#10263f"/>
+      <circle cx="60" cy="100" r="12" fill="#10263f"/>
+      <circle cx="60" cy="140" r="12" fill="#10263f"/>
+      <circle cx="240" cy="50" r="12" fill="#0b6b6e"/>
+      <circle cx="240" cy="90" r="12" fill="#0b6b6e"/>
+      <circle cx="240" cy="130" r="12" fill="#0b6b6e"/>
+      <circle cx="240" cy="170" r="12" fill="#0b6b6e"/>
+      <circle cx="420" cy="60" r="12" fill="#0b6b6e"/>
+      <circle cx="420" cy="100" r="12" fill="#0b6b6e"/>
+      <circle cx="420" cy="140" r="12" fill="#0b6b6e"/>
+      <circle cx="620" cy="80" r="14" fill="#b8891f"/>
+      <circle cx="620" cy="130" r="14" fill="#b8891f"/>
+      <g stroke="#9aa4b2" stroke-width="1">
+        <line x1="72" y1="60" x2="228" y2="50"/><line x1="72" y1="60" x2="228" y2="90"/>
+        <line x1="72" y1="100" x2="228" y2="90"/><line x1="72" y1="100" x2="228" y2="130"/>
+        <line x1="72" y1="140" x2="228" y2="130"/><line x1="72" y1="140" x2="228" y2="170"/>
+        <line x1="252" y1="50" x2="408" y2="60"/><line x1="252" y1="90" x2="408" y2="100"/>
+        <line x1="252" y1="130" x2="408" y2="140"/><line x1="252" y1="170" x2="408" y2="140"/>
+        <line x1="432" y1="60" x2="608" y2="80"/><line x1="432" y1="100" x2="608" y2="80"/>
+        <line x1="432" y1="140" x2="608" y2="130"/>
+      </g>
+      <text x="20" y="194" font-size="11" fill="#4a5564">Each line is a weight. “Deep” means several hidden layers, not a mysterious extra magic.</text>
+    </svg>
+  </div>
+  <figcaption>Figure 1. A tiny feed-forward net. Real image models have millions of weights; the picture stays the same.</figcaption>
+</figure>
+
+<h3>1.1 Components of a neural net</h3>
+<ul>
+  <li><strong>Input layer</strong> — raw pixels, samples of sound, word IDs, sensor numbers.</li>
+  <li><strong>Hidden layer(s)</strong> — where patterns are built (edges $\to$ eyes $\to$ face).</li>
+  <li><strong>Output layer</strong> — the prediction (“this is Ayesha” / “spam”).</li>
+  <li><strong>Weights</strong> and <strong>bias</strong> — knobs the training loop turns.</li>
+  <li><strong>Activation</strong> — a non-linear gate so the net can learn curves, not only straight lines.</li>
+  <li><strong>Loss</strong> — a number that says how wrong this guess was; training tries to shrink it.</li>
+</ul>
+<div class="formula">\[
+z = w_1 x_1 + w_2 x_2 + \cdots + w_n x_n + b, \qquad
+\hat{y} = f(z), \qquad
+\text{train by reducing }\mathrm{Loss}(y,\hat{y})
+\]</div>
+
+<h3>1.2 What “deep” adds</h3>
+<p>Large data, many hidden layers, automatic feature learning (you do not hand-draw “eye detectors”), repeated training passes, a learning algorithm, and serious compute (often a GPU). Applications: face and image recognition, speech, NLP (translators, chatbots), medical scans, recommendations, driving assistance, fraud alerts, captions and speech-to-text as assistive tech.</p>
+
+<h2>2. Secure collaboration and data protection</h2>
+<p>Group work on an LMS is only “collaboration” if the wrong person cannot join and the right person’s file cannot vanish.</p>
+<div class="card-row">
+  <div class="card"><div class="label">Authentication</div>Password, OTP, biometric — prove you are you.</div>
+  <div class="card"><div class="label">Access control</div>View / edit / share rights. Not everyone is an owner.</div>
+  <div class="card"><div class="label">Accountability</div>Logs: who changed the doc at 22:14?</div>
+  <div class="card gold"><div class="label">Private channels</div>Official LMS / school email beat a public random link.</div>
+</div>
+<p><strong>Encryption</strong> turns plaintext into ciphertext.</p>
+<div class="formula">\[
+\text{plaintext} \xrightarrow[\text{key}]{\text{encrypt}} \text{ciphertext} \xrightarrow[\text{key}]{\text{decrypt}} \text{plaintext}
+\]</div>
+<ul>
+  <li><strong>Symmetric:</strong> same secret both ways — fast; key-sharing is the hard part.</li>
+  <li><strong>Asymmetric:</strong> public key to lock, private key to unlock — how HTTPS starts.</li>
+</ul>
+<p>Also: strong passwords, backup/recovery (the Sukkur crash story in the book), firewall, antivirus.</p>
+
+<h2>3. Threats and the boring defences that work</h2>
+<table>
+  <caption>Table 2. Name the threat, then name the shield</caption>
+  <tr><th>Threat</th><th>What it looks like</th><th>Mitigation</th></tr>
+  <tr><td>Malware</td><td>Virus, worm, ransomware</td><td>Antivirus, do not sideload junk</td></tr>
+  <tr><td>Phishing</td><td>“Update your fee portal” email (Hyderabad college example)</td><td>Check the real domain; never send a password</td></tr>
+  <tr><td>Unauthorised access</td><td>Shared passwords, open lab accounts</td><td>Unique passwords, <strong>2FA</strong></td></tr>
+  <tr><td>Data / identity theft</td><td>Stolen marks file, CNIC photos</td><td>Encryption, least privilege</td></tr>
+  <tr><td>DoS</td><td>Service flooded until it dies</td><td>Provider protections, rate limits</td></tr>
+  <tr><td>Human error</td><td>Wrong share link, no backup</td><td>Training, official tools, rehearsed restore</td></tr>
+</table>
+
+<h2>4. Equity is not the same as equal access</h2>
+<p><strong>Equal access</strong> hands everyone the same Zoom link. <strong>Equity</strong> adds what a particular learner needs so that link is actually usable: captions, a recorded lecture for the student on a 2G connection, a mobile-friendly page, a screen reader. Rural Sindh hearing-support in the textbook is an equity story, not a gadget story.</p>
+<p>Collaboration tools: Google Docs, Zoom, Microsoft Teams, Google Classroom / LMS, email, and WhatsApp used carefully (no leaked marksheets in a 200-person group).</p>
+
+<div class="self-check">
+  <h4>Self-check</h4>
+  <ol>
+    <li>Is deep learning a different field from machine learning, or a method inside it?</li>
+    <li>Public key encrypts a message to you. Which key decrypts it?</li>
+    <li>A teacher posts the same PDF to every student. Equal access or equity? What would equity add for a student with low vision?</li>
+  </ol>
+  <div class="answer"><strong>Answers.</strong> (1) A method inside ML (training deep nets). (2) Your private key. (3) Equal access; equity would add a tagged/large-type or audio version and a high-contrast theme.</div>
+</div>
+
+<div class="recap">
+  <h3>Recap</h3>
+  <ol>
+    <li>ML learns; a neural net is a layered model; deep learning trains many hidden layers.</li>
+    <li>Input / hidden / output + weights, bias, activation, loss.</li>
+    <li>Protect collaboration with authentication, access control, logs, encryption, backups.</li>
+    <li>Threats: malware, phishing, theft, DoS, human error. Shields: 2FA, firewall, awareness.</li>
+    <li>Equal access $\neq$ equity. Design the extra support on purpose.</li>
+  </ol>
+</div>
+<div class="footer-note"><span>Teach Yourself · XII Unit 5</span><span>Redraw Figure 1 and label a phishing email with three red flags.</span></div>
+</div>
+</body>
+</html>

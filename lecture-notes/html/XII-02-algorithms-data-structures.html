@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Teach Yourself · XII Unit 2 · Algorithms &amp; Data Structures</title>
+<link rel="stylesheet" href="../assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="../assets/mathjax/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+
+<section class="cover">
+  <div>
+    <div class="cover-kicker"><span>Teach Yourself Lecture Notes</span><span>Class XII · Intermediate</span></div>
+    <h1>Unit 2<br>Computational Thinking<br>&amp; Algorithms</h1>
+    <p class="subtitle">Correctness · clarity · Big-O · linear and non-linear structures</p>
+    <div class="badge-row">
+      <span class="badge">Trace tables</span>
+      <span class="badge">$O(1)$ $O(\log n)$ $O(n)$ $O(n^2)$</span>
+      <span class="badge">Stack LIFO</span>
+      <span class="badge">Queue FIFO</span>
+      <span class="badge">Tree &amp; graph</span>
+    </div>
+  </div>
+  <div class="cover-meta">Class XI invented algorithms. Class XII asks: is it right, is it clear, and what does it cost?</div>
+</section>
+
+<div class="running"><span>XII · Unit 2 · Algorithms &amp; Data Structures</span><span>Teach Yourself</span></div>
+
+<h2>1. Correctness — prove it by hand before you trust it</h2>
+<p>An algorithm is <strong>correct</strong> when every valid input produces the specified output and the process stops. Two classroom tools:</p>
+<div class="card-row">
+  <div class="card"><div class="label">Trace table</div>A dry-run grid: line number, each variable, condition true/false, input/output. Best for loops and arithmetic slips. High effort for large $n$, so use a tiny example (soldier heights between $1.57$ and $1.91\,\mathrm{m}$).</div>
+  <div class="card gold"><div class="label">Stepwise reasoning</div>Argue the invariant: “after $k$ steps, $S$ holds the sum of the first $k$ integers.” Catches structural bugs (forgot $N=0$) that a short trace might miss.</div>
+</div>
+
+<table>
+  <caption>Table 1. Trace of “sum $1..N$” for $N=3$</caption>
+  <tr><th>Line</th><th>$i$</th><th>$S$</th><th>Condition</th><th>Notes</th></tr>
+  <tr><td>init</td><td>—</td><td>$0$</td><td>—</td><td>$S\leftarrow 0$</td></tr>
+  <tr><td>loop</td><td>$1$</td><td>$1$</td><td>$i\le 3$ T</td><td>$S\leftarrow S+i$</td></tr>
+  <tr><td>loop</td><td>$2$</td><td>$3$</td><td>$i\le 3$ T</td><td></td></tr>
+  <tr><td>loop</td><td>$3$</td><td>$6$</td><td>$i\le 3$ T</td><td></td></tr>
+  <tr><td>exit</td><td>$4$</td><td>$6$</td><td>$i\le 3$ F</td><td>output $6$</td></tr>
+</table>
+<div class="formula">\[ S = \frac{N(N+1)}{2} \quad\text{is the closed form you can use to check the trace.} \]</div>
+
+<h2>2. Clarity — modularity and readability</h2>
+<p><strong>Modularity:</strong> one function, one job (Single Responsibility), loose coupling, abstraction. <code>CalculateSum()</code> and <code>FindAverage()</code> beat a 40-line blob.</p>
+<p><strong>Readability:</strong> <code>velocity = distance / time</code> documents itself. Consistent names, shallow nesting, indentation, comments only where the why is not obvious.</p>
+<p><strong>Refine for clarity:</strong> rename, extract a module, flatten a condition. <strong>Refine for efficiency:</strong> fewer steps, stop early (short-circuit), cache a repeated calculation, pick a better structure.</p>
+
+<h2>3. Efficiency — counting the work</h2>
+<p>Cost has two axes: <strong>time</strong> (steps as $n$ grows) and <strong>space</strong> (extra memory). Drivers: number of steps, number of conditions, number of repetitions. Ask: does it scale? where is the bottleneck? is the cost worth the gain?</p>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="200" fill="#fff"/>
+      <text x="20" y="20" font-size="12" fill="#4a5564">Growth of steps as n increases (sketch, not to scale)</text>
+      <line x1="60" y1="170" x2="680" y2="170" stroke="#10263f"/>
+      <line x1="60" y1="170" x2="60" y2="30" stroke="#10263f"/>
+      <path d="M60 150 H680" stroke="#1f6b45" stroke-width="2"/>
+      <text x="690" y="154" font-size="11" fill="#1f6b45">O(1)</text>
+      <path d="M60 165 Q200 140 400 110 T680 80" fill="none" stroke="#0b6b6e" stroke-width="2"/>
+      <text x="690" y="84" font-size="11" fill="#0b6b6e">O(log n)</text>
+      <path d="M60 165 L680 70" fill="none" stroke="#2a4d8f" stroke-width="2"/>
+      <text x="640" y="66" font-size="11" fill="#2a4d8f">O(n)</text>
+      <path d="M60 165 Q240 150 400 90 T560 30" fill="none" stroke="#8a3b12" stroke-width="2"/>
+      <text x="500" y="28" font-size="11" fill="#8a3b12">O(n²)</text>
+    </svg>
+  </div>
+  <figcaption>Figure 1. Big-O families the course expects you to recognise, not derive formally.</figcaption>
+</figure>
+
+<table>
+  <caption>Table 2. Conceptual Big-O</caption>
+  <tr><th>Class</th><th>Meaning</th><th>Classroom example</th></tr>
+  <tr><td>$O(1)$</td><td>Constant — does not grow with $n$</td><td>Array index $A[i]$; hash lookup</td></tr>
+  <tr><td>$O(\log n)$</td><td>Halves the work</td><td>Binary search</td></tr>
+  <tr><td>$O(n)$</td><td>One pass</td><td>Linear search, “process each item once”</td></tr>
+  <tr><td>$O(n\log n)$</td><td>Divide-and-conquer sort (mentioned)</td><td>Efficient general sorting</td></tr>
+  <tr><td>$O(n^2)$</td><td>Nested loops</td><td>Bubble / selection, all-pairs compare</td></tr>
+</table>
+<p><strong>Repetition hierarchy:</strong> logarithmic (excellent) $\to$ linear (good) $\to$ quadratic (poor for large $n$). Short-circuit a compound test when the first clause already decides it.</p>
+
+<h2>4. Data structures — the furniture the algorithm sits on</h2>
+<p>A <strong>data structure</strong> is an organised way to store and retrieve values. Choose it from the <em>problem’s verbs</em>, not from fashion.</p>
+
+<h3>4.1 Linear structures</h3>
+<div class="card-row">
+  <div class="card"><div class="label">Array</div>Fixed sequence, index $0..n-1$, access $O(1)$. Painful insert/delete in the middle. Classroom chairs with painted numbers.</div>
+  <div class="card"><div class="label">Linked list</div>Nodes of (data + pointer). Walk from the head. Easy insert once you are there; no jumping. Browser back/forward history.</div>
+  <div class="card gold"><div class="label">Stack · LIFO</div><strong>PUSH</strong> adds on top; <strong>POP</strong> removes from top. Undo, plate pile, function-call return.</div>
+  <div class="card idea"><div class="label">Queue · FIFO</div><strong>Enqueue</strong> at rear; <strong>Dequeue</strong> from front; both $O(1)$ with two pointers. Printer line, ticket window.</div>
+</div>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="200" fill="#fff"/>
+      <text x="20" y="22" font-weight="700" font-size="13">STACK (LIFO)</text>
+      <rect x="40" y="140" width="80" height="30" fill="#e6f3f3" stroke="#0b6b6e"/><text x="80" y="160" text-anchor="middle">10</text>
+      <rect x="40" y="110" width="80" height="30" fill="#e6f3f3" stroke="#0b6b6e"/><text x="80" y="130" text-anchor="middle">20</text>
+      <rect x="40" y="80" width="80" height="30" fill="#f8efd6" stroke="#b8891f"/><text x="80" y="100" text-anchor="middle">30 top</text>
+      <text x="140" y="96" font-size="12">PUSH 30 / POP → 30</text>
+      <text x="360" y="22" font-weight="700" font-size="13">QUEUE (FIFO)</text>
+      <rect x="360" y="90" width="70" height="40" fill="#f8ece4" stroke="#8a3b12"/><text x="395" y="114" text-anchor="middle">76</text>
+      <rect x="430" y="90" width="70" height="40" fill="#e8eef8" stroke="#2a4d8f"/><text x="465" y="114" text-anchor="middle">90</text>
+      <rect x="500" y="90" width="70" height="40" fill="#e8eef8" stroke="#2a4d8f"/><text x="535" y="114" text-anchor="middle">77</text>
+      <rect x="570" y="90" width="70" height="40" fill="#e6f4ec" stroke="#1f6b45"/><text x="605" y="114" text-anchor="middle">23</text>
+      <text x="395" y="150" text-anchor="middle" font-size="11">FRONT · DEQUEUE</text>
+      <text x="605" y="150" text-anchor="middle" font-size="11">REAR · ENQUEUE</text>
+    </svg>
+  </div>
+  <figcaption>Figure 2. Stack grows upward from a single end. Queue walks from front to rear. Do not mix the verbs.</figcaption>
+</figure>
+
+<h3>4.2 Non-linear structures</h3>
+<div class="two-col">
+  <div>
+    <h4>Tree</h4>
+    <p>A hierarchy from one <strong>root</strong>. Each child has one parent. Family tree, organisation chart, folder tree.</p>
+    <svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="130" cy="24" r="16" fill="#10263f"/><text x="130" y="28" text-anchor="middle" fill="#fff" font-size="11">R</text>
+      <circle cx="60" cy="80" r="16" fill="#0b6b6e"/><text x="60" y="84" text-anchor="middle" fill="#fff" font-size="11">A</text>
+      <circle cx="200" cy="80" r="16" fill="#0b6b6e"/><text x="200" y="84" text-anchor="middle" fill="#fff" font-size="11">B</text>
+      <circle cx="30" cy="124" r="12" fill="#b8891f"/>
+      <circle cx="90" cy="124" r="12" fill="#b8891f"/>
+      <line x1="120" y1="36" x2="70" y2="66" stroke="#10263f"/>
+      <line x1="140" y1="36" x2="190" y2="66" stroke="#10263f"/>
+      <line x1="50" y1="94" x2="34" y2="112" stroke="#10263f"/>
+      <line x1="70" y1="94" x2="86" y2="112" stroke="#10263f"/>
+    </svg>
+  </div>
+  <div>
+    <h4>Graph</h4>
+    <p><strong>Vertices</strong> (nodes) plus <strong>edges</strong> (links). No forced hierarchy. Social network, road map (cities = nodes, roads = edges). Many routes may exist.</p>
+    <svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="14" fill="#2a4d8f"/><circle cx="140" cy="30" r="14" fill="#2a4d8f"/>
+      <circle cx="210" cy="80" r="14" fill="#2a4d8f"/><circle cx="80" cy="110" r="14" fill="#2a4d8f"/>
+      <line x1="52" y1="46" x2="128" y2="34" stroke="#10263f" stroke-width="2"/>
+      <line x1="152" y1="38" x2="198" y2="72" stroke="#10263f" stroke-width="2"/>
+      <line x1="40" y1="54" x2="74" y2="98" stroke="#10263f" stroke-width="2"/>
+      <line x1="94" y1="110" x2="198" y2="86" stroke="#10263f" stroke-width="2"/>
+      <line x1="148" y1="42" x2="90" y2="100" stroke="#10263f" stroke-width="2"/>
+    </svg>
+  </div>
+</div>
+
+<h3>4.3 Shared operations and retrieval traces</h3>
+<p>Insert, delete, traverse, search, sort — every structure supports some of these with different costs.</p>
+<ul>
+  <li><strong>Array retrieval:</strong> jump to an index, or scan forward/back.</li>
+  <li><strong>List retrieval:</strong> start at the head; walk pointers by position or by key. There is no $A[i]$ jump.</li>
+  <li><strong>Queue retrieval:</strong> the only honest removal is from the <strong>front</strong>.</li>
+</ul>
+
+<table>
+  <caption>Table 3. Pick the furniture from the verb</caption>
+  <tr><th>Problem verb</th><th>Structure</th></tr>
+  <tr><td>Next / previous, grades in a term</td><td>Array or list</td></tr>
+  <tr><td>Undo / backtrack</td><td>Stack</td></tr>
+  <tr><td>First-come first-served (printer)</td><td>Queue</td></tr>
+  <tr><td>Parent / child (org chart)</td><td>Tree</td></tr>
+  <tr><td>Many-to-many links (GPS, friends)</td><td>Graph</td></tr>
+</table>
+
+<div class="self-check">
+  <h4>Self-check</h4>
+  <ol>
+    <li>Why is binary search $O(\log n)$ while scanning an unsorted list is $O(n)$?</li>
+    <li>PUSH $10$, PUSH $20$, POP, PUSH $30$. What does a second POP return?</li>
+    <li>A college wants the fairest print spooler. Stack or queue?</li>
+  </ol>
+  <div class="answer"><strong>Answers.</strong> (1) Each binary probe discards half; a scan may look at every cell. (2) $30$ (the stack is $[10,30]$ after the first pop-and-push). (3) Queue — FIFO is fairness.</div>
+</div>
+
+<div class="recap">
+  <h3>Recap</h3>
+  <ol>
+    <li>Correctness: trace table + stepwise reasoning + edge cases.</li>
+    <li>Clarity: modules, names, shallow control flow.</li>
+    <li>Efficiency: $O(1), O(\log n), O(n), O(n^2)$; watch nested loops.</li>
+    <li>Array $O(1)$ index; list walks; stack LIFO; queue FIFO $O(1)$ enqueue/dequeue.</li>
+    <li>Trees branch from a root; graphs connect freely. Match structure to the problem’s verb.</li>
+  </ol>
+</div>
+<div class="footer-note"><span>Teach Yourself · XII Unit 2</span><span>Act a stack with books and a queue with a classroom line.</span></div>
+</div>
+</body>
+</html>

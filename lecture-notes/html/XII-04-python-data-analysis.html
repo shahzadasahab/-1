@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Teach Yourself · XII Unit 4 · Data Analysis with Python</title>
+<link rel="stylesheet" href="../assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="../assets/mathjax/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+
+<section class="cover">
+  <div>
+    <div class="cover-kicker"><span>Teach Yourself Lecture Notes</span><span>Class XII · Intermediate</span></div>
+    <h1>Unit 4<br>Data and Analysis</h1>
+    <p class="subtitle">SQLite · pandas · matplotlib · mean / median / spread</p>
+    <div class="badge-row">
+      <span class="badge">sqlite3</span>
+      <span class="badge">DataFrame</span>
+      <span class="badge">bar · hist · scatter · box</span>
+      <span class="badge">$\bar{x}$, median, $\sigma$</span>
+    </div>
+  </div>
+  <div class="cover-meta">Schools, shops, and hospitals already decide from data. This unit is how a Python program joins that conversation.</div>
+</section>
+
+<div class="running"><span>XII · Unit 4 · Data Analysis with Python</span><span>Teach Yourself</span></div>
+
+<h2>0. Analysis is a pipeline, not a chart</h2>
+<p><strong>Data analysis</strong> examines, organises, and interprets data so someone can decide. Python is popular because it reads files and databases, structures rows, computes statistics, and draws graphs — one language from source to slide.</p>
+<div class="formula">\[ \text{source} \to \text{connect} \to \text{clean} \to \text{compute} \to \text{visualise} \to \text{decide} \]</div>
+
+<h2>1. Talking to a database from Python</h2>
+<p>A program cannot “see” a database until a <strong>connection</strong> exists. Stack: database engine $\to$ driver $\to$ connection $\to$ cursor $\to$ SQL $\to$ <code>commit()</code> / <code>fetchall()</code> $\to$ <code>close()</code>.</p>
+<pre><code>import sqlite3
+con = sqlite3.connect("school.db")
+cur = con.cursor()
+cur.execute("""CREATE TABLE IF NOT EXISTS marks (
+    id INTEGER PRIMARY KEY, name TEXT, math INTEGER, science INTEGER)""")
+cur.execute("INSERT INTO marks (name, math, science) VALUES (?,?,?)",
+            ("Ayesha", 88, 91))
+con.commit()
+cur.execute("SELECT name, math FROM marks WHERE math &gt;= 80")
+print(cur.fetchall())
+con.close()
+</code></pre>
+<p>SQL verbs the course expects: <code>CREATE</code>, <code>INSERT</code>, <code>SELECT</code>, <code>UPDATE</code>, <code>DELETE</code>. SQLite is a single file — perfect for labs with no server.</p>
+
+<h2>2. pandas DataFrames — a table that can think</h2>
+<pre><code>import pandas as pd
+df = pd.read_csv("marks.csv")
+# df = pd.read_excel("marks.xlsx", sheet_name="Term1")
+df = pd.DataFrame({"Name": ["Ali","Sara"], "Math": [70, 90], "Science": [80, 85]})
+df["Total"] = df["Math"] + df["Science"]
+print(df.head())
+print(df.isnull().sum())
+df["Math"] = df["Math"].fillna(df["Math"].mean())
+df = df.dropna()          # last resort: drop broken rows
+</code></pre>
+<p>Missing cells arrive as <code>NaN</code>. Filling with the column mean keeps $n$ intact; dropping rows is honest when the row is junk. Never fill first and think later.</p>
+
+<h2>3. Organising for a human eye</h2>
+<div class="card-row">
+  <div class="card"><div class="label">Tabular</div>Rows and named columns — the DataFrame itself.</div>
+  <div class="card"><div class="label">Frequency table</div>Score bands (0–9, 10–19, …) and how many students sit in each.</div>
+  <div class="card gold"><div class="label">Graph</div>A picture of the same numbers. Choose the plot from the question, not from which function you remember.</div>
+</div>
+
+<h2>4. matplotlib — six plots, six jobs</h2>
+<pre><code>import matplotlib.pyplot as plt
+plt.figure()
+plt.plot(years, averages, marker="o")     # trend
+plt.bar(subjects, marks)                  # compare categories
+plt.pie(sizes, labels=labels, autopct="%1.1f%%")
+plt.hist(scores, bins=8)                  # distribution; bars touch
+plt.scatter(rain, yield_)                 # relationship
+plt.boxplot([class_a, class_b])           # spread + outliers
+plt.xlabel("..."); plt.ylabel("..."); plt.title("...")
+plt.grid(True); plt.tight_layout(); plt.show()
+</code></pre>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="200" fill="#fff"/>
+      <!-- bar -->
+      <text x="70" y="20" font-size="11" font-weight="700">Bar</text>
+      <rect x="30" y="80" width="24" height="70" fill="#0b6b6e"/>
+      <rect x="62" y="50" width="24" height="100" fill="#10263f"/>
+      <rect x="94" y="100" width="24" height="50" fill="#b8891f"/>
+      <!-- hist -->
+      <text x="230" y="20" font-size="11" font-weight="700">Histogram</text>
+      <rect x="180" y="90" width="28" height="60" fill="#2a4d8f"/>
+      <rect x="208" y="60" width="28" height="90" fill="#2a4d8f"/>
+      <rect x="236" y="80" width="28" height="70" fill="#2a4d8f"/>
+      <rect x="264" y="110" width="28" height="40" fill="#2a4d8f"/>
+      <!-- scatter -->
+      <text x="400" y="20" font-size="11" font-weight="700">Scatter</text>
+      <circle cx="360" cy="120" r="4" fill="#8a3b12"/>
+      <circle cx="380" cy="100" r="4" fill="#8a3b12"/>
+      <circle cx="400" cy="90" r="4" fill="#8a3b12"/>
+      <circle cx="430" cy="70" r="4" fill="#8a3b12"/>
+      <circle cx="450" cy="78" r="4" fill="#8a3b12"/>
+      <!-- box -->
+      <text x="560" y="20" font-size="11" font-weight="700">Box plot</text>
+      <line x1="560" y1="50" x2="560" y2="150" stroke="#10263f"/>
+      <rect x="540" y="80" width="40" height="50" fill="#f8efd6" stroke="#10263f"/>
+      <line x1="540" y1="105" x2="580" y2="105" stroke="#b8891f" stroke-width="2"/>
+      <text x="20" y="190" font-size="11" fill="#4a5564">Bar compares labels. Hist shows a continuous variable. Scatter asks “do X and Y move together?” Box shows median and spread.</text>
+    </svg>
+  </div>
+  <figcaption>Figure 1. Four of the six exam plots. Also practise line (time) and pie (parts of a whole).</figcaption>
+</figure>
+
+<table>
+  <caption>Table 1. Pick the plot from the question</caption>
+  <tr><th>Question</th><th>Plot</th></tr>
+  <tr><td>How did yearly averages move?</td><td>Line</td></tr>
+  <tr><td>Which subject scored higher?</td><td>Bar</td></tr>
+  <tr><td>What share chose Biology?</td><td>Pie</td></tr>
+  <tr><td>How are scores distributed?</td><td>Histogram</td></tr>
+  <tr><td>Does yield rise with rain?</td><td>Scatter</td></tr>
+  <tr><td>Which class is more spread out?</td><td>Box plot</td></tr>
+</table>
+
+<h2>5. Descriptive statistics — the numbers behind the picture</h2>
+<p>For a list $x_1,x_2,\ldots,x_n$:</p>
+<div class="formula">\[
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i, \qquad
+\text{Range} = x_{\max}-x_{\min}, \qquad
+\sigma^2 = \frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^2, \qquad
+\sigma = \sqrt{\sigma^2}
+\]</div>
+<p>(Some courses use $n-1$ in the variance. Follow the mark scheme; the idea is “average squared distance from the mean”.)</p>
+<ul>
+  <li><strong>Mean</strong> uses every value — pulled by outliers (one huge salary).</li>
+  <li><strong>Median</strong> is the middle after sorting — safer for skewed pay.</li>
+  <li><strong>Mode</strong> is the most frequent — the right average for “favourite fruit”.</li>
+</ul>
+<table>
+  <caption>Table 2. Which centre?</caption>
+  <tr><th>Situation</th><th>Use</th><th>Why</th></tr>
+  <tr><td>Balanced test scores</td><td>Mean</td><td>Uses all information</td></tr>
+  <tr><td>Salaries with two tycoons</td><td>Median</td><td>Resists extremes</td></tr>
+  <tr><td>Favourite fruit / blood group</td><td>Mode</td><td>Category, not a number line</td></tr>
+</table>
+<p><strong>Spread:</strong> range (quick, fragile), variance / standard deviation (typical distance from $\bar{x}$), min and max (the edges), box-plot quartiles $Q_1$, median, $Q_3$.</p>
+
+<div class="self-check">
+  <h4>Self-check</h4>
+  <ol>
+    <li>Marks: $10, 12, 13, 13, 80$. Mean vs median — which tells the truth about a “typical” student?</li>
+    <li>Why do histogram bars touch when bar-chart bars usually do not?</li>
+    <li>Write the pandas line that replaces missing Science marks with the column mean.</li>
+  </ol>
+  <div class="answer"><strong>Answers.</strong> (1) Median $13$; the mean is dragged toward $80$. (2) A histogram bins a continuous axis; neighbouring bins share a boundary. (3) <code>df["Science"]=df["Science"].fillna(df["Science"].mean())</code>.</div>
+</div>
+
+<div class="recap">
+  <h3>Recap</h3>
+  <ol>
+    <li><code>sqlite3</code>: connect, cursor, execute, commit, fetch, close.</li>
+    <li>pandas: <code>read_csv</code>, new columns, <code>isnull</code>, <code>fillna</code>, <code>dropna</code>.</li>
+    <li>Six plots: line, bar, pie, hist, scatter, box — match plot to question.</li>
+    <li>Centre: mean / median / mode. Spread: range, variance, $\sigma$, quartiles.</li>
+  </ol>
+</div>
+<div class="footer-note"><span>Teach Yourself · XII Unit 4</span><span>Chart one CSV three ways: bar, hist, box. Write one sentence each chart allows.</span></div>
+</div>
+</body>
+</html>

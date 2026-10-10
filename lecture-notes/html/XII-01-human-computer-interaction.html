@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Teach Yourself · XII Unit 1 · Human–Computer Interaction</title>
+<link rel="stylesheet" href="../assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="../assets/mathjax/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+
+<section class="cover">
+  <div>
+    <div class="cover-kicker"><span>Teach Yourself Lecture Notes</span><span>Class XII · Intermediate</span></div>
+    <h1>Unit 1<br>Human–Computer Interaction</h1>
+    <p class="subtitle">HCI · accessibility · UI/UX · wireframes · Figma · evaluate</p>
+    <div class="badge-row">
+      <span class="badge">Traditional vs natural</span>
+      <span class="badge">Contrast &amp; inclusive nav</span>
+      <span class="badge">Low-fi → high-fi</span>
+      <span class="badge">SUS &amp; NPS</span>
+    </div>
+  </div>
+  <div class="cover-meta">If a human cannot use it, the code does not matter. HCI is the subject that says that out loud.</div>
+</section>
+
+<div class="running"><span>XII · Unit 1 · Human–Computer Interaction</span><span>Teach Yourself</span></div>
+
+<h2>0. HCI in one sentence</h2>
+<p><strong>Human–Computer Interaction (HCI)</strong> — also called CHI or MMI (Man–Machine Interaction) — is the design of technology so that it is easy, efficient, and respectful of human bodies and minds. UI is what you see; UX is what you feel across the whole journey.</p>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="200" fill="#fff"/>
+      <circle cx="160" cy="100" r="70" fill="#e6f3f3" stroke="#0b6b6e" stroke-width="2"/>
+      <text x="160" y="96" text-anchor="middle" font-size="14" font-weight="700">HUMAN</text>
+      <text x="160" y="116" text-anchor="middle" font-size="11">sight · touch · voice</text>
+      <circle cx="560" cy="100" r="70" fill="#e8eef8" stroke="#2a4d8f" stroke-width="2"/>
+      <text x="560" y="96" text-anchor="middle" font-size="14" font-weight="700">COMPUTER</text>
+      <text x="560" y="116" text-anchor="middle" font-size="11">screen · speaker · haptic</text>
+      <path d="M230 80 H490" stroke="#b8891f" stroke-width="3" marker-end="url(#a)"/>
+      <path d="M490 120 H230" stroke="#10263f" stroke-width="3"/>
+      <text x="360" y="70" text-anchor="middle" font-size="11">input (keys, tap, speech)</text>
+      <text x="360" y="148" text-anchor="middle" font-size="11">feedback (pixels, sound, vibration)</text>
+    </svg>
+  </div>
+  <figcaption>Figure 1. The HCI loop. A missing feedback channel is a defect, not a style choice.</figcaption>
+</figure>
+
+<h3>0.1 Sensory channels</h3>
+<div class="card-row">
+  <div class="card"><div class="label">Sight</div>Screens, icons, video</div>
+  <div class="card"><div class="label">Touch</div>Tap, type, swipe $\leftrightarrow$ click or vibration</div>
+  <div class="card"><div class="label">Hearing</div>Spoken prompts, notification sounds</div>
+  <div class="card"><div class="label">Voice</div>“Alexa, play music”</div>
+  <div class="card"><div class="label">Spatial</div>Body position in a motion game / VR</div>
+</div>
+
+<table>
+  <caption>Table 1. Two families of interaction</caption>
+  <tr><th>Traditional (Interaction I)</th><th>Natural (Interaction II)</th></tr>
+  <tr><td>Mouse, keyboard, tap/swipe</td><td>Voice, gesture, face, spatial tracking</td></tr>
+  <tr><td>PC: keys + mouse $\to$ monitor + speakers</td><td>Smart speaker, Kinect, face unlock</td></tr>
+  <tr><td>Phone: tap/swipe $\to$ light, sound, vibrate</td><td>Multimodal: several channels at once</td></tr>
+</table>
+
+<h2>1. Components, types, and why HCI pays</h2>
+<p><strong>Components:</strong> user (end-user vs stakeholder), computer system, interaction, task, UI, environment, feedback (system $\leftrightarrow$ user).</p>
+<p><strong>Interaction styles:</strong> direct manipulation, command line, menus, forms, conversation, gesture, voice, context-aware, biometric, haptic, multimodal.</p>
+<p><strong>UI families:</strong> GUI, CLI, touch, VUI, NUI (VR / Kinect).</p>
+<p><strong>Why it matters:</strong> faster work, inclusion, room for AR/VR/AI/IoT, commercial survival, ethical duty not to exclude.</p>
+
+<h2>2. Accessibility is not a theme — it is a constraint</h2>
+<div class="card-row">
+  <div class="card ok"><div class="label">Contrast</div>Text must stand off the background. Pale grey on white fails in sunlight and for low vision.</div>
+  <div class="card ok"><div class="label">Readability</div>Sane type size, line length, and language. Decorative fonts are not “friendly”.</div>
+  <div class="card ok"><div class="label">Colour-blind safe</div>Never rely on colour alone. Pair red/green with a symbol and a label.</div>
+  <div class="card ok"><div class="label">Inclusive navigation</div>Tab order, visible focus, screen-reader names, captions, vibration as a second channel.</div>
+</div>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 130" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="130" fill="#fff"/>
+      <rect x="20" y="20" width="200" height="70" fill="#f3f4f6"/>
+      <text x="120" y="50" text-anchor="middle" fill="#d1d5db" font-size="14">Low contrast</text>
+      <text x="120" y="70" text-anchor="middle" fill="#9ca3af" font-size="11">fails WCAG-style checks</text>
+      <rect x="260" y="20" width="200" height="70" fill="#10263f"/>
+      <text x="360" y="50" text-anchor="middle" fill="#fffdf8" font-size="14">High contrast</text>
+      <text x="360" y="70" text-anchor="middle" fill="#f8efd6" font-size="11">readable outdoors</text>
+      <rect x="500" y="20" width="200" height="70" fill="#fff" stroke="#10263f"/>
+      <text x="600" y="48" text-anchor="middle" font-size="13">Error ✕ + “Failed”</text>
+      <text x="600" y="70" text-anchor="middle" font-size="11" fill="#4a5564">colour + symbol + word</text>
+    </svg>
+  </div>
+  <figcaption>Figure 2. Accessibility tests you can do on paper: contrast, and “would this still work in greyscale?”</figcaption>
+</figure>
+
+<h2>3. Need analysis — design for someone, not for “users”</h2>
+<p>A <strong>need</strong> is the gap between the current state and the desired state. Steps: identify users $\to$ collect information $\to$ analyse $\to$ prioritise $\to$ propose solutions.</p>
+<p><strong>Mobile banking example:</strong> biometric login, transfers, an elderly-friendly large-type mode, and a second language are needs, not decorations. A 19-year-old designer who only tests on their own phone will miss all four.</p>
+
+<h2>4. Common HCI failures and how you repair them</h2>
+<table>
+  <caption>Table 2. Problems you will be asked to name</caption>
+  <tr><th>Symptom</th><th>Likely cause</th><th>Repair</th></tr>
+  <tr><td>Users cannot find the next button</td><td>Hidden navigation, poor hierarchy</td><td>Visible primary action, consistent menu</td></tr>
+  <tr><td>Errors with no explanation</td><td>System-centred messages</td><td>Plain language + how to fix</td></tr>
+  <tr><td>Tiny hit targets</td><td>Desktop layout on a phone</td><td>Thumb-sized targets, spacing</td></tr>
+  <tr><td>Colour-only status</td><td>Ignored accessibility</td><td>Icon + text</td></tr>
+  <tr><td>Ten-step signup</td><td>No need analysis</td><td>Cut fields; progressive disclosure</td></tr>
+</table>
+<p><strong>Improvement methods:</strong> user-centred design, iterative prototypes, heuristic review, captions and keyboard paths, A/B tests, watch a real person attempt a real task in silence while you take notes.</p>
+
+<h2>5. UI, UX, wireframe, prototype</h2>
+<div class="two-col">
+  <div class="card"><div class="label">UI</div>Visual and interactive layout: colour, type, controls, spacing.</div>
+  <div class="card gold"><div class="label">UX</div>The whole experience: ease, trust, time-to-task, how you feel when you leave.</div>
+</div>
+<p>A <strong>wireframe</strong> is a layout blueprint. A <strong>prototype</strong> is an early model you can tap to test flow before anyone writes production code.</p>
+<table>
+  <caption>Table 3. Fidelity</caption>
+  <tr><th></th><th>Low-fidelity</th><th>High-fidelity</th></tr>
+  <tr><td>Looks like</td><td>Boxes, lines, labels</td><td>Colour, type, images, motion</td></tr>
+  <tr><td>Purpose</td><td>Structure and flow, cheap changes</td><td>Look-and-feel, stakeholder demo</td></tr>
+  <tr><td>Speed</td><td>Minutes (paper or Figma frames)</td><td>Hours to days</td></tr>
+</table>
+
+<h3>5.1 Figma lab — the course tool</h3>
+<p>Figma is a browser-based collaborative UI tool. Typical class path: <strong>E-Tutorial of HCI</strong> or a <strong>college attendance app</strong>.</p>
+<div class="step"><div class="n">1</div><div>New file. Press <strong>F</strong> (Frame). Drag a phone frame. Set width/height in the right pane.</div></div>
+<div class="step"><div class="n">2</div><div>Duplicate frames for Welcome, Sign-up, Home, Attendance mark, Confirm.</div></div>
+<div class="step"><div class="n">3</div><div>Place boxes for title, fields, and a single obvious primary button.</div></div>
+<div class="step"><div class="n">4</div><div>Prototype tab: connect buttons to the next frame. Present and tap through.</div></div>
+<div class="step"><div class="n">5</div><div>Watch one classmate use it without help. Note every pause. That pause is a defect.</div></div>
+
+<h2>6. Test and evaluate</h2>
+<div class="card-row">
+  <div class="card"><div class="label">SUS</div>System Usability Scale — a short questionnaire, score out of $100$.</div>
+  <div class="card"><div class="label">NPS</div>Net Promoter Score — “Would you recommend this?”</div>
+  <div class="card"><div class="label">Task success</div>Did the user complete the job, and in how many seconds / errors?</div>
+</div>
+<p><strong>Evaluation kinds:</strong> user-centred, formative (during design), summative (after), expert review, survey/interview, accessibility audit.</p>
+<p><strong>Testing kinds:</strong> usability, task-based, automated audit, keyboard/screen-reader walkthrough, prototype test, A/B, compatibility, performance/load.</p>
+<p>Pipeline the textbook likes: design $\to$ prototype $\to$ user test $\to$ feedback $\to$ final attendance app.</p>
+
+<div class="self-check">
+  <h4>Self-check</h4>
+  <ol>
+    <li>UI or UX: “The transfer took four taps and I was never unsure”?</li>
+    <li>Why is a red-only error message an accessibility defect?</li>
+    <li>Name one formative and one summative activity.</li>
+  </ol>
+  <div class="answer"><strong>Answers.</strong> (1) UX (the journey), though UI helped. (2) Colour-blind and greyscale users lose the signal; add a word and an icon. (3) Formative: paper-prototype test mid-week. Summative: SUS after the finished Figma flow.</div>
+</div>
+
+<div class="recap">
+  <h3>Recap</h3>
+  <ol>
+    <li>HCI = humans + computers + the loop of input and feedback.</li>
+    <li>Traditional (keys/mouse/tap) vs natural (voice/gesture/spatial).</li>
+    <li>Accessibility: contrast, type, colour+symbol, keyboard/screen reader.</li>
+    <li>Need analysis before pixels. UI $\neq$ UX. Low-fi before high-fi.</li>
+    <li>Figma: frames, prototype links, watch a real user.</li>
+    <li>Evaluate with SUS, NPS, task success; test early and again at the end.</li>
+  </ol>
+</div>
+<div class="footer-note"><span>Teach Yourself · XII Unit 1</span><span>Sketch a 4-frame attendance wireframe on paper, then rebuild it in Figma.</span></div>
+</div>
+</body>
+</html>

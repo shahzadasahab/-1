@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Teach Yourself · XI Unit 2 · Computational Thinking &amp; Algorithms</title>
+<link rel="stylesheet" href="../assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="../assets/mathjax/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+
+<section class="cover">
+  <div>
+    <div class="cover-kicker"><span>Teach Yourself Lecture Notes</span><span>Class XI · Intermediate</span></div>
+    <h1>Unit 2<br>Computational Thinking<br>&amp; Algorithms</h1>
+    <p class="subtitle">Decompose · recognise patterns · abstract · then write the steps</p>
+    <div class="badge-row">
+      <span class="badge">Decomposition</span>
+      <span class="badge">Pattern recognition</span>
+      <span class="badge">Abstraction</span>
+      <span class="badge">Bubble &amp; selection sort</span>
+      <span class="badge">Linear &amp; binary search</span>
+    </div>
+  </div>
+  <div class="cover-meta">Self-study companion · every algorithm is traced by hand before you meet Python in Unit 3</div>
+</section>
+
+<div class="running"><span>XI · Unit 2 · Computational Thinking</span><span>Teach Yourself</span></div>
+
+<h2>0. The habit before the language</h2>
+<p><strong>Computational thinking</strong> is a four-move habit: break the mess apart, notice what repeats, hide the irrelevant, and write a language-free sequence of steps. An <strong>algorithm</strong> is that sequence. <strong>Pseudocode</strong> is the same sequence written with structured words such as IF, FOR, and WHILE so a programmer can later type it in Python without reinventing the logic.</p>
+
+<div class="callout why"><div class="mark">Why it matters</div><div>Every program you will write in Unit 3 is an algorithm wearing syntax. If the algorithm is wrong, prettier code will not save it. Examiners award marks for the steps, the trace, and the reason you chose binary search rather than linear.</div></div>
+
+<div class="card-row">
+  <div class="card">
+    <div class="label">Algorithm</div>
+    <p>A step-by-step logical procedure that solves a problem. Conceptual. Independent of any programming language. May be a numbered list.</p>
+  </div>
+  <div class="card gold">
+    <div class="label">Pseudocode</div>
+    <p>Human-readable draft of an algorithm using plain English plus structured keywords. Semi-formal. Not executable. Aimed at programmers about to code.</p>
+  </div>
+  <div class="card idea">
+    <div class="label">Why bother?</div>
+    <ul>
+      <li>Structure complex work</li>
+      <li>Save time and memory</li>
+      <li>Reuse the same idea</li>
+      <li>Reduce human error</li>
+      <li>Blueprint before code</li>
+    </ul>
+  </div>
+</div>
+
+<h2>1. Three strategies you apply in this order</h2>
+
+<h3>1.1 Decomposition</h3>
+<p>Split a large task into smaller tasks you can finish and test. Learning a language is not one mountain; it is vocabulary, grammar, tenses, sentence practice, and feedback. A school attendance app is login, class list, mark present/absent, save, report. If a piece is still too big, split it again.</p>
+
+<h3>1.2 Pattern recognition</h3>
+<p>Look for repetition and rules. A star triangle in which row $i$ prints $i$ stars is one rule, not ten separate drawings. Once you see the pattern you write one loop instead of copy-paste.</p>
+<div class="formula">\[
+\begin{align*}
+\text{row }1 &\colon *\\
+\text{row }2 &\colon **\\
+\text{row }i &\colon i\text{ stars}
+\end{align*}
+\]</div>
+
+<h3>1.3 Abstraction</h3>
+<p>Keep what changes the result; drop what does not. Making tea: boil water, add tea, steep, pour. Cup colour and kettle brand are noise. In a library search you keep title, author, and availability — not the colour of the spine.</p>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="150" fill="#fff"/>
+      <rect x="20" y="40" width="150" height="60" rx="8" fill="#10263f"/>
+      <text x="95" y="75" text-anchor="middle" fill="#fff" font-size="13">1 Decompose</text>
+      <rect x="200" y="40" width="150" height="60" rx="8" fill="#0b6b6e"/>
+      <text x="275" y="75" text-anchor="middle" fill="#fff" font-size="13">2 Find pattern</text>
+      <rect x="380" y="40" width="150" height="60" rx="8" fill="#b8891f"/>
+      <text x="455" y="75" text-anchor="middle" fill="#fff" font-size="13">3 Abstract</text>
+      <rect x="560" y="40" width="140" height="60" rx="8" fill="#1f6b45"/>
+      <text x="630" y="75" text-anchor="middle" fill="#fff" font-size="13">4 Algorithm</text>
+      <text x="20" y="130" font-size="11" fill="#4a5564">Do not jump to “the code”. The four boxes are the work.</text>
+    </svg>
+  </div>
+  <figcaption>Figure 1. Computational thinking pipeline. The algorithm is the last box, not the first.</figcaption>
+</figure>
+
+<h2>2. Sorting — putting a list in order</h2>
+<p>Sorting arranges data ascending, descending, or by time. Databases, shopping sites, and game leaderboards all sort before they show you anything useful. This unit asks you to master two simple quadratic sorts.</p>
+
+<h3>2.1 Bubble sort — neighbours swap until the list is quiet</h3>
+<p>Walk left to right. Compare each pair of neighbours. If they are in the wrong order, swap. The largest value “bubbles” to the end on pass $1$. Repeat, ignoring the already-settled tail.</p>
+<div class="formula">\[
+\begin{align*}
+&\textbf{for } k \leftarrow 1 \textbf{ to } n-1 \textbf{ do}\\
+&\quad\textbf{for } \mathit{ptr} \leftarrow 1 \textbf{ to } n-k \textbf{ do}\\
+&\quad\quad\textbf{if } A[\mathit{ptr}] > A[\mathit{ptr}+1] \textbf{ then swap}
+\end{align*}
+\]</div>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="200" fill="#fff"/>
+      <text x="20" y="24" font-size="12" font-weight="700" fill="#10263f">Trace: {8, 4, 1, 9, 3}</text>
+      <g font-family="IBM Plex Sans, sans-serif" font-size="14" text-anchor="middle">
+        <rect x="20" y="40" width="44" height="36" fill="#f8ece4" stroke="#8a3b12"/><text x="42" y="64">8</text>
+        <rect x="68" y="40" width="44" height="36" fill="#f8ece4" stroke="#8a3b12"/><text x="90" y="64">4</text>
+        <rect x="116" y="40" width="44" height="36" fill="#fff" stroke="#10263f"/><text x="138" y="64">1</text>
+        <rect x="164" y="40" width="44" height="36" fill="#fff" stroke="#10263f"/><text x="186" y="64">9</text>
+        <rect x="212" y="40" width="44" height="36" fill="#fff" stroke="#10263f"/><text x="234" y="64">3</text>
+        <text x="42" y="96" font-size="10" fill="#8a3b12">swap</text>
+        <rect x="20" y="110" width="44" height="36" fill="#fff" stroke="#10263f"/><text x="42" y="134">4</text>
+        <rect x="68" y="110" width="44" height="36" fill="#fff" stroke="#10263f"/><text x="90" y="134">1</text>
+        <rect x="116" y="110" width="44" height="36" fill="#fff" stroke="#10263f"/><text x="138" y="134">8</text>
+        <rect x="164" y="110" width="44" height="36" fill="#fff" stroke="#10263f"/><text x="186" y="134">3</text>
+        <rect x="212" y="110" width="44" height="36" fill="#e6f4ec" stroke="#1f6b45"/><text x="234" y="134">9</text>
+        <text x="300" y="64" font-size="12" text-anchor="start">Start. 8 and 4 are out of order.</text>
+        <text x="300" y="134" font-size="12" text-anchor="start">After pass 1, 9 has bubbled to the end.</text>
+      </g>
+      <text x="20" y="180" font-size="12" fill="#4a5564">Final after remaining passes: {1, 3, 4, 8, 9}. Time $O(n^2)$. Stable.</text>
+    </svg>
+  </div>
+  <figcaption>Figure 2. One bubble-sort pass. Shade the settled suffix after each outer loop.</figcaption>
+</figure>
+
+<p><strong>Complexity:</strong> about $n(n-1)/2$ comparisons $\Rightarrow O(n^2)$. It is <strong>stable</strong> (equal keys keep their order) and easy to code, but too slow for large $n$.</p>
+
+<h3>2.2 Selection sort — pick the next minimum, plant it</h3>
+<p>On pass $i$, scan the unsorted suffix, find the smallest item, and swap it into position $i$. At most one swap per pass (plus many comparisons).</p>
+<div class="formula">\[
+\begin{align*}
+&\textbf{for } i \leftarrow 1 \textbf{ to } n-1 \textbf{ do}\\
+&\quad \mathit{min} \leftarrow i\\
+&\quad\textbf{for } j \leftarrow i+1 \textbf{ to } n \textbf{ do}\\
+&\quad\quad\textbf{if } A[j] < A[\mathit{min}] \textbf{ then } \mathit{min} \leftarrow j\\
+&\quad\text{swap } A[i] \text{ with } A[\mathit{min}]
+\end{align*}
+\]</div>
+<p>Same $O(n^2)$ family as bubble sort. Usually <strong>not stable</strong>. Use it when swaps are expensive and $n$ is small — you pay for comparisons but almost no movement.</p>
+
+<table>
+  <caption>Table 1. Two $O(n^2)$ sorts compared</caption>
+  <tr><th></th><th>Bubble</th><th>Selection</th></tr>
+  <tr><td>Idea</td><td>Swap neighbours</td><td>Select the next min</td></tr>
+  <tr><td>Swaps</td><td>Many (up to one per compare)</td><td>At most one per pass</td></tr>
+  <tr><td>Stable?</td><td>Yes</td><td>Usually no</td></tr>
+  <tr><td>Best use</td><td>Teaching, tiny lists, nearly sorted (if you add a “no-swap” flag)</td><td>Tiny lists when writing is costly</td></tr>
+</table>
+
+<h2>3. Searching — finding one item</h2>
+
+<h3>3.1 Linear search — start at the left, walk</h3>
+<p>Works on <strong>unsorted</strong> data. Compare the key with $A[1]$, then $A[2]$, … until you hit it or fall off the end.</p>
+<p>Example: find $7$ in $\{8,3,6,1,7,2,4,5\}$. You inspect five cells and stop. Worst case is $n$ inspections: $O(n)$.</p>
+
+<h3>3.2 Binary search — halve a sorted list</h3>
+<p>The list <em>must already be sorted</em>. Keep three markers: beginning, end, and midpoint.</p>
+<div class="formula">\[ \mathit{MID} = \left\lfloor \frac{\mathit{BEG}+\mathit{END}}{2} \right\rfloor \]</div>
+<p>If $A[\mathit{MID}]$ is the key, stop. If the key is smaller, throw away the right half ($\mathit{END} \leftarrow \mathit{MID}-1$). If larger, throw away the left half. Repeat. You need random access (an array), not a one-way linked walk.</p>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 170" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="170" fill="#fff"/>
+      <text x="20" y="22" font-size="12" font-weight="700">Find 3 in {1,2,3,4,5,6,7,8,9}</text>
+      <g font-size="13" text-anchor="middle" font-family="IBM Plex Sans, sans-serif">
+        <rect x="20" y="40" width="36" height="32" fill="#fff" stroke="#10263f"/><text x="38" y="61">1</text>
+        <rect x="56" y="40" width="36" height="32" fill="#fff" stroke="#10263f"/><text x="74" y="61">2</text>
+        <rect x="92" y="40" width="36" height="32" fill="#e6f4ec" stroke="#1f6b45"/><text x="110" y="61">3</text>
+        <rect x="128" y="40" width="36" height="32" fill="#fff" stroke="#10263f"/><text x="146" y="61">4</text>
+        <rect x="164" y="40" width="36" height="32" fill="#f8efd6" stroke="#b8891f"/><text x="182" y="61">5</text>
+        <rect x="200" y="40" width="36" height="32" fill="#eee" stroke="#aaa"/><text x="218" y="61">6</text>
+        <rect x="236" y="40" width="36" height="32" fill="#eee" stroke="#aaa"/><text x="254" y="61">7</text>
+        <rect x="272" y="40" width="36" height="32" fill="#eee" stroke="#aaa"/><text x="290" y="61">8</text>
+        <rect x="308" y="40" width="36" height="32" fill="#eee" stroke="#aaa"/><text x="326" y="61">9</text>
+      </g>
+      <text x="182" y="92" font-size="11" text-anchor="middle" fill="#b8891f">MID = 5, key &lt; 5, discard right</text>
+      <text x="20" y="130" font-size="12">Next MID lands on 2 or 3; one more compare finds 3. About $\log_2 n$ steps.</text>
+      <text x="20" y="152" font-size="12" fill="#4a5564">Grey cells were never visited — that is the whole point of binary search.</text>
+    </svg>
+  </div>
+  <figcaption>Figure 3. Binary search throws away half the remaining list every time. Complexity $O(\log n)$.</figcaption>
+</figure>
+
+<div class="formula">\[
+T_{\text{linear}}(n) = O(n), \qquad T_{\text{binary}}(n) = O(\log n)
+\quad\text{but binary requires a sorted array.}
+\]</div>
+
+<h2>4. Is the algorithm any good?</h2>
+<div class="card-row">
+  <div class="card ok"><div class="label">Correctness</div>It matches the specification, handles edges (empty list, $n=1$, key missing), and <em>terminates</em>. Dry-run with a trace table: columns for line number, each variable, conditions, and output.</div>
+  <div class="card"><div class="label">Efficiency</div>Time (how the step-count grows with $n$) and space (extra memory). Prefer binary over linear on a large sorted catalogue. Prefer $O(n\log n)$ sorts once $n$ leaves the classroom.</div>
+  <div class="card gold"><div class="label">Clarity</div>Named steps, obvious variables, one job per block. A clever one-liner that nobody can trace is a bad algorithm for this course.</div>
+</div>
+
+<h3>4.1 Mini decision guide</h3>
+<table>
+  <caption>Table 2. Which algorithm do I reach for?</caption>
+  <tr><th>Situation</th><th>Choose</th></tr>
+  <tr><td>Find an item in an unsorted bag</td><td>Linear search</td></tr>
+  <tr><td>Find an item in a sorted array</td><td>Binary search</td></tr>
+  <tr><td>Need the data itself in order</td><td>A sort (bubble/selection for tiny $n$)</td></tr>
+  <tr><td>Same sub-problem appears again and again</td><td>Remember the answer (the textbook flags dynamic programming)</td></tr>
+</table>
+
+<div class="self-check">
+  <h4>Self-check</h4>
+  <ol>
+    <li>Why can you not binary-search a pile of unmarked exam scripts on a desk?</li>
+    <li>After the first pass of bubble sort on $\{8,4,1,9,3\}$, which value is guaranteed to be in its final seat?</li>
+    <li>Write three-line pseudocode that counts how many even numbers sit in array $A[1..n]$.</li>
+  </ol>
+  <div class="answer"><strong>Answers.</strong> (1) They are not sorted (or not randomly accessible as an indexed array). (2) The maximum, $9$, sits at the end. (3) $\mathit{count}\leftarrow 0$; FOR $i\leftarrow 1$ TO $n$ DO IF $A[i]$ MOD $2=0$ THEN $\mathit{count}\leftarrow\mathit{count}+1$.</div>
+</div>
+
+<div class="recap">
+  <h3>Recap</h3>
+  <ol>
+    <li>Think: decompose $\to$ pattern $\to$ abstract $\to$ algorithm $\to$ (later) code.</li>
+    <li>Algorithm = language-free steps; pseudocode = structured English.</li>
+    <li>Bubble: neighbour swaps, stable, $O(n^2)$.</li>
+    <li>Selection: plant the next minimum, few swaps, $O(n^2)$.</li>
+    <li>Linear search: unsorted, $O(n)$. Binary search: sorted array, $O(\log n)$, $\mathit{MID}=\lfloor(\mathit{BEG}+\mathit{END})/2\rfloor$.</li>
+    <li>Judge every algorithm on correctness, efficiency, and clarity.</li>
+  </ol>
+</div>
+<div class="footer-note"><span>Teach Yourself · XI Unit 2</span><span>Trace bubble sort and binary search on paper tonight.</span></div>
+</div>
+</body>
+</html>

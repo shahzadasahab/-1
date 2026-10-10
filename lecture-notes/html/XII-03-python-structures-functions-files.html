@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Teach Yourself · XII Unit 3 · Python Structures, Functions &amp; Files</title>
+<link rel="stylesheet" href="../assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="../assets/mathjax/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+
+<section class="cover">
+  <div>
+    <div class="cover-kicker"><span>Teach Yourself Lecture Notes</span><span>Class XII · Intermediate</span></div>
+    <h1>Unit 3<br>Programming Fundamentals</h1>
+    <p class="subtitle">Lists · tuples · sets · dictionaries · functions · file handling</p>
+    <div class="badge-row">
+      <span class="badge">Mutable vs immutable</span>
+      <span class="badge">def / return / scope</span>
+      <span class="badge">with open</span>
+      <span class="badge">try / except</span>
+    </div>
+  </div>
+  <div class="cover-meta">Class XI taught the sentences of Python. This unit teaches the containers and the paragraphs (functions and files).</div>
+</section>
+
+<div class="running"><span>XII · Unit 3 · Python Structures &amp; Files</span><span>Teach Yourself</span></div>
+
+<h2>1. Four collections — choose with a table, not a guess</h2>
+<p><strong>Primitive</strong> types (<code>int</code>, <code>float</code>, <code>bool</code>, <code>str</code> characters) hold one value. <strong>Abstract</strong> structures hold many. Python’s four everyday structures:</p>
+
+<table>
+  <caption>Table 1. The comparison you will be asked to reproduce</caption>
+  <tr><th></th><th>List</th><th>Tuple</th><th>Set</th><th>Dictionary</th></tr>
+  <tr><td>Syntax</td><td><code>[ ]</code></td><td><code>( )</code></td><td><code>{ }</code></td><td><code>{k: v}</code></td></tr>
+  <tr><td>Ordered?</td><td>Yes</td><td>Yes</td><td>No</td><td>Yes (insertion, 3.7+)</td></tr>
+  <tr><td>Mutable?</td><td>Yes</td><td>No*</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Duplicates</td><td>Allowed</td><td>Allowed</td><td>Forbidden</td><td>Keys unique</td></tr>
+  <tr><td>Access</td><td>Index</td><td>Index</td><td>Membership only</td><td>Key</td></tr>
+</table>
+<p>*A tuple is immutable, but if it contains a list you can still mutate that inner list. Do not hide behind this in an exam unless the question raises it.</p>
+
+<h3>1.1 Lists</h3>
+<p>Ordered, mutable, indexed $0..n-1$ (and negative from the end). Slice <code>lst[start:stop:step]</code> — <code>stop</code> is exclusive, exactly like <code>range</code>.</p>
+<pre><code>fruits = ["mango", "apple", "banana", "apple"]
+fruits.append("guava")
+fruits.insert(1, "date")
+fruits.remove("apple")      # first match
+print(fruits.count("apple"), fruits.index("banana"))
+fruits.sort()               # in place
+fruits.sort(reverse=True)
+fruits.reverse()
+print(len(fruits))
+</code></pre>
+<p>Traverse with <code>for x in fruits</code>, or <code>for i in range(len(fruits))</code> when you need the index.</p>
+
+<h3>1.2 Tuples</h3>
+<p>Ordered, immutable. Use them for fixed records (“Karachi”, $24.86$, $67.00$). Methods: <code>.count()</code>, <code>.index()</code>.</p>
+
+<h3>1.3 Sets</h3>
+<p>Unordered unique values. No indexing. <code>.add</code>, <code>.update</code>, <code>.remove</code> (error if missing), <code>.discard</code> (quiet), <code>.clear</code>.</p>
+<div class="formula">\[
+A\cup B \;=\; A\texttt{| }B, \quad
+A\cap B \;=\; A\texttt{\& }B, \quad
+A\setminus B \;=\; A-B, \quad
+A\oplus B \;=\; A\texttt{^}B
+\]</div>
+
+<h3>1.4 Dictionaries</h3>
+<p>Key $\to$ value. <code>d[key]</code> raises <code>KeyError</code> if absent; <code>d.get(key, default)</code> does not. <code>d[k]=v</code> inserts or overwrites; <code>del d[k]</code> removes. Views: <code>.keys()</code>, <code>.values()</code>, <code>.items()</code> — they are live.</p>
+<pre><code>for k, v in freq.items():
+    print(k, v)
+</code></pre>
+<p>Shared built-ins on collections: <code>len</code>, <code>min</code>, <code>max</code>, <code>sum</code>, <code>sorted</code> (returns a new list).</p>
+
+<div class="two-col">
+  <div>
+    <h4>Activity — attendance</h4>
+    <p>A list of names, a yes/no loop, two counters. Lists + <code>if</code> is enough; you do not need a database.</p>
+  </div>
+  <div>
+    <h4>Activity — word frequency</h4>
+    <pre><code>for w in text.split():
+    d[w] = d.get(w, 0) + 1
+top = max(d, key=d.get)
+</code></pre>
+  </div>
+</div>
+
+<h2>2. Functions — decompose, then name the piece</h2>
+<p>A function packages a sub-problem. <strong>Built-in</strong> (<code>len</code>, <code>range</code>, <code>sum</code>) versus <strong>user-defined</strong> (<code>def</code>).</p>
+<pre><code>def add(a, b):
+    return a + b
+
+def divide(a, b):
+    if b == 0:
+        return "Cannot divide by zero"
+    return a / b
+</code></pre>
+<div class="card-row">
+  <div class="card"><div class="label">Local scope</div>Born inside the function; invisible outside. Parameters are local.</div>
+  <div class="card gold"><div class="label">Global scope</div>Defined at module level; visible everywhere (but writing to a global from inside a function needs <code>global</code> — avoid this habit).</div>
+</div>
+<p>Calculator activity: four functions, a menu, a zero-guard on divide. That is decomposition in one page of Python.</p>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 130" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="130" fill="#fff"/>
+      <rect x="20" y="20" width="200" height="80" fill="#e8eef8" stroke="#2a4d8f"/>
+      <text x="120" y="50" text-anchor="middle" font-size="13">main problem</text>
+      <text x="120" y="70" text-anchor="middle" font-size="11">calculator</text>
+      <rect x="280" y="15" width="120" height="36" fill="#e6f3f3" stroke="#0b6b6e"/><text x="340" y="38" text-anchor="middle" font-size="12">add()</text>
+      <rect x="420" y="15" width="120" height="36" fill="#e6f3f3" stroke="#0b6b6e"/><text x="480" y="38" text-anchor="middle" font-size="12">subtract()</text>
+      <rect x="280" y="70" width="120" height="36" fill="#e6f3f3" stroke="#0b6b6e"/><text x="340" y="93" text-anchor="middle" font-size="12">multiply()</text>
+      <rect x="420" y="70" width="120" height="36" fill="#f8efd6" stroke="#b8891f"/><text x="480" y="93" text-anchor="middle" font-size="12">divide()</text>
+      <path d="M220 60 H280" stroke="#10263f"/>
+    </svg>
+  </div>
+  <figcaption>Figure 1. One problem, four sub-problems, four functions. This picture is the unit’s definition of decomposition.</figcaption>
+</figure>
+
+<h2>3. Files — data that outlives the program</h2>
+<p>Text versus binary. <code>open(path, mode)</code> returns a file object. Modes:</p>
+<table>
+  <caption>Table 2. File modes</caption>
+  <tr><th>Mode</th><th>Meaning</th></tr>
+  <tr><td><code>'r'</code> (default)</td><td>Read text; error if missing</td></tr>
+  <tr><td><code>'w'</code></td><td>Write text; <strong>overwrite</strong> or create</td></tr>
+  <tr><td><code>'a'</code></td><td>Append; create if missing</td></tr>
+  <tr><td><code>'rb'</code> / <code>'wb'</code></td><td>Binary cousins</td></tr>
+</table>
+<p>Methods: <code>read()</code>, <code>readline()</code>, <code>readlines()</code>, <code>write()</code>, <code>close()</code>.</p>
+<pre><code>with open("marks.txt", "a") as f:
+    f.write("Ali,88\n")
+
+try:
+    with open("marks.txt") as f:
+        rows = f.readlines()
+except FileNotFoundError:
+    print("Create the file first.")
+</code></pre>
+<div class="callout why"><div class="mark">with</div><div>The <code>with</code> statement is a context manager: it closes the file even if you hit an error. Prefer it over a naked <code>open</code>/<code>close</code> pair.</div></div>
+<p><strong>Grade-tracker mini-project:</strong> <code>'w'</code> to create, <code>'a'</code> to add a student, <code>'r'</code> + <code>readlines()</code> to compute an average. Wrap the read in <code>try/except</code> for <code>FileNotFoundError</code> and <code>IOError</code>.</p>
+
+<div class="self-check">
+  <h4>Self-check</h4>
+  <ol>
+    <li>Why use a set to store “students who have submitted”?</li>
+    <li>What does <code>open("a.txt","w")</code> do to an existing file?</li>
+    <li>Rewrite a running total as a function <code>average(nums)</code> that returns $\bar{x}$.</li>
+  </ol>
+  <div class="answer"><strong>Answers.</strong> (1) Uniqueness is free; a second submit cannot duplicate. (2) Truncates it to empty, then writes. (3) <code>def average(nums): return sum(nums)/len(nums)</code> — and guard <code>len==0</code>.</div>
+</div>
+
+<div class="recap">
+  <h3>Recap</h3>
+  <ol>
+    <li>List mutable sequence; tuple frozen sequence; set unique bag; dict key-value map.</li>
+    <li>Slice stop is exclusive. <code>dict.get</code> is safer than <code>d[k]</code>.</li>
+    <li>Set algebra: <code>| &amp; - ^</code>.</li>
+    <li><code>def</code> + <code>return</code>. Local vs global. Split a calculator into functions.</li>
+    <li>Files: <code>r/w/a</code>, <code>with</code>, <code>try/except</code>. <code>w</code> overwrites.</li>
+  </ol>
+</div>
+<div class="footer-note"><span>Teach Yourself · XII Unit 3</span><span>Build the grade tracker in one sitting, then add a menu.</span></div>
+</div>
+</body>
+</html>

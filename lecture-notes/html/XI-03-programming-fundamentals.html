@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Teach Yourself · XI Unit 3 · Programming Fundamentals</title>
+<link rel="stylesheet" href="../assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="../assets/mathjax/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+
+<section class="cover">
+  <div>
+    <div class="cover-kicker"><span>Teach Yourself Lecture Notes</span><span>Class XI · Intermediate</span></div>
+    <h1>Unit 3<br>Programming Fundamentals</h1>
+    <p class="subtitle">Python as a first high-level language · IDE · operators · control flow</p>
+    <div class="badge-row">
+      <span class="badge">Variables &amp; types</span>
+      <span class="badge">input / print</span>
+      <span class="badge">if / elif / else</span>
+      <span class="badge">for / while</span>
+      <span class="badge">Libraries &amp; debug</span>
+    </div>
+  </div>
+  <div class="cover-meta">Type every snippet. Reading Python is not the same as making it run.</div>
+</section>
+
+<div class="running"><span>XI · Unit 3 · Programming Fundamentals</span><span>Teach Yourself</span></div>
+
+<h2>0. Computers are obedient, not clever</h2>
+<p>A computer does nothing until a <strong>program</strong> — a list of instructions — tells it what to do. A <strong>programming language</strong> is the agreed vocabulary and grammar for those instructions. Python is a <strong>high-level</strong> language: it looks like structured English, not like raw $0$s and $1$s.</p>
+
+<div class="card-row">
+  <div class="card"><div class="label">Low-level</div>Binary machine code. Fast for the chip, painful for humans.</div>
+  <div class="card"><div class="label">Mid-level</div>Assembly or C-like languages: mnemonics plus some hardware control. C++ sits near this border and is used for systems and games.</div>
+  <div class="card gold"><div class="label">High-level</div>Python, Java, C++. Designed for people. Java’s motto is “write once, run anywhere.” Python is the course language because it is readable and has a huge library world.</div>
+</div>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 120" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="120" fill="#fff"/>
+      <rect x="20" y="30" width="200" height="50" rx="6" fill="#1c2430"/>
+      <text x="120" y="60" text-anchor="middle" fill="#fff" font-size="13">Low · 01101001</text>
+      <rect x="250" y="30" width="200" height="50" rx="6" fill="#0b6b6e"/>
+      <text x="350" y="60" text-anchor="middle" fill="#fff" font-size="13">Mid · MOV AX, 1</text>
+      <rect x="480" y="30" width="220" height="50" rx="6" fill="#b8891f"/>
+      <text x="590" y="60" text-anchor="middle" fill="#fff" font-size="13">High · print(sum)</text>
+    </svg>
+  </div>
+  <figcaption>Figure 1. Closer to the machine on the left, closer to human language on the right.</figcaption>
+</figure>
+
+<div class="callout why"><div class="mark">Careers</div><div>Python pays the rent in web work (Django, Flask), data science, AI, and automation. This unit is not “toy coding”; it is the on-ramp those fields share.</div></div>
+
+<h2>1. The workshop — VS Code and a first program</h2>
+<p>An <strong>IDE</strong> (Integrated Development Environment) is an editor plus runner plus debugger. Visual Studio Code is the recommended desktop IDE. Online runners such as online-python.com are acceptable when a lab PC is locked down.</p>
+<div class="step"><div class="n">1</div><div>Install VS Code. Install the Python extension. Confirm <code>python --version</code> in the terminal.</div></div>
+<div class="step"><div class="n">2</div><div>Save a file as <code>hello.py</code>. Run it with the play button or <code>python hello.py</code>.</div></div>
+<div class="step"><div class="n">3</div><div>Read the terminal. That window is part of the program, not decoration.</div></div>
+
+<h2>2. Variables, types, input, output</h2>
+<p>A <strong>variable</strong> is a named box. Names: letters, digits, underscore; must start with a letter or <code>_</code>; case-sensitive; cannot be a keyword (<code>if</code>, <code>for</code>, <code>class</code>…). Python infers the type from the value you put in the box.</p>
+
+<table>
+  <caption>Table 1. Types you will actually use this year</caption>
+  <tr><th>Type</th><th>Example</th><th>Meaning</th></tr>
+  <tr><td><code>int</code></td><td><code>18</code></td><td>Whole number</td></tr>
+  <tr><td><code>float</code></td><td><code>1.75</code></td><td>Decimal</td></tr>
+  <tr><td><code>str</code></td><td><code>"Ali"</code></td><td>Text</td></tr>
+  <tr><td><code>bool</code></td><td><code>True</code></td><td>Boolean (note the capital)</td></tr>
+  <tr><td><code>list</code> / <code>tuple</code> / <code>dict</code> / <code>set</code></td><td><code>[1,2]</code></td><td>Collections (Class XII deepens these)</td></tr>
+</table>
+
+<pre><code>name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+height = float(input("Enter height (m): "))
+print(f"My name is {name} and I am {age} years old.")
+</code></pre>
+
+<div class="callout watch"><div class="mark">Watch</div><div><code>input()</code> always returns a <strong>string</strong>. Adding <code>"3" + "4"</code> gives <code>"34"</code>. Wrap with <code>int()</code> or <code>float()</code> before any arithmetic.</div></div>
+
+<h2>3. Operators — the verbs of an expression</h2>
+<div class="card-row">
+  <div class="card"><div class="label">Arithmetic</div><code>+ - * / // % **</code><br>true divide <code>/</code>, floor divide <code>//</code>, remainder <code>%</code>, power <code>**</code></div>
+  <div class="card"><div class="label">Assignment</div><code>= += -= *= /= //= %= **=</code></div>
+  <div class="card"><div class="label">Relational</div><code>== != &gt; &lt; &gt;= &lt;=</code> → <code>bool</code></div>
+  <div class="card gold"><div class="label">Logical</div><code>and</code> <code>or</code> <code>not</code> — same truth tables as Unit 1 AND/OR/NOT</div>
+  <div class="card"><div class="label">Membership</div><code>in</code> <code>not in</code></div>
+  <div class="card"><div class="label">Bitwise</div><code>&amp; | ^ ~ &lt;&lt; &gt;&gt;</code> (bit-level AND/OR/XOR)</div>
+</div>
+<div class="formula">\[
+4 == 5-1 \;\Rightarrow\; \text{True},\quad
+55 \ge 11\times 5 \;\Rightarrow\; \text{True},\quad
+22 \neq 23-1 \;\Rightarrow\; \text{False}
+\]</div>
+
+<h2>4. Control structures — sequence, selection, repetition</h2>
+<p>Almost every program is assembled from three shapes.</p>
+
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 160" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="160" fill="#fff"/>
+      <rect x="20" y="20" width="90" height="36" rx="4" fill="#10263f"/><text x="65" y="43" text-anchor="middle" fill="#fff" font-size="12">start</text>
+      <rect x="20" y="70" width="90" height="36" rx="4" fill="#0b6b6e"/><text x="65" y="93" text-anchor="middle" fill="#fff" font-size="12">next</text>
+      <text x="65" y="140" text-anchor="middle" font-size="11">Sequence</text>
+      <polygon points="280,20 360,50 280,80 200,50" fill="#f8efd6" stroke="#b8891f"/>
+      <text x="280" y="54" text-anchor="middle" font-size="12">cond?</text>
+      <text x="380" y="40" font-size="11" fill="#1f6b45">True → then</text>
+      <text x="380" y="70" font-size="11" fill="#8a3b12">False → else</text>
+      <text x="280" y="140" text-anchor="middle" font-size="11">Selection</text>
+      <rect x="540" y="20" width="100" height="36" rx="4" fill="#2a4d8f"/><text x="590" y="43" text-anchor="middle" fill="#fff" font-size="12">body</text>
+      <path d="M640 38 H670 V100 H560 V56" fill="none" stroke="#10263f" stroke-width="2"/>
+      <text x="590" y="140" text-anchor="middle" font-size="11">Repetition</text>
+    </svg>
+  </div>
+  <figcaption>Figure 2. The three control-flow shapes. Indentation in Python <em>is</em> the shape.</figcaption>
+</figure>
+
+<h3>4.1 Sequence</h3>
+<p>Statements run top to bottom. Default behaviour.</p>
+<pre><code>print("Enter two numbers")
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+total = a + b
+print("Sum =", total)
+</code></pre>
+
+<h3>4.2 Selection — <code>if</code>, <code>if-else</code>, <code>elif</code></h3>
+<p>A colon ends the condition. The following indented block runs only when the condition is true. A lone <code>if</code> may do nothing; <code>if-else</code> always runs exactly one of the two blocks.</p>
+<pre><code>age = int(input("Enter your age: "))
+if age &gt;= 18:
+    print("You are an Adult.")
+    print("You are eligible to vote.")
+elif age &gt;= 13:
+    print("Teenager — wait a few years to vote.")
+else:
+    print("Too young to vote.")
+print("Program continues...")
+</code></pre>
+
+<h3>4.3 Repetition — <code>for</code> and <code>while</code></h3>
+<pre><code>for i in range(5):        # 0,1,2,3,4
+    print(i)
+for i in range(2, 8):     # 2..7
+    print(i)
+for i in range(0, 10, 2): # step 2
+    print(i)
+
+count = 1
+while count &lt;= 5:
+    print(count)
+    count += 1            # forget this → infinite loop
+</code></pre>
+<p><code>break</code> leaves the loop immediately. <code>continue</code> skips the rest of this iteration. Nested loops: the inner loop finishes a full cycle for every single outer step (this is why nested loops smell like $O(n^2)$).</p>
+
+<div class="formula">\[
+\texttt{range}(a,b) = \{a,a+1,\ldots,b-1\}, \qquad
+\texttt{range}(a,b,s)\text{ steps by }s.
+\]</div>
+
+<h2>5. Libraries — do not reinvent the wheel</h2>
+<pre><code>import math
+import math as m
+from math import sqrt, pi
+# pip install numpy pandas matplotlib   # third-party
+</code></pre>
+<table>
+  <caption>Table 2. Built-in libraries the textbook expects</caption>
+  <tr><th>Module</th><th>Useful names</th></tr>
+  <tr><td><code>math</code></td><td><code>pi</code>, <code>sqrt</code>, <code>ceil</code>, <code>floor</code>, <code>pow</code></td></tr>
+  <tr><td><code>random</code></td><td><code>randint</code>, <code>random</code>, <code>uniform</code></td></tr>
+  <tr><td><code>datetime</code></td><td><code>datetime.now()</code>, <code>strftime</code></td></tr>
+</table>
+
+<h2>6. Debugging — three families of pain</h2>
+<div class="card-row">
+  <div class="card warn"><div class="label">1. Syntax</div>The program never starts. Missing <code>)</code>, forgotten <code>:</code>, bad indent after <code>if</code>.</div>
+  <div class="card warn"><div class="label">2. Runtime</div>Starts, then crashes. <code>10/0</code>, <code>int("abc")</code>. Read the traceback: type, file, line.</div>
+  <div class="card warn"><div class="label">3. Logical</div>Runs, prints the wrong answer. Classic: <code>i -= 1</code> instead of <code>i += 1</code> in a <code>while</code> — infinite loop that looks “alive”.</div>
+</div>
+
+<div class="self-check">
+  <h4>Self-check</h4>
+  <ol>
+    <li>What does <code>print(3 + int("4"))</code> print? What about <code>print(3 + "4")</code>?</li>
+    <li>Rewrite “print all odd numbers from 1 to 15” with <code>range</code> and a step.</li>
+    <li>Name the error family: the program prints a negative average for a class of positive marks.</li>
+  </ol>
+  <div class="answer"><strong>Answers.</strong> (1) $7$; the second raises <code>TypeError</code>. (2) <code>for i in range(1, 16, 2): print(i)</code>. (3) Logical — it ran.</div>
+</div>
+
+<div class="recap">
+  <h3>Recap</h3>
+  <ol>
+    <li>Python is high-level; <code>input()</code> is always <code>str</code>.</li>
+    <li>Names: letter/underscore first; case matters; no keywords.</li>
+    <li>Operators: arithmetic, assignment, relational, logical, membership, bitwise.</li>
+    <li>Sequence / selection / repetition. Indentation defines blocks.</li>
+    <li><code>range(a,b)</code> stops before $b$. <code>break</code> exits; <code>continue</code> skips.</li>
+    <li>Import <code>math</code>, <code>random</code>, <code>datetime</code>; install third-party with <code>pip</code>.</li>
+    <li>Debug by family: syntax, runtime, logical. Trust the traceback line number.</li>
+  </ol>
+</div>
+<div class="footer-note"><span>Teach Yourself · XI Unit 3</span><span>Write the voting-age program without looking.</span></div>
+</div>
+</body>
+</html>

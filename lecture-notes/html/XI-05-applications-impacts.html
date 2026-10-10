@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Teach Yourself · XI Unit 5 · Applications and Impacts of Computing</title>
+<link rel="stylesheet" href="../assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="../assets/mathjax/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+
+<section class="cover">
+  <div>
+    <div class="cover-kicker"><span>Teach Yourself Lecture Notes</span><span>Class XI · Intermediate</span></div>
+    <h1>Unit 5<br>Applications and Impacts<br>of Computing</h1>
+    <p class="subtitle">AI · IoT · data analytics · reliable sources · assistive technology</p>
+    <div class="badge-row">
+      <span class="badge">Sensors &amp; actuators</span>
+      <span class="badge">Smart systems</span>
+      <span class="badge">Primary / secondary / tertiary</span>
+      <span class="badge">Human impact</span>
+    </div>
+  </div>
+  <div class="cover-meta">Computing left the lab. This unit asks what it does in a city, a farm, a hospital — and who it leaves out.</div>
+</section>
+
+<div class="running"><span>XI · Unit 5 · Applications &amp; Impacts</span><span>Teach Yourself</span></div>
+
+<h2>0. Three technologies that travel together</h2>
+<p>In Pakistan, students already meet computing as LMS homework, ATM cards, hospital records, and weather apps for wheat. Three ideas sit under almost every “smart” headline.</p>
+
+<div class="card-row">
+  <div class="card"><div class="label">Artificial Intelligence</div><p><em>Artificial</em> = made by people. <em>Intelligence</em> = tasks that need judgement. Face unlock, YouTube recommendations, a website chatbot. AI is the “brain” of a smart system.</p></div>
+  <div class="card gold"><div class="label">Internet of Things</div><p>Physical devices on a network that collect and share data and often act without a human in the loop: watches, meters, cameras, irrigation valves.</p></div>
+  <div class="card idea"><div class="label">Data Analytics</div><p>Clean, study, and visualise the flood of readings so a human (or an AI) can decide. Bar and pie charts are the last mile of analytics, not the whole job.</p></div>
+</div>
+
+<div class="formula">\[
+\text{IoT sensors} \xrightarrow{\text{data}} \text{Analytics} \xrightarrow{\text{patterns}} \text{AI decision} \xrightarrow{\text{command}} \text{Actuator}
+\]</div>
+<p>Smart home: a temperature sensor reports $33^\circ\mathrm{C}$; analytics confirms it is a trend, not a glitch; AI switches the inverter AC on.</p>
+
+<h2>1. Anatomy of an IoT system</h2>
+<figure>
+  <div class="diagram-frame">
+    <svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg">
+      <rect width="720" height="150" fill="#fff"/>
+      <g font-family="IBM Plex Sans, sans-serif" font-size="12" text-anchor="middle">
+        <rect x="10" y="40" width="110" height="50" rx="6" fill="#10263f"/><text x="65" y="70" fill="#fff">Sensor</text>
+        <rect x="140" y="40" width="110" height="50" rx="6" fill="#0b6b6e"/><text x="195" y="70" fill="#fff">Connect</text>
+        <rect x="270" y="40" width="110" height="50" rx="6" fill="#2a4d8f"/><text x="325" y="70" fill="#fff">Process</text>
+        <rect x="400" y="40" width="110" height="50" rx="6" fill="#b8891f"/><text x="455" y="70" fill="#fff">Actuator</text>
+        <rect x="530" y="40" width="80" height="50" rx="6" fill="#1f6b45"/><text x="570" y="70" fill="#fff">Cloud</text>
+        <rect x="630" y="40" width="80" height="50" rx="6" fill="#8a3b12"/><text x="670" y="70" fill="#fff">UI</text>
+      </g>
+      <text x="20" y="120" font-size="11" fill="#4a5564">Wi-Fi · Bluetooth · ZigBee · LoRaWAN · 4G/5G carry the packets between the boxes.</text>
+    </svg>
+  </div>
+  <figcaption>Figure 1. IoT stack. If any box is missing, the “smart” device is just a gadget.</figcaption>
+</figure>
+
+<div class="two-col">
+  <div>
+    <h3>Sensors — they listen</h3>
+    <ul>
+      <li>Temperature, motion, smoke</li>
+      <li>Fingerprint / camera (biometric)</li>
+      <li>Soil moisture (farming)</li>
+    </ul>
+    <p>A fingerprint sensor captures an image, builds a template, and compares it with stored data.</p>
+  </div>
+  <div>
+    <h3>Actuators — they do</h3>
+    <ul>
+      <li>Motor, electric switch</li>
+      <li>Automatic door, irrigation valve</li>
+    </ul>
+    <p>Motion detected $\to$ controller $\to$ motor opens the door. The actuator turns a bit into a movement.</p>
+  </div>
+</div>
+
+<table>
+  <caption>Table 1. Where IoT already sits in daily life</caption>
+  <tr><th>Domain</th><th>Typical devices / jobs</th></tr>
+  <tr><td>Smart city</td><td>Traffic lights, street lighting, parking, waste bins</td></tr>
+  <tr><td>Industry</td><td>Machine health, line automation</td></tr>
+  <tr><td>Healthcare</td><td>Smartwatch heart-rate, remote monitoring</td></tr>
+  <tr><td>Education</td><td>Biometric attendance, smart classroom boards</td></tr>
+  <tr><td>Home</td><td>Thermostats, cameras, appliance plugs</td></tr>
+  <tr><td>Farming</td><td>Soil moisture + weather $\to$ smart irrigation (Sindh / Punjab examples)</td></tr>
+</table>
+
+<h3>1.1 Analytics pipeline</h3>
+<div class="step"><div class="n">1</div><div><strong>Collect</strong> from sensors, forms, logs.</div></div>
+<div class="step"><div class="n">2</div><div><strong>Store</strong> in a file or database (Unit 4).</div></div>
+<div class="step"><div class="n">3</div><div><strong>Clean</strong> duplicates, missing cells, wrong formats — dirty data lies.</div></div>
+<div class="step"><div class="n">4</div><div><strong>Analyse</strong> totals, trends, outliers.</div></div>
+<div class="step"><div class="n">5</div><div><strong>Visualise</strong> bar / pie / line so a non-programmer can see the story.</div></div>
+
+<h2>2. Information sources — not every page is a source</h2>
+<table>
+  <caption>Table 2. Source ladder</caption>
+  <tr><th>Type</th><th>What it is</th><th>Examples</th><th>Typical risk</th></tr>
+  <tr><td>Primary</td><td>First-hand, original</td><td>NADRA / CNIC data, your interview, official register</td><td>Incomplete or false answers</td></tr>
+  <tr><td>Secondary</td><td>Someone already processed it</td><td>Textbook, PBS report, newspaper</td><td>Out of date, no citations</td></tr>
+  <tr><td>Tertiary</td><td>Summary of summaries</td><td>Encyclopaedia, Wikipedia overview</td><td>Oversimplified, unverified sites</td></tr>
+</table>
+<p>A career page that lists “AI engineer, IoT technician, data analyst” is only as good as the organisation that published it. Ask: who wrote this, when, with what evidence, and what did they leave out?</p>
+
+<h2>3. Impacts — a balanced ledger</h2>
+<table>
+  <caption>Table 3. Computing changes the field — both ways</caption>
+  <tr><th>Field</th><th>Gain</th><th>Cost if we are careless</th></tr>
+  <tr><td>Education</td><td>LMS, remote classes, instant resources</td><td>Screen fatigue, copied homework</td></tr>
+  <tr><td>Communication</td><td>Family and class groups</td><td>Rumour speed, cyberbullying</td></tr>
+  <tr><td>Business</td><td>Online shops, mobile payments</td><td>Job shift, fraud</td></tr>
+  <tr><td>Healthcare</td><td>Digital records, remote consults</td><td>Privacy leaks</td></tr>
+  <tr><td>Agriculture</td><td>Weather and irrigation advice</td><td>Cost of devices, data gaps in villages</td></tr>
+  <tr><td>Daily life</td><td>Maps, banking, government portals</td><td>Dependence, exclusion of the offline</td></tr>
+</table>
+
+<h2>4. Assistive technology — computing as inclusion</h2>
+<p>Assistive tools exist so disability does not become exclusion.</p>
+<div class="card-row">
+  <div class="card"><div class="label">Mobility</div>Switch controls, adapted keyboards</div>
+  <div class="card"><div class="label">Sensory</div>Screen readers (NVDA, VoiceOver), magnification, captions</div>
+  <div class="card"><div class="label">Communication</div>AAC devices and symbol boards</div>
+  <div class="card"><div class="label">Cognitive / learning</div>Audiobooks, spell-check, text-to-speech</div>
+</div>
+<p>Related careers: assistive-software developer, AI/ML specialist, biomedical engineer, accessibility UX designer, rehabilitation technologist.</p>
+
+<div class="self-check">
+  <h4>Self-check</h4>
+  <ol>
+    <li>In one sentence each, separate IoT, AI, and analytics.</li>
+    <li>Is a Wikipedia page a primary source? Why?</li>
+    <li>Name one sensor and one actuator in a smart irrigation sketch.</li>
+  </ol>
+  <div class="answer"><strong>Answers.</strong> (1) IoT gathers/acts in the physical world; analytics finds patterns; AI decides. (2) No — it is tertiary (sometimes secondary); it summarises other work. (3) Soil-moisture sensor; water-valve actuator.</div>
+</div>
+
+<div class="recap">
+  <h3>Recap</h3>
+  <ol>
+    <li>Smart loop: sensor $\to$ connect $\to$ process / analyse $\to$ AI $\to$ actuator $\to$ UI.</li>
+    <li>IoT domains: city, industry, health, school, home, farm.</li>
+    <li>Analytics is only as honest as its cleaning step.</li>
+    <li>Primary / secondary / tertiary — always ask who, when, evidence.</li>
+    <li>Every gain has a human cost; assistive tech is part of the answer, not an optional extra.</li>
+  </ol>
+</div>
+<div class="footer-note"><span>Teach Yourself · XI Unit 5</span><span>Redraw Figure 1 and label a farm example on it.</span></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Teach Yourself Lecture Notes · Intermediate Computer Science · Course Map</title>
+<link rel="stylesheet" href="../assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="../assets/mathjax/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+
+<section class="cover">
+  <div>
+    <div class="cover-kicker"><span>Teach Yourself Lecture Notes</span><span>Classes XI &amp; XII</span></div>
+    <h1>Intermediate<br>Computer Science</h1>
+    <p class="subtitle">A self-study companion · MathJax · SVG diagrams · Flexbox layouts</p>
+    <div class="badge-row" style="margin:12px 0 16px;">
+      <span class="badge">12 unit booklets</span>
+      <span class="badge">Embedded MathJax 3</span>
+      <span class="badge">Hand-drawn-style SVG</span>
+      <span class="badge">Print-first A4</span>
+    </div>
+    <div class="cover-box">
+      <p style="margin:0 0 6px;"><strong>How these notes were built.</strong> Each booklet follows the official intermediate syllabus units (digital systems through digital entrepreneurship). Every chapter is a single HTML file: Flexbox cards for comparisons, inline SVG for gates/stacks/networks, and MathJax for the notation an examiner expects. Chrome prints the same file to the PDF you are holding.</p>
+      <p style="margin:0;">Study rule: read one section, redraw the figure from memory, then attempt the self-check before you turn the page.</p>
+    </div>
+  </div>
+  <div class="cover-meta">Companion to the Class XI / XII Computer Science textbooks · not a replacement for practicals (LogiSim, Access, Figma, Python labs)</div>
+</section>
+
+<div class="running"><span>Course Map · Intermediate CS</span><span>Teach Yourself</span></div>
+
+<h2>Class XI — six units</h2>
+<table>
+  <caption>Year 1 pathway</caption>
+  <tr><th>Unit</th><th>Booklet</th><th>You should leave able to…</th></tr>
+  <tr><td>1</td><td>Computer Systems</td><td>Write $Y=A\cdot B+C$, simplify on a K-map, contrast Waterfall/Agile (Al-Noor), map OSI $\leftrightarrow$ TCP/IP</td></tr>
+  <tr><td>2</td><td>Computational Thinking</td><td>Decompose / pattern / abstract; trace bubble &amp; selection sort; choose linear vs binary search</td></tr>
+  <tr><td>3</td><td>Programming Fundamentals</td><td>Use <code>input</code>/<code>int</code>, <code>if/elif</code>, <code>for</code>/<code>while</code>, <code>math</code>, and name the three bug families</td></tr>
+  <tr><td>4</td><td>Data and Analysis</td><td>Draw the library ER (Book–Borrow–Member), name keys, build Access tables/forms/queries</td></tr>
+  <tr><td>5</td><td>Applications &amp; Impacts</td><td>Sketch the IoT loop; separate AI / IoT / analytics; judge a source; name assistive tools</td></tr>
+  <tr><td>6</td><td>Digital Literacy</td><td>Write a research question, pick methods, search with <code>filetype:</code>/<code>site:</code>, present without plagiarising</td></tr>
+</table>
+
+<h2>Class XII — six units</h2>
+<table>
+  <caption>Year 2 pathway</caption>
+  <tr><th>Unit</th><th>Booklet</th><th>You should leave able to…</th></tr>
+  <tr><td>1</td><td>Human–Computer Interaction</td><td>Apply contrast and inclusive navigation; wireframe $\to$ Figma prototype; evaluate with SUS / task success</td></tr>
+  <tr><td>2</td><td>Algorithms &amp; Data Structures</td><td>Trace for correctness; quote $O(1)/O(\log n)/O(n)/O(n^2)$; PUSH/POP vs enqueue/dequeue; tree vs graph</td></tr>
+  <tr><td>3</td><td>Python Structures &amp; Files</td><td>Choose list/tuple/set/dict; write functions with scope; use <code>with open</code> and <code>try/except</code></td></tr>
+  <tr><td>4</td><td>Data Analysis with Python</td><td>Connect <code>sqlite3</code>, clean a DataFrame, pick bar/hist/scatter/box, compute $\bar{x}$, median, $\sigma$</td></tr>
+  <tr><td>5</td><td>Neural Nets &amp; Security</td><td>Separate ML / NN / DL; label layers; name phishing + 2FA; distinguish equal access from equity</td></tr>
+  <tr><td>6</td><td>Digital Entrepreneurship</td><td>Walk problem $\to$ prototype $\to$ MVP $\to$ beachhead; test the riskiest assumption first</td></tr>
+</table>
+
+<h2>Notation you will keep meeting</h2>
+<div class="formula">\[
+Y = A\cdot B + \overline{C}, \quad
+\mathit{MID}=\left\lfloor\frac{\mathit{BEG}+\mathit{END}}{2}\right\rfloor, \quad
+T(n)=O(\log n), \quad
+\bar{x}=\frac{1}{n}\sum x_i, \quad
+z=w\cdot x+b
+\]</div>
+
+<div class="card-row">
+  <div class="card"><div class="label">Flexbox in these notes</div>Comparison cards, badge rows, two-column explainers, and the SDLC/IoT/sprint strips are all <code>display:flex</code> so a printed page and a browser window share one layout language.</div>
+  <div class="card gold"><div class="label">SVG, not screenshots</div>Gates, waves, OSI stacks, stacks/queues, and neural nets are line diagrams you can re-sketch in an exam hall. If you cannot redraw it, you do not own it yet.</div>
+  <div class="card idea"><div class="label">MathJax</div>Boolean algebra, Big-O, statistics, and the neuron sum are typeset with MathJax 3 (SVG output) so PDF and HTML stay sharp when zoomed.</div>
+</div>
+
+<div class="recap">
+  <h3>Suggested weekly rhythm</h3>
+  <ol>
+    <li>One booklet section a sitting (not a whole unit in one night).</li>
+    <li>Redraw the figure; write the formula without the booklet.</li>
+    <li>Do the self-check; only then peek at the answers.</li>
+    <li>Transfer the idea into the lab tool of that unit (LogiSim, Python, Access, Figma, a paper MVP).</li>
+  </ol>
+</div>
+<div class="footer-note"><span>Teach Yourself Lecture Notes · Intermediate CS</span><span>Start with XI Unit 1 if Boolean still feels like a foreign language.</span></div>
+</div>
+</body>
+</html>
