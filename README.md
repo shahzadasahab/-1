@@ -42,6 +42,6 @@ export ANDROID_HOME=/path/to/android-sdk
 Teach-yourself notes for **XI & XII Computer Science** (MathJax, SVG diagrams, flexbox layout):
 
 - Source & build: [`lecture-notes/`](lecture-notes/)
-- Ready-made PDFs: [`releases/lecture-notes/`](releases/lecture-notes/)
+- Ready-made PDFs: [`releases/lecture-notes/`](releases/lecture-notes/) — [direct download index](lecture-notes/README.md#direct-download-pdf)
 
 ## Version 3.2.1
