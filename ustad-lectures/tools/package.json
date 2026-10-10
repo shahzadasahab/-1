@@ -1,0 +1,9 @@
+{
+  "name": "ustad-tools",
+  "private": true,
+  "description": "Dev tooling: lecture validator, diagram contact sheet, screenshots",
+  "devDependencies": {
+    "mathjax": "^3.2.2",
+    "puppeteer-core": "^22.0.0"
+  }
+}
