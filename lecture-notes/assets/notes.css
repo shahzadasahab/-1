@@ -182,6 +182,56 @@ h2 {
   padding-left: 10px;
   page-break-after: avoid;
 }
+h2.part {
+  break-before: page;
+  page-break-before: always;
+}
+
+/* ===== 30-day crash coaching ===== */
+.day {
+  break-before: page;
+  page-break-before: always;
+}
+.dayhead {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  margin: 0 0 8px;
+}
+.daynum {
+  font-family: "LN Sans", "Liberation Sans", sans-serif;
+  background: var(--navy);
+  color: #fff;
+  min-width: 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 6px;
+}
+.daynum span { font-size: 8pt; letter-spacing: 0.14em; }
+.daynum strong { font-size: 20pt; line-height: 1; }
+.dayhead h2 { margin: 0 0 2px; border: 0; padding: 0; }
+.session { display: flex; gap: 6px; margin: 0 0 10px; }
+.session div {
+  flex: 1 1 0;
+  background: var(--teal-soft);
+  border-top: 3px solid var(--teal);
+  padding: 6px 8px;
+  font-family: "LN Sans", "Liberation Sans", sans-serif;
+  font-size: 8.2pt;
+}
+.session strong { display: block; color: var(--navy); }
+.q { margin: 0 0 8px; page-break-inside: avoid; }
+.q .prompt { margin: 0 0 3px; }
+.marks {
+  font-family: "LN Sans", "Liberation Sans", sans-serif;
+  font-size: 8pt;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+}
 
 h3 {
   font-size: 12.4pt;
@@ -416,8 +466,12 @@ hr.section {
   * { letter-spacing: 0 !important; }
   .page { max-width: none; padding: 0; }
   a { color: inherit; text-decoration: none; }
-  .card, .callout, table, figure, pre, .self-check, .recap {
+  .card, .callout, figure, pre, .self-check, .recap {
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+  table.long, table.long tr, table.long td {
+    break-inside: auto;
+    page-break-inside: auto;
   }
 }

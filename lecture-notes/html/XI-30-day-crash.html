@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Class XI · 30-Day Crash Course</title>
+<link rel="stylesheet" href="../assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="../assets/mathjax/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+
+<section class="cover">
+  <div>
+    <div class="cover-kicker"><span>Coaching crash course</span><span>Class XI · 30 days</span></div>
+    <h1>Intermediate Computer Science<br>30-Day Crash</h1>
+    <p class="subtitle">Two hours a day · board, drill, mark scheme · all six units</p>
+    <div class="badge-row">
+      <span class="badge">Days 1–12 Systems</span>
+      <span class="badge">Days 13–18 Algorithms</span>
+      <span class="badge">Days 19–24 Python</span>
+      <span class="badge">Days 25–28 Data &amp; impact</span>
+      <span class="badge">Days 29–30 Mock</span>
+    </div>
+    <div class="cover-box" style="margin-top:14px;">
+      <p><strong>How a coaching day works.</strong> Recall yesterday with the book shut. Copy the board notes. Work the example in pencil before you read the steps. Sit the drill in silence, then mark in a second colour. The green lines are the mark scheme, not a script to memorise word for word.</p>
+      <p style="margin-bottom:0;">Missed a day? Do that day’s drill only, then rejoin the timetable. Do not stack three new topics in one evening.</p>
+    </div>
+  </div>
+  <div class="cover-meta">Pair with the Teach Yourself lecture notes. This booklet is the timed revision, not a second textbook.</div>
+</section>
+
+<div class="running"><span>XI · 30-Day Crash</span><span>Timetable</span></div>
+<h2>The thirty days on one sheet</h2>
+<p>Each row is a 120-minute class. Checkpoint days are closed-book. Day 29 is a full mock. Day 30 is the marking conference.</p>
+<table class="long">
+<caption>Class XI crash timetable</caption>
+<tr><th>Day</th><th>Unit</th><th>Class target</th><th>Score</th></tr>
+<tr><td>01</td><td>Systems</td><td>Analog, digital, bits</td><td>/5</td></tr>
+<tr><td>02</td><td>Systems</td><td>AND, OR, NOT tables</td><td>/5</td></tr>
+<tr><td>03</td><td>Systems</td><td>Seven gates from memory</td><td>/5</td></tr>
+<tr><td>04</td><td>Systems</td><td>Precedence and NAND/NOR</td><td>/5</td></tr>
+<tr><td>05</td><td>Systems</td><td>SOP and POS</td><td>/5</td></tr>
+<tr><td>06</td><td>Systems</td><td>2-var and 3-var K-maps</td><td>/5</td></tr>
+<tr><td>07</td><td>Systems</td><td>LogiSim on paper and screen</td><td>/5</td></tr>
+<tr><td>08</td><td>Systems</td><td>Six SDLC phases</td><td>/5</td></tr>
+<tr><td>09</td><td>Systems</td><td>Al-Noor: Waterfall vs Agile</td><td>/5</td></tr>
+<tr><td>10</td><td>Systems</td><td>OSI seven layers and PDUs</td><td>/5</td></tr>
+<tr><td>11</td><td>Systems</td><td>TCP/IP and encapsulation</td><td>/5</td></tr>
+<tr><td>12</td><td>Systems</td><td>Unit 1 checkpoint</td><td>/10</td></tr>
+<tr><td>13</td><td>Algorithms</td><td>Decompose, pattern, abstract</td><td>/5</td></tr>
+<tr><td>14</td><td>Algorithms</td><td>Bubble sort, full trace</td><td>/5</td></tr>
+<tr><td>15</td><td>Algorithms</td><td>Selection sort</td><td>/5</td></tr>
+<tr><td>16</td><td>Algorithms</td><td>Linear and binary search</td><td>/5</td></tr>
+<tr><td>17</td><td>Algorithms</td><td>Correct, efficient, clear</td><td>/5</td></tr>
+<tr><td>18</td><td>Algorithms</td><td>Unit 2 checkpoint</td><td>/10</td></tr>
+<tr><td>19</td><td>Python</td><td>Types, input, print</td><td>/5</td></tr>
+<tr><td>20</td><td>Python</td><td>Operators, including // and %</td><td>/5</td></tr>
+<tr><td>21</td><td>Python</td><td>if / elif / else</td><td>/5</td></tr>
+<tr><td>22</td><td>Python</td><td>for, while, break, continue</td><td>/5</td></tr>
+<tr><td>23</td><td>Python</td><td>Libraries and three bug families</td><td>/5</td></tr>
+<tr><td>24</td><td>Python</td><td>Unit 3 checkpoint, on paper</td><td>/10</td></tr>
+<tr><td>25</td><td>Data</td><td>Keys, 1:M, M:N</td><td>/5</td></tr>
+<tr><td>26</td><td>Data</td><td>Library ER and Access objects</td><td>/5</td></tr>
+<tr><td>27</td><td>Impacts</td><td>IoT loop, sources, assistive tech</td><td>/5</td></tr>
+<tr><td>28</td><td>Literacy</td><td>Research question to artefact</td><td>/5</td></tr>
+<tr><td>29</td><td>Mock</td><td>90-minute mixed paper</td><td>/50</td></tr>
+<tr><td>30</td><td>Mock</td><td>Mark scheme and 48-hour card</td><td>—</td></tr>
+</table>
+<div class="callout why"><div class="mark">Pass mark</div><div>A checkpoint under 7/10 means that unit is not safe. Repeat its drills on the next evening before you touch new work. The mock target is 35/50 with no blank long question.</div></div>
+<section class='day'>
+<div class='running'><span>30-Day Crash · Day 01</span><span>Unit 1 · Computer Systems</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>01</strong></div>
+<div>
+<h2>Analog, digital, and the bit</h2>
+<p class='clock'>Unit 1 · Computer Systems · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Separate discrete from continuous</li><li>Sketch sine and square waves</li><li>State what 0 and 1 mean in a digital system</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Calling every number on a screen ‘analog’. A digital display can show 37.4 and still be a digital system.</p></div>
+</div>
+
+<h3>Board notes</h3>
+<p>A <strong>discrete</strong> quantity jumps between countable values: students in a room, books on a shelf. A <strong>continuous</strong> quantity can sit anywhere in a range: temperature, height, speed. Stairs are discrete. A ramp is continuous. Digital machines chose the stairs.</p>
+<p>A <strong>signal</strong> carries information. An analog signal changes smoothly (voice, guitar, old telephone voltage) and is easily bent by noise. A digital signal has only HIGH and LOW, so a slightly dented pulse is still read as a bit.</p>
+<div class="formula">\[ 0 = \text{OFF / LOW / FALSE}, \qquad 1 = \text{ON / HIGH / TRUE} \]</div>
+<table>
+<tr><th></th><th>Analog</th><th>Digital</th></tr>
+<tr><td>Values</td><td>Any value in a range</td><td>Two levels</td></tr>
+<tr><td>Wave</td><td>Smooth</td><td>Square</td></tr>
+<tr><td>Noise</td><td>Corrupts the value</td><td>Usually ignored</td></tr>
+<tr><td>Examples</td><td>Voice, vinyl, mercury thermometer</td><td>PC, phone, USB, HDMI</td></tr>
+</table>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board.</strong> A clinic stores body temperature. The mercury thermometer is analog. The digital thermometer stores $37.4$ after rounding to one decimal — still a number on a screen, but the electronics inside use bits. Ask: which representation survives a noisy cable? The bit stream. Which one can show a value between two marks without rounding? The analog instrument.</p>
+<p>Write one sentence a marker can award: “Digital systems use two states so copies stay exact and noise rarely flips a solid HIGH into a solid LOW.”</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Define discrete and continuous with one example each.</p><div class='answer'><strong>Model.</strong> Discrete: separate countable values (fingers on a hand). Continuous: any value in a range (speed of a car).</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Why did engineers accept only two voltages?</p><div class='answer'><strong>Model.</strong> Two states are reliable against noise, exact when copied, simple to design, and easy to program.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Sketch labels, not art: which wave is HDMI?</p><div class='answer'><strong>Model.</strong> A square wave. HDMI is a digital signal, only HIGH and LOW.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Is ‘number of cars in a lot’ analog or discrete?</p><div class='answer'><strong>Model.</strong> Discrete. You cannot have 2.3 cars. The count jumps by whole cars.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> A song on vinyl versus the same song as a file. One reliability difference.</p><div class='answer'><strong>Model.</strong> Vinyl (analog) picks up hiss; the file (digital) copies without that quality loss.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Redraw both waves from memory and label three real devices under each.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 02</span><span>Unit 1 · Computer Systems</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>02</strong></div>
+<div>
+<h2>Boolean algebra: AND, OR, NOT</h2>
+<p class='clock'>Unit 1 · Computer Systems · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Build 4-row truth tables</li><li>Use Boolean + as OR</li><li>State precedence</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Treating $+$ as ordinary addition. In this unit $1+1$ is 1.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>What does bit 0 mean?</td><td>OFF, LOW, or FALSE</td></tr><tr><td>Square wave or sine wave for USB?</td><td>Square / digital</td></tr></table>
+<h3>Board notes</h3>
+<p>George Boole’s algebra has two constants. Variables such as $A$ and $B$ hold only those constants. There are three basic operations.</p>
+<table>
+<tr><th>Op</th><th>Symbol</th><th>Rule</th></tr>
+<tr><td>AND</td><td>$A \cdot B$</td><td>1 only when every input is 1</td></tr>
+<tr><td>OR</td><td>$A + B$</td><td>1 when any input is 1</td></tr>
+<tr><td>NOT</td><td>$\overline{A}$ or $A'$</td><td>Flips the single input</td></tr>
+</table>
+<div class="formula">\[ 1+1 = 1 \quad \text{(OR, not arithmetic)} \]</div>
+<p>Precedence, tightest first: brackets, then NOT, then AND, then OR. So $A + B \cdot C$ means $A + (B \cdot C)$.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board: $Y = \overline{A} + B$.</strong> Four rows, because $2^2 = 4$.</p>
+<table>
+<tr><th>$A$</th><th>$B$</th><th>$\overline{A}$</th><th>$Y$</th></tr>
+<tr><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+</table>
+<p>The only 0 is row $A=1, B=0$. Say the English: “Y is 0 only when A is true and B is false.”</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> How many rows does a truth table with 3 inputs have?</p><div class='answer'><strong>Model.</strong> 8, because $2^3 = 8$. List inputs in binary counting order so no row is skipped.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Compute $1 + 1$ and $1 \cdot 0$ in Boolean algebra.</p><div class='answer'><strong>Model.</strong> OR: $1+1=1$. AND: $1 \cdot 0 = 0$.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Door with two locks. Which operation?</p><div class='answer'><strong>Model.</strong> AND. Both locks must be open. $Y = A \cdot B$.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Room with two doors. Which operation?</p><div class='answer'><strong>Model.</strong> OR. Either door is enough. $Y = A + B$.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Evaluate $A + B \cdot C$ when $A=0, B=1, C=0$.</p><div class='answer'><strong>Model.</strong> AND first: $B \cdot C = 0$. Then OR: $0+0=0$.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Write the AND and OR tables from a blank page. Time yourself: four minutes.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 03</span><span>Unit 1 · Computer Systems</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>03</strong></div>
+<div>
+<h2>Seven gates from a blank page</h2>
+<p class='clock'>Unit 1 · Computer Systems · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Draw AND, OR, NOT, NAND, NOR, XOR, XNOR</li><li>Match each gate to an English rule</li><li>Name the two universal gates</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Swapping XOR and OR. OR is 1 when any input is 1, including both. XOR is 0 when both are 1.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Boolean 1+1?</td><td>1</td></tr><tr><td>Rows for 2 inputs?</td><td>4</td></tr></table>
+<h3>Board notes</h3>
+<p>A gate is the circuit that performs one Boolean operation. Learn shape, expression, and the sentence “output is 1 when …” together. A bubble on the output means invert.</p>
+<table>
+<tr><th>Gate</th><th>Expression</th><th>Output is 1 when</th></tr>
+<tr><td>AND</td><td>$Y=A\cdot B$</td><td>All inputs are 1</td></tr>
+<tr><td>OR</td><td>$Y=A+B$</td><td>Any input is 1</td></tr>
+<tr><td>NOT</td><td>$Y=\overline{A}$</td><td>Input is 0</td></tr>
+<tr><td>NAND</td><td>$Y=\overline{A\cdot B}$</td><td>Any input is 0</td></tr>
+<tr><td>NOR</td><td>$Y=\overline{A+B}$</td><td>All inputs are 0</td></tr>
+<tr><td>XOR</td><td>$Y=A\oplus B$</td><td>Inputs differ</td></tr>
+<tr><td>XNOR</td><td>$Y=\overline{A\oplus B}$</td><td>Inputs are the same</td></tr>
+</table>
+<p>NAND and NOR are <strong>universal</strong>: any Boolean function can be built from only NAND, or only NOR.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board stories the marker likes.</strong></p>
+<ul>
+<li>Car starts: key AND start button.</li>
+<li>Alarm: front door OR back door.</li>
+<li>Two-way staircase light: XOR. The lamp is on when the switches disagree.</li>
+<li>Equality check: XNOR. Output 1 when both bits match.</li>
+</ul>
+<p>Draw NAND as an AND shape plus a bubble. Draw XOR as an OR shape plus an extra curved line on the input side. Practise until the seven outlines take under two minutes.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> XOR of 1 and 1?</p><div class='answer'><strong>Model.</strong> 0. XOR is 1 only when the inputs differ.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> NOR of 0 and 0?</p><div class='answer'><strong>Model.</strong> 1. NOR is 1 only when every input is 0.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Which two gates are universal?</p><div class='answer'><strong>Model.</strong> NAND and NOR.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> XNOR expression in words.</p><div class='answer'><strong>Model.</strong> NOT XOR, or 1 when inputs are equal: $AB + \overline{A}\,\overline{B}$.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> A bubble on the output of AND produces which gate?</p><div class='answer'><strong>Model.</strong> NAND.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Draw all seven gates, unlabelled, then label them tomorrow morning without looking.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 04</span><span>Unit 1 · Computer Systems</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>04</strong></div>
+<div>
+<h2>Expressions, precedence, universal gates</h2>
+<p class='clock'>Unit 1 · Computer Systems · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Evaluate a mixed expression row by row</li><li>Build NOT, AND, and OR from NAND</li><li>Draw $Y=(A+B)\cdot\overline{C}$</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Forgetting the bubble when you copy a NAND into a diagram, which silently turns it into AND.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Universal gates?</td><td>NAND and NOR</td></tr><tr><td>XOR of 1 and 0?</td><td>1</td></tr></table>
+<h3>Board notes</h3>
+<p>An expression is variables joined by operations. Add a column to the truth table for every sub-expression, left to right after applying precedence.</p>
+<div class="formula">\[ Y = (A + B) \cdot \overline{C} \]</div>
+<p>Order inside that formula: the bracketed OR, the NOT on $C$, then the AND. Three inputs means eight rows.</p>
+<p><strong>From NAND alone.</strong> NOT: $\overline{A} = \overline{A \cdot A}$ (tie both NAND inputs to $A$). AND: NAND followed by NOT. OR needs De Morgan: $A+B = \overline{\overline{A}\cdot\overline{B}}$, which is a NAND of two NOTs. You do not need the algebra name in the answer if you show the gates.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board row.</strong> $A=1, B=0, C=1$ in $Y=(A+B)\cdot\overline{C}$.</p>
+<ol>
+<li>$A+B = 1+0 = 1$.</li>
+<li>$\overline{C} = \overline{1} = 0$.</li>
+<li>$Y = 1 \cdot 0 = 0$.</li>
+</ol>
+<p>Second row to speak aloud: $A=0, B=0, C=0$ gives $0 \cdot 1 = 0$. Third: $A=1, B=1, C=0$ gives $1 \cdot 1 = 1$.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Evaluate $A\cdot B + \overline{C}$ at $A=1,B=1,C=1$.</p><div class='answer'><strong>Model.</strong> AND first: $1\cdot 1=1$. NOT C is 0. OR: $1+0=1$.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> How do you make a NOT from one NAND?</p><div class='answer'><strong>Model.</strong> Join both inputs of the NAND to the same variable. Output is $\overline{A}$.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Why eight rows for $Y=(A+B)\cdot\overline{C}$?</p><div class='answer'><strong>Model.</strong> Three input variables, and $2^3=8$.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Which operation is done first in $A+B\cdot C$ if there are no brackets?</p><div class='answer'><strong>Model.</strong> AND. The expression means $A+(B\cdot C)$.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Name the gate for ‘inputs different’.</p><div class='answer'><strong>Model.</strong> XOR.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Pick one 3-variable expression and finish all eight rows. Do not stop at the interesting row.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 05</span><span>Unit 1 · Computer Systems</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>05</strong></div>
+<div>
+<h2>Minterms, maxterms, SOP and POS</h2>
+<p class='clock'>Unit 1 · Computer Systems · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Write a minterm for a row</li><li>Build SOP from the 1-rows</li><li>Build POS from the 0-rows</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Numbering minterms out of binary order. $m_2$ is 10, not 01.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Precedence winner between AND and OR?</td><td>AND</td></tr><tr><td>Rows for 3 inputs?</td><td>8</td></tr></table>
+<h3>Board notes</h3>
+<p>A <strong>minterm</strong> is an AND that contains every variable. If the variable is 0 in that row, write it complemented. You OR the minterms of every row where $Y=1$. That is the <strong>sum of products (SOP)</strong>.</p>
+<p>A <strong>maxterm</strong> is an OR that contains every variable, complemented when the variable is 1 in that row. You AND the maxterms of every row where $Y=0$. That is the <strong>product of sums (POS)</strong>.</p>
+<div class="formula">\[ m_0=\overline{A}\overline{B},\; m_1=\overline{A}B,\; m_2=A\overline{B},\; m_3=AB \]</div>
+<p>The textbook prefers SOP when you draw the circuit: AND gates into one OR gate.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board.</strong> $Y=1$ only on rows $(0,1)$ and $(1,1)$.</p>
+<p>SOP: $Y = \overline{A}B + AB$. Factor: $Y = B(\overline{A}+A) = B$. Check: both 1-rows have $B=1$, both 0-rows have $B=0$. The simpler answer is $Y=B$.</p>
+<p>POS from the 0-rows $(0,0)$ and $(1,0)$: $Y = (A+B)(\overline{A}+B)$, which is also $B$. Either form is full marks if the rows are correct; the simplified form is the one you should draw.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Write $m_2$ for variables $A,B$.</p><div class='answer'><strong>Model.</strong> $A\overline{B}$. Row 2 is $A=1, B=0$.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> SOP uses which rows?</p><div class='answer'><strong>Model.</strong> The rows where output $Y=1$.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> POS uses which rows?</p><div class='answer'><strong>Model.</strong> The rows where output $Y=0$.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> $Y=\overline{A}B + AB$. Simplify.</p><div class='answer'><strong>Model.</strong> $Y=B$.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Why does the course draw SOP as gates?</p><div class='answer'><strong>Model.</strong> Each product is an AND, and the sum of those products is one OR.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>From a blank 2-variable table with 1s only at $m_0$ and $m_2$, write SOP and simplify to $\overline{B}$.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 06</span><span>Unit 1 · Computer Systems</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>06</strong></div>
+<div>
+<h2>Karnaugh maps</h2>
+<p class='clock'>Unit 1 · Computer Systems · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Fill a map in Gray code</li><li>Group power-of-two cells</li><li>Read a group back as a term</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Grouping three cells. Three is not a power of two; split into a pair plus a single, or find a pair and another pair.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>SOP comes from which output rows?</td><td>Y=1 rows</td></tr><tr><td>What is a minterm?</td><td>AND of every variable, complemented where the row has 0</td></tr></table>
+<h3>Board notes</h3>
+<p>A K-map is a truth table redrawn so neighbours differ by one bit (Gray code). Maurice Karnaugh, 1953. You circle groups of size $1, 2, 4, 8, \ldots$ — powers of two. Bigger groups make shorter expressions. Overlap is allowed. Edges wrap around, including corners on a 3-variable map.</p>
+<p>Column order for three variables is $BC = 00, 01, 11, 10$. Never $00, 01, 10, 11$: that last pair is not adjacent in Gray code.</p>
+<p>Inside a circle, drop any variable that changes, and keep any variable that stays constant (complemented if it stays 0).</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board, two variables.</strong> Cells: $m_0=0, m_1=1, m_2=1, m_3=1$. That is $Y=\overline{A}B + A\overline{B} + AB$.</p>
+<p>Group the bottom row ($A=1$, both columns) as $A$. Group the right column ($B=1$, both rows) as $B$. Overlap on $AB$ is legal. Result: $Y = A + B$. Check against the OR table: the only 0 is $A=B=0$.</p>
+<p><strong>Three-variable collapse the book likes.</strong> If every 1-cell contains $C$ and the pairs cover all of $A$ and $B$, the whole group reads $Y=C$.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Legal group sizes?</p><div class='answer'><strong>Model.</strong> Powers of two: 1, 2, 4, 8, …</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Gray-code order of two bits?</p><div class='answer'><strong>Model.</strong> 00, 01, 11, 10.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> May groups overlap?</p><div class='answer'><strong>Model.</strong> Yes. Overlap often gives the simplest cover.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> A 2-cell group in which $A$ changes and $B$ stays 1. The term?</p><div class='answer'><strong>Model.</strong> $B$.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Simplify $Y=\overline{A}B + AB$ on a map or by factoring.</p><div class='answer'><strong>Model.</strong> $Y=B$.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Draw a 2-variable map, place three 1s, circle, and write the OR expression without looking at today’s board.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 07</span><span>Unit 1 · Computer Systems</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>07</strong></div>
+<div>
+<h2>LogiSim, including a paper lab</h2>
+<p class='clock'>Unit 1 · Computer Systems · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Place pins and a gate</li><li>Wire only horizontally and vertically</li><li>Verify $Y=A\cdot B+C$ against eight rows</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Trusting the simulator when your table disagrees. The table is the specification; a crossed wire is a bug.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Gray code pair after 01?</td><td>11, then 10</td></tr><tr><td>Group size 3 allowed?</td><td>No</td></tr></table>
+<h3>Board notes</h3>
+<p>LogiSim Evolution is the course simulator. It needs Java 21 or newer. Circuits save as <code>.circ</code>. Input pins are squares you toggle. Output pins are circles. Bright green means 1; dark green means 0. Wires must be horizontal or vertical.</p>
+<ol>
+<li>File, New, Save As <code>and_gate.circ</code>.</li>
+<li>Place AND. Place input pins $A$ and $B$ on the left, output $Y$ on the right.</li>
+<li>Wire pin to gate. Poke each of the four input pairs. $Y$ is 1 only for $(1,1)$.</li>
+<li>Extension: AND of $A$ and $B$, then OR with $C$. Tick all eight rows.</li>
+</ol>
+<p>No lab PC today? Draw the same circuit on paper and fill the eight-row table. The logic mark does not require the software screenshot if the table matches.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board checklist for $Y=A\cdot B+C$.</strong></p>
+<table>
+<tr><th>$A$</th><th>$B$</th><th>$C$</th><th>$A\cdot B$</th><th>$Y$</th></tr>
+<tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<p>$Y$ is 0 only when $C=0$ and the AND is 0. Say that sentence before you poke the circuit.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> File extension of a LogiSim circuit?</p><div class='answer'><strong>Model.</strong> <code>.circ</code>.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Which pin do you toggle, square or circle?</p><div class='answer'><strong>Model.</strong> Square input pin. The circle is the output.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> May a wire run diagonally?</p><div class='answer'><strong>Model.</strong> No. Horizontal or vertical only.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Colour of logic 1 on the wire?</p><div class='answer'><strong>Model.</strong> Bright green. Dark green is 0.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> For $Y=A\cdot B+C$, what is $Y$ when $A=B=C=0$?</p><div class='answer'><strong>Model.</strong> 0.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>If a machine is available, build the AND and photograph the $(1,1)$ case. If not, reproduce the eight-row table from memory.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 08</span><span>Unit 1 · Computer Systems</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>08</strong></div>
+<div>
+<h2>The six SDLC phases</h2>
+<p class='clock'>Unit 1 · Computer Systems · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Name each phase and its deliverable</li><li>Contrast black-box and white-box tests</li><li>Name four maintenance types</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Putting coding before an SRS because ‘we already know what to build’.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>LogiSim wire rule?</td><td>Horizontal or vertical only</td></tr><tr><td>Bright green means?</td><td>Logic 1</td></tr></table>
+<h3>Board notes</h3>
+<p>The software development life cycle is the agreed sequence so a team does not pour the concrete and then ask how many rooms. Six phases:</p>
+<table>
+<tr><th>Phase</th><th>Deliverable</th></tr>
+<tr><td>Requirement analysis</td><td>SRS — software requirements specification</td></tr>
+<tr><td>System design</td><td>HLD/LLD, database, wireframes</td></tr>
+<tr><td>Implementation</td><td>Source code, usually in Git</td></tr>
+<tr><td>Testing</td><td>Unit, integration, system, UAT; defect log</td></tr>
+<tr><td>Deployment</td><td>Direct, phased, pilot, or parallel run</td></tr>
+<tr><td>Maintenance</td><td>Corrective, adaptive, perfective, preventive</td></tr>
+</table>
+<p><strong>Black box:</strong> you see inputs and outputs, not the code. <strong>White box:</strong> you test branches and loops inside the code.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board: a fees report required by a board circular, deadline fixed, rules known.</strong> Phase 1 writes the SRS and the school signs it. Design draws tables and screens. Code follows the design. Testing includes UAT with the accounts clerk (black box) and branch tests on the calculation (white box). Deployment might be parallel: old register and new system for two weeks. Maintenance later is adaptive when the circular changes.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Which document freezes requirements?</p><div class='answer'><strong>Model.</strong> The SRS.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> UAT sits in which phase?</p><div class='answer'><strong>Model.</strong> Testing. Users accept the system against the requirements.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Corrective maintenance fixes what?</p><div class='answer'><strong>Model.</strong> Defects found after release.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Adaptive maintenance responds to what?</p><div class='answer'><strong>Model.</strong> A changed environment or rule, such as a new fee policy.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Pilot deployment means what?</p><div class='answer'><strong>Model.</strong> Release to a small group first, then widen.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Write the six phase names in order on a card you will keep until Day 12.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 09</span><span>Unit 1 · Computer Systems</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>09</strong></div>
+<div>
+<h2>Waterfall and Agile at Al-Noor</h2>
+<p class='clock'>Unit 1 · Computer Systems · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Choose a model from the project facts</li><li>Describe a sprint</li><li>Quote one difference that markers want</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Saying ‘Agile means no documentation’. It means light documentation and working software as the proof.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>SRS belongs to which phase?</td><td>Requirement analysis</td></tr><tr><td>Black box hides what?</td><td>The source code</td></tr></table>
+<h3>Board notes</h3>
+<p><strong>Waterfall</strong> finishes a phase before the next begins. Documents are heavy. Change is expensive. Use it when requirements are stable, the technology is known, and the project is small enough to plan.</p>
+<p><strong>Agile / Scrum</strong> ships a usable slice every sprint of about 2 to 4 weeks. The product backlog is a living list of user stories (“As a student, I want …”). A review shows working software. A retrospective improves the team.</p>
+<table>
+<tr><th></th><th>Library LMS</th><th>Student mobile app</th></tr>
+<tr><td>Model</td><td>Waterfall</td><td>Agile, Scrum</td></tr>
+<tr><td>Stack</td><td>Python, Tkinter, SQLite</td><td>Flutter</td></tr>
+<tr><td>Why</td><td>Rules known, deadline fixed</td><td>Needs unclear, many stakeholders</td></tr>
+<tr><td>First working build</td><td>About six months</td><td>About two weeks</td></tr>
+<tr><td>Change</td><td>SRS frozen</td><td>Next sprint</td></tr>
+</table>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board decision.</strong> “The school wants a bus tracker, but students, parents, and the principal disagree, and the phone OS will update twice this term.” Agile. Say the reason in one line: requirements are not knowable on day one, and a sprint review is how the school will discover them.</p>
+<p>Opposite board: “The library already has a signed list of fields and a six-month handover.” Waterfall. The LMS case froze STUDENTS, BOOKS, and LOANS, with 14-day loans.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Name the Waterfall case and the Agile case.</p><div class='answer'><strong>Model.</strong> Al-Noor library LMS is Waterfall. Al-Noor student mobile app is Agile.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> What is a user story?</p><div class='answer'><strong>Model.</strong> A backlog item in the user’s words: As a &lt;role&gt;, I want &lt;goal&gt;.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Length of one sprint in the mobile case?</p><div class='answer'><strong>Model.</strong> Two weeks. Five sprints, about ten weeks.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> When is change cheap?</p><div class='answer'><strong>Model.</strong> In Agile, by placing it in a later sprint. In Waterfall it is expensive after the SRS is signed.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Testing in Agile versus Waterfall?</p><div class='answer'><strong>Model.</strong> Agile tests inside every sprint. Waterfall has a dedicated later test phase.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Write a six-line comparison table from memory: requirements, client contact, first build, change, testing, documents.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 10</span><span>Unit 1 · Computer Systems</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>10</strong></div>
+<div>
+<h2>OSI: seven layers and the PDU chant</h2>
+<p class='clock'>Unit 1 · Computer Systems · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>List layers from physical up</li><li>Attach one job and one protocol to each</li><li>Name the data unit at each layer</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Putting IP at the data-link layer. IP is layer 3. MAC is layer 2.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Agile case study name?</td><td>Al-Noor student mobile app</td></tr><tr><td>Waterfall first working build, roughly?</td><td>Six months</td></tr></table>
+<h3>Board notes</h3>
+<p>Mnemonic, bottom to top: <strong>Please Do Not Throw Sausage Pizza Away</strong> — Physical, Data link, Network, Transport, Session, Presentation, Application.</p>
+<table>
+<tr><th>#</th><th>Layer</th><th>Job</th><th>PDU</th></tr>
+<tr><td>7</td><td>Application</td><td>HTTP, DNS, SMTP, FTP</td><td>Data</td></tr>
+<tr><td>6</td><td>Presentation</td><td>Format, encrypt, compress</td><td>Data</td></tr>
+<tr><td>5</td><td>Session</td><td>Open, keep, close dialogs</td><td>Data</td></tr>
+<tr><td>4</td><td>Transport</td><td>TCP or UDP, ports</td><td>Segment</td></tr>
+<tr><td>3</td><td>Network</td><td>IP addresses, routing</td><td>Packet</td></tr>
+<tr><td>2</td><td>Data link</td><td>MAC, frames, CRC</td><td>Frame</td></tr>
+<tr><td>1</td><td>Physical</td><td>Bits on cable or radio</td><td>Bits</td></tr>
+</table>
+<div class="formula">\[ \text{Data} \to \text{Segment} \to \text{Packet} \to \text{Frame} \to \text{Bits} \]</div>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board: a web page request.</strong> The browser is application (HTTP, port 443 if HTTPS). Presentation handles TLS. Transport chooses TCP because a missing byte matters. Network puts the server’s IP on the packet. Data link puts the next hop’s MAC on the frame. Physical sends bits. On the way down we <strong>encapsulate</strong> (add headers). On the way up we <strong>decapsulate</strong> (peel them).</p>
+<p>TCP is reliable and ordered. UDP is faster and does not retry. Video calls often prefer UDP because a late packet is useless.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Which layer adds port numbers?</p><div class='answer'><strong>Model.</strong> Transport.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Which layer adds the IP address?</p><div class='answer'><strong>Model.</strong> Network.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Which layer adds the MAC address?</p><div class='answer'><strong>Model.</strong> Data link.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> PDU at layer 3?</p><div class='answer'><strong>Model.</strong> Packet.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Why might a call use UDP?</p><div class='answer'><strong>Model.</strong> Retransmission would arrive too late; UDP keeps the stream timely.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Recite the mnemonic and the PDU chant before sleep. Write ports 80 and 443 beside TCP.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 11</span><span>Unit 1 · Computer Systems</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>11</strong></div>
+<div>
+<h2>TCP/IP and a packet’s journey</h2>
+<p class='clock'>Unit 1 · Computer Systems · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Map four TCP/IP layers onto OSI</li><li>Contrast the teaching model with the Internet model</li><li>Walk encapsulation in five steps</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Saying OSI ‘is the Internet’. The Internet runs TCP/IP.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Transport PDU name?</td><td>Segment</td></tr><tr><td>Layer of a MAC address?</td><td>Data link</td></tr></table>
+<h3>Board notes</h3>
+<p>TCP/IP is the model that actually runs the Internet: four layers, from 1970s US Department of Defense work. OSI (ISO, 1984) is the seven-layer teaching reference.</p>
+<table>
+<tr><th>TCP/IP</th><th>OSI layers folded in</th><th>Examples</th></tr>
+<tr><td>Application</td><td>7 + 6 + 5</td><td>HTTP, DNS, FTP, SMTP</td></tr>
+<tr><td>Transport</td><td>4</td><td>TCP, UDP</td></tr>
+<tr><td>Internet</td><td>3</td><td>IPv4, IPv6, ICMP</td></tr>
+<tr><td>Network access</td><td>2 + 1</td><td>Ethernet, Wi-Fi, cables</td></tr>
+</table>
+<p>Say this in the exam: OSI explains. TCP/IP implements.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board journey, college PC to a result website.</strong></p>
+<ol>
+<li>Application builds the HTTP request.</li>
+<li>Transport wraps it as a TCP segment, destination port 443.</li>
+<li>Internet wraps that as an IP packet with the server address.</li>
+<li>Network access wraps a frame with the gateway MAC and sends bits.</li>
+<li>Each router looks at the IP, not the web page. The page is unwrapped only at the far host.</li>
+</ol>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> How many layers in TCP/IP?</p><div class='answer'><strong>Model.</strong> Four.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Which TCP/IP layer holds Ethernet?</p><div class='answer'><strong>Model.</strong> Network access.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Which OSI layers does the TCP/IP application layer cover?</p><div class='answer'><strong>Model.</strong> Application, presentation, and session (7, 6, and 5).</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Encapsulation or decapsulation on the sending host?</p><div class='answer'><strong>Model.</strong> Encapsulation: headers are added on the way down.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> One line: OSI versus TCP/IP.</p><div class='answer'><strong>Model.</strong> OSI is a 7-layer reference for teaching. TCP/IP is the 4-layer model the Internet runs.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Draw four boxes, label them, and write one protocol in each. Sixty seconds.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 12</span><span>Unit 1 · Computer Systems</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>12</strong></div>
+<div>
+<h2>Unit 1 checkpoint</h2>
+<p class='clock'>Unit 1 · Computer Systems · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Score at least 7 out of 10</li><li>Write full sentences, not single words</li><li>Fix any gate or OSI gap tonight</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Moving on with a 4/10 because the timetable says Day 13. The timetable loses to the score.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>TCP/IP layer count?</td><td>4</td></tr><tr><td>OSI layer count?</td><td>7</td></tr></table>
+<h3>Board notes</h3>
+<p>Closed book. Ten short items. One mark each. Write the mark scheme only after you have answered. A score under 7 means Days 1–11 are not safe: redo the drills you missed before Day 13.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p>No new example today. The checkpoint is the example. Sit it in 35 minutes, mark it in 15, and spend the rest of the class repairing the lowest topic.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> State 0 and 1 in words.</p><div class='answer'><strong>Model.</strong> 0 is OFF/LOW/FALSE. 1 is ON/HIGH/TRUE.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Boolean value of $1+1$ and of $1\cdot 0$.</p><div class='answer'><strong>Model.</strong> $1$ and $0$.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Output rule for NAND.</p><div class='answer'><strong>Model.</strong> 1 when any input is 0. Expression $\overline{A\cdot B}$.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Why is NOR universal? One sentence.</p><div class='answer'><strong>Model.</strong> Any Boolean function can be built using only NOR gates.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> SOP is built from which rows?</p><div class='answer'><strong>Model.</strong> Rows where $Y=1$, as a sum of minterms.</div></div>
+<div class='q'><p class='prompt'><strong>6.</strong> Gray-code order of 00, 01, 10, 11 corrected.</p><div class='answer'><strong>Model.</strong> 00, 01, 11, 10.</div></div>
+<div class='q'><p class='prompt'><strong>7.</strong> Name the six SDLC phases in order.</p><div class='answer'><strong>Model.</strong> Analysis, design, implementation, testing, deployment, maintenance.</div></div>
+<div class='q'><p class='prompt'><strong>8.</strong> Al-Noor library: which model, and why in one line?</p><div class='answer'><strong>Model.</strong> Waterfall, because requirements were known and then frozen.</div></div>
+<div class='q'><p class='prompt'><strong>9.</strong> PDU chant from application down to the cable.</p><div class='answer'><strong>Model.</strong> Data, segment, packet, frame, bits.</div></div>
+<div class='q'><p class='prompt'><strong>10.</strong> Which TCP/IP layer corresponds to OSI layers 2 and 1?</p><div class='answer'><strong>Model.</strong> Network access.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>List the three questions you lost. Redo only those board examples. Do not reread the whole unit.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 13</span><span>Unit 2 · Computational Thinking</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>13</strong></div>
+<div>
+<h2>Decompose, notice the pattern, abstract</h2>
+<p class='clock'>Unit 2 · Computational Thinking · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Split a problem until each piece is testable</li><li>Spot a repeating rule</li><li>Drop details that do not change the result</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Starting with Python keywords before the steps exist.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Checkpoint pass mark?</td><td>7/10</td></tr><tr><td>PDU under the packet?</td><td>Frame, then bits</td></tr></table>
+<h3>Board notes</h3>
+<p>Computational thinking is the habit before the language. Four moves: <strong>decompose</strong>, <strong>recognise the pattern</strong>, <strong>abstract</strong>, then write the <strong>algorithm</strong>. An algorithm is a language-free sequence of steps. Pseudocode is that sequence written with IF, FOR, and WHILE so it can become Python later.</p>
+<p>Decomposition: a timetable clash is not one blob. It is “read the grids”, “find the shared period”, “propose a swap”, “check the room”. Pattern: row $i$ of a star triangle prints $i$ stars, so one loop replaces ten drawings. Abstraction: making tea keeps boil, add tea, steep, pour — and drops the colour of the cup.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board: attendance app.</strong> Decompose into login, class list, mark present or absent, save, report. Abstract away the logo colour. The pattern is “for each student, record one status”. Pseudocode:</p>
+<pre><code>FOR each student in class
+    READ status
+    IF status is absent THEN count = count + 1
+WRITE count</code></pre>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Algorithm or pseudocode: which one may use IF and WHILE?</p><div class='answer'><strong>Model.</strong> Pseudocode. An algorithm can be plain numbered steps and is language-free.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> One detail you abstract away in a library search.</p><div class='answer'><strong>Model.</strong> Spine colour. Keep title, author, availability.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Row $i$ prints how many stars?</p><div class='answer'><strong>Model.</strong> $i$ stars. That single rule is the pattern.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Why decompose?</p><div class='answer'><strong>Model.</strong> Small pieces can be tested and explained. A blob cannot.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Who is an algorithm for?</p><div class='answer'><strong>Model.</strong> Anyone who must follow the logic, including a non-programmer. Pseudocode aims at the person about to code.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Take ‘prepare a practical file’ and split it into six steps a classmate could follow without you.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 14</span><span>Unit 2 · Computational Thinking</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>14</strong></div>
+<div>
+<h2>Bubble sort, every pass written out</h2>
+<p class='clock'>Unit 2 · Computational Thinking · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Perform neighbour swaps</li><li>Show the settled suffix</li><li>State $O(n^2)$ and stability</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>One pass and a claim that the list is finished. Markers want the settled value named.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Four thinking moves, in order?</td><td>Decompose, pattern, abstract, algorithm</td></tr><tr><td>Pseudocode keywords?</td><td>IF, FOR, WHILE</td></tr></table>
+<h3>Board notes</h3>
+<p>Bubble sort walks left to right, compares neighbours, and swaps if they are out of order. The largest unsorted value settles at the end of the pass. The next pass ignores that settled suffix.</p>
+<div class="formula">\[ \text{for } k = 1 \text{ to } n-1:\quad \text{compare neighbours in } 1 \ldots n-k \]</div>
+<p>Comparisons are about $n(n-1)/2$, so the growth is $O(n^2)$. The sort is <strong>stable</strong>: equal keys keep their original order. It is fine for teaching and for tiny lists. It is the wrong tool for a large catalogue.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board trace of</strong> $\{8,4,1,9,3\}$.</p>
+<table>
+<tr><th>Pass</th><th>List at end of pass</th><th>Settled</th></tr>
+<tr><td>1</td><td>4, 1, 8, 3, 9</td><td>9</td></tr>
+<tr><td>2</td><td>1, 4, 3, 8, 9</td><td>8, 9</td></tr>
+<tr><td>3</td><td>1, 3, 4, 8, 9</td><td>4, 8, 9</td></tr>
+<tr><td>4</td><td>1, 3, 4, 8, 9</td><td>done</td></tr>
+</table>
+<p>Pass 1 in words: 8↔4, then 8↔1, 8 stays before 9, 9↔3. Speak every swap. A silent ‘it becomes sorted’ earns little.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> After pass 1 of bubble sort, which value is in its final seat?</p><div class='answer'><strong>Model.</strong> The maximum. In the example, 9.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Stable or not?</p><div class='answer'><strong>Model.</strong> Stable.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Complexity class?</p><div class='answer'><strong>Model.</strong> $O(n^2)$.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> First swap on $\{8,4,1,9,3\}$?</p><div class='answer'><strong>Model.</strong> 8 and 4, producing $\{4,8,1,9,3\}$.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Why ignore the last cell on pass 2?</p><div class='answer'><strong>Model.</strong> It already holds the largest value, so it will not move.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Trace $\{5,1,4,2\}$ on paper. Four lines, one per pass. No calculator.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 15</span><span>Unit 2 · Computational Thinking</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>15</strong></div>
+<div>
+<h2>Selection sort</h2>
+<p class='clock'>Unit 2 · Computational Thinking · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Find the next minimum and plant it</li><li>Contrast swap counts with bubble sort</li><li>Say why it is usually not stable</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Describing selection sort as ‘swap neighbours’. That is bubble sort.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Bubble sort: what settles at the end of pass 1?</td><td>The largest value</td></tr><tr><td>Is bubble sort stable?</td><td>Yes</td></tr></table>
+<h3>Board notes</h3>
+<p>On pass $i$, scan the unsorted suffix, find the smallest item, and swap it into position $i$. You pay many comparisons and at most one swap per pass.</p>
+<pre><code>for i = 1 to n-1
+    min = i
+    for j = i+1 to n
+        if A[j] &lt; A[min] then min = j
+    swap A[i] with A[min]</code></pre>
+<p>Same $O(n^2)$ family as bubble sort. Usually <strong>not stable</strong>, because a swap can jump an equal key over another. Prefer it only when writes are expensive and $n$ is small.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board on</strong> $\{8,4,1,9,3\}$.</p>
+<table>
+<tr><th>i</th><th>Minimum found</th><th>List after the swap</th></tr>
+<tr><td>1</td><td>1</td><td>1, 4, 8, 9, 3</td></tr>
+<tr><td>2</td><td>3</td><td>1, 3, 8, 9, 4</td></tr>
+<tr><td>3</td><td>4</td><td>1, 3, 4, 9, 8</td></tr>
+<tr><td>4</td><td>8</td><td>1, 3, 4, 8, 9</td></tr>
+</table>
+<p>Count swaps: four, not a swap on every comparison. That is the contrast with yesterday.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> What is planted at the front on pass 1?</p><div class='answer'><strong>Model.</strong> The smallest value in the whole list.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> At most how many swaps per pass?</p><div class='answer'><strong>Model.</strong> One.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Complexity?</p><div class='answer'><strong>Model.</strong> $O(n^2)$, same family as bubble sort.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Stable?</p><div class='answer'><strong>Model.</strong> Usually no.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Bubble or selection if moving a record is very costly and $n$ is tiny?</p><div class='answer'><strong>Model.</strong> Selection, because it swaps at most once per pass.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Selection-sort $\{5,1,4,2\}$ beside yesterday’s bubble trace. Circle the swaps.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 16</span><span>Unit 2 · Computational Thinking</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>16</strong></div>
+<div>
+<h2>Linear search and binary search</h2>
+<p class='clock'>Unit 2 · Computational Thinking · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Search an unsorted list linearly</li><li>Compute the midpoint</li><li>Refuse binary search when the list is unsorted</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Sorting ‘in your head’ and still calling it a linear search of unsorted data. If you sorted, say so, then you may search in binary.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Selection sort swaps per pass, at most?</td><td>One</td></tr><tr><td>Bubble complexity?</td><td>$O(n^2)$</td></tr></table>
+<h3>Board notes</h3>
+<p><strong>Linear search</strong> starts at the left and compares until it hits the key or falls off the end. It works on unsorted data. Worst case $O(n)$.</p>
+<p><strong>Binary search</strong> needs a sorted array and random access. Keep beginning, end, and midpoint.</p>
+<div class="formula">\[ \mathit{MID} = \left\lfloor \frac{\mathit{BEG}+\mathit{END}}{2} \right\rfloor \]</div>
+<p>If the key is smaller than $A[\mathit{MID}]$, throw away the right half. If larger, throw away the left. Repeat. Growth is $O(\log n)$.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board.</strong> Find 7 in $\{8,3,6,1,7,2,4,5\}$. Linear: inspect 8, 3, 6, 1, then 7. Five comparisons. Binary is illegal until you sort.</p>
+<p>Find 3 in sorted $\{1,2,3,4,5,6,7,8,9\}$. Mid index holds 5. Key is smaller, so discard 6–9. Next mid lands on 2 or 3; one more comparison finds 3. Grey cells were never visited. That saving is the whole point.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Can you binary-search a pile of unmarked scripts?</p><div class='answer'><strong>Model.</strong> No. They are not a sorted random-access array.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Linear search complexity?</p><div class='answer'><strong>Model.</strong> $O(n)$.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Binary search complexity, and the condition?</p><div class='answer'><strong>Model.</strong> $O(\log n)$, and the array must already be sorted.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> MID formula?</p><div class='answer'><strong>Model.</strong> Floor of (BEG+END)/2.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Key smaller than A[MID]. Which half dies?</p><div class='answer'><strong>Model.</strong> The right half, including the old mid. END becomes MID−1.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Binary-search 6 in $\{1,2,3,4,5,6,7,8,9\}$. Write every MID value.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 17</span><span>Unit 2 · Computational Thinking</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>17</strong></div>
+<div>
+<h2>Correct, efficient, and clear</h2>
+<p class='clock'>Unit 2 · Computational Thinking · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Use a trace table</li><li>Pick an algorithm from the situation</li><li>Name a clarity fix</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Claiming binary search is always faster. It is faster only after the data is sorted, and sorting itself costs work.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>MID formula?</td><td>floor((BEG+END)/2)</td></tr><tr><td>Linear search needs sorted data?</td><td>No</td></tr></table>
+<h3>Board notes</h3>
+<p>Judge every algorithm three ways.</p>
+<table>
+<tr><th>Test</th><th>Question</th></tr>
+<tr><td>Correctness</td><td>Does it match the specification, including empty input, and does it stop?</td></tr>
+<tr><td>Efficiency</td><td>How do steps and memory grow with $n$?</td></tr>
+<tr><td>Clarity</td><td>Could another student trace it without a phone call?</td></tr>
+</table>
+<p>Decision guide: unsorted search → linear; sorted array search → binary; data must itself be ordered → sort; the same sub-problem returns → remember the answer (the book flags dynamic programming).</p>
+<p>A trace table has columns for the line, each variable, the condition, and the output. Use a tiny $n$.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board: sum $1..N$ for $N=3$.</strong> $S$ starts at 0. After $i=1$, $S=1$. After $i=2$, $S=3$. After $i=3$, $S=6$. Then $i=4$ fails $i \le 3$ and the loop stops. Closed form $\frac{N(N+1)}{2}$ checks the trace: $6$.</p>
+<p>Clarity fix: rename <code>x</code> to <code>absentCount</code> and extract “count absences” from “print the report”.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Three judgement words.</p><div class='answer'><strong>Model.</strong> Correctness, efficiency, clarity.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Unsorted bag, find one name. Which search?</p><div class='answer'><strong>Model.</strong> Linear.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Sorted array of 100000 roll numbers. Which search?</p><div class='answer'><strong>Model.</strong> Binary.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> What does a trace table catch that a shrug does not?</p><div class='answer'><strong>Model.</strong> A wrong update, an off-by-one, or a loop that never ends.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> One clarity repair.</p><div class='answer'><strong>Model.</strong> A name that states the unit, such as velocity = distance / time, or one function per job.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Trace ‘count the evens in $\{4,7,2,9\}$’ with columns i, value, count.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 18</span><span>Unit 2 · Computational Thinking</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>18</strong></div>
+<div>
+<h2>Unit 2 checkpoint</h2>
+<p class='clock'>Unit 2 · Computational Thinking · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Trace one sort and one search</li><li>Choose the algorithm in one line</li><li>Score 7/10 before Python starts</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Memorising ‘bubble is slow’ without being able to show one pass.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Three tests of an algorithm?</td><td>Correct, efficient, clear</td></tr><tr><td>Selection: swaps per pass?</td><td>At most one</td></tr></table>
+<h3>Board notes</h3>
+<p>Closed book, 40 minutes. Algorithms are earned by traces, not by the name alone. If the sort trace is wrong, Day 19 still happens, but tonight belongs to the trace, not to new Python.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p>Mark with the scheme under each item. A correct final list with no passes shown is half a mark at most — this checkpoint wants the passes.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Define algorithm in one sentence.</p><div class='answer'><strong>Model.</strong> A finite, language-free sequence of steps that solves a problem.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> One pattern and one abstraction in making tea.</p><div class='answer'><strong>Model.</strong> Pattern: boil then steep is always the order. Abstraction: ignore cup colour.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Bubble-sort pass 1 of $\{3,1,2\}$. Show the list.</p><div class='answer'><strong>Model.</strong> Compare 3↔1 → $\{1,3,2\}$; then 3↔2 → $\{1,2,3\}$. 3 has settled.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Is bubble sort stable? Is selection sort?</p><div class='answer'><strong>Model.</strong> Bubble yes. Selection usually no.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Both classroom sorts share which complexity?</p><div class='answer'><strong>Model.</strong> $O(n^2)$.</div></div>
+<div class='q'><p class='prompt'><strong>6.</strong> Find 2 in unsorted $\{9,2,5\}$ and name the search.</p><div class='answer'><strong>Model.</strong> Linear. Compare 9, then 2. Two comparisons.</div></div>
+<div class='q'><p class='prompt'><strong>7.</strong> Binary search requirement.</p><div class='answer'><strong>Model.</strong> A sorted array with random access.</div></div>
+<div class='q'><p class='prompt'><strong>8.</strong> Key greater than A[MID]. What changes?</p><div class='answer'><strong>Model.</strong> BEG becomes MID+1.</div></div>
+<div class='q'><p class='prompt'><strong>9.</strong> What is a trace table for?</p><div class='answer'><strong>Model.</strong> A hand execution that checks correctness on a small input.</div></div>
+<div class='q'><p class='prompt'><strong>10.</strong> Large sorted file, many lookups. Search choice?</p><div class='answer'><strong>Model.</strong> Binary search, $O(\log n)$ per lookup.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Rewrite any lost trace until the swaps are visible. Then stop.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 19</span><span>Unit 3 · Programming Fundamentals</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>19</strong></div>
+<div>
+<h2>Python values, names, and input</h2>
+<p class='clock'>Unit 3 · Programming Fundamentals · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Name a legal variable</li><li>Convert input before arithmetic</li><li>Use an f-string</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Forgetting int() and then ‘adding’ two ages into a longer string.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Binary search needs what first?</td><td>Sorted data</td></tr><tr><td>Bubble pass 1 settles what?</td><td>The maximum</td></tr></table>
+<h3>Board notes</h3>
+<p>A program is a list of instructions. Python is high-level: closer to structured English than to raw bits. A variable is a named box. Names start with a letter or underscore, may contain digits, are case-sensitive, and must not be keywords.</p>
+<p><code>input()</code> always returns a <strong>string</strong>. <code>"3"+"4"</code> is <code>"34"</code>. Wrap with <code>int()</code> or <code>float()</code> before arithmetic.</p>
+<pre><code>name = input("Name: ")
+age = int(input("Age: "))
+print(f"{name} is {age}")</code></pre>
+<table>
+<tr><th>Type</th><th>Example</th></tr>
+<tr><td>int</td><td>18</td></tr>
+<tr><td>float</td><td>1.75</td></tr>
+<tr><td>str</td><td>"Ali"</td></tr>
+<tr><td>bool</td><td>True (capital T)</td></tr>
+</table>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board bug.</strong> <code>print(3 + "4")</code> raises TypeError. Repair: <code>print(3 + int("4"))</code> which prints 7. Say why: the quotes make a string, and a string is not a number until you convert it.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Is <code>2name</code> legal?</p><div class='answer'><strong>Model.</strong> No. A name cannot start with a digit.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> What type does input() return?</p><div class='answer'><strong>Model.</strong> str, always.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Result of int('4') + 3?</p><div class='answer'><strong>Model.</strong> 7.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Result of '4' + '3'?</p><div class='answer'><strong>Model.</strong> The string 43, not 7.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Write an f-string printing name and marks.</p><div class='answer'><strong>Model.</strong> <code>print(f"{name} scored {marks}")</code>.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Type the three-line program and run it. If you have no PC, write the expected screen for age 17.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 20</span><span>Unit 3 · Programming Fundamentals</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>20</strong></div>
+<div>
+<h2>Operators</h2>
+<p class='clock'>Unit 3 · Programming Fundamentals · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Choose // versus /</li><li>Predict a comparison</li><li>Connect and/or/not to Unit 1</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Using = inside an if condition. That is assignment, not a test.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>input() returns?</td><td>A string</td></tr><tr><td>int(&#x27;3&#x27;)+int(&#x27;4&#x27;)?</td><td>7</td></tr></table>
+<h3>Board notes</h3>
+<p>Arithmetic: <code>+ - * / // % **</code>. <code>/</code> is true division. <code>//</code> is floor division. <code>%</code> is remainder. <code>**</code> is power.</p>
+<p>Comparisons <code>== != &gt; &lt; &gt;= &lt;=</code> produce <code>True</code> or <code>False</code>. Logical <code>and</code>, <code>or</code>, <code>not</code> are the same ideas as AND, OR, NOT. Membership: <code>in</code>. A single <code>=</code> assigns; a double <code>==</code> compares.</p>
+<div class="formula">\[ 4 == 5-1 \Rightarrow \text{True}, \quad 22 != 23-1 \Rightarrow \text{False} \]</div>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board.</strong> <code>17 // 5</code> is 3. <code>17 % 5</code> is 2. <code>17 / 5</code> is 3.4. <code>2 ** 3</code> is 8. <code>55 &gt;= 11 * 5</code> is True because both sides are 55.</p>
+<p>Even test: <code>n % 2 == 0</code>. Say it as “remainder 0 when divided by 2”.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> 17 // 5 and 17 % 5?</p><div class='answer'><strong>Model.</strong> 3 and 2.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> What does a single = do?</p><div class='answer'><strong>Model.</strong> Assignment. Comparison is ==.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> not True?</p><div class='answer'><strong>Model.</strong> False. Same flip as a NOT gate.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> 4 == 5 - 1?</p><div class='answer'><strong>Model.</strong> True.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Expression that is true when code is 'BCA' or 'BCOM'.</p><div class='answer'><strong>Model.</strong> <code>code == 'BCA' or code == 'BCOM'</code>.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Write five predictions, then run them. Mark any mismatch; that mismatch is a logical or syntax lesson, not a mystery.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 21</span><span>Unit 3 · Programming Fundamentals</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>21</strong></div>
+<div>
+<h2>Selection</h2>
+<p class='clock'>Unit 3 · Programming Fundamentals · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Write if, elif, and else</li><li>Indent the block</li><li>Explain a lone if versus if-else</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Forgetting the indent so the ‘success’ print always runs.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Floor division operator?</td><td>//</td></tr><tr><td>Remainder operator?</td><td>%</td></tr></table>
+<h3>Board notes</h3>
+<p>Selection chooses a block. A colon ends the condition. The next indented lines belong to it. A lone <code>if</code> may do nothing when the test is false. <code>if-else</code> always runs exactly one of the two blocks. <code>elif</code> adds further tests, still only one block runs.</p>
+<pre><code>age = int(input("Age: "))
+if age &gt;= 18:
+    print("You can vote")
+elif age &gt;= 13:
+    print("Teenager")
+else:
+    print("Too young to vote")
+print("Done")</code></pre>
+<p><code>Done</code> is not indented, so it always prints. That is sequence after selection.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board, age 16.</strong> First test $16 \ge 18$ is false. Second test $16 \ge 13$ is true, so print Teenager and skip else. Then print Done.</p>
+<p><strong>Age 20.</strong> First test true, print the vote line, skip elif and else, print Done.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> What character ends the condition line?</p><div class='answer'><strong>Model.</strong> A colon.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Age 12. Which message, and does Done print?</p><div class='answer'><strong>Model.</strong> Too young to vote. Yes, Done prints.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Lone if when the test is false?</p><div class='answer'><strong>Model.</strong> The indented block is skipped. The program continues underneath.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> How many blocks run in an if/elif/else chain?</p><div class='answer'><strong>Model.</strong> Exactly one.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Why convert age with int before comparing to 18?</p><div class='answer'><strong>Model.</strong> input() is a string. Comparing a string to 18 is not the numeric test you want.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Write a three-way marks program: 80 and above distinction, 50 and above pass, otherwise retake. Trace marks = 50.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 22</span><span>Unit 3 · Programming Fundamentals</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>22</strong></div>
+<div>
+<h2>Repetition</h2>
+<p class='clock'>Unit 3 · Programming Fundamentals · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Use range stops correctly</li><li>Write a while that ends</li><li>Choose break or continue</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>range(1, 5) when you wanted 1 through 5. The stop is exclusive; use 6.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Colon and indent belong to which structure?</td><td>if / elif / else, and also loops</td></tr><tr><td>Does a lone if always print something?</td><td>No</td></tr></table>
+<h3>Board notes</h3>
+<p><code>range(a, b)</code> starts at $a$ and stops <strong>before</strong> $b$. <code>range(5)</code> is 0,1,2,3,4. <code>range(2, 8)</code> is 2 through 7. <code>range(0, 10, 2)</code> steps by 2.</p>
+<pre><code>count = 1
+while count &lt;= 5:
+    print(count)
+    count += 1</code></pre>
+<p><code>break</code> leaves the loop. <code>continue</code> skips the rest of this iteration. Nested loops: the inner loop finishes a full cycle for every single outer step, which is why they feel like $O(n^2)$.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board: odds from 1 to 7.</strong> <code>for i in range(1, 8, 2): print(i)</code> prints 1, 3, 5, 7. The stop value 8 is not printed.</p>
+<p><strong>Infinite loop to diagnose.</strong> <code>while count &lt;= 5</code> with <code>count -= 1</code> walks away from 5 and never ends. The repair is <code>+= 1</code>. This is a logical bug: the program runs, forever, and the answer never appears.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Values of range(2, 6)?</p><div class='answer'><strong>Model.</strong> 2, 3, 4, 5. Not 6.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Print 0,2,4,6,8 with one range.</p><div class='answer'><strong>Model.</strong> <code>range(0, 10, 2)</code> or <code>range(0, 9, 2)</code>.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> break versus continue?</p><div class='answer'><strong>Model.</strong> break exits. continue jumps to the next iteration.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> A while that never adds to the counter.</p><div class='answer'><strong>Model.</strong> It does not terminate. Logical error.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Why can nested loops be slow?</p><div class='answer'><strong>Model.</strong> The inner loop repeats fully for every outer step.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Write a while loop that sums 1 through 5. Trace S. It must finish at 15.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 23</span><span>Unit 3 · Programming Fundamentals</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>23</strong></div>
+<div>
+<h2>Libraries and the three bug families</h2>
+<p class='clock'>Unit 3 · Programming Fundamentals · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Import math three ways</li><li>Name syntax, runtime, and logical errors</li><li>Read a traceback’s line number</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Calling a logical error a syntax error because the answer ‘looks wrong’. If it ran, it is not syntax.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>range(1,4) values?</td><td>1, 2, 3</td></tr><tr><td>continue does what?</td><td>Skips to the next iteration</td></tr></table>
+<h3>Board notes</h3>
+<p>A library is code you did not have to write. Built-in modules this year: <code>math</code> (<code>sqrt</code>, <code>pi</code>, <code>floor</code>, <code>ceil</code>), <code>random</code> (<code>randint</code>), <code>datetime</code>. Third-party packages install with <code>pip</code>.</p>
+<pre><code>import math
+import math as m
+from math import sqrt, pi</code></pre>
+<table>
+<tr><th>Family</th><th>Symptom</th><th>Example</th></tr>
+<tr><td>Syntax</td><td>Will not start</td><td>Missing ) or colon; bad indent</td></tr>
+<tr><td>Runtime</td><td>Starts, then crashes</td><td>10/0, int('abc')</td></tr>
+<tr><td>Logical</td><td>Runs, wrong answer</td><td>count -= 1 in a while</td></tr>
+</table>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board traceback.</strong> <code>int("abc")</code> raises ValueError and names the line. You do not ‘try random fixes’. You read the type, the file, and the line, then repair that line.</p>
+<p><code>ImportError</code> or <code>ModuleNotFoundError</code> means the name is wrong or the package was never installed. <code>math.sqrt(16)</code> is 4.0, a float.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Three import styles — name one.</p><div class='answer'><strong>Model.</strong> import math; or import math as m; or from math import sqrt.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> 10/0 is which family?</p><div class='answer'><strong>Model.</strong> Runtime. ZeroDivisionError.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> A missing colon is which family?</p><div class='answer'><strong>Model.</strong> Syntax. The program does not start.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Wrong average but no crash?</p><div class='answer'><strong>Model.</strong> Logical.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> What does a traceback tell you first?</p><div class='answer'><strong>Model.</strong> The exception type and the line number.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Write one example of each bug family on a card. Keep the card for the checkpoint.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 24</span><span>Unit 3 · Programming Fundamentals</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>24</strong></div>
+<div>
+<h2>Unit 3 checkpoint, on paper</h2>
+<p class='clock'>Unit 3 · Programming Fundamentals · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Trace a short program by hand</li><li>Repair one bug and name its family</li><li>Score 7/10</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Inventing output for a program that would have crashed.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Three bug families?</td><td>Syntax, runtime, logical</td></tr><tr><td>math.sqrt(16)?</td><td>4.0</td></tr></table>
+<h3>Board notes</h3>
+<p>No computer required. Hand-tracing is the exam skill. Write the screen, not a paragraph about the screen.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p>Mark strictly. A program that would crash must be described as a crash, not as a guessed number.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Legal or not: <code>class = 5</code>?</p><div class='answer'><strong>Model.</strong> Illegal. class is a keyword.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Screen of print(int('8')+1)?</p><div class='answer'><strong>Model.</strong> 9.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Screen of print('8'+'1')?</p><div class='answer'><strong>Model.</strong> 81.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> 17 // 5 and 17 % 5.</p><div class='answer'><strong>Model.</strong> 3 and 2.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Age 18 in the Day 21 program. First message?</p><div class='answer'><strong>Model.</strong> You can vote. Then Done.</div></div>
+<div class='q'><p class='prompt'><strong>6.</strong> Values printed by for i in range(3): print(i).</p><div class='answer'><strong>Model.</strong> 0 then 1 then 2.</div></div>
+<div class='q'><p class='prompt'><strong>7.</strong> Family of a missing colon?</p><div class='answer'><strong>Model.</strong> Syntax.</div></div>
+<div class='q'><p class='prompt'><strong>8.</strong> Family of n % 0 when n is 5? Wait, division by zero via 5/0.</p><div class='answer'><strong>Model.</strong> Runtime.</div></div>
+<div class='q'><p class='prompt'><strong>9.</strong> Write a condition: pass at 50 or above.</p><div class='answer'><strong>Model.</strong> <code>if marks &gt;= 50:</code></div></div>
+<div class='q'><p class='prompt'><strong>10.</strong> One line that sums a list named nums using a built-in.</p><div class='answer'><strong>Model.</strong> <code>total = sum(nums)</code>.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Retype the two programs you traced and run them if a PC exists. The screen must match your paper.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 25</span><span>Unit 4 · Data and Analysis</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>25</strong></div>
+<div>
+<h2>Keys and relationships</h2>
+<p class='clock'>Unit 4 · Data and Analysis · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Distinguish data from information</li><li>Place a primary key and a foreign key</li><li>Break M:N with a junction table</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Putting the foreign key on the ‘one’ side and wondering why many loans will not fit.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Checkpoint target?</td><td>7/10</td></tr><tr><td>range stop is inclusive?</td><td>No, it stops before the end value</td></tr></table>
+<h3>Board notes</h3>
+<p>Data are raw facts. Information is data after processing. A database is an organised store. A DBMS (Access, MySQL, SQL Server) reduces redundancy and enforces rules.</p>
+<p>A <strong>primary key</strong> uniquely identifies a row. A <strong>foreign key</strong> in another table stores that key so the rows belong together. Cardinality:</p>
+<table>
+<tr><th>Link</th><th>How it is stored</th></tr>
+<tr><td>1:1</td><td>The key of A stored uniquely in B</td></tr>
+<tr><td>1:M</td><td>The foreign key sits on the many side</td></tr>
+<tr><td>M:N</td><td>Illegal as a single link; add a junction table</td></tr>
+</table>
+<p><strong>Referential integrity:</strong> a foreign key must match an existing primary key, or be empty if the design allows it. Cascade update rewrites child keys. Cascade delete removes child rows — dangerous if you still need history.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board.</strong> One student, many loans. STUDENT(StudentID PK, Name). LOAN(LoanID PK, StudentID FK, BookID FK, DueDate). The 1 is on STUDENT. The M is on LOAN. You cannot store a repeating group of book ids inside STUDENT and stay in a clean relational design.</p>
+<p>Students and classes are M:N. Junction: ENROLMENT(StudentID, ClassID), both foreign keys.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Marks 70, 80, 90. One sentence of information.</p><div class='answer'><strong>Model.</strong> The mean is 80, so the class met a pass line of 80. The sentence is the information; the three numbers are data.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Where does the foreign key sit in 1:M?</p><div class='answer'><strong>Model.</strong> On the many side.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Why a third table for M:N?</p><div class='answer'><strong>Model.</strong> Each pair is stored once. A single table cannot hold a repeating group of keys cleanly.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Cascade delete of a member who still has loans?</p><div class='answer'><strong>Model.</strong> The loan rows disappear too. Wrong if history matters.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Candidate key versus primary key?</p><div class='answer'><strong>Model.</strong> Any minimal unique field is a candidate. You promote one of them to primary; the others are alternate keys.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Draw STUDENT and LOAN with keys labelled PK and FK. One minute.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 26</span><span>Unit 4 · Data and Analysis</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>26</strong></div>
+<div>
+<h2>The library ER and Access objects</h2>
+<p class='clock'>Unit 4 · Data and Analysis · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Draw Book, Member, Borrow</li><li>Name four Access objects</li><li>Choose Design View for a real table</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Storing the member’s name again inside every loan row. That copy drifts; store the name once and point at it with the key.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>M:N needs what?</td><td>A junction table</td></tr><tr><td>FK sits on which side of 1:M?</td><td>The many side</td></tr></table>
+<h3>Board notes</h3>
+<p>Entities are things we store. Attributes are properties. Relationships are verbs. The library case cannot link Member directly to Book as M:N, so BorrowRecord is the junction.</p>
+<div class="formula">\[ \text{Book}(\underline{\text{BookID}}, \text{Title}, \text{Author}),\; \text{Member}(\underline{\text{MemberID}}, \text{Name}),\; \text{Borrow}(\underline{\text{BorrowID}}, \text{MemberID}, \text{BookID}, \text{dates}) \]</div>
+<p>Access objects: <strong>tables</strong> store rows, <strong>forms</strong> are the entry screens, <strong>queries</strong> ask questions, <strong>reports</strong> print what a principal reads. Datasheet View is quick and weak. Design View is where you name fields, pick types, and set the primary key (AutoNumber for StudentID, Short Text for names, Number for age).</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board query in words.</strong> “BCA students sorted by name.” That is a query, not a new table: filter Department = "BCA", sort Name, show only the columns you need. A report can sit on that query. A form can sit on the Student table so clerks do not type into the grid.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Three library entities.</p><div class='answer'><strong>Model.</strong> Book, Member, BorrowRecord (or Loan).</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Which fields in Borrow are foreign keys?</p><div class='answer'><strong>Model.</strong> MemberID and BookID.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Four Access objects.</p><div class='answer'><strong>Model.</strong> Tables, forms, queries, reports.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Design View or Datasheet View to set a primary key properly?</p><div class='answer'><strong>Model.</strong> Design View.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> A filter on Department is which object?</p><div class='answer'><strong>Model.</strong> A query.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Sketch the three boxes and the 1 and M labels. Underline every primary key.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 27</span><span>Unit 5 · Applications and Impacts</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>27</strong></div>
+<div>
+<h2>IoT, AI, sources, and the human cost</h2>
+<p class='clock'>Unit 5 · Applications and Impacts · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Draw the smart loop</li><li>Separate primary, secondary, and tertiary</li><li>Name one assistive tool</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Calling a chatbot ‘the Internet of Things’. A chatbot is AI. IoT needs a physical device.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>Access objects?</td><td>Table, form, query, report</td></tr><tr><td>Junction entity in the library?</td><td>BorrowRecord</td></tr></table>
+<h3>Board notes</h3>
+<p>Three technologies travel together. <strong>IoT</strong> devices sense and act. <strong>Analytics</strong> cleans and finds patterns. <strong>AI</strong> decides. A hot room: temperature sensor, a trend check, then the AC actuator.</p>
+<div class="formula">\[ \text{sensor} \to \text{connect} \to \text{analyse} \to \text{decide} \to \text{actuator} \]</div>
+<p>Sources: <strong>primary</strong> is first-hand (your interview, an official register). <strong>Secondary</strong> is already processed (a textbook, a statistics report). <strong>Tertiary</strong> summarises summaries (many encyclopaedia pages). Wikipedia is not a primary source.</p>
+<p>Assistive technology is part of the subject: screen readers such as NVDA, captions, AAC boards, switch controls. Every gain (records, maps, LMS) has a cost (privacy, fatigue, people left offline).</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board: smart irrigation.</strong> Soil-moisture sensor, LoRa or mobile data, a cleaned reading, a rule or a model, a valve actuator. Name the sensor and the actuator in the answer or the loop is incomplete.</p>
+<p>Source drill: “I surveyed my own class” is primary. “I quoted the Pakistan Bureau of Statistics” is secondary. “I used an unsigned blog that summarises both” is weak tertiary.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> One sentence each: IoT, analytics, AI.</p><div class='answer'><strong>Model.</strong> IoT senses and acts in the world. Analytics finds patterns. AI decides or predicts.</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Sensor and actuator in an automatic door.</p><div class='answer'><strong>Model.</strong> Motion sensor; motor that opens the door.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> Is a Wikipedia overview primary?</p><div class='answer'><strong>Model.</strong> No. It is tertiary, sometimes secondary. It summarises other work.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> One positive and one negative of digital school records.</p><div class='answer'><strong>Model.</strong> Faster lookup for a doctor or teacher; privacy harm if the file leaks.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> Name one screen reader.</p><div class='answer'><strong>Model.</strong> NVDA or VoiceOver.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Draw the five-box loop and hang a farm example on it. Six lines maximum.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 28</span><span>Unit 6 · Digital Literacy</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>28</strong></div>
+<div>
+<h2>A research day you can finish</h2>
+<p class='clock'>Unit 6 · Digital Literacy · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Write one research question</li><li>Separate qualitative from quantitative</li><li>Search with operators and cite</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>A question so wide (‘all students in Pakistan’) that no method can answer it this week.</p></div>
+</div>
+<h3>Ten-minute recall — yesterday, closed book</h3><table class='long'><tr><th>Ask</th><th>Accept</th></tr><tr><td>IoT actuator does what?</td><td>Turns a decision into a physical action</td></tr><tr><td>Primary source in one line?</td><td>First-hand data collected for this question</td></tr></table>
+<h3>Board notes</h3>
+<p>Digital literacy is judgement, not device ownership. Five verbs: find, collect, judge, present, cite.</p>
+<table>
+<tr><th></th><th>Qualitative</th><th>Quantitative</th></tr>
+<tr><td>Form</td><td>Reasons, opinions</td><td>Counts, hours, marks</td></tr>
+<tr><td>Use</td><td>Why</td><td>How many, how much</td></tr>
+</table>
+<p>Primary data is what you collect for this question. Secondary data is what you reuse. Methods: interview, survey, observation, prototype, simulation.</p>
+<p>Search operators: quotes for a phrase, <code>filetype:pdf</code>, <code>site:.edu</code> or <code>site:.gov.pk</code>. Copying without credit is plagiarism. Asking permission is part of the method.</p>
+<h3>Worked example — do not skip the steps</h3>
+<p><strong>Board question.</strong> “How does daily phone use affect study habits of Class XI in this college?” Not the topic “phones”. Sample: one section, not all of Pakistan. Tools: a Form, a Sheet, one chart, a one-page report. Ethics: no names you do not need.</p>
+<p>Best query of the set: <code>"internet usage in Pakistan" filetype:pdf</code>. The vague query <code>best internet social media</code> is how rumours enter the bibliography.</p>
+<h3>Silent drill — cover the green model lines</h3>
+<div class='q'><p class='prompt'><strong>1.</strong> Topic versus research question. Repair ‘social media’.</p><div class='answer'><strong>Model.</strong> How many hours do Class XI students in this college spend on social media on a school night, and what do they say it does to revision?</div></div>
+<div class='q'><p class='prompt'><strong>2.</strong> Survey of your own class: primary or secondary?</p><div class='answer'><strong>Model.</strong> Primary.</div></div>
+<div class='q'><p class='prompt'><strong>3.</strong> A government PDF you did not collect: which type?</p><div class='answer'><strong>Model.</strong> Secondary.</div></div>
+<div class='q'><p class='prompt'><strong>4.</strong> Which operator keeps words together?</p><div class='answer'><strong>Model.</strong> Quotation marks around the phrase.</div></div>
+<div class='q'><p class='prompt'><strong>5.</strong> The offence of pasting a paragraph with no credit.</p><div class='answer'><strong>Model.</strong> Plagiarism.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Write the question, four quantitative items, and two qualitative items. Stop. That is a complete crash artefact outline.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 29</span><span>Mock paper · Class XI</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>29</strong></div>
+<div>
+<h2>Full mock — 90 minutes, 50 marks</h2>
+<p class='clock'>Mock paper · Class XI · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Attempt every question</li><li>Show traces and tables, not only final words</li><li>Write the time on the script</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Adding notes in the margin after the time is called. Day 30 will not count those lines.</p></div>
+</div>
+
+<h3>Sit this as an exam. 90 minutes. No notes. No phone.</h3>
+
+<p class="marks">Section A · 10 × 1 = 10 · one word or one line</p>
+<ol>
+<li>Boolean value of $1+1$.</li>
+<li>Gate that outputs 1 only when inputs differ.</li>
+<li>Number of rows in a truth table with 4 inputs.</li>
+<li>PDU at the network layer.</li>
+<li>TCP/IP layer that contains Wi-Fi.</li>
+<li>Search that requires sorted data.</li>
+<li>Python type returned by <code>input()</code>.</li>
+<li>Operator for remainder.</li>
+<li>Access object used to filter rows.</li>
+<li>Copying text with no credit is called what?</li>
+</ol>
+<p class="marks">Section B · 8 × 3 = 24 · show working</p>
+<ol start="11">
+<li>Draw the truth table of $Y=\overline{A}+B$.</li>
+<li>Simplify $Y=\overline{A}B+AB$ and name the method (algebra or K-map).</li>
+<li>Give one reason the Al-Noor library used Waterfall and one reason the mobile app used Agile.</li>
+<li>List OSI layers 4, 3, and 2 with the address or number each one adds (port, IP, or MAC).</li>
+<li>Bubble-sort pass 1 only of $\{6,2,5,1\}$. Show the list after the pass and name the settled value.</li>
+<li>Write a Python <code>if/elif/else</code> that prints Pass at 50 or above and Fail otherwise. Assume <code>marks</code> is already an int.</li>
+<li>A student takes many classes and a class has many students. Name the junction table and its two foreign keys.</li>
+<li>Write one research question about phone use that a single college class could actually answer. Label one quantitative item you would collect.</li>
+</ol>
+<p class="marks">Section C · 2 × 8 = 16 · structured paragraphs or traces</p>
+<ol start="19">
+<li>Explain encapsulation as a web request moves down the TCP/IP stack. Name the data unit at each of the four layers. (8)</li>
+<li>A program is meant to sum 1 through 5 but the screen never returns. The loop is <code>while n &lt;= 5: total += n</code> and <code>n</code> starts at 1. Name the bug family, repair the code, and show a two-column trace of <code>n</code> and <code>total</code> after the repair. (8)</li>
+</ol>
+
+<div class='callout watch'><div class='mark'>Stop</div><div>Do not open Day 30 until the paper is finished and the time is written on the top.</div></div>
+<div class='callout try'><div class='mark'>Tonight</div><div>Sleep. Bring the script to Day 30 unmarked.</div></div>
+</section><section class='day'>
+<div class='running'><span>30-Day Crash · Day 30</span><span>Mock conference · Class XI</span></div>
+<div class='dayhead'>
+<div class='daynum'><span>DAY</span><strong>30</strong></div>
+<div>
+<h2>Mark the mock and build the 48-hour card</h2>
+<p class='clock'>Mock conference · Class XI · 120-minute coached session</p>
+</div></div>
+
+<div class="session">
+  <div><strong>10 min</strong>Recall, cold</div>
+  <div><strong>25 min</strong>Teach from the board</div>
+  <div><strong>25 min</strong>Work the example together</div>
+  <div><strong>40 min</strong>Silent drill, then mark</div>
+  <div><strong>20 min</strong>Homework set and traps</div>
+</div>
+
+<div class='card-row'>
+<div class='card ok'><div class='label'>Leave able to</div><ul><li>Mark to the scheme, not to kindness</li><li>Sort lost marks into three repair piles</li><li>Leave with a one-page card</li></ul></div>
+<div class='card warn'><div class='label'>Trap that costs the mark</div><p>Re-marking generously. A blank trace is not ‘almost’.</p></div>
+</div>
+
+<h3>Marking the mock — coach aloud, student in a different colour</h3>
+
+<h3>Section A — one mark, no method mark</h3>
+<ol>
+<li>$1$ (OR, not 2).</li>
+<li>XOR.</li>
+<li>$16$ because $2^4=16$.</li>
+<li>Packet.</li>
+<li>Network access.</li>
+<li>Binary search.</li>
+<li><code>str</code> / string.</li>
+<li><code>%</code>.</li>
+<li>Query.</li>
+<li>Plagiarism.</li>
+</ol>
+<h3>Section B — three marks, award points as written</h3>
+<ol start="11">
+<li>Four rows present (1). $\overline{A}$ column correct (1). $Y$ is 0 only on row 1,0 (1).</li>
+<li>$Y=B$ (2). Method named: factor $B(\overline{A}+A)$ or a 2-cell group on the map (1).</li>
+<li>Library: known, signed, frozen requirements (1). App: unclear needs or many stakeholders or early demo (1). Names of the two projects (1).</li>
+<li>Transport / port (1). Network / IP (1). Data link / MAC (1).</li>
+<li>Swaps shown through to $\{2,5,1,6\}$ (2). Settled value named as 6 (1).</li>
+<li>Colon and indent (1). <code>&gt;= 50</code> (1). Both messages, else included (1).</li>
+<li>Junction named, e.g. Enrolment (1). StudentID FK (1). ClassID FK (1).</li>
+<li>A question with a population and a measurable idea (2). One numeric item such as hours per night (1).</li>
+</ol>
+<h3>Section C — eight marks</h3>
+<ol start="19">
+<li>Application data / HTTP (2). Transport segment / TCP (2). Internet packet / IP (2). Network access frame then bits (2). “OSI instead of TCP/IP” with correct jobs may earn the job marks but not the layer-name marks.</li>
+<li>Logical error, loop does not change <code>n</code> (2). Repair <code>n += 1</code> inside the loop (2). Trace reaches total 15 (2). Stops when <code>n</code> becomes 6 (2).</li>
+</ol>
+<div class="card-row">
+<div class="card"><div class="label">48-hour card — Systems</div><p>$1+1=1$. NAND/NOR universal. XOR differs. SOP from 1-rows. Gray code 00, 01, 11, 10. PDU: data, segment, packet, frame, bits. TCP/IP folds 7–5 and 2–1.</p></div>
+<div class="card"><div class="label">48-hour card — Algorithms &amp; Python</div><p>Bubble settles the max, stable, $O(n^2)$. Selection one swap a pass. Binary needs sorted data, MID = floor((BEG+END)/2). input() is str. // and %. range stops early. Bugs: syntax, runtime, logical.</p></div>
+<div class="card gold"><div class="label">48-hour card — Data &amp; society</div><p>FK on the many side. M:N needs a junction. Access: table, form, query, report. Sensor → decide → actuator. Primary = you collected it. Quotes, filetype, site:. Plagiarism is uncredited copying.</p></div>
+</div>
+<p>Target reading of the score: 40–50 safe, 30–39 repair the largest pile only, under 30 repeat Days 12, 18, and 24 before any new past paper.</p>
+
+<div class='callout try'><div class='mark'>Tonight</div><div>Copy the 48-hour card by hand onto one sheet. That sheet is the only note you carry into the last evening.</div></div>
+</section>
+</div>
+</body>
+</html>

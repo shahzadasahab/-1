@@ -22,6 +22,23 @@ Layout is **Flexbox**. Diagrams are **inline SVG**. Mathematics is **MathJax 3**
 | `pdf/XII-05-neural-nets-security.pdf` | Neural nets, threats, equity |
 | `pdf/XII-06-digital-entrepreneurship.pdf` | Prototype, MVP, beachhead market |
 
+## 30-day crash course
+
+Two coaching booklets, one class each. Every day is a 120-minute session: recall, board notes, a worked example, a silent drill with a model answer, and homework. Checkpoints are closed-book. Each booklet ends with a mock and a mark scheme.
+
+| PDF | Pages | Use |
+|-----|-------|-----|
+| `pdf/XI-30-day-crash.pdf` | 63 | Class XI, Days 1–30 |
+| `pdf/XII-30-day-crash.pdf` | 64 | Class XII, Days 1–30 |
+
+Rebuild the HTML, then the PDFs:
+
+```bash
+cd lecture-notes
+python3 scripts/build_crash_course.py
+npm run pdf
+```
+
 ## Rebuild the PDFs
 
 ```bash
