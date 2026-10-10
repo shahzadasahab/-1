@@ -1,0 +1,157 @@
+:root {
+  --navy: #1b365d;
+  --teal: #0d7377;
+  --gold: #c4a35a;
+  --ink: #1f2430;
+  --muted: #4a5568;
+  --cream: #f6f1e6;
+  --pale: #eef4f6;
+  --rose: #f8eaea;
+  --green: #e8f3ec;
+  --line: #c9d3da;
+}
+* { box-sizing: border-box; }
+html { font-size: 11pt; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Liberation Serif", "Times New Roman", serif;
+  line-height: 1.45;
+  background: #fff;
+}
+.cover {
+  min-height: 100vh;
+  background: var(--navy);
+  color: #fff;
+  padding: 28mm 22mm;
+  page-break-after: always;
+  position: relative;
+}
+.cover::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 14mm;
+  background: var(--teal);
+}
+.cover::after {
+  content: "";
+  position: absolute;
+  left: 14mm; top: 0; bottom: 0;
+  width: 2.2mm;
+  background: var(--gold);
+}
+.cover-inner { margin-left: 10mm; padding-top: 38mm; }
+.kicker {
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 10pt;
+}
+.cover h1 {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 34pt;
+  line-height: 1.1;
+  margin: 16px 0 10px;
+  color: #ffffff !important;
+  border: none;
+  padding: 0;
+}
+.cover p { color: #d9e4ec; font-size: 13pt; max-width: 140mm; }
+header.bar {
+  background: var(--navy);
+  color: #fff;
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 8.5pt;
+  padding: 6px 18mm;
+  display: flex;
+  justify-content: space-between;
+}
+main { padding: 8mm 16mm 14mm; max-width: 190mm; margin: 0 auto; }
+h1, h2, h3 {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+h1 { page-break-before: auto; }
+h1 { color: var(--navy); font-size: 20pt; border-bottom: 2.5px solid var(--gold); padding-bottom: 4px; }
+h2 { color: var(--teal); font-size: 14pt; margin-top: 1.2em; }
+h3 { color: var(--navy); font-size: 12pt; }
+p, li { orphans: 3; widows: 3; }
+.lead { font-style: italic; color: var(--muted); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 14px;
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 9.2pt;
+  page-break-inside: avoid;
+}
+th {
+  background: var(--navy);
+  color: #fff;
+  padding: 6px 7px;
+  text-align: left;
+}
+td { padding: 5px 7px; border: 0.4px solid var(--line); vertical-align: top; }
+tr:nth-child(even) td { background: var(--pale); }
+.callout {
+  border-left: 4px solid var(--teal);
+  background: var(--pale);
+  padding: 8px 12px;
+  margin: 10px 0 14px;
+  page-break-inside: avoid;
+}
+.callout.try { border-color: var(--gold); background: #fbf3d9; }
+.callout.mistake { border-color: #8b3a3a; background: var(--rose); }
+.callout.exam { border-color: #2d6a4f; background: var(--green); }
+.callout.memory { border-color: var(--gold); background: var(--cream); }
+.callout .tag {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+}
+pre, .code {
+  font-family: "DejaVu Sans Mono", Consolas, monospace;
+  font-size: 8.6pt;
+  background: #f4f6f8;
+  border: 1px solid var(--teal);
+  padding: 8px 10px;
+  overflow: hidden;
+  page-break-inside: avoid;
+  white-space: pre-wrap;
+}
+.svg-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin: 8px 0 14px; align-items: flex-start; }
+.diagram { max-width: 100%; height: auto; flex-shrink: 0; overflow: visible; }
+.svg-label { font-family: "Liberation Sans", Arial, sans-serif; font-size: 11px; fill: #1b365d; }
+.svg-tiny { font-family: "Liberation Sans", Arial, sans-serif; font-size: 10px; fill: #1b365d; }
+.gate-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px 6px;
+  margin: 8px 0 14px;
+  align-items: start;
+}
+.gate-card { margin: 0; text-align: center; page-break-inside: avoid; overflow: visible; }
+.gate-card .diagram { width: 100%; max-width: 168px; height: auto; }
+.gate-card figcaption {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 9pt;
+  color: var(--muted);
+}
+figure.wide { margin: 8px 0 14px; text-align: center; page-break-inside: avoid; }
+figcaption {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 9pt;
+  color: var(--muted);
+  margin-top: 4px;
+}
+ol.tight li, ul.tight li { margin: 2px 0; }
+.page-break { page-break-before: always; }
+mjx-container { font-size: 103%; }
+@media print {
+  .cover { min-height: 100vh; }
+  a { color: inherit; text-decoration: none; }
+}
