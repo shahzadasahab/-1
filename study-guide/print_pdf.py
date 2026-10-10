@@ -12,8 +12,8 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-HTML = ROOT / "web" / "index.html"
-PDF = ROOT / "Class_XI_Computer_Science_Teach_Yourself_Study_Guide.pdf"
+DEFAULT_HTML = ROOT / "web" / "index.html"
+DEFAULT_PDF = ROOT / "Class_XI_Computer_Science_Teach_Yourself_Study_Guide.pdf"
 PORT = 9322
 
 
@@ -37,9 +37,11 @@ def wait_json(url: str, tries: int = 40) -> list:
 
 
 def main() -> None:
-    if not HTML.exists():
-        raise SystemExit(f"missing {HTML}; run generate_web.py first")
-    uri = HTML.resolve().as_uri()
+    html = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else DEFAULT_HTML
+    pdf = Path(sys.argv[2]).resolve() if len(sys.argv) > 2 else DEFAULT_PDF
+    if not html.exists():
+        raise SystemExit(f"missing {html}; generate the HTML first")
+    uri = html.resolve().as_uri()
     cmd = [
         chrome_bin(),
         "--headless=new",
@@ -122,8 +124,8 @@ def main() -> None:
         )
         import base64
 
-        PDF.write_bytes(base64.b64decode(result["data"]))
-        print(f"Wrote {PDF} ({PDF.stat().st_size} bytes)")
+        pdf.write_bytes(base64.b64decode(result["data"]))
+        print(f"Wrote {pdf} ({pdf.stat().st_size} bytes)")
         sock.close()
     finally:
         proc.terminate()

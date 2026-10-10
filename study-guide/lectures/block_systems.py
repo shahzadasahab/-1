@@ -1,0 +1,195 @@
+"""Lectures 1–8 — Computer Systems."""
+
+from lectures.kit import box, fig, lecture, table
+from web import svgs
+
+
+def lectures() -> str:
+    return "".join([
+        lecture(1, "Stairs and ramps — analog versus digital", "Unit 1 · Computer Systems", "45 min", [
+            "Tell a discrete quantity from a continuous one.",
+            "Read a sine-like analog wave and a two-level digital wave.",
+            "Explain why a noisy digital 1 is rewritten as a clean 1.",
+        ], "\n".join([
+            box("recap", "OPENING PICTURE", "A classroom has 31 students, never 31.4. Temperature can be 31.4 °C. That is the whole lecture in one pair of examples."),
+            "<h2>Discrete landings, continuous ramps</h2>",
+            "<p>A <strong>discrete</strong> quantity takes separate countable values. You can point to each one. A <strong>continuous</strong> quantity can sit anywhere in a range: height, time, speed, voltage on a microphone wire.</p>",
+            fig(svgs.stairs_ramp(), "Board sketch — stairs (digital / discrete) versus a ramp (analog / continuous)."),
+            "<p>Digital electronics copies the stairs. A wire is treated as LOW (\\(0\\)) or HIGH (\\(1\\)). Everything between is noise, not a third legal value. That is why a USB copy of a photo stays sharp: a slightly damaged 1 is still recognised as 1 and rewritten as a perfect 1.</p>",
+            fig(svgs.analog_digital(), "Figure L1.1 — Analog varies smoothly; digital jumps between two legal levels."),
+            table(["Feature", "Analog / continuous", "Digital / discrete"], [
+                ["Nature", "Smooth; infinitely many in-between values", "Separate steps; usually two levels"],
+                ["Waveform", "Sine-like", "Square"],
+                ["Unit", "A physical quantity (voltage, °C)", "Bit: \\(0\\) or \\(1\\)"],
+                ["Noise", "Adds permanently", "Ignored if it stays inside a band"],
+                ["Copying", "Quality falls each copy", "Perfect copies"],
+                ["Examples", "Voice, vinyl, mercury thermometer", "USB, HDMI, a calculator"],
+            ]),
+            box("exam", "BOARD TRAP", "Temperature <em>is</em> continuous. A digital sensor <em>stores</em> it as bits. The phenomenon and the representation are different questions."),
+            box("exit", "EXIT TICKET (4 min, closed book)", "1. How many legal levels has a digital signal? 2. Why does a slightly damaged digital 1 still survive? 3. Name one analog and one digital example from this room."),
+            box("hw", "HOMEWORK (15 min)", "Copy the comparison table from memory. Then write two sentences: “A school bell is digital because… A ceiling fan speed (if it turns smoothly) is analog because…”"),
+        ])),
+
+        lecture(2, "Boolean algebra — arithmetic with truth", "Unit 1 · Computer Systems", "45 min", [
+            "Evaluate AND, OR, and NOT on given bits.",
+            "Apply precedence: parentheses → NOT → AND → OR.",
+            "Show the three intermediate values of a compound expression.",
+        ], "\n".join([
+            box("recap", "LAST LECTURE", "Digital means two legal levels, \\(0\\) and \\(1\\). Today those two levels become an algebra."),
+            "<p>George Boole (1850s) built an algebra with only \\(\\mathrm{FALSE}=0\\) and \\(\\mathrm{TRUE}=1\\). Variables \\(A, B, C\\) hold one of those values. Three primitive operations generate every digital circuit you will meet this year.</p>",
+            "<ul>",
+            "<li><strong>AND (\\(\\cdot\\))</strong> — \\(Y=A\\cdot B=1\\) only if <em>every</em> input is 1. Two locks on one door.</li>",
+            "<li><strong>OR (\\(+\\))</strong> — \\(Y=A+B=1\\) if <em>any</em> input is 1. Two doors into one room.</li>",
+            "<li><strong>NOT (\\(A'\\) or \\(\\overline{A}\\))</strong> — flips one bit. A light switch.</li>",
+            "</ul>",
+            r"\[ (\,) \;\to\; \text{NOT }(\,'\,) \;\to\; \text{AND }(\,\cdot\,) \;\to\; \text{OR }(\,+). \]",
+            "<h2>Worked evaluations — write the middle steps</h2>",
+            "<p><strong>A.</strong> \\(Y=A'+B\\) with \\(A=1,\\,B=0\\). First \\(A'=0\\). Then \\(0+0=0\\). So \\(Y=0\\).</p>",
+            "<p><strong>B.</strong> \\(Y=(A+B)\\cdot C\\) with \\(A=1,\\,B=0,\\,C=1\\). Parentheses: \\(1+0=1\\). Then \\(1\\cdot 1=1\\). So \\(Y=1\\).</p>",
+            "<p><strong>C.</strong> \\(Y=A\\cdot B+C'\\) with \\(A=B=C=1\\). NOT first: \\(C'=0\\). AND: \\(1\\cdot 1=1\\). OR: \\(1+0=1\\).</p>",
+            box("try", "DO NOW (on paper)", "Evaluate \\(Y=(A\\cdot B)'+C\\) for \\(A=1,B=1,C=0\\). Write NAND first, then the OR. Answer: NAND of \\(1,1\\) is \\(0\\); \\(0+0=0\\)."),
+            box("mistake", "COMMON MISTAKE", "Treating \\(+\\) as ordinary plus. In Boolean algebra \\(1+1=1\\), not 2. There is no ‘2’ on a digital wire."),
+            box("exit", "EXIT TICKET", "1. State precedence in four words. 2. Evaluate \\(Y=A'+B\\) for \\(A=0,B=0\\). 3. Why is NOT called unary?"),
+            box("hw", "HOMEWORK", "Make a three-column table: expression / values / \\(Y\\) for the three worked examples, covering the answers first."),
+        ])),
+
+        lecture(3, "The seven logic gates", "Unit 1 · Computer Systems", "45 min", [
+            "Draw AND, OR, NOT, NAND, NOR, XOR, XNOR from memory.",
+            "Fill a 2-input truth table in binary order.",
+            "Say why NAND and NOR are called universal.",
+        ], "\n".join([
+            box("recap", "LAST LECTURE", "AND needs every 1; OR needs any 1; NOT flips. A gate is that algebra in hardware: one or more inputs, exactly one output."),
+            "<p>With \\(n\\) inputs a truth table has \\(2^n\\) rows. Always list inputs in binary counting order so no row is skipped: \\(00,01,10,11\\).</p>",
+            svgs.all_gates(),
+            "<p>Derived identities you must be able to write:</p>",
+            r"\[ \begin{aligned} Y_{\mathrm{NAND}} &= (A\cdot B)' ,& Y_{\mathrm{NOR}} &= (A+B)' ,\\ Y_{\mathrm{XOR}} &= A\oplus B = A'B + AB' ,& Y_{\mathrm{XNOR}} &= (A\oplus B)' = AB + A'B'. \end{aligned} \]",
+            table(["A", "B", "AND", "NAND", "OR", "NOR", "XOR", "XNOR"], [
+                ["0", "0", "0", "1", "0", "1", "0", "1"],
+                ["0", "1", "0", "1", "1", "0", "1", "0"],
+                ["1", "0", "0", "1", "1", "0", "1", "0"],
+                ["1", "1", "1", "0", "1", "0", "0", "1"],
+            ]),
+            "<p><strong>NAND</strong> and <strong>NOR</strong> are <em>universal</em>: any Boolean function can be built from only NAND, or only NOR. XOR is the difference detector (two-way landing light). XNOR is the sameness detector.</p>",
+            box("memory", "RECITE", "XOR = eXclusively different. NAND is NOT-AND: the only 0 is the AND’s only 1. NOR is NOT-OR: the only 1 is the OR’s only 0."),
+            box("exit", "EXIT TICKET", "1. When is XOR equal to 1? 2. Write \\(A\\oplus B\\) as a sum of products. 3. Why do chip designers like NAND?"),
+            box("hw", "HOMEWORK + LOGISIM", "From a blank page, redraw all seven symbols and the 2-input table. Then in LogiSim Evolution build a 2-input AND, poke both switches, and screenshot the four rows."),
+        ])),
+
+        lecture(4, "Truth tables, SOP, and logic diagrams", "Unit 1 · Computer Systems", "45 min", [
+            "Build an 8-row table from a Boolean expression.",
+            "Write a sum-of-products expression from the 1-rows.",
+            "Draw a gate diagram that respects precedence.",
+        ], "\n".join([
+            box("recap", "LAST LECTURE", "Seven gates, \\(2^n\\) rows, NAND/NOR are universal. Today we travel both ways: expression → table, and table → expression."),
+            "<p>For \\(Y=A\\cdot B+C\\) there are three variables, so eight rows. Add a helper column for \\(A\\cdot B\\), then OR with \\(C\\).</p>",
+            table(["A", "B", "C", "\\(A\\cdot B\\)", "\\(Y=A\\cdot B+C\\)"], [
+                ["0", "0", "0", "0", "0"],
+                ["0", "0", "1", "0", "1"],
+                ["0", "1", "0", "0", "0"],
+                ["0", "1", "1", "0", "1"],
+                ["1", "0", "0", "0", "0"],
+                ["1", "0", "1", "0", "1"],
+                ["1", "1", "0", "1", "1"],
+                ["1", "1", "1", "1", "1"],
+            ]),
+            fig(svgs.circuit_and_or(), "Figure L4.1 — AND is drawn first; its output and C feed the OR."),
+            "<p><strong>Sum of products:</strong> each row where \\(Y=1\\) is a <strong>minterm</strong>. AND every variable; complement a variable if that row’s bit is 0. Then OR the minterms.</p>",
+            r"\[ Y = \sum \text{minterms of the 1-rows}. \]",
+            "<p>Example: 1-rows \\(AB=01\\) and \\(11\\) give \\(Y=A'B+AB=B\\).</p>",
+            box("mistake", "COMMON MISTAKE", "In a minterm, a 0 in the row means the variable is complemented. Row \\(A=0,B=1\\) is \\(A'B\\), not \\(AB'\\)."),
+            "<h2>Studio — \\(Y=(A+B)'\\cdot C\\)</h2>",
+            "<p>NOR of \\(A,B\\) feeding AND with \\(C\\). \\(Y=1\\) only when \\(A=B=0\\) and \\(C=1\\). One minterm: \\(A'B'C\\).</p>",
+            table(["A", "B", "C", "A+B", "(A+B)′", "Y"], [
+                ["0", "0", "0", "0", "1", "0"],
+                ["0", "0", "1", "0", "1", "1"],
+                ["0", "1", "0", "1", "0", "0"],
+                ["0", "1", "1", "1", "0", "0"],
+                ["1", "0", "0", "1", "0", "0"],
+                ["1", "0", "1", "1", "0", "0"],
+                ["1", "1", "0", "1", "0", "0"],
+                ["1", "1", "1", "1", "0", "0"],
+            ]),
+            box("exit", "EXIT TICKET", "1. How many rows for three inputs? 2. Write the minterm for row \\(A=0,B=1,C=1\\). 3. For \\(Y=A\\cdot B+C\\), which gate is drawn first?"),
+            box("hw", "HOMEWORK", "Truth table of \\(Y=A'\\cdot B+C\\) plus SOP of the 1-rows. This is a 6-mark board item — practise it once tonight."),
+        ])),
+
+        lecture(5, "Karnaugh maps — grouping the ones", "Unit 1 · Computer Systems", "45 min", [
+            "Place minterms on a 2- and 3-variable K-map in Gray-code order.",
+            "Group \\(2^n\\) ones, including wrap-around.",
+            "Read the simplified product from a group.",
+        ], "\n".join([
+            box("recap", "LAST LECTURE", "SOP writes one product per 1-row. A K-map is that same census drawn so neighbours differ by one bit and cancel."),
+            "<p>Adjacent cells — including wrap-around — differ by one bit. That order is <strong>Gray code</strong>. Group 1, 2, 4, 8 ones (powers of two). The variable that changes inside the group disappears.</p>",
+            fig(svgs.kmap2(), "Figure L5.1 — Two-variable map. Right column is \\(B\\); bottom row is \\(A\\); so \\(Y=A+B\\)."),
+            fig(svgs.kmap3(), "Figure L5.2 — Three-variable map. Columns are \\(BC=00,01,11,10\\) — never 00, 01, 10, 11."),
+            box("try", "DO NOW", "Simplify \\(Y=\\sum m(0,1,2,3,5,7)\\). Two groups of four give \\(Y=A'+C\\)."),
+            "<p>Wrap-around trap: \\(Y=\\sum m(0,2,8,10)\\) occupies the four corners. Shared literals are \\(B'\\) and \\(C'\\); \\(A\\) cancels. Result \\(Y=B'C'\\). Forget wrap-around and you leave four lonely minterms — the classic exam miss.</p>",
+            box("exit", "EXIT TICKET", "1. Why must columns be Gray-coded? 2. Legal group sizes? 3. What happens to a variable that changes inside a group?"),
+            box("hw", "HOMEWORK", "K-map \\(Y=\\sum m(1,3,5,7)\\). It should collapse toward \\(C\\). Check your column order before you celebrate."),
+        ])),
+
+        lecture(6, "Software Development Life Cycle", "Unit 1 · Computer Systems", "45 min", [
+            "Name the six SDLC phases and one deliverable each.",
+            "Recite CAPP maintenance with a one-line school example.",
+            "Say why a life cycle is a cycle, not a dead end.",
+        ], "\n".join([
+            box("recap", "LAST LECTURE", "Logic tells a machine the truth. SDLC tells a team how an idea becomes software that people can live with."),
+            fig(svgs.sdlc_cycle(), "Figure L6.1 — Six phases. Maintenance feeds the next analysis — that is why it is a cycle."),
+            table(["Phase", "What you do", "What you hand over"], [
+                ["1 Analysis", "Meet users; list features and constraints", "SRS (software requirements)"],
+                ["2 Design", "HLD/LLD, screens, ER, UML", "Design document"],
+                ["3 Implementation", "Code, Git, comments", "Working build"],
+                ["4 Testing", "Unit, integration, system, UAT", "Test report"],
+                ["5 Deployment", "Direct, phased, pilot, or parallel", "Live software"],
+                ["6 Maintenance", "Corrective, adaptive, perfective, preventive", "Patches"],
+            ]),
+            "<p><strong>CAPP maintenance</strong> — learn four words, four school pictures:</p>",
+            "<ul>",
+            "<li><strong>Corrective</strong> — the login button crashes; you fix the bug.</li>",
+            "<li><strong>Adaptive</strong> — Windows updates; you retarget the installer.</li>",
+            "<li><strong>Perfective</strong> — students ask for dark mode; you add it.</li>",
+            "<li><strong>Preventive</strong> — a daily USB backup so a disk death is not a funeral.</li>",
+            "</ul>",
+            box("exam", "FIRST DELIVERABLE", "If a one-mark item asks for the first SDLC document, the answer is the <strong>SRS</strong>, not “coding.”"),
+            box("exit", "EXIT TICKET", "1. First phase and its deliverable? 2. Name the four maintenance types. 3. Pilot versus parallel deployment in one sentence each."),
+            box("hw", "HOMEWORK", "Close the book. Write Analyse → Design → Code → Test → Deploy → Maintain and one CAPP example each. Time yourself: under four minutes is ready."),
+        ])),
+
+        lecture(7, "Waterfall versus Agile — Al-Noor cases", "Unit 1 · Computer Systems", "45 min", [
+            "Match Waterfall to a frozen, well-specified project.",
+            "Match Agile/Scrum to unclear, evolving features.",
+            "Retell both Al-Noor stories in six sentences.",
+        ], "\n".join([
+            box("recap", "LAST LECTURE", "Six phases, CAPP, SRS. Today: two ways to walk those phases — one way down, or in short sprints."),
+            fig(svgs.waterfall_agile(), "Figure L7.1 — Waterfall finishes a phase before the next begins. Agile repeats Plan → Build → Review → Retro."),
+            "<h2>Al-Noor Library — why Waterfall worked</h2>",
+            "<p>1,200 students, 2,400 books, a paper register, lost copies. Requirements were frozen: add/edit books, search, 14-day loans, overdue alerts, printed reports, offline Windows. Team of four, six months, Python + Tkinter + SQLite. Nothing experimental was asked, so Waterfall fitted. Black-box testing found a search crash on misspellings and an overdue alert that ran only if a button was clicked. A two-week <strong>pilot</strong> sat on the librarian’s desk. Later: printer-driver fix (corrective), e-book category (adaptive), faster search (perfective), daily USB backup (preventive). Overdue returns fell about 70%.</p>",
+            "<h2>Al-Noor Student App — why Agile worked</h2>",
+            "<p>Nobody could list every feature on day one. Five two-week sprints, Flutter, five-person Scrum team. Sprint 1 shipped login + timetable; teachers’ names arrived from feedback. Sprint 2 shipped results; parents then asked for full attendance. Sprint 3’s SMS gateway died for two days — the team switched to email and kept moving. Sprint 4 connected to the library API in thirty minutes. Sprint 5 shipped homework photos. Five of ten original stories shipped in ten weeks. That flexibility is the point of Agile.</p>",
+            box("try", "DECISION RULE (4-mark compare)", "Pacemaker firmware with a frozen regulator spec → Waterfall (late change can kill). A club-events app that will grow with student requests → Agile. Four lines in a notebook is a complete answer."),
+            box("exit", "EXIT TICKET", "1. One project feature that forces Waterfall. 2. What is a sprint? 3. Which Al-Noor project used a pilot, and why?"),
+            box("hw", "HOMEWORK", "Write a one-page Waterfall vs Agile table from memory: when, risk of late change, documentation, user feedback."),
+        ])),
+
+        lecture(8, "How machines converse — OSI and TCP/IP", "Unit 1 · Computer Systems", "45 min", [
+            "Recite the seven OSI layers with the pizza mnemonic.",
+            "Name the encapsulation units: data, segment, packet, frame, bits.",
+            "Map OSI onto the four TCP/IP layers and place TCP, UDP, IP, MAC.",
+        ], "\n".join([
+            box("recap", "LAST LECTURE", "Teams need a life cycle. Distant machines need a conversation plan. That plan is layered."),
+            fig(svgs.osi_stack(), "Figure L8.1 — Please Do Not Throw Sausage Pizza Away."),
+            fig(svgs.encapsulation(), "Figure L8.2 — Going down: wrap. Going up: unwrap."),
+            fig(svgs.tcpip_map(), "Figure L8.3 — TCP/IP swallows OSI 7–5 as Application and OSI 2–1 as Network Access."),
+            table(["If you see…", "Think layer", "Why"], [
+                ["RJ45, Cat6, voltage, fibre pulse", "Physical", "Raw medium"],
+                ["MAC, switch, Ethernet frame, CRC", "Data Link", "One LAN hop"],
+                ["192.168.1.1, ping, router, OSPF", "Network", "Path across nets"],
+                ["Port 443, handshake, segment", "Transport", "Which app, reliability"],
+                ["TLS, JPEG, MP3, UTF-8", "Presentation", "Format / secret / size"],
+                ["Browser, DNS, SMTP", "Application", "What the user asked"],
+            ]),
+            "<p>TCP is connection-oriented and reliable (web, email, files). UDP is connectionless and cheap (live video, games, a cricket stream — late frames are useless). An <strong>IP address</strong> is logical; a <strong>MAC address</strong> is burned into the NIC. Routers live at Layer 3; switches at Layer 2; hubs at Layer 1. <code>ping</code> uses ICMP at the Network layer.</p>",
+            box("exit", "EXIT TICKET", "1. Which layer adds ports / IP / MAC? 2. Why might a cricket stream use UDP? 3. Four TCP/IP names?"),
+            box("hw", "HOMEWORK", "Explain HTTPS encapsulation in five sentences: data → segment → packet → frame → bits. Then write one protocol for each TCP/IP layer."),
+        ])),
+    ])
