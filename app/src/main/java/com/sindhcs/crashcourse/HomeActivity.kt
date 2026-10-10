@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.sindhcs.crashcourse.data.CourseRepository
 import com.sindhcs.crashcourse.data.ProgressStore
@@ -87,10 +86,6 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_language -> {
-                showLanguageDialog()
-                true
-            }
             R.id.action_listen -> {
                 toggleWelcome()
                 true
@@ -101,22 +96,6 @@ class HomeActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun showLanguageDialog() {
-        val options = arrayOf(getString(R.string.english), getString(R.string.urdu))
-        val current = if (LocaleHelper.getLanguage(this) == LocaleHelper.LANG_UR) 1 else 0
-        AlertDialog.Builder(this)
-            .setTitle(R.string.language)
-            .setSingleChoiceItems(options, current) { dialog, which ->
-                val lang = if (which == 1) LocaleHelper.LANG_UR else LocaleHelper.LANG_EN
-                if (lang != LocaleHelper.getLanguage(this)) {
-                    LocaleHelper.setLanguage(this, lang)
-                    recreate()
-                }
-                dialog.dismiss()
-            }
-            .show()
     }
 
     override fun onDestroy() {

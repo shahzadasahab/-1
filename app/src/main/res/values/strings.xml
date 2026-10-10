@@ -14,11 +14,8 @@
     <string name="listen_welcome">Listen welcome</string>
     <string name="listen_page">This page</string>
     <string name="stop">Stop</string>
-    <string name="language">Language</string>
-    <string name="english">English</string>
-    <string name="urdu">اردو</string>
-    <string name="transcript">Lecture script</string>
-    <string name="hide_transcript">Hide script</string>
+    <string name="transcript">Lecture notes</string>
+    <string name="hide_transcript">Hide notes</string>
     <string name="embedded_pages">Booklet pages (as printed)</string>
     <string name="page_of">Page %1$d of %2$d · booklet %3$d</string>
     <string name="day_title">Day %1$d of 30</string>
@@ -38,7 +35,7 @@
     <string name="filter_revision">Revision</string>
     <string name="next_day">Next day</string>
     <string name="prev_day">Previous day</string>
-    <string name="version_badge">Version %1$s — Urdu lectures · English terms as printed</string>
+    <string name="version_badge">Version %1$s — English text · Urdu voice · terms as printed</string>
     <string name="topics_today">Today\'s cards</string>
     <string name="progress_label">%1$d of 30 days ticked</string>
     <string name="empty_days">No days in this filter.</string>

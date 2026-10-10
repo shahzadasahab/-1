@@ -12,6 +12,29 @@ def T(*parts: str) -> str:
     return " ".join(p.strip() for p in parts if p.strip())
 
 
+def display_text(
+    n: int,
+    week: int,
+    kind: str,
+    chapter: str,
+    focus: str,
+    golden: str,
+    start: int,
+    end: int,
+    topics: list[str],
+) -> str:
+    cards = "\n".join(f"• {t}" for t in topics)
+    return (
+        f"Day {n:02d} of 30 · Week {week} · {kind}\n"
+        f"Chapter: {chapter}\n"
+        f"Focus: {focus}\n"
+        f"★ Golden: {golden}\n"
+        f"Booklet pages {start}–{end} (as printed).\n\n"
+        f"Today's cards:\n{cards}\n\n"
+        "Read the embedded pages as printed. English exam terms stay exactly as written."
+    )
+
+
 def day(
     course: str,
     n: int,
@@ -37,6 +60,7 @@ def day(
         "endPage": end,
         "topics": topics,
         "script": script,
+        "displayText": display_text(n, week, kind, chapter, focus, golden, start, end, topics),
     }
 
 
@@ -47,6 +71,22 @@ XI_INTRO = T(
     "ہر تدریسی دن تین گھنٹے: پہلے 15 منٹ کل کا ★ {Golden} زبانی، پھر آج کے کارڈز، پھر {Closed-book drill}، رات کو {Define} · {Explain} · {Example} · {Diagram} · {Working} سے پانچ نمبر۔",
     "پیچھے رہو تو صرف ★ {Golden} کارڈز کرو۔ {Checkpoint} مت چھوڑو۔ نیا باب اس وقت تک نہ شروع کرو جب تک اس باب کی {Golden} تعریف زبانی نہ آئے۔",
     "فون دوسرے کمرے میں رکھو۔ صفحات جوں کے توں دیکھیں، اصطلاحات انگریزی میں ویسی ہی یاد کریں جیسے چھپی ہیں۔",
+)
+
+XI_INTRO_EN = T(
+    "This is the Computer Science XI 30-Day Crash Course for the New Sindh Curriculum 2026.",
+    "Days 1–23 teach every topic as revision cards. The last day of each chapter is a timed Checkpoint.",
+    "Days 24–26 are Golden blitz only. Day 27 is recaps. Day 28 is the mock. Day 29 you mark. Day 30 you repair and stop.",
+    "Every teaching day is 3 hours: 0–15 min recite yesterday’s Golden, 15–105 min today’s cards, 105–135 min closed-book drill, 135–180 min one 5-mark answer using Define · Explain · Example · Diagram · Working.",
+    "If you fall behind, do only the Golden cards. Never skip a checkpoint. Do not start a new chapter until you can say that chapter’s Golden definitions without looking.",
+    "Phone in another room. Study the booklet pages as printed. English exam terms stay exactly as written.",
+)
+
+XII_INTRO_EN = T(
+    "This is the Computer Science XII 30-Day Crash Course for the New Sindh Curriculum 2026.",
+    "Chapter 1 Computer Systems (HCI). Chapter 2 Computational Thinking and Algorithms. Chapter 3 Programming Fundamentals. Chapter 4 Data and Analysis. Chapter 5 Application and Impacts of Computing. Chapter 6 Entrepreneurship in the Digital Age.",
+    "Same method: 3 hours, Golden first, never skip a Checkpoint. Last week is Golden blitz, Recap, Mock, Mark, Repair.",
+    "Booklet pages stay as printed. Listen in Urdu; English terms such as HCI, Trace Tables, Big O Notation, and MVP stay as written.",
 )
 
 XII_INTRO = T(
@@ -663,21 +703,21 @@ def main() -> None:
             {
                 "id": "xi",
                 "title": "Computer Science XI",
-                "titleUr": "کمپیوٹر سائنس XI",
                 "subtitle": "30-Day Crash Course · Days 1–23 teach · 24–30 revise, mock, repair",
                 "introStartPage": 1,
                 "introEndPage": 4,
                 "introScript": XI_INTRO,
+                "introDisplay": XI_INTRO_EN,
                 "days": XI,
             },
             {
                 "id": "xii",
                 "title": "Computer Science XII",
-                "titleUr": "کمپیوٹر سائنس XII",
                 "subtitle": "30-Day Crash Course · HCI, algorithms, Python, AI, entrepreneurship",
                 "introStartPage": 104,
                 "introEndPage": 107,
                 "introScript": XII_INTRO,
+                "introDisplay": XII_INTRO_EN,
                 "days": XII,
             },
         ],

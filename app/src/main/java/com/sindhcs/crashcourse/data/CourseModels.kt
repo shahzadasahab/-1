@@ -3,11 +3,11 @@ package com.sindhcs.crashcourse.data
 data class Course(
     val id: String,
     val title: String,
-    val titleUr: String,
     val subtitle: String,
     val introStartPage: Int,
     val introEndPage: Int,
     val introScript: String,
+    val introDisplay: String,
     val days: List<CourseDay>
 )
 
@@ -23,7 +23,8 @@ data class CourseDay(
     val startPage: Int,
     val endPage: Int,
     val topics: List<String>,
-    val script: String
+    val script: String,
+    val displayText: String
 ) {
     val pageCount: Int get() = endPage - startPage + 1
 

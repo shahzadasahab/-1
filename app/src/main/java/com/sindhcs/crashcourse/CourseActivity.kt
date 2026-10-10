@@ -40,8 +40,7 @@ class CourseActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val title = if (LocaleHelper.isUrdu(this)) course.titleUr else course.title
-        supportActionBar?.title = title
+        supportActionBar?.title = course.title
 
         adapter = DayAdapter { day ->
             startActivity(Intent(this, DayActivity::class.java).apply {

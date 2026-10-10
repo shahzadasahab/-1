@@ -48,7 +48,8 @@ object CourseRepository {
             "Day 29 mark",
             "Day 30 repair"
         ),
-        script = course.introScript
+        script = course.introScript,
+        displayText = course.introDisplay
     )
 
     private fun JSONObject.toCourse(): Course {
@@ -66,23 +67,57 @@ object CourseRepository {
                 startPage = obj.getInt("startPage"),
                 endPage = obj.getInt("endPage"),
                 topics = obj.optJSONArray("topics")?.toStringList() ?: emptyList(),
-                script = obj.getString("script")
+                script = obj.getString("script"),
+                displayText = obj.optString("displayText").ifBlank {
+                    englishNotes(
+                        day = obj.getInt("day"),
+                        week = obj.getInt("week"),
+                        kind = obj.getString("kind"),
+                        chapter = obj.getString("chapter"),
+                        focus = obj.getString("focus"),
+                        golden = obj.getString("golden"),
+                        topics = obj.optJSONArray("topics")?.toStringList() ?: emptyList(),
+                        start = obj.getInt("startPage"),
+                        end = obj.getInt("endPage")
+                    )
+                }
             )
         }
         return Course(
             id = id,
             title = getString("title"),
-            titleUr = getString("titleUr"),
             subtitle = getString("subtitle"),
             introStartPage = getInt("introStartPage"),
             introEndPage = getInt("introEndPage"),
             introScript = getString("introScript"),
+            introDisplay = optString("introDisplay").ifBlank { getString("subtitle") },
             days = days
         )
     }
 
     private fun JSONArray.toStringList(): List<String> =
         (0 until length()).map { getString(it) }
+
+    private fun englishNotes(
+        day: Int,
+        week: Int,
+        kind: String,
+        chapter: String,
+        focus: String,
+        golden: String,
+        topics: List<String>,
+        start: Int,
+        end: Int
+    ): String {
+        val cards = topics.joinToString("\n") { "• $it" }
+        return "Day $day of 30 · Week $week · $kind\n" +
+            "Chapter: $chapter\n" +
+            "Focus: $focus\n" +
+            "★ Golden: $golden\n" +
+            "Booklet pages $start–$end (as printed).\n\n" +
+            "Today's cards:\n$cards\n\n" +
+            "Read the embedded pages as printed. English exam terms stay exactly as written."
+    }
 
     private fun <T> JSONArray.mapObjects(transform: (JSONObject) -> T): List<T> =
         (0 until length()).map { transform(getJSONObject(it)) }

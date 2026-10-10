@@ -82,7 +82,7 @@ class DayActivity : AppCompatActivity() {
         binding.dayGolden.text = getString(R.string.golden_today, day.golden)
         val topicBlock = day.topics.joinToString("\n") { "• $it" }
         binding.dayTopics.text = "${getString(R.string.topics_today)}\n$topicBlock"
-        binding.transcriptText.text = MixedVoiceNarrator.visibleTranscript(day.script)
+        binding.transcriptText.text = day.displayText
         updateDoneButton()
 
         val pages = (day.startPage..day.endPage).toList()
@@ -152,7 +152,6 @@ class DayActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        menu.findItem(R.id.action_language).isVisible = false
         menu.findItem(R.id.action_listen).title = getString(if (speaking) R.string.stop else R.string.listen)
         return true
     }
