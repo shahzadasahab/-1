@@ -26,11 +26,11 @@ class TtsBridge(
 ) {
     private val main = Handler(Looper.getMainLooper())
     private var tts: TextToSpeech? = null
-    private var ready = false
-    private var initFailed = false
+    @Volatile private var ready = false
+    @Volatile private var initFailed = false
 
-    private var urLocale: Locale? = null
-    private var enLocale: Locale? = null
+    @Volatile private var urLocale: Locale? = null
+    @Volatile private var enLocale: Locale? = null
     private var currentLang: String? = null
 
     private var job = 0

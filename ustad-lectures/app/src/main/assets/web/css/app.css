@@ -554,6 +554,7 @@ button {
 }
 .blk.speaking {
   border-color: var(--brand);
+  box-shadow: 0 0 0 2px var(--brand);
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--brand) 35%, transparent);
 }
 .blk-play {
@@ -1215,10 +1216,12 @@ pre.out {
 }
 .opt.ok {
   border-color: var(--ok);
+  background: var(--card2);
   background: color-mix(in srgb, var(--ok) 14%, var(--card));
 }
 .opt.bad {
   border-color: var(--danger);
+  background: var(--card2);
   background: color-mix(in srgb, var(--danger) 12%, var(--card));
 }
 .qz .why {
@@ -1355,7 +1358,10 @@ pre.out {
 /* ---------- settings sheet ---------- */
 .sheet-bg {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.45);
   display: none;
   align-items: flex-end;
@@ -1413,6 +1419,7 @@ pre.out {
 }
 .seg button.on {
   border-color: var(--brand);
+  background: var(--card);
   background: color-mix(in srgb, var(--brand) 16%, var(--card));
   color: var(--brand);
 }

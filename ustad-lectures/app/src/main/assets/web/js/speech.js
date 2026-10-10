@@ -185,7 +185,7 @@
     }
     return out
       .map((r) => ({ l: r.l, t: r.l === 'en' ? fixEnglish(r.t).trim() : r.t.trim() }))
-      .filter((r) => /[A-Za-z0-9\u0600-\u06FF]/.test(r.t));
+      .filter((r) => /[A-Za-z0-9\u0621-\u063A\u0641-\u064A\u0660-\u0669\u066E-\u06D3\u06F0-\u06F9]/.test(r.t));
   }
 
   function splitSentences(text) {

@@ -23,7 +23,7 @@
       } catch (e) {}
     },
   };
-  const prefs = Object.assign({ font: 'naskh', size: 1, rate: 0.9, theme: 'auto', cls: 'XI' }, store.get('prefs', {}));
+  const prefs = Object.assign({ font: 'naskh', size: 1, rate: 0.9, theme: 'auto', cls: 'XI', autoNext: 'off' }, store.get('prefs', {}));
   const done = store.get('done', {});
   const savePrefs = () => store.set('prefs', prefs);
 
@@ -571,7 +571,13 @@
         $$('.blk.speaking').forEach((n) => n.classList.remove('speaking'));
         $$('.snt.on').forEach((n) => n.classList.remove('on'));
         renderPlayer();
-        toast('Lecture finished. Great job!');
+        const all = Lectures.sorted();
+        const nxt = all[all.findIndex((l) => l.id === P.lec.id) + 1];
+        if (prefs.autoNext === 'on' && nxt) {
+          toast('Next: ' + nxt.title);
+          openLecture(nxt.id);
+          setTimeout(() => view === 'lecture' && playFrom(0), 900);
+        } else toast('Lecture finished. Great job!');
       },
       onMissing() {
         if (!P.missingShown) {
@@ -626,6 +632,7 @@
       '<div class="set-row"><label>Urdu font</label>' + seg('font', [['naskh', '<span class="ur-sample">نسخ</span> Naskh'], ['nastaliq', '<span class="ur-sample">نستعلیق</span> Nastaliq']]) + '</div>' +
       '<div class="set-row"><label>Text size</label>' + seg('size', [['0.9', 'Small'], ['1', 'Normal'], ['1.15', 'Large'], ['1.3', 'Class mode']]) + '</div>' +
       '<div class="set-row"><label>Theme</label>' + seg('theme', [['auto', 'Auto'], ['light', 'Light'], ['dark', 'Dark']]) + '</div>' +
+      '<div class="set-row"><label>After a lecture ends</label>' + seg('autoNext', [['off', 'Stop'], ['on', 'Play next lecture automatically']]) + '</div>' +
       '<div class="set-row"><label>Speech speed: <span id="rate-v">' + prefs.rate + 'x</span></label><input type="range" id="rate" min="0.6" max="1.4" step="0.05" value="' + prefs.rate + '"></div>' +
       '<div class="set-row"><label>Voices (Urdish needs two)</label><div class="vstat">' +
       '<div class="line">' + dot(st.ready === false ? null : st.ur) + '<span>Urdu voice (ur-PK): ' + (st.ur ? 'available' : st.ready === false ? 'checking...' : 'not installed') + '</span></div>' +

@@ -18,6 +18,7 @@ const srv = http.createServer((q, r) => {
   const b = await puppeteer.launch({ executablePath: '/opt/google/chrome/chrome', args: ['--no-sandbox', '--force-color-profile=srgb'], headless: 'new' });
   const p = await b.newPage();
   await p.setViewport({ width: +w, height: +h, deviceScaleFactor: 2 });
+  if (process.env.PREFS) await p.evaluateOnNewDocument((v) => localStorage.setItem('ul.prefs', v), process.env.PREFS);
   const logs = [];
   p.on('console', (m) => logs.push(m.type() + ': ' + m.text()));
   p.on('response', (r) => { if (r.status() >= 400) logs.push('HTTP ' + r.status() + ' ' + r.url()); });
@@ -30,6 +31,7 @@ const srv = http.createServer((q, r) => {
     await p.setViewport({ width: +w, height: Math.min(hgt + 160, 16000), deviceScaleFactor: 2 });
     await new Promise((r) => setTimeout(r, 1200));
   }
+  if (process.env.CLICK) { await p.click(process.env.CLICK); await new Promise((r) => setTimeout(r, 500)); }
   if (/^scroll:/.test(mode)) {
     const y = +mode.split(':')[1];
     await p.evaluate((y) => { const e = document.querySelector('#lec-scroll') || document.querySelector('#home-scroll'); if (e) e.scrollTop = y; }, y);
