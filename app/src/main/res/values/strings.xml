@@ -35,8 +35,15 @@
     <string name="filter_revision">Revision</string>
     <string name="next_day">Next day</string>
     <string name="prev_day">Previous day</string>
-    <string name="version_badge">Version %1$s — English text · Urdu voice · terms as printed</string>
+    <string name="version_badge">Version %1$s — English text · Urdu voice · page-faithful narration</string>
     <string name="topics_today">Today\'s cards</string>
     <string name="progress_label">%1$d of 30 days ticked</string>
     <string name="empty_days">No days in this filter.</string>
+    <string name="page_text">Page text</string>
+    <string name="hide_page_text">Hide page text</string>
+    <string name="page_text_empty">This page has no extra text.</string>
+    <string name="speed_label">Speed %1$s</string>
+    <string name="continue_label">Continue: %1$s, Day %2$d</string>
+    <string name="continue_how_to">Continue: How to run this course</string>
+    <string name="zoom_hint">Pinch or double-tap a page to zoom.</string>
 </resources>

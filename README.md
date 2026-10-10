@@ -9,13 +9,13 @@ Android reader for the **Computer Science XI and XII 30-Day Crash Course** (New 
 
 ## Download
 
-**Latest (v1.0.1)** — English display · Urdu voice · terms as printed:
+**Latest (v1.1.0)** — page-faithful narration · zoom · speed control:
 
-https://github.com/shahzadasahab/-1/raw/cursor/cs-crash-course-urdu-tts-66df/releases/CS-XI-XII-CrashCourse-v1.0.1-english-text-urdu-voice-debug.apk
+https://github.com/shahzadasahab/-1/raw/cursor/cs-crash-course-urdu-tts-66df/releases/CS-XI-XII-CrashCourse-v1.1.0-page-faithful-debug.apk
 
-Repo copy: `releases/CS-XI-XII-CrashCourse-v1.0.1-english-text-urdu-voice-debug.apk`
+Repo copy: `releases/CS-XI-XII-CrashCourse-v1.1.0-page-faithful-debug.apk`
 
-Uninstall any older version first. On the home screen you should see **Version 1.0.1 — English text · Urdu voice · terms as printed**.
+Uninstall any older version first. On the home screen you should see **Version 1.1.0 — English text · Urdu voice · page-faithful narration**.
 
 ## How to use
 
@@ -23,18 +23,28 @@ Uninstall any older version first. On the home screen you should see **Version 1
 2. Open **Computer Science XI** or **XII**.
 3. Open a day. Swipe the original booklet pages. On-screen notes stay English.
 4. Tap **Listen lecture**. Spoken explanation is Urdu; `{English terms}` are pronounced as written.
-5. Tick the day when the 3-hour block is done.
+5. Tap **This page** to hear the current booklet page: Urdu connecting phrases, with the printed English sentences read exactly as written. Open **Page text** to see that English text on screen.
+6. Pinch or double-tap a page to zoom. Use **Speed** to switch between 0.8x, 1.0x and 1.25x.
+7. Tick the day when the 3-hour block is done. The home screen offers **Continue** to jump back to the last day you opened.
 
 Days 1–23 teach, chapter-end days are checkpoints, 24–26 Golden blitz, 27 recap, 28 mock, 29 mark, 30 repair.
 
 ## Build
 
 ```bash
-python3 scripts/build_course_json.py
+python3 scripts/extract_pages.py      # pages.json from the PDF (needs pypdf)
+python3 scripts/build_course_json.py  # course.json lectures
 export ANDROID_HOME=/path/to/android-sdk
 ./gradlew assembleDebug
 ```
 
 The debug APK is written to `app/build/outputs/apk/debug/`.
+
+## Version 1.1.0
+
+- "This page" narration is built from each page's printed text (`pages.json`): Urdu framing, English sentences spoken as-is.
+- New "Page text" panel, pinch/double-tap zoom, async page rendering, speech speed control, keep-screen-on while speaking, Continue button on home.
+- Lecture fixes: IDE, MS Access, and AI definitions now match the booklet; if Urdu TTS is missing only English text is read.
+- Not tested on a physical device in the build environment.
 
 ## Version 1.0.1

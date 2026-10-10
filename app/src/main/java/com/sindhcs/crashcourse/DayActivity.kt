@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.sindhcs.crashcourse.data.Course
 import com.sindhcs.crashcourse.data.CourseDay
 import com.sindhcs.crashcourse.data.CourseRepository
+import com.sindhcs.crashcourse.data.PageNarration
+import com.sindhcs.crashcourse.data.PageRepository
 import com.sindhcs.crashcourse.data.ProgressStore
 import com.sindhcs.crashcourse.databinding.ActivityDayBinding
 import com.sindhcs.crashcourse.ui.PdfPageAdapter
@@ -31,6 +34,10 @@ class DayActivity : AppCompatActivity() {
     private var voiceReady = false
     private var speaking = false
     private var showingTranscript = false
+    private var showingPageText = false
+    private var pageAdapter: PdfPageAdapter? = null
+    private var pages: List<Int> = emptyList()
+    private val speeds = floatArrayOf(0.8f, 1.0f, 1.25f)
 
     override fun attachBaseContext(newBase: android.content.Context) {
         super.attachBaseContext(LocaleHelper.wrap(newBase))
@@ -66,12 +73,15 @@ class DayActivity : AppCompatActivity() {
             onReadyChanged = { voiceReady = it },
             onSpeakingChanged = {
                 speaking = it
+                if (it) window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+                else window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
                 invalidateOptionsMenu()
                 binding.listenButton.text = getString(if (it) R.string.stop else R.string.listen)
             },
             onLanguageIssue = { Toast.makeText(this, it, Toast.LENGTH_LONG).show() }
         )
 
+        ProgressStore.setLastOpened(this, day.id)
         bindDay()
     }
 
@@ -85,11 +95,14 @@ class DayActivity : AppCompatActivity() {
         binding.transcriptText.text = day.displayText
         updateDoneButton()
 
-        val pages = (day.startPage..day.endPage).toList()
-        binding.pagePager.adapter = PdfPageAdapter(pages)
+        pages = (day.startPage..day.endPage).toList()
+        pageAdapter = PdfPageAdapter(pages)
+        binding.pagePager.adapter = pageAdapter
+        binding.pagePager.offscreenPageLimit = 1
         binding.pagePager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 updatePageIndicator(position, pages)
+                updatePageText()
             }
         })
         updatePageIndicator(0, pages)
@@ -98,7 +111,23 @@ class DayActivity : AppCompatActivity() {
         binding.listenPageButton.setOnClickListener {
             val index = binding.pagePager.currentItem
             val booklet = pages.getOrElse(index) { day.startPage }
-            toggleSpeech(day.pageScript(booklet))
+            val blocks = PageRepository.getBlocks(this, booklet)
+            val script = if (blocks.isEmpty()) day.pageScript(booklet) else PageNarration.script(booklet, blocks)
+            toggleSpeech(script)
+        }
+        binding.pageTextToggle.setOnClickListener {
+            showingPageText = !showingPageText
+            binding.pageText.visibility = if (showingPageText) View.VISIBLE else View.GONE
+            binding.pageTextToggle.text = getString(if (showingPageText) R.string.hide_page_text else R.string.page_text)
+            updatePageText()
+        }
+        updateSpeedButton()
+        binding.speedButton.setOnClickListener {
+            val current = ProgressStore.speechRate(this)
+            val next = speeds[(speeds.indexOfFirst { it == current } + 1).mod(speeds.size)]
+            ProgressStore.setSpeechRate(this, next)
+            narrator?.setRateScale(next)
+            updateSpeedButton()
         }
         binding.transcriptToggle.setOnClickListener {
             showingTranscript = !showingTranscript
@@ -117,6 +146,17 @@ class DayActivity : AppCompatActivity() {
         binding.prevDay.visibility = if (day.day <= 1) View.INVISIBLE else View.VISIBLE
         binding.nextDay.visibility = if (day.day == 0 || day.day >= 30) View.INVISIBLE else View.VISIBLE
         binding.doneButton.visibility = if (day.day == 0) View.GONE else View.VISIBLE
+    }
+
+    private fun updateSpeedButton() {
+        binding.speedButton.text = getString(R.string.speed_label, "${ProgressStore.speechRate(this)}x")
+    }
+
+    private fun updatePageText() {
+        if (!showingPageText) return
+        val booklet = pages.getOrElse(binding.pagePager.currentItem) { day.startPage }
+        val text = PageNarration.displayText(PageRepository.getBlocks(this, booklet))
+        binding.pageText.text = text.ifEmpty { getString(R.string.page_text_empty) }
     }
 
     private fun updatePageIndicator(position: Int, pages: List<Int>) {
@@ -138,6 +178,7 @@ class DayActivity : AppCompatActivity() {
             Toast.makeText(this, R.string.voice_not_ready, Toast.LENGTH_SHORT).show()
             return
         }
+        narrator?.setRateScale(ProgressStore.speechRate(this))
         if (narrator?.speakScript(script) != true) {
             Toast.makeText(this, R.string.voice_install_prompt, Toast.LENGTH_LONG).show()
         }
@@ -175,7 +216,13 @@ class DayActivity : AppCompatActivity() {
         return true
     }
 
+    override fun onPause() {
+        if (speaking) narrator?.stop()
+        super.onPause()
+    }
+
     override fun onDestroy() {
+        pageAdapter?.release()
         narrator?.shutdown()
         narrator = null
         super.onDestroy()

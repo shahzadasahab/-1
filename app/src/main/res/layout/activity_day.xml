@@ -96,6 +96,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="@string/listen_page" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/speedButton"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/speed_label" />
                 </LinearLayout>
 
                 <com.google.android.material.button.MaterialButton
@@ -146,11 +154,42 @@
                 android:paddingTop="4dp"
                 android:textColor="@color/on_surface_variant" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/zoom_hint"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="12sp" />
+
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/pagePager"
                 android:layout_width="match_parent"
                 android:layout_height="520dp"
                 android:layout_marginTop="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/pageTextToggle"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/page_text" />
+
+            <TextView
+                android:id="@+id/pageText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/surface"
+                android:lineSpacingExtra="4dp"
+                android:padding="12dp"
+                android:textColor="@color/on_surface"
+                android:textIsSelectable="true"
+                android:textSize="14sp"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="match_parent"

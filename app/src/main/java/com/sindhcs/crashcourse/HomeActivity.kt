@@ -60,6 +60,45 @@ class HomeActivity : AppCompatActivity() {
         binding.listenWelcome.setOnClickListener { toggleWelcome() }
     }
 
+    override fun onResume() {
+        super.onResume()
+        updateContinueButton()
+    }
+
+    private fun updateContinueButton() {
+        val last = ProgressStore.lastOpened(this)?.let { CourseRepository.getDay(this, it) }
+        val howToCourse = ProgressStore.lastOpened(this)?.removeSuffix("-howto")?.takeIf {
+            ProgressStore.lastOpened(this)?.endsWith("-howto") == true
+        }
+        when {
+            last != null -> {
+                binding.continueButton.visibility = android.view.View.VISIBLE
+                binding.continueButton.text = getString(
+                    R.string.continue_label,
+                    if (last.courseId == "xi") getString(R.string.class_xi) else getString(R.string.class_xii),
+                    last.day
+                )
+                binding.continueButton.setOnClickListener {
+                    startActivity(Intent(this, DayActivity::class.java).apply {
+                        putExtra(DayActivity.EXTRA_DAY_ID, last.id)
+                        putExtra(DayActivity.EXTRA_COURSE_ID, last.courseId)
+                    })
+                }
+            }
+            howToCourse != null -> {
+                binding.continueButton.visibility = android.view.View.VISIBLE
+                binding.continueButton.text = getString(R.string.continue_how_to)
+                binding.continueButton.setOnClickListener {
+                    startActivity(Intent(this, DayActivity::class.java).apply {
+                        putExtra(DayActivity.EXTRA_COURSE_ID, howToCourse)
+                        putExtra(DayActivity.EXTRA_HOWTO, true)
+                    })
+                }
+            }
+            else -> binding.continueButton.visibility = android.view.View.GONE
+        }
+    }
+
     private fun openCourse(courseId: String) {
         startActivity(Intent(this, CourseActivity::class.java).apply {
             putExtra(CourseActivity.EXTRA_COURSE_ID, courseId)
@@ -75,6 +114,7 @@ class HomeActivity : AppCompatActivity() {
             Toast.makeText(this, R.string.voice_not_ready, Toast.LENGTH_SHORT).show()
             return
         }
+        narrator?.setRateScale(ProgressStore.speechRate(this))
         narrator?.speakScript(CourseRepository.getWelcomeScript())
     }
 

@@ -27,6 +27,7 @@ class MixedVoiceNarrator(
     private val pending = mutableListOf<String>()
     private var queue = ArrayDeque<Pair<Segment, String>>()
     private var speaking = false
+    private var rateScale = 1.0f
 
     init {
         tts = TextToSpeech(context.applicationContext, this)
@@ -35,13 +36,13 @@ class MixedVoiceNarrator(
     override fun onInit(status: Int) {
         isReady = status == TextToSpeech.SUCCESS
         if (isReady) {
-            tts?.setSpeechRate(0.88f)
+            tts?.setSpeechRate(0.88f * rateScale)
             tts?.setPitch(1.0f)
             urduAvailable = localeAvailable(URDU_LOCALES)
             attachProgressListener()
             if (!urduAvailable) {
                 onLanguageIssue?.invoke(
-                    "Urdu voice not installed. Using mixed fallback; install Urdu TTS for full lectures."
+                    "Urdu voice is not installed, so only the English text will be read. Install Urdu TTS for full lectures."
                 )
             }
         }
@@ -63,6 +64,7 @@ class MixedVoiceNarrator(
         engine.stop()
         queue.clear()
         parseSegments(script).forEachIndexed { index, segment ->
+            if (!segment.englishTerm && !urduAvailable) return@forEachIndexed
             chunk(segment.text).forEach { part ->
                 queue.addLast(segment.copy(text = part) to "seg_${index}_${part.hashCode()}")
             }
@@ -72,6 +74,10 @@ class MixedVoiceNarrator(
         onSpeakingChanged(true)
         speakNext(flush = true)
         return true
+    }
+
+    fun setRateScale(scale: Float) {
+        rateScale = scale.coerceIn(0.5f, 2.0f)
     }
 
     fun stop() {
@@ -138,7 +144,7 @@ class MixedVoiceNarrator(
             if (engine.isLanguageAvailable(locale) >= TextToSpeech.LANG_AVAILABLE) {
                 engine.language = locale
                 selectBestVoice(engine, locale)
-                engine.setSpeechRate(if (englishTerm) 0.82f else 0.88f)
+                engine.setSpeechRate((if (englishTerm) 0.82f else 0.88f) * rateScale)
                 return
             }
         }

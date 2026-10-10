@@ -56,6 +56,13 @@
                 android:layout_marginTop="12dp"
                 android:text="@string/listen_welcome" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/continueButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="gone" />
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardXi"
                 android:layout_width="match_parent"
