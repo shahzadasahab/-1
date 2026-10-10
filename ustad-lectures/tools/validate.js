@@ -150,7 +150,7 @@ wanted.forEach((l) => {
     if (sp && (b.t === 'say' || b.t === 'h' || b.t === 'note' || b.say)) {
       const ar = (sp.match(AR) || []).length;
       const la = (sp.replace(/\$[^$]*\$/g, '').match(LAT) || []).length;
-      if (ar < (b.t === 'h' ? 2 : 8)) err(at, 'narration must be Urdu script (Urdish): found almost no Urdu letters');
+      if (b.t !== 'h' && ar < 8) err(at, 'narration must be Urdu script (Urdish): found almost no Urdu letters');
       if (ar > 0 && la / (ar + la) > 0.65 && b.t === 'say') warn(at, 'too much English; keep Urdu descriptive, English terminology only');
     }
     spoken.forEach((s) => {
