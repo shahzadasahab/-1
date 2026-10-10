@@ -2,6 +2,8 @@
 
 **Download (v1.0.0 debug):** [UstadLectures-v1.0.0-debug.apk](https://github.com/shahzadasahab/-1/raw/cursor/teacher-lectures-apk-b9d1/ustad-lectures/releases/UstadLectures-v1.0.0-debug.apk)
 
+**111 teacher lectures** covering Class XI and XII Computer Science (about 110,000 narrated words, 300+ SVG diagrams, 130+ MathJax formulas).
+
 Lecture-wise Computer Science teaching app for the **Class XI and XII** textbooks. Every lecture is delivered the way
 a teacher speaks in a Pakistani classroom:
 
@@ -15,6 +17,23 @@ a teacher speaks in a Pakistani classroom:
 * Per lecture: objectives, teacher narration blocks, key terms, exam tips, board summary, quiz (MCQ with explanations), homework.
 * Light/Dark theme, Naskh / Nastaliq Urdu fonts, text-size and "Class mode" (big text for projector), speech speed,
   progress tracking, search, "continue where I stopped", optional auto-play of the next lecture.
+
+## Lectures (111)
+
+| Class | Ch | Topic | Lectures |
+|---|---|---|---|
+| XI | 1 | Computer Systems (logic, SDLC, OSI/TCP-IP) | 17 |
+| XI | 2 | Computational Thinking and Algorithms | 8 |
+| XI | 3 | Programming Fundamentals (Python) | 10 |
+| XI | 4 | Data and Analysis (databases / Access) | 9 |
+| XI | 5 | Applications and Impacts (AI, IoT) | 9 |
+| XI | 6 | Digital Literacy | 9 |
+| XII | 1 | Human Computer Interaction | 7 |
+| XII | 2 | Computational Thinking and Algorithms | 8 |
+| XII | 3 | Programming Fundamentals (Python) | 10 |
+| XII | 4 | Data and Analysis (SQLite, pandas, stats) | 8 |
+| XII | 5 | Applications and Impacts (NN, security) | 9 |
+| XII | 6 | Entrepreneurship in the Digital Age | 7 |
 
 ## Project layout
 
