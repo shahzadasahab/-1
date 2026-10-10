@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Class XI Computer Science — Lecture-wise Intermediate Edition</title>
+<style>:root {
+  --navy: #1b365d;
+  --teal: #0d7377;
+  --gold: #c4a35a;
+  --ink: #1f2430;
+  --muted: #4a5568;
+  --cream: #f6f1e6;
+  --pale: #eef4f6;
+  --rose: #f8eaea;
+  --green: #e8f3ec;
+  --line: #c9d3da;
+}
+* { box-sizing: border-box; }
+html { font-size: 11pt; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Liberation Serif", "Times New Roman", serif;
+  line-height: 1.45;
+  background: #fff;
+}
+.cover {
+  min-height: 100vh;
+  background: var(--navy);
+  color: #fff;
+  padding: 28mm 22mm;
+  page-break-after: always;
+  position: relative;
+}
+.cover::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 14mm;
+  background: var(--teal);
+}
+.cover::after {
+  content: "";
+  position: absolute;
+  left: 14mm; top: 0; bottom: 0;
+  width: 2.2mm;
+  background: var(--gold);
+}
+.cover-inner { margin-left: 10mm; padding-top: 38mm; }
+.kicker {
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 10pt;
+}
+.cover h1 {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 34pt;
+  line-height: 1.1;
+  margin: 16px 0 10px;
+  color: #ffffff !important;
+  border: none;
+  padding: 0;
+}
+.cover p { color: #d9e4ec; font-size: 13pt; max-width: 140mm; }
+header.bar {
+  background: var(--navy);
+  color: #fff;
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 8.5pt;
+  padding: 6px 18mm;
+  display: flex;
+  justify-content: space-between;
+}
+main { padding: 8mm 16mm 14mm; max-width: 190mm; margin: 0 auto; }
+h1, h2, h3 {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+h1 { page-break-before: auto; }
+h1 { color: var(--navy); font-size: 20pt; border-bottom: 2.5px solid var(--gold); padding-bottom: 4px; }
+h2 { color: var(--teal); font-size: 14pt; margin-top: 1.2em; }
+h3 { color: var(--navy); font-size: 12pt; }
+p, li { orphans: 3; widows: 3; }
+.lead { font-style: italic; color: var(--muted); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 14px;
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 9.2pt;
+  page-break-inside: avoid;
+}
+th {
+  background: var(--navy);
+  color: #fff;
+  padding: 6px 7px;
+  text-align: left;
+}
+td { padding: 5px 7px; border: 0.4px solid var(--line); vertical-align: top; }
+tr:nth-child(even) td { background: var(--pale); }
+.callout {
+  border-left: 4px solid var(--teal);
+  background: var(--pale);
+  padding: 8px 12px;
+  margin: 10px 0 14px;
+  page-break-inside: avoid;
+}
+.callout.try { border-color: var(--gold); background: #fbf3d9; }
+.callout.mistake { border-color: #8b3a3a; background: var(--rose); }
+.callout.exam { border-color: #2d6a4f; background: var(--green); }
+.callout.memory { border-color: var(--gold); background: var(--cream); }
+.callout .tag {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+}
+pre, .code {
+  font-family: "DejaVu Sans Mono", Consolas, monospace;
+  font-size: 8.6pt;
+  background: #f4f6f8;
+  border: 1px solid var(--teal);
+  padding: 8px 10px;
+  overflow: hidden;
+  page-break-inside: avoid;
+  white-space: pre-wrap;
+}
+.svg-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin: 8px 0 14px; align-items: flex-start; }
+.diagram { max-width: 100%; height: auto; flex-shrink: 0; overflow: visible; }
+.svg-label { font-family: "Liberation Sans", Arial, sans-serif; font-size: 11px; fill: #1b365d; }
+.svg-tiny { font-family: "Liberation Sans", Arial, sans-serif; font-size: 10px; fill: #1b365d; }
+.gate-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px 6px;
+  margin: 8px 0 14px;
+  align-items: start;
+}
+.gate-card { margin: 0; text-align: center; page-break-inside: avoid; overflow: visible; }
+.gate-card .diagram { width: 100%; max-width: 168px; height: auto; }
+.gate-card figcaption {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 9pt;
+  color: var(--muted);
+}
+figure.wide { margin: 8px 0 14px; text-align: center; page-break-inside: avoid; }
+figcaption {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 9pt;
+  color: var(--muted);
+  margin-top: 4px;
+}
+ol.tight li, ul.tight li { margin: 2px 0; }
+.page-break { page-break-before: always; }
+mjx-container { font-size: 103%; }
+.lecture {
+  page-break-before: always;
+  page-break-inside: auto;
+}
+.lecture:first-of-type { page-break-before: auto; }
+.lec-head {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  margin: 0 0 12px;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+.lec-num {
+  background: var(--navy);
+  color: #fff !important;
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 16pt;
+  font-weight: 700;
+  min-width: 22mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 6px;
+}
+.lec-titles h1 {
+  border: none;
+  margin: 0 0 4px;
+  padding: 0;
+  font-size: 16.5pt;
+}
+.lec-meta {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 8.5pt;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.outcomes, .exit, .hw, .recap {
+  page-break-inside: avoid;
+}
+.outcomes { border-left-color: var(--navy); background: var(--pale); }
+.recap { border-left-color: var(--teal); }
+.exit { border-left-color: #2d6a4f; background: var(--green); }
+.hw { border-left-color: var(--gold); background: #fbf3d9; }
+.toc a { color: var(--navy); text-decoration: none; }
+.period {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 9pt;
+  color: var(--teal);
+  font-weight: 700;
+}
+@media print {
+  .cover { min-height: 100vh; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'local', displayAlign: 'center' },
+  startup: {
+    pageReady: function () {
+      return MathJax.startup.defaultPageReady().then(function () {
+        document.documentElement.dataset.mathjax = 'ready';
+      });
+    }
+  }
+};
+</script>
+<script src="vendor/tex-svg.js"></script>
+
+</head>
+<body>
+<section class="cover"><div class="cover-inner">
+<div class="kicker">SINDH · INTERMEDIATE / CLASS XI · COMPUTER SCIENCE</div>
+<h1>Lecture-wise<br/>Study Guide</h1>
+<p>Twenty-five college sittings with outcomes, board work, exit tickets, and homework. MathJax notation and SVG diagrams for Digital Logic, SDLC, Networks, Algorithms, Python, Databases, IoT &amp; AI, and Digital Literacy.</p>
+<p class="kicker">One lecture · One artefact · One recitation</p>
+</div></section>
+<header class="bar"><span>Class XI Computer Science · Lecture-wise Intermediate Edition</span><span>MathJax + SVG · 25 sittings</span></header>
+<main>
+<h1>How to use this lecture edition</h1><p class="lead">Written for Intermediate / HSC Class XI students following the Sindh Textbook Board Computer Science syllabus. Each sitting is one college lecture: outcomes, taught content, a board example, an exit ticket, and a 15-minute homework. Formulae are MathJax; diagrams are SVG. This is a companion, not a reprint — keep your textbook for official figures and LogiSim screenshots.</p><aside class="callout "><div class="tag">THE FIVE-PASS METHOD</div><div><ol class="tight"><li><strong>Read for the map</strong> — the outcomes box, two minutes.</li><li><strong>Read for the mechanism</strong> — cover a worked line and try it first.</li><li><strong>Exit ticket</strong> is a mini exam; write on paper.</li><li><strong>Recite</strong> the lecture’s one list (gates, CAPP, OSI, keys…).</li><li><strong>Homework tonight, review next week.</strong></li></ol></div></aside><h2>Twenty-five sittings · eight college weeks</h2><table><thead><tr><th>Week</th><th>Lectures</th><th>Must-finish artefact</th></tr></thead><tbody><tr><td>1</td><td>L01–L03</td><td>LogiSim AND + the seven-gate table from memory</td></tr><tr><td>2</td><td>L04–L06</td><td>One SOP table and the SDLC list closed-book</td></tr><tr><td>3</td><td>L07–L09</td><td>Waterfall vs Agile from memory; CT strategies</td></tr><tr><td>4</td><td>L10–L12</td><td>Two sort traces and one binary-search diary</td></tr><tr><td>5</td><td>L13–L15</td><td>Calculator + even/odd running in VS Code</td></tr><tr><td>6</td><td>L16–L18</td><td>ATM or guess game; four keys recited</td></tr><tr><td>7</td><td>L19–L21</td><td>One ER + one grouped query on paper</td></tr><tr><td>8</td><td>L22–L25</td><td>Irrigation paragraph + 40-mark rehearsal</td></tr></tbody></table><h2>Lecture register</h2><table><thead><tr><th>No.</th><th>Title</th><th>Syllabus</th></tr></thead><tbody><tr><td>L01</td><td>Stairs and ramps — analog versus digital</td><td>Unit 1</td></tr><tr><td>L02</td><td>Boolean algebra — arithmetic with truth</td><td>Unit 1</td></tr><tr><td>L03</td><td>The seven logic gates</td><td>Unit 1</td></tr><tr><td>L04</td><td>Truth tables, SOP, and logic diagrams</td><td>Unit 1</td></tr><tr><td>L05</td><td>Karnaugh maps — grouping the ones</td><td>Unit 1</td></tr><tr><td>L06</td><td>Software Development Life Cycle</td><td>Unit 1</td></tr><tr><td>L07</td><td>Waterfall versus Agile — Al-Noor cases</td><td>Unit 1</td></tr><tr><td>L08</td><td>How machines converse — OSI and TCP/IP</td><td>Unit 1</td></tr><tr><td>L09</td><td>Think so a machine can follow you</td><td>Unit 2</td></tr><tr><td>L10</td><td>Bubble Sort — neighbours swap</td><td>Unit 2</td></tr><tr><td>L11</td><td>Selection Sort — park the minimum</td><td>Unit 2</td></tr><tr><td>L12</td><td>Linear search and binary search</td><td>Unit 2</td></tr><tr><td>L13</td><td>Python, the IDE, and input() is a string</td><td>Unit 3</td></tr><tr><td>L14</td><td>Operators — including the bitwise family</td><td>Unit 3</td></tr><tr><td>L15</td><td>Selection — if, elif, else</td><td>Unit 3</td></tr><tr><td>L16</td><td>Repetition — for, while, break, continue</td><td>Unit 3</td></tr><tr><td>L17</td><td>Libraries, errors, and the ATM studio</td><td>Unit 3</td></tr><tr><td>L18</td><td>Data, DBMS, and the four keys</td><td>Unit 4</td></tr><tr><td>L19</td><td>ER models and the three cardinalities</td><td>Unit 4</td></tr><tr><td>L20</td><td>Referential integrity and Access objects</td><td>Unit 4</td></tr><tr><td>L21</td><td>Queries, totals, and charts</td><td>Unit 4</td></tr><tr><td>L22</td><td>IoT collects, analytics explains, AI decides</td><td>Unit 5</td></tr><tr><td>L23</td><td>Sources, impacts, and assistive technology</td><td>Unit 5</td></tr><tr><td>L24</td><td>Digital literacy — find, judge, collect, show</td><td>Unit 6</td></tr><tr><td>L25</td><td>Revision sitting — cards, alarm, 40-mark paper</td><td>Revision</td></tr></tbody></table><aside class="callout exam"><div class="tag">WHAT “DONE” LOOKS LIKE</div><div>You can teach the lecture’s core idea to a classmate in three minutes. You have hand-traced the board example. You scored the exit ticket closed-book and corrected every miss in writing.</div></aside><article class="lecture" id="l01"><div class="lec-head"><div class="lec-num">L01</div><div class="lec-titles"><div class="lec-meta">Unit 1 · Computer Systems · 45 min · Intermediate / Class XI</div><h1>Stairs and ramps — analog versus digital</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Tell a discrete quantity from a continuous one.</li><li>Read a sine-like analog wave and a two-level digital wave.</li><li>Explain why a noisy digital 1 is rewritten as a clean 1.</li></ul></div></aside><aside class="callout recap"><div class="tag">OPENING PICTURE</div><div>A classroom has 31 students, never 31.4. Temperature can be 31.4 °C. That is the whole lecture in one pair of examples.</div></aside>
+<h2>Discrete landings, continuous ramps</h2>
+<p>A <strong>discrete</strong> quantity takes separate countable values. You can point to each one. A <strong>continuous</strong> quantity can sit anywhere in a range: height, time, speed, voltage on a microphone wire.</p>
+<figure class="wide"><div class="svg-row"><svg class="diagram" viewBox="0 0 280 172" width="280" height="172" xmlns="http://www.w3.org/2000/svg" role="img">
+<path d="M20 140 H70 V110 H120 V80 H170 V50 H220 V20 H260" fill="none" stroke="#1B365D" stroke-width="3"/><circle cx="95" cy="110" r="5" fill="#C4A35A"/><circle cx="145" cy="80" r="5" fill="#C4A35A"/><text x="140" y="162" text-anchor="middle" class="svg-label">Stairs = discrete landings</text>
+</svg><svg class="diagram" viewBox="0 0 280 172" width="280" height="172" xmlns="http://www.w3.org/2000/svg" role="img">
+<path d="M20 140 L260 20" fill="none" stroke="#0D7377" stroke-width="3"/><circle cx="90" cy="107" r="5" fill="#C4A35A"/><circle cx="160" cy="70" r="5" fill="#C4A35A"/><text x="140" y="162" text-anchor="middle" class="svg-label">Ramp = any height in the range</text>
+</svg></div><figcaption>Board sketch — stairs (digital / discrete) versus a ramp (analog / continuous).</figcaption></figure>
+<p>Digital electronics copies the stairs. A wire is treated as LOW (\(0\)) or HIGH (\(1\)). Everything between is noise, not a third legal value. That is why a USB copy of a photo stays sharp: a slightly damaged 1 is still recognised as 1 and rewritten as a perfect 1.</p>
+<figure class="wide"><div class="svg-row">
+<svg class="diagram" viewBox="0 0 300 168" width="300" height="168" xmlns="http://www.w3.org/2000/svg" role="img">
+<polyline points="14.0,78.0 17.0,74.0 20.0,70.1 23.0,66.3 26.0,62.5 29.0,59.0 32.0,55.7 35.0,52.6 38.0,49.8 41.0,47.3 44.0,45.1 47.0,43.3 50.0,41.9 53.0,40.8 56.0,40.2 59.0,40.0 62.0,40.2 65.0,40.8 68.0,41.9 71.0,43.3 74.0,45.1 77.0,47.3 80.0,49.8 83.0,52.6 86.0,55.7 89.0,59.0 92.0,62.5 95.0,66.3 98.0,70.1 101.0,74.0 104.0,78.0 107.0,82.0 110.0,85.9 113.0,89.7 116.0,93.5 119.0,97.0 122.0,100.3 125.0,103.4 128.0,106.2 131.0,108.7 134.0,110.9 137.0,112.7 140.0,114.1 143.0,115.2 146.0,115.8 149.0,116.0 152.0,115.8 155.0,115.2 158.0,114.1 161.0,112.7 164.0,110.9 167.0,108.7 170.0,106.2 173.0,103.4 176.0,100.3 179.0,97.0 182.0,93.5 185.0,89.7 188.0,85.9 191.0,82.0 194.0,78.0 197.0,74.0 200.0,70.1 203.0,66.3 206.0,62.5 209.0,59.0 212.0,55.7 215.0,52.6 218.0,49.8 221.0,47.3 224.0,45.1 227.0,43.3 230.0,41.9 233.0,40.8 236.0,40.2 239.0,40.0 242.0,40.2 245.0,40.8 248.0,41.9 251.0,43.3 254.0,45.1 257.0,47.3 260.0,49.8 263.0,52.6 266.0,55.7 269.0,59.0 272.0,62.5 275.0,66.3 278.0,70.1 281.0,74.0 284.0,78.0" fill="none" stroke="#0D7377" stroke-width="3"/><line x1="10" y1="78" x2="290" y2="78" stroke="#C9D3DA" stroke-width="1"/><text x="150" y="158" text-anchor="middle" class="svg-label">Analog — continuous wave</text>
+</svg>
+<svg class="diagram" viewBox="0 0 300 168" width="300" height="168" xmlns="http://www.w3.org/2000/svg" role="img">
+<path d="M10 120 L10 28 L70 28 L70 120 L130 120 L130 28 L190 28 L190 120 L250 120 L250 28 L286 28" fill="none" stroke="#1B365D" stroke-width="3"/><text x="8" y="22" class="svg-tiny" fill="#0D7377">HIGH / 1</text><text x="8" y="138" class="svg-tiny" fill="#8B3A3A">LOW / 0</text><text x="150" y="158" text-anchor="middle" class="svg-label">Digital — square wave</text>
+</svg>
+</div><figcaption>Figure L1.1 — Analog varies smoothly; digital jumps between two legal levels.</figcaption></figure>
+<table><thead><tr><th>Feature</th><th>Analog / continuous</th><th>Digital / discrete</th></tr></thead><tbody><tr><td>Nature</td><td>Smooth; infinitely many in-between values</td><td>Separate steps; usually two levels</td></tr><tr><td>Waveform</td><td>Sine-like</td><td>Square</td></tr><tr><td>Unit</td><td>A physical quantity (voltage, °C)</td><td>Bit: \(0\) or \(1\)</td></tr><tr><td>Noise</td><td>Adds permanently</td><td>Ignored if it stays inside a band</td></tr><tr><td>Copying</td><td>Quality falls each copy</td><td>Perfect copies</td></tr><tr><td>Examples</td><td>Voice, vinyl, mercury thermometer</td><td>USB, HDMI, a calculator</td></tr></tbody></table>
+<aside class="callout exam"><div class="tag">BOARD TRAP</div><div>Temperature <em>is</em> continuous. A digital sensor <em>stores</em> it as bits. The phenomenon and the representation are different questions.</div></aside>
+<aside class="callout exit"><div class="tag">EXIT TICKET (4 min, closed book)</div><div>1. How many legal levels has a digital signal? 2. Why does a slightly damaged digital 1 still survive? 3. Name one analog and one digital example from this room.</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK (15 min)</div><div>Copy the comparison table from memory. Then write two sentences: “A school bell is digital because… A ceiling fan speed (if it turns smoothly) is analog because…”</div></aside></article>
+<article class="lecture" id="l02"><div class="lec-head"><div class="lec-num">L02</div><div class="lec-titles"><div class="lec-meta">Unit 1 · Computer Systems · 45 min · Intermediate / Class XI</div><h1>Boolean algebra — arithmetic with truth</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Evaluate AND, OR, and NOT on given bits.</li><li>Apply precedence: parentheses → NOT → AND → OR.</li><li>Show the three intermediate values of a compound expression.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>Digital means two legal levels, \(0\) and \(1\). Today those two levels become an algebra.</div></aside>
+<p>George Boole (1850s) built an algebra with only \(\mathrm{FALSE}=0\) and \(\mathrm{TRUE}=1\). Variables \(A, B, C\) hold one of those values. Three primitive operations generate every digital circuit you will meet this year.</p>
+<ul>
+<li><strong>AND (\(\cdot\))</strong> — \(Y=A\cdot B=1\) only if <em>every</em> input is 1. Two locks on one door.</li>
+<li><strong>OR (\(+\))</strong> — \(Y=A+B=1\) if <em>any</em> input is 1. Two doors into one room.</li>
+<li><strong>NOT (\(A'\) or \(\overline{A}\))</strong> — flips one bit. A light switch.</li>
+</ul>
+\[ (\,) \;\to\; \text{NOT }(\,'\,) \;\to\; \text{AND }(\,\cdot\,) \;\to\; \text{OR }(\,+). \]
+<h2>Worked evaluations — write the middle steps</h2>
+<p><strong>A.</strong> \(Y=A'+B\) with \(A=1,\,B=0\). First \(A'=0\). Then \(0+0=0\). So \(Y=0\).</p>
+<p><strong>B.</strong> \(Y=(A+B)\cdot C\) with \(A=1,\,B=0,\,C=1\). Parentheses: \(1+0=1\). Then \(1\cdot 1=1\). So \(Y=1\).</p>
+<p><strong>C.</strong> \(Y=A\cdot B+C'\) with \(A=B=C=1\). NOT first: \(C'=0\). AND: \(1\cdot 1=1\). OR: \(1+0=1\).</p>
+<aside class="callout try"><div class="tag">DO NOW (on paper)</div><div>Evaluate \(Y=(A\cdot B)'+C\) for \(A=1,B=1,C=0\). Write NAND first, then the OR. Answer: NAND of \(1,1\) is \(0\); \(0+0=0\).</div></aside>
+<aside class="callout mistake"><div class="tag">COMMON MISTAKE</div><div>Treating \(+\) as ordinary plus. In Boolean algebra \(1+1=1\), not 2. There is no ‘2’ on a digital wire.</div></aside>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. State precedence in four words. 2. Evaluate \(Y=A'+B\) for \(A=0,B=0\). 3. Why is NOT called unary?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Make a three-column table: expression / values / \(Y\) for the three worked examples, covering the answers first.</div></aside></article>
+<article class="lecture" id="l03"><div class="lec-head"><div class="lec-num">L03</div><div class="lec-titles"><div class="lec-meta">Unit 1 · Computer Systems · 45 min · Intermediate / Class XI</div><h1>The seven logic gates</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Draw AND, OR, NOT, NAND, NOR, XOR, XNOR from memory.</li><li>Fill a 2-input truth table in binary order.</li><li>Say why NAND and NOR are called universal.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>AND needs every 1; OR needs any 1; NOT flips. A gate is that algebra in hardware: one or more inputs, exactly one output.</div></aside>
+<p>With \(n\) inputs a truth table has \(2^n\) rows. Always list inputs in binary counting order so no row is skipped: \(00,01,10,11\).</p>
+<div class="gate-grid"><figure class="gate-card"><svg class="diagram" viewBox="0 0 168 108" width="168" height="108" xmlns="http://www.w3.org/2000/svg" role="img">
+<path d="M44 10 H80 C114 10, 114 62, 80 62 H44 Z" fill="#d5e4ea" stroke="#1B365D" stroke-width="2.3"/><line x1="14" y1="23" x2="44" y2="23" stroke="#1B365D" stroke-width="2"/><line x1="14" y1="49" x2="44" y2="49" stroke="#1B365D" stroke-width="2"/><text x="10" y="19" class="svg-tiny">A</text><text x="10" y="45" class="svg-tiny">B</text><line x1="114" y1="36" x2="154" y2="36" stroke="#1B365D" stroke-width="2"/><text x="158" y="32" class="svg-tiny">Y</text><text x="84" y="100" text-anchor="middle" class="svg-label">AND</text>
+</svg></figure><figure class="gate-card"><svg class="diagram" viewBox="0 0 168 108" width="168" height="108" xmlns="http://www.w3.org/2000/svg" role="img">
+<path d="M44 10 Q60 36 44 62 Q102 62 118 36 Q102 10 44 10 Z" fill="#d5e4ea" stroke="#1B365D" stroke-width="2.3"/><line x1="14" y1="23" x2="52" y2="23" stroke="#1B365D" stroke-width="2"/><line x1="14" y1="49" x2="52" y2="49" stroke="#1B365D" stroke-width="2"/><text x="10" y="19" class="svg-tiny">A</text><text x="10" y="45" class="svg-tiny">B</text><line x1="118" y1="36" x2="154" y2="36" stroke="#1B365D" stroke-width="2"/><text x="158" y="32" class="svg-tiny">Y</text><text x="84" y="100" text-anchor="middle" class="svg-label">OR</text>
+</svg></figure><figure class="gate-card"><svg class="diagram" viewBox="0 0 168 108" width="168" height="108" xmlns="http://www.w3.org/2000/svg" role="img">
+<path d="M50 10 L50 62 L108 36 Z" fill="#d5e4ea" stroke="#1B365D" stroke-width="2.3"/><line x1="18" y1="36" x2="50" y2="36" stroke="#1B365D" stroke-width="2"/><circle cx="114" cy="36" r="5.5" fill="#F6F1E6" stroke="#1B365D" stroke-width="2"/><line x1="120" y1="36" x2="154" y2="36" stroke="#1B365D" stroke-width="2"/><text x="14" y="32" class="svg-tiny">A</text><text x="158" y="32" class="svg-tiny">Y</text><text x="84" y="100" text-anchor="middle" class="svg-label">NOT</text>
+</svg></figure><figure class="gate-card"><svg class="diagram" viewBox="0 0 168 108" width="168" height="108" xmlns="http://www.w3.org/2000/svg" role="img">
+<path d="M44 10 H80 C114 10, 114 62, 80 62 H44 Z" fill="#d5e4ea" stroke="#1B365D" stroke-width="2.3"/><line x1="14" y1="23" x2="44" y2="23" stroke="#1B365D" stroke-width="2"/><line x1="14" y1="49" x2="44" y2="49" stroke="#1B365D" stroke-width="2"/><text x="10" y="19" class="svg-tiny">A</text><text x="10" y="45" class="svg-tiny">B</text><circle cx="114" cy="36" r="5.5" fill="#F6F1E6" stroke="#1B365D" stroke-width="2"/><line x1="120" y1="36" x2="154" y2="36" stroke="#1B365D" stroke-width="2"/><text x="158" y="32" class="svg-tiny">Y</text><text x="84" y="100" text-anchor="middle" class="svg-label">NAND</text>
+</svg></figure><figure class="gate-card"><svg class="diagram" viewBox="0 0 168 108" width="168" height="108" xmlns="http://www.w3.org/2000/svg" role="img">
+<path d="M44 10 Q60 36 44 62 Q102 62 118 36 Q102 10 44 10 Z" fill="#d5e4ea" stroke="#1B365D" stroke-width="2.3"/><line x1="14" y1="23" x2="52" y2="23" stroke="#1B365D" stroke-width="2"/><line x1="14" y1="49" x2="52" y2="49" stroke="#1B365D" stroke-width="2"/><text x="10" y="19" class="svg-tiny">A</text><text x="10" y="45" class="svg-tiny">B</text><circle cx="118" cy="36" r="5.5" fill="#F6F1E6" stroke="#1B365D" stroke-width="2"/><line x1="124" y1="36" x2="154" y2="36" stroke="#1B365D" stroke-width="2"/><text x="158" y="32" class="svg-tiny">Y</text><text x="84" y="100" text-anchor="middle" class="svg-label">NOR</text>
+</svg></figure><figure class="gate-card"><svg class="diagram" viewBox="0 0 168 108" width="168" height="108" xmlns="http://www.w3.org/2000/svg" role="img">
+<path d="M50 10 Q66 36 50 62 Q108 62 124 36 Q108 10 50 10 Z" fill="#d5e4ea" stroke="#1B365D" stroke-width="2.3"/><path d="M38 10 Q54 36 38 62" fill="none" stroke="#1B365D" stroke-width="2.2"/><line x1="14" y1="23" x2="38" y2="23" stroke="#1B365D" stroke-width="2"/><line x1="14" y1="49" x2="38" y2="49" stroke="#1B365D" stroke-width="2"/><text x="10" y="19" class="svg-tiny">A</text><text x="10" y="45" class="svg-tiny">B</text><line x1="124" y1="36" x2="154" y2="36" stroke="#1B365D" stroke-width="2"/><text x="158" y="32" class="svg-tiny">Y</text><text x="84" y="100" text-anchor="middle" class="svg-label">XOR</text>
+</svg></figure><figure class="gate-card"><svg class="diagram" viewBox="0 0 168 108" width="168" height="108" xmlns="http://www.w3.org/2000/svg" role="img">
+<path d="M50 10 Q66 36 50 62 Q108 62 124 36 Q108 10 50 10 Z" fill="#d5e4ea" stroke="#1B365D" stroke-width="2.3"/><path d="M38 10 Q54 36 38 62" fill="none" stroke="#1B365D" stroke-width="2.2"/><line x1="14" y1="23" x2="38" y2="23" stroke="#1B365D" stroke-width="2"/><line x1="14" y1="49" x2="38" y2="49" stroke="#1B365D" stroke-width="2"/><text x="10" y="19" class="svg-tiny">A</text><text x="10" y="45" class="svg-tiny">B</text><circle cx="124" cy="36" r="5.5" fill="#F6F1E6" stroke="#1B365D" stroke-width="2"/><line x1="130" y1="36" x2="154" y2="36" stroke="#1B365D" stroke-width="2"/><text x="158" y="32" class="svg-tiny">Y</text><text x="84" y="100" text-anchor="middle" class="svg-label">XNOR</text>
+</svg></figure></div>
+<p>Derived identities you must be able to write:</p>
+\[ \begin{aligned} Y_{\mathrm{NAND}} &= (A\cdot B)' ,& Y_{\mathrm{NOR}} &= (A+B)' ,\\ Y_{\mathrm{XOR}} &= A\oplus B = A'B + AB' ,& Y_{\mathrm{XNOR}} &= (A\oplus B)' = AB + A'B'. \end{aligned} \]
+<table><thead><tr><th>A</th><th>B</th><th>AND</th><th>NAND</th><th>OR</th><th>NOR</th><th>XOR</th><th>XNOR</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr></tbody></table>
+<p><strong>NAND</strong> and <strong>NOR</strong> are <em>universal</em>: any Boolean function can be built from only NAND, or only NOR. XOR is the difference detector (two-way landing light). XNOR is the sameness detector.</p>
+<aside class="callout memory"><div class="tag">RECITE</div><div>XOR = eXclusively different. NAND is NOT-AND: the only 0 is the AND’s only 1. NOR is NOT-OR: the only 1 is the OR’s only 0.</div></aside>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. When is XOR equal to 1? 2. Write \(A\oplus B\) as a sum of products. 3. Why do chip designers like NAND?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK + LOGISIM</div><div>From a blank page, redraw all seven symbols and the 2-input table. Then in LogiSim Evolution build a 2-input AND, poke both switches, and screenshot the four rows.</div></aside></article>
+<article class="lecture" id="l04"><div class="lec-head"><div class="lec-num">L04</div><div class="lec-titles"><div class="lec-meta">Unit 1 · Computer Systems · 45 min · Intermediate / Class XI</div><h1>Truth tables, SOP, and logic diagrams</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Build an 8-row table from a Boolean expression.</li><li>Write a sum-of-products expression from the 1-rows.</li><li>Draw a gate diagram that respects precedence.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>Seven gates, \(2^n\) rows, NAND/NOR are universal. Today we travel both ways: expression → table, and table → expression.</div></aside>
+<p>For \(Y=A\cdot B+C\) there are three variables, so eight rows. Add a helper column for \(A\cdot B\), then OR with \(C\).</p>
+<table><thead><tr><th>A</th><th>B</th><th>C</th><th>\(A\cdot B\)</th><th>\(Y=A\cdot B+C\)</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr></tbody></table>
+<figure class="wide"><svg class="diagram" viewBox="0 0 380 178" width="380" height="178" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="18" y="38" class="svg-tiny">A</text><text x="18" y="78" class="svg-tiny">B</text><text x="18" y="128" class="svg-tiny">C</text><line x1="32" y1="34" x2="70" y2="34" stroke="#1B365D" stroke-width="2"/><line x1="32" y1="74" x2="70" y2="74" stroke="#1B365D" stroke-width="2"/><path d="M70 18 H120 C162 18, 162 90, 120 90 H70 Z" fill="#EEF4F6" stroke="#1B365D" stroke-width="2.3"/><text x="96" y="60" text-anchor="middle" class="svg-tiny">AND</text><line x1="162" y1="54" x2="210" y2="54" stroke="#1B365D" stroke-width="2"/><line x1="32" y1="124" x2="210" y2="124" stroke="#1B365D" stroke-width="2"/><path d="M210 34 Q228 79 210 124 Q280 124 298 79 Q280 34 210 34 Z" fill="#EEF4F6" stroke="#1B365D" stroke-width="2.3"/><text x="248" y="84" text-anchor="middle" class="svg-tiny">OR</text><line x1="298" y1="79" x2="340" y2="79" stroke="#1B365D" stroke-width="2"/><text x="348" y="84" class="svg-tiny">Y</text><text x="190" y="168" text-anchor="middle" class="svg-label">Y = (A · B) + C</text>
+</svg><figcaption>Figure L4.1 — AND is drawn first; its output and C feed the OR.</figcaption></figure>
+<p><strong>Sum of products:</strong> each row where \(Y=1\) is a <strong>minterm</strong>. AND every variable; complement a variable if that row’s bit is 0. Then OR the minterms.</p>
+\[ Y = \sum \text{minterms of the 1-rows}. \]
+<p>Example: 1-rows \(AB=01\) and \(11\) give \(Y=A'B+AB=B\).</p>
+<aside class="callout mistake"><div class="tag">COMMON MISTAKE</div><div>In a minterm, a 0 in the row means the variable is complemented. Row \(A=0,B=1\) is \(A'B\), not \(AB'\).</div></aside>
+<h2>Studio — \(Y=(A+B)'\cdot C\)</h2>
+<p>NOR of \(A,B\) feeding AND with \(C\). \(Y=1\) only when \(A=B=0\) and \(C=1\). One minterm: \(A'B'C\).</p>
+<table><thead><tr><th>A</th><th>B</th><th>C</th><th>A+B</th><th>(A+B)′</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr></tbody></table>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. How many rows for three inputs? 2. Write the minterm for row \(A=0,B=1,C=1\). 3. For \(Y=A\cdot B+C\), which gate is drawn first?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Truth table of \(Y=A'\cdot B+C\) plus SOP of the 1-rows. This is a 6-mark board item — practise it once tonight.</div></aside></article>
+<article class="lecture" id="l05"><div class="lec-head"><div class="lec-num">L05</div><div class="lec-titles"><div class="lec-meta">Unit 1 · Computer Systems · 45 min · Intermediate / Class XI</div><h1>Karnaugh maps — grouping the ones</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Place minterms on a 2- and 3-variable K-map in Gray-code order.</li><li>Group \(2^n\) ones, including wrap-around.</li><li>Read the simplified product from a group.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>SOP writes one product per 1-row. A K-map is that same census drawn so neighbours differ by one bit and cancel.</div></aside>
+<p>Adjacent cells — including wrap-around — differ by one bit. That order is <strong>Gray code</strong>. Group 1, 2, 4, 8 ones (powers of two). The variable that changes inside the group disappears.</p>
+<figure class="wide"><svg class="diagram" viewBox="0 0 240 244" width="240" height="244" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="90" y="22" text-anchor="middle" class="svg-tiny">B=0</text><text x="170" y="22" text-anchor="middle" class="svg-tiny">B=1</text><text x="18" y="82" text-anchor="middle" class="svg-tiny">A=0</text><text x="18" y="162" text-anchor="middle" class="svg-tiny">A=1</text><rect x="118" y="38" width="84" height="164" rx="10" fill="none" stroke="#0D7377" stroke-width="3"/><rect x="38" y="118" width="164" height="84" rx="10" fill="none" stroke="#C4A35A" stroke-width="3"/><rect x="40" y="40" width="80" height="80" fill="#F6F1E6" stroke="#1B365D"/><text x="80" y="88" text-anchor="middle" font-size="22" font-weight="700" fill="#1B365D">0</text><text x="80" y="108" text-anchor="middle" class="svg-tiny">A′B′</text><rect x="120" y="40" width="80" height="80" fill="#F6F1E6" stroke="#1B365D"/><text x="160" y="88" text-anchor="middle" font-size="22" font-weight="700" fill="#1B365D">1</text><text x="160" y="108" text-anchor="middle" class="svg-tiny">A′B</text><rect x="40" y="120" width="80" height="80" fill="#F6F1E6" stroke="#1B365D"/><text x="80" y="168" text-anchor="middle" font-size="22" font-weight="700" fill="#1B365D">1</text><text x="80" y="188" text-anchor="middle" class="svg-tiny">AB′</text><rect x="120" y="120" width="80" height="80" fill="#F6F1E6" stroke="#1B365D"/><text x="160" y="168" text-anchor="middle" font-size="22" font-weight="700" fill="#1B365D">1</text><text x="160" y="188" text-anchor="middle" class="svg-tiny">AB</text><text x="120" y="232" text-anchor="middle" class="svg-label">Groups: right column → B, bottom row → A, so Y = A + B</text>
+</svg><figcaption>Figure L5.1 — Two-variable map. Right column is \(B\); bottom row is \(A\); so \(Y=A+B\).</figcaption></figure>
+<figure class="wide"><svg class="diagram" viewBox="0 0 420 224" width="420" height="224" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="210" y="18" text-anchor="middle" class="svg-tiny">BC (Gray code: 00 · 01 · 11 · 10)</text><text x="90" y="42" text-anchor="middle" class="svg-tiny">00</text><text x="160" y="42" text-anchor="middle" class="svg-tiny">01</text><text x="230" y="42" text-anchor="middle" class="svg-tiny">11</text><text x="300" y="42" text-anchor="middle" class="svg-tiny">10</text><text x="28" y="88" class="svg-tiny">A=0</text><text x="28" y="158" class="svg-tiny">A=1</text><rect x="125" y="50" width="140" height="140" rx="8" fill="#0D737722" stroke="#0D7377" stroke-width="3"/><rect x="55" y="50" width="70" height="70" fill="none" stroke="#1B365D"/><text x="90" y="92" text-anchor="middle" font-size="20" font-weight="700" fill="#1B365D">0</text><rect x="125" y="50" width="70" height="70" fill="none" stroke="#1B365D"/><text x="160" y="92" text-anchor="middle" font-size="20" font-weight="700" fill="#1B365D">1</text><rect x="195" y="50" width="70" height="70" fill="none" stroke="#1B365D"/><text x="230" y="92" text-anchor="middle" font-size="20" font-weight="700" fill="#1B365D">1</text><rect x="265" y="50" width="70" height="70" fill="none" stroke="#1B365D"/><text x="300" y="92" text-anchor="middle" font-size="20" font-weight="700" fill="#1B365D">0</text><rect x="55" y="120" width="70" height="70" fill="none" stroke="#1B365D"/><text x="90" y="162" text-anchor="middle" font-size="20" font-weight="700" fill="#1B365D">0</text><rect x="125" y="120" width="70" height="70" fill="none" stroke="#1B365D"/><text x="160" y="162" text-anchor="middle" font-size="20" font-weight="700" fill="#1B365D">1</text><rect x="195" y="120" width="70" height="70" fill="none" stroke="#1B365D"/><text x="230" y="162" text-anchor="middle" font-size="20" font-weight="700" fill="#1B365D">1</text><rect x="265" y="120" width="70" height="70" fill="none" stroke="#1B365D"/><text x="300" y="162" text-anchor="middle" font-size="20" font-weight="700" fill="#1B365D">0</text><text x="210" y="210" text-anchor="middle" class="svg-label">Block of four 1s: C is always 1 → Y = C</text>
+</svg><figcaption>Figure L5.2 — Three-variable map. Columns are \(BC=00,01,11,10\) — never 00, 01, 10, 11.</figcaption></figure>
+<aside class="callout try"><div class="tag">DO NOW</div><div>Simplify \(Y=\sum m(0,1,2,3,5,7)\). Two groups of four give \(Y=A'+C\).</div></aside>
+<p>Wrap-around trap: \(Y=\sum m(0,2,8,10)\) occupies the four corners. Shared literals are \(B'\) and \(C'\); \(A\) cancels. Result \(Y=B'C'\). Forget wrap-around and you leave four lonely minterms — the classic exam miss.</p>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. Why must columns be Gray-coded? 2. Legal group sizes? 3. What happens to a variable that changes inside a group?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>K-map \(Y=\sum m(1,3,5,7)\). It should collapse toward \(C\). Check your column order before you celebrate.</div></aside></article>
+<article class="lecture" id="l06"><div class="lec-head"><div class="lec-num">L06</div><div class="lec-titles"><div class="lec-meta">Unit 1 · Computer Systems · 45 min · Intermediate / Class XI</div><h1>Software Development Life Cycle</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Name the six SDLC phases and one deliverable each.</li><li>Recite CAPP maintenance with a one-line school example.</li><li>Say why a life cycle is a cycle, not a dead end.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>Logic tells a machine the truth. SDLC tells a team how an idea becomes software that people can live with.</div></aside>
+<figure class="wide"><svg class="diagram" viewBox="0 0 400 300" width="400" height="300" xmlns="http://www.w3.org/2000/svg" role="img">
+<circle cx="200" cy="150" r="108" fill="none" stroke="#C4A35A" stroke-width="2.5" stroke-dasharray="6 6"/><circle cx="200" cy="150" r="42" fill="#1B365D"/><text x="200" y="146" text-anchor="middle" fill="#F6F1E6" font-size="12" font-weight="700">SDLC</text><text x="200" y="162" text-anchor="middle" fill="#C4A35A" font-size="10">cycle</text><rect x="148" y="22" width="104" height="28" rx="14" fill="#EEF4F6" stroke="#1B365D"/><text x="200" y="41" text-anchor="middle" font-size="11" fill="#1B365D">1 Analysis</text><rect x="278" y="86" width="104" height="28" rx="14" fill="#EEF4F6" stroke="#1B365D"/><text x="330" y="105" text-anchor="middle" font-size="11" fill="#1B365D">2 Design</text><rect x="278" y="186" width="104" height="28" rx="14" fill="#EEF4F6" stroke="#1B365D"/><text x="330" y="205" text-anchor="middle" font-size="11" fill="#1B365D">3 Code</text><rect x="148" y="250" width="104" height="28" rx="14" fill="#EEF4F6" stroke="#1B365D"/><text x="200" y="269" text-anchor="middle" font-size="11" fill="#1B365D">4 Testing</text><rect x="18" y="186" width="104" height="28" rx="14" fill="#EEF4F6" stroke="#1B365D"/><text x="70" y="205" text-anchor="middle" font-size="11" fill="#1B365D">5 Deploy</text><rect x="18" y="86" width="104" height="28" rx="14" fill="#EEF4F6" stroke="#1B365D"/><text x="70" y="105" text-anchor="middle" font-size="11" fill="#1B365D">6 Maintain</text>
+</svg><figcaption>Figure L6.1 — Six phases. Maintenance feeds the next analysis — that is why it is a cycle.</figcaption></figure>
+<table><thead><tr><th>Phase</th><th>What you do</th><th>What you hand over</th></tr></thead><tbody><tr><td>1 Analysis</td><td>Meet users; list features and constraints</td><td>SRS (software requirements)</td></tr><tr><td>2 Design</td><td>HLD/LLD, screens, ER, UML</td><td>Design document</td></tr><tr><td>3 Implementation</td><td>Code, Git, comments</td><td>Working build</td></tr><tr><td>4 Testing</td><td>Unit, integration, system, UAT</td><td>Test report</td></tr><tr><td>5 Deployment</td><td>Direct, phased, pilot, or parallel</td><td>Live software</td></tr><tr><td>6 Maintenance</td><td>Corrective, adaptive, perfective, preventive</td><td>Patches</td></tr></tbody></table>
+<p><strong>CAPP maintenance</strong> — learn four words, four school pictures:</p>
+<ul>
+<li><strong>Corrective</strong> — the login button crashes; you fix the bug.</li>
+<li><strong>Adaptive</strong> — Windows updates; you retarget the installer.</li>
+<li><strong>Perfective</strong> — students ask for dark mode; you add it.</li>
+<li><strong>Preventive</strong> — a daily USB backup so a disk death is not a funeral.</li>
+</ul>
+<aside class="callout exam"><div class="tag">FIRST DELIVERABLE</div><div>If a one-mark item asks for the first SDLC document, the answer is the <strong>SRS</strong>, not “coding.”</div></aside>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. First phase and its deliverable? 2. Name the four maintenance types. 3. Pilot versus parallel deployment in one sentence each.</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Close the book. Write Analyse → Design → Code → Test → Deploy → Maintain and one CAPP example each. Time yourself: under four minutes is ready.</div></aside></article>
+<article class="lecture" id="l07"><div class="lec-head"><div class="lec-num">L07</div><div class="lec-titles"><div class="lec-meta">Unit 1 · Computer Systems · 45 min · Intermediate / Class XI</div><h1>Waterfall versus Agile — Al-Noor cases</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Match Waterfall to a frozen, well-specified project.</li><li>Match Agile/Scrum to unclear, evolving features.</li><li>Retell both Al-Noor stories in six sentences.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>Six phases, CAPP, SRS. Today: two ways to walk those phases — one way down, or in short sprints.</div></aside>
+<figure class="wide"><div class="svg-row"><svg class="diagram" viewBox="0 0 240 280" width="240" height="280" xmlns="http://www.w3.org/2000/svg" role="img">
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#C4A35A"/></marker></defs><text x="20" y="22" class="svg-label">Waterfall — one way down</text><rect x="40" y="40" width="160" height="28" rx="4" fill="#1B365D"/><text x="120" y="59" text-anchor="middle" fill="#F6F1E6" font-size="12">Req</text><path d="M120 68 L120 76" stroke="#C4A35A" stroke-width="2" marker-end="url(#arr)"/><rect x="40" y="76" width="160" height="28" rx="4" fill="#1B365D"/><text x="120" y="95" text-anchor="middle" fill="#F6F1E6" font-size="12">Design</text><path d="M120 104 L120 112" stroke="#C4A35A" stroke-width="2" marker-end="url(#arr)"/><rect x="40" y="112" width="160" height="28" rx="4" fill="#1B365D"/><text x="120" y="131" text-anchor="middle" fill="#F6F1E6" font-size="12">Code</text><path d="M120 140 L120 148" stroke="#C4A35A" stroke-width="2" marker-end="url(#arr)"/><rect x="40" y="148" width="160" height="28" rx="4" fill="#1B365D"/><text x="120" y="167" text-anchor="middle" fill="#F6F1E6" font-size="12">Test</text><path d="M120 176 L120 184" stroke="#C4A35A" stroke-width="2" marker-end="url(#arr)"/><rect x="40" y="184" width="160" height="28" rx="4" fill="#1B365D"/><text x="120" y="203" text-anchor="middle" fill="#F6F1E6" font-size="12">Deploy</text><path d="M120 212 L120 220" stroke="#C4A35A" stroke-width="2" marker-end="url(#arr)"/><rect x="40" y="220" width="160" height="28" rx="4" fill="#1B365D"/><text x="120" y="239" text-anchor="middle" fill="#F6F1E6" font-size="12">Maintain</text>
+</svg><svg class="diagram" viewBox="0 0 280 250" width="280" height="250" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="20" y="22" class="svg-label">Agile — repeat in sprints</text><rect x="40" y="50" width="90" height="40" rx="6" fill="#0D7377"/><text x="85" y="75" text-anchor="middle" fill="#F6F1E6" font-size="12">Plan</text><rect x="160" y="50" width="90" height="40" rx="6" fill="#0D7377"/><text x="205" y="75" text-anchor="middle" fill="#F6F1E6" font-size="12">Build</text><rect x="160" y="150" width="90" height="40" rx="6" fill="#0D7377"/><text x="205" y="175" text-anchor="middle" fill="#F6F1E6" font-size="12">Review</text><rect x="40" y="150" width="90" height="40" rx="6" fill="#0D7377"/><text x="85" y="175" text-anchor="middle" fill="#F6F1E6" font-size="12">Retro</text><path d="M130 70 H160 M205 90 V150 M160 170 H130 M85 150 V90" fill="none" stroke="#C4A35A" stroke-width="2.2"/><text x="145" y="230" text-anchor="middle" class="svg-tiny">working software every 2–4 weeks</text>
+</svg></div><figcaption>Figure L7.1 — Waterfall finishes a phase before the next begins. Agile repeats Plan → Build → Review → Retro.</figcaption></figure>
+<h2>Al-Noor Library — why Waterfall worked</h2>
+<p>1,200 students, 2,400 books, a paper register, lost copies. Requirements were frozen: add/edit books, search, 14-day loans, overdue alerts, printed reports, offline Windows. Team of four, six months, Python + Tkinter + SQLite. Nothing experimental was asked, so Waterfall fitted. Black-box testing found a search crash on misspellings and an overdue alert that ran only if a button was clicked. A two-week <strong>pilot</strong> sat on the librarian’s desk. Later: printer-driver fix (corrective), e-book category (adaptive), faster search (perfective), daily USB backup (preventive). Overdue returns fell about 70%.</p>
+<h2>Al-Noor Student App — why Agile worked</h2>
+<p>Nobody could list every feature on day one. Five two-week sprints, Flutter, five-person Scrum team. Sprint 1 shipped login + timetable; teachers’ names arrived from feedback. Sprint 2 shipped results; parents then asked for full attendance. Sprint 3’s SMS gateway died for two days — the team switched to email and kept moving. Sprint 4 connected to the library API in thirty minutes. Sprint 5 shipped homework photos. Five of ten original stories shipped in ten weeks. That flexibility is the point of Agile.</p>
+<aside class="callout try"><div class="tag">DECISION RULE (4-mark compare)</div><div>Pacemaker firmware with a frozen regulator spec → Waterfall (late change can kill). A club-events app that will grow with student requests → Agile. Four lines in a notebook is a complete answer.</div></aside>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. One project feature that forces Waterfall. 2. What is a sprint? 3. Which Al-Noor project used a pilot, and why?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Write a one-page Waterfall vs Agile table from memory: when, risk of late change, documentation, user feedback.</div></aside></article>
+<article class="lecture" id="l08"><div class="lec-head"><div class="lec-num">L08</div><div class="lec-titles"><div class="lec-meta">Unit 1 · Computer Systems · 45 min · Intermediate / Class XI</div><h1>How machines converse — OSI and TCP/IP</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Recite the seven OSI layers with the pizza mnemonic.</li><li>Name the encapsulation units: data, segment, packet, frame, bits.</li><li>Map OSI onto the four TCP/IP layers and place TCP, UDP, IP, MAC.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>Teams need a life cycle. Distant machines need a conversation plan. That plan is layered.</div></aside>
+<figure class="wide"><svg class="diagram" viewBox="0 0 460 334" width="460" height="334" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect x="20" y="12" width="420" height="36" rx="6" fill="#1B365D"/><text x="36" y="35" fill="#F6F1E6" font-size="14" font-weight="700">7 Application</text><text x="428" y="35" text-anchor="end" fill="#F6F1E6" font-size="11">HTTP · HTTPS · FTP · SMTP · DNS</text><rect x="20" y="54" width="420" height="36" rx="6" fill="#24486F"/><text x="36" y="77" fill="#F6F1E6" font-size="14" font-weight="700">6 Presentation</text><text x="428" y="77" text-anchor="end" fill="#F6F1E6" font-size="11">TLS · JPEG · MP3 · ASCII</text><rect x="20" y="96" width="420" height="36" rx="6" fill="#2C587F"/><text x="36" y="119" fill="#F6F1E6" font-size="14" font-weight="700">5 Session</text><text x="428" y="119" text-anchor="end" fill="#F6F1E6" font-size="11">NetBIOS · RPC · checkpoints</text><rect x="20" y="138" width="420" height="36" rx="6" fill="#0D7377"/><text x="36" y="161" fill="#F6F1E6" font-size="14" font-weight="700">4 Transport</text><text x="428" y="161" text-anchor="end" fill="#F6F1E6" font-size="11">TCP / UDP · ports · segments</text><rect x="20" y="180" width="420" height="36" rx="6" fill="#14919B"/><text x="36" y="203" fill="#F6F1E6" font-size="14" font-weight="700">3 Network</text><text x="428" y="203" text-anchor="end" fill="#F6F1E6" font-size="11">IP · ICMP · routers · packets</text><rect x="20" y="222" width="420" height="36" rx="6" fill="#C4A35A"/><text x="36" y="245" fill="#F6F1E6" font-size="14" font-weight="700">2 Data Link</text><text x="428" y="245" text-anchor="end" fill="#F6F1E6" font-size="11">Ethernet · Wi-Fi · MAC · frames</text><rect x="20" y="264" width="420" height="36" rx="6" fill="#8A7030"/><text x="36" y="287" fill="#F6F1E6" font-size="14" font-weight="700">1 Physical</text><text x="428" y="287" text-anchor="end" fill="#F6F1E6" font-size="11">cables · radio · bits</text><text x="230" y="322" text-anchor="middle" class="svg-label">Please Do Not Throw Sausage Pizza Away</text>
+</svg><figcaption>Figure L8.1 — Please Do Not Throw Sausage Pizza Away.</figcaption></figure>
+<figure class="wide"><svg class="diagram" viewBox="0 0 460 260" width="460" height="260" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect x="20" y="20" width="420" height="200" rx="10" fill="#1B365D" stroke="#1B365D"/><text x="230.0" y="40" text-anchor="middle" fill="#F6F1E6" font-size="12">Frame  ·  MAC header + trailer  ·  Data Link</text><rect x="48" y="52" width="364" height="136" rx="10" fill="#0D7377" stroke="#1B365D"/><text x="230.0" y="72" text-anchor="middle" fill="#F6F1E6" font-size="12">Packet  ·  IP header  ·  Network</text><rect x="76" y="84" width="308" height="72" rx="10" fill="#C4A35A" stroke="#1B365D"/><text x="230.0" y="104" text-anchor="middle" fill="#F6F1E6" font-size="12">Segment  ·  TCP/UDP + ports  ·  Transport</text><rect x="110" y="108" width="240" height="28" rx="10" fill="#F6F1E6" stroke="#1B365D"/><text x="230.0" y="128" text-anchor="middle" fill="#1B365D" font-size="12">Data</text><text x="230" y="248" text-anchor="middle" class="svg-label">Going down: wrap. Going up: unwrap.</text>
+</svg><figcaption>Figure L8.2 — Going down: wrap. Going up: unwrap.</figcaption></figure>
+<figure class="wide"><svg class="diagram" viewBox="0 0 400 270" width="400" height="270" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="90" y="24" text-anchor="middle" class="svg-label">OSI</text><text x="310" y="24" text-anchor="middle" class="svg-label">TCP/IP</text><rect x="20" y="36" width="150" height="70" rx="6" fill="#1B365D"/><text x="95" y="75.0" text-anchor="middle" fill="#F6F1E6" font-size="10">7–5 Application / Presentation / Session</text><rect x="20" y="110" width="150" height="40" rx="6" fill="#0D7377"/><text x="95" y="134.0" text-anchor="middle" fill="#F6F1E6" font-size="10">4 Transport</text><rect x="20" y="154" width="150" height="40" rx="6" fill="#14919B"/><text x="95" y="178.0" text-anchor="middle" fill="#F6F1E6" font-size="10">3 Network</text><rect x="20" y="198" width="150" height="50" rx="6" fill="#C4A35A"/><text x="95" y="227.0" text-anchor="middle" fill="#F6F1E6" font-size="10">2–1 Data Link + Physical</text><rect x="230" y="36" width="150" height="70" rx="6" fill="#1B365D"/><text x="305" y="75.0" text-anchor="middle" fill="#F6F1E6" font-size="12">Application</text><rect x="230" y="110" width="150" height="40" rx="6" fill="#0D7377"/><text x="305" y="134.0" text-anchor="middle" fill="#F6F1E6" font-size="12">Transport</text><rect x="230" y="154" width="150" height="40" rx="6" fill="#14919B"/><text x="305" y="178.0" text-anchor="middle" fill="#F6F1E6" font-size="12">Internet</text><rect x="230" y="198" width="150" height="50" rx="6" fill="#C4A35A"/><text x="305" y="227.0" text-anchor="middle" fill="#F6F1E6" font-size="12">Network Access</text><line x1="170" y1="71" x2="230" y2="71" stroke="#1B365D" stroke-width="1.5"/><line x1="170" y1="130" x2="230" y2="130" stroke="#1B365D" stroke-width="1.5"/><line x1="170" y1="174" x2="230" y2="174" stroke="#1B365D" stroke-width="1.5"/><line x1="170" y1="223" x2="230" y2="223" stroke="#1B365D" stroke-width="1.5"/>
+</svg><figcaption>Figure L8.3 — TCP/IP swallows OSI 7–5 as Application and OSI 2–1 as Network Access.</figcaption></figure>
+<table><thead><tr><th>If you see…</th><th>Think layer</th><th>Why</th></tr></thead><tbody><tr><td>RJ45, Cat6, voltage, fibre pulse</td><td>Physical</td><td>Raw medium</td></tr><tr><td>MAC, switch, Ethernet frame, CRC</td><td>Data Link</td><td>One LAN hop</td></tr><tr><td>192.168.1.1, ping, router, OSPF</td><td>Network</td><td>Path across nets</td></tr><tr><td>Port 443, handshake, segment</td><td>Transport</td><td>Which app, reliability</td></tr><tr><td>TLS, JPEG, MP3, UTF-8</td><td>Presentation</td><td>Format / secret / size</td></tr><tr><td>Browser, DNS, SMTP</td><td>Application</td><td>What the user asked</td></tr></tbody></table>
+<p>TCP is connection-oriented and reliable (web, email, files). UDP is connectionless and cheap (live video, games, a cricket stream — late frames are useless). An <strong>IP address</strong> is logical; a <strong>MAC address</strong> is burned into the NIC. Routers live at Layer 3; switches at Layer 2; hubs at Layer 1. <code>ping</code> uses ICMP at the Network layer.</p>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. Which layer adds ports / IP / MAC? 2. Why might a cricket stream use UDP? 3. Four TCP/IP names?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Explain HTTPS encapsulation in five sentences: data → segment → packet → frame → bits. Then write one protocol for each TCP/IP layer.</div></aside></article>
+<article class="lecture" id="l09"><div class="lec-head"><div class="lec-num">L09</div><div class="lec-titles"><div class="lec-meta">Unit 2 · Computational Thinking · 45 min · Intermediate / Class XI</div><h1>Think so a machine can follow you</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Define an algorithm and contrast it with pseudocode.</li><li>Name decomposition, pattern recognition, and abstraction on a school task.</li><li>Judge an algorithm on correctness, efficiency, and clarity.</li></ul></div></aside><aside class="callout recap"><div class="tag">BLOCK B OPENS</div><div>Unit 1 taught machines truth and conversation. Unit 2 teaches you to write steps so clear that a classmate — or Python — can follow them.</div></aside>
+<p>An <strong>algorithm</strong> is a finite, language-independent sequence of logical steps. It is the recipe, not the cooked dish. <strong>Pseudocode</strong> writes those steps with IF / FOR / WHILE but no compiler punctuation.</p>
+<table><thead><tr><th></th><th>Algorithm</th><th>Pseudocode</th></tr></thead><tbody><tr><td>Audience</td><td>Anyone who can follow logic</td><td>Someone about to code</td></tr><tr><td>Form</td><td>Numbered everyday steps</td><td>Structured keywords</td></tr><tr><td>Syntax</td><td>None required</td><td>Conventions, still not executable</td></tr><tr><td>Purpose</td><td>Get the logic right</td><td>Bridge logic to a language</td></tr></tbody></table>
+<ul>
+<li><strong>Decomposition</strong> — split “learn Spanish” into alphabet, vocabulary, grammar, practice. A school app becomes login, timetable, results.</li>
+<li><strong>Pattern recognition</strong> — a triangle of stars that grows by one star per row is a loop \(i=1\ldots n\).</li>
+<li><strong>Abstraction</strong> — making tea is boil, add, steep, pour. Ignore mug colour and kettle brand.</li>
+</ul>
+<table><thead><tr><th>Move</th><th>Strategy</th></tr></thead><tbody><tr><td>Split “build the app” into login, marks, notices</td><td>Decomposition</td></tr><tr><td>Every notice has a title, date, body — same shape</td><td>Pattern recognition</td></tr><tr><td>Ignore button colour when specifying “post a notice”</td><td>Abstraction</td></tr><tr><td>Write numbered steps before opening VS Code</td><td>Algorithm</td></tr></tbody></table>
+<aside class="callout exam"><div class="tag">BOARD TRAP</div><div>Ignoring the kettle brand is <strong>abstraction</strong>, not decomposition. Decomposition lists the subtasks. Pattern recognition notices that every hot drink shares “heat → infuse → pour.”</div></aside>
+<p>Judge every algorithm on <strong>correctness</strong> (right for every valid input, and it finishes), <strong>efficiency</strong> (time and memory as \(n\) grows), and <strong>clarity</strong> (a classmate can maintain it).</p>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. Define an algorithm in one sentence. 2. Which CT strategy ignores mug colour? 3. Name correctness, efficiency, clarity.</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Write an algorithm (not Python) for borrowing a library book. Mark one step as abstraction and one as decomposition.</div></aside></article>
+<article class="lecture" id="l10"><div class="lec-head"><div class="lec-num">L10</div><div class="lec-titles"><div class="lec-meta">Unit 2 · Algorithms · 45 min · Intermediate / Class XI</div><h1>Bubble Sort — neighbours swap</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Trace Bubble Sort on a 5-item list, pass by pass.</li><li>Write the nested-loop pseudocode.</li><li>State one strength and one weakness.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>An algorithm is finite steps. Today the steps compare neighbours until the list is ordered.</div></aside>
+<p>Walk along the list. Whenever two neighbours are in the wrong order, swap them. After pass \(k\), the \(k\) largest items sit at the right. Nested loops give time that grows like \(n^2\).</p>
+<figure class="wide"><svg class="diagram" viewBox="0 0 400 244" width="400" height="244" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="16" y="38" class="svg-tiny">start</text><rect x="90" y="20" width="38" height="28" rx="4" fill="#1B365D"/><text x="109" y="39" text-anchor="middle" fill="#F6F1E6" font-size="13">8</text><rect x="134" y="20" width="38" height="28" rx="4" fill="#1B365D"/><text x="153" y="39" text-anchor="middle" fill="#F6F1E6" font-size="13">4</text><rect x="178" y="20" width="38" height="28" rx="4" fill="#1B365D"/><text x="197" y="39" text-anchor="middle" fill="#F6F1E6" font-size="13">1</text><rect x="222" y="20" width="38" height="28" rx="4" fill="#1B365D"/><text x="241" y="39" text-anchor="middle" fill="#F6F1E6" font-size="13">9</text><rect x="266" y="20" width="38" height="28" rx="4" fill="#1B365D"/><text x="285" y="39" text-anchor="middle" fill="#F6F1E6" font-size="13">3</text><text x="16" y="78" class="svg-tiny">pass 1</text><rect x="90" y="60" width="38" height="28" rx="4" fill="#1B365D"/><text x="109" y="79" text-anchor="middle" fill="#F6F1E6" font-size="13">4</text><rect x="134" y="60" width="38" height="28" rx="4" fill="#1B365D"/><text x="153" y="79" text-anchor="middle" fill="#F6F1E6" font-size="13">1</text><rect x="178" y="60" width="38" height="28" rx="4" fill="#1B365D"/><text x="197" y="79" text-anchor="middle" fill="#F6F1E6" font-size="13">8</text><rect x="222" y="60" width="38" height="28" rx="4" fill="#1B365D"/><text x="241" y="79" text-anchor="middle" fill="#F6F1E6" font-size="13">3</text><rect x="266" y="60" width="38" height="28" rx="4" fill="#0D7377"/><text x="285" y="79" text-anchor="middle" fill="#F6F1E6" font-size="13">9</text><text x="16" y="118" class="svg-tiny">pass 2</text><rect x="90" y="100" width="38" height="28" rx="4" fill="#1B365D"/><text x="109" y="119" text-anchor="middle" fill="#F6F1E6" font-size="13">1</text><rect x="134" y="100" width="38" height="28" rx="4" fill="#1B365D"/><text x="153" y="119" text-anchor="middle" fill="#F6F1E6" font-size="13">4</text><rect x="178" y="100" width="38" height="28" rx="4" fill="#1B365D"/><text x="197" y="119" text-anchor="middle" fill="#F6F1E6" font-size="13">3</text><rect x="222" y="100" width="38" height="28" rx="4" fill="#0D7377"/><text x="241" y="119" text-anchor="middle" fill="#F6F1E6" font-size="13">8</text><rect x="266" y="100" width="38" height="28" rx="4" fill="#0D7377"/><text x="285" y="119" text-anchor="middle" fill="#F6F1E6" font-size="13">9</text><text x="16" y="158" class="svg-tiny">pass 3</text><rect x="90" y="140" width="38" height="28" rx="4" fill="#1B365D"/><text x="109" y="159" text-anchor="middle" fill="#F6F1E6" font-size="13">1</text><rect x="134" y="140" width="38" height="28" rx="4" fill="#1B365D"/><text x="153" y="159" text-anchor="middle" fill="#F6F1E6" font-size="13">3</text><rect x="178" y="140" width="38" height="28" rx="4" fill="#0D7377"/><text x="197" y="159" text-anchor="middle" fill="#F6F1E6" font-size="13">4</text><rect x="222" y="140" width="38" height="28" rx="4" fill="#0D7377"/><text x="241" y="159" text-anchor="middle" fill="#F6F1E6" font-size="13">8</text><rect x="266" y="140" width="38" height="28" rx="4" fill="#0D7377"/><text x="285" y="159" text-anchor="middle" fill="#F6F1E6" font-size="13">9</text><text x="16" y="198" class="svg-tiny">sorted</text><rect x="90" y="180" width="38" height="28" rx="4" fill="#0D7377"/><text x="109" y="199" text-anchor="middle" fill="#F6F1E6" font-size="13">1</text><rect x="134" y="180" width="38" height="28" rx="4" fill="#0D7377"/><text x="153" y="199" text-anchor="middle" fill="#F6F1E6" font-size="13">3</text><rect x="178" y="180" width="38" height="28" rx="4" fill="#0D7377"/><text x="197" y="199" text-anchor="middle" fill="#F6F1E6" font-size="13">4</text><rect x="222" y="180" width="38" height="28" rx="4" fill="#0D7377"/><text x="241" y="199" text-anchor="middle" fill="#F6F1E6" font-size="13">8</text><rect x="266" y="180" width="38" height="28" rx="4" fill="#0D7377"/><text x="285" y="199" text-anchor="middle" fill="#F6F1E6" font-size="13">9</text><text x="200" y="230" text-anchor="middle" class="svg-label">Largest value bubbles to the right each pass</text>
+</svg><figcaption>Figure L10.1 — Trace of {8, 4, 1, 9, 3}. Teal cells are already parked.</figcaption></figure>
+<pre>FOR pass ← 0 TO n−2
+    FOR i ← 0 TO n−2−pass
+        IF DATA[i] &gt; DATA[i+1] THEN swap</pre>
+<p>Diary of {8, 4, 1, 9, 3}: pass 1 ends {4, 1, 8, 3, <strong>9</strong>}; pass 2 ends {1, 4, 3, <strong>8, 9</strong>}; pass 3 ends {1, 3, <strong>4, 8, 9</strong>}; pass 4 confirms.</p>
+<p><strong>Strengths:</strong> easy to see; in-place; stable (equal keys keep their order). <strong>Weaknesses:</strong> many swaps; hopeless for large \(n\).</p>
+<p>Studio list \(\{6,2,5,1\}\): pass 1 → \(\{2,5,1,6\}\) (three swaps); pass 2 → \(\{2,1,5,6\}\); pass 3 → \(\{1,2,5,6\}\).</p>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. After pass 1, where does the largest item sit? 2. Why is the inner loop shorter each pass? 3. Is Bubble Sort stable?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Trace {8, 3, 6, 2} on paper. Show the list at the end of each pass. Count swaps.</div></aside></article>
+<article class="lecture" id="l11"><div class="lec-head"><div class="lec-num">L11</div><div class="lec-titles"><div class="lec-meta">Unit 2 · Algorithms · 45 min · Intermediate / Class XI</div><h1>Selection Sort — park the minimum</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Trace Selection Sort on the same list as Lecture 10.</li><li>Explain why it usually swaps less than Bubble Sort.</li><li>State that it is not stable.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>Bubble Sort swaps neighbours and parks the largest at the right. Selection Sort parks the next minimum at the left — at most one write per pass.</div></aside>
+<p>On pass \(k\), find the minimum of the unsorted tail and swap it into index \(k\). Still \(\Theta(n^2)\) comparisons, fewer writes, <strong>not stable</strong>.</p>
+<figure class="wide"><svg class="diagram" viewBox="0 0 400 244" width="400" height="244" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="16" y="38" class="svg-tiny">start</text><rect x="90" y="20" width="38" height="28" rx="4" fill="#1B365D"/><text x="109" y="39" text-anchor="middle" fill="#F6F1E6" font-size="13">8</text><rect x="134" y="20" width="38" height="28" rx="4" fill="#1B365D"/><text x="153" y="39" text-anchor="middle" fill="#F6F1E6" font-size="13">4</text><rect x="178" y="20" width="38" height="28" rx="4" fill="#1B365D"/><text x="197" y="39" text-anchor="middle" fill="#F6F1E6" font-size="13">1</text><rect x="222" y="20" width="38" height="28" rx="4" fill="#1B365D"/><text x="241" y="39" text-anchor="middle" fill="#F6F1E6" font-size="13">9</text><rect x="266" y="20" width="38" height="28" rx="4" fill="#1B365D"/><text x="285" y="39" text-anchor="middle" fill="#F6F1E6" font-size="13">3</text><text x="16" y="78" class="svg-tiny">pass 0</text><rect x="90" y="60" width="38" height="28" rx="4" fill="#C4A35A"/><text x="109" y="79" text-anchor="middle" fill="#F6F1E6" font-size="13">1</text><rect x="134" y="60" width="38" height="28" rx="4" fill="#1B365D"/><text x="153" y="79" text-anchor="middle" fill="#F6F1E6" font-size="13">4</text><rect x="178" y="60" width="38" height="28" rx="4" fill="#1B365D"/><text x="197" y="79" text-anchor="middle" fill="#F6F1E6" font-size="13">8</text><rect x="222" y="60" width="38" height="28" rx="4" fill="#1B365D"/><text x="241" y="79" text-anchor="middle" fill="#F6F1E6" font-size="13">9</text><rect x="266" y="60" width="38" height="28" rx="4" fill="#1B365D"/><text x="285" y="79" text-anchor="middle" fill="#F6F1E6" font-size="13">3</text><text x="16" y="118" class="svg-tiny">pass 1</text><rect x="90" y="100" width="38" height="28" rx="4" fill="#0D7377"/><text x="109" y="119" text-anchor="middle" fill="#F6F1E6" font-size="13">1</text><rect x="134" y="100" width="38" height="28" rx="4" fill="#C4A35A"/><text x="153" y="119" text-anchor="middle" fill="#F6F1E6" font-size="13">3</text><rect x="178" y="100" width="38" height="28" rx="4" fill="#1B365D"/><text x="197" y="119" text-anchor="middle" fill="#F6F1E6" font-size="13">8</text><rect x="222" y="100" width="38" height="28" rx="4" fill="#1B365D"/><text x="241" y="119" text-anchor="middle" fill="#F6F1E6" font-size="13">9</text><rect x="266" y="100" width="38" height="28" rx="4" fill="#1B365D"/><text x="285" y="119" text-anchor="middle" fill="#F6F1E6" font-size="13">4</text><text x="16" y="158" class="svg-tiny">pass 2</text><rect x="90" y="140" width="38" height="28" rx="4" fill="#0D7377"/><text x="109" y="159" text-anchor="middle" fill="#F6F1E6" font-size="13">1</text><rect x="134" y="140" width="38" height="28" rx="4" fill="#0D7377"/><text x="153" y="159" text-anchor="middle" fill="#F6F1E6" font-size="13">3</text><rect x="178" y="140" width="38" height="28" rx="4" fill="#C4A35A"/><text x="197" y="159" text-anchor="middle" fill="#F6F1E6" font-size="13">4</text><rect x="222" y="140" width="38" height="28" rx="4" fill="#1B365D"/><text x="241" y="159" text-anchor="middle" fill="#F6F1E6" font-size="13">9</text><rect x="266" y="140" width="38" height="28" rx="4" fill="#1B365D"/><text x="285" y="159" text-anchor="middle" fill="#F6F1E6" font-size="13">8</text><text x="16" y="198" class="svg-tiny">pass 3</text><rect x="90" y="180" width="38" height="28" rx="4" fill="#0D7377"/><text x="109" y="199" text-anchor="middle" fill="#F6F1E6" font-size="13">1</text><rect x="134" y="180" width="38" height="28" rx="4" fill="#0D7377"/><text x="153" y="199" text-anchor="middle" fill="#F6F1E6" font-size="13">3</text><rect x="178" y="180" width="38" height="28" rx="4" fill="#0D7377"/><text x="197" y="199" text-anchor="middle" fill="#F6F1E6" font-size="13">4</text><rect x="222" y="180" width="38" height="28" rx="4" fill="#0D7377"/><text x="241" y="199" text-anchor="middle" fill="#F6F1E6" font-size="13">8</text><rect x="266" y="180" width="38" height="28" rx="4" fill="#0D7377"/><text x="285" y="199" text-anchor="middle" fill="#F6F1E6" font-size="13">9</text><text x="200" y="230" text-anchor="middle" class="svg-label">Each pass parks the minimum of the unsorted tail</text>
+</svg><figcaption>Figure L11.1 — Same list {8, 4, 1, 9, 3}. Gold is the newly parked minimum.</figcaption></figure>
+<ul>
+<li>Pass 0: smallest of the whole list is 1; swap with 8 → {1, 4, 8, 9, 3}.</li>
+<li>Pass 1: smallest of the tail is 3; swap with 4 → {1, 3, 8, 9, 4}.</li>
+<li>Pass 2: smallest of the tail is 4; swap with 8 → {1, 3, 4, 9, 8}.</li>
+<li>Pass 3: smallest of the tail is 8; swap with 9 → {1, 3, 4, 8, 9}.</li>
+</ul>
+<p>On \(\{6,2,5,1\}\) Selection finds min \(1\) and swaps once with \(6\) → \(\{1,2,5,6\}\). Watch equal keys: sort {9, 4, 7, 4, 1}. Bubble Sort should keep the first 4 ahead of the second. Selection Sort may swap their order — that single observation is a 3-mark “disadvantage” answer.</p>
+<aside class="callout exam"><div class="tag">TEXTBOOK COUSIN</div><div>Some traces swap as soon as a smaller value is seen. Standard selection finds the <em>index</em> of the minimum, then swaps once. In the paper, follow the version your teacher traced.</div></aside>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. How many swaps per pass in standard Selection Sort? 2. Why is it not stable? 3. Same time class as Bubble Sort?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Sort {9, 4, 7, 4, 1} with both algorithms. Circle the two 4s and see who keeps their order.</div></aside></article>
+<article class="lecture" id="l12"><div class="lec-head"><div class="lec-num">L12</div><div class="lec-titles"><div class="lec-meta">Unit 2 · Algorithms · 45 min · Intermediate / Class XI</div><h1>Linear search and binary search</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Trace linear search on unsorted data.</li><li>Compute mid and discard a half on a sorted list.</li><li>Say when binary search is simply wrong.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>Two sorts, both \(n^2\). Searching asks a different question: is this value here, and where?</div></aside>
+<p><strong>Linear search</strong> checks items \(1,2,\ldots,n\). Works on unsorted data. Worst case \(n\) probes.</p>
+<p><strong>Binary search</strong> requires a sorted array. Each step uses</p>
+\[ \mathrm{mid} = \left\lfloor \frac{\mathrm{low}+\mathrm{high}}{2} \right\rfloor. \]
+<p>If the target is smaller, set \(\mathrm{high}=\mathrm{mid}-1\); if larger, \(\mathrm{low}=\mathrm{mid}+1\). About \(\log_2 n\) probes — twenty looks for a million items.</p>
+<figure class="wide"><svg class="diagram" viewBox="0 0 400 220" width="400" height="220" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="200" y="18" text-anchor="middle" class="svg-label">Find 3 in a sorted list — halve each time</text><rect x="40" y="36" width="38" height="28" rx="4" fill="#1B365D"/><text x="59" y="55" text-anchor="middle" fill="#F6F1E6" font-size="13">1</text><rect x="82" y="36" width="38" height="28" rx="4" fill="#1B365D"/><text x="101" y="55" text-anchor="middle" fill="#F6F1E6" font-size="13">2</text><rect x="124" y="36" width="38" height="28" rx="4" fill="#1B365D"/><text x="143" y="55" text-anchor="middle" fill="#F6F1E6" font-size="13">3</text><rect x="166" y="36" width="38" height="28" rx="4" fill="#C4A35A"/><text x="185" y="55" text-anchor="middle" fill="#F6F1E6" font-size="13">4</text><rect x="208" y="36" width="38" height="28" rx="4" fill="#1B365D"/><text x="227" y="55" text-anchor="middle" fill="#F6F1E6" font-size="13">5</text><rect x="250" y="36" width="38" height="28" rx="4" fill="#1B365D"/><text x="269" y="55" text-anchor="middle" fill="#F6F1E6" font-size="13">6</text><rect x="292" y="36" width="38" height="28" rx="4" fill="#1B365D"/><text x="311" y="55" text-anchor="middle" fill="#F6F1E6" font-size="13">7</text><rect x="334" y="36" width="38" height="28" rx="4" fill="#1B365D"/><text x="353" y="55" text-anchor="middle" fill="#F6F1E6" font-size="13">8</text><text x="200" y="82" text-anchor="middle" class="svg-tiny">mid = 4, target 3 is smaller → keep left</text><rect x="40" y="96" width="38" height="28" rx="4" fill="#1B365D"/><text x="59" y="115" text-anchor="middle" fill="#F6F1E6" font-size="13">1</text><rect x="82" y="96" width="38" height="28" rx="4" fill="#C4A35A"/><text x="101" y="115" text-anchor="middle" fill="#F6F1E6" font-size="13">2</text><rect x="124" y="96" width="38" height="28" rx="4" fill="#1B365D"/><text x="143" y="115" text-anchor="middle" fill="#F6F1E6" font-size="13">3</text><rect x="166" y="96" width="38" height="28" rx="4" fill="#8A9BA8"/><text x="185" y="115" text-anchor="middle" fill="#F6F1E6" font-size="13">4</text><rect x="208" y="96" width="38" height="28" rx="4" fill="#8A9BA8"/><text x="227" y="115" text-anchor="middle" fill="#F6F1E6" font-size="13">5</text><rect x="250" y="96" width="38" height="28" rx="4" fill="#8A9BA8"/><text x="269" y="115" text-anchor="middle" fill="#F6F1E6" font-size="13">6</text><rect x="292" y="96" width="38" height="28" rx="4" fill="#8A9BA8"/><text x="311" y="115" text-anchor="middle" fill="#F6F1E6" font-size="13">7</text><rect x="334" y="96" width="38" height="28" rx="4" fill="#8A9BA8"/><text x="353" y="115" text-anchor="middle" fill="#F6F1E6" font-size="13">8</text><text x="200" y="142" text-anchor="middle" class="svg-tiny">mid = 2, target 3 is larger → keep {3}</text><rect x="40" y="156" width="38" height="28" rx="4" fill="#8A9BA8"/><text x="59" y="175" text-anchor="middle" fill="#F6F1E6" font-size="13">1</text><rect x="82" y="156" width="38" height="28" rx="4" fill="#8A9BA8"/><text x="101" y="175" text-anchor="middle" fill="#F6F1E6" font-size="13">2</text><rect x="124" y="156" width="38" height="28" rx="4" fill="#C4A35A"/><text x="143" y="175" text-anchor="middle" fill="#F6F1E6" font-size="13">3</text><rect x="166" y="156" width="38" height="28" rx="4" fill="#8A9BA8"/><text x="185" y="175" text-anchor="middle" fill="#F6F1E6" font-size="13">4</text><rect x="208" y="156" width="38" height="28" rx="4" fill="#8A9BA8"/><text x="227" y="175" text-anchor="middle" fill="#F6F1E6" font-size="13">5</text><rect x="250" y="156" width="38" height="28" rx="4" fill="#8A9BA8"/><text x="269" y="175" text-anchor="middle" fill="#F6F1E6" font-size="13">6</text><rect x="292" y="156" width="38" height="28" rx="4" fill="#8A9BA8"/><text x="311" y="175" text-anchor="middle" fill="#F6F1E6" font-size="13">7</text><rect x="334" y="156" width="38" height="28" rx="4" fill="#8A9BA8"/><text x="353" y="175" text-anchor="middle" fill="#F6F1E6" font-size="13">8</text><text x="200" y="208" text-anchor="middle" class="svg-label">Found after 3 looks, not 8</text>
+</svg><figcaption>Figure L12.1 — Find 3. Gold is mid; grey cells have been discarded.</figcaption></figure>
+<p>Find 11 in \(\{2,5,7,11,13,17,19\}\): \(\mathrm{mid}=\lfloor(0+6)/2\rfloor=3\), hit on the first probe. Find 2 (left edge): three looks. Find 12 (absent): finish with \(\mathrm{low}&gt;\mathrm{high}\) and report not found — write that failure case so you do not invent a crash.</p>
+<table><thead><tr><th></th><th>Linear</th><th>Binary</th></tr></thead><tbody><tr><td>Needs sorted data?</td><td>No</td><td>Yes</td></tr><tr><td>Idea</td><td>One-by-one</td><td>Halve the interval</td></tr><tr><td>Best for</td><td>Small or unsorted; one-off search</td><td>Large static sorted lists</td></tr><tr><td>Growth</td><td>\(O(n)\)</td><td>\(O(\log n)\)</td></tr></tbody></table>
+<aside class="callout mistake"><div class="tag">COMMON MISTAKE</div><div>Binary search on an unsorted list is not “a bit worse.” It is wrong: the discarded half may hold the target. {9, 1, 4, 7} is a 2-mark trap.</div></aside>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. One limitation of binary search. 2. Write the mid formula. 3. Why does linear search still matter?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Binary-search 6 in {1,2,3,4,5,6,7,8,9}. Write every low, high, mid. Then state what happens if the list is shuffled.</div></aside></article>
+<article class="lecture" id="l13"><div class="lec-head"><div class="lec-num">L13</div><div class="lec-titles"><div class="lec-meta">Unit 3 · Programming · 45 min · Intermediate / Class XI</div><h1>Python, the IDE, and input() is a string</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Say why Python is a high-level language.</li><li>Run a three-line program in VS Code.</li><li>Convert input() with int() or float() before arithmetic.</li></ul></div></aside><aside class="callout recap"><div class="tag">BLOCK C OPENS</div><div>A computer does exactly what you said, including the mistakes. Python is this course’s high-level language because it reads almost like English.</div></aside>
+<p><strong>Low-level</strong> sits next to the machine (binary, assembly). <strong>Mid-level</strong> (C) lets you touch memory. <strong>High-level</strong> (Python, Java) hides the hardware so you think about the problem. C++ is for speed; Java’s promise is “write once, run anywhere”; Python’s promise is readable syntax and a huge library world.</p>
+<p>An <strong>IDE</strong> is one workplace: editor, colour, run, debugger. VS Code becomes an IDE when you install the Microsoft Python extension. Save as <code>program.py</code>. Indentation is syntax: <strong>4 spaces</strong> per block. Mix tabs and spaces and you will meet <code>IndentationError</code>.</p>
+<pre># a comment — the interpreter ignores it
+print("Hello, Intermediate")
+print(100)</pre>
+<p>Execution is top to bottom. That default order is <strong>sequence</strong>.</p>
+<table><thead><tr><th>Type</th><th>Keyword</th><th>Example</th></tr></thead><tbody><tr><td>Integer</td><td>int</td><td>20, −3</td></tr><tr><td>Float</td><td>float</td><td>5.7</td></tr><tr><td>String</td><td>str</td><td>"Ali", '2026'</td></tr><tr><td>Boolean</td><td>bool</td><td>True</td></tr><tr><td>List / tuple / dict</td><td>list, tuple, dict</td><td>[2,4], (10,), {"name": "Ahmed"}</td></tr></tbody></table>
+<p><code>input()</code> always returns a <strong>string</strong>. Convert: <code>age = int(input("Age: "))</code>. Forget the conversion and <code>"10" + "20"</code> quietly gives <code>"1020"</code>.</p>
+<aside class="callout mistake"><div class="tag">THE CLASSIC FIRST-YEAR CRASH</div><div>Using input() in arithmetic without int() or float(). Names: letters, digits, underscore; start with a letter or _; never a keyword. <code>my-var</code> is illegal (the hyphen is minus).</div></aside>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. What does input() return? 2. Standard indent? 3. Why is my-var illegal?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Type a program that asks for two numbers, converts them with float(), and prints the sum. Break it on purpose by removing float() and read the error.</div></aside></article>
+<article class="lecture" id="l14"><div class="lec-head"><div class="lec-num">L14</div><div class="lec-titles"><div class="lec-meta">Unit 3 · Programming · 45 min · Intermediate / Class XI</div><h1>Operators — including the bitwise family</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Use //, %, and ** correctly.</li><li>Contrast = (store) with == (test).</li><li>Compute AND, OR, XOR, and a left shift on small integers.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>input() is a string; 4 spaces; sequence. Today the symbols that sit between values.</div></aside>
+<table><thead><tr><th>Family</th><th>Symbols</th><th>Notes</th></tr></thead><tbody><tr><td>Arithmetic</td><td>+ − * / // % **</td><td>\(9//2=4\), \(9\%2=1\), \(2^{3}=8\)</td></tr><tr><td>Assignment</td><td>= += −= *=</td><td>After a = 10; a += 5, a is 15</td></tr><tr><td>Relational</td><td>== != &gt; &lt; &gt;= &lt;=</td><td>Return True / False</td></tr><tr><td>Logical</td><td>and · or · not</td><td>Combine conditions</td></tr><tr><td>Membership</td><td>in · not in</td><td>"P" in "Python" is True</td></tr><tr><td>Bitwise</td><td>&amp; | ^ ~ &lt;&lt; &gt;&gt;</td><td>Same truth tables as Unit 1 gates</td></tr></tbody></table>
+<p>Bitwise worked example. \(a=10=1010_{2}\), \(b=6=0110_{2}\):</p>
+\[ a \land b = 0010_{2}=2,\quad a \lor b = 1110_{2}=14,\quad a \oplus b = 1100_{2}=12,\quad a \ll 1 = 20 = a\cdot 2. \]
+<p>Also \(\sim x = -x-1\) in two’s complement, so \(\sim 10=-11\). If a question shows <code>0b1010</code>, the <code>0b</code> prefix is notation, not part of the value.</p>
+<aside class="callout try"><div class="tag">PREDICT (True/False)</div><div>\(9//2==4\) · \(9\%2==1\) · <code>"Py" in "Python"</code> · <code>not (True and False)</code>. All four are True.</div></aside>
+<aside class="callout mistake"><div class="tag">COMMON MISTAKE</div><div>= stores a value. == tests equality. Mixing them inside an if is a logic bug that looks like a typo.</div></aside>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. What is 9 // 2? 2. Bitwise AND of 10 and 6? 3. Difference between = and ==?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Line up 10 (1010) and 6 (0110) on paper. Compute AND, OR, XOR, and 5 &lt;&lt; 2 (= 20).</div></aside></article>
+<article class="lecture" id="l15"><div class="lec-head"><div class="lec-num">L15</div><div class="lec-titles"><div class="lec-meta">Unit 3 · Programming · 45 min · Intermediate / Class XI</div><h1>Selection — if, elif, else</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Draw a selection flowchart with exactly one path taken.</li><li>Write if / elif / else for a three-way choice.</li><li>Nest a guard (for example refuse ÷ 0).</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>Operators decide True/False. Selection uses that answer to pick a path.</div></aside>
+<figure class="wide"><svg class="diagram" viewBox="0 0 410 232" width="410" height="232" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect x="140" y="10" width="120" height="36" rx="6" fill="#1B365D"/><text x="200" y="33" text-anchor="middle" fill="#F6F1E6" font-size="12">Start / input</text><path d="M200 46 V70" stroke="#C4A35A" stroke-width="2"/><path d="M200 70 L260 110 L200 150 L140 110 Z" fill="#0D7377" stroke="#1B365D"/><text x="200" y="116" text-anchor="middle" fill="#F6F1E6" font-size="12">age ≥ 18?</text><text x="280" y="104" class="svg-tiny">yes</text><text x="108" y="164" class="svg-tiny">no</text><rect x="280" y="96" width="110" height="32" rx="6" fill="#1B365D"/><text x="335" y="117" text-anchor="middle" fill="#F6F1E6" font-size="11">Adult path</text><rect x="20" y="160" width="110" height="32" rx="6" fill="#8B3A3A"/><text x="75" y="181" text-anchor="middle" fill="#F6F1E6" font-size="11">Minor path</text><text x="200" y="220" text-anchor="middle" class="svg-label">Selection chooses exactly one path</text>
+</svg><figcaption>Figure L15.1 — Selection: exactly one path runs.</figcaption></figure>
+<p><strong>for</strong> waits until Lecture 16. Today: <code>if</code>, <code>elif</code>, <code>else</code>. The colon opens a block; the indent is the block.</p>
+<pre>a = float(input("First number: "))
+b = float(input("Second number: "))
+op = input("Choose + - * / : ").strip()
+if op == "+":
+    print(a + b)
+elif op == "-":
+    print(a - b)
+elif op == "*":
+    print(a * b)
+elif op == "/":
+    if b == 0:
+        print("Cannot divide by zero.")
+    else:
+        print(a / b)
+else:
+    print("Unknown operator.")</pre>
+<p>The nested if inside division is selection inside selection — the unit’s nested-if idea in a useful costume.</p>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. How many paths of an if/elif/else run? 2. Why does / need a nested guard? 3. What does strip() remove?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Write even/odd: read an int, print Even if n % 2 == 0 else Odd. Then add a third branch for zero.</div></aside></article>
+<article class="lecture" id="l16"><div class="lec-head"><div class="lec-num">L16</div><div class="lec-titles"><div class="lec-meta">Unit 3 · Programming · 45 min · Intermediate / Class XI</div><h1>Repetition — for, while, break, continue</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Choose for when the trip count is known.</li><li>Choose while until a condition dies.</li><li>Trace a while-loop that never dies.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>Selection picks one path. Repetition walks a path many times.</div></aside>
+<p><strong>for</strong> when the count is known: <code>range(start, stop, step)</code> — stop is exclusive. <strong>while</strong> until a condition becomes False. <code>break</code> leaves now; <code>continue</code> skips this iteration.</p>
+<pre>for i in range(1, 6):
+    print(i)          # 1 2 3 4 5
+
+i = 1
+while i &lt; 6:
+    print(i)
+    i += 1            # without this line the loop never dies</pre>
+<aside class="callout mistake"><div class="tag">LOGICAL ERROR, NOT A CRASH</div><div>The textbook infinite loop: <code>i = 1; while i &lt; 6: print(i); i -= 1</code>. Trace: 1, 0, −1… \(i\) never reaches 6. The program is legal and will run until you kill it. Always ask: “What makes the condition False, and does every path reach it?”</div></aside>
+<p>A one-shot guess uses <code>random.randint</code> and a single if. A PIN loop (next lecture) uses while + a bool flag.</p>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. Loop when the count is known? 2. What does continue do? 3. Why does i -= 1 inside while i &lt; 6 never finish?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Print a triangle of stars, 1 to 5, with a nested for. Then rewrite it with a while. Same output, two control stories.</div></aside></article>
+<article class="lecture" id="l17"><div class="lec-head"><div class="lec-num">L17</div><div class="lec-titles"><div class="lec-meta">Unit 3 · Programming · 45 min · Intermediate / Class XI</div><h1>Libraries, errors, and the ATM studio</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Import math, random, and datetime.</li><li>Name syntax, runtime, and logical errors.</li><li>Read an ATM skeleton as sequence + selection + repetition.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>for / while / flags. Today we borrow other people’s code and name the three ways a program can be wrong.</div></aside>
+<pre>import math, random, datetime
+print(math.sqrt(25), math.pi)
+secret = random.randint(1, 10)
+now = datetime.datetime.now().strftime("%d-%m-%Y")</pre>
+<p>Third-party libraries need <code>pip install</code> (NumPy, Pandas, Matplotlib). Built-ins are already housemates.</p>
+<table><thead><tr><th>Error</th><th>When</th><th>Example</th></tr></thead><tbody><tr><td>Syntax</td><td>Will not start</td><td>Missing ), bad indent, if without :</td></tr><tr><td>Runtime</td><td>Dies while running</td><td>10/0, int("abc")</td></tr><tr><td>Logical</td><td>Runs and lies</td><td>i -= 1 in a climbing loop</td></tr></tbody></table>
+<p>Read a traceback from the <strong>bottom</strong>: last line is the disease.</p>
+<h2>ATM skeleton — Unit 3 in one costume</h2>
+<pre>PIN = "1234"
+balance = 10000.0
+tries = 3
+ok = False
+while tries &gt; 0 and not ok:
+    entered = input("Enter PIN: ")
+    if entered == PIN:
+        ok = True
+    else:
+        tries -= 1
+        print("Wrong PIN!", tries, "left.")
+if not ok:
+    print("Card locked.")
+else:
+    running = True
+    while running:
+        print("1 Check  2 Deposit  3 Withdraw  4 Exit")
+        choice = input("Choose: ")
+        if choice == "1":
+            print(f"Balance: Rs. {balance:.2f}")
+        elif choice == "2":
+            amt = float(input("Deposit: "))
+            if amt &gt; 0:
+                balance += amt
+        elif choice == "3":
+            amt = float(input("Withdraw: "))
+            if 0 &lt; amt &lt;= balance:
+                balance -= amt
+            else:
+                print("Rejected.")
+        elif choice == "4":
+            running = False</pre>
+<p>Sequence (start values) + selection (menu) + repetition (PIN loop, menu loop) + bool flags. If you can add a transfer or a 20-try lockout, you own the unit.</p>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. Three error types? 2. Where do you start reading a traceback? 3. Which structure is the PIN loop?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Type the ATM. Add deposit and a rejected-overdraw message. Then break the PIN on purpose and read the traceback from the bottom.</div></aside></article>
+<article class="lecture" id="l18"><div class="lec-head"><div class="lec-num">L18</div><div class="lec-titles"><div class="lec-meta">Unit 4 · Data and Analysis · 45 min · Intermediate / Class XI</div><h1>Data, DBMS, and the four keys</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Turn raw marks into one sentence of information.</li><li>Define database, DBMS, and RDBMS.</li><li>Place candidate, primary, alternate, and foreign keys.</li></ul></div></aside><aside class="callout recap"><div class="tag">BLOCK D OPENS</div><div>Eighty, seventy-five, ninety is data. “The class average is 80%” is information. A database is the organised cupboard that keeps those facts consistent.</div></aside>
+<table><thead><tr><th></th><th>Data</th><th>Information</th></tr></thead><tbody><tr><td>Definition</td><td>Raw facts</td><td>Processed, meaningful facts</td></tr><tr><td>Example</td><td>85, 90, 75</td><td>Average = 83.3%</td></tr><tr><td>Use</td><td>Little, alone</td><td>Supports a decision</td></tr></tbody></table>
+<p>A <strong>DBMS</strong> (Access, MySQL, Oracle, SQL Server) inserts, updates, deletes, and retrieves with less redundancy, better consistency, security, and integrity. An <strong>RDBMS</strong> stores related tables and is queried with SQL.</p>
+<p>A <strong>table</strong> is rows × columns. A <strong>record</strong> is a row. A <strong>field</strong> is a column.</p>
+<table><thead><tr><th>Key</th><th>Role</th></tr></thead><tbody><tr><td>Candidate</td><td>Any unique non-null identifier — a table may have several</td></tr><tr><td>Primary</td><td>The chosen candidate; exactly one; never NULL</td></tr><tr><td>Alternate</td><td>A leftover candidate (still unique)</td></tr><tr><td>Foreign</td><td>Points at another table’s primary key; may repeat</td></tr></tbody></table>
+<aside class="callout exam"><div class="tag">ONE-LINER</div><div>Primary key: unique, not null, one per table. Foreign key: lives in the child, points home.</div></aside>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. DBMS besides Access? 2. Define a foreign key. 3. Can a table have two primary keys?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>For a Student table list two candidate keys and choose a primary key. Write one sentence why CNIC is a poor classroom PK (privacy).</div></aside></article>
+<article class="lecture" id="l19"><div class="lec-head"><div class="lec-num">L19</div><div class="lec-titles"><div class="lec-meta">Unit 4 · Data and Analysis · 45 min · Intermediate / Class XI</div><h1>ER models and the three cardinalities</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Draw entity rectangles and name attributes.</li><li>Recognise 1:1, 1:M, and M:N.</li><li>Resolve M:N with a junction table.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>Keys identify rows. Relationships say how rows of two tables belong together.</div></aside>
+<figure class="wide"><div class="svg-row">
+<svg class="diagram" viewBox="0 0 170 96" width="170" height="96" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="80" y="16" text-anchor="middle" class="svg-label">1 : 1</text><rect x="10" y="30" width="70" height="36" rx="6" fill="#1B365D"/><text x="45" y="53" text-anchor="middle" fill="#F6F1E6" font-size="11">Student</text><rect x="80" y="30" width="70" height="36" rx="6" fill="#0D7377"/><text x="115" y="53" text-anchor="middle" fill="#F6F1E6" font-size="11">ID card</text><text x="80" y="86" text-anchor="middle" class="svg-tiny">one ↔ one</text>
+</svg>
+<svg class="diagram" viewBox="0 0 170 96" width="170" height="96" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="80" y="16" text-anchor="middle" class="svg-label">1 : M</text><rect x="10" y="30" width="70" height="36" rx="6" fill="#1B365D"/><text x="45" y="53" text-anchor="middle" fill="#F6F1E6" font-size="11">Teacher</text><rect x="80" y="30" width="70" height="36" rx="6" fill="#0D7377"/><text x="115" y="53" text-anchor="middle" fill="#F6F1E6" font-size="11">Classes</text><text x="80" y="86" text-anchor="middle" class="svg-tiny">one → many</text>
+</svg>
+<svg class="diagram" viewBox="0 0 170 96" width="170" height="96" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="80" y="16" text-anchor="middle" class="svg-label">M : N</text><rect x="10" y="30" width="70" height="36" rx="6" fill="#1B365D"/><text x="45" y="53" text-anchor="middle" fill="#F6F1E6" font-size="11">Student</text><rect x="80" y="30" width="70" height="36" rx="6" fill="#0D7377"/><text x="115" y="53" text-anchor="middle" fill="#F6F1E6" font-size="11">Course</text><text x="80" y="86" text-anchor="middle" class="svg-tiny">needs junction</text>
+</svg>
+</div><figcaption>Figure L19.1 — Only M:N needs a junction table.</figcaption></figure>
+<figure class="wide"><svg class="diagram" viewBox="0 0 660 184" width="660" height="184" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect x="20" y="40" width="150" height="82" rx="6" fill="#EEF4F6" stroke="#1B365D" stroke-width="2"/><rect x="20" y="40" width="150" height="24" rx="6" fill="#1B365D"/><text x="95" y="57" text-anchor="middle" fill="#F6F1E6" font-size="12">Member</text><text x="30" y="84" font-size="11" fill="#1B365D">PK MemberID</text><text x="30" y="102" font-size="11" fill="#1B365D">Name</text><text x="30" y="120" font-size="11" fill="#1B365D">Contact</text><rect x="250" y="16" width="150" height="100" rx="6" fill="#EEF4F6" stroke="#1B365D" stroke-width="2"/><rect x="250" y="16" width="150" height="24" rx="6" fill="#1B365D"/><text x="325" y="33" text-anchor="middle" fill="#F6F1E6" font-size="12">BorrowRecord</text><text x="260" y="60" font-size="11" fill="#1B365D">PK BorrowID</text><text x="260" y="78" font-size="11" fill="#1B365D">FK MemberID</text><text x="260" y="96" font-size="11" fill="#1B365D">FK BookID</text><text x="260" y="114" font-size="11" fill="#1B365D">Issue / Return</text><rect x="490" y="40" width="150" height="100" rx="6" fill="#EEF4F6" stroke="#1B365D" stroke-width="2"/><rect x="490" y="40" width="150" height="24" rx="6" fill="#1B365D"/><text x="565" y="57" text-anchor="middle" fill="#F6F1E6" font-size="12">Book</text><text x="500" y="84" font-size="11" fill="#1B365D">PK BookID</text><text x="500" y="102" font-size="11" fill="#1B365D">Title</text><text x="500" y="120" font-size="11" fill="#1B365D">Author</text><text x="500" y="138" font-size="11" fill="#1B365D">Publisher</text><line x1="170" y1="80" x2="250" y2="70" stroke="#0D7377" stroke-width="2"/><line x1="400" y1="70" x2="490" y2="80" stroke="#0D7377" stroke-width="2"/><text x="200" y="64" class="svg-tiny">1</text><text x="232" y="58" class="svg-tiny">M</text><text x="430" y="58" class="svg-tiny">M</text><text x="478" y="64" class="svg-tiny">1</text><text x="330" y="170" text-anchor="middle" class="svg-label">M:N resolved by a junction entity</text>
+</svg><figcaption>Figure L19.2 — Library ER: Member and Book are M:N, resolved as BorrowRecord.</figcaption></figure>
+<p>A student has one ID card (1:1). A teacher teaches many classes (1:M). Students enrol on many courses and a course has many students (M:N) — that last pair needs a junction (Enrolment) holding both foreign keys plus extras such as date.</p>
+<p><strong>Clinic in 15 minutes.</strong> Patient and Doctor are M:N, resolved as Appointment(AppointmentID PK, PatientID FK, DoctorID FK, VisitDate, Fee). Customer 1—M Order needs <em>no</em> junction: one order belongs to one customer. Students over-use junction tables.</p>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. ER rectangle is which concept? 2. Which relationship needs a junction? 3. Name the library junction entity.</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>On paper, Bus / Route / Student. A bus serves one route; many students ride many buses across a week — that last link may need a Ride junction with a date.</div></aside></article>
+<article class="lecture" id="l20"><div class="lec-head"><div class="lec-num">L20</div><div class="lec-titles"><div class="lec-meta">Unit 4 · Data and Analysis · 45 min · Intermediate / Class XI</div><h1>Referential integrity and Access objects</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>State referential integrity with a school example.</li><li>Warn about cascade delete.</li><li>Name table, form, query, report.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>M:N is two 1:M links through a junction. Those links only work if every foreign key points at a living parent.</div></aside>
+<p><strong>Referential integrity:</strong> every foreign key must match a living parent. You cannot store marks for StudentID 999 if that student does not exist.</p>
+<p><em>Cascade update</em> rewrites child FKs when the parent PK changes. <em>Cascade delete</em> removes child rows when the parent is deleted — use it like a chainsaw. Cascade-delete of a doctor wipes appointment history; better to forbid the delete or mark the doctor inactive.</p>
+<p>Access objects: <strong>table</strong> stores, <strong>form</strong> enters, <strong>query</strong> asks, <strong>report</strong> prints. Create a table in Datasheet or Design view; pick datatypes (Short Text, Number, Date/Time, Currency, Yes/No, AutoNumber for a surrogate PK).</p>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. Define referential integrity. 2. Cascade update in one sentence. 3. Which object is for friendly entry?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Write a 3-mark caution: why cascade-delete on Doctor is dangerous in the clinic schema.</div></aside></article>
+<article class="lecture" id="l21"><div class="lec-head"><div class="lec-num">L21</div><div class="lec-titles"><div class="lec-meta">Unit 4 · Data and Analysis · 45 min · Intermediate / Class XI</div><h1>Queries, totals, and charts</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Put AND on the same criteria row and OR on different rows.</li><li>Use Group By with Count or Avg.</li><li>Pick line, pie, or bar for the story.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>Tables store; forms enter; queries ask. Today the Design grid — the usual practical-exam discriminator.</div></aside>
+<table><thead><tr><th>Need</th><th>Design grid</th></tr></thead><tbody><tr><td>CS students only</td><td>Department Criteria: "Computer Science"</td></tr><tr><td>IT or CS</td><td>Criteria / or: two department values</td></tr><tr><td>Aslam in IT</td><td>Name and Department on the SAME row</td></tr><tr><td>Headcount per dept</td><td>Totals on; Department Group By; StudentID Count</td></tr><tr><td>Average marks per dept</td><td>Department Group By; Marks Avg</td></tr></tbody></table>
+<p>AND is horizontal (one row). OR is vertical (criteria / or). Totals \(\Sigma\): Group By + Count / Avg / Sum / Min / Max.</p>
+<p>Line charts show trends (monthly attendance). Pies show parts of a whole (pass/fail). Bars compare named categories (marks by department).</p>
+<aside class="callout memory"><div class="tag">RECITE</div><div>AND same row. OR different rows. Chart for a monthly trend = line.</div></aside>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. Aggregate for a mean? 2. Chart for a monthly trend? 3. How do you write OR in Query Design?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>On paper, design a grouped query: average fee per doctor from Appointment. Name the Group By field and the aggregate.</div></aside></article>
+<article class="lecture" id="l22"><div class="lec-head"><div class="lec-num">L22</div><div class="lec-titles"><div class="lec-meta">Unit 5 · Applications · 45 min · Intermediate / Class XI</div><h1>IoT collects, analytics explains, AI decides</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Keep IoT, analytics, and AI as a loop, not as synonyms.</li><li>Name sensor, connectivity, processing, actuator, cloud, UI.</li><li>Walk a Sindh irrigation chain in six labelled sentences.</li></ul></div></aside><aside class="callout recap"><div class="tag">BLOCK E OPENS</div><div>Computing has left the lab. Today three cooperating technologies — and the exam trap of treating the three words as the same thing.</div></aside>
+<figure class="wide"><svg class="diagram" viewBox="0 0 560 246" width="560" height="246" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect x="20" y="48" width="100" height="44" rx="10" fill="#1B365D"/><text x="70" y="75" text-anchor="middle" fill="#F6F1E6" font-size="13">Sensor</text><rect x="160" y="48" width="100" height="44" rx="10" fill="#24486F"/><text x="210" y="75" text-anchor="middle" fill="#F6F1E6" font-size="13">Connect</text><rect x="300" y="48" width="100" height="44" rx="10" fill="#0D7377"/><text x="350" y="75" text-anchor="middle" fill="#F6F1E6" font-size="13">Analytics</text><rect x="440" y="48" width="100" height="44" rx="10" fill="#14919B"/><text x="490" y="75" text-anchor="middle" fill="#F6F1E6" font-size="13">AI / rule</text><rect x="300" y="148" width="100" height="44" rx="10" fill="#C4A35A"/><text x="350" y="175" text-anchor="middle" fill="#F6F1E6" font-size="13">Actuator</text><rect x="160" y="148" width="100" height="44" rx="10" fill="#8A7030"/><text x="210" y="175" text-anchor="middle" fill="#F6F1E6" font-size="13">UI / app</text><path d="M120 70 H160 M260 70 H300 M400 70 H440 M490 92 V148 H400" fill="none" stroke="#1B365D" stroke-width="2"/><path d="M300 170 H260" fill="none" stroke="#1B365D" stroke-width="2"/><text x="280" y="232" text-anchor="middle" class="svg-label">Collect → carry → explain → decide → act → show</text>
+</svg><figcaption>Figure L22.1 — Smart irrigation: moisture sensor → radio → cloud analysis → valve → farmer’s phone.</figcaption></figure>
+<figure class="wide"><svg class="diagram" viewBox="0 0 560 124" width="560" height="124" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect x="20" y="36" width="96" height="44" rx="8" fill="#1B365D"/><text x="68" y="63" text-anchor="middle" fill="#F6F1E6" font-size="12">Collect</text><path d="M116 58 H130" stroke="#C4A35A" stroke-width="3"/><rect x="130" y="36" width="96" height="44" rx="8" fill="#1B365D"/><text x="178" y="63" text-anchor="middle" fill="#F6F1E6" font-size="12">Store</text><path d="M226 58 H240" stroke="#C4A35A" stroke-width="3"/><rect x="240" y="36" width="96" height="44" rx="8" fill="#1B365D"/><text x="288" y="63" text-anchor="middle" fill="#F6F1E6" font-size="12">Clean</text><path d="M336 58 H350" stroke="#C4A35A" stroke-width="3"/><rect x="350" y="36" width="96" height="44" rx="8" fill="#1B365D"/><text x="398" y="63" text-anchor="middle" fill="#F6F1E6" font-size="12">Analyse</text><path d="M446 58 H460" stroke="#C4A35A" stroke-width="3"/><rect x="460" y="36" width="96" height="44" rx="8" fill="#1B365D"/><text x="508" y="63" text-anchor="middle" fill="#F6F1E6" font-size="12">Visualise</text><text x="280" y="110" text-anchor="middle" class="svg-label">Raw marks become a pass/fail chart only after cleaning</text>
+</svg><figcaption>Figure L22.2 — Raw records become a decision only after cleaning.</figcaption></figure>
+<table><thead><tr><th></th><th>IoT</th><th>Analytics</th><th>AI</th></tr></thead><tbody><tr><td>Job</td><td>Sense and actuate</td><td>Find patterns</td><td>Decide or predict</td></tr><tr><td>Pieces</td><td>Sensors, actuators, links, cloud, UI</td><td>Collect–store–clean–analyse–visualise</td><td>Models, learning</td></tr><tr><td>Example</td><td>Soil probe, smartwatch</td><td>Pass/fail pie chart</td><td>Face unlock, recommendation</td></tr></tbody></table>
+<p><strong>Sensor ≠ actuator.</strong> A moisture probe does not open the tap; the valve does. Connectivity (Wi-Fi, Bluetooth, 4G/5G, LoRa) carries the message. Cloud stores the history. The UI is how a human looks and commands.</p>
+<p>Memorise the smart-home skeleton: sensor → Wi-Fi → hub/cloud → analytics vs set-point → rule/AI → actuator → phone UI. If Wi-Fi dies the chain breaks — that one failure sentence shows you understand dependency.</p>
+<aside class="callout exam"><div class="tag">LONG-ANSWER SKELETON (6 marks)</div><div>A farmer in Sindh wants automatic irrigation. One mark each: sensor, link, decide/process, valve, farmer UI, and where analytics/AI sit on the decision side.</div></aside>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. Watch → phone heart-rate is mainly which tech? 2. Device that judges dry soil vs opens the valve? 3. Duplicate rows are which analytics step?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Write the irrigation paragraph in six labelled sentences without looking. Then add the failure sentence (Wi-Fi dies).</div></aside></article>
+<article class="lecture" id="l23"><div class="lec-head"><div class="lec-num">L23</div><div class="lec-titles"><div class="lec-meta">Unit 5 · Applications · 45 min · Intermediate / Class XI</div><h1>Sources, impacts, and assistive technology</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Classify primary, secondary, and tertiary sources.</li><li>Write a 4-mark impact paragraph: help + harm + responsible action.</li><li>Name four assistive-tech families.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>IoT collects, analytics speaks, AI acts. Today: can you trust the story, and who does computing include?</div></aside>
+<table><thead><tr><th>Kind</th><th>Meaning</th><th>Example</th></tr></thead><tbody><tr><td>Primary</td><td>First-hand original</td><td>Interview, NADRA CNIC capture</td></tr><tr><td>Secondary</td><td>Already explained</td><td>Textbook, PBS census summary</td></tr><tr><td>Tertiary</td><td>Quick digest</td><td>Encyclopedia, many Wikipedia leads</td></tr></tbody></table>
+<table><thead><tr><th>Exhibit</th><th>Verdict</th></tr></thead><tbody><tr><td>Your interview with the librarian</td><td>Primary source / primary data</td></tr><tr><td>PBS graph of literacy rates</td><td>Secondary</td></tr><tr><td>Wikipedia lead paragraph</td><td>Tertiary; start only</td></tr><tr><td>Anonymous “forward this” image</td><td>Unreliable — no author or date</td></tr><tr><td>Government .gov.pk PDF, 2024</td><td>Usually reliable secondary</td></tr></tbody></table>
+<p>Impact formula: <strong>field + one concrete help + one concrete harm + one responsible action</strong>. “In education, recorded lessons let a student replay a proof (help), but six-hour screen days blunt attention (harm). A responsible student uses the recording for the hard ten minutes, then walks.”</p>
+<p><strong>Assistive tech</strong> — mobility (wheelchair), sensory (NVDA screen reader), communication (picture boards), cognitive (audiobooks). They are how computing keeps its promise to everyone. Importance: education access, communication, independence, work, social life.</p>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. Interview is which source? 2. Two reasons a website is unreliable? 3. What does a screen reader do?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Classify five sources actually on your phone. Then write one impact paragraph for healthcare using the four-sentence formula.</div></aside></article>
+<article class="lecture" id="l24"><div class="lec-head"><div class="lec-num">L24</div><div class="lec-titles"><div class="lec-meta">Unit 6 · Digital Literacy · 45 min · Intermediate / Class XI</div><h1>Digital literacy — find, judge, collect, show</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Use quotes, filetype:, and site: in a search.</li><li>Tell qualitative from quantitative, primary data from secondary data.</li><li>Design an ethical 90-minute mini inquiry.</li></ul></div></aside><aside class="callout recap"><div class="tag">LAST LECTURE</div><div>Sources can lie. Literacy is the filter: find, judge, collect, and show — without stealing words or leaking private data.</div></aside>
+<figure class="wide"><svg class="diagram" viewBox="0 0 560 116" width="560" height="116" xmlns="http://www.w3.org/2000/svg" role="img">
+<circle cx="60" cy="48" r="28" fill="#0D7377"/><text x="60" y="52" text-anchor="middle" fill="#F6F1E6" font-size="18" font-weight="700">1</text><text x="60" y="96" text-anchor="middle" class="svg-tiny">Question</text><path d="M90 48 H132" stroke="#C4A35A" stroke-width="2"/><circle cx="168" cy="48" r="28" fill="#0D7377"/><text x="168" y="52" text-anchor="middle" fill="#F6F1E6" font-size="18" font-weight="700">2</text><text x="168" y="96" text-anchor="middle" class="svg-tiny">Search</text><path d="M198 48 H240" stroke="#C4A35A" stroke-width="2"/><circle cx="276" cy="48" r="28" fill="#0D7377"/><text x="276" y="52" text-anchor="middle" fill="#F6F1E6" font-size="18" font-weight="700">3</text><text x="276" y="96" text-anchor="middle" class="svg-tiny">Collect</text><path d="M306 48 H348" stroke="#C4A35A" stroke-width="2"/><circle cx="384" cy="48" r="28" fill="#0D7377"/><text x="384" y="52" text-anchor="middle" fill="#F6F1E6" font-size="18" font-weight="700">4</text><text x="384" y="96" text-anchor="middle" class="svg-tiny">Analyse</text><path d="M414 48 H456" stroke="#C4A35A" stroke-width="2"/><circle cx="492" cy="48" r="28" fill="#0D7377"/><text x="492" y="52" text-anchor="middle" fill="#F6F1E6" font-size="18" font-weight="700">5</text><text x="492" y="96" text-anchor="middle" class="svg-tiny">Artefact</text>
+</svg><figcaption>Figure L24.1 — From a sharp question to a final artefact.</figcaption></figure>
+<table><thead><tr><th></th><th>Qualitative</th><th>Quantitative</th></tr></thead><tbody><tr><td>Nature</td><td>Words, reasons, feelings</td><td>Numbers you can count</td></tr><tr><td>Ask</td><td>Why / how</td><td>How many / how much</td></tr><tr><td>Example</td><td>“Notifications break my focus”</td><td>4 hours/day, 72% distracted</td></tr></tbody></table>
+<p><strong>Primary data</strong> is what you gather for this question. <strong>Secondary data</strong> already exists (a PBS table). A NADRA record is a primary <em>source</em>; a published NADRA statistic you download is secondary <em>data for you</em>.</p>
+<p>Advanced search: quotes for a phrase, <code>filetype:pdf</code> for reports, <code>site:.edu</code> or <code>site:.gov.pk</code> for a domain family. Best PDF query for internet use in Pakistan: <code>"internet usage in Pakistan" filetype:pdf</code>.</p>
+<p>Ninety-minute inquiry: one sharp question · two advanced searches · eight mixed items (no CNIC, no phone) · 15 classmates with permission · one chart · one recommendation aimed at a real audience (principal, parents, or students).</p>
+<aside class="callout mistake"><div class="tag">NOT AN ARTEFACT</div><div>A decorated Canva file is not an artefact if it never answers the question. Evidence → claim → recommendation. Copying without credit is plagiarism. Asking permission is ethics, not politeness.</div></aside>
+<aside class="callout exit"><div class="tag">EXIT TICKET</div><div>1. Digital literacy in one sentence. 2. What does site: do? 3. Your own survey replies — primary or secondary data?</div></aside>
+<aside class="callout hw"><div class="tag">HOMEWORK</div><div>Write eight survey items on weekend internet hours. Mark which are qualitative. Remove any personal-id field. State your sample and your permission sentence.</div></aside></article>
+<article class="lecture" id="l25"><div class="lec-head"><div class="lec-num">L25</div><div class="lec-titles"><div class="lec-meta">All units · Closed book · 60–70 min · Intermediate / Class XI</div><h1>Revision sitting — cards, burglar alarm, 40-mark paper</h1></div></div><aside class="callout outcomes"><div class="tag">TODAY YOU WILL BE ABLE TO</div><div><ul class="tight"><li>Recite the seven cards without notes.</li><li>Build Y = A · (D + W) and poke eight rows.</li><li>Sit the 40-mark rehearsal and mark it the same evening.</li></ul></div></aside><aside class="callout recap"><div class="tag">COURSE CLOSES</div><div>Twenty-four sittings. Today you produce traces, not highlights.</div></aside>
+<h2>Burglar-alarm studio</h2>
+<p>Armed switch \(A\), door \(D\), window \(W\). Siren</p>
+\[ Y = A \cdot (D + W). \]
+<figure class="wide"><svg class="diagram" viewBox="0 0 460 210" width="460" height="210" xmlns="http://www.w3.org/2000/svg" role="img">
+<text x="18" y="38" class="svg-tiny">D door</text><text x="18" y="88" class="svg-tiny">W window</text><text x="18" y="148" class="svg-tiny">A armed</text><line x1="70" y1="34" x2="108" y2="34" stroke="#1B365D" stroke-width="2"/><line x1="70" y1="84" x2="108" y2="84" stroke="#1B365D" stroke-width="2"/><path d="M108 14 Q126 59 108 104 Q178 104 196 59 Q178 14 108 14 Z" fill="#EEF4F6" stroke="#1B365D" stroke-width="2.3"/><text x="148" y="64" text-anchor="middle" class="svg-tiny">OR</text><line x1="196" y1="59" x2="250" y2="59" stroke="#1B365D" stroke-width="2"/><line x1="70" y1="144" x2="250" y2="144" stroke="#1B365D" stroke-width="2"/><path d="M250 40 H300 C342 40, 342 164, 300 164 H250 Z" fill="#EEF4F6" stroke="#1B365D" stroke-width="2.3"/><text x="286" y="110" text-anchor="middle" class="svg-tiny">AND</text><line x1="342" y1="102" x2="390" y2="102" stroke="#1B365D" stroke-width="2"/><text x="398" y="107" class="svg-tiny">Y siren</text><text x="220" y="196" text-anchor="middle" class="svg-label">Y = A · (D + W)</text>
+</svg><figcaption>Figure L25.1 — OR of the contacts, then AND with the armed switch.</figcaption></figure>
+<p>If \(A=0\) the house stays quiet. Build it in LogiSim and poke all eight rows.</p>
+<h2>Recitation cards</h2>
+<p><strong>A Gates.</strong> AND all 1s · OR any 1 · NOT flip · NAND not-all-1s · NOR only all 0s · XOR different · XNOR same · rows \(2^n\).</p>
+<p><strong>B SDLC.</strong> Analyse → Design → Code → Test → Deploy → Maintain (CAPP).</p>
+<p><strong>C OSI.</strong> Please Do Not Throw Sausage Pizza Away. ping = ICMP = layer 3.</p>
+<p><strong>D Algorithms.</strong> Bubble neighbours · Selection parks min · Linear any list · Binary sorted only · \(\mathrm{mid}=\lfloor(lo+hi)/2\rfloor\).</p>
+<p><strong>E Python.</strong> input → str · indent 4 · = vs == · syntax / runtime / logic.</p>
+<p><strong>F Data.</strong> PK unique · FK points home · M:N + junction · AND same row · OR different rows.</p>
+<p><strong>G Society.</strong> Collect / explain / decide · sensor ≠ actuator · consent · no plagiarism.</p>
+<h2>40-mark rehearsal (60 minutes, closed book)</h2>
+<p><strong>A (10×1).</strong> Digital levels? XOR 1 when? First SDLC phase? TCP/IP layer count? Search that needs sorted data? <code>input()</code> type? ER rectangle? Soil dryness device? Your own survey replies? <code>site:</code> does what?</p>
+<p><strong>B (6×2).</strong> Analog vs digital · when Waterfall · why binary search fails on {9, 1, 4, 7} · <code>=</code> vs <code>==</code> · referential integrity · NADRA interview vs textbook paragraph.</p>
+<p><strong>C (3×6).</strong> Truth table of \(Y=A'\cdot B+C\) plus SOP · Bubble-sort trace of {6, 2, 5, 1} · Sindh irrigation chain naming sensor, link, analytics, AI, actuator, UI.</p>
+<p><strong>Scheme A:</strong> two values; different; analysis; 4; binary; str; entity; sensor; primary; restrict domain.</p>
+<p><strong>Scheme B–C (short).</strong> Analog continuous / digital two levels. Waterfall when requirements are frozen. Binary search needs order. = stores, == tests. FK must match a living PK. Interview = primary; textbook = secondary. C1 eight rows + SOP. C2 passes → {2,5,1,6}, {2,1,5,6}, {1,2,5,6}; Selection swaps less. C3 six labelled sentences.</p>
+<h2>Three days without a teacher</h2>
+<p><strong>Day 1.</strong> Seven 2-input tables from a blank page. K-map \(Y=\sum m(1,3,5,7)\). OSI both ways. HTTPS encapsulation in five sentences.</p>
+<p><strong>Day 2.</strong> Both sorts on {8, 3, 6, 2}. Binary-search 6 in {1..9}. Calculator + guess game; break them; read the traceback.</p>
+<p><strong>Day 3.</strong> Library or clinic ER. AND vs OR query rows. Irrigation long answer. Classify five phone sources. Sit this paper again. Target 32 / 40.</p>
+<aside class="callout exam"><div class="tag">READY MEANS</div><div>A ready Intermediate student scores 28+ and can explain every miss. The board paper rewards people who can do a truth table, trace a sort, write a small program, draw an ER fragment, and judge a source.</div></aside></article>
+<p class="lead">If you have worked the amber boxes twice, you are the teacher you were waiting for. Take Lecture 25 again in a month.</p>
+</main>
+</body>
+</html>

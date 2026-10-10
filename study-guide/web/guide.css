@@ -151,6 +151,59 @@ figcaption {
 ol.tight li, ul.tight li { margin: 2px 0; }
 .page-break { page-break-before: always; }
 mjx-container { font-size: 103%; }
+.lecture {
+  page-break-before: always;
+  page-break-inside: auto;
+}
+.lecture:first-of-type { page-break-before: auto; }
+.lec-head {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  margin: 0 0 12px;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+.lec-num {
+  background: var(--navy);
+  color: #fff !important;
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 16pt;
+  font-weight: 700;
+  min-width: 22mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 6px;
+}
+.lec-titles h1 {
+  border: none;
+  margin: 0 0 4px;
+  padding: 0;
+  font-size: 16.5pt;
+}
+.lec-meta {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 8.5pt;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.outcomes, .exit, .hw, .recap {
+  page-break-inside: avoid;
+  page-break-before: avoid;
+}
+.outcomes { border-left-color: var(--navy); background: var(--pale); }
+.recap { border-left-color: var(--teal); }
+.exit { border-left-color: #2d6a4f; background: var(--green); }
+.hw { border-left-color: var(--gold); background: #fbf3d9; }
+.toc a { color: var(--navy); text-decoration: none; }
+.period {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 9pt;
+  color: var(--teal);
+  font-weight: 700;
+}
 @media print {
   .cover { min-height: 100vh; }
   a { color: inherit; text-decoration: none; }
