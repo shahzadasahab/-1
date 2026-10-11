@@ -15,9 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/primary"
-            app:navigationIconTint="@color/on_primary"
-            app:titleTextColor="@color/on_primary" />
-
+            app:titleTextColor="@color/on_primary"
+            app:navigationIconTint="@color/on_primary" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -35,202 +34,129 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardBackgroundColor="@color/surface_variant"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/guideCoverImage"
+                        android:id="@+id/coverImage"
                         android:layout_width="match_parent"
-                        android:layout_height="140dp"
-                        android:contentDescription="@string/posture_illustration"
-                        android:padding="12dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/pic_guide_cover" />
+                        android:layout_height="168dp"
+                        android:contentDescription="@string/cover_desc"
+                        android:scaleType="centerCrop" />
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/app_subtitle"
-                        android:textColor="@color/primary"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                    <TextView
-                        android:id="@+id/versionBadge"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:gravity="center"
-                        android:textColor="@color/secondary"
-                        android:textSize="12sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/app_subtitle"
+                            android:textColor="@color/primary"
+                            android:textStyle="bold"
+                            android:textSize="14sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/welcome_title"
-                        android:textColor="@color/on_surface"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/versionBadge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="12sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:lineSpacingExtra="4dp"
-                        android:text="@string/welcome_message"
-                        android:textColor="@color/on_surface_variant"
-                        android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/welcome_title"
+                            android:textColor="@color/on_surface"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:lineSpacingExtra="3dp"
+                            android:text="@string/welcome_message"
+                            android:textColor="@color/on_surface_variant"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/progressText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textColor="@color/primary"
+                            android:textStyle="bold" />
+
+                        <ProgressBar
+                            android:id="@+id/progressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:layout_marginTop="6dp"
+                            android:progressTint="@color/secondary" />
+                    </LinearLayout>
                 </LinearLayout>
-
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/guide_chapters"
-                android:textColor="@color/on_surface"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/chapterList"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="never" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="@string/sex_education_for_him"
-                android:textColor="@color/on_surface"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCoach"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:text="@string/urdish_coach" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/sex_education_for_him_hint"
-                android:textColor="@color/on_surface_variant"
-                android:textSize="13sp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMock"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1"
+                    android:text="@string/mock_tests" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/forHimList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="never" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="@string/sex_education_for_her"
-                android:textColor="@color/on_surface"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGlossary"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:text="@string/glossary" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="@string/sex_education_for_her_hint"
-                android:textColor="@color/on_surface_variant"
-                android:textSize="13sp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/forHerList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="never" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="@string/imagination_postures"
-                android:textColor="@color/on_surface"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/imagination_postures_hint"
-                android:textColor="@color/on_surface_variant"
-                android:textSize="13sp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/imaginationList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="never" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/browse_categories"
+                android:text="@string/units_title"
                 android:textColor="@color/on_surface"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/categoryList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:clipToPadding="false"
-                android:overScrollMode="never" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/all_postures"
-                android:textColor="@color/on_surface"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/postureList"
+                android:id="@+id/unitList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false"
                 android:overScrollMode="never" />
-
-            <TextView
-                android:id="@+id/emptyText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="32dp"
-                android:text="@string/no_postures"
-                android:textColor="@color/on_surface_variant"
-                android:visibility="gone" />
-
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
