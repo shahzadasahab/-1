@@ -25,13 +25,18 @@ def display_text(
 ) -> str:
     cards = "\n".join(f"• {t}" for t in topics)
     return (
-        f"Day {n:02d} of 30 · Week {week} · {kind}\n"
+        f"Tutoring session · Day {n:02d} of 30 · Week {week} · {kind}\n"
         f"Chapter: {chapter}\n"
-        f"Focus: {focus}\n"
-        f"★ Golden: {golden}\n"
+        f"Learning aim: {focus}\n"
+        f"★ Golden (must be spoken without notes): {golden}\n"
         f"Booklet pages {start}–{end} (as printed).\n\n"
-        f"Today's cards:\n{cards}\n\n"
-        "Read the embedded pages as printed. English exam terms stay exactly as written."
+        "3-hour tutoring block\n"
+        "1. Recap (0–15 min) — yesterday’s Golden, closed book.\n"
+        "2. Teach (15–105 min) — today’s cards from the booklet.\n"
+        "3. Drill (105–135 min) — closed-book questions.\n"
+        "4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\n"
+        f"Learning outcomes\n{cards}\n\n"
+        "Exam rule: keep English terms exactly as printed. Do not translate them."
     )
 
 
@@ -65,35 +70,38 @@ def day(
 
 
 XI_INTRO = T(
-    "یہ {Computer Science XI} کا تیس دن کا {Crash Course} ہے، {New Sindh Curriculum 2026}۔",
+    "السلام علیکم۔ میں آپ کا {Computer Science} کا استاد ہوں۔ یہ {Class XI} کا تیس دن کا {Crash Course} ہے، {New Sindh Curriculum 2026}۔",
+    "میں اردو میں سمجھاؤں گا، مگر امتحانی اصطلاحات انگریزی میں ویسی ہی رہیں گی جیسے کتابچہ پر چھپی ہیں — ان کا ترجمہ نہ کیجیے گا۔",
     "دن 1 سے 23 ہر موضوع revision cards کی صورت میں پڑھاتے ہیں۔ ہر باب کا آخری دن timed {Checkpoint} ہے۔",
     "دن 24 سے 26 صرف ★ {Golden blitz} ہے۔ دن 27 recaps، دن 28 {Mock}، دن 29 marking، دن 30 {Repair}۔",
-    "ہر تدریسی دن تین گھنٹے: پہلے 15 منٹ کل کا ★ {Golden} زبانی، پھر آج کے کارڈز، پھر {Closed-book drill}، رات کو {Define} · {Explain} · {Example} · {Diagram} · {Working} سے پانچ نمبر۔",
+    "ہر تدریسی نشست تین گھنٹے: پہلے 15 منٹ کل کا ★ {Golden} زبانی، پھر آج کے کارڈز، پھر {Closed-book drill}، رات کو {Define} · {Explain} · {Example} · {Diagram} · {Working} سے پانچ نمبر۔",
     "پیچھے رہو تو صرف ★ {Golden} کارڈز کرو۔ {Checkpoint} مت چھوڑو۔ نیا باب اس وقت تک نہ شروع کرو جب تک اس باب کی {Golden} تعریف زبانی نہ آئے۔",
-    "فون دوسرے کمرے میں رکھو۔ صفحات جوں کے توں دیکھیں، اصطلاحات انگریزی میں ویسی ہی یاد کریں جیسے چھپی ہیں۔",
+    "فون دوسرے کمرے میں رکھو۔ صفحات جوں کے توں دیکھیں۔ استاد کے ساتھ سمجھیں، صرف پڑھیں نہیں۔",
 )
 
 XI_INTRO_EN = T(
-    "This is the Computer Science XI 30-Day Crash Course for the New Sindh Curriculum 2026.",
+    "This is the Computer Science XI academic tutoring edition of the 30-Day Crash Course for the New Sindh Curriculum 2026.",
+    "The tutor speaks Urdu. English exam terms stay exactly as printed — do not translate them.",
     "Days 1–23 teach every topic as revision cards. The last day of each chapter is a timed Checkpoint.",
     "Days 24–26 are Golden blitz only. Day 27 is recaps. Day 28 is the mock. Day 29 you mark. Day 30 you repair and stop.",
-    "Every teaching day is 3 hours: 0–15 min recite yesterday’s Golden, 15–105 min today’s cards, 105–135 min closed-book drill, 135–180 min one 5-mark answer using Define · Explain · Example · Diagram · Working.",
+    "Every teaching session is 3 hours: 0–15 min recite yesterday’s Golden, 15–105 min today’s cards, 105–135 min closed-book drill, 135–180 min one 5-mark answer using Define · Explain · Example · Diagram · Working.",
     "If you fall behind, do only the Golden cards. Never skip a checkpoint. Do not start a new chapter until you can say that chapter’s Golden definitions without looking.",
-    "Phone in another room. Study the booklet pages as printed. English exam terms stay exactly as written.",
+    "Phone in another room. Study the booklet pages as printed. Follow the tutor; do not only read.",
 )
 
 XII_INTRO_EN = T(
-    "This is the Computer Science XII 30-Day Crash Course for the New Sindh Curriculum 2026.",
+    "This is the Computer Science XII academic tutoring edition of the 30-Day Crash Course for the New Sindh Curriculum 2026.",
     "Chapter 1 Computer Systems (HCI). Chapter 2 Computational Thinking and Algorithms. Chapter 3 Programming Fundamentals. Chapter 4 Data and Analysis. Chapter 5 Application and Impacts of Computing. Chapter 6 Entrepreneurship in the Digital Age.",
+    "The tutor speaks Urdu. English terms such as HCI, Trace Tables, Big O Notation, and MVP stay as written.",
     "Same method: 3 hours, Golden first, never skip a Checkpoint. Last week is Golden blitz, Recap, Mock, Mark, Repair.",
-    "Booklet pages stay as printed. Listen in Urdu; English terms such as HCI, Trace Tables, Big O Notation, and MVP stay as written.",
 )
 
 XII_INTRO = T(
-    "یہ {Computer Science XII} کا تیس دن کا {Crash Course} ہے، {New Sindh Curriculum 2026}۔",
+    "السلام علیکم۔ میں آپ کا {Computer Science} کا استاد ہوں۔ یہ {Class XII} کا تیس دن کا {Crash Course} ہے، {New Sindh Curriculum 2026}۔",
+    "میں اردو میں سمجھاؤں گا؛ امتحانی اصطلاحات جیسے {HCI}، {Trace Tables}، {Big O Notation}، {MVP} انگریزی میں ویسی ہی رہیں گی جیسے کتابچہ پر چھپی ہیں۔",
     "باب ایک {Computer Systems (HCI)}، باب دو {Computational Thinking and Algorithms}، باب تین {Programming Fundamentals}، باب چار {Data and Analysis}، باب پانچ {Application and Impacts of Computing}، باب چھ {Entrepreneurship in the Digital Age}۔",
-    "طریقہ وہی ہے: تین گھنٹے، ★ {Golden} پہلے، {Checkpoint} مت چھوڑو، آخری ہفتے {Golden blitz}، {Recap}، {Mock}، {Mark}، {Repair}۔",
-    "صفحات جوں کے توں ہیں۔ لیکچر اردو میں ہے، اصطلاحات جیسے {HCI}، {Trace Tables}، {Big O Notation}، {MVP} انگریزی میں ویسی ہی بولی جائیں گی۔",
+    "طریقہ وہی ہے: تین گھنٹے کی تدریسی نشست، ★ {Golden} پہلے، {Checkpoint} مت چھوڑو، آخری ہفتے {Golden blitz}، {Recap}، {Mock}، {Mark}، {Repair}۔",
+    "صفحات جوں کے توں کھولیں۔ استاد کے ساتھ سمجھیں۔",
 )
 
 XI = [

@@ -32,9 +32,9 @@ data class CourseDay(
 
     fun pageScript(bookletPage: Int): String {
         val topicsLine = topics.joinToString("، ") { "{$it}" }
-        return "یہ کتابچہ کا صفحہ {$bookletPage} ہے، {$chapter}، $focus۔ " +
-            "صفحہ جوں کا توں دیکھیں۔ آج کے کارڈز: $topicsLine۔ " +
-            "★ Golden موضوع {$golden} ہے۔ اصطلاحات انگریزی میں ویسی ہی بولی جائیں گی جیسے صفحے پر لکھی ہیں۔"
+        return "اب ہم کتابچے کا صفحہ {$bookletPage} ساتھ پڑھتے ہیں، باب {$chapter}، {${focus}}۔ " +
+            "صفحہ جوں کا توں کھلا رکھیں۔ آج کے کارڈز: $topicsLine۔ " +
+            "★ {Golden} موضوع {$golden} ہے۔ امتحانی اصطلاحات انگریزی میں ویسی ہی بولی جائیں گی جیسے صفحے پر لکھی ہیں۔"
     }
 
     fun isRevision(): Boolean = kind in REVISION_KINDS

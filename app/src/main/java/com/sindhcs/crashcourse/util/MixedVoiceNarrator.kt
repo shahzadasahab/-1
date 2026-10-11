@@ -19,7 +19,7 @@ class MixedVoiceNarrator(
     private val onLanguageIssue: ((String) -> Unit)? = null
 ) : TextToSpeech.OnInitListener {
 
-    data class Segment(val text: String, val englishTerm: Boolean)
+    data class Segment(val text: String, val englishTerm: Boolean, val pauseMs: Long = 0)
 
     private var tts: TextToSpeech? = null
     private var isReady = false
@@ -36,7 +36,7 @@ class MixedVoiceNarrator(
     override fun onInit(status: Int) {
         isReady = status == TextToSpeech.SUCCESS
         if (isReady) {
-            tts?.setSpeechRate(0.88f * rateScale)
+            tts?.setSpeechRate(0.82f * rateScale)
             tts?.setPitch(1.0f)
             urduAvailable = localeAvailable(URDU_LOCALES)
             attachProgressListener()
@@ -67,6 +67,13 @@ class MixedVoiceNarrator(
             if (!segment.englishTerm && !urduAvailable) return@forEachIndexed
             chunk(segment.text).forEach { part ->
                 queue.addLast(segment.copy(text = part) to "seg_${index}_${part.hashCode()}")
+                val pause = when {
+                    part.endsWith('۔') -> 420L
+                    part.endsWith('.') || part.endsWith('?') -> 360L
+                    segment.englishTerm -> 180L
+                    else -> 220L
+                }
+                queue.addLast(Segment("", false, pause) to "pause_${index}_${part.hashCode()}")
             }
         }
         if (queue.isEmpty()) return false
@@ -106,11 +113,15 @@ class MixedVoiceNarrator(
             return
         }
         val (segment, id) = item
+        val mode = if (flush) TextToSpeech.QUEUE_FLUSH else TextToSpeech.QUEUE_ADD
+        if (segment.pauseMs > 0) {
+            engine.playSilentUtterance(segment.pauseMs, mode, id)
+            return
+        }
         applyLocale(engine, segment.englishTerm)
         val params = Bundle().apply {
             putString(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, id)
         }
-        val mode = if (flush) TextToSpeech.QUEUE_FLUSH else TextToSpeech.QUEUE_ADD
         engine.speak(segment.text, mode, params, id)
     }
 
@@ -144,7 +155,7 @@ class MixedVoiceNarrator(
             if (engine.isLanguageAvailable(locale) >= TextToSpeech.LANG_AVAILABLE) {
                 engine.language = locale
                 selectBestVoice(engine, locale)
-                engine.setSpeechRate((if (englishTerm) 0.82f else 0.88f) * rateScale)
+                engine.setSpeechRate((if (englishTerm) 0.76f else 0.82f) * rateScale)
                 return
             }
         }

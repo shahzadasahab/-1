@@ -23,10 +23,7 @@ object CourseRepository {
     fun getDay(context: Context, dayId: String): CourseDay? =
         getCourses(context).asSequence().flatMap { it.days.asSequence() }.find { it.id == dayId }
 
-    fun getWelcomeScript(): String =
-        "السلام علیکم۔ یہ {New Sindh Curriculum 2026} کا {Computer Science XI} اور {Computer Science XII} تیس دن کا {Crash Course} ہے۔ " +
-            "ہر سبق کی اصل صفحات جوں کی توں دکھائی جاتی ہیں۔ لیکچر اردو میں سنایا جاتا ہے، اور امتحانی اصطلاحات انگریزی میں ویسی ہی رہتی ہیں جیسے صفحے پر لکھی ہیں، مثلاً {Algorithm}، {Logic Gates}، {SDLC} اور {Neural Networks}۔ " +
-            "پہلے {Class XI} یا {Class XII} چنیں، دن کھولیں، صفحات دیکھیں، اور لیکچر سنیں۔ پیچھے رہو تو صرف ★ {Golden} کارڈز کرو، {Checkpoint} مت چھوڑو۔"
+    fun getWelcomeScript(): String = TutorScript.welcome()
 
     fun getHowToDay(course: Course): CourseDay = CourseDay(
         id = "${course.id}-howto",
@@ -110,13 +107,18 @@ object CourseRepository {
         end: Int
     ): String {
         val cards = topics.joinToString("\n") { "• $it" }
-        return "Day $day of 30 · Week $week · $kind\n" +
+        return "Tutoring session · Day $day of 30 · Week $week · $kind\n" +
             "Chapter: $chapter\n" +
-            "Focus: $focus\n" +
-            "★ Golden: $golden\n" +
+            "Learning aim: $focus\n" +
+            "★ Golden (must be spoken without notes): $golden\n" +
             "Booklet pages $start–$end (as printed).\n\n" +
-            "Today's cards:\n$cards\n\n" +
-            "Read the embedded pages as printed. English exam terms stay exactly as written."
+            "3-hour tutoring block\n" +
+            "1. Recap (0–15 min) — yesterday’s Golden, closed book.\n" +
+            "2. Teach (15–105 min) — today’s cards from the booklet.\n" +
+            "3. Drill (105–135 min) — closed-book questions.\n" +
+            "4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\n" +
+            "Learning outcomes\n$cards\n\n" +
+            "Exam rule: keep English terms exactly as printed. Do not translate them."
     }
 
     private fun <T> JSONArray.mapObjects(transform: (JSONObject) -> T): List<T> =
