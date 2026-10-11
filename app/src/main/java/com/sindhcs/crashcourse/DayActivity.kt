@@ -14,6 +14,7 @@ import com.sindhcs.crashcourse.data.CourseRepository
 import com.sindhcs.crashcourse.data.PageNarration
 import com.sindhcs.crashcourse.data.PageRepository
 import com.sindhcs.crashcourse.data.ProgressStore
+import com.sindhcs.crashcourse.data.LectureCue
 import com.sindhcs.crashcourse.data.TutorPhase
 import com.sindhcs.crashcourse.data.TutorScript
 import com.sindhcs.crashcourse.databinding.ActivityDayBinding
@@ -40,6 +41,10 @@ class DayActivity : AppCompatActivity() {
     private var pageAdapter: PdfPageAdapter? = null
     private var pages: List<Int> = emptyList()
     private val speeds = floatArrayOf(0.8f, 1.0f, 1.25f)
+    private var cues: List<LectureCue> = emptyList()
+    private var cueIndex = -1
+    private var autoSync = false
+    private var syncingPage = false
 
     override fun attachBaseContext(newBase: android.content.Context) {
         super.attachBaseContext(LocaleHelper.wrap(newBase))
@@ -72,15 +77,24 @@ class DayActivity : AppCompatActivity() {
 
         narrator = MixedVoiceNarrator(
             context = this,
-            onReadyChanged = { voiceReady = it },
+            onReadyChanged = { ready ->
+                voiceReady = ready
+                if (ready) updateVoiceStatus()
+            },
             onSpeakingChanged = {
                 speaking = it
                 if (it) window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
                 else window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
                 invalidateOptionsMenu()
-                binding.listenButton.text = getString(if (it) R.string.stop else R.string.listen_tutor)
+                binding.listenButton.text = getString(if (it || autoSync) R.string.stop else R.string.listen_tutor)
+                if (!it && !autoSync) {
+                    binding.pagePager.isUserInputEnabled = true
+                    binding.syncBanner.visibility = View.GONE
+                }
             },
-            onLanguageIssue = { Toast.makeText(this, it, Toast.LENGTH_LONG).show() }
+            onLanguageIssue = { Toast.makeText(this, it, Toast.LENGTH_LONG).show() },
+            onScriptFinished = { onCueFinished() },
+            onVoiceReady = { updateVoiceStatus() }
         )
 
         ProgressStore.setLastOpened(this, day.id)
@@ -108,14 +122,10 @@ class DayActivity : AppCompatActivity() {
             }
         })
         updatePageIndicator(0, pages)
+        updateVoiceStatus()
 
-        binding.listenButton.setOnClickListener { toggleSpeech(tutorScript()) }
-        binding.listenPageButton.setOnClickListener {
-            val index = binding.pagePager.currentItem
-            val booklet = pages.getOrElse(index) { day.startPage }
-            val blocks = PageRepository.getBlocks(this, booklet)
-            toggleSpeech(TutorScript.pageWalkthrough(booklet, day, blocks))
-        }
+        binding.listenButton.setOnClickListener { toggleSyncedSession() }
+        binding.listenPageButton.setOnClickListener { toggleCurrentPage() }
         binding.pageTextToggle.setOnClickListener {
             showingPageText = !showingPageText
             binding.pageText.visibility = if (showingPageText) View.VISIBLE else View.GONE
@@ -149,6 +159,95 @@ class DayActivity : AppCompatActivity() {
         binding.doneButton.visibility = if (day.day == 0) View.GONE else View.VISIBLE
     }
 
+    private fun updateVoiceStatus() {
+        val label = narrator?.voiceLabel ?: getString(R.string.voice_loading)
+        binding.voiceStatus.text = getString(R.string.voice_status, label)
+    }
+
+    private fun toggleSyncedSession() {
+        if (speaking || autoSync) {
+            stopSync()
+            return
+        }
+        startCues(TutorScript.cues(this, course, day, selectedPhase()), syncPages = true)
+    }
+
+    private fun toggleCurrentPage() {
+        if (speaking || autoSync) {
+            stopSync()
+            return
+        }
+        val booklet = pages.getOrElse(binding.pagePager.currentItem) { day.startPage }
+        val script = TutorScript.pageWalkthrough(booklet, day, PageRepository.getBlocks(this, booklet))
+        startCues(listOf(LectureCue(booklet, "Booklet $booklet", script)), syncPages = true)
+    }
+
+    private fun startCues(playlist: List<LectureCue>, syncPages: Boolean) {
+        if (playlist.isEmpty()) {
+            Toast.makeText(this, R.string.voice_install_prompt, Toast.LENGTH_LONG).show()
+            return
+        }
+        if (!voiceReady) {
+            Toast.makeText(this, R.string.voice_not_ready, Toast.LENGTH_SHORT).show()
+            return
+        }
+        cues = playlist
+        cueIndex = -1
+        autoSync = syncPages
+        narrator?.setRateScale(ProgressStore.speechRate(this))
+        binding.pagePager.isUserInputEnabled = false
+        playNextCue()
+    }
+
+    private fun playNextCue() {
+        val next = cueIndex + 1
+        if (next >= cues.size) {
+            stopSync()
+            return
+        }
+        cueIndex = next
+        val cue = cues[next]
+        showCuePage(cue)
+        if (narrator?.speakScript(cue.script) != true) {
+            Toast.makeText(this, R.string.voice_install_prompt, Toast.LENGTH_LONG).show()
+            stopSync()
+        }
+    }
+
+    private fun onCueFinished() {
+        if (!autoSync) return
+        binding.root.post { playNextCue() }
+    }
+
+    private fun showCuePage(cue: LectureCue) {
+        val index = pages.indexOf(cue.bookletPage).takeIf { it >= 0 } ?: 0
+        syncingPage = true
+        if (binding.pagePager.currentItem != index) {
+            binding.pagePager.setCurrentItem(index, true)
+        }
+        updatePageIndicator(index, pages)
+        updatePageText()
+        binding.syncBanner.visibility = View.VISIBLE
+        binding.syncBanner.text = getString(
+            R.string.sync_banner,
+            cue.title,
+            cueIndex + 1,
+            cues.size,
+            cue.bookletPage
+        )
+        binding.dayScroll.smoothScrollTo(0, binding.pagesLabel.top)
+        syncingPage = false
+    }
+
+    private fun stopSync() {
+        autoSync = false
+        cueIndex = -1
+        cues = emptyList()
+        binding.pagePager.isUserInputEnabled = true
+        binding.syncBanner.visibility = View.GONE
+        if (speaking) narrator?.stop()
+    }
+
     private fun selectedPhase(): TutorPhase = when (binding.phaseGroup.checkedChipId) {
         R.id.phaseRecap -> TutorPhase.RECAP
         R.id.phaseTeach -> TutorPhase.TEACH
@@ -156,8 +255,6 @@ class DayActivity : AppCompatActivity() {
         R.id.phaseHomework -> TutorPhase.HOMEWORK
         else -> TutorPhase.FULL
     }
-
-    private fun tutorScript(): String = TutorScript.session(this, course, day, selectedPhase())
 
     private fun updateSpeedButton() {
         binding.speedButton.text = getString(R.string.speed_label, "${ProgressStore.speechRate(this)}x")
@@ -180,21 +277,6 @@ class DayActivity : AppCompatActivity() {
         binding.doneButton.text = getString(if (done) R.string.mark_undone else R.string.mark_done)
     }
 
-    private fun toggleSpeech(script: String) {
-        if (speaking) {
-            narrator?.stop()
-            return
-        }
-        if (!voiceReady) {
-            Toast.makeText(this, R.string.voice_not_ready, Toast.LENGTH_SHORT).show()
-            return
-        }
-        narrator?.setRateScale(ProgressStore.speechRate(this))
-        if (narrator?.speakScript(script) != true) {
-            Toast.makeText(this, R.string.voice_install_prompt, Toast.LENGTH_LONG).show()
-        }
-    }
-
     private fun openRelative(delta: Int) {
         val target = course.days.find { it.day == day.day + delta } ?: return
         intent.putExtra(EXTRA_DAY_ID, target.id)
@@ -211,7 +293,7 @@ class DayActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_listen -> {
-                toggleSpeech(tutorScript())
+                toggleSyncedSession()
                 true
             }
             R.id.action_tts_settings -> {
@@ -228,7 +310,7 @@ class DayActivity : AppCompatActivity() {
     }
 
     override fun onPause() {
-        if (speaking) narrator?.stop()
+        stopSync()
         super.onPause()
     }
 

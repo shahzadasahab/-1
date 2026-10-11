@@ -3,7 +3,7 @@
     <string name="app_name">CS Academic Tutor</string>
     <string name="app_subtitle">XI &amp; XII · New Sindh Curriculum 2026</string>
     <string name="welcome_title">Academic Tutoring Edition</string>
-    <string name="welcome_message">A 30-day tutoring desk for the Sindh Computer Science crash-course booklet. On screen everything stays English. The tutor speaks Urdu and leaves exam terms — Algorithm, Logic Gates, SDLC, Neural Networks, MVP — exactly as printed.</string>
+    <string name="welcome_message">A 30-day tutoring desk for the Sindh Computer Science crash-course booklet. On screen everything stays English. An embedded male Urdu teacher (Fasih) explains each scan. English exam terms — Algorithm, Logic Gates, SDLC, Neural Networks, MVP — stay exactly as printed. Pages turn with the lecture.</string>
     <string name="class_xi">Computer Science XI</string>
     <string name="class_xii">Computer Science XII</string>
     <string name="class_xi_hint">Days 1–23 teach · 24–30 revise, mock, repair</string>
@@ -14,7 +14,7 @@
     <string name="listen">Listen as tutor</string>
     <string name="listen_tutor">Listen as tutor</string>
     <string name="listen_welcome">Listen orientation</string>
-    <string name="listen_page">Tutor this page</string>
+    <string name="listen_page">Tutor this scan</string>
     <string name="listen_phase">Session phase</string>
     <string name="stop">Stop</string>
     <string name="transcript">Lesson notes</string>
@@ -28,8 +28,11 @@
     <string name="mark_done">Mark session complete</string>
     <string name="mark_undone">Mark session incomplete</string>
     <string name="done_badge">Done</string>
-    <string name="voice_not_ready">Voice engine not ready</string>
-    <string name="voice_install_prompt">Install Urdu voice data in system Text-to-speech settings so the tutor can speak.</string>
+    <string name="voice_not_ready">Male tutor voice is still loading</string>
+    <string name="voice_install_prompt">The embedded male voice could not start. Wait a moment, or install Urdu in system Text-to-speech settings.</string>
+    <string name="voice_loading">Loading embedded male tutor (Fasih)…</string>
+    <string name="voice_status">Voice: %1$s</string>
+    <string name="sync_banner">Teaching %1$s · cue %2$d of %3$d · booklet page %4$d</string>
     <string name="voice_open_settings">TTS Settings</string>
     <string name="voice_language_fallback">Urdu voice is not installed. English terms will still be spoken as written; install Urdu TTS for the full tutoring session.</string>
     <string name="filter_all">All days</string>
@@ -38,7 +41,7 @@
     <string name="filter_revision">Revision</string>
     <string name="next_day">Next session</string>
     <string name="prev_day">Previous session</string>
-    <string name="version_badge">Version %1$s — Academic tutoring · English text · Urdu voice · terms as printed</string>
+    <string name="version_badge">Version %1$s — Male tutor · page-synced scans · English terms as printed</string>
     <string name="topics_today">Learning outcomes</string>
     <string name="progress_label">%1$d of 30 sessions ticked</string>
     <string name="empty_days">No days in this filter.</string>
@@ -60,5 +63,5 @@
     <string name="phase_drill">Drill 105–135</string>
     <string name="phase_homework">5-mark 135–180</string>
     <string name="method_card_title">How the tutor works</string>
-    <string name="method_card_body">Urdu explanation. English exam terms spoken as written. Booklet pages stay as printed. Three hours, Golden first, never skip a Checkpoint.</string>
+    <string name="method_card_body">Embedded male Urdu tutor (Fasih). English exam terms spoken as written. Booklet scans turn automatically with the lecture. Three hours, Golden first, never skip a Checkpoint.</string>
 </resources>

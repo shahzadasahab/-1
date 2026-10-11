@@ -6,16 +6,59 @@ package com.sindhcs.crashcourse.data
  */
 enum class TutorPhase { FULL, RECAP, TEACH, DRILL, HOMEWORK }
 
+data class LectureCue(
+    val bookletPage: Int,
+    val title: String,
+    val script: String
+)
+
 object TutorScript {
 
     fun welcome(): String = join(
-        "السلام علیکم۔ میں آپ کا {Computer Science} کا استاد ہوں۔",
-        "یہ {New Sindh Curriculum 2026} کا {Class XI} اور {Class XII} تیس دن کا {Crash Course} ہے — ایک تدریسی نشست، صفحہ بہ صفحہ۔",
+        "السلام علیکم۔ میں آپ کا {Computer Science} کا استاد ہوں۔ میری آواز مردانہ تدریسی آواز ہے، درمیانے درجے کے طلبہ کے لیے۔",
+        "یہ {New Sindh Curriculum 2026} کا {Class XI} اور {Class XII} تیس دن کا {Crash Course} ہے — ایک تدریسی نشست، صفحہ بہ صفحہ۔ سکین میری بات کے ساتھ خود کھلتی ہے۔",
         "میں اردو میں سمجھاؤں گا، مگر امتحانی اصطلاحات انگریزی میں ویسی ہی رہیں گی جیسے کتابچہ پر چھپی ہیں، مثلاً {Algorithm}، {Logic Gates}، {SDLC}، {Neural Networks} اور {MVP}۔ ان کا اردو ترجمہ نہ کیجیے گا۔",
         "ہر تدریسی دن تین گھنٹے کی نشست ہے: پہلے پندرہ منٹ کل کا ★ {Golden} کارڈ، پھر آج کے کارڈز، پھر {Closed-book drill}، آخر میں ایک پانچ نمبر کا جواب {Define}، {Explain}، {Example}، {Diagram}، {Working} سے۔",
         "{Class XI} یا {Class XII} کھولیں، دن چنیں، کتابچے کے صفحات جوں کے توں دیکھیں، اور استاد کی نشست سنیں۔",
         "پیچھے رہو تو صرف ★ {Golden} کارڈز کرو۔ {Checkpoint} مت چھوڑو۔"
     )
+
+    fun cues(
+        context: android.content.Context,
+        course: Course,
+        day: CourseDay,
+        phase: TutorPhase
+    ): List<LectureCue> {
+        val pages = if (day.endPage >= day.startPage) {
+            (day.startPage..day.endPage).toList()
+        } else {
+            listOf(day.startPage)
+        }
+        val first = pages.first()
+        val last = pages.last()
+        val allBlocks = dayBlocks(context, day)
+        return when (phase) {
+            TutorPhase.RECAP -> listOf(LectureCue(first, "Recap", recap(course, day)))
+            TutorPhase.DRILL -> listOf(LectureCue(last, "Drill", drill(day, allBlocks)))
+            TutorPhase.HOMEWORK -> listOf(LectureCue(last, "Homework", homework(day)))
+            TutorPhase.TEACH -> pages.map { page ->
+                LectureCue(page, "Booklet $page", pageWalkthrough(page, day, PageRepository.getBlocks(context, page)))
+            }
+            TutorPhase.FULL -> buildList {
+                add(LectureCue(first, "Opening", join(opening(course, day), recap(course, day), teachLead(day))))
+                pages.forEach { page ->
+                    add(
+                        LectureCue(
+                            page,
+                            "Booklet $page",
+                            pageWalkthrough(page, day, PageRepository.getBlocks(context, page))
+                        )
+                    )
+                }
+                add(LectureCue(last, "Close", join(drill(day, allBlocks), homework(day))))
+            }
+        }.filter { it.script.isNotBlank() }
+    }
 
     fun session(context: android.content.Context, course: Course, day: CourseDay, phase: TutorPhase): String {
         val blocks = dayBlocks(context, day)
@@ -135,6 +178,19 @@ object TutorScript {
             first,
             "اگر تعریف نہ آئے تو صفحہ ایک بار کھول کر پڑھیں، پھر فوراً بند کتاب دہرائیں۔"
         )
+    }
+
+    private fun teachLead(day: CourseDay): String {
+        val cards = day.topics.joinToString("، ") { term(it) }.ifBlank { term(day.focus) }
+        return when (day.kind) {
+            "Checkpoint" -> "آج تدریس مختصر ہے کیونکہ آگے {Checkpoint} ہے۔ صفحات کے ساتھ چلتے ہیں۔"
+            "Golden blitz" -> "آج نیا سبق نہیں۔ صفحات پر ★ {Golden} کارڈز دیکھیں گے۔"
+            "Recap", "Mock", "Mark", "Repair", "How-to" -> "اب کتابچے کے صفحات کے ساتھ چلتے ہیں۔"
+            else -> join(
+                "دوسرا مرحلہ: تدریس۔ میں صفحہ بہ صفحہ سکین کھولوں گا، آپ چھپی ہوئی بات دیکھیں۔",
+                "آج کے کارڈز: $cards۔"
+            )
+        }
     }
 
     private fun teach(day: CourseDay): String {
