@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#7B4B6A</color>
-    <color name="primary_dark">#5C3650</color>
-    <color name="primary_light">#E8D5E3</color>
-    <color name="secondary">#B8860B</color>
-    <color name="background">#FFF8F5</color>
+    <color name="primary">#0F4C5C</color>
+    <color name="primary_dark">#0A3440</color>
+    <color name="primary_light">#D4E8EC</color>
+    <color name="secondary">#C45C26</color>
+    <color name="secondary_soft">#F4E0D4</color>
+    <color name="gold">#B8860B</color>
+    <color name="gold_soft">#F8EFC8</color>
+    <color name="background">#F4F7F8</color>
     <color name="surface">#FFFFFF</color>
-    <color name="surface_variant">#F5EDE8</color>
+    <color name="surface_variant">#E8EEF0</color>
     <color name="on_primary">#FFFFFF</color>
-    <color name="on_surface">#2D1F2B</color>
-    <color name="on_surface_variant">#5C4F58</color>
-    <color name="illustration_bg">#F0E6EF</color>
-    <color name="figure_primary">#7B4B6A</color>
-    <color name="figure_secondary">#C49A6C</color>
-    <color name="chip_bg_default">#FFFFFF</color>
+    <color name="on_surface">#142326</color>
+    <color name="on_surface_variant">#4A5B60</color>
+    <color name="teach">#1B6B4A</color>
+    <color name="checkpoint">#8A3B12</color>
+    <color name="revision">#3D4A8A</color>
 </resources>
