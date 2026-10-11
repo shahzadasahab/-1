@@ -11,8 +11,12 @@ android {
         applicationId = "com.sindhcs.crashcourse"
         minSdk = 24
         targetSdk = 34
-        versionCode = 4
-        versionName = "1.2.0"
+        versionCode = 5
+        versionName = "1.3.0"
+
+        ndk {
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a")
+        }
     }
 
     buildTypes {
@@ -38,6 +42,25 @@ android {
         viewBinding = true
         buildConfig = true
     }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
+}
+
+tasks.register<Exec>("fetchEmbeddedTts") {
+    workingDir = rootProject.projectDir
+    commandLine("bash", "scripts/fetch_embedded_tts.sh")
+    onlyIf {
+        !file("src/main/assets/tts/ur_male/ur_PK-fasih-medium.onnx").exists() ||
+            !file("libs/sherpa-onnx-android-arm.aar").exists()
+    }
+}
+
+tasks.named("preBuild") {
+    dependsOn("fetchEmbeddedTts")
 }
 
 dependencies {
@@ -50,4 +73,5 @@ dependencies {
     implementation("androidx.viewpager2:viewpager2:1.1.0")
     implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
+    implementation(files("libs/sherpa-onnx-android-arm.aar"))
 }

@@ -3,68 +3,121 @@ package com.sindhcs.crashcourse.util
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.speech.tts.Voice
 import java.util.Locale
+import java.util.concurrent.Executors
+import java.util.concurrent.Future
+import java.util.concurrent.atomic.AtomicBoolean
 
 /**
- * Speaks Urdu lecture prose and switches to an English voice for {term} markers
- * so exam terminology is pronounced as printed on the booklet pages.
+ * Male teaching voice: prefers the embedded Fasih (ur-PK) engine shipped in the APK.
+ * Falls back to a system male voice. {English terms} stay as printed.
  */
 class MixedVoiceNarrator(
     private val context: Context,
     private val onReadyChanged: (Boolean) -> Unit,
     private val onSpeakingChanged: (Boolean) -> Unit,
-    private val onLanguageIssue: ((String) -> Unit)? = null
+    private val onLanguageIssue: ((String) -> Unit)? = null,
+    private val onScriptFinished: (() -> Unit)? = null,
+    private val onVoiceReady: ((String) -> Unit)? = null
 ) : TextToSpeech.OnInitListener {
 
     data class Segment(val text: String, val englishTerm: Boolean, val pauseMs: Long = 0)
 
+    private val main = Handler(Looper.getMainLooper())
+    private val worker = Executors.newSingleThreadExecutor()
     private var tts: TextToSpeech? = null
+    private var embedded: EmbeddedMaleVoice? = null
     private var isReady = false
+    private var systemReady = false
+    private var embedTried = false
+    private var announced = false
     private var urduAvailable = false
+    private var useEmbedded = false
     private val pending = mutableListOf<String>()
     private var queue = ArrayDeque<Pair<Segment, String>>()
     private var speaking = false
     private var rateScale = 1.0f
+    private val cancel = AtomicBoolean(false)
+    private var job: Future<*>? = null
+    @Volatile var voiceLabel: String = "System TTS"
+        private set
 
     init {
+        worker.execute {
+            val male = EmbeddedMaleVoice(context)
+            if (male.load()) {
+                embedded = male
+                useEmbedded = true
+                voiceLabel = male.label
+                urduAvailable = true
+            }
+            embedTried = true
+            main.post { finishInit() }
+        }
         tts = TextToSpeech(context.applicationContext, this)
     }
 
     override fun onInit(status: Int) {
-        isReady = status == TextToSpeech.SUCCESS
-        if (isReady) {
+        systemReady = status == TextToSpeech.SUCCESS
+        if (systemReady) {
             tts?.setSpeechRate(0.82f * rateScale)
-            tts?.setPitch(1.0f)
-            urduAvailable = localeAvailable(URDU_LOCALES)
+            tts?.setPitch(MALE_PITCH)
             attachProgressListener()
+        }
+        finishInit()
+    }
+
+    private fun finishInit() {
+        if (!embedTried) return
+        if (announced) return
+        if (useEmbedded) {
+            announced = true
+            isReady = true
+            onVoiceReady?.invoke(voiceLabel)
+            onReadyChanged(true)
+            flushPending()
+            return
+        }
+        if (systemReady) {
+            announced = true
+            urduAvailable = localeAvailable(URDU_LOCALES)
+            isReady = true
+            voiceLabel = if (urduAvailable) {
+                "System male tutor (Urdu)"
+            } else {
+                "System TTS · install Urdu for full lectures"
+            }
             if (!urduAvailable) {
                 onLanguageIssue?.invoke(
-                    "Urdu voice is not installed, so only the English text will be read. Install Urdu TTS for full lectures."
+                    "Embedded male voice could not load. Install Urdu TTS, or rebuild with scripts/fetch_embedded_tts.sh."
                 )
             }
-        }
-        onReadyChanged(isReady)
-        if (isReady && pending.isNotEmpty()) {
-            val queued = pending.toList()
-            pending.clear()
-            queued.forEach { speakScript(it) }
+            onVoiceReady?.invoke(voiceLabel)
+            onReadyChanged(true)
+            flushPending()
+        } else {
+            onReadyChanged(false)
         }
     }
 
     fun speakScript(script: String): Boolean {
         if (script.isBlank()) return false
-        val engine = tts ?: return false
         if (!isReady) {
             pending.add(script)
             return true
         }
-        engine.stop()
+        cancel.set(true)
+        job?.cancel(true)
+        embedded?.stop()
+        tts?.stop()
         queue.clear()
         parseSegments(script).forEachIndexed { index, segment ->
-            if (!segment.englishTerm && !urduAvailable) return@forEachIndexed
+            if (!segment.englishTerm && !urduAvailable && !useEmbedded) return@forEachIndexed
             chunk(segment.text).forEach { part ->
                 queue.addLast(segment.copy(text = part) to "seg_${index}_${part.hashCode()}")
                 val pause = when {
@@ -79,7 +132,14 @@ class MixedVoiceNarrator(
         if (queue.isEmpty()) return false
         speaking = true
         onSpeakingChanged(true)
-        speakNext(flush = true)
+        cancel.set(false)
+        if (useEmbedded && embedded?.ready == true) {
+            val snapshot = ArrayList(queue)
+            queue.clear()
+            job = worker.submit { speakEmbedded(snapshot) }
+        } else {
+            speakNext(flush = true)
+        }
         return true
     }
 
@@ -88,8 +148,11 @@ class MixedVoiceNarrator(
     }
 
     fun stop() {
+        cancel.set(true)
         pending.clear()
         queue.clear()
+        job?.cancel(true)
+        embedded?.stop()
         tts?.stop()
         speaking = false
         onSpeakingChanged(false)
@@ -97,12 +160,47 @@ class MixedVoiceNarrator(
 
     fun shutdown() {
         stop()
+        embedded?.release()
+        embedded = null
         tts?.shutdown()
         tts = null
         isReady = false
+        worker.shutdownNow()
     }
 
     fun isSpeaking(): Boolean = speaking
+
+    fun usesEmbeddedMale(): Boolean = useEmbedded
+
+    private fun speakEmbedded(items: List<Pair<Segment, String>>) {
+        val voice = embedded ?: return
+        for ((segment, _) in items) {
+            if (cancel.get()) break
+            if (segment.pauseMs > 0) {
+                try {
+                    Thread.sleep(segment.pauseMs)
+                } catch (_: InterruptedException) {
+                    break
+                }
+                continue
+            }
+            val speed = (if (segment.englishTerm) 0.90f else 0.86f) * rateScale
+            if (!voice.speakBlocking(segment.text, speed)) break
+        }
+        val finishedClean = !cancel.get()
+        main.post {
+            speaking = false
+            onSpeakingChanged(false)
+            if (finishedClean) onScriptFinished?.invoke()
+        }
+    }
+
+    private fun flushPending() {
+        if (pending.isEmpty()) return
+        val queued = pending.toList()
+        pending.clear()
+        queued.forEach { speakScript(it) }
+    }
 
     private fun speakNext(flush: Boolean) {
         val engine = tts ?: return
@@ -110,6 +208,7 @@ class MixedVoiceNarrator(
         if (item == null) {
             speaking = false
             onSpeakingChanged(false)
+            onScriptFinished?.invoke()
             return
         }
         val (segment, id) = item
@@ -133,11 +232,13 @@ class MixedVoiceNarrator(
             }
 
             override fun onDone(utteranceId: String?) {
+                if (useEmbedded) return
                 speakNext(flush = false)
             }
 
             @Deprecated("Deprecated in Java")
             override fun onError(utteranceId: String?) {
+                if (useEmbedded) return
                 speaking = false
                 queue.clear()
                 onSpeakingChanged(false)
@@ -154,7 +255,8 @@ class MixedVoiceNarrator(
         for (locale in locales) {
             if (engine.isLanguageAvailable(locale) >= TextToSpeech.LANG_AVAILABLE) {
                 engine.language = locale
-                selectBestVoice(engine, locale)
+                selectMaleVoice(engine, locale)
+                engine.setPitch(MALE_PITCH)
                 engine.setSpeechRate((if (englishTerm) 0.76f else 0.82f) * rateScale)
                 return
             }
@@ -166,18 +268,21 @@ class MixedVoiceNarrator(
         return locales.any { engine.isLanguageAvailable(it) >= TextToSpeech.LANG_AVAILABLE }
     }
 
-    private fun selectBestVoice(engine: TextToSpeech, locale: Locale) {
+    private fun selectMaleVoice(engine: TextToSpeech, locale: Locale) {
         val voices = engine.voices ?: return
         val match = voices
             .filter { it.locale.language == locale.language && !it.isNetworkConnectionRequired }
-            .maxByOrNull { voiceScore(it) }
+            .maxByOrNull { maleVoiceScore(it) }
         if (match != null) engine.voice = match
     }
 
-    private fun voiceScore(voice: Voice): Int {
+    private fun maleVoiceScore(voice: Voice): Int {
+        val name = voice.name.lowercase()
         var score = 0
+        if (FEMALE_HINT.any { name.contains(it) }) score -= 8
+        if (MALE_HINT.any { name.contains(it) }) score += 8
         if (voice.quality >= Voice.QUALITY_HIGH) score += 2
-        if (!voice.name.contains("network", ignoreCase = true)) score += 1
+        if (!name.contains("network")) score += 1
         return score
     }
 
@@ -186,6 +291,9 @@ class MixedVoiceNarrator(
         private val ENGLISH_LOCALES = listOf(Locale.US, Locale.UK, Locale.ENGLISH)
         private val TERM = Regex("\\{([^{}]+)\\}")
         private const val MAX_CHUNK = 1800
+        private const val MALE_PITCH = 0.88f
+        private val MALE_HINT = listOf("male", "man", "fasih", "ravi", "david", "daniel", "mark", "ryan", "guy")
+        private val FEMALE_HINT = listOf("female", "woman", "zira", "samantha", "salli", "ivy", "joanna", "kendra")
 
         fun parseSegments(script: String): List<Segment> {
             val out = mutableListOf<Segment>()
