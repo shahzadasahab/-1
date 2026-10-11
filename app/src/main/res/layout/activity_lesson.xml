@@ -46,27 +46,11 @@
                 android:textColor="@color/secondary"
                 android:textSize="13sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/embedded_diagrams"
-                android:textStyle="bold"
-                android:textColor="@color/on_surface" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/diagramList"
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:layout_marginTop="8dp"
-                android:clipToPadding="false"
-                android:paddingEnd="8dp" />
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/coachButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/urdish_coach" />
 
             <TextView
@@ -106,6 +90,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:text="@string/exam_diagram"
+                android:textStyle="bold"
+                android:textColor="@color/on_surface" />
+
+            <LinearLayout
+                android:id="@+id/examDiagramStack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="@string/learn"
                 android:textStyle="bold"
                 android:textColor="@color/on_surface" />
@@ -118,6 +117,29 @@
                 android:lineSpacingExtra="5dp"
                 android:textColor="@color/on_surface"
                 android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/booklet_diagrams"
+                android:textStyle="bold"
+                android:textColor="@color/on_surface" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/booklet_diagrams_hint"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/bookletDiagramStack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" />
 
             <TextView
                 android:layout_width="match_parent"

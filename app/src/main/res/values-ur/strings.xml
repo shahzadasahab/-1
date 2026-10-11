@@ -4,7 +4,7 @@
     <string name="app_subtitle">سندھ نصاب 2026 · جماعت یازدہم کمپیوٹر سائنس</string>
     <string name="welcome_title">اردش کوچ اور کتابچے کے تمام خاکے</string>
     <string name="welcome_message">یونٹ 1 تا 6 کی خود آموز کوچنگ۔ فنی اصطلاحات انگریزی میں رہتی ہیں، کوچ اردش بولتا ہے، اور دونوں کتابچوں کے تمام خاکے ایپ میں موجود ہیں۔</string>
-    <string name="version_badge">ورژن %1$s — اردش ٹی ٹی ایس · 82 صفحات · 39 خاکے</string>
+    <string name="version_badge">ورژن %1$s — الگ مدفون خاکے · اردش ٹی ٹی ایس · 82 صفحات</string>
     <string name="units_title">چھ یونٹ</string>
     <string name="lessons">اسباق</string>
     <string name="glossary">فرہنگ</string>
@@ -19,7 +19,12 @@
     <string name="urdish">Urdish</string>
     <string name="urdu">اردو</string>
     <string name="progress_line">پیش رفت %1$d / %2$d اسباق</string>
-    <string name="embedded_diagrams">مدفون خاکے — سوائپ کریں، زوم کے لیے تھپکی</string>
+    <string name="embedded_diagrams">مدفون خاکے</string>
+    <string name="exam_diagram">امتحانی خاکہ</string>
+    <string name="exam_diagram_label">امتحانی خاکہ %1$d</string>
+    <string name="booklet_diagrams">کتابچے کے خاکے</string>
+    <string name="booklet_diagrams_hint">ہر شکل نیچے الگ مدفون ہے۔ سبق نیچے سکرول کریں — سوائپ پٹی نہیں۔ زوم کے لیے صفحہ دبائیں۔</string>
+    <string name="booklet_page_label">کتابچہ · %1$s</string>
     <string name="words_to_know">اہم الفاظ</string>
     <string name="key_idea">کلیدی نکتہ</string>
     <string name="learn">سیکھیں</string>

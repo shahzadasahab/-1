@@ -6,9 +6,9 @@ The APK embeds every Learn + diagram page from the two Teach-Yourself booklets a
 
 ## Download
 
-**Latest (v1.0.0)** — Urdish TTS coach + 82 embedded booklet pages + 39 exam diagrams:
+**Latest (v1.0.1)** — stacked embedded diagrams (no swipe) + Urdish TTS:
 
-`releases/CsxiUltimateCoaching-v1.0.0-debug.apk`
+https://github.com/shahzadasahab/-1/raw/cursor/cs-xi-ultimate-coaching-74ef/releases/CsxiUltimateCoaching-v1.0.1-debug.apk
 
 > Uninstall any older unrelated APK from this repo first. The package id is `com.csxi.ultimatecoaching`.
 
@@ -16,7 +16,7 @@ The APK embeds every Learn + diagram page from the two Teach-Yourself booklets a
 
 - **6 units, 40 lessons** mapped to the booklet contents (logic gates, SDLC, OSI/TCP-IP, algorithms, Python, Access, IoT/AI, digital inquiry).
 - **Urdish Coach** on Home, every lesson, and every mock question. Uses the English TTS engine so it works when an Urdu voice pack is missing.
-- **Embedded diagrams**: original booklet pages (vector figures rendered from the PDFs) plus clean exam-ready diagrams.
+- **Embedded diagrams**: each exam figure and booklet page is stacked in the lesson (no swipe strip). Tap a page to zoom.
 - **Check yourself**, **I can…** tracker, **unit mock tests**, searchable **glossary**.
 - Languages: English UI, Urdish UI (default), اردو UI (RTL).
 

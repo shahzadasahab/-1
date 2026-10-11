@@ -4,7 +4,7 @@
     <string name="app_subtitle">Sindh Curriculum 2026 · Class XI Computer Science</string>
     <string name="welcome_title">Urdish coach + every booklet diagram</string>
     <string name="welcome_message">Teach-yourself coaching for Units 1–6. Technical terms stay in English, the coach speaks Urdish, and every Learn + diagram page from the bilingual booklets is embedded in the APK.</string>
-    <string name="version_badge">Version %1$s — Urdish TTS · 82 booklet pages · 39 exam diagrams</string>
+    <string name="version_badge">Version %1$s — stacked diagrams · Urdish TTS · 82 booklet pages</string>
     <string name="units_title">Six units</string>
     <string name="lessons">Lessons</string>
     <string name="glossary">Glossary</string>
@@ -19,7 +19,12 @@
     <string name="urdish">Urdish</string>
     <string name="urdu">اردو</string>
     <string name="progress_line">Progress %1$d / %2$d lessons</string>
-    <string name="embedded_diagrams">Embedded diagrams — swipe, then tap to zoom</string>
+    <string name="embedded_diagrams">Embedded diagrams</string>
+    <string name="exam_diagram">Exam diagram</string>
+    <string name="exam_diagram_label">Exam diagram %1$d</string>
+    <string name="booklet_diagrams">Booklet diagrams</string>
+    <string name="booklet_diagrams_hint">Each figure is embedded below. Scroll the lesson — no swipe strip. Tap a page to zoom.</string>
+    <string name="booklet_page_label">Booklet · %1$s</string>
     <string name="words_to_know">Words to know</string>
     <string name="key_idea">Key idea</string>
     <string name="learn">Learn</string>

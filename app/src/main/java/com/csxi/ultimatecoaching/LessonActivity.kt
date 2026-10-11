@@ -2,6 +2,7 @@ package com.csxi.ultimatecoaching
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.CheckBox
@@ -10,11 +11,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.csxi.ultimatecoaching.data.Curriculum
 import com.csxi.ultimatecoaching.data.Lesson
 import com.csxi.ultimatecoaching.databinding.ActivityLessonBinding
-import com.csxi.ultimatecoaching.ui.DiagramAdapter
+import com.csxi.ultimatecoaching.databinding.ItemDiagramBinding
+import com.csxi.ultimatecoaching.util.AssetImages
 import com.csxi.ultimatecoaching.util.LocaleHelper
 import com.csxi.ultimatecoaching.util.ProgressStore
 import com.csxi.ultimatecoaching.util.VoiceNarrator
@@ -95,12 +96,16 @@ class LessonActivity : AppCompatActivity() {
             binding.wordChips.addView(chip)
         }
 
-        val paths = listOf(lesson.diagram) + lesson.bookletPages
-        binding.diagramList.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        binding.diagramList.adapter = DiagramAdapter(paths) { path ->
-            startActivity(Intent(this, DiagramActivity::class.java).putExtra(DiagramActivity.EXTRA_PATH, path))
-        }
+        bindDiagramStack(
+            binding.examDiagramStack,
+            listOf(lesson.diagram),
+            exam = true
+        )
+        bindDiagramStack(
+            binding.bookletDiagramStack,
+            lesson.bookletPages,
+            exam = false
+        )
 
         binding.checkList.removeAllViews()
         lesson.checks.forEachIndexed { index, item ->
@@ -132,6 +137,25 @@ class LessonActivity : AppCompatActivity() {
                 LinearLayout.LayoutParams.WRAP_CONTENT
             )
             binding.iCanList.addView(box, lp)
+        }
+    }
+
+    private fun bindDiagramStack(stack: LinearLayout, paths: List<String>, exam: Boolean) {
+        stack.removeAllViews()
+        val inflater = LayoutInflater.from(this)
+        paths.forEachIndexed { index, path ->
+            val card = ItemDiagramBinding.inflate(inflater, stack, false)
+            AssetImages.load(this, card.diagramImage, path)
+            card.diagramLabel.text = if (exam) {
+                getString(R.string.exam_diagram_label, index + 1)
+            } else {
+                val page = path.substringAfterLast('/').removeSuffix(".jpg").replace('_', ' ')
+                getString(R.string.booklet_page_label, page)
+            }
+            card.root.setOnClickListener {
+                startActivity(Intent(this, DiagramActivity::class.java).putExtra(DiagramActivity.EXTRA_PATH, path))
+            }
+            stack.addView(card.root)
         }
     }
 
