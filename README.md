@@ -1,40 +1,33 @@
-# Intimacy Guide
+# CS XI Ultimate Coaching
 
-Bilingual (English & Urdu) couples sex-education app with embedded diagram pictures, imagination postures, voice narration, and PDF export.
+Bilingual (English · Urdish · Urdu) teach-yourself coaching app for **Sindh Curriculum 2026, Class XI Computer Science, Units 1–6**.
+
+The APK embeds every Learn + diagram page from the two Teach-Yourself booklets and speaks classroom coaching in **Urdish** (Roman Urdu with English technical terms, the same mix teachers use and the exam paper expects).
 
 ## Download
 
-**Latest (v3.2.1)** — man/woman posture roles + sex education for him & her:
+**Latest (v1.0.0)** — Urdish TTS coach + 82 embedded booklet pages + 39 exam diagrams:
 
-https://github.com/SyedShahzadAliShah/-1/raw/main/releases/IntimacyHandbook-v3.2.1-debug.apk
+`releases/CsxiUltimateCoaching-v1.0.0-debug.apk`
 
-Branch copy: https://github.com/SyedShahzadAliShah/-1/raw/cursor/couples-posture-guide-ed65/releases/IntimacyHandbook-v3.2.1-debug.apk
+> Uninstall any older unrelated APK from this repo first. The package id is `com.csxi.ultimatecoaching`.
 
-> **Important:** Uninstall any older version first, then install v3.2.1. On the home screen you should see **"Version 3.2.1 — Man/Woman roles + Sex Ed for Him & Her"** below the subtitle.
+## What is inside
 
-## v3.2.1
+- **6 units, 40 lessons** mapped to the booklet contents (logic gates, SDLC, OSI/TCP-IP, algorithms, Python, Access, IoT/AI, digital inquiry).
+- **Urdish Coach** on Home, every lesson, and every mock question. Uses the English TTS engine so it works when an Urdu voice pack is missing.
+- **Embedded diagrams**: original booklet pages (vector figures rendered from the PDFs) plus clean exam-ready diagrams.
+- **Check yourself**, **I can…** tracker, **unit mock tests**, searchable **glossary**.
+- Languages: English UI, Urdish UI (default), اردو UI (RTL).
 
-- **Fix:** Sex Education and chapter lists now display correctly inside the scroll view
-- **Fix:** Version badge on home screen so you can confirm the correct build is installed
-
-## v3.2.0
-
-- **Man & woman roles** — each posture defines the man's and woman's position and guidance
-- **Sex education for him** — 4 chapters on arousal, pleasuring partner, stamina, confidence
-- **Sex education for her** — 4 chapters on arousal, pleasure, comfort, confidence
-- Diagram labels updated to Man/Woman
-
-## v2.4 fixes
-
-- **PDF export fixed** — proper image loading, multi-page pagination, Urdu font embedding, reliable sharing
-- **Upgraded pictures** — 960×600 educational diagrams with Partner A/B labels and position annotations
+This is an independent study aid prepared from the Sindh Textbook Board Class XI Computer Science booklets. It is not an official publication.
 
 ## Build
 
 ```bash
-python3 scripts/generate_posture_pictures.py
-export ANDROID_HOME=/path/to/android-sdk
+python3 scripts/build_csxi_assets.py
+export ANDROID_HOME=$HOME/android-sdk
 ./gradlew assembleDebug
 ```
 
-## Version 3.2.1
+Copy the APK from `app/build/outputs/apk/debug/` to `releases/`.
