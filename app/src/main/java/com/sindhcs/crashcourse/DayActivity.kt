@@ -14,6 +14,8 @@ import com.sindhcs.crashcourse.data.CourseRepository
 import com.sindhcs.crashcourse.data.PageNarration
 import com.sindhcs.crashcourse.data.PageRepository
 import com.sindhcs.crashcourse.data.ProgressStore
+import com.sindhcs.crashcourse.data.TutorPhase
+import com.sindhcs.crashcourse.data.TutorScript
 import com.sindhcs.crashcourse.databinding.ActivityDayBinding
 import com.sindhcs.crashcourse.ui.PdfPageAdapter
 import com.sindhcs.crashcourse.util.LocaleHelper
@@ -76,7 +78,7 @@ class DayActivity : AppCompatActivity() {
                 if (it) window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
                 else window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
                 invalidateOptionsMenu()
-                binding.listenButton.text = getString(if (it) R.string.stop else R.string.listen)
+                binding.listenButton.text = getString(if (it) R.string.stop else R.string.listen_tutor)
             },
             onLanguageIssue = { Toast.makeText(this, it, Toast.LENGTH_LONG).show() }
         )
@@ -92,7 +94,7 @@ class DayActivity : AppCompatActivity() {
         binding.dayGolden.text = getString(R.string.golden_today, day.golden)
         val topicBlock = day.topics.joinToString("\n") { "• $it" }
         binding.dayTopics.text = "${getString(R.string.topics_today)}\n$topicBlock"
-        binding.transcriptText.text = day.displayText
+        binding.transcriptText.text = TutorScript.lessonNotes(day)
         updateDoneButton()
 
         pages = (day.startPage..day.endPage).toList()
@@ -107,13 +109,12 @@ class DayActivity : AppCompatActivity() {
         })
         updatePageIndicator(0, pages)
 
-        binding.listenButton.setOnClickListener { toggleSpeech(day.script) }
+        binding.listenButton.setOnClickListener { toggleSpeech(tutorScript()) }
         binding.listenPageButton.setOnClickListener {
             val index = binding.pagePager.currentItem
             val booklet = pages.getOrElse(index) { day.startPage }
             val blocks = PageRepository.getBlocks(this, booklet)
-            val script = if (blocks.isEmpty()) day.pageScript(booklet) else PageNarration.script(booklet, blocks)
-            toggleSpeech(script)
+            toggleSpeech(TutorScript.pageWalkthrough(booklet, day, blocks))
         }
         binding.pageTextToggle.setOnClickListener {
             showingPageText = !showingPageText
@@ -147,6 +148,16 @@ class DayActivity : AppCompatActivity() {
         binding.nextDay.visibility = if (day.day == 0 || day.day >= 30) View.INVISIBLE else View.VISIBLE
         binding.doneButton.visibility = if (day.day == 0) View.GONE else View.VISIBLE
     }
+
+    private fun selectedPhase(): TutorPhase = when (binding.phaseGroup.checkedChipId) {
+        R.id.phaseRecap -> TutorPhase.RECAP
+        R.id.phaseTeach -> TutorPhase.TEACH
+        R.id.phaseDrill -> TutorPhase.DRILL
+        R.id.phaseHomework -> TutorPhase.HOMEWORK
+        else -> TutorPhase.FULL
+    }
+
+    private fun tutorScript(): String = TutorScript.session(this, course, day, selectedPhase())
 
     private fun updateSpeedButton() {
         binding.speedButton.text = getString(R.string.speed_label, "${ProgressStore.speechRate(this)}x")
@@ -193,14 +204,14 @@ class DayActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        menu.findItem(R.id.action_listen).title = getString(if (speaking) R.string.stop else R.string.listen)
+        menu.findItem(R.id.action_listen).title = getString(if (speaking) R.string.stop else R.string.listen_tutor)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_listen -> {
-                toggleSpeech(day.script)
+                toggleSpeech(tutorScript())
                 true
             }
             R.id.action_tts_settings -> {

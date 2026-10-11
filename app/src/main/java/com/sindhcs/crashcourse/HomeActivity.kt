@@ -4,10 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.sindhcs.crashcourse.data.CourseRepository
 import com.sindhcs.crashcourse.data.ProgressStore
+import com.sindhcs.crashcourse.data.TutorScript
 import com.sindhcs.crashcourse.databinding.ActivityHomeBinding
 import com.sindhcs.crashcourse.util.LocaleHelper
 import com.sindhcs.crashcourse.util.MixedVoiceNarrator
@@ -35,6 +37,8 @@ class HomeActivity : AppCompatActivity() {
             onReadyChanged = { voiceReady = it },
             onSpeakingChanged = {
                 speaking = it
+                if (it) window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+                else window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
                 invalidateOptionsMenu()
                 binding.listenWelcome.text = getString(if (it) R.string.stop else R.string.listen_welcome)
             },
@@ -115,12 +119,12 @@ class HomeActivity : AppCompatActivity() {
             return
         }
         narrator?.setRateScale(ProgressStore.speechRate(this))
-        narrator?.speakScript(CourseRepository.getWelcomeScript())
+        narrator?.speakScript(TutorScript.welcome())
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        menu.findItem(R.id.action_listen).title = getString(if (speaking) R.string.stop else R.string.listen)
+        menu.findItem(R.id.action_listen).title = getString(if (speaking) R.string.stop else R.string.listen_welcome)
         return true
     }
 
@@ -136,6 +140,11 @@ class HomeActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onPause() {
+        if (speaking) narrator?.stop()
+        super.onPause()
     }
 
     override fun onDestroy() {

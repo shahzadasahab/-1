@@ -48,6 +48,33 @@
                 android:textColor="@color/on_surface_variant"
                 android:textSize="15sp" />
 
+            <TextView
+                android:id="@+id/editionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_badge"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:text="@string/edition_badge"
+                android:textColor="@color/on_primary"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/methodCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/surface"
+                android:lineSpacingExtra="3dp"
+                android:padding="12dp"
+                android:text="@string/method_card_body"
+                android:textColor="@color/on_surface"
+                android:textSize="14sp" />
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/listenWelcome"
                 style="@style/Widget.Material3.Button.TonalButton"
@@ -216,7 +243,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="3-hour block · ★ Golden first · no phone"
+                        android:text="@string/how_to_hint"
                         android:textColor="@color/on_surface_variant" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
