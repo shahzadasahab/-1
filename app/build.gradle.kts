@@ -4,15 +4,20 @@ plugins {
 }
 
 android {
-    namespace = "com.couplesguide.postures"
+    namespace = "com.sindhcs.crashcourse"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.couplesguide.postures"
+        applicationId = "com.sindhcs.crashcourse"
         minSdk = 24
         targetSdk = 34
-        versionCode = 15
-        versionName = "3.2.1"
+        versionCode = 6
+        versionName = "2.0.0"
+
+        ndk {
+            // arm64 keeps the embedded voice and the full booklet under the sideload size limit.
+            abiFilters += listOf("arm64-v8a")
+        }
     }
 
     buildTypes {
@@ -38,6 +43,25 @@ android {
         viewBinding = true
         buildConfig = true
     }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
+}
+
+tasks.register<Exec>("fetchEmbeddedTts") {
+    workingDir = rootProject.projectDir
+    commandLine("bash", "scripts/fetch_embedded_tts.sh")
+    onlyIf {
+        !file("src/main/assets/tts/ur_male/ur_PK-fasih-medium.onnx").exists() ||
+            !file("libs/sherpa-onnx-android-arm.aar").exists()
+    }
+}
+
+tasks.named("preBuild") {
+    dependsOn("fetchEmbeddedTts")
 }
 
 dependencies {
@@ -47,5 +71,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.viewpager2:viewpager2:1.1.0")
+    implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
+    implementation(files("libs/sherpa-onnx-android-arm.aar"))
 }

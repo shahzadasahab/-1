@@ -1,0 +1,1210 @@
+{
+ "courses": [
+  {
+   "id": "xi",
+   "title": "Computer Science XI",
+   "subtitle": "Teach Yourself · Units 1–6 · Teacher’s Edition",
+   "introStartPage": 1,
+   "introEndPage": 5,
+   "introScript": "السلام علیکم۔ میں آپ کا {Computer Science} کا استاد ہوں۔ یہ {Class XI} کا تیس دن کا {Teach Yourself Crash Course} ہے، {New Sindh Curriculum 2026}۔ کتابچہ اساتذہ والا دو لسانی ایڈیشن ہے۔ میں اردو میں سمجھاؤں گا۔ امتحانی اصطلاحات انگریزی میں ویسی ہی رہیں گی جیسے صفحے پر چھپی ہیں — {Algorithm}، {Logic Gates}، {SDLC}، {IoT}۔ ہر علامت، گیٹ، جدول اور خاکہ ایپ کے اندر چھپا ہوا ہے۔ صفحہ میری بات کے ساتھ کھلے گا۔ خاکہ کاپی میں نقل کریں۔ دن 1 سے 23 پڑھاتے ہیں، ہر باب کا آخری دن {Checkpoint} ہے۔ دن 24 سے 26 ★ {Golden blitz}، دن 27 {Recap}، دن 28 {Mock}، دن 29 {Mark}، دن 30 {Repair}۔ ہر نشست تین گھنٹے: پندرہ منٹ کل کا {Golden}، پھر صفحات، پھر بند کتاب مشق، رات کو پانچ نمبر {Define} {Explain} {Example} {Diagram} {Working} سے۔",
+   "introDisplay": "Computer Science XI. Teacher’s Edition, bilingual. 30 days. Urdu tutor. English exam terms as printed. Every symbol and diagram from the booklet is embedded in this app.",
+   "days": [
+    {
+     "id": "xi-d01",
+     "day": 1,
+     "week": 1,
+     "kind": "Teach",
+     "chapter": "Computer Systems",
+     "focus": "Analog, digital and binary",
+     "golden": "Analog and Digital Signals",
+     "startPage": 6,
+     "endPage": 8,
+     "topics": [
+      "Discrete and continuous quantities",
+      "Analog signals",
+      "Digital signals",
+      "Bit"
+     ],
+     "script": "آج {Class XI} کے {Unit 1} کا پہلا سبق ہے۔ ★ {Golden} موضوع {Analog and Digital Signals} ہے۔ {Discrete} مقدار گنی جاتی ہے، جیسے کلاس کے طلبہ۔ {Continuous} مقدار ناپی جاتی ہے، جیسے پانی کا درجہ حرارت۔ سیڑھیاں {Discrete} ہیں، ramp {Continuous} ہے۔ {Digital system} صرف دو قیمتیں استعمال کرتا ہے: 0 یعنی {OFF}، {LOW}، {FALSE}، اور 1 یعنی {ON}، {HIGH}، {TRUE}۔ ایک {Bit} بتی کے سوئچ کی طرح ہے۔ ★ {Analog signals} ہموار {Sine Wave} ہیں، جیسے آواز۔ {Digital signals} صرف دو سطحیں رکھتی ہیں، {Square Wave}۔ {Analog} شور سے متاثر ہوتا ہے، {Digital} شور کے خلاف مضبوط ہے۔ صفحے پر دونوں لہریں چھپی ہیں۔ انہیں نقل کریں۔ امتحان میں جدول اور دونوں لہریں کھینچنی آئیں گی۔ اصطلاحات کا ترجمہ نہ کریں۔",
+     "displayText": "Teach Yourself · Day 01 of 30 · Week 1 · Teach\nChapter: Computer Systems\nLearning aim: Analog, digital and binary\n★ Golden (must be spoken without notes): Analog and Digital Signals\nBooklet pages 6–8 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Discrete and continuous quantities\n• Analog signals\n• Digital signals\n• Bit\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d02",
+     "day": 2,
+     "week": 1,
+     "kind": "Teach",
+     "chapter": "Computer Systems",
+     "focus": "Boolean algebra and logic gates",
+     "golden": "Logic Gates (AND, OR, NOT)",
+     "startPage": 9,
+     "endPage": 10,
+     "topics": [
+      "Boolean algebra",
+      "AND gate",
+      "OR gate",
+      "NOT gate",
+      "Truth table"
+     ],
+     "script": "دن 02۔ ★ {Golden}: {Logic Gates}، بنیادی گیٹس {AND}، {OR}، {NOT}۔ {Boolean Algebra} {George Boole} نے بنائی۔ صرف {TRUE} 1 اور {FALSE} 0۔ جال: Boolean میں جمع کا نشان {OR} ہے، حساب کا جمع نہیں۔ {AND} تب 1 جب تمام inputs 1 ہوں — دو تالے والا دروازہ۔ {OR} تب 1 جب کوئی ایک 1 ہو۔ {NOT} الٹ دیتا ہے، اس لیے اسے inverter کہتے ہیں۔ صفحے پر گیٹ کی شکلیں چھپی ہیں: {AND} کی شکل D، {OR} نوک دار، {NOT} مثلث پر bubble۔ شکل نقل کریں، نام انگریزی میں لکھیں۔ {Truth Table} ہر ممکن input اور output دکھاتی ہے۔ دو inputs کی چار قطاریں: 00، 01، 10، 11۔",
+     "displayText": "Teach Yourself · Day 02 of 30 · Week 1 · Teach\nChapter: Computer Systems\nLearning aim: Boolean algebra and logic gates\n★ Golden (must be spoken without notes): Logic Gates (AND, OR, NOT)\nBooklet pages 9–10 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Boolean algebra\n• AND gate\n• OR gate\n• NOT gate\n• Truth table\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d03",
+     "day": 3,
+     "week": 1,
+     "kind": "Teach",
+     "chapter": "Computer Systems",
+     "focus": "Expressions, truth tables and diagrams",
+     "golden": "Truth Tables and Logic Diagrams",
+     "startPage": 11,
+     "endPage": 12,
+     "topics": [
+      "Logic expressions",
+      "Minterms",
+      "Maxterms",
+      "Logic diagrams"
+     ],
+     "script": "دن 03۔ ★ {Golden}: {Truth Tables} اور {Logic Diagrams}۔ {XOR} تب 1 جب inputs مختلف ہوں۔ {XNOR} تب 1 جب دونوں یکساں ہوں۔ {Minterm} وہ حاصل ضرب ہے جو ایک قطار میں 1 دیتی ہے۔ {Maxterm} وہ حاصل جمع ہے جو 0 دیتی ہے۔ Expression کو گیٹ کی تصویر بنانا {Logic Diagram} ہے۔ ترتیب: پہلے {NOT}، پھر {AND}، آخر میں {OR} — یا جو ترتیب صفحے پر دی گئی ہو۔ چھپے ہوئے diagram کو کاپی میں بنائیں۔ بند کتاب ایک چھوٹی expression کا diagram خود کھینچیں۔",
+     "displayText": "Teach Yourself · Day 03 of 30 · Week 1 · Teach\nChapter: Computer Systems\nLearning aim: Expressions, truth tables and diagrams\n★ Golden (must be spoken without notes): Truth Tables and Logic Diagrams\nBooklet pages 11–12 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Logic expressions\n• Minterms\n• Maxterms\n• Logic diagrams\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d04",
+     "day": 4,
+     "week": 1,
+     "kind": "Teach",
+     "chapter": "Computer Systems",
+     "focus": "Karnaugh maps and LogiSim",
+     "golden": "Karnaugh Maps and LogiSim",
+     "startPage": 13,
+     "endPage": 14,
+     "topics": [
+      "Karnaugh map",
+      "Gray code",
+      "Universal gates NAND and NOR",
+      "LogiSim"
+     ],
+     "script": "دن 04۔ ★ {Golden}: {Karnaugh Maps} یعنی {K-Maps}، اور {LogiSim}۔ {NAND} یعنی {NOT AND}، {NOR} یعنی {NOT OR}۔ دونوں {Universal gates} ہیں — پورا منطق سرکٹ صرف {NAND} یا صرف {NOR} سے بن سکتا ہے۔ ★ {K-Map} {Truth Table} کو خانوں میں سمیٹتی ہے تاکہ سادہ گروپ ملیں۔ پڑوسی خانے صرف ایک {Bit} بدلتے ہیں، یہ {Gray code} ہے۔ گروپ 1، 2، 4، 8 کے ہوں۔ صفحے کا {K-Map} جوں کا توں نقل کریں، پھر بند کتاب 2 variable اور 3 variable map بنائیں۔ {LogiSim Evolution} میں گیٹ رکھیں، تار جوڑیں، input دے کر output دیکھیں۔ فائل کی توسیع {.circ} ہے۔",
+     "displayText": "Teach Yourself · Day 04 of 30 · Week 1 · Teach\nChapter: Computer Systems\nLearning aim: Karnaugh maps and LogiSim\n★ Golden (must be spoken without notes): Karnaugh Maps and LogiSim\nBooklet pages 13–14 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Karnaugh map\n• Gray code\n• Universal gates NAND and NOR\n• LogiSim\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d05",
+     "day": 5,
+     "week": 1,
+     "kind": "Checkpoint",
+     "chapter": "Computer Systems",
+     "focus": "SDLC, Waterfall, Agile, OSI and TCP/IP",
+     "golden": "SDLC, the Waterfall Model, Agile, and the OSI 7-Layer Model",
+     "startPage": 15,
+     "endPage": 27,
+     "topics": [
+      "SDLC",
+      "Waterfall model",
+      "Agile model",
+      "OSI 7-layer model",
+      "TCP/IP"
+     ],
+     "script": "دن 05 {Checkpoint}۔ ★ {Golden}: {SDLC}، {Waterfall}، {Agile}، اور {OSI 7-Layer Model}۔ {Software Development Life Cycle} کے عام مراحل: {Requirement}، {Design}، {Implementation}، {Testing}، {Deployment}، {Maintenance}۔ ★ {Waterfall Model} ایک طرف بہتا ہے، واپس آنا مہنگا ہے۔ {Agile} چھوٹے {Sprint} میں بناتا ہے، عموماً 2 سے 4 ہفتے۔ گاہک ہر {Sprint} کے بعد کام دیکھتا ہے۔ ★ {OSI} کی سات تہیں: {Physical}، {Data Link}، {Network}، {Transport}، {Session}، {Presentation}، {Application}۔ یاد: Please Do Not Throw Sausage Pizza Away۔ {TCP/IP} چار تہیں: {Network Access}، {Internet}، {Transport}، {Application}۔ {OSI} نمونہ ہے، {TCP/IP} عملی انٹرنیٹ۔ تہوں کا خاکہ صفحے پر ہے۔ نقل کریں۔ پھر بند کتاب چالیس منٹ کا باب ٹیسٹ۔ 60 فیصد سے کم ہو تو کل {Golden repair}، نیا باب نہیں۔",
+     "displayText": "Teach Yourself · Day 05 of 30 · Week 1 · Checkpoint\nChapter: Computer Systems\nLearning aim: SDLC, Waterfall, Agile, OSI and TCP/IP\n★ Golden (must be spoken without notes): SDLC, the Waterfall Model, Agile, and the OSI 7-Layer Model\nBooklet pages 15–27 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• SDLC\n• Waterfall model\n• Agile model\n• OSI 7-layer model\n• TCP/IP\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d06",
+     "day": 6,
+     "week": 2,
+     "kind": "Teach",
+     "chapter": "Computational Thinking and Algorithms",
+     "focus": "Algorithms, pseudocode and decomposition",
+     "golden": "Algorithm, Pseudocode and Decomposition",
+     "startPage": 28,
+     "endPage": 31,
+     "topics": [
+      "Computational thinking",
+      "Algorithm",
+      "Pseudocode",
+      "Decomposition",
+      "Pattern recognition",
+      "Abstraction"
+     ],
+     "script": "دن 06، {Unit 2}۔ ★ {Golden}: {Algorithm}، {Pseudocode}، {Decomposition}۔ {Computational Thinking} چار ستون: {Decomposition}، {Pattern Recognition}، {Abstraction}، {Algorithm}۔ ★ {Algorithm} قدم بہ قدم ہدایات ہیں: شروع، واضح قدم، اختتام۔ کھانا پکانے کی ترکیب الگورتھم کی مثال ہے۔ ★ {Pseudocode} انگریزی نما ڈھانچہ ہے، مخصوص زبان نہیں۔ {Algorithm} سوچ ہے، {Pseudocode} اس کی لکھائی، حقیقی کوڈ {Python}۔ ★ {Decomposition} بڑے مسئلے کو چھوٹے حصوں میں توڑنا۔ {Abstraction} غیر ضروری تفصیل چھپاتا ہے۔ صفحے کے خاکے نقل کریں۔",
+     "displayText": "Teach Yourself · Day 06 of 30 · Week 2 · Teach\nChapter: Computational Thinking and Algorithms\nLearning aim: Algorithms, pseudocode and decomposition\n★ Golden (must be spoken without notes): Algorithm, Pseudocode and Decomposition\nBooklet pages 28–31 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Computational thinking\n• Algorithm\n• Pseudocode\n• Decomposition\n• Pattern recognition\n• Abstraction\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d07",
+     "day": 7,
+     "week": 2,
+     "kind": "Teach",
+     "chapter": "Computational Thinking and Algorithms",
+     "focus": "Bubble sort, selection sort, linear and binary search",
+     "golden": "Bubble Sort, Selection Sort and Binary Search",
+     "startPage": 32,
+     "endPage": 35,
+     "topics": [
+      "Bubble sort",
+      "Selection sort",
+      "Linear search",
+      "Binary search"
+     ],
+     "script": "دن 07۔ ★ {Golden}: {Bubble Sort}، {Selection Sort}، {Binary Search}۔ {Bubble Sort}: پڑوسی جوڑوں کا موازنہ، بڑا آگے دھکیل دو، آخر تک {Pass}۔ سادہ، سست، تقریباً n مربع موازنے۔ {Selection Sort}: ہر {Pass} میں باقی فہرست کا سب سے چھوٹا چن کر جگہ پر لگاؤ۔ swaps کم ہوتے ہیں۔ {Linear Search} شروع سے آخر تک ایک ایک دیکھتا ہے۔ ترتیب ضروری نہیں۔ بدترین صورت n قدم۔ ★ {Binary Search} صرف ترتیب شدہ فہرست پر۔ درمیان دیکھو۔ برابر ہو تو مل گیا؛ مطلوبہ بڑا ہو تو دایاں نصف، چھوٹا ہو تو بایاں نصف۔ پیچیدگی {O(log n)}۔ صفحے کی جدول اور شکل جوں کی توں نقل کریں، پھر ایک چھوٹی فہرست پر دونوں sort خود چلائیں۔",
+     "displayText": "Teach Yourself · Day 07 of 30 · Week 2 · Teach\nChapter: Computational Thinking and Algorithms\nLearning aim: Bubble sort, selection sort, linear and binary search\n★ Golden (must be spoken without notes): Bubble Sort, Selection Sort and Binary Search\nBooklet pages 32–35 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Bubble sort\n• Selection sort\n• Linear search\n• Binary search\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d08",
+     "day": 8,
+     "week": 2,
+     "kind": "Checkpoint",
+     "chapter": "Computational Thinking and Algorithms",
+     "focus": "Evaluate and choose an algorithm",
+     "golden": "Evaluating an Algorithm",
+     "startPage": 36,
+     "endPage": 40,
+     "topics": [
+      "Correctness",
+      "Clarity",
+      "Efficiency",
+      "Memory",
+      "Checkpoint test"
+     ],
+     "script": "دن 08 {Checkpoint}۔ ★ {Golden}: الگورتھم کی جانچ — درستگی، وضاحت، رفتار، یادداشت۔ درست الگورتھم ہر جائز input پر درست output دیتا ہے۔ واضح الگورتھم دوسرا شخص پڑھ کر چلا سکتا ہے۔ کارکردگی: {Bubble Sort} اور {Selection Sort} تقریباً {O(n²)} ہیں۔ {Binary Search} {O(log n)} ہے، مگر فہرست ترتیب شدہ ہونی چاہیے۔ صفحات پر mock اور کلید ہے۔ پہلے بند کتاب ٹیسٹ حل کریں، پھر سبز جواب پڑھیں۔ {Binary Search} کی تعریف، شرط، اور ایک مثال لازمی لکھیں۔",
+     "displayText": "Teach Yourself · Day 08 of 30 · Week 2 · Checkpoint\nChapter: Computational Thinking and Algorithms\nLearning aim: Evaluate and choose an algorithm\n★ Golden (must be spoken without notes): Evaluating an Algorithm\nBooklet pages 36–40 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Correctness\n• Clarity\n• Efficiency\n• Memory\n• Checkpoint test\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d09",
+     "day": 9,
+     "week": 2,
+     "kind": "Teach",
+     "chapter": "Programming Fundamentals",
+     "focus": "Programming, Python and the IDE",
+     "golden": "Python and the IDE (VS Code)",
+     "startPage": 41,
+     "endPage": 43,
+     "topics": [
+      "Programming",
+      "High-level and low-level languages",
+      "Python",
+      "IDE",
+      "VS Code"
+     ],
+     "script": "دن 09، {Unit 3}۔ ★ {Golden}: {Python} اور {IDE}، مثال {Visual Studio Code}۔ {Programming} کمپیوٹر کو ہدایات دینا ہے۔ {Low-level} مشین کے قریب، {High-level} انسان کے قریب۔ {Python} high-level ہے۔ {Compiled} زبانیں پہلے مشین کوڈ بناتی ہیں۔ {Interpreted} لائن بہ لائن چلتی ہیں۔ {Python} interpreted ہے۔ {IDE} وہ جگہ ہے جہاں کوڈ لکھا، چلایا اور سنبھالا جاتا ہے۔ یادداشتی لفظ {ESARD}: {Editor}، {Syntax highlighting}، {Auto-completion}، {Run}، {Debugger}۔ صفحے کی جدول نقل کریں۔ کل {Variables} اور {Data Types} آئیں گے۔",
+     "displayText": "Teach Yourself · Day 09 of 30 · Week 2 · Teach\nChapter: Programming Fundamentals\nLearning aim: Programming, Python and the IDE\n★ Golden (must be spoken without notes): Python and the IDE (VS Code)\nBooklet pages 41–43 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Programming\n• High-level and low-level languages\n• Python\n• IDE\n• VS Code\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d10",
+     "day": 10,
+     "week": 2,
+     "kind": "Teach",
+     "chapter": "Programming Fundamentals",
+     "focus": "Variables, data types, operators",
+     "golden": "Variables, Data Types and Operators",
+     "startPage": 44,
+     "endPage": 46,
+     "topics": [
+      "Variables",
+      "int, float, str, bool",
+      "input and print",
+      "Arithmetic operators",
+      "Assignment"
+     ],
+     "script": "دن 10۔ ★ {Golden}: {Variables}، {Data Types}، {Operators}۔ {Variable} نام والا ڈبہ ہے۔ {int} عدد، {float} اعشاری، {str} متن، {bool} {True} یا {False}۔ {type()} قسم بتاتا ہے۔ {print} دکھاتا ہے، {input} پوچھتا ہے۔ {Python} انڈینٹیشن سے بلاک بناتا ہے، اور نام case-sensitive ہیں۔ عمل: جمع، تفریق، ضرب، تقسیم، {//} مکمل تقسیم، {%} باقی، {**} طاقت۔ {Assignment} = قیمت رکھتا ہے۔ {Operand} وہ قیمت ہے جس پر عمل ہو، {Operator} خود عمل۔ صفحے کا نمونہ کوڈ خود ٹائپ کریں، پھر بند کتاب تین متغیر بنائیں۔",
+     "displayText": "Teach Yourself · Day 10 of 30 · Week 2 · Teach\nChapter: Programming Fundamentals\nLearning aim: Variables, data types, operators\n★ Golden (must be spoken without notes): Variables, Data Types and Operators\nBooklet pages 44–46 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Variables\n• int, float, str, bool\n• input and print\n• Arithmetic operators\n• Assignment\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d11",
+     "day": 11,
+     "week": 3,
+     "kind": "Teach",
+     "chapter": "Programming Fundamentals",
+     "focus": "Sequence and selection",
+     "golden": "Selection: if and if-else",
+     "startPage": 47,
+     "endPage": 48,
+     "topics": [
+      "Sequence",
+      "if",
+      "if-else",
+      "Relational operators",
+      "Logical operators"
+     ],
+     "script": "دن 11۔ ★ {Golden}: {Selection}، {if} اور {if-else}۔ {Control structure} تین: {Sequence} سیدھا چلے، {Selection} انتخاب کرے، {Repetition} دہرائے۔ تقابلی عمل == != < > <= >= نتیجہ {bool} دیتے ہیں۔ منطقی: {and} دونوں سچ، {or} کوئی ایک، {not} الٹ۔ {in} رکنیت ہے۔ {if} شرط سچ ہو تو بلاک چلتا ہے۔ {if-else} دو راستے دیتا ہے۔ امتحان میں flowchart اور چھوٹا کوڈ دونوں مانگتے ہیں۔ صفحے کا خاکہ نقل کریں۔",
+     "displayText": "Teach Yourself · Day 11 of 30 · Week 3 · Teach\nChapter: Programming Fundamentals\nLearning aim: Sequence and selection\n★ Golden (must be spoken without notes): Selection: if and if-else\nBooklet pages 47–48 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Sequence\n• if\n• if-else\n• Relational operators\n• Logical operators\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d12",
+     "day": 12,
+     "week": 3,
+     "kind": "Teach",
+     "chapter": "Programming Fundamentals",
+     "focus": "for and while loops",
+     "golden": "for loop, while loop, break and continue",
+     "startPage": 49,
+     "endPage": 50,
+     "topics": [
+      "if-elif-else",
+      "for loop",
+      "range()",
+      "while loop",
+      "break",
+      "continue",
+      "Nested loops"
+     ],
+     "script": "دن 12۔ ★ {Golden}: {for}، {range()}، {while}، {break}، {continue}۔ کئی شرطیں ہوں تو {elif} زنجیر۔ اندر {if} کو {Nested if} کہتے ہیں۔ {for} معلوم تکرار کے لیے: {for i in range(5)}۔ {range(start, stop, step)} میں stop شامل نہیں۔ {while} جب تک شرط سچ رہے چلتا ہے۔ شرط نہ بدلی تو {Infinite loop}۔ {break} لوپ توڑتا ہے، {continue} یہ چکر چھوڑ کر اگلا شروع کرتا ہے۔ گنتی معلوم ہو تو {for}، شرط پر رکنا ہو تو {while}۔ صفحے کا کوڈ خود چلائیں اور trace لکھیں۔",
+     "displayText": "Teach Yourself · Day 12 of 30 · Week 3 · Teach\nChapter: Programming Fundamentals\nLearning aim: for and while loops\n★ Golden (must be spoken without notes): for loop, while loop, break and continue\nBooklet pages 49–50 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• if-elif-else\n• for loop\n• range()\n• while loop\n• break\n• continue\n• Nested loops\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d13",
+     "day": 13,
+     "week": 3,
+     "kind": "Checkpoint",
+     "chapter": "Programming Fundamentals",
+     "focus": "Libraries, debugging and the unit mock",
+     "golden": "Libraries and Debugging",
+     "startPage": 51,
+     "endPage": 57,
+     "topics": [
+      "Libraries",
+      "Debugging",
+      "Syntax error",
+      "Logic error",
+      "Checkpoint test"
+     ],
+     "script": "دن 13 {Checkpoint}۔ ★ {Golden}: {Libraries} اور {Debugging}۔ {Library} تیار کوڈ کا مجموعہ ہے، جیسے ریاضی کے فنکشن۔ خود وہی کوڈ دوبارہ نہ لکھیں۔ غلطیاں: {Syntax error} زبان کا قاعدہ ٹوٹنا، پروگرام چلتا ہی نہیں۔ {Logic error} پروگرام چلتا ہے مگر جواب غلط۔ {Debugger} لائن بہ لائن روک کر متغیر دکھاتا ہے۔ بند کتاب باب کا mock حل کریں۔ پھر کلید سے میل کھائیں۔ کمزور ★ {Golden} {Repair list} میں لکھیں۔",
+     "displayText": "Teach Yourself · Day 13 of 30 · Week 3 · Checkpoint\nChapter: Programming Fundamentals\nLearning aim: Libraries, debugging and the unit mock\n★ Golden (must be spoken without notes): Libraries and Debugging\nBooklet pages 51–57 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Libraries\n• Debugging\n• Syntax error\n• Logic error\n• Checkpoint test\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d14",
+     "day": 14,
+     "week": 3,
+     "kind": "Teach",
+     "chapter": "Database Management",
+     "focus": "Data, DBMS, tables and keys",
+     "golden": "DBMS, tables and keys",
+     "startPage": 58,
+     "endPage": 60,
+     "topics": [
+      "Data and information",
+      "DBMS",
+      "Table, record, field",
+      "Primary key",
+      "Foreign key"
+     ],
+     "script": "دن 14، {Unit 4}۔ ★ {Golden}: {DBMS}، tables اور keys۔ {Data} کچا حقائق ہے۔ {Information} وہی data جب معنی دے دے۔ {Database} متعلقہ data کا منظم مجموعہ ہے۔ {DBMS} وہ سافٹ ویئر ہے جو database بناتا، محفوظ رکھتا اور سوالوں کے جواب دیتا ہے۔ مثال {MS Access}۔ {Table} میں قطاریں {records} ہیں اور کالم {fields}۔ ★ {Primary key} ہر record کو منفرد بناتی ہے۔ {Foreign key} دوسری table کی primary key ہے۔ صفحے کا جدول نقل کریں۔ ایک اسکول کی table خود بنائیں: StudentID بطور {Primary key}۔",
+     "displayText": "Teach Yourself · Day 14 of 30 · Week 3 · Teach\nChapter: Database Management\nLearning aim: Data, DBMS, tables and keys\n★ Golden (must be spoken without notes): DBMS, tables and keys\nBooklet pages 58–60 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Data and information\n• DBMS\n• Table, record, field\n• Primary key\n• Foreign key\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d15",
+     "day": 15,
+     "week": 3,
+     "kind": "Teach",
+     "chapter": "Database Management",
+     "focus": "ER model, integrity and the library schema",
+     "golden": "ER Model and Referential Integrity",
+     "startPage": 61,
+     "endPage": 64,
+     "topics": [
+      "Entity",
+      "Attribute",
+      "Relationship",
+      "Referential integrity",
+      "Relational schema"
+     ],
+     "script": "دن 15۔ ★ {Golden}: {ER model} اور {Referential integrity}۔ {Entity} وہ چیز ہے جس کا data رکھتے ہیں، جیسے Student یا Book۔ {Attribute} اس کی خصوصیت ہے۔ {Relationship} entities کو جوڑتا ہے: one-to-many، many-to-many۔ ★ {Referential integrity} کا مطلب: {Foreign key} کی قیمت یا تو خالی ہو یا دوسری table کی موجود {Primary key} ہو۔ یتیم record جائز نہیں۔ لائبریری کیس اسٹڈی کا {Relational schema} صفحے پر ہے۔ مستطیل entity، بیضوی attribute، ہیرے relationship — خاکہ نقل کریں۔",
+     "displayText": "Teach Yourself · Day 15 of 30 · Week 3 · Teach\nChapter: Database Management\nLearning aim: ER model, integrity and the library schema\n★ Golden (must be spoken without notes): ER Model and Referential Integrity\nBooklet pages 61–64 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Entity\n• Attribute\n• Relationship\n• Referential integrity\n• Relational schema\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d16",
+     "day": 16,
+     "week": 4,
+     "kind": "Teach",
+     "chapter": "Database Management",
+     "focus": "Tables and forms in MS Access",
+     "golden": "MS Access tables and forms",
+     "startPage": 65,
+     "endPage": 67,
+     "topics": [
+      "MS Access objects",
+      "Datasheet view",
+      "Design view",
+      "Forms"
+     ],
+     "script": "دن 16۔ ★ {Golden}: {MS Access} کے objects، tables اور {Forms}۔ {Table} data رکھتی ہے۔ {Form} data داخل کرنے کی سکرین ہے۔ {Query} سوال ہے۔ {Report} چھپنے والا خالصہ ہے۔ {Design view} میں فیلڈ کا نام، {Data type} اور {Primary key} مقرر ہوتی ہے۔ {Datasheet view} میں قطاریں بھری جاتی ہیں۔ {Form} صارف کو table کی پیچیدگی سے بچاتا ہے۔ صفحے کی سکرین جیسی شکل کاپی میں بنائیں: عنوان، فیلڈز، محفوظ کرنے کا بٹن۔",
+     "displayText": "Teach Yourself · Day 16 of 30 · Week 4 · Teach\nChapter: Database Management\nLearning aim: Tables and forms in MS Access\n★ Golden (must be spoken without notes): MS Access tables and forms\nBooklet pages 65–67 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• MS Access objects\n• Datasheet view\n• Design view\n• Forms\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d17",
+     "day": 17,
+     "week": 4,
+     "kind": "Checkpoint",
+     "chapter": "Database Management",
+     "focus": "Queries, charts and the unit mock",
+     "golden": "Queries, summaries and charts",
+     "startPage": 68,
+     "endPage": 80,
+     "topics": [
+      "Select query",
+      "Criteria",
+      "Summary",
+      "Chart",
+      "Checkpoint test"
+     ],
+     "script": "دن 17 {Checkpoint}۔ ★ {Golden}: {Queries}، summaries اور charts۔ {Select query} table سے قطاریں چنتی ہے۔ {Criteria} شرط ہے، جیسے Marks >= 50۔ {Sort} ترتیب دیتا ہے۔ Summary: {Sum}، {Average}، {Count}۔ Chart اعداد کو تصویر بناتا ہے — {bar chart} موازنہ، {pie chart} حصہ۔ بند کتاب mock حل کریں۔ {Primary key}، {Foreign key}، {Referential integrity} کی تعریف زبانی آئے۔ فرہنگ کے صفحات بھی اسی نشست میں ہیں۔",
+     "displayText": "Teach Yourself · Day 17 of 30 · Week 4 · Checkpoint\nChapter: Database Management\nLearning aim: Queries, charts and the unit mock\n★ Golden (must be spoken without notes): Queries, summaries and charts\nBooklet pages 68–80 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Select query\n• Criteria\n• Summary\n• Chart\n• Checkpoint test\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d18",
+     "day": 18,
+     "week": 4,
+     "kind": "Teach",
+     "chapter": "Applications and Impacts of Computing",
+     "focus": "Artificial intelligence and the Internet of Things",
+     "golden": "Artificial Intelligence and IoT",
+     "startPage": 81,
+     "endPage": 91,
+     "topics": [
+      "Artificial Intelligence",
+      "Internet of Things",
+      "Six components of IoT",
+      "Sensor",
+      "Actuator"
+     ],
+     "script": "دن 18، {Unit 5}۔ ★ {Golden}: {Artificial Intelligence} اور {IoT}۔ {AI} وہ کمپیوٹر نظام ہے جو ایسے کام کرے جن میں انسان کو ذہانت لگتی ہے: پہچان، فیصلہ، سیکھنا۔ ★ {Internet of Things} چیزوں کا جال ہے جو internet سے جڑ کر data بھیجتی ہیں۔ چھ اجزا صفحے کے خاکے پر ہیں: {Sensor}، کنیکٹیویٹی، data کی پروسیسنگ، {Actuator}، interface، اور سیکیورٹی۔ خاکہ نقل کریں۔ اسمارٹ گھر کی مثال: sensor درجہ حرارت ناپے، actuator پنکھا چلائے۔ اصطلاح {IoT} انگریزی میں ہی لکھیں۔",
+     "displayText": "Teach Yourself · Day 18 of 30 · Week 4 · Teach\nChapter: Applications and Impacts of Computing\nLearning aim: Artificial intelligence and the Internet of Things\n★ Golden (must be spoken without notes): Artificial Intelligence and IoT\nBooklet pages 81–91 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Artificial Intelligence\n• Internet of Things\n• Six components of IoT\n• Sensor\n• Actuator\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d19",
+     "day": 19,
+     "week": 4,
+     "kind": "Teach",
+     "chapter": "Applications and Impacts of Computing",
+     "focus": "Data analytics and uses of IoT",
+     "golden": "Data Analytics",
+     "startPage": 92,
+     "endPage": 97,
+     "topics": [
+      "Data analytics",
+      "Descriptive analytics",
+      "Predictive analytics",
+      "Smart farming",
+      "Smart home"
+     ],
+     "script": "دن 19۔ ★ {Golden}: {Data Analytics}۔ {Data analytics} data سے معنی نکالنا ہے۔ {Descriptive} بتاتا ہے کیا ہوا۔ {Predictive} بتاتا ہے کیا ہو سکتا ہے۔ {IoT} کے استعمال: {Smart home}، {Smart farming}، صحت، نقل و حمل۔ سمارٹ کاشتکاری میں sensor نمی ناپتا ہے اور پانی اسی وقت کھلتا ہے۔ صفحے کے خاکے اور ریاضی کا کونا نقل کریں۔ ایک جملے میں بتائیں analytics فیصلہ کیسے بدلتا ہے۔",
+     "displayText": "Teach Yourself · Day 19 of 30 · Week 4 · Teach\nChapter: Applications and Impacts of Computing\nLearning aim: Data analytics and uses of IoT\n★ Golden (must be spoken without notes): Data Analytics\nBooklet pages 92–97 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Data analytics\n• Descriptive analytics\n• Predictive analytics\n• Smart farming\n• Smart home\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d20",
+     "day": 20,
+     "week": 4,
+     "kind": "Checkpoint",
+     "chapter": "Applications and Impacts of Computing",
+     "focus": "Impacts, sources and assistive technologies",
+     "golden": "Impacts of computing and assistive technologies",
+     "startPage": 98,
+     "endPage": 114,
+     "topics": [
+      "AI in education",
+      "Information sources",
+      "Impacts of computing",
+      "Assistive technologies",
+      "Checkpoint test"
+     ],
+     "script": "دن 20 {Checkpoint}۔ ★ {Golden}: computing کے اثرات اور {Assistive technologies}۔ {AI} تعلیم میں مشق، فوری رائے، اور ہر طالب علم کی رفتار دے سکتا ہے۔ خطرہ: غلط جواب پر اندھا اعتماد، اور نجی data۔ معلومات کے ماخذ: {Primary} خود اکٹھا کیا، {Secondary} پہلے سے موجود۔ قابل اعتبار ماخذ مصنف، تاریخ اور ثبوت دکھاتا ہے۔ {Assistive technology} معذوری والے شخص کو کمپیوٹر استعمال کرنے دیتی ہے: screen reader، voice input، بڑے بٹن۔ یہ {equity} ہے۔ mock بند کتاب حل کریں۔ اثرات کے مثبت اور منفی دونوں پہلو لکھیں، اور خاکہ اگر صفحے پر ہو تو نقل کریں۔",
+     "displayText": "Teach Yourself · Day 20 of 30 · Week 4 · Checkpoint\nChapter: Applications and Impacts of Computing\nLearning aim: Impacts, sources and assistive technologies\n★ Golden (must be spoken without notes): Impacts of computing and assistive technologies\nBooklet pages 98–114 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• AI in education\n• Information sources\n• Impacts of computing\n• Assistive technologies\n• Checkpoint test\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d21",
+     "day": 21,
+     "week": 5,
+     "kind": "Teach",
+     "chapter": "Digital Literacy",
+     "focus": "Digital literacy, types of data and collection",
+     "golden": "Digital literacy and types of data",
+     "startPage": 115,
+     "endPage": 122,
+     "topics": [
+      "Digital literacy",
+      "Information Age",
+      "Qualitative data",
+      "Quantitative data",
+      "Primary and secondary data"
+     ],
+     "script": "دن 21، {Unit 6}۔ ★ {Golden}: {Digital literacy} اور data کی اقسام۔ {Digital literacy} صرف بٹن دبانا نہیں۔ یہ جاننا ہے کہ digital اوزار سے سوال پوچھیں، data اکٹھا کریں، جانچیں، اور ایمانداری سے پیش کریں۔ {Qualitative} data الفاظ اور صفات ہیں، جیسے رائے۔ {Quantitative} data عدد ہیں، جیسے نمبر۔ {Primary} خود اکٹھا ہوتا ہے، {Secondary} کتاب یا ویب سے آتا ہے۔ اکٹھا کرنے کے طریقے: سروے، مشاہدہ، انٹرویو، sensor، موجودہ ریکارڈ۔ صفحے کی جدول نقل کریں۔",
+     "displayText": "Teach Yourself · Day 21 of 30 · Week 5 · Teach\nChapter: Digital Literacy\nLearning aim: Digital literacy, types of data and collection\n★ Golden (must be spoken without notes): Digital literacy and types of data\nBooklet pages 115–122 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Digital literacy\n• Information Age\n• Qualitative data\n• Quantitative data\n• Primary and secondary data\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d22",
+     "day": 22,
+     "week": 5,
+     "kind": "Teach",
+     "chapter": "Digital Literacy",
+     "focus": "Designing a collection and presenting data",
+     "golden": "Data-collection approach and presenting data",
+     "startPage": 123,
+     "endPage": 131,
+     "topics": [
+      "Data-collection plan",
+      "Digital tools",
+      "Chart",
+      "Digital Inquiry Project"
+     ],
+     "script": "دن 22۔ ★ {Golden}: data اکٹھا کرنے کا منصوبہ اور {Digital Inquiry Project}۔ منصوبے میں چار باتیں لکھیں: سوال کیا ہے، کون سا data چاہیے، کہاں سے آئے گا، اور کیسے پیش ہوگا۔ پیشکش: table درست عدد دیتی ہے، {bar chart} موازنہ، {line chart} وقت کے ساتھ تبدیلی، {pie chart} حصہ۔ غلط chart معنی بدل دیتا ہے۔ کیس اسٹڈی کا خاکہ صفحے پر ہے۔ اپنے اسکول کا ایک چھوٹا inquiry سوال لکھیں اور artefact کا خاکہ بنائیں۔",
+     "displayText": "Teach Yourself · Day 22 of 30 · Week 5 · Teach\nChapter: Digital Literacy\nLearning aim: Designing a collection and presenting data\n★ Golden (must be spoken without notes): Data-collection approach and presenting data\nBooklet pages 123–131 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Data-collection plan\n• Digital tools\n• Chart\n• Digital Inquiry Project\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d23",
+     "day": 23,
+     "week": 5,
+     "kind": "Checkpoint",
+     "chapter": "Digital Literacy",
+     "focus": "Inquiry project, revision and mock",
+     "golden": "Presenting data and the inquiry project",
+     "startPage": 132,
+     "endPage": 144,
+     "topics": [
+      "Inquiry artefact",
+      "Revision",
+      "Mock test",
+      "Glossary"
+     ],
+     "script": "دن 23 {Checkpoint}۔ ★ {Golden}: data کی پیشکش اور inquiry project۔ آج نیا نظریہ کم ہے، کام زیادہ۔ artefact مکمل کریں: سوال، طریقہ، table یا chart، ایک نتیجہ۔ بند کتاب {Unit 6} کا mock حل کریں۔ {Primary} اور {Secondary}، {Qualitative} اور {Quantitative} کی تعریف مثال کے ساتھ لکھیں۔ فرہنگ کے صفحات کھول کر وہ اصطلاح دہرائیں جو زبان پر نہ آئی۔",
+     "displayText": "Teach Yourself · Day 23 of 30 · Week 5 · Checkpoint\nChapter: Digital Literacy\nLearning aim: Inquiry project, revision and mock\n★ Golden (must be spoken without notes): Presenting data and the inquiry project\nBooklet pages 132–144 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Inquiry artefact\n• Revision\n• Mock test\n• Glossary\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d24",
+     "day": 24,
+     "week": 5,
+     "kind": "Golden blitz",
+     "chapter": "Computer Systems",
+     "focus": "Gates, K-maps and OSI without notes",
+     "golden": "Logic Gates, K-Maps, SDLC and OSI",
+     "startPage": 9,
+     "endPage": 14,
+     "topics": [
+      "Analog and digital",
+      "Logic gates",
+      "K-map",
+      "SDLC",
+      "OSI model"
+     ],
+     "script": "دن 24 صرف ★ {Golden blitz} ہے۔ نیا سبق نہیں۔ بند کتاب بولیں: {Analog} بمقابلہ {Digital}، {AND} {OR} {NOT}، {NAND} اور {NOR} universal کیوں ہیں، {K-Map} کا قاعدہ، {Waterfall} بمقابلہ {Agile}، {OSI} کی سات تہیں۔ جو تعریف نہ آئے، صفحہ ایک بار کھولیں، خاکہ نقل کریں، پھر فوراً بند کتاب دہرائیں۔",
+     "displayText": "Teach Yourself · Day 24 of 30 · Week 5 · Golden blitz\nChapter: Computer Systems\nLearning aim: Gates, K-maps and OSI without notes\n★ Golden (must be spoken without notes): Logic Gates, K-Maps, SDLC and OSI\nBooklet pages 9–14 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Analog and digital\n• Logic gates\n• K-map\n• SDLC\n• OSI model\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d25",
+     "day": 25,
+     "week": 5,
+     "kind": "Golden blitz",
+     "chapter": "Algorithms and Programming",
+     "focus": "Sorts, search, loops and keys",
+     "golden": "Binary Search, loops, DBMS keys",
+     "startPage": 32,
+     "endPage": 36,
+     "topics": [
+      "Bubble sort",
+      "Binary search",
+      "if and loops",
+      "Primary key",
+      "ER model"
+     ],
+     "script": "دن 25 {Golden blitz}، {Unit 2} سے {Unit 4} تک۔ بند کتاب: {Algorithm} کی تعریف، {Bubble Sort} کا ایک pass، {Binary Search} کی شرط، {for} اور {while} کا فرق، {Primary key} اور {Foreign key}، {Referential integrity}۔ صفحے کی جدول صرف اس وقت کھولیں جب تعریف رک جائے۔",
+     "displayText": "Teach Yourself · Day 25 of 30 · Week 5 · Golden blitz\nChapter: Algorithms and Programming\nLearning aim: Sorts, search, loops and keys\n★ Golden (must be spoken without notes): Binary Search, loops, DBMS keys\nBooklet pages 32–36 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Bubble sort\n• Binary search\n• if and loops\n• Primary key\n• ER model\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d26",
+     "day": 26,
+     "week": 6,
+     "kind": "Golden blitz",
+     "chapter": "Impacts and Digital Literacy",
+     "focus": "AI, IoT, data types",
+     "golden": "AI, IoT, data types and digital literacy",
+     "startPage": 86,
+     "endPage": 96,
+     "topics": [
+      "AI",
+      "IoT",
+      "Data analytics",
+      "Assistive technology",
+      "Primary and secondary data"
+     ],
+     "script": "دن 26 {Golden blitz}، {Unit 5} اور {Unit 6}۔ بند کتاب: {AI} کی تعریف، {IoT} کے چھ اجزا، {Data analytics}، {Assistive technology}، {Qualitative} بمقابلہ {Quantitative}، {Primary} بمقابلہ {Secondary}۔ خاکہ صرف دیکھ کر بند کر دیں، پھر خود بنائیں۔",
+     "displayText": "Teach Yourself · Day 26 of 30 · Week 6 · Golden blitz\nChapter: Impacts and Digital Literacy\nLearning aim: AI, IoT, data types\n★ Golden (must be spoken without notes): AI, IoT, data types and digital literacy\nBooklet pages 86–96 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• AI\n• IoT\n• Data analytics\n• Assistive technology\n• Primary and secondary data\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d27",
+     "day": 27,
+     "week": 6,
+     "kind": "Recap",
+     "chapter": "All units",
+     "focus": "Teach each chapter back in five minutes",
+     "golden": "All Golden definitions",
+     "startPage": 2,
+     "endPage": 5,
+     "topics": [
+      "Method",
+      "Golden cards",
+      "Diagram habit"
+     ],
+     "script": "دن 27 {Recap} ہے۔ ہر باب پانچ منٹ میں واپس سکھائیں، نوٹس بند۔ ترتیب: {Computer Systems}، {Algorithms}، {Python}، {Database}، {AI} اور {IoT}، {Digital literacy}۔ ہر باب میں ایک تعریف، ایک مثال، ایک خاکہ۔ اصطلاح انگریزی میں رہے۔ جو باب کمزور ہو، اس کا نام {Repair list} پر لکھیں۔",
+     "displayText": "Teach Yourself · Day 27 of 30 · Week 6 · Recap\nChapter: All units\nLearning aim: Teach each chapter back in five minutes\n★ Golden (must be spoken without notes): All Golden definitions\nBooklet pages 2–5 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Method\n• Golden cards\n• Diagram habit\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d28",
+     "day": 28,
+     "week": 6,
+     "kind": "Mock",
+     "chapter": "All units",
+     "focus": "Closed-book mock",
+     "golden": "Sit the mock as an exam",
+     "startPage": 23,
+     "endPage": 27,
+     "topics": [
+      "Closed book",
+      "Time limit",
+      "No new teaching"
+     ],
+     "script": "دن 28 {Mock} ہے۔ میں سبق نہیں پڑھاتا۔ کتاب بند، فون دور، وقت رکھیں۔ {Unit 1} کا mock صفحوں پر ہے۔ باقی ابواب کے mock اپنے checkpoint دنوں والے صفحات پر دوبارہ بیٹھیں۔ ہر خاکے والا سوال خالی نہ چھوڑیں۔ آدھا خاکہ بھی نمبر دیتا ہے۔ آج کلید نہ دیکھیں۔",
+     "displayText": "Teach Yourself · Day 28 of 30 · Week 6 · Mock\nChapter: All units\nLearning aim: Closed-book mock\n★ Golden (must be spoken without notes): Sit the mock as an exam\nBooklet pages 23–27 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Closed book\n• Time limit\n• No new teaching\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d29",
+     "day": 29,
+     "week": 6,
+     "kind": "Mark",
+     "chapter": "All units",
+     "focus": "Mark against the key",
+     "golden": "Build the Repair list",
+     "startPage": 109,
+     "endPage": 114,
+     "topics": [
+      "Answer key",
+      "Marking scheme",
+      "Repair list"
+     ],
+     "script": "دن 29 {Mark} ہے۔ اندازے سے نمبر نہ لگائیں۔ کلید اور marking scheme سے میل کھائیں۔ ہر کمزور ★ {Golden} {Repair list} میں لکھیں: اصطلاح، کیا غلط ہوا، کون سا خاکہ نہیں بنا۔ 60 فیصد سے کم باب کل کے {Repair} میں پہلے آئے۔",
+     "displayText": "Teach Yourself · Day 29 of 30 · Week 6 · Mark\nChapter: All units\nLearning aim: Mark against the key\n★ Golden (must be spoken without notes): Build the Repair list\nBooklet pages 109–114 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Answer key\n• Marking scheme\n• Repair list\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xi-d30",
+     "day": 30,
+     "week": 6,
+     "kind": "Repair",
+     "chapter": "All units",
+     "focus": "Repair only yesterday’s list",
+     "golden": "Repair list only",
+     "startPage": 75,
+     "endPage": 80,
+     "topics": [
+      "Repair list",
+      "Glossary",
+      "Stop"
+     ],
+     "script": "دن 30 {Repair} ہے۔ نیا باب نہیں۔ صرف کل کی فہرست۔ ہر اصطلاح فرہنگ میں دیکھیں، تعریف بند کتاب کہیں، خاکہ ایک بار بنائیں۔ شام کو رک جائیں۔ دس بجے سوئیں۔ ہال میں کتاب نہیں ہوگی، ★ {Golden} سر میں ہونا چاہیے۔",
+     "displayText": "Teach Yourself · Day 30 of 30 · Week 6 · Repair\nChapter: All units\nLearning aim: Repair only yesterday’s list\n★ Golden (must be spoken without notes): Repair list only\nBooklet pages 75–80 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Repair list\n• Glossary\n• Stop\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    }
+   ]
+  },
+  {
+   "id": "xii",
+   "title": "Computer Science XII",
+   "subtitle": "Teach Yourself · Units 1–6 · Teacher’s Edition",
+   "introStartPage": 145,
+   "introEndPage": 149,
+   "introScript": "السلام علیکم۔ میں آپ کا {Computer Science} کا استاد ہوں۔ یہ {Class XII} کا تیس دن کا {Teach Yourself Crash Course} ہے، {New Sindh Curriculum 2026}۔ باب: {HCI}، {Algorithms} اور {Big O Notation}، {Python} کے {List} {Tuple} {Set} {Dictionary}، {Data and Analysis}، {Neural Networks}، اور {MVP}۔ میں اردو میں سمجھاؤں گا۔ یہ اصطلاحات انگریزی میں ویسی ہی بولیں جیسی کتابچے پر چھپی ہیں۔ neuron، contrast، اور prototype کے خاکے ایپ میں شامل ہیں۔ انہیں نقل کریں۔ طریقہ وہی ہے: تین گھنٹے، ★ {Golden} پہلے، {Checkpoint} مت چھوڑو، آخری دن {Repair}۔",
+   "introDisplay": "Computer Science XII. Teacher’s Edition, bilingual. 30 days. Urdu tutor. English exam terms as printed. Every symbol and diagram from the booklet is embedded in this app.",
+   "days": [
+    {
+     "id": "xii-d01",
+     "day": 1,
+     "week": 1,
+     "kind": "Teach",
+     "chapter": "Computer Systems — HCI",
+     "focus": "What HCI is, and its components",
+     "golden": "HCI and its components",
+     "startPage": 150,
+     "endPage": 155,
+     "topics": [
+      "Human-Computer Interaction",
+      "Human",
+      "Computer",
+      "Interaction",
+      "Environment"
+     ],
+     "script": "السلام علیکم۔ {Class XII}، دن 01، {Unit 1}۔ ★ {Golden}: {HCI} اور اس کے اجزا۔ {HCI} یعنی {Human-Computer Interaction}: انسان اور کمپیوٹر کے درمیان وہ ڈائیلاگ جس سے کام ہو۔ اجزاء صفحے کے خاکے پر ہیں: {Human} صارف، {Computer} نظام، {Interaction} درمیان کا پل، اور {Environment} جگہ — گھر، کلاس، شور والی ورکشاپ، بیرونی {ATM}۔ خاکہ نقل کریں۔ اچھا {HCI} غلطی کم کرتا ہے، کام تیز کرتا ہے، اور زیادہ لوگوں کو شامل کرتا ہے۔ اصطلاح {HCI} کا ترجمہ نہ لکھیں۔",
+     "displayText": "Teach Yourself · Day 01 of 30 · Week 1 · Teach\nChapter: Computer Systems — HCI\nLearning aim: What HCI is, and its components\n★ Golden (must be spoken without notes): HCI and its components\nBooklet pages 150–155 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Human-Computer Interaction\n• Human\n• Computer\n• Interaction\n• Environment\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d02",
+     "day": 2,
+     "week": 1,
+     "kind": "Teach",
+     "chapter": "Computer Systems — HCI",
+     "focus": "Accessibility, needs, UI, UX and Figma",
+     "golden": "Accessibility, UI, UX and Figma",
+     "startPage": 156,
+     "endPage": 161,
+     "topics": [
+      "Accessibility",
+      "Contrast ratio",
+      "Need analysis",
+      "UI",
+      "UX",
+      "Wireframe",
+      "Figma"
+     ],
+     "script": "دن 02۔ ★ {Golden}: {Accessibility}، {UI}، {UX}، {Wireframe}، {Figma}۔ {Accessibility} کا مطلب ہے زیادہ سے زیادہ لوگ استعمال کر سکیں: contrast، پڑھنے کے قابل فونٹ، رنگ کے علاوہ لیبل، کی بورڈ سے راستہ۔ متن کا contrast عموماً کم از کم {4.5 : 1} ہونا چاہیے۔ صفحے پر کم contrast اور زیادہ contrast کی مثال چھپی ہے۔ دونوں دیکھیں۔ {UI} وہ ہے جو نظر آتا ہے: بٹن، متن، ترتیب۔ {UX} وہ احساس ہے جو کام کے بعد رہتا ہے۔ {Wireframe} لے آؤٹ کا سادہ خاکہ ہے۔ {Figma} میں prototype بنتا ہے۔ دو frames جوڑنے کی {Figma} سیٹنگز صفحے پر ہیں۔ نام انگریزی میں نقل کریں۔",
+     "displayText": "Teach Yourself · Day 02 of 30 · Week 1 · Teach\nChapter: Computer Systems — HCI\nLearning aim: Accessibility, needs, UI, UX and Figma\n★ Golden (must be spoken without notes): Accessibility, UI, UX and Figma\nBooklet pages 156–161 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Accessibility\n• Contrast ratio\n• Need analysis\n• UI\n• UX\n• Wireframe\n• Figma\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d03",
+     "day": 3,
+     "week": 1,
+     "kind": "Checkpoint",
+     "chapter": "Computer Systems — HCI",
+     "focus": "Test, evaluate and the unit mock",
+     "golden": "Test and evaluate a user interface",
+     "startPage": 162,
+     "endPage": 169,
+     "topics": [
+      "Usability test",
+      "SUS",
+      "Model answer",
+      "Mock test"
+     ],
+     "script": "دن 03 {Checkpoint}۔ ★ {Golden}: interface کی جانچ۔ جانچ میں حقیقی کام دیں، دیکھیں صارف کہاں رکتا ہے، پھر درستگی کریں۔ {SUS} دس سوالوں کا پیمانہ ہے، وفاداری {Net Promoter Score} سے الگ چیز ہے۔ لمبے سوال کا طریقہ: مسئلہ لکھیں، {Accessibility} کی خلاف ورزی بتائیں، contrast کا نمبر دیں، پھر تجویز۔ صفحے کا model answer پڑھ کر بند کتاب اپنی زبان میں لکھیں۔ mock بند کتاب۔ {HCI} کے اجزا کا خاکہ لازمی بنائیں۔",
+     "displayText": "Teach Yourself · Day 03 of 30 · Week 1 · Checkpoint\nChapter: Computer Systems — HCI\nLearning aim: Test, evaluate and the unit mock\n★ Golden (must be spoken without notes): Test and evaluate a user interface\nBooklet pages 162–169 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Usability test\n• SUS\n• Model answer\n• Mock test\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d04",
+     "day": 4,
+     "week": 1,
+     "kind": "Teach",
+     "chapter": "Computational Thinking and Algorithms",
+     "focus": "Correctness, clarity and the growth of work",
+     "golden": "Algorithm correctness, clarity and Big O",
+     "startPage": 170,
+     "endPage": 176,
+     "topics": [
+      "Correctness",
+      "Clarity",
+      "Modularity",
+      "Readability",
+      "Decomposition"
+     ],
+     "script": "دن 04، {Unit 2}۔ ★ {Golden}: {Correctness} اور {Clarity}۔ درست الگورتھم ہر جائز input پر درست output دیتا ہے۔ واضح الگورتھم میں {Modularity} اور {Readability} ہوتے ہیں: چھوٹے نام والے حصے، دہرایا کام الگ فنکشن۔ صفحے پر ایک بلاک بمقابلہ دو modules کا خاکہ ہے، {Figure 2.1}۔ نقل کریں اور بتائیں ماڈیول غلطی کہاں سمٹتا ہے۔ {Trace table} قدم بہ قدم متغیر دکھاتی ہے۔ یہ درستگی جانچنے کا آلہ ہے۔ {Figure 2.2} دکھاتی ہے n بڑھنے پر کام کیسے بڑھتا ہے۔ گراف نقل کریں۔",
+     "displayText": "Teach Yourself · Day 04 of 30 · Week 1 · Teach\nChapter: Computational Thinking and Algorithms\nLearning aim: Correctness, clarity and the growth of work\n★ Golden (must be spoken without notes): Algorithm correctness, clarity and Big O\nBooklet pages 170–176 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Correctness\n• Clarity\n• Modularity\n• Readability\n• Decomposition\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d05",
+     "day": 5,
+     "week": 1,
+     "kind": "Teach",
+     "chapter": "Computational Thinking and Algorithms",
+     "focus": "Stacks, queues and Big O classes",
+     "golden": "Stack, queue and Big O Notation",
+     "startPage": 177,
+     "endPage": 184,
+     "topics": [
+      "Stack",
+      "LIFO",
+      "Queue",
+      "FIFO",
+      "Big O notation",
+      "O(n²)",
+      "O(n log n)"
+     ],
+     "script": "دن 05۔ ★ {Golden}: {Stack}، {Queue}، اور {Big O Notation}۔ {Stack} {LIFO} ہے: آخری آیا، پہلے گیا، جیسے پلیٹوں کا ڈھیر۔ عمل {Push} اور {Pop}۔ {Queue} {FIFO} ہے: پہلا آیا، پہلے گیا، جیسے پرنٹر کی قطار۔ صفحے پر {STACK} اور {QUEUE} کے خاکے چھپے ہیں۔ TOP کا تیر اور دونوں سمتیں نقل کریں۔ {Big O} بتاتا ہے input بڑھنے پر قدم کتنے تیزی سے بڑھتے ہیں۔ {O(n²)} نیسٹڈ لوپ ہے۔ {O(n log n)} بڑی فہرست چھانٹنے کے لیے بہتر ہے۔ صفحے کی درجہ بندی والی table نقل کریں۔",
+     "displayText": "Teach Yourself · Day 05 of 30 · Week 1 · Teach\nChapter: Computational Thinking and Algorithms\nLearning aim: Stacks, queues and Big O classes\n★ Golden (must be spoken without notes): Stack, queue and Big O Notation\nBooklet pages 177–184 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Stack\n• LIFO\n• Queue\n• FIFO\n• Big O notation\n• O(n²)\n• O(n log n)\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d06",
+     "day": 6,
+     "week": 2,
+     "kind": "Teach",
+     "chapter": "Computational Thinking and Algorithms",
+     "focus": "Trace tables and choosing a structure",
+     "golden": "Trace tables and choosing a data structure",
+     "startPage": 185,
+     "endPage": 191,
+     "topics": [
+      "Trace table",
+      "Linear search",
+      "Factorial",
+      "Choosing a structure"
+     ],
+     "script": "دن 06۔ ★ {Golden}: {Trace table} اور ساخت کا انتخاب۔ trace میں ہر قدم کے بعد متغیر کی نئی قیمت لکھیں۔ صفحے کی traces دیکھیں: زیادہ سے زیادہ عدد، {Linear search}، factorial۔ پھر بند کتاب ایک نئی فہرست کا trace بنائیں۔ انتخاب: واپسی کی تاریخ چاہیے تو {Stack}، باری چاہیے تو {Queue}، انڈیکس سے سیدھی رسائی چاہیے تو list۔ صفحے کا منظرنامہ والا جدول نقل کریں۔",
+     "displayText": "Teach Yourself · Day 06 of 30 · Week 2 · Teach\nChapter: Computational Thinking and Algorithms\nLearning aim: Trace tables and choosing a structure\n★ Golden (must be spoken without notes): Trace tables and choosing a data structure\nBooklet pages 185–191 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Trace table\n• Linear search\n• Factorial\n• Choosing a structure\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d07",
+     "day": 7,
+     "week": 2,
+     "kind": "Checkpoint",
+     "chapter": "Computational Thinking and Algorithms",
+     "focus": "Trace tables and the unit mock",
+     "golden": "Trace tables",
+     "startPage": 192,
+     "endPage": 195,
+     "topics": [
+      "Trace table",
+      "Linear search trace",
+      "Factorial trace",
+      "Mock test"
+     ],
+     "script": "دن 07 {Checkpoint}۔ ★ {Golden}: {Trace table}۔ trace میں ہر قدم کے بعد متغیر کی نئی قیمت لکھیں۔ پرانی قیمت کاٹ کر نئی لکھنا امتحان میں نمبر دیتا ہے۔ صفحے کی traces دیکھیں: زیادہ سے زیادہ عدد، {Linear search}، factorial۔ پھر بند کتاب ایک نئی فہرست کا trace خود بنائیں۔ mock میں {Big O} کا موازنہ اور {Stack} بمقابلہ {Queue} لازمی آئے گا۔",
+     "displayText": "Teach Yourself · Day 07 of 30 · Week 2 · Checkpoint\nChapter: Computational Thinking and Algorithms\nLearning aim: Trace tables and the unit mock\n★ Golden (must be spoken without notes): Trace tables\nBooklet pages 192–195 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Trace table\n• Linear search trace\n• Factorial trace\n• Mock test\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d08",
+     "day": 8,
+     "week": 2,
+     "kind": "Teach",
+     "chapter": "Programming Fundamentals",
+     "focus": "Lists and tuples",
+     "golden": "Lists and tuples",
+     "startPage": 196,
+     "endPage": 202,
+     "topics": [
+      "List",
+      "Index",
+      "Slice",
+      "Tuple",
+      "Traversal"
+     ],
+     "script": "دن 08، {Unit 3}۔ ★ {Golden}: {List} اور {Tuple}۔ {List} بدلنے کے قابل ترتیب ہے۔ انڈیکس 0 سے شروع۔ {append}، {insert}، {pop}، {len}۔ {Slice} کا اصول: start شامل، stop شامل نہیں۔ {Tuple} ترتیب تو ہے مگر بدل نہیں سکتی۔ گول قوسین، اور اگر ایک عنصر ہو تو آخر میں comma۔ {Traversal} بائیں سے دائیں: {for item in list}۔ صفحے کی slice tables نقل کریں اور تین slice بند کتاب لکھیں۔",
+     "displayText": "Teach Yourself · Day 08 of 30 · Week 2 · Teach\nChapter: Programming Fundamentals\nLearning aim: Lists and tuples\n★ Golden (must be spoken without notes): Lists and tuples\nBooklet pages 196–202 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• List\n• Index\n• Slice\n• Tuple\n• Traversal\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d09",
+     "day": 9,
+     "week": 2,
+     "kind": "Teach",
+     "chapter": "Programming Fundamentals",
+     "focus": "Sets and dictionaries",
+     "golden": "Sets and dictionaries",
+     "startPage": 203,
+     "endPage": 209,
+     "topics": [
+      "Set",
+      "Union",
+      "Intersection",
+      "Dictionary",
+      "Key",
+      "Value"
+     ],
+     "script": "دن 09۔ ★ {Golden}: {Set} اور {Dictionary}۔ {Set} میں دہرایا عنصر نہیں رہتا، اور ترتیب کا وعدہ نہیں۔ {Union} دونوں کا مجموعہ، {Intersection} مشترک، difference وہ جو پہلے میں ہو دوسرے میں نہ ہو۔ {Dictionary} {key} سے {value} جوڑتا ہے۔ key منفرد ہوتی ہے۔ طلبہ کے نام سے نمبر، یہ dictionary ہے۔ صفحے کی set drills خود حساب کریں، پھر {Python} سے ملا کر دیکھیں۔",
+     "displayText": "Teach Yourself · Day 09 of 30 · Week 2 · Teach\nChapter: Programming Fundamentals\nLearning aim: Sets and dictionaries\n★ Golden (must be spoken without notes): Sets and dictionaries\nBooklet pages 203–209 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Set\n• Union\n• Intersection\n• Dictionary\n• Key\n• Value\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d10",
+     "day": 10,
+     "week": 2,
+     "kind": "Teach",
+     "chapter": "Programming Fundamentals",
+     "focus": "Functions, scope and files",
+     "golden": "Functions, scope and file handling",
+     "startPage": 210,
+     "endPage": 216,
+     "topics": [
+      "Function",
+      "Parameter",
+      "Return",
+      "Scope",
+      "open()",
+      "with open()"
+     ],
+     "script": "دن 10۔ ★ {Golden}: {Function}، {scope}، اور files۔ {Function} نام والا بلاک ہے جو {parameter} لیتا ہے اور {return} سے جواب دیتا ہے۔ {Figure 3.6} کال کا سفر دکھاتی ہے۔ خاکہ نقل کریں۔ {Local scope} فنکشن کے اندر۔ {Global} باہر۔ اندر کا نام باہر نہیں ملتا جب تک واپس نہ کیا جائے۔ فائل: {open(path, mode)}، {read}، {readline}، {readlines}، {write}، {close}۔ ★ {with open()} زیادہ محفوظ ہے کیونکہ بلاک ختم ہوتے ہی فائل بند ہو جاتی ہے۔",
+     "displayText": "Teach Yourself · Day 10 of 30 · Week 2 · Teach\nChapter: Programming Fundamentals\nLearning aim: Functions, scope and files\n★ Golden (must be spoken without notes): Functions, scope and file handling\nBooklet pages 210–216 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Function\n• Parameter\n• Return\n• Scope\n• open()\n• with open()\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d11",
+     "day": 11,
+     "week": 3,
+     "kind": "Checkpoint",
+     "chapter": "Programming Fundamentals",
+     "focus": "Predict the output and the unit mock",
+     "golden": "Functions and file handling",
+     "startPage": 217,
+     "endPage": 220,
+     "topics": [
+      "Predict the output",
+      "Scope bugs",
+      "Mock test"
+     ],
+     "script": "دن 11 {Checkpoint}۔ پہلے output خود بتائیں، پھر صفحہ دیکھیں۔ عام غلطیاں: slice میں stop شامل سمجھ لینا، set میں ترتیب مان لینا، {close()} بھول جانا، local متغیر باہر چھاپنا۔ mock بند کتاب۔ ایک فنکشن لکھیں جو فہرست کا سب سے بڑا عدد بنائے، بغیر {max()} کے۔ اور {with open()} کی ایک وجہ لکھیں۔",
+     "displayText": "Teach Yourself · Day 11 of 30 · Week 3 · Checkpoint\nChapter: Programming Fundamentals\nLearning aim: Predict the output and the unit mock\n★ Golden (must be spoken without notes): Functions and file handling\nBooklet pages 217–220 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Predict the output\n• Scope bugs\n• Mock test\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d12",
+     "day": 12,
+     "week": 3,
+     "kind": "Teach",
+     "chapter": "Data and Analysis",
+     "focus": "Database connectivity and DataFrames",
+     "golden": "Database connectivity and DataFrames",
+     "startPage": 221,
+     "endPage": 226,
+     "topics": [
+      "SQL",
+      "Connection",
+      "Cursor",
+      "commit()",
+      "DataFrame",
+      "Cleaning"
+     ],
+     "script": "دن 12، {Unit 4}۔ ★ {Golden}: database connectivity اور {DataFrame}۔ پروگرام database سے {connection} بناتا ہے، {cursor} سوال چلاتا ہے، {commit()} تبدیلی مستقل محفوظ کرتا ہے۔ {commit()} کے بغیر {INSERT}، {UPDATE}، {DELETE} فائل میں نہیں جمے۔ {DataFrame} جدول جیسا object ہے، قطاریں مشاہدے، کالم متغیر۔ صفائی: خالی قدر، غلط قسم، دہرایا ریکارڈ۔ صفحے کا کوڈ خود ٹائپ کریں۔ {SQL} انگریزی میں ہی لکھیں۔",
+     "displayText": "Teach Yourself · Day 12 of 30 · Week 3 · Teach\nChapter: Data and Analysis\nLearning aim: Database connectivity and DataFrames\n★ Golden (must be spoken without notes): Database connectivity and DataFrames\nBooklet pages 221–226 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• SQL\n• Connection\n• Cursor\n• commit()\n• DataFrame\n• Cleaning\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d13",
+     "day": 13,
+     "week": 3,
+     "kind": "Teach",
+     "chapter": "Data and Analysis",
+     "focus": "Charts with matplotlib",
+     "golden": "matplotlib charts",
+     "startPage": 227,
+     "endPage": 232,
+     "topics": [
+      "bar chart",
+      "line chart",
+      "histogram",
+      "matplotlib",
+      "Axis labels"
+     ],
+     "script": "دن 13۔ ★ {Golden}: {matplotlib} سے charts۔ {bar chart} زمروں کا موازنہ۔ {line chart} وقت کے ساتھ رجحان۔ {histogram} عدد کی تقسیم، مسلسل وقفے۔ ہر chart پر عنوان، محور کے نام، اور اکائی ہونی چاہیے۔ صفحے کی شکل نقل کریں، پھر بتائیں یہ bar ہے یا histogram، اور کیوں۔ جھوٹا پیمانہ معنی بدل دیتا ہے۔ محور صفر سے شروع ہے یا نہیں، یہ امتحانی نکتہ ہے۔",
+     "displayText": "Teach Yourself · Day 13 of 30 · Week 3 · Teach\nChapter: Data and Analysis\nLearning aim: Charts with matplotlib\n★ Golden (must be spoken without notes): matplotlib charts\nBooklet pages 227–232 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• bar chart\n• line chart\n• histogram\n• matplotlib\n• Axis labels\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d14",
+     "day": 14,
+     "week": 3,
+     "kind": "Checkpoint",
+     "chapter": "Data and Analysis",
+     "focus": "Mean, median, mode, spread",
+     "golden": "Mean, median and variance",
+     "startPage": 233,
+     "endPage": 239,
+     "topics": [
+      "Mean",
+      "Median",
+      "Mode",
+      "Variance",
+      "Outlier",
+      "Mock test"
+     ],
+     "script": "دن 14 {Checkpoint}۔ ★ {Golden}: {Mean}، {Median}، {Mode}، {Variance}۔ {Mean} اوسط ہے۔ {Median} درمیانہ قدر جب data ترتیب شدہ ہو۔ {Mode} سب سے زیادہ بار آنے والی قدر۔ mode ایک ہو، زیادہ ہوں، یا کوئی نہ ہو۔ {Variance} پھیلاؤ کا مربع ہے۔ کم variance: قدریں mean سے چمٹی ہوئی۔ زیادہ variance: بکھری ہوئی۔ صفحے کی {Figure 4.3} دونوں دکھاتی ہے، mean ایک جیسا، پھیلاؤ الگ۔ نقل کریں۔ {Outlier} دور کی قدر ہے۔ باڑ کا قاعدہ صفحے پر ہے: {1.5} ضرب {IQR}۔ mock بند کتاب۔",
+     "displayText": "Teach Yourself · Day 14 of 30 · Week 3 · Checkpoint\nChapter: Data and Analysis\nLearning aim: Mean, median, mode, spread\n★ Golden (must be spoken without notes): Mean, median and variance\nBooklet pages 233–239 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Mean\n• Median\n• Mode\n• Variance\n• Outlier\n• Mock test\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d15",
+     "day": 15,
+     "week": 3,
+     "kind": "Teach",
+     "chapter": "Applications and Impacts of Computing",
+     "focus": "Neural networks and deep learning",
+     "golden": "Neural Networks and Deep Learning",
+     "startPage": 240,
+     "endPage": 244,
+     "topics": [
+      "Machine learning",
+      "Neural network",
+      "Deep learning",
+      "Neuron",
+      "Activation"
+     ],
+     "script": "دن 15، {Unit 5}۔ ★ {Golden}: {Neural Networks} اور {Deep Learning}۔ {Machine learning} data سے نمونے سیکھ کر پیش گوئی کرتا ہے۔ {Neural network} جڑے ہوئے nodes کی تہیں ہیں: {input layer}، {hidden layer}، {output layer}۔ یہ model ہے۔ ★ {Deep learning} وہ طریقہ ہے جو کئی hidden layers اور بہت سے data سے، اکثر {GPU} پر، اس model کو سکھاتا ہے۔ model اور method الگ ہیں۔ مثال: چہرے سے فون کھولنا۔ صفحے پر ایک neuron کا خاکہ ہے: inputs، weights، {bias}، weighted sum، {activation}، output۔ علامات x1، w1، Σ، f(z) نقل کریں۔ یہ خاکہ امتحان میں بنتا ہے۔",
+     "displayText": "Teach Yourself · Day 15 of 30 · Week 3 · Teach\nChapter: Applications and Impacts of Computing\nLearning aim: Neural networks and deep learning\n★ Golden (must be spoken without notes): Neural Networks and Deep Learning\nBooklet pages 240–244 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Machine learning\n• Neural network\n• Deep learning\n• Neuron\n• Activation\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d16",
+     "day": 16,
+     "week": 4,
+     "kind": "Teach",
+     "chapter": "Applications and Impacts of Computing",
+     "focus": "Secure collaboration and threats",
+     "golden": "Secure collaboration and security threats",
+     "startPage": 245,
+     "endPage": 250,
+     "topics": [
+      "Authentication",
+      "Authorisation",
+      "Encryption",
+      "Phishing",
+      "Malware",
+      "Password strength"
+     ],
+     "script": "دن 16۔ ★ {Golden}: محفوظ اشتراک اور خطرات۔ {Authentication} پوچھتا ہے آپ کون ہیں۔ {Authorisation} بتاتا ہے آپ کو کیا کرنے کی اجازت ہے۔ دونوں الگ ہیں۔ خطرات: {Phishing} جعلی پیغام، {Malware} نقصان دہ سافٹ ویئر، کمزور پاس ورڈ، غیر محفوظ لنک۔ تدارک: لمبا ملا جلا پاس ورڈ، دو مرحلے کی تصدیق، شک کی ای میل پر کلک نہ کریں۔ صفحے پر پاس ورڈ کی گنتی اور Caesar cipher کا ذکر ہے۔ اعداد کی طاقت دیکھیں: لمبائی بڑھے تو امکان دیوار کی طرح بڑھتا ہے۔ جدول نقل کریں۔",
+     "displayText": "Teach Yourself · Day 16 of 30 · Week 4 · Teach\nChapter: Applications and Impacts of Computing\nLearning aim: Secure collaboration and threats\n★ Golden (must be spoken without notes): Secure collaboration and security threats\nBooklet pages 245–250 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Authentication\n• Authorisation\n• Encryption\n• Phishing\n• Malware\n• Password strength\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d17",
+     "day": 17,
+     "week": 4,
+     "kind": "Checkpoint",
+     "chapter": "Applications and Impacts of Computing",
+     "focus": "Equity, access and the unit mock",
+     "golden": "Equity and equal access",
+     "startPage": 251,
+     "endPage": 256,
+     "topics": [
+      "Equity",
+      "Equal access",
+      "Deep learning in healthcare",
+      "Mock test"
+     ],
+     "script": "دن 17 {Checkpoint}۔ ★ {Golden}: {Equity} اور {equal access}۔ {Equality} سب کو ایک جیسا دینا ہے۔ {Equity} ضرورت کے مطابق اضافی سہارا دینا تاکہ موقع برابر ہو۔ دیہی اسکول میں آف لائن مواد equity ہو سکتا ہے۔ لمبے سوال میں پاکستان کی صحت کی مثال: {X-ray} input، deep neural model، بیماری کی نشاندہی output۔ حدود بھی لکھیں: غلط تشخیص، data کی رازداری۔ mock بند کتاب۔ neuron کا خاکہ اور ایک threat لازمی۔",
+     "displayText": "Teach Yourself · Day 17 of 30 · Week 4 · Checkpoint\nChapter: Applications and Impacts of Computing\nLearning aim: Equity, access and the unit mock\n★ Golden (must be spoken without notes): Equity and equal access\nBooklet pages 251–256 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Equity\n• Equal access\n• Deep learning in healthcare\n• Mock test\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d18",
+     "day": 18,
+     "week": 4,
+     "kind": "Teach",
+     "chapter": "Entrepreneurship in the Digital Age",
+     "focus": "Entrepreneur, problem and idea",
+     "golden": "Entrepreneur and entrepreneurship",
+     "startPage": 257,
+     "endPage": 261,
+     "topics": [
+      "Entrepreneur",
+      "Entrepreneurship",
+      "Problem",
+      "Idea",
+      "Calculated risk"
+     ],
+     "script": "دن 18، {Unit 6}۔ ★ {Golden}: {Entrepreneur} اور {Entrepreneurship}۔ {Entrepreneur} مسئلہ دیکھتا ہے، حل سوچتا ہے، اور اسے پروڈکٹ یا سروس بناتا ہے۔ اکثر چھوٹا آغاز، لوگوں کی بات، سمجھ بوجھ کا خطرہ۔ سفر کا خاکہ صفحے پر ہے: {Problem}، {Idea}، {Prototype}، {Feedback}، {MVP}، {Beachhead}۔ یہ تیر نقل کریں۔ یہی باب کا نقشہ ہے۔ مقامی مثال انگریزی اصطلاح کے ساتھ لکھیں، جیسے اسکول کی کینٹین کی قطار کے لیے آرڈر ایپ۔",
+     "displayText": "Teach Yourself · Day 18 of 30 · Week 4 · Teach\nChapter: Entrepreneurship in the Digital Age\nLearning aim: Entrepreneur, problem and idea\n★ Golden (must be spoken without notes): Entrepreneur and entrepreneurship\nBooklet pages 257–261 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Entrepreneur\n• Entrepreneurship\n• Problem\n• Idea\n• Calculated risk\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d19",
+     "day": 19,
+     "week": 4,
+     "kind": "Teach",
+     "chapter": "Entrepreneurship in the Digital Age",
+     "focus": "Prototypes and fidelity",
+     "golden": "Prototype and fidelity",
+     "startPage": 262,
+     "endPage": 266,
+     "topics": [
+      "Prototype",
+      "Low fidelity",
+      "Mid fidelity",
+      "High fidelity",
+      "Iteration"
+     ],
+     "script": "دن 19۔ ★ {Golden}: {Prototype} اور fidelity۔ {Prototype} نمونہ ہے جو دکھاتا ہے حل کیسا لگے گا یا کیسے چلے گا۔ {Low-fidelity} کاغذ۔ {Mid-fidelity} کلک ہونے والا خاکہ۔ {High-fidelity} اصل کے قریب۔ {Figure 6.1} تینوں دکھاتی ہے۔ نقل کریں۔ {Figure 6.2} چکر ہے: بنائیں، آزمائیں، سنیں، بہتر کریں۔ اس چکر کا نام {iteration} ہے۔ عام غلطی: prototype اور {MVP} کو ایک سمجھنا۔ prototype دکھاتا ہے، {MVP} حقیقی صارف کے لیے واقعی چلتا ہے۔",
+     "displayText": "Teach Yourself · Day 19 of 30 · Week 4 · Teach\nChapter: Entrepreneurship in the Digital Age\nLearning aim: Prototypes and fidelity\n★ Golden (must be spoken without notes): Prototype and fidelity\nBooklet pages 262–266 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Prototype\n• Low fidelity\n• Mid fidelity\n• High fidelity\n• Iteration\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d20",
+     "day": 20,
+     "week": 5,
+     "kind": "Teach",
+     "chapter": "Entrepreneurship in the Digital Age",
+     "focus": "MVP and the riskiest assumption",
+     "golden": "MVP and the riskiest assumption",
+     "startPage": 267,
+     "endPage": 271,
+     "topics": [
+      "MVP",
+      "Riskiest assumption",
+      "Cost per user",
+      "Ethics"
+     ],
+     "script": "دن 20۔ ★ {Golden}: {MVP} اور {riskiest assumption}۔ {MVP} یعنی {Minimum Viable Product}: سب سے چھوٹی چیز جو حقیقی صارف کے اصل کام آئے، تاکہ سیکھا جا سکے۔ {Riskiest assumption} وہ مفروضہ ہے جس کے غلط ہونے پر پورا خیال گر جائے۔ آن لائن ٹیوشن میں خطرناک مفروضہ یہ ہو سکتا ہے کہ طلبہ پیسے دیں گے۔ پہلے اسی کو آزمائیں۔ صفحے کی لاگت دیکھیں: سستا ٹیسٹ جلدی اور کم نقصان سے غلط ثابت ہوتا ہے۔ اخلاق: صرف ضروری ذاتی معلومات، اجازت کے بغیر تصویر شیئر نہیں، جھوٹا دعویٰ نہیں۔",
+     "displayText": "Teach Yourself · Day 20 of 30 · Week 5 · Teach\nChapter: Entrepreneurship in the Digital Age\nLearning aim: MVP and the riskiest assumption\n★ Golden (must be spoken without notes): MVP and the riskiest assumption\nBooklet pages 267–271 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• MVP\n• Riskiest assumption\n• Cost per user\n• Ethics\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d21",
+     "day": 21,
+     "week": 5,
+     "kind": "Checkpoint",
+     "chapter": "Entrepreneurship in the Digital Age",
+     "focus": "Beachhead market and the final project",
+     "golden": "Beachhead market and the MVP plan",
+     "startPage": 272,
+     "endPage": 275,
+     "topics": [
+      "Beachhead market",
+      "MVP plan",
+      "Features, cost, marketing",
+      "Mock test"
+     ],
+     "script": "دن 21 {Checkpoint}۔ ★ {Golden}: {Beachhead market} اور {MVP} کا منصوبہ۔ {Beachhead} پہلی چھوٹی منڈی ہے جہاں پورا زور لگائیں۔ چھوٹی اس لیے کہ سیکھنا تیز ہو، پھیلنے سے پہلے۔ منصوبے میں تین کالم: features، cost، marketing۔ صفحے کی مثال نقل کریں، پھر اپنا ایک مسئلہ اسی خاکے میں اتاریں۔ mock بند کتاب۔ {Prototype} اور {MVP} کا فرق، اور ایک {riskiest assumption} لازمی۔",
+     "displayText": "Teach Yourself · Day 21 of 30 · Week 5 · Checkpoint\nChapter: Entrepreneurship in the Digital Age\nLearning aim: Beachhead market and the final project\n★ Golden (must be spoken without notes): Beachhead market and the MVP plan\nBooklet pages 272–275 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Beachhead market\n• MVP plan\n• Features, cost, marketing\n• Mock test\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d22",
+     "day": 22,
+     "week": 5,
+     "kind": "Teach",
+     "chapter": "Revision tools",
+     "focus": "Flashcards and the formula sheet",
+     "golden": "Bilingual flashcards and the formula sheet",
+     "startPage": 276,
+     "endPage": 281,
+     "topics": [
+      "Flashcards",
+      "Formula sheet",
+      "Big O",
+      "Variance",
+      "Contrast ratio"
+     ],
+     "script": "دن 22۔ ★ {Golden} کارڈز اور فارمولہ شیٹ۔ فلیش کارڈ: اصطلاح انگریزی میں پڑھیں، اردو معنی بولیں، پھر نیچے کی سطر دیکھیں۔ الٹا نہ کریں — امتحان میں اصطلاح انگریزی ہی لکھی جائے گی۔ فارمولہ شیٹ پر {Big O}، variance، contrast، اور {MVP} کی لاگت ایک صفحے پر ہے۔ رنگ اکائی بتاتا ہے۔ پورا صفحہ کاپی میں اتاریں۔",
+     "displayText": "Teach Yourself · Day 22 of 30 · Week 5 · Teach\nChapter: Revision tools\nLearning aim: Flashcards and the formula sheet\n★ Golden (must be spoken without notes): Bilingual flashcards and the formula sheet\nBooklet pages 276–281 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Flashcards\n• Formula sheet\n• Big O\n• Variance\n• Contrast ratio\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d23",
+     "day": 23,
+     "week": 5,
+     "kind": "Checkpoint",
+     "chapter": "Revision tools",
+     "focus": "Glossary and the tracker",
+     "golden": "Glossary terms",
+     "startPage": 282,
+     "endPage": 288,
+     "topics": [
+      "Glossary",
+      "Answer key",
+      "Assessment tracker"
+     ],
+     "script": "دن 23 {Checkpoint}۔ فرہنگ A سے Z۔ ہر وہ اصطلاح گھیریں جو کل کے mock میں کمزور رہے۔ {Equity}، {Wireframe}، {Net Promoter Score}، {Malware} جیسی اصطلاحات انگریزی میں دہرائیں۔ ٹریکر پر نشان لگائیں: کون سا سبق پڑھا، کون سا خاکہ بنا، کون سا mock ہوا۔ خالی خانہ کل کے {Repair} میں جائے گا۔",
+     "displayText": "Teach Yourself · Day 23 of 30 · Week 5 · Checkpoint\nChapter: Revision tools\nLearning aim: Glossary and the tracker\n★ Golden (must be spoken without notes): Glossary terms\nBooklet pages 282–288 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Glossary\n• Answer key\n• Assessment tracker\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d24",
+     "day": 24,
+     "week": 5,
+     "kind": "Golden blitz",
+     "chapter": "HCI",
+     "focus": "HCI diagrams without notes",
+     "golden": "HCI, accessibility, UI and UX",
+     "startPage": 150,
+     "endPage": 155,
+     "topics": [
+      "HCI components",
+      "Contrast",
+      "Wireframe",
+      "Figma"
+     ],
+     "script": "دن 24 {Golden blitz}۔ {Unit 1} کے خاکے بند کتاب۔ بولیں اور بنائیں: {HCI} کے چار اجزا، contrast {4.5 : 1}، {UI} بمقابلہ {UX}، {Wireframe}۔ صفحہ صرف اس وقت کھولیں جب شکل نہ بنے۔",
+     "displayText": "Teach Yourself · Day 24 of 30 · Week 5 · Golden blitz\nChapter: HCI\nLearning aim: HCI diagrams without notes\n★ Golden (must be spoken without notes): HCI, accessibility, UI and UX\nBooklet pages 150–155 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• HCI components\n• Contrast\n• Wireframe\n• Figma\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d25",
+     "day": 25,
+     "week": 6,
+     "kind": "Golden blitz",
+     "chapter": "Computational Thinking and Algorithms",
+     "focus": "Stack, queue and Big O without notes",
+     "golden": "Stack, queue and Big O Notation",
+     "startPage": 177,
+     "endPage": 184,
+     "topics": [
+      "Big O",
+      "Stack",
+      "Queue",
+      "Trace table",
+      "Mean",
+      "Variance"
+     ],
+     "script": "دن 25 {Golden blitz}۔ صفحات پر {Stack}، {Queue} اور {Big O} کے خاکے ہیں۔ بند کتاب بنائیں: {LIFO}، {FIFO}، {O(n²)} بمقابلہ {O(n log n)}۔ جو شکل نہ بنے صرف ایک بار صفحہ کھولیں، نقل کریں، پھر بند کر دیں۔",
+     "displayText": "Teach Yourself · Day 25 of 30 · Week 6 · Golden blitz\nChapter: Computational Thinking and Algorithms\nLearning aim: Stack, queue and Big O without notes\n★ Golden (must be spoken without notes): Stack, queue and Big O Notation\nBooklet pages 177–184 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Big O\n• Stack\n• Queue\n• Trace table\n• Mean\n• Variance\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d26",
+     "day": 26,
+     "week": 6,
+     "kind": "Golden blitz",
+     "chapter": "AI and Entrepreneurship",
+     "focus": "Neuron diagram and MVP",
+     "golden": "Neural Networks, equity, prototype and MVP",
+     "startPage": 240,
+     "endPage": 244,
+     "topics": [
+      "Neural network",
+      "Deep learning",
+      "Phishing",
+      "Equity",
+      "Prototype",
+      "MVP",
+      "Beachhead"
+     ],
+     "script": "دن 26 {Golden blitz}۔ سب سے اہم خاکہ neuron کا ہے: inputs، weights، bias، activation۔ پھر {Authentication} بمقابلہ {Authorisation}، {Equity} بمقابلہ equality، {Prototype} بمقابلہ {MVP}، {Beachhead}۔ جو خاکہ نہ بنے وہی کل کے {Repair} میں پہلا نمبر ہے۔",
+     "displayText": "Teach Yourself · Day 26 of 30 · Week 6 · Golden blitz\nChapter: AI and Entrepreneurship\nLearning aim: Neuron diagram and MVP\n★ Golden (must be spoken without notes): Neural Networks, equity, prototype and MVP\nBooklet pages 240–244 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Neural network\n• Deep learning\n• Phishing\n• Equity\n• Prototype\n• MVP\n• Beachhead\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d27",
+     "day": 27,
+     "week": 6,
+     "kind": "Recap",
+     "chapter": "All units",
+     "focus": "Teach each chapter back",
+     "golden": "All Golden definitions",
+     "startPage": 145,
+     "endPage": 149,
+     "topics": [
+      "HCI",
+      "Big O",
+      "Python structures",
+      "Statistics",
+      "Neural networks",
+      "MVP"
+     ],
+     "script": "دن 27 {Recap}۔ چھ ابواب، ہر ایک پانچ منٹ، نوٹس بند۔ ترتیب: {HCI}، {Algorithms}، {Python}، {Data and Analysis}، {Neural Networks}، {Entrepreneurship}۔ ہر باب: تعریف، مثال، خاکہ۔ کمزور باب {Repair list} پر۔",
+     "displayText": "Teach Yourself · Day 27 of 30 · Week 6 · Recap\nChapter: All units\nLearning aim: Teach each chapter back\n★ Golden (must be spoken without notes): All Golden definitions\nBooklet pages 145–149 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• HCI\n• Big O\n• Python structures\n• Statistics\n• Neural networks\n• MVP\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d28",
+     "day": 28,
+     "week": 6,
+     "kind": "Mock",
+     "chapter": "All units",
+     "focus": "Closed-book mock",
+     "golden": "Sit the mock as an exam",
+     "startPage": 255,
+     "endPage": 256,
+     "topics": [
+      "Closed book",
+      "30 marks",
+      "Diagrams compulsory"
+     ],
+     "script": "دن 28 {Mock} ہے۔ سبق بند۔ وقت رکھیں، فون دور۔ خاکے والے سوال خالی نہ چھوڑیں: {HCI} کے اجزا، neuron، {Stack}، chart کا انتخاب۔ آج کلید نہیں۔ کل نمبر لگیں گے۔",
+     "displayText": "Teach Yourself · Day 28 of 30 · Week 6 · Mock\nChapter: All units\nLearning aim: Closed-book mock\n★ Golden (must be spoken without notes): Sit the mock as an exam\nBooklet pages 255–256 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Closed book\n• 30 marks\n• Diagrams compulsory\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d29",
+     "day": 29,
+     "week": 6,
+     "kind": "Mark",
+     "chapter": "All units",
+     "focus": "Mark against the answer key",
+     "golden": "Build the Repair list",
+     "startPage": 284,
+     "endPage": 287,
+     "topics": [
+      "Answer key",
+      "Marking",
+      "Repair list"
+     ],
+     "script": "دن 29 {Mark} ہے۔ کلید سے میل کھائیں، اندازے سے نہیں۔ ہر کٹا ہوا خاکہ اور ہر غلط اصطلاح {Repair list} میں لکھیں۔ اصطلاح کی ہجے انگریزی میں درست کریں۔",
+     "displayText": "Teach Yourself · Day 29 of 30 · Week 6 · Mark\nChapter: All units\nLearning aim: Mark against the answer key\n★ Golden (must be spoken without notes): Build the Repair list\nBooklet pages 284–287 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Answer key\n• Marking\n• Repair list\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    },
+    {
+     "id": "xii-d30",
+     "day": 30,
+     "week": 6,
+     "kind": "Repair",
+     "chapter": "All units",
+     "focus": "Repair only yesterday’s list",
+     "golden": "Repair list only",
+     "startPage": 277,
+     "endPage": 281,
+     "topics": [
+      "Flashcards",
+      "Formula sheet",
+      "Stop"
+     ],
+     "script": "دن 30 {Repair} ہے۔ صرف کل کی فہرست۔ فلیش کارڈ اور فارمولہ شیٹ کھولیں۔ ہر کارڈ: انگریزی اصطلاح، ایک اردو جملہ سمجھ کا، ایک خاکہ۔ پھر کارڈ بند۔ شام کو رک جائیں۔ نیا باب نہیں۔ ہال میں ★ {Golden} سر میں ہونا چاہیے۔ اللہ حافظ۔",
+     "displayText": "Teach Yourself · Day 30 of 30 · Week 6 · Repair\nChapter: All units\nLearning aim: Repair only yesterday’s list\n★ Golden (must be spoken without notes): Repair list only\nBooklet pages 277–281 (as printed). Every symbol and diagram on these pages is inside the app.\n\n3-hour tutoring block\n1. Recap (0–15 min) — yesterday’s Golden, closed book.\n2. Teach (15–105 min) — today’s pages, including every diagram.\n3. Drill (105–135 min) — closed-book questions.\n4. Homework (135–180 min) — one 5-mark answer: Define · Explain · Example · Diagram · Working.\n\nLearning outcomes\n• Flashcards\n• Formula sheet\n• Stop\n\nExam rule: keep English terms exactly as printed. Do not translate them."
+    }
+   ]
+  }
+ ]
+}
