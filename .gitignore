@@ -11,3 +11,5 @@ captures/
 *.apk
 !releases/*.apk
 *.aab
+/app/libs/*.aar
+/app/src/main/assets/tts/
