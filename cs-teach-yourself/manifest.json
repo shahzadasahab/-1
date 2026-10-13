@@ -1,0 +1,432 @@
+{
+  "XI": [
+    {
+      "day": 1,
+      "title": "Signals, Digital Systems & Boolean Algebra",
+      "pages": [
+        3
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Boolean Operations, Truth Tables & Logic Gates",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "day": 3,
+      "title": "XOR/XNOR, Expressions, Logic Diagrams & K-Maps",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "day": 4,
+      "title": "LogiSim, SDLC & Waterfall Model",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Agile, Waterfall vs Agile & OSI / TCP-IP",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "day": 6,
+      "title": "Computational Thinking, Algorithm & Decomposition",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "day": 7,
+      "title": "Abstraction, Bubble Sort & Selection Sort",
+      "pages": [
+        9
+      ]
+    },
+    {
+      "day": 8,
+      "title": "Linear & Binary Search, Evaluation, Choosing Algorithms",
+      "pages": [
+        10
+      ]
+    },
+    {
+      "day": 9,
+      "title": "Programming, Language Levels, IDE & VS Code",
+      "pages": [
+        11
+      ]
+    },
+    {
+      "day": 10,
+      "title": "Python Basics, Variables, Data Types & Arithmetic",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "day": 11,
+      "title": "Relational, Logical, Bitwise & if / if-else",
+      "pages": [
+        13
+      ]
+    },
+    {
+      "day": 12,
+      "title": "if-elif-else, for/range, while, break/continue & Nested Loops",
+      "pages": [
+        14
+      ]
+    },
+    {
+      "day": 13,
+      "title": "Libraries, Built-in & Third-Party, Debugging",
+      "pages": [
+        15
+      ]
+    },
+    {
+      "day": 14,
+      "title": "Data, DBMS, Tables & Keys",
+      "pages": [
+        16
+      ]
+    },
+    {
+      "day": 15,
+      "title": "ER Model, Referential Integrity & Schema",
+      "pages": [
+        17
+      ]
+    },
+    {
+      "day": 16,
+      "title": "MS Access: Tables, Forms, Queries & Charts",
+      "pages": [
+        18
+      ]
+    },
+    {
+      "day": 17,
+      "title": "AI, IoT & Data Analytics",
+      "pages": [
+        19
+      ]
+    },
+    {
+      "day": 18,
+      "title": "IoT Uses, AI in Education & Information Sources",
+      "pages": [
+        20
+      ]
+    },
+    {
+      "day": 19,
+      "title": "Impacts of Computing & Assistive Technologies",
+      "pages": [
+        21
+      ]
+    },
+    {
+      "day": 20,
+      "title": "Digital Literacy, Types of Data & Collection Strategies",
+      "pages": [
+        22
+      ]
+    },
+    {
+      "day": 21,
+      "title": "Prototypes, Observation, Primary/Secondary & Spreadsheets",
+      "pages": [
+        23
+      ]
+    },
+    {
+      "day": 22,
+      "title": "Infographics, Reports & Digital Inquiry (Steps 1\u20136)",
+      "pages": [
+        24
+      ]
+    },
+    {
+      "day": 23,
+      "title": "Inquiry Steps 7\u201312, Final Artefact & Careers",
+      "pages": [
+        25
+      ]
+    },
+    {
+      "day": 24,
+      "title": "Golden Blitz \u2014 Chapters 1 & 2",
+      "pages": [
+        26
+      ]
+    },
+    {
+      "day": 25,
+      "title": "Golden Blitz \u2014 Chapters 3 & 4",
+      "pages": [
+        27
+      ]
+    },
+    {
+      "day": 26,
+      "title": "Golden Blitz \u2014 Chapters 5 & 6",
+      "pages": [
+        28
+      ]
+    },
+    {
+      "day": 27,
+      "title": "Night-before Recaps \u2014 Saare Chapters",
+      "pages": [
+        29
+      ]
+    },
+    {
+      "day": 28,
+      "title": "Mock Paper \u2014 Hall Conditions (1/2)",
+      "pages": [
+        30,
+        31
+      ]
+    },
+    {
+      "day": 29,
+      "title": "Mark the Mock \u2014 Section C Worked Solutions",
+      "pages": [
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "day": 30,
+      "title": "Repair Day \u2014 Phir Ruk Jao",
+      "pages": [
+        35
+      ]
+    }
+  ],
+  "XII": [
+    {
+      "day": 1,
+      "title": "HCI Fundamentals, Interaction & Applications",
+      "pages": [
+        3
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Interaction Types, Interfaces, Importance & Accessibility",
+      "pages": [
+        4
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Need Analysis, HCI Problems, Fixes & UI vs UX",
+      "pages": [
+        5
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Wireframes, Prototypes, Evaluation & Testing",
+      "pages": [
+        6
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Correctness: Trace Tables & Stepwise Reasoning",
+      "pages": [
+        7
+      ]
+    },
+    {
+      "day": 6,
+      "title": "Modularity, Readability & Big O",
+      "pages": [
+        8
+      ]
+    },
+    {
+      "day": 7,
+      "title": "Repetitions, Framework, Data Structures & Array",
+      "pages": [
+        9
+      ]
+    },
+    {
+      "day": 8,
+      "title": "Linked List, Stack, Queue, Tree & Graph",
+      "pages": [
+        10
+      ]
+    },
+    {
+      "day": 9,
+      "title": "Operations, Choosing Structures & Data Retrieval",
+      "pages": [
+        11
+      ]
+    },
+    {
+      "day": 10,
+      "title": "Lists, Tuples, Sets & Dictionaries",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "day": 11,
+      "title": "Built-in Functions, Activities & Functions",
+      "pages": [
+        13
+      ]
+    },
+    {
+      "day": 12,
+      "title": "Return Values, Scope & File Handling",
+      "pages": [
+        14
+      ]
+    },
+    {
+      "day": 13,
+      "title": "with Statement, Exceptions & Grade Tracker",
+      "pages": [
+        15
+      ]
+    },
+    {
+      "day": 14,
+      "title": "Data Sources, SQLite, Pandas & Missing Values",
+      "pages": [
+        16
+      ]
+    },
+    {
+      "day": 15,
+      "title": "Organization, Visualization & Descriptive Statistics",
+      "pages": [
+        17
+      ]
+    },
+    {
+      "day": 16,
+      "title": "Machine Learning, Neural Networks & Deep Learning",
+      "pages": [
+        18
+      ]
+    },
+    {
+      "day": 17,
+      "title": "DL Components, Pakistan, Applications & Secure Collaboration",
+      "pages": [
+        19
+      ]
+    },
+    {
+      "day": 18,
+      "title": "Data Protection, Security Threats & Mitigation",
+      "pages": [
+        20
+      ]
+    },
+    {
+      "day": 19,
+      "title": "Equity, Equal Access, Collaboration Tools & Careers",
+      "pages": [
+        21
+      ]
+    },
+    {
+      "day": 20,
+      "title": "Entrepreneurship, Digital Age & Prototype",
+      "pages": [
+        22
+      ]
+    },
+    {
+      "day": 21,
+      "title": "Prototype Types, Development Cycle & MVP",
+      "pages": [
+        23
+      ]
+    },
+    {
+      "day": 22,
+      "title": "Riskiest Assumption, Developing & Testing an MVP",
+      "pages": [
+        24
+      ]
+    },
+    {
+      "day": 23,
+      "title": "Beachhead Market, Project, Ethics & Careers",
+      "pages": [
+        25
+      ]
+    },
+    {
+      "day": 24,
+      "title": "Golden Blitz \u2014 Chapters 1 & 2",
+      "pages": [
+        26
+      ]
+    },
+    {
+      "day": 25,
+      "title": "Golden Blitz \u2014 Chapters 3 & 4",
+      "pages": [
+        27
+      ]
+    },
+    {
+      "day": 26,
+      "title": "Golden Blitz \u2014 Chapters 5 & 6",
+      "pages": [
+        28
+      ]
+    },
+    {
+      "day": 27,
+      "title": "Night-before Recaps \u2014 Saare Chapters",
+      "pages": [
+        29
+      ]
+    },
+    {
+      "day": 28,
+      "title": "Mock Paper \u2014 Hall Conditions (1/2)",
+      "pages": [
+        30,
+        31
+      ]
+    },
+    {
+      "day": 29,
+      "title": "Mark the Mock \u2014 Section C Worked Solutions",
+      "pages": [
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "day": 30,
+      "title": "Repair Day \u2014 Phir Ruk Jao",
+      "pages": [
+        35
+      ]
+    }
+  ]
+}
