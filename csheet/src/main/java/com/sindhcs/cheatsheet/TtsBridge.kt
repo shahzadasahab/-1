@@ -24,8 +24,9 @@ class TtsBridge(
     override fun onInit(status: Int) {
         ready = status == TextToSpeech.SUCCESS
         if (ready) {
-            engine?.language = Locale.US
+            applySpokenLocale(engine!!)
             engine?.setSpeechRate(rate)
+            engine?.setPitch(0.98f)
             engine?.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
                 override fun onStart(utteranceId: String?) {
                     notifyWeb(true)
@@ -114,6 +115,21 @@ class TtsBridge(
         engine?.shutdown()
         engine = null
         ready = false
+    }
+
+    private fun applySpokenLocale(speaker: TextToSpeech) {
+        val candidates = listOf(Locale("en", "IN"), Locale.UK, Locale.US, Locale.ENGLISH)
+        for (locale in candidates) {
+            val available = speaker.isLanguageAvailable(locale)
+            if (
+                available == TextToSpeech.LANG_AVAILABLE ||
+                available == TextToSpeech.LANG_COUNTRY_AVAILABLE ||
+                available == TextToSpeech.LANG_COUNTRY_VAR_AVAILABLE
+            ) {
+                speaker.language = locale
+                return
+            }
+        }
     }
 
     private fun notifyWeb(isSpeaking: Boolean) {

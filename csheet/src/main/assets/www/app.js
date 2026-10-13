@@ -1,7 +1,7 @@
 const BOOKS = ["xi", "xii"];
 const store = { xi: null, xii: null };
 const PROGRESS_KEY = "cs-cheat-progress-v1";
-const RATE_KEY = "cs-cheat-rate";
+const RATE_KEY = "cs-cheat-rate-v2";
 
 const LABELS = {
   def: "Definition — write this on the paper",
@@ -22,7 +22,7 @@ const MODE_LABEL = {
 };
 
 let speaking = false;
-let rate = Number(localStorage.getItem(RATE_KEY) || "0.92");
+let rate = Number(localStorage.getItem(RATE_KEY) || "0.86");
 
 const $ = (id) => document.getElementById(id);
 
@@ -71,7 +71,18 @@ function speakable(text) {
     .trim();
 }
 
+function visibleNarration(card) {
+  let text = card.narration || "";
+  const title = (card.title || "").trim();
+  if (title && text.toLowerCase().startsWith(title.toLowerCase())) {
+    text = text.slice(title.length).replace(/^[\s.]+/, "");
+  }
+  text = text.replace(/^Yeh golden point hai, paper mein aksar aata hai\.?\s*/i, "");
+  return text;
+}
+
 function cardSpeech(card) {
+  if (card.narration) return card.narration;
   const bits = [card.title];
   for (const block of card.blocks || []) {
     if (block.type === "table") {
@@ -86,9 +97,8 @@ function cardSpeech(card) {
 }
 
 function pageSpeech(page) {
-  return [page.title, page.subtitle, page.mustLock ? "Must lock. " + page.mustLock : "", ...page.cards.map(cardSpeech)]
-    .filter(Boolean)
-    .join(". ");
+  const cards = page.cards.map(cardSpeech).filter(Boolean);
+  return [page.narration || "", ...cards].filter(Boolean).join(" ");
 }
 
 function setSpeaking(on) {
@@ -98,7 +108,7 @@ function setSpeaking(on) {
     button.classList.toggle("speaking", on);
   });
   const main = $("listen-page");
-  if (main) main.textContent = on ? "Stop" : "Listen";
+  if (main) main.textContent = on ? "Ruko" : "Suno";
 }
 
 window.__ttsState = setSpeaking;
@@ -157,7 +167,7 @@ function renderHome() {
   $("stage").innerHTML = `
     <section class="home">
       <div class="hero">
-        <div class="badge">Version 1.0.0 · offline</div>
+        <div class="badge">Version 1.0.1 · offline</div>
         <h1>CS XI &amp; XII cheat-sheet</h1>
         <p>Sindh Curriculum 2026 · 30 days each · Roman Urdu + English. Formulas are set with MathJax, diagrams are SVG, and the layout is Flexbox. Listen uses the phone's voice.</p>
       </div>
@@ -294,11 +304,12 @@ async function renderBook(bookId, pageId) {
               <h2>${esc(card.title || "Notes")}</h2>
               <div class="card-tools">
                 ${card.golden ? `<span class="golden">Golden</span>` : ""}
-                <button class="mini" data-card="${index}">Listen</button>
+                <button class="mini" data-card="${index}">Suno</button>
               </div>
             </div>
+            ${card.narration ? `<p class="narrative">${esc(visibleNarration(card))}</p>` : ""}
             ${card.diagram ? renderFigure(card.diagram) : ""}
-            ${(card.blocks || []).map(renderBlock).join("")}
+            ${(card.blocks || []).filter((block) => !card.narration || block.type !== "p").map(renderBlock).join("")}
           </section>`).join("") || `<p class="empty">No cards match this search.</p>`}
       </div>
     </article>`;
