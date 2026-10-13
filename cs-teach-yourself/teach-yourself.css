@@ -307,6 +307,12 @@ body {
   border-color: var(--accent);
 }
 
+.index-download {
+  border-color: var(--accent2);
+  flex: 1 1 100%;
+  max-width: none;
+}
+
 .index-card h2 {
   margin-top: 0;
 }
