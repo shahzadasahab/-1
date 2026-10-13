@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>CS XI–XII Cheat-Sheet</title>
+  <link rel="stylesheet" href="app.css"/>
+  <script>
+    window.MathJax = {
+      options: { enableMenu: false },
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]]
+      },
+      svg: { fontCache: "local" },
+      startup: { typeset: false }
+    };
+  </script>
+  <script src="mathjax/tex-svg.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <button id="back" class="icon-btn hidden" type="button">Books</button>
+      <div class="brand">
+        <strong>CS Cheat-Sheet</strong>
+        <span>XI · XII · 30 days</span>
+      </div>
+      <input id="search" class="search hidden" type="search" placeholder="Search days and cards" aria-label="Search"/>
+    </header>
+    <div class="shell">
+      <nav id="rail" class="rail hidden" aria-label="Days"></nav>
+      <main id="stage"></main>
+    </div>
+    <div id="caption-bar" class="caption-bar hidden" aria-live="polite">
+      <p id="caption-ur" class="ur" dir="rtl" lang="ur"></p>
+      <p id="caption-vocal" class="vocal"></p>
+    </div>
+    <footer id="tts-bar" class="tts-bar hidden">
+      <button id="prev" class="nav-btn ghost" type="button">Previous</button>
+      <button id="listen-page" data-listen type="button">Suno</button>
+      <button id="stop" class="ghost" type="button">Stop</button>
+      <button id="next" class="nav-btn" type="button">Next</button>
+      <label class="rate">Speed <input id="rate" type="range" min="0.75" max="1.15" step="0.01" value="0.86"/></label>
+    </footer>
+  </div>
+  <script src="diagrams.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
