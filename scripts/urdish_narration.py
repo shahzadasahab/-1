@@ -12,6 +12,8 @@ import json
 import re
 from pathlib import Path
 
+from caption_track import cues_from_vocal, explain_text
+
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "csheet" / "src" / "main" / "assets" / "www" / "content"
 
@@ -224,7 +226,7 @@ def speak_block(block: dict) -> list[str]:
     if not text or is_noise(text):
         return []
     if kind == "def":
-        text = "Paper ki definition, yehi lafz likhna. " + without_lead(text, "Def")
+        text = "Definition ka matlab yeh hai. " + without_lead(text, "Def")
     elif kind == "tip":
         text = "Yaad rakho. " + without_lead(without_lead(text, "Yaad rakho"), "Yaad rakhne ka tarika")
     elif kind == "exam":
@@ -293,12 +295,13 @@ def polish(text: str) -> str:
     text = text.replace("..", ".")
     text = re.sub(r"\bRow\s+\d+\.?", "", text)
     text = re.sub(r"\bphir\s*\.", ".", text)
+    text = re.sub(r"\(sine\.\s+Wave\)", "(sine wave)", text, flags=re.I)
     text = re.sub(r"(?<![A-Za-z])\b\d{1,2},\s+(?=[A-Z])", "", text)
     text = re.sub(r"\b\d+\s+kahin bhi khare ho\.?", "", text)
     text = re.sub(r"\s+", " ", text).strip()
     sentences = re.split(r"(?<=[.!?])\s+", text)
     text = " ".join(sentence[:1].upper() + sentence[1:] if sentence else sentence for sentence in sentences)
-    return text
+    return explain_text(text)
 
 
 def narrate_card(card: dict) -> str:
@@ -332,7 +335,7 @@ def narrate_page(page: dict) -> str:
     subtitle = clean(page.get("subtitle") or "")
     if subtitle and len(subtitle) > 12:
         bits.append("Is din ke hisse: " + ensure_period(subtitle))
-    return " ".join(bits)
+    return explain_text(" ".join(bits))
 
 
 def main() -> None:
@@ -340,13 +343,18 @@ def main() -> None:
         path = CONTENT / name
         book = json.loads(path.read_text(encoding="utf-8"))
         spoken = 0
+        cues = 0
         for page in book["pages"]:
             page["narration"] = narrate_page(page)
+            page["captions"] = cues_from_vocal(page["narration"])
+            cues += len(page["captions"])
             for card in page["cards"]:
                 card["narration"] = narrate_card(card)
+                card["captions"] = cues_from_vocal(card["narration"])
                 spoken += 1
+                cues += len(card["captions"])
         path.write_text(json.dumps(book, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-        print(f"{name}: narrated {spoken} cards, {path.stat().st_size} bytes")
+        print(f"{name}: narrated {spoken} cards, {cues} captions, {path.stat().st_size} bytes")
 
 
 if __name__ == "__main__":

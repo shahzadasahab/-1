@@ -7,6 +7,7 @@ import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.webkit.JavascriptInterface
 import android.webkit.WebView
+import org.json.JSONArray
 import java.util.Locale
 
 class TtsBridge(
@@ -19,7 +20,9 @@ class TtsBridge(
     private var ready = false
     private var rate = 0.92f
     private var pending: String? = null
+    private var pendingCues: String? = null
     private var active = 0
+    private var epoch = 0
 
     override fun onInit(status: Int) {
         ready = status == TextToSpeech.SUCCESS
@@ -29,31 +32,37 @@ class TtsBridge(
             engine?.setPitch(0.98f)
             engine?.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
                 override fun onStart(utteranceId: String?) {
+                    if (!current(utteranceId)) return
                     notifyWeb(true)
+                    val raw = callbackId(utteranceId)
+                    if (!raw.startsWith(PREFIX)) notifyCue(raw)
                 }
 
                 override fun onDone(utteranceId: String?) {
-                    if (utteranceId?.startsWith(PREFIX) == true) {
-                        active = (active - 1).coerceAtLeast(0)
-                    }
+                    if (!current(utteranceId)) return
+                    active = (active - 1).coerceAtLeast(0)
                     if (active == 0) notifyWeb(false)
                 }
 
                 @Deprecated("Deprecated in Java")
                 override fun onError(utteranceId: String?) {
+                    if (!current(utteranceId)) return
                     active = 0
                     notifyWeb(false)
                 }
 
                 override fun onError(utteranceId: String?, errorCode: Int) {
+                    if (!current(utteranceId)) return
                     active = 0
                     notifyWeb(false)
                 }
             })
-            pending?.let { text ->
-                pending = null
-                speak(text, rate.toDouble())
-            }
+            val queuedCues = pendingCues
+            val queuedText = pending
+            pendingCues = null
+            pending = null
+            if (queuedCues != null) speakCues(queuedCues, rate.toDouble())
+            else if (queuedText != null) speak(queuedText, rate.toDouble())
         }
     }
 
@@ -64,18 +73,57 @@ class TtsBridge(
         val speaker = engine
         if (!ready || speaker == null) {
             pending = text
+            pendingCues = null
             return
         }
         speaker.setSpeechRate(rate)
         val chunks = chunk(text)
+        val generation = beginUtterances()
         active = chunks.size
         chunks.forEachIndexed { index, chunk ->
-            val id = PREFIX + index
+            val id = "$generation:" + PREFIX + index
             val params = Bundle().apply {
                 putString(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, id)
             }
             val mode = if (index == 0) TextToSpeech.QUEUE_FLUSH else TextToSpeech.QUEUE_ADD
             speaker.speak(chunk, mode, params, id)
+        }
+    }
+
+    @JavascriptInterface
+    fun speakCues(json: String, speechRate: Double) {
+        if (json.isBlank()) return
+        rate = speechRate.toFloat().coerceIn(0.6f, 1.3f)
+        val speaker = engine
+        if (!ready || speaker == null) {
+            pendingCues = json
+            pending = null
+            return
+        }
+        val items = ArrayList<Pair<String, String>>()
+        try {
+            val array = JSONArray(json)
+            for (index in 0 until array.length()) {
+                val obj = array.optJSONObject(index) ?: continue
+                val text = obj.optString("t").trim()
+                if (text.isEmpty()) continue
+                val id = obj.optString("id").ifBlank { "cue_$index" }
+                items.add(id to text)
+            }
+        } catch (_: Exception) {
+            return
+        }
+        if (items.isEmpty()) return
+        speaker.setSpeechRate(rate)
+        val generation = beginUtterances()
+        active = items.size
+        items.forEachIndexed { index, (id, text) ->
+            val tagged = "$generation:$id"
+            val params = Bundle().apply {
+                putString(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, tagged)
+            }
+            val mode = if (index == 0) TextToSpeech.QUEUE_FLUSH else TextToSpeech.QUEUE_ADD
+            speaker.speak(text, mode, params, tagged)
         }
     }
 
@@ -88,7 +136,9 @@ class TtsBridge(
     @JavascriptInterface
     fun stop() {
         pending = null
+        pendingCues = null
         active = 0
+        epoch += 1
         engine?.stop()
         notifyWeb(false)
     }
@@ -110,6 +160,7 @@ class TtsBridge(
 
     fun shutdown() {
         pending = null
+        pendingCues = null
         active = 0
         engine?.stop()
         engine?.shutdown()
@@ -129,6 +180,30 @@ class TtsBridge(
                 speaker.language = locale
                 return
             }
+        }
+    }
+
+    private fun beginUtterances(): Int {
+        epoch += 1
+        return epoch
+    }
+
+    private fun current(utteranceId: String?): Boolean {
+        val mark = utteranceId?.substringBefore(':', "") ?: return false
+        return mark == epoch.toString()
+    }
+
+    private fun callbackId(utteranceId: String?): String {
+        return utteranceId?.substringAfter(':', "") ?: ""
+    }
+
+    private fun notifyCue(id: String) {
+        val safe = id.replace("\\", "").replace("'", "")
+        webView.post {
+            webView.evaluateJavascript(
+                "window.__ttsCue && window.__ttsCue('$safe')",
+                null
+            )
         }
     }
 

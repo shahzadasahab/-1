@@ -22,6 +22,8 @@ const MODE_LABEL = {
 };
 
 let speaking = false;
+let playlist = [];
+let speechToken = 0;
 let rate = Number(localStorage.getItem(RATE_KEY) || "0.86");
 
 const $ = (id) => document.getElementById(id);
@@ -71,14 +73,57 @@ function speakable(text) {
     .trim();
 }
 
-function visibleNarration(card) {
-  let text = card.narration || "";
-  const title = (card.title || "").trim();
-  if (title && text.toLowerCase().startsWith(title.toLowerCase())) {
-    text = text.slice(title.length).replace(/^[\s.]+/, "");
-  }
-  text = text.replace(/^Yeh golden point hai, paper mein aksar aata hai\.?\s*/i, "");
-  return text;
+function renderUr(text) {
+  return String(text || "").split(/([\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]+)/).map((part) => {
+    if (!part) return "";
+    if (/[\u0600-\u06FF]/.test(part)) return esc(part);
+    if (!/[A-Za-z]/.test(part)) return esc(part);
+    return `<b class="term">${esc(part)}</b>`;
+  }).join("");
+}
+
+function cuesOf(source) {
+  if (source.captions && source.captions.length) return source.captions;
+  const text = source.narration || "";
+  return text.split(/(?<=[.!?])\s+/).filter(Boolean).map((vocal) => ({ vocal, ur: vocal }));
+}
+
+function cueButton(cue, id) {
+  return `<button type="button" class="cue" data-cue-id="${esc(id)}">
+    <span class="ur" dir="rtl" lang="ur">${renderUr(cue.ur || cue.vocal)}</span>
+    <span class="vocal">${esc(cue.vocal || "")}</span>
+  </button>`;
+}
+
+function shownCardCues(card) {
+  const cues = cuesOf(card);
+  const title = (card.title || "").trim().toLowerCase().replace(/[.]+$/g, "");
+  return cues.map((cue, index) => ({ cue, index })).filter(({ cue, index }) => {
+    if (index !== 0 || !title) return true;
+    const vocal = (cue.vocal || "").trim().toLowerCase().replace(/[.]+$/g, "");
+    return vocal !== title;
+  });
+}
+
+function shownPageCues(page) {
+  const title = (page.title || "").trim().toLowerCase().replace(/[.]+$/g, "");
+  return cuesOf(page).map((cue, index) => ({ cue, index })).filter(({ cue }) => {
+    const vocal = (cue.vocal || "").trim().toLowerCase().replace(/[.!?]+$/g, "");
+    if (/^day \d+$/.test(vocal)) return false;
+    if (title && vocal === title) return false;
+    if (vocal.startsWith("chapter ")) return false;
+    return true;
+  });
+}
+
+function pagePlaylist(page) {
+  const list = cuesOf(page).map((cue, index) => ({ ...cue, id: "p" + index }));
+  page.cards.forEach((card, cardIndex) => {
+    cuesOf(card).forEach((cue, index) => {
+      list.push({ ...cue, id: "c" + cardIndex + "_" + index });
+    });
+  });
+  return list.filter((cue) => cue.vocal);
 }
 
 function cardSpeech(card) {
@@ -109,32 +154,84 @@ function setSpeaking(on) {
   });
   const main = $("listen-page");
   if (main) main.textContent = on ? "Ruko" : "Suno";
+  if (!on) {
+    document.querySelectorAll(".cue.active").forEach((el) => el.classList.remove("active"));
+    const bar = $("caption-bar");
+    if (bar) bar.classList.add("hidden");
+  }
+}
+
+function showCue(id) {
+  document.querySelectorAll(".cue.active").forEach((el) => el.classList.remove("active"));
+  const cue = playlist.find((item) => item.id === id);
+  const bar = $("caption-bar");
+  if (cue && bar) {
+    bar.classList.remove("hidden");
+    $("caption-ur").innerHTML = renderUr(cue.ur || cue.vocal);
+    $("caption-vocal").textContent = cue.vocal || "";
+  }
+  const el = document.querySelector('[data-cue-id="' + id + '"]');
+  if (el) {
+    el.classList.add("active");
+    el.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }
 }
 
 window.__ttsState = setSpeaking;
+window.__ttsCue = showCue;
 
 function stopSpeech() {
+  speechToken += 1;
   if (window.AndroidTts) AndroidTts.stop();
   if (window.speechSynthesis) speechSynthesis.cancel();
   setSpeaking(false);
 }
 
-function startSpeech(text) {
-  stopSpeech();
-  if (!text) return;
-  if (window.AndroidTts) {
-    AndroidTts.speak(text, rate);
-    setSpeaking(true);
+function startCues(cues) {
+  speechToken += 1;
+  const token = speechToken;
+  if (window.speechSynthesis) speechSynthesis.cancel();
+  playlist = (cues || []).filter((cue) => cue && cue.vocal);
+  if (!playlist.length) return;
+  setSpeaking(true);
+  showCue(playlist[0].id);
+  if (window.AndroidTts && AndroidTts.speakCues) {
+    AndroidTts.speakCues(JSON.stringify(playlist.map((cue) => ({ id: cue.id, t: cue.vocal }))), rate);
     return;
   }
   if (!window.speechSynthesis) return;
-  const utter = new SpeechSynthesisUtterance(text);
-  utter.rate = rate;
-  utter.lang = "en-US";
-  utter.onend = () => setSpeaking(false);
-  utter.onerror = () => setSpeaking(false);
-  setSpeaking(true);
-  speechSynthesis.speak(utter);
+  let index = 0;
+  const next = () => {
+    if (token !== speechToken) return;
+    if (index >= playlist.length) {
+      setSpeaking(false);
+      return;
+    }
+    const cue = playlist[index++];
+    const utter = new SpeechSynthesisUtterance(cue.vocal);
+    utter.rate = rate;
+    utter.lang = "en-IN";
+    const voices = speechSynthesis.getVoices ? speechSynthesis.getVoices() : [];
+    const voice = voices.find((item) => item.lang === "en-IN") || voices.find((item) => /^en/i.test(item.lang || ""));
+    if (voice) utter.voice = voice;
+    utter.onstart = () => { if (token === speechToken) showCue(cue.id); };
+    utter.onend = () => next();
+    utter.onerror = () => { if (token === speechToken) setSpeaking(false); };
+    speechSynthesis.speak(utter);
+  };
+  next();
+}
+
+function playFrom(page, id) {
+  const full = pagePlaylist(page);
+  const start = full.findIndex((cue) => cue.id === id);
+  if (start < 0) return;
+  if (id.charAt(0) === "c") {
+    const cardKey = id.slice(0, id.lastIndexOf("_"));
+    startCues(full.slice(start).filter((cue) => cue.id.startsWith(cardKey + "_")));
+    return;
+  }
+  startCues(full.slice(start));
 }
 
 async function loadBook(id) {
@@ -155,6 +252,7 @@ function route() {
 function renderHome() {
   $("rail").classList.add("hidden");
   $("tts-bar").classList.add("hidden");
+  $("caption-bar").classList.add("hidden");
   $("search").classList.add("hidden");
   $("back").classList.add("hidden");
   const done = progress();
@@ -167,9 +265,9 @@ function renderHome() {
   $("stage").innerHTML = `
     <section class="home">
       <div class="hero">
-        <div class="badge">Version 1.0.1 · offline</div>
+        <div class="badge">Version 1.0.2 · offline</div>
         <h1>CS XI &amp; XII cheat-sheet</h1>
-        <p>Sindh Curriculum 2026 · 30 days each · Roman Urdu + English. Formulas are set with MathJax, diagrams are SVG, and the layout is Flexbox. Listen uses the phone's voice.</p>
+        <p>Sindh Curriculum 2026 · 30 days each. The paper definition stays in English. The voice explains it in Urdu and keeps the Computer Science terms in English. Each spoken line has an Urdu caption and the Urdish vocal under it.</p>
       </div>
       <div class="books">
         <button class="book" data-open="xi">
@@ -276,11 +374,12 @@ async function renderBook(bookId, pageId) {
     </button>`;
   }).join("") || `<p class="empty">No day matches.</p>`;
 
-  const cards = page.cards.filter((card) => {
+  const cards = page.cards.map((card, index) => ({ card, index })).filter(({ card }) => {
     if (!query) return true;
     const blob = (card.title + " " + JSON.stringify(card.blocks)).toLowerCase();
     return blob.includes(query);
   });
+  const pageCues = shownPageCues(page).map(({ cue, index }) => cueButton(cue, "p" + index)).join("");
   const key = bookId + ":" + page.id;
   $("stage").innerHTML = `
     <article class="reader">
@@ -293,12 +392,13 @@ async function renderBook(bookId, pageId) {
         <h1>${esc(page.title)}</h1>
         <p>${esc(page.chapter || "")}${page.subtitle ? " · " + esc(page.subtitle) : ""}</p>
         ${page.mustLock ? `<p><strong>Must lock:</strong> ${esc(page.mustLock)}</p>` : ""}
+        ${pageCues ? `<div class="cues page-cues">${pageCues}</div>` : ""}
         <div class="head-row">
           <label class="check"><input type="checkbox" id="done" ${done[key] ? "checked" : ""}/> Mark day done</label>
         </div>
       </header>
       <div class="cards" id="cards">
-        ${cards.map((card, index) => `
+        ${cards.map(({ card, index }) => `
           <section class="card ${card.kind}">
             <div class="card-head">
               <h2>${esc(card.title || "Notes")}</h2>
@@ -307,9 +407,9 @@ async function renderBook(bookId, pageId) {
                 <button class="mini" data-card="${index}">Suno</button>
               </div>
             </div>
-            ${card.narration ? `<p class="narrative">${esc(visibleNarration(card))}</p>` : ""}
+            <div class="cues">${shownCardCues(card).map(({ cue, index: cueIndex }) => cueButton(cue, "c" + index + "_" + cueIndex)).join("")}</div>
             ${card.diagram ? renderFigure(card.diagram) : ""}
-            ${(card.blocks || []).filter((block) => !card.narration || block.type !== "p").map(renderBlock).join("")}
+            ${(card.blocks || []).filter((block) => !(card.narration || (card.captions && card.captions.length)) || block.type !== "p").map(renderBlock).join("")}
           </section>`).join("") || `<p class="empty">No cards match this search.</p>`}
       </div>
     </article>`;
@@ -326,11 +426,18 @@ async function renderBook(bookId, pageId) {
     renderBook(bookId, page.id);
   });
   $("stage").querySelectorAll("[data-card]").forEach((button) => {
-    button.addEventListener("click", () => startSpeech(cardSpeech(cards[Number(button.getAttribute("data-card"))])));
+    button.addEventListener("click", () => {
+      const cardIndex = Number(button.getAttribute("data-card"));
+      const card = page.cards[cardIndex];
+      startCues(cuesOf(card).map((cue, index) => ({ ...cue, id: "c" + cardIndex + "_" + index })));
+    });
+  });
+  $("stage").querySelectorAll("[data-cue-id]").forEach((button) => {
+    button.addEventListener("click", () => playFrom(page, button.getAttribute("data-cue-id")));
   });
   $("listen-page").onclick = () => {
     if (speaking) stopSpeech();
-    else startSpeech(pageSpeech(page));
+    else startCues(pagePlaylist(page));
   };
   const index = book.pages.findIndex((item) => item.id === page.id);
   $("prev").disabled = index <= 0;

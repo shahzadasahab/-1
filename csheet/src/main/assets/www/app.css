@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Noto Naskh";
+  src: url("fonts/NotoNaskhArabic-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
 :root {
   --ink: #1b212f;
   --muted: #4a5467;
@@ -197,6 +203,77 @@ html, body { height: 100%; }
   line-height: 1.55;
   font-size: 16.5px;
 }
+
+.cues {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cue {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 12px;
+  text-align: start;
+}
+
+.cue.active {
+  background: var(--gold-soft);
+  box-shadow: inset 3px 0 0 #f2c14e;
+}
+
+.ur {
+  font-family: "Noto Naskh", "Noto Naskh Arabic", serif;
+  font-size: 1.22rem;
+  line-height: 1.85;
+  direction: rtl;
+  text-align: right;
+}
+
+.vocal {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.term {
+  font-family: "Roboto", "Noto Sans", "Segoe UI", sans-serif;
+  font-weight: 700;
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+.page-cues .cue {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.page-cues .ur,
+.page-cues .vocal {
+  color: white;
+}
+
+.page-cues .term { color: #f2c14e; }
+
+.page-cues .cue.active {
+  background: rgba(242, 193, 78, 0.22);
+}
+
+.caption-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 0 0 auto;
+  padding: 8px 16px 6px;
+  background: #fffdf6;
+  border-top: 1px solid var(--line);
+}
+
+.caption-bar .ur { margin: 0; }
+.caption-bar .vocal { margin: 0; }
 
 .head-row {
   display: flex;
