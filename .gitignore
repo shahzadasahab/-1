@@ -2,6 +2,7 @@
 /.gradle/
 /build/
 /app/build/
+/csheet/build/
 /android-sdk/
 /gradle-8.7/
 *.iml
