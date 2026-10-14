@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="theme-color" content="#0f172a"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <title>Computer Science XII — Teach Yourself Edition</title>
+  <link rel="stylesheet" href="teach-yourself.css"/>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script defer src="teach-yourself.js"></script>
+</head>
+<body class="edition-xii">
+  <header class="site-header flex-row">
+    <div>
+      <p class="eyebrow">Teach Yourself Edition</p>
+      <h1>Computer Science XII — Teach Yourself Edition</h1>
+      <p class="subtitle">30-Day Ultimate Cheat-Sheet · Urdish · New Sindh Curriculum 2026</p>
+    </div>
+    <div class="tts-bar flex-col">
+      <label class="flex-row"><span>Voice</span>
+        <select id="tts-voice" aria-label="TTS voice"></select>
+      </label>
+      <label class="flex-row"><span>Rate</span>
+        <input type="range" id="tts-rate" min="0.6" max="1.4" step="0.05" value="1"/>
+      </label>
+      <button type="button" class="btn" id="tts-stop">Stop speech</button>
+    </div>
+  </header>
+  
+<div class="schedule flex-row">
+  <div class="slot"><strong>0–15′</strong> Kal ka ★ recap</div>
+  <div class="slot"><strong>15–105′</strong> Aaj ke cards (Teach)</div>
+  <div class="slot"><strong>105–135′</strong> Closed-book drill</div>
+  <div class="slot"><strong>135–180′</strong> Ek 5-mark answer</div>
+</div>
+
+  <div class="shell flex-row">
+    <nav class="sidebar flex-col" aria-label="Day navigation">
+      <a class="nav-home" href="index.html">← Both classes</a>
+      <a class="nav-day" href="#day-01" data-day="1">Day 01</a>
+<a class="nav-day" href="#day-02" data-day="2">Day 02</a>
+<a class="nav-day" href="#day-03" data-day="3">Day 03</a>
+<a class="nav-day" href="#day-04" data-day="4">Day 04</a>
+<a class="nav-day" href="#day-05" data-day="5">Day 05</a>
+<a class="nav-day" href="#day-06" data-day="6">Day 06</a>
+<a class="nav-day" href="#day-07" data-day="7">Day 07</a>
+<a class="nav-day" href="#day-08" data-day="8">Day 08</a>
+<a class="nav-day" href="#day-09" data-day="9">Day 09</a>
+<a class="nav-day" href="#day-10" data-day="10">Day 10</a>
+<a class="nav-day" href="#day-11" data-day="11">Day 11</a>
+<a class="nav-day" href="#day-12" data-day="12">Day 12</a>
+<a class="nav-day" href="#day-13" data-day="13">Day 13</a>
+<a class="nav-day" href="#day-14" data-day="14">Day 14</a>
+<a class="nav-day" href="#day-15" data-day="15">Day 15</a>
+<a class="nav-day" href="#day-16" data-day="16">Day 16</a>
+<a class="nav-day" href="#day-17" data-day="17">Day 17</a>
+<a class="nav-day" href="#day-18" data-day="18">Day 18</a>
+<a class="nav-day" href="#day-19" data-day="19">Day 19</a>
+<a class="nav-day" href="#day-20" data-day="20">Day 20</a>
+<a class="nav-day" href="#day-21" data-day="21">Day 21</a>
+<a class="nav-day" href="#day-22" data-day="22">Day 22</a>
+<a class="nav-day" href="#day-23" data-day="23">Day 23</a>
+<a class="nav-day" href="#day-24" data-day="24">Day 24</a>
+<a class="nav-day" href="#day-25" data-day="25">Day 25</a>
+<a class="nav-day" href="#day-26" data-day="26">Day 26</a>
+<a class="nav-day" href="#day-27" data-day="27">Day 27</a>
+<a class="nav-day" href="#day-28" data-day="28">Day 28</a>
+<a class="nav-day" href="#day-29" data-day="29">Day 29</a>
+<a class="nav-day" href="#day-30" data-day="30">Day 30</a>
+    </nav>
+    <main class="main flex-col">
+      
+<article class="day-card phase-teach" id="day-01" data-day="1">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 01 · Teach</p>
+      <h2>HCI Fundamentals, Interaction &amp; Applications</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-01 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">Chapter 1 — Computer Systems (HCI)<br>Days 1–4 · 3 Teach + 1 Checkpoint<br>01<br>HCI Fundamentals, Interaction &amp;<br>Applications<br>Fundamentals of HCI · Traditional &amp; Natural Interaction · Applications (Domains) ·<br>Components<br>★ Must lock: Applications of HCI (Domains of Life)<br>1.1 Fundamentals of HCI<br>Def (paper mein yehi likho): Human-Computer Interaction<br>(HCI) is the study and design of technology so that it serves<br>people.<br>Achha HCI system = easy to use, efficient, insani zaroorat pe<br>responsive. Doosre naam: CHI (Computer-Human Interface), MMI<br>(Man-Machine Interaction) — teeno ka matlab: insaan aur machine<br>ka milna.<br>Sight<br>screen, video<br>Touch<br>tap, haptics<br>Hearing<br>speaker<br>Voice<br>&quot;Alexa…&quot;<br>Spatial<br>VR movement<br>HUMAN<br>🧠 Yaad rakho: HCI = CHI = MMI → &quot;Human meets Machine&quot;. Paanch<br>channels S-T-H-V-S: Sight, Touch, Hearing, Voice, Spatial.<br>1.3 Components of HCI<br>i) User<br>end user / stakeholder<br>ii) Computer<br>input·output·feedback<br>iii) Interaction<br>click, tap, type, speak<br>iv) Task<br>complexity·skill·time<br>Component<br>Matlab<br>i) User<br>Jo bhi system se goal ke liye interact kare: end users<br>(khud chalate, beginner se expert) + stakeholders<br>(nateeje mein dilchaspi: managers, clients)<br>ii) Computer<br>system<br>Platform jahan input, output, feedback interface ke<br>zariye<br>iii) Interaction<br>User ke actions (click, tap, type, bolna) → user ka<br>iraada system response mein<br>iv) Task<br>Khaas kaam (ticket booking): complexity (form vs 3D<br>model), user knowledge, time (ATM vs passport)<br>🧠 Yaad rakho: U-C-I-T: &quot;U Can Interact with Tasks.&quot; Task ke 3 sawal:<br>kitna mushkil? kaunsi skill? kitna waqt?<br>1.2 Applications of HCI (Domains of Life)<br>★ Golden<br>Def (paper mein yehi likho): HCI is used to design and develop<br>interactive systems (desktop apps, websites, mobile apps) as<br>human-centred solutions across many domains of life.<br>Health care<br>telemedicine<br>Banking<br>mobile app, ATM<br>Education<br>LMS, e-exam<br>Networking<br>WhatsApp, Zoom<br>HCI<br>Domain<br>Application examples<br>User benefit<br>Health care<br>Patient portals,<br>telemedicine apps,<br>assistive tech<br>Door se medical<br>services tak rasai<br>Banking<br>Mobile banking apps,<br>secure ATM interfaces<br>Tez transactions,<br>mehfooz financial<br>management<br>Education<br>E-learning (LMS),<br>online exam portals<br>Behtar teaching,<br>learning, engagement<br>Networking &amp;<br>communication<br>Social media,<br>WhatsApp, Zoom<br>Duniya bhar ke log jure,<br>collaboration<br>🧠 Yaad rakho: H-BEN: Health, Banking, Education, Networking — har<br>ek ke liye 1 application + 1 user benefit.<br>📝 Paper mein: 5–8 marks: &quot;Explain applications of HCI in different<br>domains with examples.&quot; Chaar-row table + hub diagram.<br>1.1.1–1.1.2 Traditional vs Natural Interaction<br>Feature<br>Traditional<br>Natural<br>Main<br>input<br>Mouse, keyboard, keypad,<br>saada tap/swipe<br>Awaaz, chehra,<br>haath/body gesture,<br>harkat<br>Kaisa<br>lage<br>Machine chalana<br>Insaan se baat/harkat<br>jaisa<br>Examples<br>TV remote, ATM keypad, PC<br>pe school-portal login<br>FaceID, Siri, Kinect, &quot;Hey<br>Google&quot;<br>Output<br>Screen, speakers, vibration<br>Bola hua jawab, unlock, VR<br>body tracking<br>🧠 Yaad rakho: Test: keys/labelled buttons dabane parein →<br>traditional. Machine awaaz, chehra ya body samjhe → natural.<br>Drill: (1) HCI ke do aur naam? (2) ATM keypad traditional ya natural? (3) Chaar domains? (4) End user vs stakeholder?<br>Jawab: 1. CHI, MMI · 2. Traditional · 3. Health care, banking, education, networking &amp; communication · 4. End user khud chalata; stakeholder ko nateeje se dilchaspi (manager,<br>client)  |  5-mark: Applications of HCI.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 1 · Computer Systems (HCI) · Days 1–4<br>1<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 1"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 280 120"><rect x="20" y="20" width="100" height="80" rx="8" fill="#f1f5f9" stroke="#64748b"/><rect x="160" y="30" width="100" height="60" rx="6" fill="#dbeafe" stroke="#2563eb"/><path d="M120 60 H160" stroke="#334" marker-end="url(#arr)"/><text x="35" y="55" font-size="10">User</text><text x="175" y="55" font-size="10">System</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-02" data-day="2">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 02 · Teach</p>
+      <h2>Interaction Types, Interfaces, Importance &amp; Accessibility</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-02 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">02<br>Interaction Types, Interfaces, Importance &amp;<br>Accessibility<br>Types of User Interaction · Interface, Environment, Feedback · Importance of HCI · Accessibility<br>★ Must lock: Importance of HCI<br>Types of User Interaction<br>Technology ke hisaab se interaction kai tareeqon se. Board aksar<br>&quot;list &amp; explain 5+&quot; poochta hai — har ek ki ek saaf misaal:<br>Group<br>Type<br>Misaal<br>Screen pe<br>haath<br>Direct<br>manipulation<br>File drag karke folder mein<br>Gesture-based<br>Pinch to zoom, VR mein haath<br>hilana<br>Haptic<br>Phone ka vibration feedback<br>Alfaaz<br>Command-based<br>Linux: cd ..<br>Conversational<br>Bank chatbot se chat<br>Voice<br>&quot;Alexa, play a song&quot;<br>Lists &amp; blanks<br>Menu-based<br>ATM menu se option chuno<br>Form-based<br>Admission form bharna<br>Automatic /<br>body<br>Context-aware<br>Raat ko phone khud dark mode<br>🧠 Yaad rakho: Groups: haath (direct, gesture, haptic) · alfaaz<br>(command, conversational, voice) · lists/blanks (menu, form) ·<br>automatic/body (context-aware, natural).<br>Interface Types, Environment &amp; Feedback<br>Components v–vii: v) Interface (controls ki shakal), vi)<br>Environment (jagah jahan use ho — shor, roshni, safar), vii)<br>Feedback (signal &quot;ho gaya&quot; / &quot;dobara koshish&quot;).<br>🖱<br>GUI<br>click pictures<br>⌨<br>CLI<br>type words<br>👆<br>Touch<br>finger on glass<br>🗣<br>VUI<br>speak<br>🙌<br>NUI<br>move body<br>Interface<br>Kaise<br>Misaal<br>GUI<br>Windows, icons, menus<br>Windows OS, Android<br>CLI<br>Text type karna<br>MS-DOS, Linux terminal<br>Touch<br>Tap, swipe, pinch<br>Smartphone, tablet<br>VUI<br>Bole hue commands<br>Smart speakers<br>NUI<br>Gesture, chehra, body<br>Kinect, FaceID<br>🧠 Yaad rakho: Feedback rule: user ke har action ka system foran<br>jawab de — warna user dobara click karta hai ya ghabra jata hai.<br>1.4 Importance of HCI<br>★ Golden<br>Def (paper mein yehi likho): HCI ensures that machines are<br>approachable and usable, turning complex technology into<br>everyday tools.<br>Achha design → aasaan aur mazedaar (touchscreens). Bura<br>design → uljhan aur khatra (medical device pe ghair-wazeh<br>buttons). Is liye HCI sajawat nahi, zaroorat hai.<br>Implication<br>Matlab<br>1. Enhance<br>Productivity<br>Tez kaam, kam ghaltiyan, goals jaldi<br>2. Promotes<br>Inclusivity<br>Screen readers, voice commands — har kisi ke<br>liye barabar istemaal<br>3. Drives Innovation<br>AR/VR, AI, IoT tabhi apnaye jayenge jab HCI<br>mazboot ho<br>4. Economic impact<br>User-friendly product → zyada adoption, loyalty,<br>munafa<br>5. Ethical<br>responsibility<br>Privacy ka ehtiraam, bias kam, insani behbood<br>🧠 Yaad rakho: P-I-I-E-E: &quot;Please Include Innovative, Ethical<br>Earnings.&quot;<br>📝 Paper mein: 8 marks: &quot;Why is HCI important? Discuss its<br>implications.&quot; Opening (achha vs bura design) + 5 numbered points,<br>har ek ki misaal.<br>1.5 Accessibility Principles<br>Def (paper mein yehi likho): Accessibility principles are HCI<br>guidelines that ensure digital systems are usable by all<br>individuals, including people with diverse physical, sensory and<br>cognitive abilities.<br>Principle<br>Matlab<br>Misaal<br>Contrast<br>Text/tasveer background<br>se wazeh<br>Railway app: safed pe<br>kala text, dhoop mein bhi<br>Fonts<br>Saaf, saada font, sahih<br>size/spacing<br>School site pe bara<br>Calibri<br>Colour-blind<br>friendly<br>Sirf rang pe bharosa nahi<br>— symbol/label bhi<br>Laal circle + &quot;STOP&quot; label<br>Navigation<br>Ghoomne ke kai tareeqe<br>Mouse na ho to Tab key<br>se buttons<br>Multimodal<br>Kai formats (dekhna,<br>sunna, choona)<br>Video captions, phone<br>vibration<br>🧠 Yaad rakho: C-F-C-N-M: &quot;Can Friends Catch New Messages?&quot;<br>Drill: (1) Linux cd .. kaunsi type? (2) Paanch UI types? (3) Bure design ki misaal? (4) Sirf laal &quot;STOP&quot; kyun masla?<br>Jawab: 1. Command-based · 2. GUI, CLI, Touch, VUI, NUI · 3. Medical devices pe ghair-wazeh buttons · 4. Colour-blind user ko matlab samajh nahi aata agar symbol/text na ho<br> |  5-mark: Importance of HCI.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 1 · Computer Systems (HCI) · Days 1–4<br>1<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 2"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 02</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-03" data-day="3">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 03 · Teach</p>
+      <h2>Need Analysis, HCI Problems, Fixes &amp; UI vs UX</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-03 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">03<br>Need Analysis, HCI Problems, Fixes &amp; UI vs UX<br>Need Analysis · HCI Problems · Methods for Improving HCI · UI Design (UI vs UX)<br>★ Must lock: HCI Problems, UI vs UX<br>1.6 Need Analysis for Interface Design<br>Def (paper mein yehi likho): Need analysis is the process of<br>identifying the gap between the existing situation and the<br>desired outcome.<br>1. Users pehchano<br>→<br>2. Info collect<br>→<br>3. Needs analyse<br>→<br>4. Prioritise<br>→<br>5. Solutions<br>UI design se pehle — users ke goals, tasks, salahiyat, tawaqqoat<br>samajhne ke liye. Chhora to andaza; isi tarah school portal mein 40<br>menus aur &quot;Download date sheet&quot; ka button ghaib.<br>🧠 Yaad rakho: Need analysis = gap dhoondna. Existing = abhi kya<br>takleef. Desired = &quot;ho gaya&quot; kaisa dikhe. UI woh gap band kare, sajaye<br>nahi.<br>1.7 HCI Problems<br>★ Golden<br>Def (paper mein yehi likho): HCI problems are common<br>difficulties that stop users from using technology smoothly; they<br>happen when systems fail to meet human needs or cognitive<br>limits.<br>Problem<br>Wazahat + misaal<br>Interface<br>complexity<br>Bohat options; shopping app mein checkout button<br>na mile<br>Poor feedback<br>Pata na chale kaam hua ya nahi; Submit pe screen<br>freeze, koi confirmation nahi<br>Inconsistency<br>Ek page pe 🔍, doosre pe 🔭 search icon<br>Accessibility gaps<br>Video tutorial bina captions (behre users)<br>Compatibility<br>issues<br>Laptop pe chale, mobile browser pe crash<br>Contextual<br>neglect<br>Map app mein dark mode nahi — raat ko driver ki<br>aankhein chundhiya jayein<br>High cognitive<br>load<br>Ek saath teen SMS codes yaad rakhna<br>Trust deficiency<br>Card maange par SSL/HTTPS 🔒 nahi<br>🧠 Yaad rakho: Do families: screen problems (complexity,<br>inconsistency, accessibility, compatibility, context) + mind &amp; trust<br>(feedback, cognitive load, trust).<br>📝 Paper mein: 8 marks: &quot;Describe problems of HCI with examples&quot;<br>— kam az kam 6: Naam → ek line → misaal.<br>1.8 Methods for Improving HCI<br>Problem (1.7)<br>Method (1.8)<br>&quot;Send Money&quot; nahi mil raha<br>Usability — ek wazeh button<br>Help video bina captions<br>Accessibility mazboot karo<br>Search icon har page pe alag<br>Consistency — same &quot;Save&quot; button har<br>jagah<br>Submit freeze, koi message<br>nahi<br>Clear feedback — &quot;Payment<br>Successful&quot;<br>Portal mobile pe crash<br>Adaptability — responsive layout<br>Aise features jo kisi ne na<br>maange<br>UCD (User-Centred Design) — interview,<br>phir pilot-test<br>Buzurg lamba number type<br>na kar sake<br>Multimodal — voice + touch<br>Launch ke baad shikayatein<br>ignore<br>Continuous testing &amp; updates<br>1.9 UI Design (UI vs UX)<br>★ Golden<br>Def (paper mein yehi likho): UI design is the process of creating<br>and organizing the visual elements of a software application so<br>users can interact with it easily and efficiently.<br>☰ Menu: Home · Results · Fees<br>🔍 ⚙<br>Text field:<br>Search…<br>☑ Checkbox: Math ☑ CS ☐<br>◉ Radio: Male ○ Female<br>Slider: volume<br>Submit<br>Cancel<br>← Buttons<br>Component<br>Kaam<br>Buttons<br>Click se action (Submit, Cancel)<br>Menus<br>Options ki list — navigation<br>Icons<br>Tools/actions ke chhote symbols<br>Text fields<br>Type karne ke dabbe (password, search)<br>Checkbox / Radio<br>Checkbox = kai choices; radio = group mein sirf ek<br>Sliders<br>Bar pe value (volume, brightness)<br>UI (User Interface)<br>UX (User Experience)<br>Jo dikhta hai — rang, buttons,<br>icons, layout<br>Jo mehsoos hota hai — poora safar,<br>aasaani, satisfaction<br>Tool: Figma (visual design)<br>Research, interviews, testing<br>Misaal: JazzCash ka<br>khoobsurat &quot;Send&quot; button<br>Kya paisa 3 taps mein bina ghabrahat<br>ke chala gaya?<br>🧠 Yaad rakho: UI = kapre (outfit). UX = poora din (waqt pe<br>pohanche? bheege? pareshaan hue?).<br>📝 Paper mein: Sab se zyada aane wala short Q: &quot;Differentiate UI and<br>UX with an example&quot; — dono definitions + &quot;UI is what you see; UX is<br>how it feels&quot; + misaal.<br>Drill: (1) Need analysis kab? (2) Payment page pe HTTPS lock nahi — kaunsa problem? (3) UCD full form + extra step? (4) Chhe UI components?<br>Jawab: 1. UI design se pehle · 2. Trust deficiency · 3. User-Centred Design; asal user goals + pilot-test · 4. Buttons, menus, icons, text fields, checkboxes/radio, sliders  |  5-<br>mark: HCI Problems / UI vs UX.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 1 · Computer Systems (HCI) · Days 1–4<br>1<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 3"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 03</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-04" data-day="4">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 04 · Teach</p>
+      <h2>Wireframes, Prototypes, Evaluation &amp; Testing</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-04 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">04<br>Wireframes, Prototypes, Evaluation &amp;<br>Testing<br>Wireframing &amp; Figma · Test &amp; Evaluate HCI · Testing Methods · Careers in UI/UX<br>★ Must lock: Testing Methods (Usability, A/B,<br>Automated)<br>1.9.3–1.9.5 Wireframing, Figma, Prototypes<br>Def (paper mein yehi likho): Wireframing is creating a basic<br>visual outline or blueprint of a user interface before the final<br>design.<br>Lo-Fi sketch<br>→<br>Details add<br>→<br>Hi-Fi prototype<br>LOGO<br>Portal<br>Username<br>Password<br>LOGIN<br>Forgot password?<br>add colour,<br>real details<br>Sindh College<br>ali12<br>••••••••<br>LOGIN<br>Forgot password?<br>School-portal login: left Lo-Fi (dabbe + labels), right Hi-Fi (rangeen, asli jaisa)<br>Stage<br>Kya<br>Lo-Fi<br>wireframe<br>Black &amp; white sketch — sirf layout (boxes, lines); jaldi<br>ideas test/share<br>Hi-Fi design<br>Rang, fonts, asli images — taqreeban final app<br>Prototype<br>Clickable model — screens jure hue<br>Figma teeno stages rakh sakta hai. Prototype linking: Trigger =<br>user kya kare (On click) → Action = fake app kahan jaye (Navigate<br>to &quot;Dashboard&quot;).<br>🧠 Yaad rakho: Lo-Fi = dabbe. Hi-Fi = taqreeban asli app. Prototype =<br>click ho sake.<br>1.11 Test &amp; Evaluate HCI<br>Testing = product theek chalta hai? (bugs). Evaluation = users ki<br>zaroorat poori karta hai? (usability). Portal &quot;bug-free&quot; ho kar bhi<br>bekaar agar date sheet na mile.<br>Method<br>Matlab<br>SUS (System Usability<br>Scale)<br>Standard 10-item questionnaire → usability<br>score<br>NPS (Net Promoter<br>Score)<br>&quot;Dost ko recommend karoge?&quot; → loyalty<br>Formative evaluation<br>Development ke dauran — jaldi feedback<br>Summative evaluation<br>Development ke aakhir mein — goals ke<br>muqable kamyabi<br>Expert reviews<br>Specialists design standards (heuristics) se<br>check<br>🧠 Yaad rakho: Formative = bana rahe hain (dauran). Summative =<br>jama-tafreeq (aakhir).<br>Chapter 1 Exam Radar 🎯<br>Applications of HCI (H-BEN table) — 5–8 marks<br>Importance of HCI (P-I-I-E-E) — 8 marks<br>HCI problems (6 of 8 with examples) — 8 marks<br>UI vs UX with example — short<br>Testing methods (usability, task, A/B, audit) — 8 marks<br>1.11.2 Testing Methods<br>★ Golden<br>Def (paper mein yehi likho): Testing involves observing how the<br>system behaves under specific conditions.<br>Task-based<br>&quot;Add to cart&quot;<br>⏱ Time: 12 s<br>Success: Yes<br>Errors: 0<br>A/B test<br>A<br>B ✔<br>half / half users<br>more clicks wins<br>Automated audit<br>🤖 Bot scanning…<br>3 broken links<br>Slow page<br>Low contrast<br>Method<br>Kaise<br>Usability<br>testing<br>Asli users ko asli kaam karte dekho — efficiency &amp;<br>satisfaction; user phanse to design ka masla<br>Task-based<br>testing<br>Khaas kaam (&quot;product dhoondo, cart mein dalo&quot;) —<br>time, success rate, errors naapo<br>Automated<br>audits<br>Software bots: broken links, slow loading, low colour<br>contrast<br>A/B testing<br>Do versions; aadhe users A, aadhe B; zyada<br>clicks/sign-ups wala jeete<br>Load testing<br>Ek saath bohat users (result day) — system tike ga?<br>A/B misaal: &quot;Register&quot; button sabz (A) vs neela (B) — 1000 users, B<br>pe 12% zyada sign-ups → B rakho.<br>🧠 Yaad rakho: Task-based ke 3 numbers: Time, Success, Errors.<br>A/B: do versions, users baanto, zyada clicks jeete. Bot: links, speed,<br>contrast.<br>📝 Paper mein: Golden 8 marks: &quot;Explain testing methods used in<br>HCI&quot; — table bana ke har method: definition + kya naapta + misaal.<br>Careers in UI/UX<br>Career<br>Kaam<br>UX designer<br>User needs research — app intuitive aur<br>satisfying<br>UI designer<br>Visual layout (rang, typography, buttons) —<br>Figma<br>Interaction designer<br>Screens ka flow, animations, gestures<br>Usability researcher<br>SUS/NPS aur A/B tests asli users ke saath<br>Accessibility<br>specialist<br>Disabled logon ke liye inclusive standards<br>🧠 Yaad rakho: UI dikhata; UX poochta; interaction jorta; research<br>naapta; accessibility sab ko shamil karta.<br>Checkpoint: (1) Lo-Fi wireframe kya jaan-boojh ke chhorta hai? (2) Testing vs evaluation? (3) Task-based ke teen measurements? (4) SUS, NPS, A/B kaun<br>chalata hai?<br>Jawab: 1. Rang aur detailed graphics · 2. Testing = bugs/chalta hai; evaluation = user needs (usability) · 3. Completion time, success rate, errors · 4. Usability researcher  |  60%<br>se kam → kal Golden repair.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 1 · Computer Systems (HCI) · Days 1–4<br>1<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 4"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 200 160"><rect x="20" y="20" width="160" height="120" fill="#fff" stroke="#333" stroke-dasharray="4"/><rect x="40" y="40" width="120" height="24" fill="#e2e8f0"/><rect x="40" y="72" width="80" height="40" fill="#bfdbfe"/><text x="30" y="150" font-size="10">Wireframe blocks</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-checkpoint" id="day-05" data-day="5">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 05 · Checkpoint</p>
+      <h2>Correctness: Trace Tables &amp; Stepwise Reasoning</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-05 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">Chapter 2 — Computational Thinking &amp; Algorithms<br>Days 5–9 · 4 Teach + 1 Checkpoint<br>05<br>Correctness: Trace Tables &amp; Stepwise<br>Reasoning<br>Correctness · Trace Tables · Stepwise Reasoning · Comparison · Clarity<br>★ Must lock: Trace Tables, Comparing Trace &amp;<br>Stepwise<br>2.1 Analyse Algorithms for Correctness<br>Def (paper mein yehi likho): An algorithm is correct if its output<br>matches the expected results for all valid inputs.<br>Ek &quot;khush-qismat&quot; misaal kaafi nahi — har valid input pe sahih ho.<br>Do tareeqe: trace tables (kaghaz pe line-by-line) aur stepwise<br>reasoning (logic blocks, overall state).<br>⚠ Dhoka: &quot;Chal gaya&quot; ≠ &quot;sahih hai&quot;. Logical error bhi output deta hai —<br>bas ghalat output.<br>2.1.1 Trace Tables<br>★ Golden<br>Def (paper mein yehi likho): A trace table is a technique used to<br>monitor how the values of variables change during the execution<br>of an algorithm.<br>Kaam: dry running (haath se line-by-line), debugging (logical<br>errors), validation (wahi kare jo chahiye). Columns: line/step ·<br>variables · condition check · input/output.<br>AllHeights = [1.91, 2.01, 1.87, 1.57, 1.48]<br>Total = 0<br>for height in AllHeights:<br>    if height &gt;= 1.57 and height &lt;= 1.91:<br>        Total = Total + 1<br>print(Total)<br>Step<br>height<br>1.57 ≤ h ≤ 1.91?<br>Total<br>Output<br>0<br>—<br>—<br>0<br>1<br>1.91<br>True<br>1<br>2<br>2.01<br>False<br>1<br>3<br>1.87<br>True<br>2<br>4<br>1.57<br>True<br>3<br>5<br>1.48<br>False<br>3<br>end<br>3<br>3<br>🧠 Yaad rakho: Har baar variable badle ya condition test ho → nayi<br>row. Na badalne wali values neeche copy karo.<br>📝 Paper mein: &quot;Dry-run using a trace table and state the output&quot; —<br>har variable ka column + condition column + aakhir mein output.<br>2.1.2 Stepwise Reasoning (Logic Verification)<br>Algorithm ko logical hisson mein tod ke har stage pe state check:<br>sahih shuru? sab cases? conditions theek?<br>N = 5<br>Sum = 0<br>for i in range(1, N + 1):<br>    Sum = Sum + i<br>print(Sum)<br>Check<br>Kya verify<br>Initial state<br>Loop se pehle Sum = 0 ✔<br>Loop boundary<br>i = 1 se N tak — na kam, na zyada<br>Iteration<br>k iterations ke baad Sum = 1+2+…+k<br>Final state<br>Sum = 1+…+N = jo chahiye<br>Edge N = 0<br>Loop nahi chalta, Sum = 0 ✔<br>Check N = 5<br>15 =<br>✔<br>🧠 Yaad rakho: Stepwise = teacher proof check kare (&quot;ye block<br>hamesha sahih?&quot;). Trace = cashier sikke gine.<br>2.1.3 Trace Table vs Stepwise Reasoning<br>★ Golden<br>🔬 Trace table<br>Micro-level<br>line by line<br>exact values<br>🗺 Stepwise reasoning<br>Macro-level<br>logic blocks<br>overall state<br>Feature<br>Trace table<br>Stepwise reasoning<br>Best for<br>Chhote blocks, complex<br>loops, beginners<br>Bare systems, architecture,<br>math proofs<br>Effort<br>High — 1000 dafa loop pe<br>na-mumkin<br>Moderate — mazboot logic<br>chahiye<br>Goal<br>Line-by-line<br>arithmetic/misread errors<br>Design ki<br>conceptual/structural<br>ghaltiyan<br>Level<br>Micro — exact values<br>Macro — overall state<br>📝 Paper mein: Takreeban guaranteed: &quot;Compare a trace table with<br>stepwise reasoning&quot; — 4-row table (best for, effort, goal, level).<br>2.2 Clarity of an Algorithm<br>Def (paper mein yehi likho): Clarity means an algorithm is easy<br>to read, understand and modify.<br>Aksar thori speed se zyada ahem — maintain, debug, extend<br>aasaan. Do pehlu: Modularity (hisse) aur Readability (text aur<br>flow).<br>Drill: (1) Algorithm kab correct? (2) Trace table ke 4 columns? (3) Stepwise reasoning ka doosra naam? (4) Micro-level kaun? (5) Clarity?<br>Jawab: 1. Har valid input pe expected output · 2. Line/step, variables, input/output, condition check · 3. Logic verification · 4. Trace table · 5. Parhna, samajhna, badalna aasaan<br> |  5-mark: Trace Tables.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 2 · Computational Thinking &amp; Algorithms · Days 5–9<br>2<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 5"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 05</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-06" data-day="6">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 06 · Teach</p>
+      <h2>Modularity, Readability &amp; Big O</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-06 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">06<br>Modularity, Readability &amp; Big O<br>Modularity · Readability · Efficiency · Number of Steps (Big O) · Number of Conditions<br>★ Must lock: Number of Steps (Big O Notation)<br>2.2.1 Modularity<br>Def (paper mein yehi likho): Modularity means breaking an<br>algorithm into smaller, independent parts such as functions,<br>classes or modules.<br>Idea<br>Matlab<br>SRP (Single<br>Responsibility)<br>Har module ek kaam. Sum + report + print ek<br>function mein = ghalat<br>Loose coupling<br>Ek hissa badlo to doosra na toote; modules<br>reuse ho sakein<br>Abstraction<br>Andar ki tafseel chhupao — sort() call karo bina<br>jaane kaunsa algorithm<br>🧠 Yaad rakho: SRP: &quot;one function, one job&quot;. Naam chhota verb-<br>phrase na ban sake (CalculateSum) → zyada kaam kar raha hai.<br>2.2.2 Readability<br>Def (paper mein yehi likho): Readability is how easily another<br>person can understand the purpose and logic of an algorithm<br>without running it.<br>Pehlu<br>Matlab<br>Naming<br>conventions<br>Bura: v = d / t → Achha: velocity =<br>distance / time<br>Self-<br>documentation<br>Code khud samjhaye — kam comments chahiye<br>Simple control<br>flow<br>IF ke andar IF ke andar IF se bacho<br>Consistency<br>Ek style: indentation, spacing, camelCase ya<br>snake_case<br># Hard to read<br>v = d / t<br>if v &gt; s:<br>    if t &gt; 0:<br>        print(v)<br># Readable<br>velocity = dist / time<br>if velocity &gt; limit:<br>    print(velocity)<br>🧠 Yaad rakho: N-S-S-C: Names, Self-documentation, Simple flow,<br>Consistency.<br>2.3 Assess Algorithm Efficiency<br>Def (paper mein yehi likho): Algorithm efficiency is measured in<br>terms of time (speed) and space (memory).<br>Teen cheezein gino: steps (Big O), conditions (IF), repetitions<br>(loops). Hamesha &quot;jab input bare&quot;. 10 items pe foran, 10 million pe<br>freeze ho sakta.<br>2.3.1 Number of Steps (Big O)<br>★ Golden<br>Def (paper mein yehi likho): Big O notation is a mathematical<br>method used to describe how the running time (or memory)<br>grows as the input size n grows.<br>Chhote constants chhoro, sab se bara term rakho:<br>;<br>.<br>=<br>(n ko kitni baar aadha karo ke 1 bache).<br>Relative work at n = 16<br>1<br>\(O(1)\)<br>4<br>\(O(\log n)\)<br>16<br>\(O(n)\)<br>64<br>\(O(n \log n)\)<br>256<br>O(n²)<br>Class<br>Naam<br>n barhe to<br>Misaal<br>Grade<br>Constant<br>Waqt same<br>arr[0]<br>Excellent<br>Logarithmic<br>Bohat aahista; har<br>step aadha<br>Binary<br>search<br>Great<br>Linear<br>n dugna → waqt<br>dugna<br>Linear<br>search<br>Fair/Good<br>Linearithmic<br>Linear se thora<br>bura<br>Merge Sort<br>Good<br>Quadratic<br>n² — nested loops<br>Bubble<br>Sort<br>Poor<br>Tez se aahista:<br>. n = 16 pe: 1, 4, 16, 64, 256.<br>🧠 Yaad rakho: &quot;Constant Logs Never Need Squares&quot; — Constant,<br>Log, n, n log n, Square.<br>📝 Paper mein: MCQ: &quot;arr[0] access?&quot; →<br>. &quot;Binary search?&quot; →<br>. &quot;Nested loops?&quot; →<br>. Paanchon rows (naam, growth, misaal, grade) yaad.<br>2.3.2 Number of Conditions<br>Har IF ek decision point — CPU ko True/False nikalna parta = extra<br>kaam. Nested IFs = brute force, readability aur speed dono kharab.<br>Short-circuiting: nateeja maloom hote hi ruk jao. AND mein pehla<br>False → doosra check hi nahi.<br>x, y = 0, 10<br># x != 0 False → divide hota hi nahi<br>if x != 0 and (y / x) &gt; 2:<br>    print(&quot;ratio is large&quot;)<br>else:<br>    print(&quot;skipped safely&quot;)<br>🧠 Yaad rakho: AND mein sasta / zyada-tar-False test pehle; OR mein<br>zyada-tar-True test pehle.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 2 · Computational Thinking &amp; Algorithms · Days 5–9<br>2<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 6"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 240 100"><text x="10" y="20" font-size="12">Growth curves</text><path d="M20 80 Q80 75 120 50 T220 20" fill="none" stroke="#2563eb" stroke-width="2"/><path d="M20 80 L220 30" fill="none" stroke="#059669" stroke-width="2"/><text x="180" y="25" font-size="9">O(n)</text><text x="180" y="45" font-size="9">O(log n)</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-07" data-day="7">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 07 · Teach</p>
+      <h2>Repetitions, Framework, Data Structures &amp; Array</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-07 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">07<br>Repetitions, Framework, Data Structures &amp; Array<br>Number of Repetitions · Evaluation Framework · Refinements · Data Structure · Array<br>★ Must lock: Concept of Data Structure<br>2.3.3 Number of Repetitions<br>Loops efficiency ka sab se bara factor:<br>Repetition<br>Asar<br>Grade<br>Linear loop<br>Har element ek dafa<br>Good —<br>Logarithmic<br>Har iteration problem aadha (binary<br>search)<br>Excellent<br>—<br>Nested<br>loops<br>Har element ke liye baqi sab<br>Poor —<br>🧠 Yaad rakho: Sab se gehra loop dhoondo: ek loop ≈<br>; loop ke andar loop ≈<br>; aadha karne wala ≈<br>.<br>2.3.4 Efficiency Evaluation Framework<br>Scale karta?<br>→<br>Bottleneck kahan?<br>→<br>Extra complexity worth it?<br>n 10× ho to waqt 10× (linear) ya 100× (quadratic,<br>)?<br>Situation<br>Faisla<br>Kyun<br>50 unsorted class names<br>Linear<br>search<br>n chhota; binary ke liye<br>pehle sort = extra<br>kaam/code<br>1,000,000 sorted account<br>numbers, din bhar search<br>Binary<br>search<br>Bara n; search loop<br>bottleneck; binary standard<br>🧠 Yaad rakho: S-B-W: Scale, Bottleneck, Worth it.<br>2.4 Refinements<br>Clarity: N-M-I-C<br>Efficiency: S-A-C-D<br>Names: average = totalSum /<br>totalItems<br>Shrink steps (faltu kaam<br>hatao)<br>Modules: CalculateSum() alag<br>Behtar Algorithm chuno<br>Indentation &amp; spacing<br>Cache — dobara hisaab<br>mat karo<br>Comments — &quot;kyun&quot;, sirf &quot;kya&quot; nahi<br>Sahih Data structure<br>2.5 Concept of Data Structure<br>★ Golden<br>Def (paper mein yehi likho): A data structure is a systematic<br>way of organising, storing and managing data so that an<br>algorithm can access, modify and process it efficiently.<br>Shelf pe tarteeb se kitaabein, folders mein files — memory mein<br>yahi kaam data structures karte hain.<br>Linear<br>A<br>B<br>C<br>D<br>Non-linear<br>R<br>L<br>R<br>net / graph<br>Linear<br>Non-linear<br>Tarteeb<br>Ek ke baad ek (sequence)<br>Shaakhein / jaal<br>Rishta<br>Har item ka 1 pichla + 1 agla<br>Ek item ke kai connections<br>Misaal<br>Array, linked list, stack, queue<br>Tree, graph<br>🧠 Yaad rakho: &quot;Har item ka zyada se zyada ek agla?&quot; Haan → linear.<br>&quot;Ek se kai, ya jaal?&quot; → non-linear.<br>📝 Paper mein: Poori definition (organise, store, manage; efficient<br>access) + linear vs non-linear (&quot;one predecessor, one successor&quot;) +<br>misaalein.<br>2.5.1 Array<br>Def (paper mein yehi likho): An array holds a collection of<br>similar items (same data type) in contiguous memory; each item<br>has an index starting from 0.<br>Array A<br>23<br>0<br>76<br>1<br>12<br>2<br>90<br>3<br>34<br>4<br>68<br>5<br>index<br>Contiguous = ek musalsal block. Index se address nikal aata →<br>seedha jump: direct (random) access =<br>. A[3] → 90 bina 23, 76, 12 se guzre.<br>A = [23, 76, 12, 90, 34, 68]<br>print(A[3])   # 90<br>print(A[0])   # 23<br>🧠 Yaad rakho: Index = baayen se position − 1. Insaan ka &quot;4th&quot; =<br>index 3.<br>5-mark frame: Concept of Data Structure<br>Define<br>A systematic way of organising, storing and managing data so an algorithm can access, modify and process it efficiently.<br>Explain<br>Linear: sequence, ek agla. Non-linear: shaakhein/jaal.<br>Example<br>Array, linked list, stack, queue · tree, graph.<br>Diagram<br>A–B–C–D line + root wala tree.<br>Working<br>Array: A[3] direct jump \(O(1)\).<br>Drill: (1) Nested loops ka grade? (2) n 10× → quadratic kitna slow? (3) a = b / c average ke liye? (4) Data structure define karo (5) Contiguous<br>memory?<br>Jawab: 1. Poor — O(n²) · 2. ~100× · 3. average = totalSum / totalItems · 4. Organise, store, manage for efficient access · 5. Items ek musalsal block mein<br>saath saath  |  5-mark: Concept of Data Structure.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 2 · Computational Thinking &amp; Algorithms · Days 5–9<br>2<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 7"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 07</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-checkpoint" id="day-08" data-day="8">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 08 · Checkpoint</p>
+      <h2>Linked List, Stack, Queue, Tree &amp; Graph</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-08 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">08<br>Linked List, Stack, Queue, Tree &amp; Graph<br>Linked List · Stack (LIFO) · Queue (FIFO) · Tree · Graph<br>★ Must lock: Stack, Queue<br>Linked List<br>Data ki zanjeer — array ki tarah ek block nahi. Har node = data +<br>link (pointer) jo agle node ka address rakhe. Aakhri link = NULL.<br>HEAD<br>23<br>•<br>76<br>•<br>12<br>•<br>90<br>✕NULL<br>data | link<br>🧠 Yaad rakho: Array = number wale lockers ki qataar. Linked list =<br>khazane ki talaash: har clue agle dabbe ka pata.<br>Stack (LIFO)<br>★ Golden<br>Def (paper mein yehi likho): A stack is a linear data structure<br>that works on the LIFO principle: Last-In, First-Out.<br>Data 1<br>Data 2<br>Data 3<br>← TOP<br>PUSH ↓<br>POP ↑<br>top se hi andar/bahar<br>PUSH = top pe add. POP = top<br>se nikalo. TOP = sab se upar<br>wala.<br>Misaal: Undo/Redo, Back<br>button, function calls.<br>#<br>Operation<br>Stack (bottom→top)<br>TOP<br>Popped<br>1<br>PUSH Data1<br>[Data1]<br>Data1<br>2<br>PUSH Data2<br>[Data1, Data2]<br>Data2<br>3<br>PUSH Data3<br>[Data1, Data2, Data3]<br>Data3<br>4<br>POP<br>[Data1, Data2]<br>Data2<br>Data3<br>5<br>POP<br>[Data1]<br>Data1<br>Data2<br>stack = []<br>stack.append(&quot;Data1&quot;)   # PUSH<br>stack.append(&quot;Data2&quot;); stack.append(&quot;Data3&quot;)<br>print(stack.pop())      # POP → Data3<br>🧠 Yaad rakho: Canteen ki plates: aakhir mein dhuli plate pehle use.<br>LIFO.<br>📝 Paper mein: Stack + LIFO, PUSH/POP, TOP, Undo misaal, vertical<br>boxes TOP label ke saath. &quot;Show the stack after PUSH…POP&quot;.<br>Queue (FIFO)<br>★ Golden<br>Def (paper mein yehi likho): A queue organises data on the<br>FIFO principle: First-In, First-Out.<br>DEQUEUE ←<br>← ENQUEUE<br>55<br>76<br>90<br>D<br>FRONT<br>REAR<br>ENQUEUE = Rear (peeche) pe add. DEQUEUE = Front se nikalo.<br>Misaal: printer jobs, canteen ki line.<br>#<br>Operation<br>Queue (Front→Rear)<br>Front<br>Rear<br>1<br>ENQUEUE 55<br>[55]<br>55<br>55<br>2<br>ENQUEUE 76<br>[55, 76]<br>55<br>76<br>3<br>ENQUEUE 90<br>[55, 76, 90]<br>55<br>90<br>4<br>ENQUEUE D<br>[55, 76, 90, D]<br>55<br>D<br>5<br>DEQUEUE → 55<br>[76, 90, D]<br>76<br>D<br>🧠 Yaad rakho: FIFO = canteen line: Front = jise serve ho raha; Rear =<br>jo abhi aaya.<br>📝 Paper mein: Queue + FIFO, ENQUEUE (rear) / DEQUEUE (front),<br>printer misaal, Front/Rear diagram, chhota trace.<br>2.5.2 Tree (non-linear)<br>Hierarchy — sab ek root se phootta; one-to-many (parent–child).<br>Koi child do parents ka nahi.<br>Principal (Root)<br>Administrative Head<br>Academic Dean<br>Accounts<br>HR<br>HOD Math<br>HOD CS<br>Graph (non-linear)<br>A<br>B<br>C<br>D<br>edge<br>Nodes (vertices) = cheezein<br>(shehar, log). Edges =<br>connections (sarak, dosti). Cycle<br>ban sakta (A–B–D–C–A) — tree<br>mein nahi.<br>🧠 Yaad rakho: Tree = khas graph: ek root, koi cycle nahi. Cycles /<br>many-to-many → graph.<br>Array vs Linked List<br>Point<br>Array<br>Linked list<br>Memory<br>Contiguous (ek block)<br>Bikhri nodes, links se jurri<br>Access<br>Direct by index<br>Sequential, HEAD se<br>Insert / delete<br>Beech mein mushkil (shift)<br>Aasaan — link badlo<br>Size<br>Aam tor pe fixed<br>Dynamic, barh/ghat sakta<br>Stack vs Queue<br>Point<br>Stack<br>Queue<br>Principle<br>LIFO<br>FIFO<br>Add<br>PUSH — top pe<br>ENQUEUE — rear pe<br>Remove<br>POP — top se<br>DEQUEUE — front se<br>Ends used<br>Ek (top)<br>Do (front, rear)<br>Misaal<br>Undo, back button<br>Printer, canteen line<br>Drill: (1) Node ke 2 hisse? (2) LIFO? (3) FIFO — add kahan, remove kahan? (4) Tree ka starting node? (5) Graph ke 2 hisse?<br>Jawab: 1. Data + link · 2. Last-In First-Out · 3. First-In First-Out; Rear pe add, Front se remove · 4. Root · 5. Nodes (vertices), edges  |  5-mark: Stack / Queue.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 2 · Computational Thinking &amp; Algorithms · Days 5–9<br>2<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 8"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 200 160"><rect x="90" y="20" width="50" height="24" fill="#dbeafe" stroke="#2563eb"/><line x1="115" y1="44" x2="115" y2="60" stroke="#333"/><rect x="90" y="60" width="50" height="24" fill="#dbeafe" stroke="#2563eb"/><text x="20" y="110" font-size="10">Stack: push/pop at top (LIFO)</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-09" data-day="9">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 09 · Teach</p>
+      <h2>Operations, Choosing Structures &amp; Data Retrieval</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-09 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">09<br>Operations, Choosing Structures &amp; Data Retrieval<br>Operations on Data Structures · Scenarios · Trace Data Retrieval · Careers<br>★ Must lock: None — tables copy karo<br>2.5.3 Operations on Data Structures<br>Operation<br>Matlab<br>Misaal<br>Insertion<br>Naya item daalna<br>PUSH; ENQUEUE; array mein 40<br>Deletion<br>Item nikalna<br>POP; DEQUEUE; node delete<br>Traversal<br>Har item ek ek<br>dekhna<br>HEAD → … → NULL; har tree node<br>Searching<br>Khaas item<br>dhoondna<br>Array linear search; links follow<br>karke 87<br>Sorting<br>Tarteeb (asc/desc)<br>Marks ki array pe Bubble Sort<br>🧠 Yaad rakho: I-D-T-S-S: Insert, Delete, Traverse, Search, Sort.<br>2.6 Scenario se Data Structure<br>Scenario<br>Structure<br>Kyun<br>Class ke grades<br>Array<br>Size maloom, same type,<br>index se tez<br>Music playlist / browser<br>history<br>Linked<br>list<br>Har song ko agla maloom<br>Undo / Redo<br>Stack<br>Aakhri action pehle wapas<br>Printer jobs<br>Queue<br>Pehle aao, pehle pao<br>College organogram,<br>folders<br>Tree<br>Parent–child<br>Maps, social network<br>Graph<br>Connections / rishte<br>🧠 Yaad rakho: Ulti tarteeb? → stack · Pehle aao? → queue · Parent–<br>child? → tree · Many-to-many? → graph · Index wali list? → array.<br>Practice trace (khud karo)<br>Stack: PUSH 5, PUSH 8, POP, PUSH 3, PUSH 9, POP, POP → bacha?<br>popped tarteeb?<br>Queue: ENQUEUE A, B, C, DEQUEUE, ENQUEUE D, DEQUEUE →<br>Front? Rear?<br>Jawab: stack [5], popped 8, 9, 3 · queue [C, D], Front C, Rear D (A, B nikle)<br>from collections import deque<br>q = deque()<br>q.append(&quot;A&quot;); q.append(&quot;B&quot;)   # ENQUEUE<br>print(q.popleft())             # DEQUEUE → A<br>2.7 Trace Data Retrieval<br>Teeno linear, magar dhoondne ki mehnat alag:<br>Iteration<br>Index<br>Access<br>Value<br>1<br>0<br>Array[0]<br>10<br>2<br>1<br>Array[1]<br>50<br>3<br>2<br>Array[2]<br>20<br>Array = [10, 50, 20, 70, 90, 30]<br>print(&quot;Direct Array[2] =&quot;, Array[2])   # 20, \(O(1)\)<br>for i in range(3):<br>    print(i + 1, i, Array[i])<br>A<br>B<br>C<br>D<br>DEQUEUE ←<br>Front<br>Rear<br>D = ENQUEUE<br>B tab tak nahi jab tak A na jaye<br>Structure<br>Retrieval<br>Array<br>Jump — index se direct,<br>Linked list<br>Walk — HEAD se links follow,<br>Queue<br>Wait — sirf Front se<br>🧠 Yaad rakho: &quot;Array jumps, list walks, queue waits.&quot;<br>Careers in Algorithms<br>Career<br>Kaam<br>Software Engineer<br>Data structures + efficient algorithms se<br>software<br>Backend Developer<br>Server-side logic; sahih structure → web<br>speed<br>Algorithm Engineer<br>Search engines, finance, logistics ke algorithms<br>optimise<br>Systems Analyst<br>Mojooda systems ki efficiency/clarity behtar<br>Competitive<br>Programmer<br>Time-limit mein mushkil problems<br>🧠 Yaad rakho: Har career ke 3 test: correct, clear, efficient + sahih<br>data structure.<br>Chapter 2 Exam Radar 🎯<br>Dry-run with trace table + output<br>Trace table vs stepwise reasoning (4-row table)<br>Big O classes: naam, misaal, grade; order fastest → slowest<br>Define data structure; linear vs non-linear<br>Stack/queue: define, diagram, PUSH/POP · ENQUEUE/DEQUEUE<br>trace<br>Scenario → structure (undo, printer, playlist…)<br>Checkpoint: (1) Paanch operations? (2) Class grades kis mein, kyun? (3) [10, 50, 20, 70, 90, 30] mein Array[2]? (4) Search-engine/logistics algorithms<br>kaun?<br>Jawab: 1. Insertion, deletion, traversal, searching, sorting · 2. Array — size maloom, same type, tez index · 3. 20 · 4. Algorithm Engineer  |  60% se kam → kal Golden repair.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 2 · Computational Thinking &amp; Algorithms · Days 5–9<br>2<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 9"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 09</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-10" data-day="10">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 10 · Teach</p>
+      <h2>Lists, Tuples, Sets &amp; Dictionaries</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-10 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">Chapter 3 — Programming Fundamentals<br>Days 10–13 · 3 Teach + 1 Checkpoint<br>10<br>Lists, Tuples, Sets &amp; Dictionaries<br>Primitive vs Abstract · Lists · Tuples · Sets · Dictionaries<br>★ Must lock: Lists, Tuples, Dictionaries<br>3.1 Data Structures in Python<br>Category<br>Matlab<br>Examples<br>Primitive<br>Sirf ek value<br>int, float, bool<br>Abstract<br>Bohat si values, richer operations<br>list, tuple, set, dict<br>🧠 Yaad rakho: Primitive = ek sikka 🪙. Abstract = batwa jis mein kai<br>sikke.<br>3.1.1 Lists (Ordered, Mutable)<br>★ Golden<br>Def (paper mein yehi likho): A list stores an ordered collection<br>of items in a single variable; it is mutable and written with square<br>brackets [ ].<br>[0]<br>apple<br>[-5]<br>[1]<br>mango<br>[-4]<br>[2]<br>banana<br>[-3]<br>[3]<br>grape<br>[-2]<br>[4]<br>kiwi<br>[-1]<br>first<br>last<br>Method / op<br>Kaam<br>.append(x)<br>Aakhir mein add<br>.insert(i, x)<br>Index i pe add<br>.remove(x)<br>Pehla x hatao<br>.pop(i)<br>Index i (default aakhri) nikal ke wapas do<br>.sort() / .reverse()<br>Tarteeb / ulta (original badle)<br>.index(x) / .count(x)<br>Pehli position / kitni dafa<br>L[2:6]<br>Slice: index 2 se 5 tak<br>After<br>List<br>create<br>[&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;apple&#x27;]<br>.append(&#x27;grape&#x27;)<br>[&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;apple&#x27;, &#x27;grape&#x27;]<br>.remove(&#x27;apple&#x27;)<br>[&#x27;banana&#x27;, &#x27;apple&#x27;, &#x27;grape&#x27;] — sirf pehla<br>.sort()<br>[&#x27;apple&#x27;, &#x27;banana&#x27;, &#x27;grape&#x27;]<br>🧠 Yaad rakho: [-1] hamesha aakhri item — len(L)-1 ki zaroorat<br>nahi. Mixed types allowed: [1, &quot;Python&quot;, 3.14, True].<br>📝 Paper mein: Har saal: &quot;What is a list?&quot;, &quot;4 methods&quot;, &quot;list vs tuple&quot;,<br>&quot;search program&quot;, &quot;predict output&quot; (slicing).<br>3.1.2 Tuples (Ordered, Immutable)<br>★ Golden<br>Def (paper mein yehi likho): A tuple is an ordered collection<br>that is immutable — once created, items cannot be added,<br>removed or replaced. Written with ( ).<br>t = (10, 20, 30, 40, 50)<br>print(t[0], t[-1])   # 10 50<br>print(t[1:4])        # (20, 30, 40)<br>print(t[::-1])       # (50, 40, 30, 20, 10)<br>t[0] = 99            # TypeError!<br>Point<br>List [ ]<br>Tuple ( )<br>Mutability<br>Mutable — badal sakti<br>Immutable — read-only 🔒<br>Methods<br>Bohat (append,<br>remove…)<br>Sirf count, index<br>Speed /<br>safety<br>Thori slow<br>Tez, data mehfooz<br>Use<br>Badalta data<br>Fixed data (coordinates,<br>din)<br>🧠 Yaad rakho: Tuple = band lunchbox: andar dekh sakte, sandwich<br>badal nahi sakte. &quot;Tuple is Tight&quot;.<br>3.1.3 Sets (Unordered, Unique)<br>Unordered, unindexed, unique items, { }. Duplicates foran<br>khatam: {1,4,3,3,2,2} → {1,2,3,4}.<br>Set A<br>Set B<br>1, 2<br>3, 4<br>5, 6<br>A &amp; B = {3, 4}<br>Op<br>Result<br>A | B<br>{1..6} union<br>A &amp; B<br>{3, 4}<br>A - B<br>{1, 2}<br>A ^ B<br>{1,2,5,6}<br>.add() ek · .update() kai · .remove() (na ho to KeyError) ·<br>.discard() (crash nahi) · .clear()<br>⚠ Dhoka: Khaali set = set(), {} nahi (woh khaali dict hai).<br>3.1.4 Dictionaries (Key–Value)<br>★ Golden<br>Def (paper mein yehi likho): A dictionary stores data as key–<br>value pairs; it is ordered (Python 3.7+), mutable, and its keys are<br>unique.<br>d = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}<br>d[&quot;age&quot;] = 31          # change<br>d[&quot;city&quot;] = &quot;NYC&quot;      # add<br>del d[&quot;city&quot;]          # delete<br>print(d.get(&quot;marks&quot;, 0))   # 0, crash nahi<br>.keys() · .values() · .items() (tuples). Key repeat → aakhri<br>value: {&quot;a&quot;:1,&quot;a&quot;:3} → {&#x27;a&#x27;: 3}. Position se nahi, key se<br>dhoondo.<br>🧠 Yaad rakho: Keys = roll numbers (unique); values repeat ho sakti.<br>&quot;get is gentle, brackets can break&quot; (KeyError).<br>Drill: (1) 2 primitive + 2 abstract? (2) nums[2:6] for 0..9? (3) Tuple ke 2 methods? (4) print({1,4,3,3,2,2})? (5) {&quot;a&quot;:1,&quot;a&quot;:2,&quot;a&quot;:3}?<br>Jawab: 1. int, float · list, dict · 2. [2, 3, 4, 5] · 3. count, index · 4. {1, 2, 3, 4} · 5. {&#x27;a&#x27;: 3}  |  5-mark: Lists / Dictionaries.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 3 · Programming Fundamentals · Days 10–13<br>3<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 10"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 10</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-11" data-day="11">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 11 · Teach</p>
+      <h2>Built-in Functions, Activities &amp; Functions</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-11 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">11<br>Built-in Functions, Activities &amp; Functions<br>min/max/len/sum · Attendance System · Word Frequency · Functions · Built-in vs User-defined<br>★ Must lock: Functions in Python<br>3.1.5 Built-in Functions<br>Function<br>Kaam<br>Kis pe<br>len()<br>Kitne elements (dict:<br>keys)<br>Sab<br>min() /<br>max()<br>Sab se chhota / bara<br>(numeric ya<br>alphabetical)<br>List, tuple, set, dict keys<br>sum()<br>Numbers ka jama<br>List, tuple, set; dict:<br>sum(d.values())<br>sorted()<br>Naya sorted list; original<br>same<br>Sab<br>s = {5, 1, 9, 3, 7}<br>print(len(s), min(s))   # 5 1<br>print(max(s), sum(s))   # 9 25<br>print(sorted(s))        # [1, 3, 5, 7, 9]<br>🧠 Yaad rakho: LEN-MIN-MAX-SUM = gino, chhota, bara, jama. Dict<br>pe len/min/max/sorted keys use karte; sum ko .values() chahiye.<br>3.1.6 Activity: Attendance System<br>students = [&quot;Ali&quot;, &quot;Sara&quot;, &quot;Ayesha&quot;]<br>present_count = 0<br>for name in students:<br>    ans = input(name + &quot; present? &quot;)<br>    if ans.lower() == &quot;yes&quot;:<br>        present_count += 1<br>print(&quot;Present:&quot;, present_count)<br>print(&quot;Absent:&quot;, len(students) - present_count)<br>Student<br>Typed<br>.lower()<br>count<br>Ali<br>yes<br>yes → +1<br>1<br>Sara<br>no<br>—<br>1<br>Ayesha<br>YES<br>yes → +1<br>2<br>3.1.7 Activity: Word Frequency<br>text = &quot;python is easy python is fun &quot;<br>text += &quot;python is powerful&quot;<br>word_freq = {}<br>for word in text.split():<br>    word_freq[word] = word_freq.get(word, 0) + 1<br>print(word_freq)<br># {&#x27;python&#x27;: 3, &#x27;is&#x27;: 3, &#x27;easy&#x27;: 1,<br>#  &#x27;fun&#x27;: 1, &#x27;powerful&#x27;: 1}<br>🧠 Yaad rakho: Har counter ka dil: d[item] = d.get(item, 0)<br>+ 1 — letters, votes, roll numbers sab.<br>3.2 Functions in Python<br>★ Golden<br>Def (paper mein yehi likho): A function is a named block of<br>code that is written once and runs whenever it is called, avoiding<br>duplicate code.<br>Same instructions bar bar = duplicate code: lamba, mushkil, har<br>copy theek karni parti.<br>def<br>name<br>(params)<br>a, b<br>body<br>indent<br>return<br>optional<br>def add(a, b): → return a + b → add(2, 3) = 5<br>def greet():<br>    print(&quot;Hello, World!&quot;)<br>greet()     # call 1<br>greet()     # call 2<br>Benefit<br>Matlab<br>Code reusability<br>Ek dafa likho, har jagah use<br>Modularity<br>Bara masla chhote naam wale kaamon mein<br>Readability<br>Chhoti, saaf files, meaningful naam<br>Maintainability<br>Bug ek jagah theek → har call theek<br>🧠 Yaad rakho: DRY — Don&#x27;t Repeat Yourself. Copy-paste ka irada →<br>def mein lapeto. Naam verbs: greet, add, save_grades.<br>3.2.1 Built-in vs User-defined<br>Built-in<br>User-defined<br>Kaun<br>likhta<br>Python language<br>Programmer<br>Shuru<br>Bas naam call<br>Pehle def name(...):<br>Misaal<br>len(&quot;Ali&quot;) → 3, range,<br>sum, print, input, type<br>def add(a, b):<br>return a + b<br>Maqsad<br>Sab ke rozana kaam<br>Aap ke program ke khaas<br>kaam<br>def greet_student(name):      # parameter<br>    print(&quot;Hello,&quot;, name)<br>greet_student(&quot;Hassan&quot;)       # argument<br>🧠 Yaad rakho: Python ke paas pehle se hai (len, sum, max) →<br>dobara mat likho. Apne steps pack karne hon → user-defined.<br>5-mark frame: Functions<br>Define<br>A named block of code written once and run whenever it is called.<br>Explain<br>def, name, parameters, indented body, optional return.<br>Example<br>def add(a, b): return a + b → add(2, 3) = 5<br>Working<br>Benefits: reusability, modularity, readability, maintainability.<br>Drill: (1) s = {5,1,9,3,7}: len, min, max, sum? (2) Teeno &quot;no&quot; type karein to? (3) &quot;is&quot; kitni dafa? (4) Function kis keyword se? (5) range() built-in ya user-<br>defined?<br>Jawab: 1. 5, 1, 9, 25 · 2. Present 0, Absent 3 · 3. Teen · 4. def · 5. Built-in  |  5-mark: Functions in Python.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 3 · Programming Fundamentals · Days 10–13<br>3<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 11"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 11</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-12" data-day="12">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 12 · Teach</p>
+      <h2>Return Values, Scope &amp; File Handling</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-12 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">12<br>Return Values, Scope &amp; File Handling<br>Return Values · Calculator Activity · Local vs Global · File Handling &amp; Modes r, w, a<br>★ Must lock: File Handling (Modes r, w, a)<br>3.2.2 Functions with Return Values<br>Function result print kare (screen pe dikhaye) ya return kare (caller<br>ko wapas bheje). Returned value store, print ya aage hisaab mein<br>use.<br>def multiply(a, b):<br>    return a * b<br>    print(&quot;never runs&quot;)      # return ke baad<br>result = multiply(5, 3)      # call → 15<br>print(&quot;The answer is:&quot;, result)<br>🧠 Yaad rakho: return = wapas bhejo; print = abhi dikhao. return<br>function se foran bahar le jata hai.<br>3.2.3 Activity: Calculator<br>def add(a, b): return a + b<br>def subtract(a, b): return a - b<br>def multiply(a, b): return a * b<br>def divide(a, b):<br>    if b == 0:<br>        return &quot;Cannot divide by zero&quot;<br>    return a / b<br>x = float(input(&quot;First: &quot;))<br>y = float(input(&quot;Second: &quot;))<br>print(add(x, y), subtract(x, y))<br>print(multiply(x, y), divide(x, y))<br>🧠 Yaad rakho: Main program = fehrist (calls ka silsila), formulon ka<br>dher nahi. divide mein zero ka guard.<br>3.2.4 Local vs Global Scope<br>Scope = program ka woh hissa jahan variable dikhe/use ho.<br>Local<br>Global<br>Kahan<br>bana<br>Function ke andar<br>Functions ke bahar<br>Zindagi<br>Sirf function chalne<br>tak<br>Poora program<br>Kaun<br>dekhe<br>Sirf woh function<br>Sab (badalne ke liye global<br>keyword)<br>def calc():<br>    secret = 50       # local<br>    print(secret)<br>calc()<br>print(secret)         # NameError!<br>🧠 Yaad rakho: Local = kamre ke andar; global = corridor. Kamre se<br>niklo to andar ki cheezein ghaib. Locals ko tarjeeh.<br>3.3–3.4 File Handling (Modes r, w, a)<br>★ Golden<br>Def (paper mein yehi likho): File handling is a program&#x27;s ability<br>to create, read, write, update and delete files on disk.<br>Variables RAM mein — program khatam, sab gaya. Files disk pe —<br>persistent (rehti hain).<br>RAM<br>variables (temporary)<br>Hard disk / SSD<br>file (persistent)<br>write() →<br>← read()<br>Type<br>Kya store<br>Misaal<br>Text file<br>Insaan parh sake (characters)<br>.txt, .csv, .py<br>Binary file<br>Raw bytes<br>.jpg, .mp3, .dat<br>Mode<br>Kaam<br>File na ho to<br>File ho to<br>&#x27;r&#x27; read<br>Parhna<br>(default)<br>FileNotFoundError<br>Parhta hai<br>&#x27;w&#x27; write<br>Likhna<br>Nayi banata<br>Mita ke naya likhta<br>⚠<br>&#x27;a&#x27;<br>append<br>Aakhir mein<br>jorna<br>Nayi banata<br>Purana rakh ke<br>neeche add<br>Method<br>Kaam<br>read()<br>Poori file ek string<br>readline()<br>Ek line<br>readlines()<br>Sab lines ki list<br>write(s)<br>String likho (newline khud \n)<br>close()<br>File band — zaroori<br>f = open(&quot;myfile.txt&quot;, &quot;w&quot;)<br>f.write(&quot;The quick brown fox!\n&quot;)<br>f.close()<br>f = open(&quot;myfile.txt&quot;, &quot;r&quot;)<br>print(f.read())<br>f.close()<br>🧠 Yaad rakho: r = Read existing · w = Wipe then write · a = Add at<br>end. write() khud newline nahi dalta.<br>📝 Paper mein: Define file handling, RAM vs disk, modes r/w/a ek ek<br>property ke saath, warning: w overwrites. Chhota program: ek line<br>likho, close.<br>5-mark frame: File Handling<br>Define<br>A program&#x27;s ability to create, read, write, update and delete files on disk.<br>Explain<br>RAM temporary, disk persistent; modes r (read), w (overwrite), a (append).<br>Example<br>grades.txt mein marks likhna aur parhna.<br>Diagram<br>RAM ⇄ Disk: write() →, ← read().<br>Working<br>open → write/read → close (ya with).<br>Drill: (1) result = multiply(5, 3) → result? (2) divide(10, 0)? (3) Local variable kahan? (4) Kaunsa mode overwrite karta?<br>Jawab: 1. 15 · 2. &quot;Cannot divide by zero&quot; · 3. Function ke andar · 4. &#x27;w&#x27;  |  5-mark: File Handling (r, w, a).<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 3 · Programming Fundamentals · Days 10–13<br>3<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 12"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 12</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-checkpoint" id="day-13" data-day="13">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 13 · Checkpoint</p>
+      <h2>with Statement, Exceptions &amp; Grade Tracker</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-13 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">13<br>with Statement, Exceptions &amp; Grade Tracker<br>Context Manager · try-except · Grade Tracker Project · Careers<br>★ Must lock: The with Statement (Context Manager)<br>3.6 The with Statement (Context Manager)<br>★ Golden<br>Def (paper mein yehi likho): The with statement is a context<br>manager: it opens the file, runs the indented block, and always<br>closes the file when the block ends — even if an error occurs.<br>with open(...) as f<br>→<br>f use karo<br>→<br>block khatam<br>→<br>file auto-close ✔<br>.close() bhoolna aasaan; crash pe file adhuri/kharab ho sakti.<br>with open(&quot;myfile.txt&quot;, &quot;w&quot;) as f:<br>    f.write(&quot;Context managers are safe!\n&quot;)<br># yahan close() ki zaroorat nahi<br>with open(&quot;myfile.txt&quot;, &quot;r&quot;) as f:<br>    for line in f:<br>        print(line.strip())<br>Manual open/close<br>with<br>close() khud likhna<br>Khud-ba-khud close<br>Error pe file khuli reh sakti<br>Error pe bhi close<br>Zyada lines<br>Saaf, chhota<br>🧠 Yaad rakho: with = &quot;lo, use karo, wapas rakho&quot;. Mode phir bhi aap<br>chuno: &#x27;r&#x27;, &#x27;w&#x27;, &#x27;a&#x27;.<br>📝 Paper mein: Context manager jo close guarantee kare; manual se<br>farq; 4-line program with + write.<br>3.8 Errors &amp; Exceptions (try-except)<br>Exception = program chalte waqt error (missing file). Handle na<br>karo → traceback + program ruk jata. try/except pakar ke saaf<br>message dikhata.<br>try:<br>    with open(&quot;missing_data.txt&quot;, &quot;r&quot;) as f:<br>        print(f.read())<br>except FileNotFoundError:<br>    print(&quot;Error: file does not exist.&quot;)<br>except Exception as e:<br>    print(f&quot;Unexpected error: {{e}}&quot;)<br>else:<br>    print(&quot;Read OK&quot;)        # error na aaye to<br>finally:<br>    print(&quot;Done&quot;)           # hamesha<br>Error<br>Matlab<br>FileNotFoundError<br>Path maujood nahi<br>PermissionError<br>OS parhne/likhne nahi deta<br>IOError<br>Aam I/O masla (disk full/disconnect)<br>🧠 Yaad rakho: try = koshish; except = backup plan. Specific pehle,<br>general Exception baad mein.<br>3.9 Mini Project: Grade Tracker<br>&#x27;w&#x27; names + marks<br>→<br>&#x27;a&#x27; naya student<br>→<br>&#x27;r&#x27; lines parho<br>→<br>split, total, average<br>with open(&quot;grades.txt&quot;, &quot;w&quot;) as f:   # create<br>    f.write(&quot;Alice,88\nBob,75\n&quot;)<br>    f.write(&quot;Carol,92\n&quot;)<br>with open(&quot;grades.txt&quot;, &quot;a&quot;) as f:   # add<br>    f.write(&quot;David,81\n&quot;)<br>total, count = 0, 0<br>with open(&quot;grades.txt&quot;, &quot;r&quot;) as f:   # read<br>    for line in f:<br>        name, mark = line.strip().split(&quot;,&quot;)<br>        total += int(mark)<br>        count += 1<br>print(&quot;Average:&quot;, total / count)     # 84.0<br>⚠ Dhoka: David add karne ke liye &#x27;w&#x27; kholi to Alice, Bob, Carol mit<br>jayenge — &#x27;a&#x27; use karo!<br>Careers<br>Career<br>Kaam<br>Python / software<br>developer<br>Applications, scripts, tools<br>Data analyst<br>Lists, dicts, files se data process aur<br>interpret<br>Automation engineer<br>Repetitive file/testing kaam scripts se<br>Game developer<br>Functions, data structures, logic se games<br>🧠 Yaad rakho: P-D-A-G.<br>Chapter 3 Exam Radar 🎯<br>List: define, 4 methods, slicing output; list vs tuple<br>Set ops (|, &amp;, −), remove vs discard<br>Dict: d[key] vs d.get(), repeated key, .items() loop<br>Functions: benefits, return vs print, local vs global<br>File modes r/w/a, with statement, try-except program<br>Checkpoint: (1) Context manager file ke liye kya guarantee karta? (2) Missing file &#x27;r&#x27; mein → kaunsa exception? (3) Sample ka class average? (4) Lists,<br>dicts, files se business data — kaunsa career?<br>Jawab: 1. Block khatam hone pe file close, error ho tab bhi · 2. FileNotFoundError · 3. 84.0 = 336/4 · 4. Data analyst  |  60% se kam → kal Golden repair.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 3 · Programming Fundamentals · Days 10–13<br>3<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 13"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 13</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-14" data-day="14">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 14 · Teach</p>
+      <h2>Data Sources, SQLite, Pandas &amp; Missing Values</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-14 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">Chapter 4 — Data and Analysis<br>Days 14–15 · 1 Teach + 1 Checkpoint<br>14<br>Data Sources, SQLite, Pandas &amp; Missing<br>Values<br>Data Analysis · Database Connection · SQLite in Python · Pandas DataFrames · NaN<br>★ Must lock: Data Sources &amp; Connection, Pandas,<br>NaN<br>4.1 Concept of Data Analysis<br>Def (paper mein yehi likho): Data analysis is examining,<br>organising and interpreting data to extract useful information.<br>School results, dukaan ki sales, hospital records — faisla, trend ya<br>hal ke liye. Python kyun: parhne mein aasaan, files/DB se baat,<br>statistics, graphs. Pandas ki 5 lines = ghante bhar ki spreadsheet<br>clicking.<br>4.1.1–4.1.2 Data Sources &amp; Database Connection<br>★ Golden<br>Data sources = info kahan se: school records, websites, sensors,<br>databases. Connectivity = Python aur source ki baat-cheet<br>(read/update).<br>Python<br>program<br>Driver<br>sqlite3<br>Connect<br>pipe<br>Cursor<br>messenger<br>SQL<br>query<br>Database<br>.db file<br>#<br>Component<br>Kaam<br>1<br>Database<br>Organised store (SQLite = ek .db file; MySQL =<br>bari apps ka server)<br>2<br>Driver<br>Python aur DBMS ka tarjuman (sqlite3 built-<br>in)<br>3<br>Connection<br>object<br>Pipeline kholna, sambhalna, band karna<br>4<br>Cursor object<br>SQL chalata, result rows mein chalta<br>5<br>SQL queries<br>CREATE, INSERT, SELECT, UPDATE, DELETE<br>⚠ Dhoka: Cursor aur connection ulat mat karo: connection = pipe;<br>cursor = messenger jo pipe mein safar kare.<br>4.2 SQLite Database in Python<br>Built-in; poora DB ek .db file — na password, na server. Steps:<br>connect → cursor → execute → commit → fetchall → close.<br>import sqlite3<br>conn = sqlite3.connect(&quot;school.db&quot;)<br>cur = conn.cursor()<br>cur.execute(&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS<br>  students (id INTEGER PRIMARY KEY,<br>            name TEXT, marks INTEGER)&quot;&quot;&quot;)<br>cur.execute(&quot;INSERT INTO students &quot;<br>    &quot;(name, marks) VALUES (&#x27;Ali&#x27;, 85)&quot;)<br>conn.commit()                 # disk pe likho<br>cur.execute(&quot;SELECT * FROM students&quot;)<br>print(cur.fetchall())         # [(1, &#x27;Ali&#x27;, 85)]<br>conn.close()                  # free + unlock<br>🧠 Yaad rakho: SQL ke andar strings single quotes: &#x27;Ali&#x27;. SELECT * =<br>sab columns.<br>4.3 Pandas &amp; DataFrames<br>★ Golden<br>Pandas = tables ki third-party library. Terminal mein ek dafa pip<br>install pandas; convention import pandas as pd.<br>Def (paper mein yehi likho): A DataFrame is a 2-D table of rows<br>and columns, like Excel or an SQL table.<br>import pandas as pd<br>data = {&quot;Name&quot;: [&quot;Ali&quot;, &quot;Sara&quot;, &quot;Ahmed&quot;],<br>        &quot;Math&quot;: [85, 90, 78],<br>        &quot;Science&quot;: [80, 88, 70]}<br>df = pd.DataFrame(data)<br>print(df)<br>Name<br>Math<br>Science<br>0<br>Ali<br>85<br>80<br>1<br>Sara<br>90<br>88<br>2<br>Ahmed<br>78<br>70<br>Command<br>Kaam<br>pd.read_csv(&quot;f.csv&quot;)<br>CSV se DataFrame<br>df.head() / df.info()<br>Pehli 5 rows / columns + types<br>df.describe()<br>count, mean, std, min, max…<br>df[&quot;Math&quot;].mean()<br>Column ka average → 84.33<br>df[df[&quot;Math&quot;] &gt; 80]<br>Filter rows<br>df.sort_values(&quot;Math&quot;)<br>Sort<br>df.groupby(&quot;Class&quot;).mean()<br>Group-wise<br>4.3.3 Handling Missing Values (NaN)<br>★ Golden<br>Khaali cells = NaN (&quot;Not a Number&quot;). Nazar-andaaz karo to<br>statistics crash ya jhooth bolein.<br>df = pd.DataFrame({<br>  &quot;Name&quot;: [&quot;Ali&quot;, &quot;Sara&quot;,<br>           &quot;Ahmed&quot;, &quot;Ayesha&quot;],<br>  &quot;Marks&quot;: [85.0, None, 78.0, 92.0],<br>  &quot;Grade&quot;: [&quot;A&quot;, &quot;A&quot;, None, &quot;A&quot;]})<br>print(df.isnull().sum())  # Marks 1, Grade 1<br>avg = df[&quot;Marks&quot;].mean()<br>df[&quot;Marks&quot;] = df[&quot;Marks&quot;].fillna(avg)<br>df[&quot;Grade&quot;] = df[&quot;Grade&quot;].fillna(&quot;Unknown&quot;)<br>clean = df.dropna()   # NaN rows hatao<br>Tool<br>Kaam<br>isnull()<br>Jahan khaali → True<br>fillna(value)<br>Khaali ko value se bharo<br>dropna()<br>Khaali wali row delete<br>Sara ka Marks → mean<br>⚠ Dhoka: CEO samait company ki salary ke mean se gap bharna =<br>ghurbat chhup jati (outlier). Pehle saaf karo, phir analyse.<br>Drill: (1) School mein data analysis ka ek use? (2) SELECT * kaun chalata? (3) * ka matlab? (4) pd? (5) df.isnull().sum()?<br>Jawab: 1. Results parh ke teaching behtar · 2. Cursor · 3. Sab columns · 4. pandas ka alias · 5. Har column mein NaN ki ginti  |  5-mark: Database connection / Pandas / NaN.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 4 · Data and Analysis · Days 14–15<br>4<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 14"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 14</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-15" data-day="15">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 15 · Teach</p>
+      <h2>Organization, Visualization &amp; Descriptive Statistics</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-15 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">15<br>Organization, Visualization &amp; Descriptive<br>Statistics<br>Frequency Distribution · Graph Types · Matplotlib · Mean, Median, Mode, Variance,<br>SD<br>★ Must lock: Data Visualization, Descriptive<br>Statistics<br>4.4 Data Organization &amp; Representation<br>Teen roop: Table (exact values: Ali 85 Math, 80 Science) ·<br>Frequency distribution (har range/bin mein kitne) · Graph (trend ki<br>tasveer).<br>Marks<br>Students<br>50–59<br>5<br>60–69<br>7<br>70–79<br>9<br>80–89<br>4<br>90–100<br>2<br>Total<br>27<br>5<br>50–59<br>7<br>60–69<br>9<br>70–79<br>4<br>80–89<br>2<br>90–100<br>freq<br>80 ya zyada: 4 + 2 = 6 students.<br>4.5 Data Visualization &amp; Graph Types<br>★ Golden<br>Sawal ke mutabiq graph chuno; axes label + title — bina label chart<br>= zero marks.<br>Column<br>Line<br>Pie<br>Scatter<br>Box plot<br>Chart<br>Dikhata hai<br>Dhyan<br>Bar /<br>column<br>Categories compare<br>(subjects)<br>Column = vertical, bar =<br>horizontal<br>Line<br>Waqt ke saath badlao<br>x-axis tarteeb wala<br>(mahine)<br>Pie<br>Ek whole ke hisse (%)<br>Bohat / barabar slices pe<br>bura<br>Histogram<br>Ek numeric variable ki<br>distribution (bins)<br>Bars jurri (continuous)<br>Scatter<br>Do numeric variables ka<br>rishta<br>Har dot ek (x, y)<br>Box plot<br>Min, Q1, median, Q3, max,<br>outliers<br>Extreme values ke liye<br>best<br>import matplotlib.pyplot as plt<br>subjects = [&quot;Eng&quot;, &quot;Math&quot;, &quot;Sci&quot;, &quot;Hist&quot;]<br>marks = [64, 82, 71, 49]<br>plt.bar(subjects, marks, color=&quot;skyblue&quot;)<br>plt.title(&quot;Marks vs Subjects&quot;)<br>plt.xlabel(&quot;Subjects&quot;); plt.ylabel(&quot;Marks&quot;)<br>plt.show()<br>📝 Paper mein: &quot;Which graph and why?&quot; — 3 marks ka tohfa: naam +<br>kya dikhata + baqi kyun bure.<br>Chapter 4 Exam Radar 🎯<br>5 components of DB connection in order<br>SQLite steps: connect → cursor → execute → commit →<br>fetchall → close<br>DataFrame banana; isnull / fillna / dropna<br>Which graph and why · histogram vs bar<br>Mean, median, mode, range, variance, SD (n vs n−1)<br>4.6 Descriptive Statistics<br>★ Golden<br>Lambi list ko chand imaandar numbers mein: central tendency<br>(&quot;aam kya?&quot;) aur spread (&quot;kitna bikhra?&quot;).<br>Measure<br>Kaise<br>Kab use<br>Mean<br>— har value<br>Values qareeb<br>qareeb<br>Median<br>Sort karke beech; even n → do beech<br>walon ka mean<br>Outliers ho (CEO<br>salary)<br>Mode<br>Sab se zyada baar; koi nahi / ek / kai<br>Sab se popular<br>(shoe size)<br>Range<br>Max − Min<br>Seedha spread<br>Worked: 4, 8, 6, 10, 2 → sorted 2, 4, 6, 8, 10<br>x<br>2<br>−4<br>16<br>4<br>−2<br>4<br>6<br>0<br>0<br>8<br>2<br>4<br>10<br>4<br>16<br>Σ = 30<br>Σ = 40<br>Mean<br>· Median = 6 · Range = 10 − 2 = 8 · Population variance<br>, SD<br>· Sample (n−1) variance<br>, SD<br>(pandas .std() n−1 use karta).<br>Min<br>Q1<br>Median<br>Q3<br>Max<br>outlier<br>⚠ Dhoka: Variance ko &quot;marks&quot; mein mat batao — us ki unit square<br>hai; SD asal unit mein.<br>📝 Paper mein: n ya n−1 batao. Median ke liye sorted list dikhao. SD:<br>mean → deviations → squares → divide → square root.<br>Careers<br>Career<br>Tools<br>Data analyst<br>Pandas, Excel<br>Database administrator<br>SQLite / MySQL<br>Data scientist<br>Statistics + modelling<br>Visualisation specialist<br>Matplotlib, Power BI<br>Checkpoint: (1) Table mein 80+ kitne? (2) Histogram ki bars kyun jurti? (3) 4, 8, 6, 10, 2 ka median?<br>Jawab: 1. 4 + 2 = 6 · 2. x-axis continuous numeric range, alag categories nahi · 3. Sorted 2, 4, 6, 8, 10 → 6  |  60% se kam → kal Golden repair.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 4 · Data and Analysis · Days 14–15<br>4<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 15"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 15</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-checkpoint" id="day-16" data-day="16">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 16 · Checkpoint</p>
+      <h2>Machine Learning, Neural Networks &amp; Deep Learning</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-16 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">Chapter 5 — Application and Impacts of Computing<br>Days 16–19 · 3 Teach + 1 Checkpoint<br>16<br>Machine Learning, Neural Networks &amp; Deep<br>Learning<br>AI ⊃ ML ⊃ DL · Machine Learning · Neural Networks · Deep Learning · NN Components<br>★ Must lock: Neural Networks, NN Components<br>5.1 ML, NN &amp; DL — AI ke hisse<br>Misaalein: phone ka face unlock, speech recognition (Siri, Alexa,<br>Urdu voice typing), gallery mein &quot;car&quot; likho to car photos, X-ray se<br>diagnosis.<br>AI — &quot;sochne wali&quot; machines<br>ML — data se seekhe<br>DL<br>many hidden layers<br>— DL, ML ka tareeqa; ML, AI ka hissa<br>🧠 Yaad rakho: Russian dolls 🪆: bahar AI, andar ML, sab se andar<br>DL. DL ko ML se bahar nahi nikal sakte.<br>5.1.1 Machine Learning (ML)<br>Def (paper mein yehi likho): A machine learning model is the<br>system that learns from data and gives an output.<br>1. Data input<br>→<br>2. Learning (patterns)<br>→<br>3. Prediction (naya data)<br>Normal programming<br>Machine learning<br>Har rule khud likho: if<br>marks &gt;= 40: &quot;Pass&quot;<br>Rules list nahi karte — data<br>(examples) do, model khud pattern<br>seekhe<br>Input + rules → output<br>Input + output (examples) →<br>rules/model<br>🧠 Yaad rakho: D-L-P: &quot;Data Learns to Predict.&quot; Model = program ka<br>trained dimagh.<br>5.1.3 Deep Learning (DL)<br>Def (paper mein yehi likho): Deep learning is a machine-<br>learning method in which computers use multi-layer neural<br>networks to learn complex patterns from data.<br>Shuru ki layers saada features (edges, shapes, rang); gehri layers<br>unhein jor ke complex cheez (poora chehra, Cultus vs Mehran).<br>Neural network (model)<br>Deep learning (method)<br>Kya<br>Layers, nodes, connections<br>wala system<br>Bohat hidden layers wale NN ko<br>train karne ka tareeqa<br>Gehrai<br>Shallow ho sakta (1–2<br>hidden)<br>Hamesha deep; bohat data +<br>power<br>Role<br>Architecture (&quot;machine&quot;)<br>Training ka tareeqa<br>5.1.2 Neural Networks (NN)<br>★ Golden<br>Def (paper mein yehi likho): A neural network is a computer<br>model that learns patterns from data.<br>Input<br>Hidden<br>Hidden<br>Output<br>pixels<br>features seekhe<br>unlock?<br>Layer<br>Kaam (face unlock)<br>Input<br>Raw data leta — chehre ke pixels<br>Hidden<br>&quot;Sochta&quot; — features seekhta (aankhon ka faasla, naak)<br>Output<br>Final jawab — unlock / locked<br>🧠 Yaad rakho: I-H-O: &quot;In, Hidden, Out&quot; — input leta, hidden sochta,<br>output faisla. Dimagh se inspired maths machine — asli dimagh ki copy<br>nahi.<br>📝 Paper mein: &quot;What is a neural network?&quot; (2–3) · &quot;3 layers face-<br>unlock misaal ke saath&quot; (5) · NN vs DL.<br>5.1.4 Components of Neural Networks<br>★ Golden<br>#<br>Component<br>Kaam<br>1<br>Input layer<br>Raw data (pixels, sound, text)<br>2<br>Neurons / nodes<br>Chhoti units: lein, hisaab, aage bhejein<br>3<br>Hidden layer(s)<br>Beech mein process, patterns seekhein<br>4<br>Weights<br>Connection ki ahmiyat/taqat<br>5<br>Bias<br>Extra constant — nateeja adjust (dhakka)<br>6<br>Activation function<br>Math gate: info aage jaye ya nahi<br>7<br>Output layer<br>Final result (&quot;This is a cat&quot;)<br>8<br>Loss function<br>Ghalti kitni → network khud theek kare<br>Worked:<br>→<br>→<br>.<br>🧠 Yaad rakho: Weights = ahmiyat · Bias = extra nudge · Activation =<br>haan/na gate · Loss = kitna ghalat.<br>📝 Paper mein: &quot;List 8 components&quot; + &quot;weights &amp; bias kya?&quot; +<br>numerical neuron (x, w, b, threshold diya ho).<br>Drill: (1) AI, ML, DL mein sab se bara set? (2) ML ke 3 steps? (3) NN ki chhoti processing units? (4) &quot;Deep&quot; kyun? (5) Weights kya dikhate?<br>Jawab: 1. AI · 2. Data input, learning, prediction · 3. Neurons/nodes · 4. Kai hidden layers · 5. Neurons ke connection ki ahmiyat/taqat  |  5-mark: Neural Networks.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 5 · Application &amp; Impacts of Computing · Days 16–19<br>5<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 16"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 260 120"><circle cx="40" cy="60" r="12" fill="#fef3c7" stroke="#d97706"/><circle cx="100" cy="40" r="12" fill="#fef3c7" stroke="#d97706"/><circle cx="100" cy="80" r="12" fill="#fef3c7" stroke="#d97706"/><circle cx="160" cy="60" r="12" fill="#fde68a" stroke="#d97706"/><circle cx="220" cy="60" r="12" fill="#86efac" stroke="#16a34a"/><line x1="52" y1="55" x2="88" y2="42" stroke="#666"/><line x1="52" y1="65" x2="88" y2="78" stroke="#666"/><line x1="112" y1="50" x2="148" y2="58" stroke="#666"/><line x1="172" y1="60" x2="208" y2="60" stroke="#666"/><text x="10" y="110" font-size="10">Neural net: layers of nodes</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-17" data-day="17">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 17 · Teach</p>
+      <h2>DL Components, Pakistan, Applications &amp; Secure Collaboration</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-17 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">17<br>DL Components, Pakistan, Applications &amp;<br>Secure Collaboration<br>Components of DL · Future in Pakistan · Applications of NN &amp; DL · Authentication,<br>MFA, Access Control<br>★ Must lock: Secure Collaboration (Authentication,<br>MFA, Access Control)<br>5.1.5 Components of Deep Learning<br>#<br>Component<br>Matlab<br>1<br>Data (large input)<br>&quot;Data hungry&quot; — hazaron/lakhon<br>records<br>2<br>Many hidden Layers<br>Darjanon/saikron layers — gehre<br>patterns<br>3<br>Automatic feature<br>learning<br>Insaan features na bataye — khud<br>nikale<br>4<br>Learning algorithm<br>Backpropagation — ghaltiyan kam<br>5<br>High computing power<br>GPUs (Graphics Processing Units)<br>6<br>Training process<br>Bar bar loops = epochs<br>🧠 Yaad rakho: D-L-A-L-G-T: &quot;Deep Learners Always Love Good<br>Training.&quot;<br>Future of AI, NN, DL in Pakistan<br>National AI Policy 2025 — AI ab qaumi planning ka hissa:<br>innovation, skills, ethics, digital growth.<br>Sector<br>Mumkin asar<br>Education<br>Smart learning, online tutoring, auto assessment<br>Healthcare<br>Bimari detect, medical images — dehaat mein<br>specialist kam<br>Agriculture<br>Fasal monitoring, mausam, irrigation, paidawar<br>Business &amp;<br>banking<br>Fraud detection, chatbots, forecasting<br>Local languages<br>Urdu, Sindhi ki speech recognition, translation, TTS<br>🧠 Yaad rakho: E-H-A-B-L.<br>5.2 Applications of NN &amp; DL<br>Application<br>Misaal<br>Image recognition<br>Face unlock; Karachi plaza camera staff list se<br>milaye<br>Speech recognition<br>Alexa se alarm; Urdu voice search<br>NLP<br>Google Translate English → Urdu; bank chatbot<br>Healthcare<br>Lung X-ray mein pneumonia/tumour pattern<br>(DHQ hospital)<br>Recommendation<br>YouTube programming tutorials suggest kare<br>Autonomous<br>vehicles<br>Self-driving car pedestrian dekh ke brake<br>Fraud detection<br>HBL/Meezan app: naye shehar se raat 3 baje Rs<br>80,000 flag<br>Assistive tech<br>Speech-to-text; Urdu screen reader<br>🧠 Yaad rakho: I-S-N-H-R-A-F-A.<br>5.3.1 Secure Collaboration<br>★ Golden<br>Def (paper mein yehi likho): Secure collaboration means using<br>digital tools to work together in a safe, controlled and<br>responsible way.<br>Files share, online classes, documents mil ke edit — faida tabhi jab<br>data mehfooz ho.<br>Element<br>Sawal / matlab<br>Misaal<br>Authentication<br>&quot;Tum kaun ho?&quot; — pehchan<br>verify<br>Password, fingerprint,<br>MFA<br>Access control<br>&quot;Tum kya kar sakte ho?&quot; —<br>permissions<br>Teacher edit, student<br>sirf view<br>Accountability<br>Kis ne kya kiya — record<br>Activity logs, version<br>history<br>Privacy<br>Sirf zaroori logon se share<br>&quot;Anyone with link&quot;<br>band<br>Safe<br>transmission<br>Raste mein data encrypted<br>HTTPS, encrypted<br>chat<br>MFA (Multi-Factor Authentication) = kam az kam do alag qisam ke<br>factors. 2FA = exactly do (password + OTP).<br>🔑<br>Know<br>password, PIN<br>📱<br>Have<br>phone OTP, card<br>👆<br>Are<br>fingerprint, face<br>⚠ Dhoka: Do passwords = 2FA nahi (dono &quot;know&quot; qisam ke). Factors<br>alag qisam ke hone chahiye.<br>🧠 Yaad rakho: A-A-A-P-S. Authentication = darwaze pe pehchan;<br>access control = andar kaunse kamre khulein.<br>📝 Paper mein: &quot;Define secure collaboration&quot;, &quot;authentication vs<br>access control&quot;, &quot;What is MFA/2FA?&quot;, &quot;5 elements with examples&quot;.<br>5-mark frame: Neural Network<br>Define<br>A computer model that learns patterns from data.<br>Explain<br>Input → hidden → output layers; weights, bias,<br>activation, loss.<br>Example<br>Face unlock: pixels → features → unlock/locked.<br>Diagram<br>3 columns of circles joined by lines.<br>Working<br>s = Σ x·w + b → activation → y.<br>Drill: (1) DL &quot;data hungry&quot; kyun? (2) Pakistan ki AI policy? (3) Bola hua lafz → text? (4) Authentication aur access control kaunsa sawal?<br>Jawab: 1. Bohat bare datasets chahiye · 2. National AI Policy 2025 · 3. Speech recognition · 4. Kaun ho? / Kya kar sakte ho?  |  5-mark: Secure Collaboration.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 5 · Application &amp; Impacts of Computing · Days 16–19<br>5<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 17"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 17</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-18" data-day="18">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 18 · Teach</p>
+      <h2>Data Protection, Security Threats &amp; Mitigation</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-18 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">18<br>Data Protection, Security Threats &amp;<br>Mitigation<br>Encryption · Passwords · 3-2-1 Backup · Firewall · Malware, Phishing, DoS ·<br>Identifying · Mitigation<br>★ Must lock: Common Security Threats (Malware,<br>Phishing, DoS)<br>5.3.2 Data Protection<br>Def (paper mein yehi likho): Data protection means keeping<br>digital information safe from unauthorised access, misuse, loss,<br>damage or accidental deletion.<br>Tareeqa<br>Kaam<br>Encryption<br>Data ko na-parhne-qabil code mein (sirf key wala<br>parhe)<br>Strong<br>passwords<br>Lamba, mix (A-z, 0-9, @#), share nahi<br>Backup (3-2-1)<br>3 copies, 2 media types, 1 off-site (cloud)<br>Firewall<br>Network ka gate — mashkook traffic block<br>Antivirus<br>Andar talaashi — malware dhoond ke hatao<br>Caesar cipher (shift 3): har harf 3 aage.<br>Plain<br>Cipher<br>S<br>V<br>+3<br>I<br>L<br>+3<br>N<br>Q<br>+3<br>D<br>G<br>+3<br>H<br>K<br>+3<br>PAK → SDN (P→S, A→D, K→N). Decrypt = 3 peeche.<br>🧠 Yaad rakho: Cipher = paigham pe taala · Password = darwaze pe<br>taala · 3-2-1 = teen jagah chaabiyan · Firewall = gate · Antivirus =<br>andar talaashi.<br>5.4.2 Identifying Threats<br>Nishani<br>Shayad<br>Slow PC, files ghaib, random pop-ups<br>Malware<br>Failed logins, ajeeb login location<br>Unauthorised access<br>Jaldi karo! OTP do, bad grammar, ajeeb link<br>Phishing<br>Records achanak delete/copy/move<br>Data theft / insider<br>Server requests ka achanak toofan<br>DoS attack<br>5.4.1 Common Security Threats<br>★ Golden<br>Def (paper mein yehi likho): A security threat is any action,<br>event or weakness that can harm a computer system or its data.<br>Mitigation techniques are protective measures that prevent<br>threats or reduce their impact.<br>🎣<br>Phishing<br>nakli SMS/email<br>OTP churaye<br>🌊<br>DoS<br>nakli requests<br>server crash<br>🪪<br>Identity theft<br>chori CNIC<br>aap ke naam fraud<br>Threat<br>Kya hai<br>Misaal<br>Malware<br>Nuqsan-deh software:<br>viruses, worms, spyware,<br>ransomware, Trojans<br>Cracked software; &quot;free<br>game&quot; USB lab ka<br>coursework lock kare<br>Phishing<br>Social engineering — nakli<br>email/site se password,<br>OTP<br>JazzCash/HBL jaisa SMS<br>&quot;verify karo&quot;<br>Unauthorised<br>access<br>Bina ijazat system/account<br>Khula lab PC, doosre ka<br>Classroom<br>Data / identity<br>theft<br>Data chori; identity = kisi<br>ki details se uska roop<br>Leaked CNICs se<br>SIM/wallet<br>DoS<br>Hazaron nakli requests →<br>slow/crash<br>BISE result day pe<br>portal flood<br>Human error<br>Jaiz users ki ghalti<br>Marksheet ghalat parent<br>ko email<br>🧠 Yaad rakho: Malware = bura program · Phishing = nakli paigham ·<br>DoS = toofan · Identity theft = chori hua &quot;aap&quot; · Human error =<br>imaandar ghalti.<br>📝 Paper mein: &quot;Define security threat&quot;, &quot;malware/phishing/DoS with<br>examples&quot;, &quot;data theft vs identity theft&quot; — chhe ke chhe threats likho.<br>5.4.3 Mitigation Techniques<br>Technique<br>Kaise madad<br>Antivirus +<br>Firewall<br>USB malware hatao; internet traffic filter<br>Strong<br>passwords + 2FA<br>Guessing mushkil; OTP extra layer<br>Encryption<br>Intercept ho bhi to parha na jaye<br>Regular backups<br>Crash, ghalti, ransomware ke baad wapsi<br>User awareness<br>Anjaan links/attachments se bacho — insaan sab se<br>kamzor aur sab se mazboot kari<br>🧠 Yaad rakho: Paanch dhaalein: AF · P2 · E · B · U. Ransomware files<br>lock kare → backup hi bachata.<br>Drill: (1) PAK ko Caesar shift 3? (2) Malware ki 5 qismein? (3) Random pop-ups + files ghaib? (4) 2FA password ke upar kaise?<br>Jawab: 1. SDN · 2. Viruses, worms, spyware, ransomware, Trojans · 3. Malware · 4. Phone pe OTP — doosra factor  |  5-mark: Security Threats.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 5 · Application &amp; Impacts of Computing · Days 16–19<br>5<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 18"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 18</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-checkpoint" id="day-19" data-day="19">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 19 · Checkpoint</p>
+      <h2>Equity, Equal Access, Collaboration Tools &amp; Careers</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-19 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">19<br>Equity, Equal Access, Collaboration Tools &amp;<br>Careers<br>Equity vs Equal Access · Functions · Collaboration Tools · AI &amp; Cyber Careers<br>★ Must lock: Functions of Equity and Equal Access<br>5.5 Equity &amp; Equal Access<br>Collaboration tools online learning ke liye zaroori — har koi bina<br>rukawat hissa le.<br>Equal access<br>Equity<br>🧍<br>🧍<br>🧍<br>🧍<br>🧍<br>🧍<br>sab ko same dabba<br>zaroorat ke mutabiq<br>Equal access<br>Equity<br>Sab ko bilkul same moqa,<br>tools, resources<br>Har ek ko zaroorat ke mutabiq extra<br>madad taake nateeja barabar<br>Sab ko same joote<br>Wheelchair wale ke liye ramp<br>5.5.1 Functions of Equity &amp; Equal Access<br>★ Golden<br>Function<br>Kya karta<br>Pakistani misaal<br>1. Need-based<br>Support<br>Har fard ke liye<br>khaas madad<br>Nabina student ke liye<br>screen reader / audio<br>descriptions (Karachi)<br>2. Removing<br>barriers<br>Door-daraz<br>students online<br>class mein<br>Low-data, mobile-friendly<br>apps — Tharparkar, katcha<br>areas<br>3. Active<br>Participation<br>Live class chhoot<br>jaye to bhi hissa<br>Recorded lectures —<br>Hyderabad mein load-<br>shedding<br>4. Different learning<br>needs (Formats)<br>Ek se zyada<br>formats<br>Same topic ka video, notes,<br>audio<br>🧠 Yaad rakho: &quot;Some Rural Pupils Fail&quot; — agar ye na hon: Support,<br>Remove, Participate, Formats.<br>📝 Paper mein: Golden 5–8 marks: chaar headings tarteeb se, har ek<br>ki misaal + equal vs equity ka farq.<br>5-mark frame: Equity &amp; Equal Access<br>Define<br>Equal access gives everyone the same opportunity, tools<br>and resources; equity gives extra need-based support for<br>a fair outcome.<br>Explain<br>4 functions: support, remove barriers, participation,<br>formats.<br>Example<br>Screen reader; low-data app in Tharparkar; recorded<br>lecture.<br>Diagram<br>Same boxes vs different-height boxes.<br>Working<br>Teacher LMS pe video + notes + audio deta hai.<br>5.5.2 Collaboration Tools<br>Tool<br>Kaam / taleemi use<br>Google Docs<br>Real-time mil ke likhna, comment — group<br>assignments<br>Zoom<br>Online meetings, virtual class, screen share<br>Microsoft Teams<br>Meetings + files + class groups ek jagah<br>Google Classroom /<br>LMS<br>Lectures, assignments, quizzes, grading<br>WhatsApp<br>Foran announcements — zimmedari se<br>Email<br>Formal notices, bari attachments, professional<br>record<br>🧠 Yaad rakho: Docs = saath likho · Zoom/Teams = milo · Classroom<br>= official hub · WhatsApp = tez magar informal · Email = formal record.<br>Careers (AI &amp; Cybersecurity)<br>Career<br>Kaam<br>Machine Learning<br>Engineer<br>ML/NN models banaye, train kare (face<br>recognition, NLP)<br>Cybersecurity Analyst<br>Malware/phishing pe nazar; firewall, 2FA<br>AI Researcher<br>Naye AI/DL techniques — university labs, R&amp;D<br>Data Privacy Officer<br>Data handling privacy qawaneen ke mutabiq<br>Ethical Hacker<br>Qanooni tor pe kamzoriyan dhoonde<br>(penetration testing)<br>Chapter 5 Exam Radar 🎯<br>AI ⊃ ML ⊃ DL; NN 3 layers; 8 components; neuron numerical<br>Secure collaboration 5 elements; authentication vs access<br>control; MFA<br>6 threats + examples; identify signs; 5 mitigations; Caesar<br>cipher<br>Equity vs equal access; 4 functions; tools<br>Checkpoint: (1) Equal access ek jumle mein? (2) Equity ke 4 functions? (3) Real-time group writing tool? (4) Network ki kamzoriyan qanooni tor pe kaun<br>jaanchta?<br>Jawab: 1. Sab ko bilkul same moqa, tools, resources · 2. Need-based support, removing barriers, active participation, different learning needs · 3. Google Docs · 4. Ethical<br>hacker  |  60% se kam → kal Golden repair.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 5 · Application &amp; Impacts of Computing · Days 16–19<br>5<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 19"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 19</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-20" data-day="20">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 20 · Teach</p>
+      <h2>Entrepreneurship, Digital Age &amp; Prototype</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-20 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">Chapter 6 — Entrepreneurship in the Digital Age<br>Days 20–23 · 3 Teach + 1 Checkpoint<br>20<br>Entrepreneurship, Digital Age &amp; Prototype<br>Entrepreneur · Digital Age · Local Examples · Problem to Idea · Prototype<br>★ Must lock: Entrepreneurship in the Digital Age,<br>Prototype<br>6.1 Entrepreneur &amp; Entrepreneurship<br>Def (paper mein yehi likho): An entrepreneur is a person who<br>identifies a problem, thinks of a solution, and tries to change that<br>solution into a product or service.<br>1. Problem<br>→<br>2. Solution<br>→<br>3. Product / service<br>Logon ko dekhte, unki zaroorat sunte — kya bar bar tang karta<br>hai.<br>Calculated risk lete — kya kho sakte, nuqsan chhota kaise<br>rakhein, soch ke.<br>Idea qadam ba qadam behtar — pehli koshish perfect nahi.<br>Entrepreneur<br>Entrepreneurship<br>Shakhs<br>Process — plan, start, test, improve<br>🧠 Yaad rakho: Entrepreneur poochta: &quot;Main kaunsa masla hal kar<br>sakta hoon?&quot;<br>Local Examples (Table 6.1)<br>Problem<br>Digital idea<br>Pehle users<br>Parents college<br>notices miss karte<br>WhatsApp notice + reminder<br>service<br>First-year<br>students ke<br>parents<br>Embroidery shop ke<br>customers kam<br>Facebook/WhatsApp<br>catalogue + order form<br>Isi shehar ke<br>customers<br>Students test dates<br>bhoolte<br>Google Calendar guide /<br>reminder app<br>Grade XII<br>students<br>Canteen pe break<br>mein lambi line<br>Snacks ka pre-order form<br>Students &amp;<br>teachers<br>🧠 Yaad rakho: &quot;Problem pehle, tool baad mein.&quot; Takleef se shuru<br>karo, technology se nahi.<br>6.3 Problem → Business Idea<br>Chaar sawal: Masla kya? Kis ko? Kitni baar? Abhi log kya karte?<br>Step<br>Students kya karein<br>Misaal<br>Observe<br>Ghar/college/bazaar mein bar<br>bar ka masla<br>Practical file dates<br>bhoolna<br>Ask users<br>Mutasir logon se baat<br>5 classmates se<br>poochho<br>Select one<br>problem<br>Sirf ek saaf masla<br>Practical file<br>reminder<br>Suggest<br>solution<br>Saada digital/kaghazi hal<br>Reminder form /<br>app screen<br>Test early<br>Final se pehle users ko dikhao<br>&quot;Use karoge?&quot;<br>🧠 Yaad rakho: &quot;Only Ask Simple Solutions Today&quot;.<br>6.2 Entrepreneurship in the Digital Age<br>★ Golden<br>Def (paper mein yehi likho): Entrepreneurship in the digital age<br>means using digital tools to start, test, improve, and grow a<br>business idea.<br>Tools: mobile phones, social media, websites, online forms, digital<br>payments, maps, videos, simple apps. Pakistan mein: WhatsApp,<br>Facebook, Instagram, TikTok, YouTube, Google Forms, Google<br>Maps, JazzCash/Easypaisa.<br>Pehle<br>Ab (digital)<br>Dukaan, kiraya, bara<br>kharcha<br>WhatsApp/Facebook page — takreeban<br>muft<br>Sirf mohalle ke customers<br>Poore shehar/mulk tak<br>Feedback lena mushkil<br>Google Form, comments — foran<br>Test karna mehenga<br>Sasta, tez test<br>🧠 Yaad rakho: S-T-I-G: Start, Test, Improve, Grow — &quot;Start The Idea<br>Growing.&quot;<br>📝 Paper mein: &quot;Define entrepreneurship in the digital age&quot;, &quot;Digital<br>tools ne kaise badla?&quot;, &quot;Bina bari investment ki misaalein&quot;.<br>6.4 Prototype<br>★ Golden<br>Def (paper mein yehi likho): A prototype is an early model of a<br>product, service, website, or app that shows how the idea may<br>look or work; it is NOT the final product and is made to test the<br>idea and collect feedback.<br>Menu<br>☐ Samosa Rs 40<br>☐ Roll Rs 120<br>☐ Juice Rs 60<br>Next<br>Your details<br>Name ______<br>Class ______<br>Order<br>Collect order<br>Order No. 17<br>Collect at break<br>Pay at counter<br>Canteen pre-order ka paper prototype: item chuno → naam/class → order collect<br>Faide<br>Idea jaldi aur sasta dikhao · ghaltiyan pehle pakro · user feedback lo ·<br>waqt/paisa bachao · team ka idea saaf<br>🧠 Yaad rakho: Prototype = &quot;practice model&quot; — essay ka rough draft:<br>dikhao, correction lo, final se pehle dobara likho.<br>📝 Paper mein: 3–5 marks: definition (early model, not final, test<br>idea, collect feedback) + faide + misaal (paper screens).<br>Drill: (1) Entrepreneurship shakhs ya process? (2) 4 digital tools? (3) Embroidery shop ka idea? (4) Table 6.2 ke 5 steps? (5) Prototype final product?<br>Jawab: 1. Process · 2. Phones, social media, online forms, digital payments · 3. FB/WhatsApp catalogue + order form · 4. Observe, Ask, Select, Suggest, Test early · 5. Nahi —<br>test aur feedback ka early model  |  5-mark: Prototype.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 6 · Entrepreneurship in the Digital Age · Days 20–23<br>6<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 20"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 20</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-21" data-day="21">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 21 · Teach</p>
+      <h2>Prototype Types, Development Cycle &amp; MVP</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-21 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">21<br>Prototype Types, Development Cycle &amp; MVP<br>Types of Prototypes · Development Cycle · ClassBuddy Activity · MVP · Prototype vs<br>MVP<br>★ Must lock: Prototype Development Cycle, MVP<br>6.5 Types of Prototypes (Fidelity)<br>Fidelity = prototype final product se kitna qareeb.<br>Low-Fi<br>paper sketch<br>Mid-Fi<br>PowerPoint/Figma<br>High-Fi<br>working demo<br>final se door ———→ final ke qareeb<br>Type<br>Matlab<br>Best use<br>Misaal<br>Low-<br>Fi<br>Jaldi, kacha<br>model<br>Bohat early<br>test<br>Haath se bani homework-<br>reminder screens<br>Mid-<br>Fi<br>Layout + flow<br>saaf<br>Navigation<br>test<br>PowerPoint/Figma clickable<br>screens<br>High-<br>Fi<br>Final ke<br>qareeb,<br>tafseeli<br>Asli tajurba<br>test<br>Order form website ka<br>working demo<br>🧠 Yaad rakho: Fidelity = &quot;wafadari&quot;. Paper → PowerPoint →<br>Polished.<br>6.7 Class Activity: &quot;ClassBuddy&quot;<br>Students homework deadlines, test dates, class items bhoolte.<br>Team poora app foran nahi banati:<br>1. Samjho<br>→<br>2. Low-fi draw<br>→<br>3. Test<br>→<br>4. Feedback analyse<br>→<br>5. Behtar<br>Finding<br>Matlab<br>Design decision<br>10 mein se 7 bhoolte (70%)<br>Masla aam<br>hai<br>Daily task list dikhao<br>Ghar se nikalne se pehle<br>reminder<br>Waqt ahem<br>Subah notification<br>option<br>Saada app chahiye<br>Design saada<br>Bare buttons, saaf<br>labels<br>🧠 Yaad rakho: Feedback → Problem → Improvement: har comment<br>ko masle mein, phir ek saaf tabdeeli mein.<br>6.6 Prototype Development Cycle<br>★ Golden<br>Ek dafa ka kaam nahi — banao, test, behtar, phir test. Is dohrane ko<br>iteration kehte hain.<br>1. Design<br>plan<br>2. Build<br>visible karo<br>3. Test<br>users ko dikhao<br>4. Iterate<br>feedback se behtar<br>Iteration ↻<br>jab tak users ko<br>saaf aur useful na lage<br>Stage<br>Kya hota<br>1.<br>Design<br>Masla samjho, hal plan — prototype kya dikhaye (screens,<br>features)<br>2. Build<br>Pehla version (physical/digital) — maqsad khoobsurti nahi,<br>idea nazar aaye<br>3. Test<br>Users ko dikhao — kya samjhe, kahan mushkil<br>4.<br>Iterate<br>Feedback se behtar — faltu hatao, kami jodo → wapas<br>Design<br>🧠 Yaad rakho: &quot;Do Big Things Iteratively&quot;. Aakhri arrow wapas<br>Design — cycle hai, line nahi.<br>📝 Paper mein: Long Q: &quot;Explain the prototype development cycle<br>with a diagram&quot; — 4 boxes circle mein, arrows, har stage 1–2 lines.<br>6.8 Minimum Viable Product (MVP)<br>★ Golden<br>Def (paper mein yehi likho): A Minimum Viable Product (MVP) is<br>the simplest working version of a product.<br>Minimum = sirf zaroori features, extras nahi. Viable = itna kaam<br>kare ke asal masla hal ho (&quot;kamyabi se chal sake&quot;).<br>Poori canteen app (final)<br>Canteen MVP<br>Login, online payment, delivery<br>tracking, discounts…<br>Saada Google Form — break se<br>pehle snacks chuno<br>🧠 Yaad rakho: MVP jawab deta: &quot;Kya log waqai use karenge?&quot;<br>Design nahi, asal behaviour test.<br>6.9 Prototype vs MVP<br>Point<br>Prototype<br>MVP<br>Maqsad<br>Idea kaisa dikhe/chale — design test<br>Log waqai use karenge? — market demand test<br>Working<br>Chalna zaroori nahi — sketch/model<br>Kam az kam basic tor pe chale<br>Users<br>Chhota group design pe feedback<br>Asal early users rozmarra mein<br>Cost<br>Bohat kam<br>Kam, magar thora development<br>Misaal<br>Canteen ke paper screens<br>Google Form 3 din asal orders ke liye<br>🧠 Yaad rakho: Prototype = &quot;Sahih dikhta/samajh aata?&quot; · MVP = &quot;Log use karenge aur faida payenge?&quot; Market demand = kaafi log chahte aur<br>use/paise denge?<br>Drill: (1) Fidelity? (2) Iteration? (3) Step 1 mein kitne bhoole, %? (4) MVP full form? (5) Kaunsa basic tor pe chalna zaroori?<br>Jawab: 1. Final product se kitna qareeb · 2. Banao, test, behtar, dobara test ka dohrao · 3. 7/10 = 70% · 4. Minimum Viable Product · 5. MVP  |  5-mark: Prototype Cycle / MVP.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 6 · Entrepreneurship in the Digital Age · Days 20–23<br>6<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 21"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 21</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-teach" id="day-22" data-day="22">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 22 · Teach</p>
+      <h2>Riskiest Assumption, Developing &amp; Testing an MVP</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-22 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">22<br>Riskiest Assumption, Developing &amp; Testing an MVP<br>Riskiest Assumption · Developing an MVP · Canteen Case Study · Testing an MVP<br>★ Must lock: None — tables copy karo<br>6.10 Riskiest Assumption<br>Assumption = jo hum sach maante magar test nahi kiya. Riskiest<br>assumption = ghalat nikle to poora business doob jaye. Pehle test<br>karo — waqt aur paisa bachta.<br>Business idea<br>Risky assumption<br>MVP se test<br>Online tuition<br>finder<br>Students tutoring ke<br>paise denge<br>20 students, trial class —<br>sign up?<br>Canteen pre-<br>order<br>Break se pehle order<br>karenge<br>Google Form ek hafta asal<br>waqt mein<br>Ajrak online<br>catalogue<br>WhatsApp pe order<br>denge<br>30 customers ko catalogue,<br>asal orders gino<br>College van<br>updates<br>Roz updates dekhenge<br>Ek route ka trial WhatsApp<br>broadcast<br>🧠 Yaad rakho: Poochho: &quot;Kya cheez is idea ko maar degi?&quot; — wohi<br>riskiest. Sasta, asal behaviour se pehle test.<br>6.11 Developing an MVP<br>Sirf zaroori features; shuru mein extras nahi. Aam ghalti: sab kuch<br>ek saath banana → mushkil, mehenga, slow.<br>MVP element<br>Sawal<br>Misaal<br>Problem<br>Kaunsa masla?<br>Canteen pe lamba intezar<br>Target users<br>Pehle kaun?<br>Ek college ke Grade XII<br>Main feature<br>EK feature jo hal kare?<br>Break se pehle pre-order<br>Basic design<br>Kaunse steps?<br>Menu, naam, class, waqt<br>Cost<br>Muft/sasta tool?<br>Google Form / printed slips<br>Marketing<br>Users ko pata kaise?<br>Class WhatsApp group<br>Feedback<br>Jawab kaise?<br>3 din baad chhota form<br>Improvement<br>Kya badlein?<br>Feedback ke mutabiq<br>🧠 Yaad rakho: &quot;People Try My Bakery; Cheap Muffins Find<br>Improvement&quot;.<br>6.12 Case Study: Canteen Pre-Order MVP<br>Lambi lines; kabhi counter tak pohanchte snacks khatam. Maqsad:<br>poora app nahi — idea test.<br>Paper prototype<br>→<br>Feedback: chhota menu, collection pe payment<br>→<br>Google Form MVP<br>→<br>3-din test<br>→<br>Behtar<br>Element<br>Faisla<br>Features<br>Menu, naam, class, item, quantity<br>Cost &amp; tools<br>Muft Google Form ya printed slips<br>Marketing<br>Class announcement + WhatsApp<br>Testing period<br>Teen din<br>Feedback<br>Waqt bacha? Dobara use karoge?<br>Improvement<br>Sirf 5 items; break se 20 min pehle orders band<br>🧠 Yaad rakho: &quot;5 items, 3 days, 20 minutes&quot;.<br>6.13 Testing an MVP<br>Basic version asal users ko do, response parho. Numbers<br>(quantitative) = kitno ne try kiya/dobara karenge; comments<br>(qualitative) = kya pasand/na-pasand/uljhan. Plan: kitne users,<br>kitne din.<br>Canteen MVP — 40 students ne try kiya<br>Tried: 40<br>Use again: 30 (75%)<br>No: 10<br>30 / 40 × 100 = 75%<br>Feedback type<br>Sawal<br>Nateeja<br>Number-based<br>Kitno ne try kiya?<br>40 students<br>Number-based<br>Dobara use?<br>40 mein se 30 haan<br>Comment-based<br>Kya uljhan thi?<br>Order closing time maloom nahi<br>Observation<br>Kahan mushkil?<br>Class ka naam bhool gaye<br>🧠 Yaad rakho: Feedback tabhi faida jab parha jaye: gino → dohrate<br>masle dhoondo → pehli improvement chuno.<br>5-mark frame: Minimum Viable Product (MVP)<br>Define<br>The simplest working version of a product, with only<br>essential features, usable enough to solve the main<br>problem.<br>Explain<br>Minimum = sirf zaroori; Viable = kaam kare. Asal users ke<br>saath market demand test.<br>Example<br>Canteen: Google Form, 3 din, 40 students, 30 dobara.<br>Diagram<br>Final app (bohat features) vs MVP (ek feature).<br>Working<br>Riskiest assumption chuno → 8 elements → test →<br>feedback → improve.<br>Feedback se faisla — misaal<br>Feedback<br>Masla<br>Tabdeeli<br>&quot;Closing time<br>maloom nahi tha&quot;<br>Info ghaib<br>Form ke upar: &quot;Orders break se<br>20 min pehle band&quot;<br>Class naam bhool<br>gaye<br>Field<br>optional<br>Class field required<br>Menu lamba<br>Faisla<br>mushkil<br>Sirf 5 items<br>Paisa online nahi<br>Payment<br>rukawat<br>Counter pe payment<br>Drill: (1) Assumption? (2) Sab ek saath banana ghalti kyun? (3) Canteen MVP ka tool aur muddat? (4) Table 6.10 ke 3 feedback types?<br>Jawab: 1. Jo sach maante magar test nahi kiya · 2. Mushkil, mehenga, slow · 3. Google Form, 3 din · 4. Number-based, comment-based, observation<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 6 · Entrepreneurship in the Digital Age · Days 20–23<br>6<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 22"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 22</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-checkpoint" id="day-23" data-day="23">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 23 · Checkpoint</p>
+      <h2>Beachhead Market, Project, Ethics &amp; Careers</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-23 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">23<br>Beachhead Market, Project, Ethics &amp; Careers<br>Beachhead Market · Student Project Rubric · Ethical Use · Startup Careers<br>★ Must lock: Beachhead Market<br>6.14 Beachhead Market<br>★ Golden<br>Def (paper mein yehi likho): A beachhead market is a small and<br>focused group of first users who have a clear need and are likely<br>to try the product early.<br>Sab ko serve karne ki bajaye ek chhota group pehle → MVP theek<br>test, behtar, phir phailao.<br>All students in Pakistan (bohat bara)<br>All Grade XII students in Sindh<br>Beachhead<br>XII, ek college, board prep<br>Andar wale chhote circle se shuru, seekho, behtar karo, phir bahar phailo<br>Idea<br>Kamzor pehla<br>market<br>Behtar beachhead<br>Study app<br>Pakistan ke sab<br>students<br>Ek college ke XII, exam prep<br>Canteen pre-<br>order<br>Shehar ki sab<br>canteens<br>Ek college canteen, lunch<br>break<br>Ajrak catalogue<br>Sab online shoppers<br>Ek local shop ke purane<br>customers<br>Van updates<br>Sab transport users<br>EK van route ke<br>students/parents<br>🧠 Yaad rakho: S-R-U: Specific (tang), Reachable (team pohanch<br>sake), Urgent need. Hafte mein pehle users se na mil sako → market<br>bohat bara.<br>📝 Paper mein: &quot;Define beachhead market + characteristics&quot; ya<br>&quot;Suggest a beachhead for …&quot; — definition + S-R-U + kamzor vs behtar<br>misaal.<br>6.16 Ethical &amp; Safe Use<br>Value<br>Matlab<br>Privacy<br>Logon ki zaati info unki — ijazat ke baghair share nahi<br>Truthfulness<br>Nateeje imaandari se — numbers na banao, bura<br>feedback na chhupao<br>Fairness<br>Sab users se barabar sulook<br>Equal<br>access<br>Har koi use kar sake<br>🧠 Yaad rakho: P-T-F-E: Private, Truthful, Fair, Equal-access?<br>6.15 Complete Student Project<br>Groups mein chhota, local project. Safar: problem → prototype →<br>feedback → MVP plan → risky assumption → beachhead.<br>Ideas: homework/test reminder, college notice organizer, canteen<br>pre-order, dukaan ka WhatsApp catalogue.<br>Criteria<br>Excellent<br>Satisfactory<br>Needs work<br>Problem ID<br>Saaf, local, ahem<br>Samajh aaye,<br>detail kam<br>Mubham /<br>bohat bara<br>Prototype<br>Saaf flow +<br>features<br>Basic idea<br>Adhoora<br>Feedback &amp;<br>fixes<br>Sahih collect;<br>tabdeeli feedback<br>se<br>Analysis kamzor<br>Feedback nahi<br>MVP plan<br>Zaroori features +<br>test plan<br>Basic, testing<br>ghair-wazeh<br>Final product<br>se confuse<br>🧠 Yaad rakho: Submit se pehle rubric row-by-row: &quot;Kya ye Excellent<br>hai?&quot; Feedback &amp; Fixes mein likho kaunse feedback se kaunsi<br>tabdeeli.<br>Careers (Startups)<br>Pakistan mein incubators: National Incubation Centres (NICs).<br>Career<br>Kaam<br>Tech Entrepreneur /<br>Founder<br>Masla → digital product: prototype → MVP<br>→ launch<br>Product Manager<br>User needs, features ki tarjeeh,<br>prototype/MVP test<br>Business Analyst<br>Masail analyse, digital hal, assumptions test<br>Innovation Consultant<br>Ideas validate, MVP, beachhead mein<br>mashwara<br>Digital Marketing<br>Specialist<br>MVP ko beachhead tak pohanchana, users<br>barhana<br>Venture / Incubator<br>Analyst<br>Early startups ko investment/incubation ke<br>liye jaanchna<br>Chapter 6 Exam Radar 🎯<br>Entrepreneur vs entrepreneurship; digital age definition (S-T-I-<br>G)<br>Prototype: define, types (fidelity), cycle diagram<br>MVP: Minimum + Viable; prototype vs MVP table<br>Riskiest assumption; 8 MVP elements; canteen case<br>Beachhead: define + S-R-U + misaal<br>5-mark frame: Beachhead Market<br>Define<br>A small, focused group of first users with a clear need who are likely to try the product early.<br>Explain<br>Sab ki bajaye ek group → MVP theek test → phir phailao. S-R-U: specific, reachable, urgent.<br>Example<br>Canteen app: ek college ki canteen, lunch break.<br>Diagram<br>Concentric circles — andar beachhead.<br>Checkpoint: (1) Achhe beachhead ki 3 khoobiyan? (2) 4 project ideas? (3) Feedback lete waqt 3 values? (4) MVP ko beachhead tak kaun pohanchata?<br>Jawab: 1. Specific, reachable, urgent need · 2. Reminder system, notice organizer, canteen pre-order, shop catalogue · 3. Privacy, truthfulness, fairness · 4. Digital Marketing<br>Specialist  |  60% se kam → kal Golden repair.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Chapter 6 · Entrepreneurship in the Digital Age · Days 20–23<br>6<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 23"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 23</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-blitz" id="day-24" data-day="24">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 24 · Blitz</p>
+      <h2>Golden Blitz — Chapters 1 &amp; 2</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-24 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">Revision Booklet — Golden Blitz &amp; Recap<br>Days 24–27 · Day 28 mock · 29 mark · 30 repair<br>24<br>Golden Blitz — Chapters 1 &amp; 2<br>Sirf ★ cards · 11 Golden · har table aur diagram yaad se likho, phir check<br>★ Must lock: 11 Golden cards (Ch 1–2)<br>Pehle har card scrap paper pe yaad se likho (table + diagram), phir milao. Sahih ho to ☐ pe ✔. Ghalat walay Day 29 repair list mein.<br>☐<br>Applications of HCI<br>Ch1 · 1.2<br>HCI designs interactive systems (apps,<br>websites) as human-centred solutions<br>across domains of life.<br>H-BEN<br>Application<br>Health<br>telemedicine, portals<br>Banking<br>mobile app, ATM<br>Education<br>LMS, online exams<br>Networking<br>WhatsApp, Zoom<br>☐<br>Importance of HCI<br>Ch1 · 1.4<br>HCI makes machines approachable and<br>usable — complex tech into everyday<br>tools.<br>P-I-I-E-E: Productivity, Inclusivity,<br>Innovation (AR/VR, AI, IoT), Economic<br>impact, Ethical responsibility. Bura<br>design = medical device ke ghair-wazeh<br>buttons.<br>☐<br>HCI Problems<br>Ch1 · 1.7<br>Complexity (checkout na mile) · Poor<br>feedback (Submit freeze) ·<br>Inconsistency (🔍 vs 🔭) · Accessibility<br>gaps (no captions) · Compatibility<br>(mobile crash) · Contextual neglect (no<br>dark mode) · Cognitive load (3 SMS<br>codes) · Trust deficiency (no HTTPS)<br>☐<br>UI vs UX<br>Ch1 · 1.9<br>UI design creates and organises visual<br>elements so users interact easily.<br>UI<br>UX<br>Kya<br>Look: buttons,<br>icons, colors<br>Poora tajurba /<br>feeling<br>Misaal<br>Outfit<br>Poora din<br>Tool<br>Figma<br>Research,<br>testing<br>Components: buttons, menus, icons,<br>text fields, checkbox/radio, sliders.<br>☐<br>Testing Methods<br>Ch1 · 1.11.2<br>Observing how the system behaves<br>under specific conditions.<br>Method<br>Key<br>Usability<br>real users, real tasks<br>Task-based<br>time · success · errors<br>A/B<br>2 versions, 50/50, zyada<br>clicks jeete<br>Automated<br>audit<br>bot: links, speed, contrast<br>Evaluation: SUS (10 sawal), NPS<br>(recommend?), formative vs summative.<br>☐<br>Trace Tables<br>Ch2 · 2.1.1<br>Monitors how variable values change<br>during execution.<br>Dry run · debugging · validation.<br>Columns: step, variables, condition,<br>output.<br>height<br>1.57–1.91?<br>Total<br>1.91<br>T<br>1<br>2.01<br>F<br>1<br>1.87<br>T<br>2<br>1.57<br>T<br>3<br>1.48<br>F<br>3<br>Output: 3<br>☐<br>Trace vs Stepwise<br>Ch2 · 2.1.3<br>Trace<br>Stepwise<br>Best<br>for<br>chhote blocks,<br>beginners<br>bare systems,<br>proofs<br>Effort<br>high<br>moderate<br>Level<br>micro, exact<br>values<br>macro, overall<br>state<br>☐<br>Big O<br>Ch2 · 2.3.1<br>Describes how running time grows as<br>input size n grows.<br>Class<br>Misaal<br>Grade<br>arr[0]<br>Excellent<br>binary search<br>Great<br>linear search<br>Fair<br>merge sort<br>Good<br>nested loops<br>Poor<br>· n = 16: 1, 4, 16, 64, 256<br>☐<br>Data Structure<br>Ch2 · 2.5<br>Systematic way of organising, storing<br>and managing data for efficient access<br>and processing.<br>Linear: array, linked list, stack, queue ·<br>Non-linear: tree, graph.<br>D1<br>D2<br>D3 ←TOP<br>55<br>76<br>90<br>D<br>Front<br>Rear<br>☐<br>Stack (LIFO)<br>Ch2<br>PUSH/POP at TOP. PUSH D1, D2, D3 →<br>POP = D3. Undo, back button.<br>☐<br>Queue (FIFO)<br>Ch2<br>ENQUEUE at Rear, DEQUEUE from<br>Front. 55, 76, 90, D → DEQUEUE = 55.<br>Printer jobs.<br>Blitz score<br>Ch1 ☐☐☐☐☐ / 5<br>Ch2 ☐☐☐☐☐☐ / 6<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Revision · Golden Blitz &amp; Recap · Days 24–27<br>★<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 24"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 24</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-blitz" id="day-25" data-day="25">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 25 · Blitz</p>
+      <h2>Golden Blitz — Chapters 3 &amp; 4</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-25 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">25<br>Golden Blitz — Chapters 3 &amp; 4<br>Sirf ★ cards · 11 Golden · code aur tables yaad se likho<br>★ Must lock: 11 Golden cards (Ch 3–4)<br>Pehle har card scrap paper pe yaad se likho (table + diagram), phir milao. Sahih ho to ☐ pe ✔. Ghalat walay Day 29 repair list mein.<br>☐<br>Lists<br>Ch3 · 3.1.1<br>Ordered, mutable collection in [ ].<br>append, insert, remove (pehla), pop,<br>sort, reverse, index, count. L[-1]<br>aakhri; nums[2:6] → [2,3,4,5].<br>f = [&quot;kiwi&quot;, &quot;apple&quot;]<br>f.append(&quot;grape&quot;)<br>f.remove(&quot;apple&quot;)<br>f.sort()<br>☐<br>Tuples<br>Ch3 · 3.1.2<br>Ordered, immutable collection in ( ).<br>List<br>Tuple<br>Mutable?<br>Haan<br>Nahi<br>Methods<br>bohat<br>count, index<br>Speed<br>slow<br>tez, safe<br>t[0] = 99 → TypeError<br>☐<br>Dictionaries<br>Ch3 · 3.1.4<br>Key–value pairs; ordered (3.7+),<br>mutable, unique keys.<br>d[&quot;age&quot;] = 31 · del d[&quot;city&quot;] ·<br>d.get(k, 0) (crash nahi) · keys(),<br>values(), items(). Repeat key → aakhri<br>value.<br>freq[w] = freq.get(w, 0) + 1<br>☐<br>Functions<br>Ch3 · 3.2<br>Named block written once, run<br>whenever called.<br>def → name → (params) → body →<br>return. Benefits: reusability, modularity,<br>readability, maintainability. DRY.<br>def add(a, b):<br>    return a + b<br>print(add(2, 3))   # 5<br>☐<br>File Handling r/w/a<br>Ch3 · 3.3<br>Create, read, write, update, delete files<br>on disk (persistent).<br>Mode<br>Kaam<br>File na ho<br>r<br>parho<br>error<br>w<br>mita ke likho ⚠<br>nayi<br>a<br>aakhir mein jodo<br>nayi<br>read(), readline(), readlines(), write(),<br>close()<br>☐<br>with (Context Manager)<br>Ch3 · 3.6<br>Opens the file, runs the block, always<br>closes it — even on error.<br>with open(&quot;f.txt&quot;, &quot;a&quot;) as f:<br>    f.write(&quot;David,81\n&quot;)<br>try / except FileNotFoundError / else /<br>finally<br>☐<br>DB Connection<br>Ch4 · 4.1.2<br>Database → Driver (sqlite3) →<br>Connection (pipe) → Cursor<br>(messenger) → SQL.<br>connect → cursor → execute → commit<br>→ fetchall → close<br>c = sqlite3.connect(&quot;a.db&quot;)<br>cur = c.cursor()<br>cur.execute(sql)<br>c.commit()<br>rows = cur.fetchall()<br>c.close()<br>☐<br>Pandas DataFrame<br>Ch4 · 4.3<br>2-D table of rows and columns.<br>import pandas as pd<br>df = pd.DataFrame(data)<br>df[&quot;Math&quot;].mean()<br>Name<br>Math<br>Science<br>Ali<br>85<br>80<br>Sara<br>90<br>88<br>Ahmed<br>78<br>70<br>Math mean = 84.33<br>☐<br>Missing Values (NaN)<br>Ch4 · 4.3.3<br>isnull().sum() gino · fillna(mean)<br>numbers · fillna(&quot;Unknown&quot;)<br>categories · dropna() rows hatao.<br>Pehle saaf, phir analyse.<br>☐<br>Graph Types<br>Ch4 · 4.5<br>Chart<br>Kab<br>Bar/column<br>categories<br>Line<br>time trend<br>Pie<br>whole ke hisse<br>Histogram<br>distribution, bars jurri<br>Scatter<br>2 variables<br>Box<br>spread, outliers<br>Title + axis labels zaroori.<br>☐<br>Descriptive Statistics<br>Ch4 · 4.6<br>· median = sorted beech · mode = sab<br>se zyada · range = max − min ·<br>2,4,6,8,10: mean 6, median 6, range 8,<br>var 8 (n) / 10 (n−1), SD 2.83 / 3.16<br>Blitz score<br>Ch3 ☐☐☐☐☐☐ / 6<br>Ch4 ☐☐☐☐☐ / 5<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Revision · Golden Blitz &amp; Recap · Days 24–27<br>★<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 25"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 25</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-blitz" id="day-26" data-day="26">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 26 · Blitz</p>
+      <h2>Golden Blitz — Chapters 5 &amp; 6</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-26 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">26<br>Golden Blitz — Chapters 5 &amp; 6<br>Sirf ★ cards · 10 Golden · definitions word-for-word bolo<br>★ Must lock: 10 Golden cards (Ch 5–6)<br>Pehle har card scrap paper pe yaad se likho (table + diagram), phir milao. Sahih ho to ☐ pe ✔. Ghalat walay Day 29 repair list mein.<br>☐<br>Neural Networks<br>Ch5 · 5.1.2<br>A computer model that learns patterns<br>from data.<br>Input (pixels) → Hidden (features) →<br>Output (unlock?). I-H-O.<br>.<br>☐<br>NN Components<br>Ch5 · 5.1.4<br>Input · neurons · hidden · weights<br>(ahmiyat) · bias (nudge) · activation<br>(gate) · output · loss (ghalti).<br>☐<br>Secure Collaboration<br>Ch5 · 5.3.1<br>Using digital tools to work together<br>safely, controlled and responsibly.<br>A-A-A-P-S: Authentication (kaun?),<br>Access control (kya kar sakte?),<br>Accountability, Privacy, Safe<br>transmission. MFA = know + have + are.<br>☐<br>Security Threats<br>Ch5 · 5.4.1<br>Threat<br>Misaal<br>Malware<br>virus, worm,<br>ransomware<br>Phishing<br>nakli SMS, OTP chori<br>Unauthorised<br>access<br>khula PC<br>Data/identity theft<br>chori CNIC<br>DoS<br>requests ka toofan<br>Human error<br>ghalat email<br>Shields: antivirus+firewall,<br>password+2FA, encryption, backup,<br>awareness.<br>Nishaniyan: pop-ups → malware · ajeeb<br>login → access · &quot;OTP do!&quot; → phishing ·<br>traffic spike → DoS. Caesar +3: PAK →<br>SDN.<br>☐<br>Equity &amp; Equal Access<br>Ch5 · 5.5.1<br>Equal = sab ko same; Equity = zaroorat<br>ke mutabiq madad.<br>Function<br>Misaal<br>Support<br>screen reader<br>Remove barriers<br>low-data app<br>Participation<br>recorded lecture<br>Formats<br>video + notes + audio<br>☐<br>Digital Entrepreneurship<br>Ch6 · 6.2<br>Using digital tools to start, test, improve<br>and grow a business idea.<br>S-T-I-G · WhatsApp, Forms, JazzCash.<br>Problem pehle, tool baad mein.<br>☐<br>Prototype<br>Ch6 · 6.4<br>Early model to test the idea and collect<br>feedback — not the final product.<br>Low-Fi (paper) → Mid-Fi<br>(PowerPoint/Figma) → High-Fi (demo).<br>☐<br>Prototype Cycle<br>Ch6 · 6.6<br>Design<br>Build<br>Test<br>Iterate ↻<br>Design → Build → Test → Iterate ↻<br>wapas Design. &quot;Do Big Things<br>Iteratively&quot;.<br>☐<br>MVP<br>Ch6 · 6.8<br>Simplest working version of a product.<br>Minimum = zaroori features; Viable =<br>kaam kare. Canteen: Google Form, 3<br>din, 5 items, 20 min.<br>Prototype<br>MVP<br>Maqsad<br>design test<br>market demand<br>Chale?<br>zaroori nahi<br>basic tor pe<br>haan<br>Misaal<br>paper<br>screens<br>Form 3 din<br>Riskiest assumption pehle test.<br>☐<br>Beachhead Market<br>Ch6 · 6.14<br>Small, focused group of first users with<br>a clear need.<br>start<br>S-R-U: Specific, Reachable, Urgent. Ek<br>college ke XII students, phir phailo.<br>Blitz score<br>Ch5 ☐☐☐☐☐ / 5<br>Ch6 ☐☐☐☐☐ / 5<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Revision · Golden Blitz &amp; Recap · Days 24–27<br>★<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 26"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 26</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-blitz" id="day-27" data-day="27">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 27 · Blitz</p>
+      <h2>Night-before Recaps — Saare Chapters</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-27 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">27<br>Night-before Recaps — Saare Chapters<br>Kitaab band karo · har recap ounchi awaaz mein bolo · jo na bol sako, mark karo<br>★ Must lock: All chapters<br>Ch 1 Human-Computer Interaction<br>HCI = log aur computer saath kaam karein — usable,<br>useful, satisfying. HCI = CHI = MMI.<br>Traditional = keyboard, mouse; natural = touch, voice,<br>gesture, face.<br>Components: user, computer, interaction, task (+<br>interface, environment, feedback).<br>UI = look/controls; UX = poora tajurba. Wireframe (Lo-Fi<br>→ Hi-Fi) → prototype (Figma) → test.<br>Evaluate: usability, task-based, A/B, automated audit,<br>SUS, NPS. Accessibility C-F-C-N-M.<br>Ch 2 Algorithms &amp; Data Structures<br>Correctness: trace table (har step values) ya stepwise<br>reasoning (logic blocks).<br>Clarity: modularity (SRP) + readability (N-S-S-C).<br>Efficiency: steps, conditions, repetitions. Big O:<br>.<br>Linear: array, linked list, stack (LIFO), queue (FIFO). Non-<br>linear: tree (root), graph (nodes + edges).<br>Undo → stack · printer → queue · hierarchy → tree · maps<br>→ graph · fast index → array.<br>Ch 3 Python Data Structures, Functions, Files<br>list [ ] mutable · tuple ( ) immutable · set { } unique · dict<br>{k:v}.<br>def, parameters, return; local vs global; built-in vs user-<br>defined.<br>Files: r read, w overwrite, a append; with open(...) as<br>f khud close.<br>try / except / else / finally — specific error pehle.<br>Ch 4 Data and Analysis<br>SQLite: connect → cursor → execute → commit → close.<br>Writes ke baad commit!<br>DataFrame = table; read_csv, isnull, dropna, fillna, sort,<br>filter, groupby.<br>Bar (categories), line (time), pie (whole), histogram<br>(distribution), scatter (2 vars), box (outliers).<br>Mean, median, mode, range, variance, SD; pandas .std()<br>n−1.<br>Ch 5 AI, Security, Collaboration<br>AI ⊃ ML ⊃ DL; neuron = weighted sum + bias → activation.<br>Deep = bohat hidden layers.<br>Authentication (MFA) + access control; encryption,<br>passwords, 3-2-1 backup, firewall.<br>Threats: malware, phishing, DoS, identity theft, human<br>error.<br>Equity: devices, zubaan, disability, bandwidth — sab hissa<br>lein.<br>Ch 6 Entrepreneurship<br>Entrepreneur = masla → venture, calculated risk. Digital<br>tools = sasta test.<br>Prototype: low/mid/high fidelity; Design → Build → Test<br>→ Iterate.<br>MVP = riskiest assumption asal users se test. Prototype ≠<br>MVP.<br>Beachhead = pehla tang group. Data ethically (P-T-F-E).<br>Mnemonic wall 🧠<br>HCI = CHI = MMI<br>S-T-H-V-S<br>H-BEN<br>U-C-I-T<br>P-I-I-E-E<br>C-F-C-N-M<br>Time · Success · Errors<br>N-S-S-C<br>Constant Logs Never Need Squares<br>S-B-W<br>I-D-T-S-S<br>LIFO / FIFO<br>DRY<br>r · w · a<br>P-D-A-G<br>D-L-P<br>I-H-O<br>D-L-A-L-G-T<br>A-A-A-P-S<br>Some Rural Pupils Fail<br>S-T-I-G<br>Do Big Things Iteratively<br>S-R-U<br>P-T-F-E<br>Paper ke pakke sawal 🎯<br>HCI applications (H-BEN) · importance (P-I-I-E-E) · problems<br>(8) · UI vs UX · testing methods<br>Trace table dry-run · trace vs stepwise · Big O table ·<br>stack/queue trace · scenario → structure<br>List methods/slicing · list vs tuple · dict get · functions<br>benefits · r/w/a + with + try-except<br>DB connection 5 parts · SQLite steps · NaN handling · which<br>graph · mean/median/SD<br>NN layers + components + neuron sum · secure collaboration<br>· threats · equity functions<br>Digital entrepreneurship · prototype + cycle · MVP vs<br>prototype · beachhead (S-R-U)<br>Aage ka plan: Day 28 — mock, hall conditions. Day 29 — key se mark, har<br>missed ★ ki repair list. Day 30 — sirf repair list; raat 10 baje so jao; koi<br>naya topic nahi.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>Revision · Golden Blitz &amp; Recap · Days 24–27<br>★<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 27"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 27</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-mock" id="day-28" data-day="28">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 28 · Mock</p>
+      <h2>Mock Paper — Hall Conditions (1/2)</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-28 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">Days 28–30 — Mock, Mark &amp; Repair · Computer Science XII<br>Day 28 mock · Day 29 mark · Day 30 repair<br>28<br>Mock Paper — Hall Conditions (1/2)<br>2 hours 30 minutes · 75 marks · no notes · Section A<br>★ Must lock: Whole syllabus<br>Aaj ke 3 ghante — Hall conditions<br>2 h 30 min mein paper · 75 marks · notes nahi, phone doosre kamre mein,<br>Day 29 ke pages mat dekho (answers wahan hain — un pages ko alag rakh<br>do).<br>Bacha hua 30 min: paper pack karo — aaj mark nahi karna.<br>Khud apne invigilator bano: timer lagao, ghari saamne, ek hi baith mein.<br>0′<br>B · 10 short<br>25′<br>C · any 3 long<br>80′<br>140′ · 150′<br>read<br>check<br>Time plan (minutes): pehle 10′ paper parho aur Section C ke 3 sawal chuno · A 15′ · B 55′ (~5′ har sawal) ·<br>C 60′ (20′ har sawal) · aakhri 10′ check<br>Paper strategy<br>MCQ: pehle yaqeeni wale, shak wale pe nishaan,<br>baad mein.<br>Short (3 marks): Define + 2 points/example.<br>Long (10 marks): Define · Explain · Example ·<br>Diagram · Working.<br>Har diagram/table pe label + title.<br>Python: sahih indentation, colon, quotes.<br>Mock paper — Computer Science XII<br>Time: 2 h 30 min · Total: 75 · Calculators allowed<br>Instructions: Answer all of Section A and B; attempt any three from Section C. Write Python with correct indentation. Draw neat,<br>labelled diagrams.<br>Section A — Multiple choice<br>15 × 1 = 15<br>1. HCI stands for:<br>a. Human Computer Interaction<br>b. High Code Interface<br>c. Hardware Control Input<br>d. Hybrid Computing Internet<br>2. A wireframe is:<br>a. the final coloured UI<br>b. a simple layout sketch of<br>screens<br>c. a compiled program<br>d. an encryption key<br>3. Which is<br>?<br>a. Linear search<br>b. Nested for-loops<br>c. Binary search<br>d. Reading one array cell<br>4. A stack is:<br>a. FIFO<br>b. LIFO<br>c. random access only<br>d. unordered unique items<br>5. Which Python type is immutable?<br>a. list<br>b. dict<br>c. set<br>d. tuple<br>6. The file mode that overwrites an existing file is:<br>a. r<br>b. a<br>c. w<br>d. x+<br>7. with open(&quot;t.txt&quot;) as f is useful because:<br>a. it encrypts the file<br>b. it closes the file<br>automatically<br>c. it creates a DataFrame<br>d. it skips exceptions<br>8. After INSERT in sqlite3 you must:<br>a. rollback always<br>b. commit<br>c. drop the table<br>d. print the cursor<br>9. A pie chart is a poor choice when:<br>a. you have 3 parts of a total<br>b. you have 20 tiny slices<br>c. you show percentages of a<br>whole<br>d. you label each slice<br>10. pandas df[&#x27;x&#x27;].std() uses:<br>a. population n<br>b. sample n−1<br>c. median<br>d. mode<br>11. Deep Learning is a subset of:<br>a. only statistics<br>b. Machine Learning<br>c. only HCI<br>d. only networking<br>12. MFA means:<br>a. Many File Archives<br>b. Multi-Factor Authentication<br>c. Main Firewall Access<br>d. Minimum Function API<br>13. A Caesar cipher is a form of:<br>a. phishing<br>b. encryption<br>c. a firewall<br>d. a prototype<br>14. An MVP is:<br>a. the most polished version of<br>a product<br>b. the smallest product that<br>tests the riskiest assumption<br>c. a paper sketch only<br>d. a full company registration<br>15. A printer job list is best modelled as a:<br>a. stack<br>b. queue<br>c. binary tree<br>d. set<br>MCQ answer grid — sahih harf pe gola lagao<br>1. ⓐ ⓑ ⓒ ⓓ<br>2. ⓐ ⓑ ⓒ ⓓ<br>3. ⓐ ⓑ ⓒ ⓓ<br>4. ⓐ ⓑ ⓒ ⓓ<br>5. ⓐ ⓑ ⓒ ⓓ<br>6. ⓐ ⓑ ⓒ ⓓ<br>7. ⓐ ⓑ ⓒ ⓓ<br>8. ⓐ ⓑ ⓒ ⓓ<br>9. ⓐ ⓑ ⓒ ⓓ<br>10. ⓐ ⓑ ⓒ ⓓ<br>11. ⓐ ⓑ ⓒ ⓓ<br>12. ⓐ ⓑ ⓒ ⓓ<br>13. ⓐ ⓑ ⓒ ⓓ<br>14. ⓐ ⓑ ⓒ ⓓ<br>15. ⓐ ⓑ ⓒ ⓓ<br>Kal (Day 29) isi grid ko key se milao — overwriting / do gole = ghalat.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>CS XII · Mock, Mark &amp; Repair · Days 28–30<br>28<br>Day</div>
+<div class="block golden">28<br>Mock Paper — Hall Conditions (2/2)<br>Section B (short) · Section C (long, any three)<br>★ Must lock: Whole syllabus<br>[3]<br>[3]<br>[3]<br>[3]<br>[3]<br>[3]<br>[3]<br>[3]<br>[3]<br>[3]<br>Section B — Short questions<br>10 × 3 = 30<br>1. Differentiate UI and UX with one example.<br>2. What is a trace table? Why is it better than &quot;it looks right&quot;?<br>3. Draw a 3-node stack after push 10, push 20, pop. Label TOS.<br>4. Write one difference each: list vs tuple vs set vs dictionary.<br>5. Write a Python function area(l, w) that returns l*w, and a call that prints it.<br>6. Name the five steps of a database connection in Python.<br>7. When would you draw a scatter plot rather than a line graph?<br>8. Compute mean, median and range of 4, 8, 6, 10, 2.<br>9. List three signs of a phishing message.<br>10. Differentiate a prototype and an MVP.<br>[10]<br>[10]<br>[10]<br>[10]<br>[10]<br>Section C — Long questions<br>Attempt any THREE · 3 × 10 = 30<br>1. A college wants a new student-portal. Describe need analysis, a low-fidelity wireframe of the login + timetable screens,<br>three accessibility principles you would apply, and one usability test you would run.<br>2. Trace this algorithm with a table for n = 5: total = 0; for i in 1..n: total = total + i; return total. State its Big O and rewrite it<br>as a formula that is<br>.<br>3. Write a Python program that reads a text file of lines &quot;name,marks&quot;, stores results in a dictionary, and writes &quot;name:<br>grade&quot; to an output file using with. Grade A if marks ≥ 80 else B. Include exception handling if the file is missing.<br>4. Using the dataset 12, 18, 12, 20, 15, compute mean, median, mode, range, population variance and population standard<br>deviation, showing every step. Then state which chart you would use to show the distribution and why.<br>5. A Karachi canteen wants a pre-order app. Identify the problem, the riskiest assumption, an MVP, a beachhead market,<br>two test metrics, and one ethical rule for student data.<br>Rough-work / time log<br>Section<br>Shuru<br>Khatam<br>Kitne sawal<br>A<br>/15<br>B<br>/10<br>C<br>/3<br>Marks ↔ jawab ki lambai<br>Marks<br>Kitna likho<br>1 (MCQ)<br>Sirf sahih harf<br>3 (short)<br>Definition + 2 points / 4–6 lines ya ek chhota diagram<br>10 (long)<br>1½–2 pages: Define · Explain · Example · Diagram · Working<br>Section C — mera intikhab<br>Choice<br>Q no.<br>Kyun (strongest topic)<br>1st<br>2nd<br>3rd<br>Paper khatam? 🛑<br>Kalam rakho. Paper ek lifafe mein band. Aaj marking nahi — kal<br>fresh dimagh se Day 29 key ke saath. Raat ko bas aaram.<br>🧠 Yaad rakho: Long answer ka frame: Define · Explain · Example ·<br>Diagram · Working — kisi ek ke baghair poore marks nahi.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>CS XII · Mock, Mark &amp; Repair · Days 28–30<br>28<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 28"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 28</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-mock" id="day-29" data-day="29">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 29 · Mock</p>
+      <h2>Mark the Mock — Section C Worked Solutions</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-29 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">29<br>Mark the Mock — Section A &amp; B Key<br>0–90 min: key se mark karo · ghalat sawal ka Golden note karo<br>★ Must lock: Missed Goldens<br>⚠ Dhoka: Pehle Day 28 ka paper poora ho chuka ho — warna ye page mat parho. Jis jawab mein working, diagram ya example nahi, usay poore marks<br>mat do.<br>Section A — key (15)<br>Q<br>Ans<br>Ghalat ho to repair<br>✔/✘<br>1<br>a<br>1.1 HCI fundamentals<br>☐<br>2<br>b<br>1.9.3 Wireframing<br>☐<br>3<br>c<br>★ Big O<br>☐<br>4<br>b<br>★ Stack<br>☐<br>5<br>d<br>★ Tuples<br>☐<br>6<br>c<br>★ File handling (r, w, a)<br>☐<br>7<br>b<br>★ with statement<br>☐<br>8<br>b<br>★ DB connection (commit)<br>☐<br>9<br>b<br>★ Data visualization<br>☐<br>10<br>b<br>★ Descriptive statistics<br>☐<br>11<br>b<br>5.1 AI ⊃ ML ⊃ DL<br>☐<br>12<br>b<br>★ Secure collaboration<br>☐<br>13<br>b<br>5.3.2 Data protection<br>☐<br>14<br>b<br>★ MVP<br>☐<br>15<br>b<br>★ Queue<br>☐<br>A score: ____ / 15<br>Section B — model answers (10 × 3)<br>Q<br>Model answer (in points ko dhoondo)<br>Repair topic<br>Mine<br>1<br>UI = screens &amp; controls (buttons, rang). UX = poora safar<br>(waqt, frustration, trust). JazzCash send screen (UI) vs<br>payment kitni mehfooz/jaldi lagi (UX).<br>★ UI vs UX<br>/3<br>2<br>Har instruction ke baad har variable ki value. Chune hue<br>input pe correctness saabit; &quot;looks right&quot; off-by-one aur<br>uninitialised variables miss karta.<br>★ Trace tables<br>/3<br>3<br>10<br>← TOS<br>20 popped<br> push 10 → TOS 10; push 20 →<br>TOS 20; pop → 20 gaya, TOS = 10.<br>★ Stack<br>/3<br>4<br>list: ordered, mutable [ ] · tuple: ordered, immutable ( ) ·<br>set: unordered, unique { } · dict: key:value pairs.<br>★<br>Lists/Tuples/Dicts<br>/3<br>5<br>def area(l, w): return l * w ·<br>print(area(3, 4)) → 12<br>★ Functions<br>/3<br>6<br>connect → cursor → execute → commit → close.<br>★ DB connection<br>/3<br>7<br>Scatter: do measured variables (height vs marks), time<br>axis nahi. Line: ek quantity waqt/sequence ke saath.<br>★ Data<br>visualization<br>/3<br>8<br>Sorted 2, 4, 6, 8, 10 · mean<br>· median 6 · range<br>.<br>★ Descriptive<br>statistics<br>/3<br>9<br>Anjaan sender · urgent dhamki (&quot;account aaj band&quot;) · link<br>bank se match na kare · OTP/password maange · bura<br>Urdu/English · anjaan attachment (koi 3).<br>★ Security threats<br>/3<br>10<br>Prototype = seekhne ka model (aksar internal). MVP = asli,<br>usable product — bas itne features ke riskiest assumption<br>asli customers se test ho.<br>★ Prototype / MVP<br>/3<br>B score: ____ / 30  ·  Marking: 1 mark definition/sahih term, 1 mark explanation, 1<br>mark example/diagram.<br>Section A — har jawab ki wajah<br>Q<br>Kyun yahi jawab? (MCQ wazahat)<br>1<br>HCI = Human-Computer Interaction (CHI / MMI bhi).<br>2<br>Wireframe = Lo-Fi layout sketch, rang nahi.<br>3<br>Binary search har step aadha karta hai.<br>4<br>Stack = Last-In First-Out.<br>5<br>Tuple ( ) read-only — badal nahi sakte.<br>6<br>&#x27;w&#x27; pehle mita deta, phir likhta.<br>7<br>Block khatam → file khud band.<br>8<br>INSERT/UPDATE/DELETE disk pe tabhi jab commit.<br>Q<br>Kyun yahi jawab? (MCQ wazahat)<br>9<br>20 chhote slices — pie parhna na-mumkin; bar behtar.<br>10<br>pandas .std() default sample (n−1).<br>11<br>AI ⊃ ML ⊃ DL — DL, ML ka hissa.<br>12<br>Multi-Factor Authentication: know / have / are.<br>13<br>Caesar = letters shift = encryption.<br>14<br>MVP = riskiest assumption test karne wala sab se chhota product.<br>15<br>Printer: pehle aaya pehle print → FIFO queue.<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>CS XII · Mock, Mark &amp; Repair · Days 28–30<br>29<br>Day</div>
+<div class="block golden">29<br>Mark the Mock — Section C Worked Solutions<br>Har long answer ka model · marks ka hisaab<br>★ Must lock: Missed Goldens<br>C1 — Student portal (HCI) [10]<br>★ Golden<br>Need analysis<br>Jawab<br>Users<br>Students, teachers, office<br>Tasks<br>Timetable dekhna, leave submit<br>Constraints<br>Mobile, slow internet, Urdu/English<br>Login<br>LOGO<br>Roll no.<br>Password<br>LOGIN (bara button)<br>→<br>Timetable<br>Mon<br>Tue<br>Wed<br>Thu<br>Fri<br>[Leave] [Logout]<br>Accessibility (koi 3): bare tap targets · colour akela signal nahi<br>(icon/text bhi) · Urdu/English labels · screen-reader names · achha<br>contrast.<br>Usability test: 5 students think-aloud karte hue login + timetable<br>kholein; time, errors, success note.<br>Marks: need analysis 3 · wireframe 3 · accessibility 3 · test 1<br>C2 — Trace + Big O [10]<br>★ Golden<br>i<br>1<br>2<br>3<br>4<br>5<br>total<br>1<br>3<br>6<br>10<br>15<br>Loop body n dafa →<br>. Formula:<br>→<br>(n kitna bhi bara, ek hi hisaab).<br>def total_loop(n):          # \(O(n)\)<br>    total = 0<br>    for i in range(1, n + 1):<br>        total = total + i<br>    return total<br>def total_formula(n):       # \(O(1)\)<br>    return \(n(n+1)/2\)<br>Marks: trace table 4 · output 1 · Big O + wajah 2 · formula + \(O(1)\) 3<br>Section C marking guide<br>Definition/sahih terms ke baghair → max 6/10.<br>Wireframe/table bina label → −2.<br>Python indentation/colon ghalat → −1 to −3.<br>Stats: har step (mean → deviations → squares → ÷n → √) na<br>dikhaya → −3.<br>Sirf 2 long sawal? Teesre ke 0.<br>C3 — Dictionary + files + exception [10]<br>★ Golden<br>grades = {}<br>try:<br>    with open(&quot;marks.txt&quot;) as f:<br>        for line in f:<br>            name, m = line.strip().split(&quot;,&quot;)<br>            grades[name] = int(m)<br>except FileNotFoundError:<br>    print(&quot;Error: marks.txt is missing&quot;)<br>else:<br>    with open(&quot;grades.txt&quot;, &quot;w&quot;) as g:<br>        for name, m in grades.items():<br>            grade = &quot;A&quot; if m &gt;= 80 else &quot;B&quot;<br>            g.write(name + &quot;: &quot; + grade + &quot;\n&quot;)<br>Sample: Ali,85, Sara,72 → dict {&#x27;Ali&#x27;: 85, &#x27;Sara&#x27;: 72} →<br>grades.txt: Ali: A, Sara: B.<br>C4 — Statistics 12, 18, 12, 20, 15 [10]<br>★ Golden<br>x<br>12<br>−3.4<br>11.56<br>12<br>−3.4<br>11.56<br>15<br>−0.4<br>0.16<br>18<br>2.6<br>6.76<br>20<br>4.6<br>21.16<br>Σ 77<br>0<br>51.2<br>Sorted 12, 12, 15, 18, 20 · mean<br>· median 15 · mode 12 · range 8 ·<br>·<br>. Chart: histogram (distribution) ya frequencies ka bar.<br>C5 — Karachi canteen pre-order [10]<br>★ Golden<br>Element<br>Jawab<br>Problem<br>Periods ke darmiyan lambi canteen queues<br>Riskiest<br>assumption<br>Students break se 10 min pehle pre-order karenge<br>MVP<br>WhatsApp number + Google Form, pickup tokens<br>— app nahi<br>Beachhead<br>First-year students ki ek shift<br>Metrics<br>% orders pick-up · time-to-collect · repeat use<br>Ethics<br>Phone numbers publish nahi; term ke baad<br>responses delete<br>Aam ghaltiyan — Section C<br>Q<br>Ghalti → sahih<br>C1<br>Sirf &quot;achha design&quot; → users/tasks/constraints + labelled<br>wireframe<br>C2<br>Big O bina wajah → &quot;loop n dafa&quot; likho; formula<br>C3<br>open bina with; int() bhoolna; except na lagana<br>C4<br>Variance ko &quot;marks&quot; mein; n vs n−1 na batana<br>C5<br>MVP = poori app likhna → sab se chhota test<br>C score: ____ / 30<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>CS XII · Mock, Mark &amp; Repair · Days 28–30<br>29<br>Day</div>
+<div class="block golden">29<br>Score, Repair List &amp; Golden Checklist<br>90–150 min: repair list bharo · 150–180 min: ek missed Golden yaad se<br>★ Must lock: Missed Goldens<br>Score tracker<br>Section<br>Max<br>Mine<br>%<br>A — MCQ<br>15<br>B — Short<br>30<br>C — Long<br>30<br>Total<br>75<br>Score<br>Matlab<br>Kal (Day 30)<br>≥ 80% (60+)<br>Tayyar ✔<br>Sirf repair list, jaldi so jao<br>60–79% (45–<br>59)<br>Theek, kuch<br>kamzor<br>Repair list poori, har item 2 dafa<br>&lt; 60% (&lt; 45)<br>Serious repair<br>Sirf top 6 Goldens — naya kuch<br>nahi<br>Chapter-wise kamzori<br>Ch<br>A ghalat<br>B kam<br>C kam<br>Priority<br>Ch 1<br>Ch 2<br>Ch 3<br>Ch 4<br>Ch 5<br>Ch 6<br>Repair list ✍<br>Har Golden jis pe 0 ya aadhe marks aaye. Kal sirf yahi — poori<br>kitaab nahi.<br>#<br>Golden topic<br>missed<br>Main yaad se kya likhunga (def /<br>table / diagram)<br>Done<br>1<br>☐<br>2<br>☐<br>3<br>☐<br>4<br>☐<br>5<br>☐<br>6<br>☐<br>7<br>☐<br>8<br>☐<br>9<br>☐<br>10<br>☐<br>150–180 min: in mein se ek Golden abhi yaad se dobara likho.<br>Golden checklist — mock mein jo miss hua us pe ✔ (32 Goldens)<br>Chapter<br>Goldens (miss hua to ✔)<br>Missed<br>Ch 1<br>☐ Applications of HCI<br>☐ Importance of HCI<br>☐ HCI Problems<br>☐ UI vs UX<br>☐ Testing Methods<br>__ / 5<br>Ch 2<br>☐ Trace Tables<br>☐ Trace vs Stepwise<br>☐ Big O<br>☐ Data Structure concept<br>☐ Stack<br>☐ Queue<br>__ / 6<br>Ch 3<br>☐ Lists<br>☐ Tuples<br>☐ Dictionaries<br>☐ Functions<br>☐ File handling (r, w, a)<br>☐ with statement<br>__ / 6<br>Ch 4<br>☐ DB connection<br>☐ Pandas &amp; DataFrames<br>☐ Missing values (NaN)<br>☐ Data visualization<br>☐ Descriptive statistics<br>__ / 5<br>Ch 5<br>☐ Neural Networks<br>☐ NN components<br>☐ Secure collaboration<br>☐ Security threats<br>☐ Equity functions<br>__ / 5<br>Ch 6<br>☐ Digital entrepreneurship<br>☐ Prototype<br>☐ Prototype cycle<br>☐ MVP<br>☐ Beachhead market<br>__ / 5<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>CS XII · Mock, Mark &amp; Repair · Days 28–30<br>29<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 29"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 29</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+
+<article class="day-card phase-repair" id="day-30" data-day="30">
+  <header class="day-header flex-row">
+    <div>
+      <p class="eyebrow">Day 30 · Repair</p>
+      <h2>Repair Day — Phir Ruk Jao</h2>
+    </div>
+    <div class="header-actions flex-row">
+      <button type="button" class="btn tts-read" data-tts-target="#day-30 .lesson-body" aria-label="Read aloud">🔊 Listen</button>
+      <button type="button" class="btn btn-ghost drill-toggle" aria-expanded="false">✎ Drill</button>
+    </div>
+  </header>
+  <div class="lesson flex-row">
+    <section class="lesson-body flex-col">
+      <div class="block golden">30<br>Repair Day — Phir Ruk Jao<br>Sirf Day 29 ki repair list · 6 pm stop · raat 10 baje neend<br>★ Must lock: Missed Goldens only<br>Aaj ka plan (3 ghante · 6 baje band)<br>Waqt<br>Kaam<br>0–10′<br>Day 29 ki repair list kholo — sirf woh items<br>10–100′<br>Har missed Golden pe 3-step redo (neeche)<br>100–<br>115′<br>Break — paani, thora chalo; phone nahi<br>115–<br>170′<br>Doosra round: kitaab band, har item ounchi awaaz mein +<br>ek table/diagram<br>170–<br>180′<br>Bag pack — bas! 6 pm stop<br>⚠ Dhoka: Naya chapter nahi · naya non-Golden card nahi · aakhri raat<br>&quot;sab kuch dobara&quot; nahi.<br>3-step redo (har missed Golden)<br>1. Definition bolo (word-for-word)<br>→<br>2. Table / diagram yaad se banao<br>→<br>3. Ek 5-mark answer likho<br>#<br>Golden<br>Def<br>Table/Diag<br>5-mark<br>1<br>☐<br>☐<br>☐<br>2<br>☐<br>☐<br>☐<br>3<br>☐<br>☐<br>☐<br>4<br>☐<br>☐<br>☐<br>5<br>☐<br>☐<br>☐<br>6<br>☐<br>☐<br>☐<br>7<br>☐<br>☐<br>☐<br>8<br>☐<br>☐<br>☐<br>Raat ki checklist 🎒<br>☐ Admit card / roll no. slip<br>☐ 2 blue/black pens + spare<br>☐ Pencil, sharpener, eraser<br>☐ Ruler (diagrams, tables)<br>☐ Calculator (agar allowed)<br>☐ Paani ki bottle<br>☐ Ghari (hall clock pe bharosa nahi)<br>☐ Kapre tayyar<br>☐ Alarm set<br>☐ Raat 10 baje so jao 😴<br>Goldens dimagh mein le kar jao — booklet hall mein nahi.<br>Hall mein — 6 sunehri usool<br>1. Pehle 10′ poora paper parho; Section C ke apne 3 strongest<br>sawal chuno.<br>2. MCQ pehle — jaldi, magar har option parh ke.<br>3. Har long answer: Define · Explain · Example · Diagram ·<br>Working.<br>4. Diagrams pencil + ruler se, labels aur title ke saath.<br>5. Python: indentation, colons, quotes check.<br>6. Aakhri 10′ — roll no., question numbers, khali chhore sawal<br>check.<br>5-mark frame — ek nazar 🧠<br>Step<br>Kya likho<br>Misaal (Stack)<br>Define<br>Kitaab wali exact English definition<br>A stack is a linear data structure that works on the LIFO principle: Last-In, First-Out.<br>Explain<br>2–3 lines Urdu soch, English likhai<br>PUSH top pe add, POP top se nikale; TOP sab se upar.<br>Example<br>Pakistani / rozmarra misaal<br>Undo button; canteen ki plates.<br>Diagram<br>Labelled diagram ya table<br>Vertical boxes, TOP label, PUSH/POP arrows.<br>Working<br>Steps / trace / formula<br>PUSH D1, D2, D3 → POP = D3 → stack [D1, D2].<br>Aakhri nazar — 6 pm se pehle ek dafa 👀<br>Topic<br>Aakhri nazar (mnemonic / formula)<br>HCI<br>H-BEN domains · P-I-I-E-E importance<br>Accessibility<br>C-F-C-N-M<br>UI vs UX<br>UI = jo dikhe; UX = jo mehsoos ho<br>Big O<br>Stack /<br>Queue<br>LIFO push/pop · FIFO rear in, front out<br>Python types<br>[ ] list · ( ) tuple · { } set · {k:v} dict<br>Topic<br>Aakhri nazar (mnemonic / formula)<br>Files<br>r read · w wipe+write · a add · with = auto close<br>SQLite<br>connect → cursor → execute → commit → close<br>Stats<br>,<br>Neural network<br>I-H-O; weights, bias, activation, loss<br>Security<br>A-A-A-P-S · MFA know/have/are · 3-2-1 backup<br>Startup<br>Do Big Things Iteratively · MVP · beachhead S-R-U<br>🧠 Yaad rakho: 30 din mukammal. Tum ne har Golden kam az kam 3 dafa dekha hai. Ab aaram — kal behtareen do. 🌟 Best of<br>luck!<br>CS XII · Sindh Curriculum 2025–27 · Ultimate Cheat-Sheet (Urdish)<br>CS XII · Mock, Mark &amp; Repair · Days 28–30<br>30<br>Day</div>
+      <details class="checkpoint-panel">
+        <summary>Closed-book checkpoint (105–135′)</summary>
+        <p>Book band karke ★ Must lock definitions likho. Phir answer key se match karo.</p>
+        <textarea rows="4" placeholder="Apna jawab yahan likho…" aria-label="Checkpoint notes day 30"></textarea>
+      </details>
+    </section>
+    <aside class="diagram flex-col" aria-label="Visual aid">
+      <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e2e8f0" stroke-width="10"/><path d="M60 12 A48 48 0 1 1 59 12" fill="none" stroke="#6366f1" stroke-width="10" stroke-linecap="round"/><text x="60" y="65" text-anchor="middle" font-size="14" fill="#4338ca">Day 30</text></svg>
+      <p class="diagram-caption">SVG concept map · is din ke topic se linked</p>
+    </aside>
+  </div>
+</article>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <p>Offline-friendly after first load · MathJax + Web Speech API · Flexbox layout · inline SVG</p>
+  </footer>
+</body>
+</html>
