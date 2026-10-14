@@ -13,11 +13,19 @@
   --golden: #581c87;
   --radius: 12px;
   --gap: 1rem;
-  font-family: "Segoe UI", system-ui, sans-serif;
+  --touch-min: 44px;
+  --header-offset: calc(4.5rem + env(safe-area-inset-top, 0px));
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  min-height: 100%;
+  min-height: -webkit-fill-available;
 }
 
 body {
@@ -26,6 +34,10 @@ body {
   color: var(--text);
   line-height: 1.55;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
 .flex-row {
@@ -42,9 +54,10 @@ body {
 }
 
 .site-header {
-  padding: 1.25rem 1.5rem;
+  padding: calc(0.75rem + env(safe-area-inset-top, 0px)) 1rem 0.75rem 1.5rem;
   border-bottom: 1px solid var(--surface2);
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.92);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   justify-content: space-between;
   position: sticky;
@@ -108,11 +121,14 @@ body {
 
 .nav-day {
   display: block;
-  padding: 0.35rem 0.5rem;
+  padding: 0.55rem 0.75rem;
+  min-height: var(--touch-min);
+  line-height: 1.3;
   color: var(--muted);
   text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.85rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-day:hover,
@@ -133,7 +149,7 @@ body {
   border-radius: var(--radius);
   padding: 1rem 1.1rem;
   margin-bottom: 1.25rem;
-  scroll-margin-top: 5rem;
+  scroll-margin-top: var(--header-offset);
 }
 
 .day-card.phase-checkpoint {
@@ -171,10 +187,13 @@ body {
   border: none;
   background: var(--accent);
   color: #fff;
-  padding: 0.45rem 0.75rem;
-  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  min-height: var(--touch-min);
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 1rem;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn:hover {
@@ -269,8 +288,9 @@ body {
   border: 1px solid #475569;
   background: #0f172a;
   color: var(--text);
-  padding: 0.5rem;
+  padding: 0.65rem;
   font-family: inherit;
+  font-size: 16px;
 }
 
 .tts-bar label {
@@ -282,7 +302,45 @@ body {
 
 .tts-bar select,
 .tts-bar input[type="range"] {
-  max-width: 160px;
+  max-width: min(160px, 100%);
+  font-size: 16px;
+}
+
+.tts-bar input[type="range"] {
+  min-height: var(--touch-min);
+}
+
+.mobile-day-jump {
+  display: none;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--surface2);
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.mobile-day-jump label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  flex: 0 0 auto;
+}
+
+.mobile-day-jump select {
+  flex: 1 1 auto;
+  min-height: var(--touch-min);
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--surface2);
+  background: var(--surface2);
+  color: var(--text);
+  padding: 0.35rem 0.5rem;
+}
+
+.ios-tts-hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0;
+  max-width: 14rem;
 }
 
 .index-main {
@@ -326,15 +384,68 @@ body {
 }
 
 @media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tts-bar {
+    width: 100%;
+  }
+
+  .mobile-day-jump {
+    display: flex;
+  }
+
   .sidebar {
     flex: 1 1 100%;
     max-height: none;
     position: static;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    gap: 0.35rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .nav-day {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    white-space: nowrap;
+  }
+
+  .nav-home {
+    flex: 0 0 auto;
+    align-self: center;
+    padding: 0.5rem;
+  }
+
+  .day-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .header-actions .btn {
+    flex: 1 1 0;
+  }
+
+  .lesson {
+    flex-direction: column;
   }
 
   .diagram {
     max-width: none;
+    order: -1;
+  }
+
+  .schedule .slot {
+    flex: 1 1 100%;
   }
 }
