@@ -1,5 +1,6 @@
 package com.sindhcs.crashcourse
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -11,7 +12,6 @@ import androidx.viewpager2.widget.ViewPager2
 import com.sindhcs.crashcourse.data.Course
 import com.sindhcs.crashcourse.data.CourseDay
 import com.sindhcs.crashcourse.data.CourseRepository
-import com.sindhcs.crashcourse.data.PageNarration
 import com.sindhcs.crashcourse.data.PageRepository
 import com.sindhcs.crashcourse.data.ProgressStore
 import com.sindhcs.crashcourse.data.LectureCue
@@ -45,6 +45,9 @@ class DayActivity : AppCompatActivity() {
     private var cueIndex = -1
     private var autoSync = false
     private var syncingPage = false
+    private val urduTypeface: Typeface by lazy {
+        Typeface.createFromAsset(assets, "fonts/NotoNaskhArabic-Regular.ttf")
+    }
 
     override fun attachBaseContext(newBase: android.content.Context) {
         super.attachBaseContext(LocaleHelper.wrap(newBase))
@@ -178,7 +181,7 @@ class DayActivity : AppCompatActivity() {
             return
         }
         val booklet = pages.getOrElse(binding.pagePager.currentItem) { day.startPage }
-        val script = TutorScript.pageWalkthrough(booklet, day, PageRepository.getBlocks(this, booklet))
+        val script = TutorScript.pageWalkthrough(this, booklet, day, PageRepository.getBlocks(this, booklet))
         startCues(listOf(LectureCue(booklet, "Booklet $booklet", script)), syncPages = true)
     }
 
@@ -263,8 +266,11 @@ class DayActivity : AppCompatActivity() {
     private fun updatePageText() {
         if (!showingPageText) return
         val booklet = pages.getOrElse(binding.pagePager.currentItem) { day.startPage }
-        val text = PageNarration.displayText(PageRepository.getBlocks(this, booklet))
-        binding.pageText.text = text.ifEmpty { getString(R.string.page_text_empty) }
+        val script = TutorScript.pageWalkthrough(this, booklet, day, PageRepository.getBlocks(this, booklet))
+        binding.pageText.typeface = urduTypeface
+        binding.pageText.textDirection = View.TEXT_DIRECTION_FIRST_STRONG
+        binding.pageText.text = MixedVoiceNarrator.visibleTranscript(script)
+            .ifBlank { getString(R.string.page_text_empty) }
     }
 
     private fun updatePageIndicator(position: Int, pages: List<Int>) {

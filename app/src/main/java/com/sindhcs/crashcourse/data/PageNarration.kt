@@ -6,8 +6,12 @@ package com.sindhcs.crashcourse.data
  */
 object PageNarration {
 
-    fun script(bookletPage: Int, day: CourseDay, blocks: List<PageBlock>): String =
-        TutorScript.pageWalkthrough(bookletPage, day, blocks)
+    fun script(
+        context: android.content.Context,
+        bookletPage: Int,
+        day: CourseDay,
+        blocks: List<PageBlock>
+    ): String = TutorScript.pageWalkthrough(context, bookletPage, day, blocks)
 
     fun displayText(blocks: List<PageBlock>): String {
         if (blocks.isEmpty()) return ""

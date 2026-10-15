@@ -2,7 +2,7 @@ package com.sindhcs.crashcourse.data
 
 /**
  * Academic tutoring scripts: spoken Urdu with English exam terms left as printed.
- * On-screen copy stays English; this object is for TTS only.
+ * Page lectures come from the embedded tts.json text. On-screen lesson notes stay English.
  */
 enum class TutorPhase { FULL, RECAP, TEACH, DRILL, HOMEWORK }
 
@@ -51,7 +51,7 @@ object TutorScript {
                         LectureCue(
                             page,
                             "Booklet $page",
-                            pageWalkthrough(page, day, PageRepository.getBlocks(context, page))
+                            pageWalkthrough(context, page, day, PageRepository.getBlocks(context, page))
                         )
                     )
                 }
@@ -68,7 +68,7 @@ object TutorScript {
                         LectureCue(
                             page,
                             "Booklet $page",
-                            pageWalkthrough(page, day, PageRepository.getBlocks(context, page))
+                            pageWalkthrough(context, page, day, PageRepository.getBlocks(context, page))
                         )
                     )
                 }
@@ -94,7 +94,14 @@ object TutorScript {
         }
     }
 
-    fun pageWalkthrough(bookletPage: Int, day: CourseDay, blocks: List<PageBlock>): String {
+    fun pageWalkthrough(
+        context: android.content.Context,
+        bookletPage: Int,
+        day: CourseDay,
+        blocks: List<PageBlock>
+    ): String {
+        val embedded = PageRepository.getSpeech(context, bookletPage)
+        if (embedded.isNotBlank()) return embedded
         if (blocks.isEmpty()) return day.pageScript(bookletPage)
         val parts = ArrayList<String>()
         parts.add("اب ہم کتابچے کا صفحہ نمبر $bookletPage ساتھ پڑھتے ہیں۔ صفحہ جوں کا توں کھلا رکھیں۔")
