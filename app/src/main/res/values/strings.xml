@@ -41,13 +41,13 @@
     <string name="filter_revision">Revision</string>
     <string name="next_day">Next session</string>
     <string name="prev_day">Previous session</string>
-    <string name="version_badge">Version %1$s — Urdu tutor · diagrams and symbols embedded · English terms as printed</string>
+    <string name="version_badge">Version %1$s — Urdu descriptions and English terms embedded as tutor text</string>
     <string name="topics_today">Learning outcomes</string>
     <string name="progress_label">%1$d of 30 sessions ticked</string>
     <string name="empty_days">No days in this filter.</string>
-    <string name="page_text">Page text</string>
-    <string name="hide_page_text">Hide page text</string>
-    <string name="page_text_empty">This page has no extra text.</string>
+    <string name="page_text">Tutor text</string>
+    <string name="hide_page_text">Hide tutor text</string>
+    <string name="page_text_empty">This page has no tutor text yet.</string>
     <string name="speed_label">Speed %1$s</string>
     <string name="continue_label">Continue session: %1$s, Day %2$d</string>
     <string name="continue_how_to">Continue: How to run this course</string>

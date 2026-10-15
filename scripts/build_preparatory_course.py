@@ -4,6 +4,7 @@
 Writes:
   app/src/main/assets/course/pages.json   — English text of every printed page
   app/src/main/assets/course/course.json  — XI and XII 30-day plans with Urdu scripts
+  app/src/main/assets/course/tts.json     — Urdu description + {English terms} for TTS
 
 The combined booklet PDF (crash-course.pdf) is produced separately and already
 contains every symbol, gate, table and diagram.
@@ -821,3 +822,5 @@ def build_course() -> None:
 if __name__ == "__main__":
     extract_pages()
     build_course()
+    import embed_tts_text
+    embed_tts_text.main()

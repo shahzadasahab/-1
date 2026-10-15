@@ -11,8 +11,8 @@ android {
         applicationId = "com.sindhcs.crashcourse"
         minSdk = 24
         targetSdk = 34
-        versionCode = 6
-        versionName = "2.0.0"
+        versionCode = 7
+        versionName = "2.1.0"
 
         ndk {
             // arm64 keeps the embedded voice and the full booklet under the sideload size limit.
