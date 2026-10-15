@@ -11,15 +11,13 @@ Preparatory material for the **New Sindh Curriculum 2026**, built from the bilin
 
 ## Download
 
-Version **2.1.0** puts the tutor’s words in the app as text: Urdu description, English exam terms in `{braces}`. Rebuild the APK to install that version (`./gradlew assembleDebug`). The home screen should then read **Version 2.1.0 — Urdu descriptions and English terms embedded as tutor text**.
+**Version 2.1.0** — Urdu descriptions and English exam terms embedded as tutor text. Direct download (arm64):
 
-The APK already stored in this repo is the previous **2.0.0** build (diagrams, symbols, and the Urdu voice, without the per-page tutor text):
+https://github.com/shahzadasahab/-1/raw/cursor/embed-urdu-english-tts-4c40/releases/CS-XI-XII-TeachYourself-v2.1.0-urdu-tts-debug.apk
 
-https://github.com/shahzadasahab/-1/raw/cursor/cs-30day-teach-yourself-2ef7/releases/CS-XI-XII-TeachYourself-v2.0.0-urdu-tts-debug.apk
+Repo copy: `releases/CS-XI-XII-TeachYourself-v2.1.0-urdu-tts-debug.apk`
 
-Repo copy: `releases/CS-XI-XII-TeachYourself-v2.0.0-urdu-tts-debug.apk`
-
-That file is arm64. Install it on a 64-bit Android phone. Uninstall any older crash-course build first.
+Uninstall any older crash-course build first. The home screen should read **Version 2.1.0 — Urdu descriptions and English terms embedded as tutor text**. Install it on a 64-bit Android phone. Open a day and tap **Tutor text** to read the same Urdu-and-English script the voice speaks.
 
 ## How to use
 
@@ -49,6 +47,7 @@ The combined booklet is `app/src/main/assets/course/crash-course.pdf` (288 pages
 - The description is Urdu. Exam terminology stays inside `{braces}` and is spoken in English, as printed.
 - **Tutor text** on the day screen shows that same script, with the braces removed so it can be read.
 - Listen as tutor, and Tutor this scan, speak this embedded text. Page turns still follow the lecture.
+- Debug APK `CS-XI-XII-TeachYourself-v2.1.0-urdu-tts-debug.apk` is versionName 2.1.0 and contains `tts.json` plus the Fasih voice. Not tested on a physical phone in this environment.
 
 ## Version 2.0.0
 
