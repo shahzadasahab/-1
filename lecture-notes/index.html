@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Computer Science Lecture Notes · Classes XI and XII</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    tags: 'none'
+  },
+  svg: { fontCache: 'global' },
+  startup: { typeset: true }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {
+    --ink: #1c2430;
+    --navy: #16324f;
+    --teal: #0e6b66;
+    --clay: #9a4524;
+    --sand: #f6f3ec;
+    --card: #f4f8f8;
+    --line: #d3dde4;
+    --muted: #4c5d6c;
+    --soft: #e7f2f1;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Liberation Serif", "Noto Serif", serif;
+    color: var(--ink);
+    font-size: 10.75pt;
+    line-height: 1.45;
+    background: white;
+  }
+  h1, h2, h3, h4, .sans, .kicker, .figcap, th, .chip, .lab, .say, .foot, .toc a, .meta {
+    font-family: "Liberation Sans", "Noto Sans", sans-serif;
+  }
+  h1 { font-size: 28pt; line-height: 1.05; margin: 0; color: var(--navy); letter-spacing: -0.02em; }
+  h2 { font-size: 18pt; line-height: 1.15; margin: 0; color: var(--navy); }
+  h3 { font-size: 12.4pt; margin: 13px 0 4px; color: var(--navy); break-after: avoid; }
+  h4 { font-size: 11pt; margin: 8px 0 3px; color: var(--teal); break-after: avoid; }
+  p { margin: 0 0 7px; }
+  a { color: var(--navy); text-decoration: none; }
+  strong { font-weight: 700; }
+  .cover { break-after: page; }
+  .lecture { margin-top: 4px; }
+  .lec-head { break-inside: avoid; break-after: avoid; }
+  .kicker {
+    font-size: 8.6pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--clay);
+    font-weight: 700;
+    margin: 0 0 3px;
+  }
+  .deck { margin: 4px 0 0; color: var(--muted); font-size: 11pt; }
+  .lec-head {
+    display: flex;
+    flex-direction: column;
+    border-top: 2.4px solid var(--navy);
+    border-bottom: 2.4px solid var(--navy);
+    padding: 8px 0 7px;
+    margin: 16px 0 10px;
+  }
+  .cover + .lecture .lec-head { margin-top: 0; }
+  #sheet .card { padding: 5px 8px 4px; }
+  #sheet .cards { gap: 6px; }
+  #sheet table { margin: 4px 0; }
+  #sheet td, #sheet th { padding: 2px 6px; }
+  #sheet .closing { margin-top: 4px; }
+  .row, .pair, .trio, .cards, .split, .headrow, .toc, .banner, .steps, .qa, .stackrow {
+    display: flex;
+    gap: 10px;
+  }
+  .pair > *, .split > *, .qa > *, .toc > * { flex: 1 1 0; min-width: 0; }
+  .trio, .cards { flex-wrap: wrap; }
+  .card, .note, .say, .lab, .outcomes, .check, pre, table, figure, .keep {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .card {
+    flex: 1 1 30%;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 8px 10px 7px;
+  }
+  .card h4 { margin-top: 0; }
+  .card p:last-child { margin-bottom: 0; }
+  .note {
+    background: var(--sand);
+    border-left: 3.5px solid var(--clay);
+    padding: 7px 10px;
+    margin: 8px 0;
+  }
+  .say {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    background: var(--soft);
+    border-radius: 7px;
+    padding: 7px 10px;
+    margin: 8px 0;
+  }
+  .say b {
+    flex: 0 0 auto;
+    font-family: "Liberation Sans", sans-serif;
+    font-size: 8pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal);
+    padding-top: 2px;
+  }
+  .lab {
+    border: 1px dashed var(--teal);
+    border-radius: 7px;
+    padding: 7px 10px;
+    margin: 8px 0;
+    background: #f8fcfb;
+  }
+  .lab .tag {
+    font-family: "Liberation Sans", sans-serif;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+  .outcomes {
+    margin: 6px 0 8px;
+    padding: 6px 8px 6px 22px;
+    background: #f3f7f8;
+    border-left: 4px solid var(--teal);
+  }
+  .outcomes li { margin: 1px 0; }
+  ul, ol { margin: 4px 0 8px; padding-left: 1.2em; }
+  li { margin: 1px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6px 0 8px;
+    font-size: 9.3pt;
+    font-family: "Liberation Sans", sans-serif;
+  }
+  th, td {
+    border: 1px solid #b7c6d1;
+    padding: 3px 6px;
+    vertical-align: top;
+    text-align: left;
+  }
+  th { background: var(--navy); color: white; font-weight: 650; }
+  tr:nth-child(even) td { background: #f5f8fa; }
+  table.tt td, table.tt th { text-align: center; }
+  code, pre { font-family: "JetBrains Mono", "Liberation Mono", monospace; }
+  code { font-size: 0.92em; background: #f3efe6; padding: 0 3px; border-radius: 3px; }
+  pre {
+    font-size: 8.5pt;
+    line-height: 1.38;
+    background: #f7f4ee;
+    border: 1px solid #e3dac8;
+    border-left: 3px solid var(--teal);
+    padding: 7px 9px;
+    margin: 6px 0 8px;
+    white-space: pre-wrap;
+  }
+  figure { margin: 6px 0 8px; }
+  .figcap {
+    font-size: 8.5pt;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  svg text { font-family: "Liberation Sans", sans-serif; }
+  .check {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 7px 10px;
+    margin-top: 6px;
+  }
+  .check h3 { margin-top: 0; }
+  .ans { color: var(--muted); font-size: 10pt; }
+  .cover { min-height: 250mm; display: flex; flex-direction: column; }
+  .banner { margin: 14px 0; align-items: stretch; }
+  .banner .panel {
+    flex: 1;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 6px;
+    background: white;
+  }
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    border-top: 1px solid var(--line);
+    margin-top: auto;
+    padding-top: 8px;
+    font-size: 9pt;
+    color: var(--muted);
+  }
+  .toc { margin-top: 8px; }
+  .toc ol { margin: 0; padding-left: 1.3em; }
+  .toc li { margin: 3px 0; }
+  .toc span { color: var(--muted); }
+  .steps { flex-direction: column; gap: 0; margin: 4px 0 8px; }
+  .step {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    break-inside: avoid;
+  }
+  .n {
+    flex: 0 0 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: white;
+    font-family: "Liberation Sans", sans-serif;
+    font-size: 8.5pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+  .rule { height: 1px; background: var(--line); margin: 8px 0; }
+  mjx-container { break-inside: avoid; }
+  @page {
+    size: A4;
+    margin: 13mm 13mm 15mm 13mm;
+  }
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <p class="kicker">Lecture notes · original teaching draft</p>
+  <h1>Computer Science</h1>
+  <p class="deck" style="font-size:15pt;color:var(--navy);margin-top:4px;">Classes XI and XII</p>
+  <p>Twelve lectures on how computers represent information, how software is built, how algorithms and Python programs solve problems, how data is stored and analysed, how people and machines interact, and how a small digital idea becomes a first product.</p>
+  <div class="banner">
+    <div class="panel">
+      <svg viewBox="0 0 220 120" width="100%" role="img" aria-label="AND gate with inputs A and B and output Y">
+        <text x="6" y="46" font-size="13" fill="#16324f">A</text>
+        <text x="6" y="86" font-size="13" fill="#16324f">B</text>
+        <line x1="20" y1="42" x2="62" y2="42" stroke="#16324f" stroke-width="2"/>
+        <line x1="20" y1="82" x2="62" y2="82" stroke="#16324f" stroke-width="2"/>
+        <path d="M62 18 H108 A40 40 0 0 1 108 102 H62 Z" fill="#e5f4f3" stroke="#16324f" stroke-width="2.2"/>
+        <line x1="148" y1="60" x2="188" y2="60" stroke="#16324f" stroke-width="2"/>
+        <text x="194" y="64" font-size="13" fill="#16324f">Y</text>
+        <text x="78" y="66" font-size="13" fill="#0e6b66">AND</text>
+      </svg>
+      <p class="figcap">Digital logic · Class XI</p>
+    </div>
+    <div class="panel">
+      <svg viewBox="0 0 220 120" width="100%" role="img" aria-label="Seven-layer stack shrinking into four TCP/IP layers">
+        <g font-size="9" fill="#16324f">
+          <rect x="8" y="8" width="96" height="13" fill="#d9ebe9" stroke="#16324f"/><text x="14" y="18">Application</text>
+          <rect x="8" y="22" width="96" height="13" fill="#e7f2f1" stroke="#16324f"/><text x="14" y="32">Presentation</text>
+          <rect x="8" y="36" width="96" height="13" fill="#d9ebe9" stroke="#16324f"/><text x="14" y="46">Session</text>
+          <rect x="8" y="50" width="96" height="13" fill="#f6e4da" stroke="#16324f"/><text x="14" y="60">Transport</text>
+          <rect x="8" y="64" width="96" height="13" fill="#f8efe2" stroke="#16324f"/><text x="14" y="74">Network</text>
+          <rect x="8" y="78" width="96" height="13" fill="#e7eef5" stroke="#16324f"/><text x="14" y="88">Data link</text>
+          <rect x="8" y="92" width="96" height="13" fill="#f4f7fa" stroke="#16324f"/><text x="14" y="102">Physical</text>
+        </g>
+        <path d="M112 60 H128" stroke="#9a4524" stroke-width="1.6" marker-end="url(#arr)"/>
+        <g font-size="9" fill="#16324f">
+          <rect x="132" y="14" width="80" height="22" fill="#d9ebe9" stroke="#16324f"/><text x="140" y="28">Application</text>
+          <rect x="132" y="38" width="80" height="16" fill="#f6e4da" stroke="#16324f"/><text x="140" y="49">Transport</text>
+          <rect x="132" y="56" width="80" height="16" fill="#f8efe2" stroke="#16324f"/><text x="140" y="67">Internet</text>
+          <rect x="132" y="74" width="80" height="28" fill="#e7eef5" stroke="#16324f"/><text x="140" y="91">Network access</text>
+        </g>
+        <defs><marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#9a4524"/></marker></defs>
+      </svg>
+      <p class="figcap">OSI and TCP/IP · Class XI</p>
+    </div>
+    <div class="panel">
+      <svg viewBox="0 0 220 120" width="100%" role="img" aria-label="Small neural network with three inputs, a hidden layer, and one output">
+        <g fill="#e5f4f3" stroke="#16324f" stroke-width="1.6">
+          <circle cx="36" cy="30" r="10"/><circle cx="36" cy="60" r="10"/><circle cx="36" cy="90" r="10"/>
+          <circle cx="110" cy="40" r="12"/><circle cx="110" cy="78" r="12"/>
+          <circle cx="184" cy="59" r="13"/>
+        </g>
+        <g stroke="#8aa0b0" stroke-width="1.2">
+          <line x1="46" y1="30" x2="98" y2="40"/><line x1="46" y1="30" x2="98" y2="78"/>
+          <line x1="46" y1="60" x2="98" y2="40"/><line x1="46" y1="60" x2="98" y2="78"/>
+          <line x1="46" y1="90" x2="98" y2="40"/><line x1="46" y1="90" x2="98" y2="78"/>
+          <line x1="122" y1="40" x2="171" y2="59"/><line x1="122" y1="78" x2="171" y2="59"/>
+        </g>
+        <text x="28" y="114" font-size="10" fill="#4c5d6c">input</text>
+        <text x="92" y="114" font-size="10" fill="#4c5d6c">hidden</text>
+        <text x="168" y="114" font-size="10" fill="#4c5d6c">output</text>
+      </svg>
+      <p class="figcap">Neural networks · Class XII</p>
+    </div>
+  </div>
+  <p>These notes follow the learning outcomes of the Class XI and Class XII computer-science units. The explanations, worked examples, and diagrams are written for the lecture; they are not a copy of the textbook. Diagrams are inline SVG. Formulas are set with MathJax. The page is laid out with CSS flexbox, then printed to PDF so the vectors remain sharp.</p>
+  <h3>How to use a lecture</h3>
+  <div class="cards">
+    <div class="card"><h4>1. Outcome</h4><p>Read the checklist. If you can already do an item, skim that section and spend time on the one you cannot explain aloud.</p></div>
+    <div class="card"><h4>2. Diagram</h4><p>Redraw the figure from memory. A gate, a stack, or an ER diagram that you can redraw is a diagram you understand.</p></div>
+    <div class="card"><h4>3. Example</h4><p>Close the notes and repeat the worked example with a new set of numbers. Then answer the checkpoint before you look at the sketch answers.</p></div>
+  </div>
+  <div class="toc">
+    <ol>
+      <li><strong>Computer systems</strong> <span>· XI · logic, SDLC, OSI and TCP/IP</span></li>
+      <li><strong>Computational thinking</strong> <span>· XI · strategies, sort, and search</span></li>
+      <li><strong>Programming fundamentals</strong> <span>· XI · Python, decisions, loops</span></li>
+      <li><strong>Data and analysis</strong> <span>· XI · databases, ER models, Access</span></li>
+      <li><strong>Applications and impacts</strong> <span>· XI · AI, IoT, reliable sources</span></li>
+      <li><strong>Digital literacy</strong> <span>· XI · inquiry, data collection, ethics</span></li>
+    </ol>
+    <ol start="7">
+      <li><strong>Human–computer interaction</strong> <span>· XII · accessibility, UI/UX, Figma</span></li>
+      <li><strong>Algorithms and structures</strong> <span>· XII · traces, Big O, lists, trees</span></li>
+      <li><strong>Python in depth</strong> <span>· XII · collections, functions, files</span></li>
+      <li><strong>Data analysis with Python</strong> <span>· XII · SQLite, charts, statistics</span></li>
+      <li><strong>Impacts of computing</strong> <span>· XII · networks, security, equity</span></li>
+      <li><strong>Digital entrepreneurship</strong> <span>· XII · prototype, MVP, beachhead</span></li>
+    </ol>
+  </div>
+  <div class="meta"><span>Flexbox layout · SVG diagrams · MathJax formulas</span><span>Revision draft for classroom use</span></div>
+</section>
+
+<section class="lecture" id="l1">
+  <header class="lec-head">
+    <p class="kicker">Class XI · Lecture 1</p>
+    <h2>Computer systems</h2>
+    <p class="deck">From two electrical states, to a software process, to a message crossing a network.</p>
+  </header>
+  <ol class="outcomes">
+    <li>Distinguish discrete and continuous quantities, and analog and digital representation.</li>
+    <li>Apply Boolean operations, build truth tables, and read logic-gate diagrams.</li>
+    <li>Describe the six phases of the software development life cycle, and choose between Waterfall and Agile.</li>
+    <li>Explain the OSI and TCP/IP models, the job of each layer, and encapsulation.</li>
+  </ol>
+
+  <h3>Discrete, continuous, analog, digital</h3>
+  <div class="pair">
+    <div>
+      <p>A <strong>discrete</strong> quantity jumps from one countable value to the next: students in a room, books on a shelf. A <strong>continuous</strong> quantity can fall anywhere inside a range: temperature, height, the position of a car along a road.</p>
+      <p>An <strong>analog</strong> signal follows a continuous quantity. A microphone voltage rises and falls with the sound. A <strong>digital</strong> signal uses a finite set of symbols. Inside a computer those symbols are two voltages, written 0 and 1. A clock, a calculator, and a processor all reduce their work to patterns of those two states.</p>
+    </div>
+    <figure>
+      <svg viewBox="0 0 320 130" width="100%" role="img" aria-label="Stairs for discrete values beside a smooth ramp for continuous values">
+        <text x="8" y="16" font-size="12" fill="#16324f">Discrete</text>
+        <path d="M16 110 H46 V90 H76 V70 H106 V50 H136 V30" fill="none" stroke="#16324f" stroke-width="2.4"/>
+        <text x="170" y="16" font-size="12" fill="#0e6b66">Continuous</text>
+        <path d="M168 110 C210 108 230 40 300 28" fill="none" stroke="#0e6b66" stroke-width="2.4"/>
+        <text x="8" y="126" font-size="10" fill="#4c5d6c">countable steps</text>
+        <text x="168" y="126" font-size="10" fill="#4c5d6c">any value along the curve</text>
+      </svg>
+      <p class="figcap">Figure 1. Stairs are discrete. A ramp is continuous.</p>
+    </figure>
+  </div>
+  <div class="say"><b>One sentence</b><span>Digital systems store and process information as symbols from a finite set, and modern computers use the two symbols 0 and 1.</span></div>
+
+  <h3>Boolean algebra</h3>
+  <p>Boolean algebra, introduced by George Boole, uses only the values 0 and 1. A letter such as \(A\) or \(B\) is a variable. An expression combines variables with operations. With \(n\) inputs a complete truth table has</p>
+  \[ \text{rows} = 2^{n}. \]
+  <p>Two inputs need 4 rows. Three inputs need 8. List the input combinations in binary order so none are missed.</p>
+  <table class="tt">
+    <tr><th>Operation</th><th>Reading</th><th>Expression</th><th>Output is 1 when</th></tr>
+    <tr><td>AND</td><td>both</td><td>\(Y = A \cdot B\)</td><td>every input is 1</td></tr>
+    <tr><td>OR</td><td>either</td><td>\(Y = A + B\)</td><td>at least one input is 1</td></tr>
+    <tr><td>NOT</td><td>opposite</td><td>\(Y = \overline{A}\)</td><td>the single input is 0</td></tr>
+  </table>
+  <p>A door with two locks is AND: both must be open. A room with two doors is OR: either door is enough. A switch that turns a lamp off when it was on is NOT. NOT has one input; AND and OR have two or more.</p>
+
+  <h3>Logic gates</h3>
+  <p>A logic gate is a circuit that performs one Boolean operation. Each gate in this course has one output. NAND and NOR are universal: either one, used repeatedly, can build AND, OR, and NOT. XOR is 1 when the inputs differ. XNOR is 1 when they match.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h4>AND · \(Y=A\cdot B\)</h4>
+      <svg viewBox="0 0 210 100" width="100%" role="img" aria-label="AND gate symbol">
+        <text x="2" y="36" font-size="12" fill="#16324f">A</text>
+        <text x="2" y="74" font-size="12" fill="#16324f">B</text>
+        <line x1="16" y1="32" x2="54" y2="32" stroke="#16324f" stroke-width="2"/>
+        <line x1="16" y1="70" x2="54" y2="70" stroke="#16324f" stroke-width="2"/>
+        <path d="M54 14 H96 A34 34 0 0 1 96 86 H54 Z" fill="#e5f4f3" stroke="#16324f" stroke-width="2"/>
+        <line x1="130" y1="50" x2="168" y2="50" stroke="#16324f" stroke-width="2"/>
+        <text x="174" y="54" font-size="12" fill="#16324f">Y</text>
+      </svg>
+      <table class="tt"><tr><th>A</th><th>B</th><th>Y</th></tr><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></table>
+    </div>
+    <div class="card">
+      <h4>OR · \(Y=A+B\)</h4>
+      <svg viewBox="0 0 210 100" width="100%" role="img" aria-label="OR gate symbol">
+        <text x="2" y="36" font-size="12" fill="#16324f">A</text>
+        <text x="2" y="74" font-size="12" fill="#16324f">B</text>
+        <line x1="16" y1="32" x2="62" y2="32" stroke="#16324f" stroke-width="2"/>
+        <line x1="16" y1="70" x2="62" y2="70" stroke="#16324f" stroke-width="2"/>
+        <path d="M48 14 Q78 14 108 50 Q78 86 48 86 Q70 50 48 14 Z" fill="#e5f4f3" stroke="#16324f" stroke-width="2"/>
+        <line x1="108" y1="50" x2="168" y2="50" stroke="#16324f" stroke-width="2"/>
+        <text x="174" y="54" font-size="12" fill="#16324f">Y</text>
+      </svg>
+      <table class="tt"><tr><th>A</th><th>B</th><th>Y</th></tr><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></table>
+    </div>
+    <div class="card">
+      <h4>NOT · \(Y=\overline{A}\)</h4>
+      <svg viewBox="0 0 210 100" width="100%" role="img" aria-label="NOT gate symbol">
+        <text x="2" y="54" font-size="12" fill="#16324f">A</text>
+        <line x1="16" y1="50" x2="48" y2="50" stroke="#16324f" stroke-width="2"/>
+        <polygon points="48,16 48,84 112,50" fill="#e5f4f3" stroke="#16324f" stroke-width="2"/>
+        <circle cx="122" cy="50" r="8" fill="white" stroke="#16324f" stroke-width="2"/>
+        <line x1="130" y1="50" x2="168" y2="50" stroke="#16324f" stroke-width="2"/>
+        <text x="174" y="54" font-size="12" fill="#16324f">Y</text>
+      </svg>
+      <table class="tt"><tr><th>A</th><th>Y</th></tr><tr><td>0</td><td>1</td></tr><tr><td>1</td><td>0</td></tr></table>
+    </div>
+    <div class="card">
+      <h4>NAND · \(Y=\overline{A\cdot B}\)</h4>
+      <svg viewBox="0 0 210 100" width="100%" role="img" aria-label="NAND gate symbol">
+        <text x="2" y="36" font-size="12" fill="#16324f">A</text>
+        <text x="2" y="74" font-size="12" fill="#16324f">B</text>
+        <line x1="16" y1="32" x2="48" y2="32" stroke="#16324f" stroke-width="2"/>
+        <line x1="16" y1="70" x2="48" y2="70" stroke="#16324f" stroke-width="2"/>
+        <path d="M48 14 H88 A32 32 0 0 1 88 86 H48 Z" fill="#f6e4da" stroke="#16324f" stroke-width="2"/>
+        <circle cx="128" cy="50" r="8" fill="white" stroke="#16324f" stroke-width="2"/>
+        <line x1="136" y1="50" x2="168" y2="50" stroke="#16324f" stroke-width="2"/>
+        <text x="174" y="54" font-size="12" fill="#16324f">Y</text>
+      </svg>
+      <table class="tt"><tr><th>A</th><th>B</th><th>Y</th></tr><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></table>
+    </div>
+    <div class="card">
+      <h4>NOR · \(Y=\overline{A+B}\)</h4>
+      <svg viewBox="0 0 210 100" width="100%" role="img" aria-label="NOR gate symbol">
+        <text x="2" y="36" font-size="12" fill="#16324f">A</text>
+        <text x="2" y="74" font-size="12" fill="#16324f">B</text>
+        <line x1="16" y1="32" x2="58" y2="32" stroke="#16324f" stroke-width="2"/>
+        <line x1="16" y1="70" x2="58" y2="70" stroke="#16324f" stroke-width="2"/>
+        <path d="M44 14 Q72 14 100 50 Q72 86 44 86 Q64 50 44 14 Z" fill="#f6e4da" stroke="#16324f" stroke-width="2"/>
+        <circle cx="112" cy="50" r="8" fill="white" stroke="#16324f" stroke-width="2"/>
+        <line x1="120" y1="50" x2="168" y2="50" stroke="#16324f" stroke-width="2"/>
+        <text x="174" y="54" font-size="12" fill="#16324f">Y</text>
+      </svg>
+      <table class="tt"><tr><th>A</th><th>B</th><th>Y</th></tr><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></table>
+    </div>
+    <div class="card">
+      <h4>XOR · \(Y=A\oplus B\)</h4>
+      <svg viewBox="0 0 210 100" width="100%" role="img" aria-label="XOR gate symbol">
+        <text x="0" y="36" font-size="12" fill="#16324f">A</text>
+        <text x="0" y="74" font-size="12" fill="#16324f">B</text>
+        <path d="M36 14 Q54 50 36 86" fill="none" stroke="#16324f" stroke-width="2"/>
+        <line x1="14" y1="32" x2="48" y2="32" stroke="#16324f" stroke-width="2"/>
+        <line x1="14" y1="70" x2="48" y2="70" stroke="#16324f" stroke-width="2"/>
+        <path d="M48 14 Q76 14 108 50 Q76 86 48 86 Q68 50 48 14 Z" fill="#f8efe2" stroke="#16324f" stroke-width="2"/>
+        <line x1="108" y1="50" x2="168" y2="50" stroke="#16324f" stroke-width="2"/>
+        <text x="174" y="54" font-size="12" fill="#16324f">Y</text>
+      </svg>
+      <table class="tt"><tr><th>A</th><th>B</th><th>Y</th></tr><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></table>
+      <p>XNOR is XOR followed by a bubble: \(Y=\overline{A\oplus B}\). It is 1 only on the rows 00 and 11.</p>
+    </div>
+  </div>
+  <p>The small circle, or bubble, means inversion. NAND is AND then NOT. NOR is OR then NOT. Read a bubble on the output before you memorise the table: build the inner gate, then flip every output bit.</p>
+
+  <h3>Worked circuit: a night alarm</h3>
+  <p>A shop alarm should sound when it is night and either the door or the window opens. Let \(D\) be the door sensor, \(W\) the window sensor, and \(N\) the night switch.</p>
+  \[ Y = (D + W)\cdot N \]
+  <p>Build it as an OR gate feeding an AND gate. The truth table has \(2^3 = 8\) rows. \(Y\) is 1 only for \((D,W,N) = (1,0,1)\), \((0,1,1)\), and \((1,1,1)\). In daylight \(N=0\), so \(Y=0\) even if a sensor trips. That is the circuit the Boolean expression demanded.</p>
+  <div class="lab">
+    <div class="tag">Lab · Logisim Evolution</div>
+    <p>The textbook calls the simulator LogiSim. The steps below build the two-input AND circuit \(Y=A\cdot B\).</p>
+    <ol>
+      <li>Start a project, then use File → Save As. The file ends in <code>.circ</code>.</li>
+      <li>In the explorer, open Gates and place an AND gate on the canvas.</li>
+      <li>Place two input pins on the left and one output pin on the right. Label them A, B, and Y.</li>
+      <li>Draw wires from A and B into the gate and from the gate to Y. Escape returns you to the select tool.</li>
+      <li>Use the poke tool. Click the inputs through 00, 01, 10, and 11. The output must match the AND table.</li>
+    </ol>
+  </div>
+
+  <h3>The software development life cycle</h3>
+  <p>The SDLC is a planned route from a need to working software that can be maintained. The course uses six phases. Each phase has a reason and a deliverable.</p>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><div><strong>Requirement analysis.</strong> Ask users what the system must do. Write the Software Requirements Specification (SRS).</div></div>
+    <div class="step"><span class="n">2</span><div><strong>System design.</strong> Decide structure (high-level design), components (low-level design), the database, and the screens. Deliver a design document.</div></div>
+    <div class="step"><span class="n">3</span><div><strong>Implementation.</strong> Write readable code, comment the hard parts, and review it with another person.</div></div>
+    <div class="step"><span class="n">4</span><div><strong>Testing.</strong> Unit tests check one piece. Integration tests check pieces together. System testing checks the whole product. User acceptance testing is done by the people who will use it.</div></div>
+    <div class="step"><span class="n">5</span><div><strong>Deployment.</strong> Release the software to its users.</div></div>
+    <div class="step"><span class="n">6</span><div><strong>Maintenance.</strong> Fix faults, adapt to new rules, and improve what real use reveals.</div></div>
+  </div>
+  <div class="pair">
+    <div class="note"><strong>Black-box testing</strong> looks only at inputs and outputs. The tester need not see the code. A login trial is black-box: correct details enter, and either the account opens or it does not.<br><strong>White-box testing</strong> reads the code and checks that branches and conditions behave. Developers usually do this work.</div>
+    <figure>
+      <svg viewBox="0 0 340 150" width="100%" role="img" aria-label="Waterfall of six descending phases">
+        <g font-size="11" fill="#16324f">
+          <rect x="8" y="8" width="150" height="20" fill="#16324f"/><text x="16" y="22" fill="white">1 Analysis</text>
+          <rect x="28" y="30" width="150" height="20" fill="#1d4668"/><text x="36" y="44" fill="white">2 Design</text>
+          <rect x="48" y="52" width="150" height="20" fill="#2a6a66"/><text x="56" y="66" fill="white">3 Coding</text>
+          <rect x="68" y="74" width="150" height="20" fill="#8a5a12"/><text x="76" y="88" fill="white">4 Testing</text>
+          <rect x="88" y="96" width="150" height="20" fill="#9a4524"/><text x="96" y="110" fill="white">5 Deployment</text>
+          <rect x="108" y="118" width="150" height="20" fill="#5c6b7a"/><text x="116" y="132" fill="white">6 Maintenance</text>
+        </g>
+      </svg>
+      <p class="figcap">Figure 2. Waterfall finishes one phase before the next begins.</p>
+    </figure>
+  </div>
+
+  <h3>Waterfall and Agile</h3>
+  <p>Waterfall is a strong choice when the requirements are already clear and are unlikely to move. The textbook’s library system is that kind of project: the records, the loans, and the reports can be specified before coding starts. The cost of Waterfall is late discovery. Testing sits after coding, so a misunderstood requirement may appear only when the build is large.</p>
+  <p>Agile, in the Scrum form used for the textbook’s school mobile app, expects the requirements to change. Work is divided into short sprints. The textbook case uses two-week sprints. Each sprint has planning, daily stand-up, building, a review of working software, and a retrospective on the team’s process. The product backlog is allowed to change after feedback. That fits an app whose students, teachers, and parents discover features as they try them.</p>
+  <figure>
+    <svg viewBox="0 0 520 118" width="100%" role="img" aria-label="Scrum cycle of plan, build, review, and retrospective around a two-week sprint">
+      <rect x="150" y="36" width="220" height="46" rx="8" fill="#16324f"/>
+      <text x="260" y="56" text-anchor="middle" fill="white" font-size="13">Sprint · 2 weeks</text>
+      <text x="260" y="72" text-anchor="middle" fill="#d9ebe9" font-size="11">working software out</text>
+      <g fill="#f4f8f8" stroke="#16324f" stroke-width="1.4" font-size="11">
+        <rect x="8" y="40" width="110" height="36" rx="6"/><text x="63" y="62" text-anchor="middle" fill="#16324f">Plan</text>
+        <rect x="402" y="8" width="110" height="36" rx="6"/><text x="457" y="30" text-anchor="middle" fill="#16324f">Review</text>
+        <rect x="402" y="74" width="110" height="36" rx="6"/><text x="457" y="96" text-anchor="middle" fill="#16324f">Retrospective</text>
+      </g>
+      <g stroke="#9a4524" stroke-width="1.5" fill="none">
+        <path d="M118 58 H150"/><path d="M370 50 H402"/><path d="M370 78 H402"/>
+      </g>
+    </svg>
+    <p class="figcap">Figure 3. A Scrum sprint returns something usable, then plans the next slice.</p>
+  </figure>
+  <table>
+    <tr><th></th><th>Waterfall</th><th>Agile / Scrum</th></tr>
+    <tr><td>Requirements</td><td>Written up front in an SRS</td><td>Emerge and change in the backlog</td></tr>
+    <tr><td>Delivery</td><td>One release after the late phases</td><td>Working software every sprint</td></tr>
+    <tr><td>Testing</td><td>A dedicated phase after coding</td><td>Continuous, inside the sprint</td></tr>
+    <tr><td>Best fit</td><td>Stable, well-understood work</td><td>Unclear needs, fast feedback</td></tr>
+  </table>
+
+  <h3>OSI and TCP/IP</h3>
+  <p>A communication model divides the work of sending a message into layers. Each layer has one job and talks to the layers next to it. The <strong>OSI model</strong> (Open Systems Interconnection), published by ISO, is a seven-layer reference. The <strong>TCP/IP model</strong> is the four-layer model the Internet actually runs. A top-to-bottom memory line for OSI is “All People Seem To Need Data Processing.”</p>
+  <table>
+    <tr><th>#</th><th>OSI layer</th><th>Main job</th><th>You will meet</th></tr>
+    <tr><td>7</td><td>Application</td><td>The service the user touches</td><td>HTTP, HTTPS, FTP, SMTP, DNS</td></tr>
+    <tr><td>6</td><td>Presentation</td><td>Format, compression, encryption</td><td>Translation between data formats</td></tr>
+    <tr><td>5</td><td>Session</td><td>Open, keep, and close a dialogue</td><td>Session setup and recovery</td></tr>
+    <tr><td>4</td><td>Transport</td><td>End-to-end delivery and ports</td><td>TCP, UDP</td></tr>
+    <tr><td>3</td><td>Network</td><td>Logical addresses and routing</td><td>IP, ICMP · IPv4 is 32-bit, IPv6 is 128-bit</td></tr>
+    <tr><td>2</td><td>Data link</td><td>Frames, MAC addresses, error check</td><td>Ethernet, a switch</td></tr>
+    <tr><td>1</td><td>Physical</td><td>Bits as signals on a medium</td><td>Cable, fibre, radio, a hub</td></tr>
+  </table>
+  <div class="pair">
+    <div>
+      <h4>TCP and UDP</h4>
+      <p><strong>TCP</strong> sets up a connection, numbers data so it can be reassembled, and resends what is lost. Web pages, email, and file transfer use it. <strong>UDP</strong> sends datagrams without that handshake. It is lighter, and it is used where a late packet is worse than a missing one: live video, online games, and many DNS queries.</p>
+      <h4>TCP/IP in four layers</h4>
+      <p>Application in TCP/IP covers OSI layers 7, 6, and 5. Transport matches OSI layer 4. Internet matches OSI layer 3. Network Access covers OSI layers 2 and 1. Every device on the Internet uses this stack.</p>
+    </div>
+    <figure>
+      <svg viewBox="0 0 300 210" width="100%" role="img" aria-label="Encapsulation from data down to bits">
+        <g font-size="11" fill="#16324f">
+          <rect x="70" y="8" width="160" height="26" fill="#d9ebe9" stroke="#16324f"/><text x="150" y="25" text-anchor="middle">Data · layers 7–5</text>
+          <rect x="50" y="42" width="200" height="26" fill="#f6e4da" stroke="#16324f"/><text x="150" y="59" text-anchor="middle">Segment · TCP/UDP + ports</text>
+          <rect x="30" y="76" width="240" height="26" fill="#f8efe2" stroke="#16324f"/><text x="150" y="93" text-anchor="middle">Packet · IP addresses</text>
+          <rect x="14" y="110" width="272" height="26" fill="#e7eef5" stroke="#16324f"/><text x="150" y="127" text-anchor="middle">Frame · MAC header and trailer</text>
+          <rect x="14" y="144" width="272" height="26" fill="#16324f"/><text x="150" y="161" text-anchor="middle" fill="white">Bits on the medium</text>
+        </g>
+        <text x="150" y="196" text-anchor="middle" font-size="11" fill="#9a4524">sender adds headers · receiver removes them</text>
+      </svg>
+      <p class="figcap">Figure 4. Encapsulation going down. Decapsulation climbs back up.</p>
+    </figure>
+  </div>
+  <div class="say"><b>One sentence</b><span>OSI is the seven-layer map we use to explain networks; TCP/IP is the four-layer stack that carries Internet traffic.</span></div>
+
+  <div class="check">
+    <h3>Checkpoint</h3>
+    <ol>
+      <li>How many rows does a truth table with 4 inputs have?</li>
+      <li>A gate outputs 0 only when both inputs are 1. Name it, and write the expression.</li>
+      <li>Name the SDLC phase whose deliverable is the SRS, and the two testing methods that differ by whether the tester sees the code.</li>
+      <li>Which OSI layer adds port numbers, and which data-unit name belongs to that layer?</li>
+    </ol>
+    <p class="ans">Sketch answers: 16 rows. NAND, \(Y=\overline{A\cdot B}\). Requirement analysis; black-box and white-box. Transport layer; the segment.</p>
+  </div>
+</section>
+
+<section class="lecture" id="l2">
+  <header class="lec-head">
+    <p class="kicker">Class XI · Lecture 2</p>
+    <h2>Computational thinking and algorithms</h2>
+    <p class="deck">Break the problem down, then choose a search or a sort that fits the data.</p>
+  </header>
+  <ol class="outcomes">
+    <li>Use decomposition, pattern recognition, and abstraction on a real problem.</li>
+    <li>State what an algorithm is, how it differs from pseudocode, and what makes one good.</li>
+    <li>Trace bubble sort and selection sort, and linear search and binary search.</li>
+    <li>Choose an algorithm from the shape of the data and the cost of a wrong choice.</li>
+  </ol>
+
+  <h3>Three strategies</h3>
+  <div class="cards">
+    <div class="card"><h4>Decomposition</h4><p>Split one hard job into smaller jobs that can be solved and checked on their own. Planning a school trip becomes transport, permissions, food, and a headcount. A bug is easier to find when only one of those jobs is wrong.</p></div>
+    <div class="card"><h4>Pattern recognition</h4><p>Look for a repeat. If every pass of a sort compares neighbours, you do not invent a new method for each pair. The same comparison is the pattern; the data values change.</p></div>
+    <div class="card"><h4>Abstraction</h4><p>Keep the details that change the result, and set the rest aside. A search cares about the order of the values and the target. It does not care whether those values are roll numbers or prices.</p></div>
+  </div>
+
+  <h3>Algorithms and pseudocode</h3>
+  <p>An <strong>algorithm</strong> is a finite sequence of clear steps that produces a result. It is an idea, not a file in a particular language. <strong>Pseudocode</strong> writes that idea in structured English so a programmer can turn it into code. The algorithm says what must happen. The pseudocode shows one readable way to carry it out.</p>
+  <table>
+    <tr><th>A good algorithm has</th><th>Meaning in practice</th></tr>
+    <tr><td>Input</td><td>The data it is allowed to receive is stated.</td></tr>
+    <tr><td>Output</td><td>What it returns, or prints, is stated.</td></tr>
+    <tr><td>Definiteness</td><td>Each step has one meaning. “Sort it somehow” is not a step.</td></tr>
+    <tr><td>Finiteness</td><td>It stops. A loop needs a condition that becomes false.</td></tr>
+    <tr><td>Effectiveness</td><td>Each step is small enough to do, by hand or by a machine.</td></tr>
+  </table>
+  <p>Later you will judge the same algorithm on three further questions: <strong>correctness</strong> (the output matches the expected result on valid input), <strong>efficiency</strong> (how the work grows as the input grows), and <strong>clarity</strong> (another person can read it and change it).</p>
+
+  <h3>Bubble sort and selection sort</h3>
+  <p>Both sorts taught here are simple and both do about \(n^{2}\) comparisons. They are teaching algorithms. On a million items a faster method such as merge sort finishes in far less time. Use these two when the list is short or when the goal is to understand swapping.</p>
+  <div class="pair">
+    <div>
+      <h4>Bubble sort</h4>
+      <p>Walk along the list. If two neighbours are out of order, swap them. After one pass the largest item has bubbled to the end. Repeat on the unsorted prefix. If a whole pass makes no swap, the list is already sorted and you may stop.</p>
+      <p>One pass on \([5, 1, 4]\): compare 5 and 1, swap to \([1, 5, 4]\); compare 5 and 4, swap to \([1, 4, 5]\).</p>
+    </div>
+    <div>
+      <h4>Selection sort</h4>
+      <p>On pass \(i\), find the smallest item in the unsorted tail and swap it into position \(i\). There is at most one swap per pass. Unlike bubble sort, selection sort does not stop early: it still scans the remaining tail even when the tail is already ordered.</p>
+      <p>On \([5, 1, 4]\): the minimum is 1, swap with 5 to get \([1, 5, 4]\). The minimum of the tail is 4, swap with 5 to get \([1, 4, 5]\).</p>
+    </div>
+  </div>
+  <figure>
+    <svg viewBox="0 0 520 120" width="100%" role="img" aria-label="Bar diagram of bubble sort moving 5 to the right">
+      <g font-size="11" fill="#4c5d6c">
+        <text x="8" y="16">Start</text><text x="140" y="16">After first swap</text><text x="300" y="16">After second swap</text>
+      </g>
+      <g fill="#16324f">
+        <rect x="16" y="40" width="22" height="62"/><rect x="42" y="78" width="22" height="24"/><rect x="68" y="58" width="22" height="44"/>
+        <rect x="156" y="78" width="22" height="24"/><rect x="182" y="40" width="22" height="62"/><rect x="208" y="58" width="22" height="44"/>
+        <rect x="316" y="78" width="22" height="24"/><rect x="342" y="58" width="22" height="44"/><rect x="368" y="40" width="22" height="62"/>
+      </g>
+      <g font-size="11" fill="#1c2430">
+        <text x="20" y="114">5</text><text x="46" y="114">1</text><text x="72" y="114">4</text>
+        <text x="160" y="114">1</text><text x="186" y="114">5</text><text x="212" y="114">4</text>
+        <text x="320" y="114">1</text><text x="346" y="114">4</text><text x="372" y="114">5</text>
+      </g>
+      <path d="M110 70 H140" stroke="#9a4524" stroke-width="1.6" marker-end="url(#arr2)"/>
+      <path d="M250 70 H300" stroke="#9a4524" stroke-width="1.6" marker-end="url(#arr2)"/>
+      <defs><marker id="arr2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#9a4524"/></marker></defs>
+    </svg>
+    <p class="figcap">Figure 5. Bubble sort swaps neighbours until the largest bar sits at the end of the pass.</p>
+  </figure>
+
+  <h3>Linear search and binary search</h3>
+  <div class="pair">
+    <div>
+      <p><strong>Linear search</strong> starts at the first item and checks one by one until it finds the target or runs out of items. The list may be unsorted. On \(n\) items the worst case looks at all \(n\) of them: order \(n\), written \(O(n)\) in the next class. For a dozen items this is often the right tool.</p>
+      <p><strong>Binary search</strong> requires a sorted list. Compare the target with the middle item. If the target is smaller, discard the right half. If it is larger, discard the left half. Repeat. The worst-case number of comparisons grows like the logarithm:</p>
+      \[ \text{steps} \approx \lfloor \log_{2} n \rfloor + 1. \]
+    </div>
+    <div class="note">
+      <strong>Worked binary search.</strong> Sorted list \([4, 9, 15, 21, 28, 33, 40]\), target 21. Indices run from 0 to 6.
+      <ol>
+        <li>\(beg=0\), \(end=6\), \(mid=\lfloor(0+6)/2\rfloor=3\). Value 21. Found.</li>
+      </ol>
+      Target 33 on the same list:
+      <ol>
+        <li>\(mid=3\), value 21. 33 is larger, so \(beg=4\).</li>
+        <li>\(mid=\lfloor(4+6)/2\rfloor=5\), value 33. Found in two comparisons, not seven.</li>
+      </ol>
+      An off-by-one error in \(beg\) or \(end\) is the usual bug. Update the bound to the item <em>after</em> or <em>before</em> the middle, and stop when the range is empty.
+    </div>
+  </div>
+  <div class="say"><b>Decision</b><span>Unsorted, or a one-off search of a short list: linear search. Sorted, and searched often: binary search. The cost of sorting is paid once; every later search is cheap.</span></div>
+  <table>
+    <tr><th>Question</th><th>Choose</th></tr>
+    <tr><td>Is the data unordered, or tiny?</td><td>Linear search</td></tr>
+    <tr><td>Is the data sorted, and will you search it many times?</td><td>Binary search</td></tr>
+    <tr><td>Do you need a sort you can explain with swaps, and the list is short?</td><td>Bubble sort or selection sort</td></tr>
+    <tr><td>Might the list already be nearly sorted, and may you stop early?</td><td>Bubble sort, with the no-swap stop</td></tr>
+    <tr><td>Are swaps expensive, so you want at most one swap per pass?</td><td>Selection sort</td></tr>
+  </table>
+
+  <div class="check">
+    <h3>Checkpoint</h3>
+    <ol>
+      <li>Name the strategy that throws away details which do not affect the result.</li>
+      <li>After one bubble-sort pass on \([3, 8, 2, 6]\), what is the last value, and why?</li>
+      <li>Why does binary search refuse an unsorted list?</li>
+    </ol>
+    <p class="ans">Sketch answers: abstraction. The last value is 8, because each swap moved the current largest item rightward and 8 is the maximum. The half you discard is only safe to discard when you know every value on that side is too small or too large, which sorting guarantees.</p>
+  </div>
+</section>
+
+<section class="lecture" id="l3">
+  <header class="lec-head">
+    <p class="kicker">Class XI · Lecture 3</p>
+    <h2>Programming fundamentals</h2>
+    <p class="deck">Python as a readable language: data, decisions, repetition, libraries, and faults.</p>
+  </header>
+  <ol class="outcomes">
+    <li>Place a language on the path from machine code to Python, and name real uses of Python.</li>
+    <li>Use variables, types, input, output, and operators.</li>
+    <li>Direct a program with sequence, selection, and repetition.</li>
+    <li>Call a library and separate a syntax error from a logic error.</li>
+  </ol>
+
+  <h3>Languages and why Python</h3>
+  <div class="pair">
+    <figure>
+      <svg viewBox="0 0 300 150" width="100%" role="img" aria-label="Three levels of programming language">
+        <rect x="20" y="12" width="260" height="34" rx="4" fill="#f6e4da" stroke="#16324f"/>
+        <rect x="40" y="54" width="220" height="34" rx="4" fill="#f8efe2" stroke="#16324f"/>
+        <rect x="60" y="96" width="180" height="34" rx="4" fill="#d9ebe9" stroke="#16324f"/>
+        <text x="150" y="33" text-anchor="middle" font-size="12" fill="#16324f">High-level · Python, Java</text>
+        <text x="150" y="75" text-anchor="middle" font-size="12" fill="#16324f">Mid-level · C</text>
+        <text x="150" y="117" text-anchor="middle" font-size="12" fill="#16324f">Low-level · machine code, assembly</text>
+      </svg>
+      <p class="figcap">Figure 6. Closer to the machine at the bottom, closer to speech at the top.</p>
+    </figure>
+    <div>
+      <p>A <strong>low-level</strong> language sits near the processor. Machine code is bits. Assembly replaces some of those bits with short mnemonics. A <strong>mid-level</strong> language such as C still lets the programmer talk about memory, but it reads more like a procedure. A <strong>high-level</strong> language hides the machine. Python, Java, and C++ programs describe the problem in words and structures a person can review.</p>
+      <p>Python shows up in data work, small web tools, automation, and teaching because the same idea is short to write. The editor used in this course is Visual Studio Code: the explorer holds files, the editor holds the program, the terminal runs it, and the debugger stops on a chosen line.</p>
+    </div>
+  </div>
+
+  <h3>Data, input, and operators</h3>
+  <p>A variable is a name bound to a value. Names describe the value: <code>score</code>, not <code>s2</code>. Python types you will use immediately are <code>int</code>, <code>float</code>, <code>str</code>, and <code>bool</code>.</p>
+<pre>name = input("Student name: ")
+marks = int(input("Marks: "))
+passed = marks &gt;= 50
+print(name, "passed:", passed)</pre>
+  <p><code>input</code> always returns text. Arithmetic needs <code>int</code> or <code>float</code> around it. <code>print</code> writes values separated by spaces.</p>
+  <table>
+    <tr><th>Kind</th><th>Symbols</th><th>Watch this</th></tr>
+    <tr><td>Arithmetic</td><td><code>+ − * / // % **</code></td><td><code>/</code> is true division. <code>//</code> is floor division. <code>%</code> is the remainder.</td></tr>
+    <tr><td>Comparison</td><td><code>== != &gt; &lt; &gt;= &lt;=</code></td><td><code>=</code> assigns. <code>==</code> asks a question. The result is <code>True</code> or <code>False</code>.</td></tr>
+    <tr><td>Logical</td><td><code>and or not</code></td><td><code>and</code> needs both sides true. <code>or</code> needs one. <code>not</code> flips the value.</td></tr>
+  </table>
+  <p>Try these before you trust a condition: <code>4 == 5 - 1</code> is true, <code>55 &gt;= 11 * 5</code> is true because both sides are 55, and <code>22 != 23 - 1</code> is false because both sides are 22.</p>
+
+  <h3>Sequence, selection, repetition</h3>
+  <p><strong>Sequence</strong> is the default: the next line runs after the line above it. <strong>Selection</strong> chooses a block. <strong>Repetition</strong> runs a block while a condition holds, or once for each item.</p>
+<pre>marks = int(input("Marks: "))
+if marks &gt;= 85:
+    grade = "A"
+elif marks &gt;= 70:
+    grade = "B"
+elif marks &gt;= 50:
+    grade = "C"
+else:
+    grade = "F"
+print(grade)</pre>
+  <p>The colon opens the block. The indent is the block. <code>if</code> alone skips the block when the test fails. <code>if</code>/<code>else</code> always takes one of the two paths. <code>elif</code> tries further tests only when earlier tests failed. Conditions are checked from top to bottom, so put the stricter test first.</p>
+<pre>total = 0
+for subject in (78, 64, 91, 55):
+    total = total + subject
+print("Average:", total / 4)
+
+n = 3
+while n &gt; 0:
+    print(n)
+    n = n - 1</pre>
+  <p>A <code>for</code> loop is the natural choice when you know the collection. A <code>while</code> loop is the natural choice when you know the stopping test. Every <code>while</code> needs a line that moves toward that test. Forgetting <code>n = n - 1</code> is an infinite loop: the algorithm is no longer finite.</p>
+
+  <h3>Libraries and debugging</h3>
+  <p>A library is code someone else has tested. A <strong>built-in</strong> library ships with Python. Import it, then use the name you imported.</p>
+<pre>import math
+print(math.sqrt(49))
+print(math.floor(6.8))
+print(math.pi)</pre>
+  <p>A <strong>third-party</strong> library is installed separately. Later units use libraries of that kind for tables and charts. Import only what the program uses.</p>
+  <div class="cards">
+    <div class="card"><h4>Syntax error</h4><p>The program does not start. A missing colon, a broken indent, or a bracket that never closes. Read the line number Python prints. Fix that line, then run again.</p></div>
+    <div class="card"><h4>Runtime error</h4><p>The program starts and then fails. <code>int("Ali")</code> and division by zero are runtime errors. Guard the input, or catch the case before the operation.</p></div>
+    <div class="card"><h4>Logic error</h4><p>The program finishes and the answer is wrong. Using <code>=</code> inside a comparison, or averaging with the wrong count, is a logic error. Trace the variables by hand.</p></div>
+  </div>
+  <div class="say"><b>One sentence</b><span>Sequence does the steps in order, selection chooses a step, and repetition repeats a step until the data or the test says stop.</span></div>
+
+  <div class="check">
+    <h3>Checkpoint</h3>
+    <ol>
+      <li>Why does <code>int(input(...))</code> appear so often around numbers?</li>
+      <li>Rewrite “print the first multiple of 7 that is greater than 50” as a <code>while</code> idea in one or two lines of reasoning.</li>
+      <li>The program runs and prints 10 for the marks 10 and 6, where the average should be 8. What class of error is that, and what is a likely cause?</li>
+    </ol>
+    <p class="ans">Sketch answers: <code>input</code> returns a string, and <code>int</code> makes a number. Start at 7 and keep adding 7 until the value exceeds 50, then print it. A logic error: the code likely printed one of the marks again, or added the marks and forgot to divide by 2.</p>
+  </div>
+</section>
+
+<section class="lecture" id="l4">
+  <header class="lec-head">
+    <p class="kicker">Class XI · Lecture 4</p>
+    <h2>Data and analysis</h2>
+    <p class="deck">Turn facts into a relational database, then ask it questions.</p>
+  </header>
+  <ol class="outcomes">
+    <li>Separate data from information, and name the parts of a database.</li>
+    <li>Use keys, cardinality, and referential integrity, including cascade update and delete.</li>
+    <li>Draw an ER model and turn a many-to-many relationship into a schema.</li>
+    <li>Create tables, forms, queries, and reports, and summarise a result with a chart.</li>
+  </ol>
+
+  <h3>From facts to a database</h3>
+  <p><strong>Data</strong> are recorded facts: 80, 75, 90, 70, 85. <strong>Information</strong> is data after it has been organised for a decision: the class average is 80. A <strong>database</strong> stores related data so it can be retrieved without copying the same fact into a dozen files. A <strong>DBMS</strong> is the software that creates, protects, and queries that database. Microsoft Access is the DBMS used for the practical work in this unit.</p>
+  <div class="cards">
+    <div class="card"><h4>Field</h4><p>One fact about one thing: a student’s name. A field has a data type.</p></div>
+    <div class="card"><h4>Record</h4><p>All the fields for one thing: one student’s row.</p></div>
+    <div class="card"><h4>Table</h4><p>The records of one kind of thing. A database is the set of related tables.</p></div>
+  </div>
+  <p>Choose types on purpose. Short Text for names, Number for ages and marks, Date/Time for a loan date, Yes/No for a Boolean flag, AutoNumber for a key the DBMS can mint itself. Design view is where you set the type, a required field, a validation rule, and the primary key. Datasheet view looks like a grid and is a fast way to type the first rows once the design is settled.</p>
+
+  <h3>Keys, relationships, integrity</h3>
+  <p>A <strong>primary key</strong> identifies one record and does not repeat. A <strong>foreign key</strong> is a field in one table that stores the primary key of another table. That is how a row in Loans points at exactly one row in Students.</p>
+  <table>
+    <tr><th>Cardinality</th><th>Reading</th><th>Example</th></tr>
+    <tr><td>One-to-one</td><td>Each A matches at most one B</td><td>A student and that student’s identity card</td></tr>
+    <tr><td>One-to-many</td><td>One A matches many B</td><td>One class, many students</td></tr>
+    <tr><td>Many-to-many</td><td>Many A match many B</td><td>Students and the books they borrow</td></tr>
+  </table>
+  <p><strong>Referential integrity</strong> means a foreign key must point at a real primary key, or be empty when the design allows that. You cannot record a loan for a student who is not in the student table. <strong>Cascade update</strong> copies a changed primary key into the foreign keys that use it. <strong>Cascade delete</strong> removes the dependent rows when the parent row is deleted. Use cascade delete only when the dependent rows have no meaning alone. Deleting a student and silently deleting every fee receipt is usually the wrong cascade.</p>
+
+  <h3>An ER model, including the library pattern</h3>
+  <p>An entity-relationship diagram names the things (rectangles), their attributes (ovals or a list), and the relationships (diamonds or a labelled line). Cardinality is written at the ends of the line.</p>
+  <figure>
+    <svg viewBox="0 0 560 168" width="100%" role="img" aria-label="ER diagram resolving many-to-many borrowing with an Issue table">
+      <g fill="#e5f4f3" stroke="#16324f" stroke-width="1.6">
+        <rect x="16" y="48" width="120" height="56" rx="4"/>
+        <rect x="220" y="48" width="120" height="56" rx="4"/>
+        <rect x="424" y="48" width="120" height="56" rx="4"/>
+      </g>
+      <g fill="#16324f" font-size="13">
+        <text x="76" y="72" text-anchor="middle">Member</text>
+        <text x="280" y="72" text-anchor="middle">Issue</text>
+        <text x="484" y="72" text-anchor="middle">Book</text>
+      </g>
+      <g fill="#4c5d6c" font-size="10">
+        <text x="76" y="90" text-anchor="middle">MemberID, Name</text>
+        <text x="280" y="90" text-anchor="middle">Date, Return</text>
+        <text x="484" y="90" text-anchor="middle">BookID, Title</text>
+      </g>
+      <line x1="136" y1="76" x2="220" y2="76" stroke="#9a4524" stroke-width="1.8"/>
+      <line x1="340" y1="76" x2="424" y2="76" stroke="#9a4524" stroke-width="1.8"/>
+      <text x="144" y="70" font-size="11" fill="#9a4524">1</text>
+      <text x="198" y="70" font-size="11" fill="#9a4524">M</text>
+      <text x="348" y="70" font-size="11" fill="#9a4524">M</text>
+      <text x="406" y="70" font-size="11" fill="#9a4524">1</text>
+      <text x="280" y="150" text-anchor="middle" font-size="11" fill="#4c5d6c">Member M : N Book becomes two 1 : M links through Issue</text>
+    </svg>
+    <p class="figcap">Figure 7. The loan is its own entity because the date belongs to the pair, not to the person or the book alone.</p>
+  </figure>
+  <p>Build a schema in this order: list the requirements, name the entities, list attributes, name relationships, mark cardinality, and replace every many-to-many link with a new table that holds both foreign keys. In a library, Member and Book are many-to-many, because one member borrows many books and one book is borrowed by many members over time. Issue (or Loan) stores MemberID, BookID, and the dates. Each foreign key is many-to-one back to its parent.</p>
+
+  <h3>Objects you build in Access</h3>
+  <div class="cards">
+    <div class="card"><h4>Table</h4><p>Stores the rows. Design the keys before you type a hundred records.</p></div>
+    <div class="card"><h4>Form</h4><p>A screen for one job, such as registering a student. The form’s data source is a table or a query. The wizard is a fair start; then align the controls.</p></div>
+    <div class="card"><h4>Query</h4><p>A question. A select query chooses columns and rows. Criteria on the same row combine with AND. Criteria on different rows combine with OR.</p></div>
+    <div class="card"><h4>Report</h4><p>A formatted printout or PDF of a query: a class list, a loan reminder, a summary.</p></div>
+  </div>
+  <p>Totals in a query use Group By with Sum, Avg, or Count. A bar or column chart compares categories. A pie chart shows parts of one whole, and only when there are few slices. A line chart shows a value across time. The chart is an argument about the data, so the title should state the finding, not only the word “Chart”.</p>
+  <div class="say"><b>One sentence</b><span>A relational database keeps each fact in one place and uses keys so a query can reassemble the facts the question needs.</span></div>
+
+  <div class="check">
+    <h3>Checkpoint</h3>
+    <ol>
+      <li>A course has many students and a student enrols in many courses. What extra table does the schema need?</li>
+      <li>Where do you put two criteria so that both must be true?</li>
+      <li>What does cascade delete do, and when is it dangerous?</li>
+    </ol>
+    <p class="ans">Sketch answers: an enrolment table with CourseID and StudentID. On the same criteria row. It deletes child rows when the parent disappears; it is dangerous when those rows are records you still need, such as payments.</p>
+  </div>
+</section>
+
+<section class="lecture" id="l5">
+  <header class="lec-head">
+    <p class="kicker">Class XI · Lecture 5</p>
+    <h2>Applications and impacts of computing</h2>
+    <p class="deck">Sensors collect, analytics explain, and AI decides. Then you decide which source to trust.</p>
+  </header>
+  <ol class="outcomes">
+    <li>Describe artificial intelligence, the Internet of Things, and data analytics as one pipeline.</li>
+    <li>Give a concrete use of IoT in cities, industry, health, education, homes, energy, farms, and wearables.</li>
+    <li>Tell a reliable information source from an unreliable one.</li>
+  </ol>
+  <p><strong>Artificial intelligence</strong> is computing that carries out tasks we associate with noticing, predicting, or choosing. A phone that unlocks on a face, a video site that suggests the next clip, and a site assistant that answers a short question are everyday cases. The system is not wise. It is using data to map an input to an output that used to require a person.</p>
+  <p>The <strong>Internet of Things</strong> is the network of physical devices that sense the world, send those readings, and sometimes act. A smartwatch, a soil probe, a meter, and a camera become IoT devices when they share data and take part in a task.</p>
+  <div class="pair">
+    <figure>
+      <svg viewBox="0 0 460 150" width="100%" role="img" aria-label="IoT pipeline from sensor through analytics and AI to an actuator">
+        <g font-size="12" fill="#16324f">
+          <rect x="8" y="40" width="90" height="44" rx="6" fill="#e5f4f3" stroke="#16324f"/>
+          <text x="53" y="66" text-anchor="middle">Sensor</text>
+          <rect x="126" y="40" width="90" height="44" rx="6" fill="#f8efe2" stroke="#16324f"/>
+          <text x="171" y="66" text-anchor="middle">Network</text>
+          <rect x="244" y="28" width="100" height="68" rx="6" fill="#f6e4da" stroke="#16324f"/>
+          <text x="294" y="56" text-anchor="middle">Analytics</text>
+          <text x="294" y="74" text-anchor="middle">and AI</text>
+          <rect x="372" y="40" width="80" height="44" rx="6" fill="#16324f"/>
+          <text x="412" y="66" text-anchor="middle" fill="white">Actuator</text>
+        </g>
+        <g stroke="#9a4524" stroke-width="1.6">
+          <path d="M98 62 H126"/><path d="M216 62 H244"/><path d="M344 62 H372"/>
+        </g>
+        <text x="230" y="130" text-anchor="middle" font-size="11" fill="#4c5d6c">collect · carry · interpret · act</text>
+      </svg>
+      <p class="figcap">Figure 8. A hot room: the sensor reports, the model decides, the actuator starts the fan.</p>
+    </figure>
+    <div>
+      <p>Four pieces repeat in every example.</p>
+      <ul>
+        <li><strong>Sensor.</strong> Temperature, motion, fingerprint, camera, smoke, soil moisture.</li>
+        <li><strong>Connectivity.</strong> Wi-Fi, mobile data, or Bluetooth, so the reading can leave the device.</li>
+        <li><strong>Processing.</strong> Analytics turns readings into a summary. AI uses that summary to choose.</li>
+        <li><strong>Actuator.</strong> A motor, a lock, a valve, or a relay that changes the world.</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Data analytics</strong> is the work of cleaning, grouping, and reading data so a person or a model can act. IoT without analytics is a pile of readings. Analytics without a question is a chart nobody uses. AI without reliable data repeats the bias in that data.</p>
+  <table>
+    <tr><th>Setting</th><th>What is sensed</th><th>What changes</th></tr>
+    <tr><td>Smart city</td><td>Traffic, air, bins, street lights</td><td>Signal timing, collection routes</td></tr>
+    <tr><td>Industry</td><td>Vibration, temperature, product checks</td><td>Maintenance before a breakdown</td></tr>
+    <tr><td>Healthcare</td><td>Pulse, ward occupancy, medicine stores</td><td>Alerts and stock orders</td></tr>
+    <tr><td>Education</td><td>Attendance devices, lab conditions</td><td>Records that no longer depend on a paper roll</td></tr>
+    <tr><td>Home</td><td>Motion, smoke, temperature</td><td>A door, an alarm, a fan</td></tr>
+    <tr><td>Smart grid</td><td>Meters in homes and on lines</td><td>Load shifted away from the peak hour</td></tr>
+    <tr><td>Farming</td><td>Soil moisture, local weather</td><td>Irrigation only where the soil is dry</td></tr>
+    <tr><td>Wearables</td><td>Steps, heart rate</td><td>A prompt on the wearer’s phone</td></tr>
+  </table>
+  <h3>Reliable and unreliable sources</h3>
+  <div class="pair">
+    <div class="note"><strong>Lean toward a source</strong> when you can name the author or the institution, the date is visible, the method or the data is described, and the claim matches what other serious sources say. Government statistics offices, university pages, standards bodies, and papers that cite their data sit here. A <code>.gov</code> or <code>.edu</code> address is a clue, not a proof.</div>
+    <div class="note"><strong>Step back</strong> when there is no author, no date, and no path to the original numbers. Sensational headlines, undated screenshots, and a shop that is selling the thing it “proves” are weak sources. If two pages disagree, open the table they both claim to quote.</div>
+  </div>
+  <div class="say"><b>One sentence</b><span>IoT gathers the world’s readings, analytics makes them readable, and AI uses the result to recommend or to act.</span></div>
+  <div class="check">
+    <h3>Checkpoint</h3>
+    <ol>
+      <li>In an automatic door, which part is the sensor and which part is the actuator?</li>
+      <li>Name two checks you make before you cite a web page in a school report.</li>
+    </ol>
+    <p class="ans">Sketch answers: a motion sensor detects a person; the motor that swings the door is the actuator. Name the author or organisation, and check that a date and a source for the figures are visible.</p>
+  </div>
+</section>
+
+<section class="lecture" id="l6">
+  <header class="lec-head">
+    <p class="kicker">Class XI · Lecture 6</p>
+    <h2>Digital literacy</h2>
+    <p class="deck">Ask a sharp question, collect the right data, and present it without taking credit for someone else’s work.</p>
+  </header>
+  <ol class="outcomes">
+    <li>Distinguish qualitative and quantitative data, and primary and secondary data.</li>
+    <li>Choose among interviews, surveys, prototypes, observation, and simulations.</li>
+    <li>Design a collection plan and present the result in a fitting digital form.</li>
+    <li>Search with operators, and follow consent, privacy, and citation.</li>
+  </ol>
+  <p>Digital literacy is the ability to find, judge, create, and share information with digital tools, safely and with credit. Owning a phone is not the same skill.</p>
+  <div class="pair">
+    <div>
+      <h4>Qualitative and quantitative</h4>
+      <p><strong>Qualitative</strong> data describes experience in words: why a student prefers printed notes, what a shopkeeper says about closing time. <strong>Quantitative</strong> data is counted or measured: 18 out of 30 students, a download time of 2.4 seconds. Many studies need both. The count says how widespread a problem is. The interview says why it happens.</p>
+      <h4>Primary and secondary</h4>
+      <p><strong>Primary</strong> data is collected by you for this question: your survey, your interview, your observation sheet. <strong>Secondary</strong> data was collected by someone else: a census table, a published report, a textbook. Secondary data is faster and sometimes better, because a national sample is larger than a class. It can also answer a slightly different question from yours. Say which kind you used.</p>
+    </div>
+    <figure>
+      <svg viewBox="0 0 250 168" width="100%" role="img" aria-label="Inquiry path from question to artefact">
+        <g font-size="12" fill="#16324f">
+          <rect x="40" y="6" width="170" height="24" rx="4" fill="#16324f"/><text x="125" y="22" text-anchor="middle" fill="white">Research question</text>
+          <rect x="40" y="38" width="170" height="24" rx="4" fill="#e5f4f3" stroke="#16324f"/><text x="125" y="54" text-anchor="middle">Search and sources</text>
+          <rect x="40" y="70" width="170" height="24" rx="4" fill="#f8efe2" stroke="#16324f"/><text x="125" y="86" text-anchor="middle">Collect</text>
+          <rect x="40" y="102" width="170" height="24" rx="4" fill="#f6e4da" stroke="#16324f"/><text x="125" y="118" text-anchor="middle">Analyse</text>
+          <rect x="40" y="134" width="170" height="24" rx="4" fill="#0e6b66"/><text x="125" y="150" text-anchor="middle" fill="white">Artefact</text>
+        </g>
+      </svg>
+      <p class="figcap">Figure 9. The question chooses the method. The artefact answers the question.</p>
+    </figure>
+  </div>
+  <table>
+    <tr><th>Method</th><th>Use it when</th><th>Limit</th></tr>
+    <tr><td>Interview</td><td>You need reasons, in the person’s own words</td><td>Few people, easy to lead the witness</td></tr>
+    <tr><td>Survey</td><td>You need the same questions from many people</td><td>Shallow if the questions are vague</td></tr>
+    <tr><td>Observation</td><td>You need what people do, not what they say</td><td>Your presence can change the behaviour</td></tr>
+    <tr><td>Prototype</td><td>You need a reaction to an idea you can point at</td><td>People comment on the sketch, not on a finished product</td></tr>
+    <tr><td>Simulation</td><td>A real trial is unsafe, slow, or expensive</td><td>The result is only as fair as the model</td></tr>
+  </table>
+  <h3>A collection plan</h3>
+  <ol>
+    <li>Write one question a stranger could understand. “How does phone use during homework relate to time spent on one assignment?” is a question. “Phones are bad” is a slogan.</li>
+    <li>Name the group. “Class XI in this college” is a population you can actually reach.</li>
+    <li>Pick the method from the table, and draft the instrument: five to eight survey items, or an interview guide.</li>
+    <li>Decide the sample. Asking only your friends is a biased sample if the question is about the whole class.</li>
+    <li>State the ethics before you collect anything: what you will ask, whether names are stored, and how someone refuses.</li>
+  </ol>
+  <h3>Search operators</h3>
+  <p>A search box is a tool, not a slot for a sentence. Quotes force a phrase. <code>site:</code> stays inside one site or kind of site. <code>filetype:</code> asks for a format. <code>OR</code> allows alternatives. A minus sign excludes a word.</p>
+<pre>"internet usage in Pakistan" filetype:pdf
+digital literacy students site:.edu
+smartphone homework -advertisement</pre>
+  <h3>Presenting, and the ethics that sit underneath</h3>
+  <p>A spreadsheet holds the table, computes an average, and draws the chart. Slides are for a spoken explanation with one idea on a slide. An infographic is for a single result a passer-by can read. A report is for the question, the method, the result, and the limit. Pick the form that matches the audience. A chart with no title and no units is decoration.</p>
+  <div class="note"><strong>Consent, privacy, citation.</strong> Ask before you record an answer. Collect only what the question needs. Do not publish names if the answers could embarrass a classmate. <strong>Plagiarism</strong> is presenting someone else’s words, images, or ideas as your own. Quote, paraphrase, and write the source. A digital artefact that copies three paragraphs from a website has not finished the inquiry.</div>
+  <div class="check">
+    <h3>Checkpoint</h3>
+    <ol>
+      <li>A student copies a government table of enrolment, then interviews twelve classmates about why they chose the college. Which part is primary, and which is secondary?</li>
+      <li>Write a query that looks for a PDF report on the PTA website about broadband.</li>
+      <li>Why is “Do you agree that our canteen is excellent?” a weak survey item?</li>
+    </ol>
+    <p class="ans">Sketch answers: the interviews are primary; the government table is secondary. <code>broadband Pakistan filetype:pdf site:pta.gov.pk</code> is one reasonable query. The item leads the respondent and offers no room for a careful answer.</p>
+  </div>
+</section>
+
+<section class="lecture" id="l7">
+  <header class="lec-head">
+    <p class="kicker">Class XII · Lecture 7</p>
+    <h2>Human–computer interaction</h2>
+    <p class="deck">Design the exchange between a person and a system so more people can finish the task.</p>
+  </header>
+  <ol class="outcomes">
+    <li>Describe HCI, the human side and the computer side, and where it appears in daily tools.</li>
+    <li>Apply accessibility: contrast, readable type, colour-blind-safe colour, and inclusive navigation.</li>
+    <li>Analyse a user’s need, name common interface failures, and choose a way to improve them.</li>
+    <li>Separate UI from UX, sketch a low-fidelity wireframe, and outline a Figma prototype.</li>
+  </ol>
+  <p><strong>Human–computer interaction</strong> is the design of the exchange between people and digital systems. The older names CHI and man–machine interaction point at the same study. A person senses the system, decides, and acts. The system receives that act through an input device, computes, and responds through an output device.</p>
+  <figure>
+    <svg viewBox="0 0 540 92" width="100%" role="img" aria-label="Cycle of human senses, input devices, processing, and output">
+      <g font-size="12" fill="#16324f">
+        <rect x="8" y="24" width="110" height="44" rx="6" fill="#f6e4da" stroke="#16324f"/><text x="63" y="50" text-anchor="middle">Person</text>
+        <rect x="146" y="24" width="110" height="44" rx="6" fill="#e5f4f3" stroke="#16324f"/><text x="201" y="44" text-anchor="middle">Input</text><text x="201" y="58" text-anchor="middle" font-size="10">keys, touch, voice</text>
+        <rect x="284" y="24" width="110" height="44" rx="6" fill="#16324f"/><text x="339" y="50" text-anchor="middle" fill="white">Process</text>
+        <rect x="422" y="24" width="110" height="44" rx="6" fill="#f8efe2" stroke="#16324f"/><text x="477" y="44" text-anchor="middle">Output</text><text x="477" y="58" text-anchor="middle" font-size="10">screen, sound</text>
+      </g>
+      <g stroke="#9a4524" stroke-width="1.5"><path d="M118 46 H146"/><path d="M256 46 H284"/><path d="M394 46 H422"/></g>
+    </svg>
+    <p class="figcap">Figure 10. Sight, hearing, and touch are the human channels. Screens, speakers, and vibration are the machine’s reply.</p>
+  </figure>
+  <div class="cards">
+    <div class="card"><h4>GUI</h4><p>Windows, icons, menus, pointer. The usual desktop and phone home screen.</p></div>
+    <div class="card"><h4>Command line</h4><p>Typed commands. Fast for a person who knows the language, opaque for everyone else.</p></div>
+    <div class="card"><h4>Touch</h4><p>The finger is the pointer. Targets must be large enough to hit.</p></div>
+    <div class="card"><h4>Voice and natural UI</h4><p>Speech, and interfaces that track a gesture or a headset. Powerful, and easy to design so that only one kind of body can use them.</p></div>
+  </div>
+  <p>Traditional interaction expected a trained user at a keyboard. Natural interaction tries to meet the user with speech, touch, and gesture. Both still fail when the task itself was never understood.</p>
+
+  <h3>Accessibility is part of the design, not a patch</h3>
+  <div class="cards">
+    <div class="card"><h4>Contrast</h4><p>Text must stand off the background. Pale grey on white looks delicate and fails in sunlight and for low vision. Dark text on a light surface, or the reverse, is the default.</p></div>
+    <div class="card"><h4>Readability</h4><p>A familiar typeface, a size a person can read at arm’s length, generous line height, and short lines. All capitals slow reading.</p></div>
+    <div class="card"><h4>Colour is not the only signal</h4><p>Red against green disappears for many colour-blind users. Pair colour with a word, an icon, or a pattern: “Paid” beside a tick, not a green dot alone.</p></div>
+    <div class="card"><h4>Inclusive navigation</h4><p>A keyboard path, a visible focus, labels a screen reader can speak, and captions on video. Do not hide the only route inside a gesture.</p></div>
+  </div>
+
+  <h3>Needs, failures, and repairs</h3>
+  <p>Need analysis asks who the user is, what they are trying to finish, where they are (a bright courtyard, a noisy lab), and what happens if they make a mistake. Write those answers before you decorate a screen.</p>
+  <p>Common failures are clutter, low contrast, labels that differ from the user’s words, no confirmation after a tap, and a path that only a mouse can follow. The repairs in this unit are practical: talk to users, sketch, test the sketch, change it, and test again. Continuous testing means a small check every time the interface changes, not a single demonstration on the last day.</p>
+  <div class="pair">
+    <div>
+      <h4>UI and UX</h4>
+      <p>The <strong>user interface</strong> is what is on the screen and under the finger: controls, layout, words, colour. The <strong>user experience</strong> is whether the person finishes the task feeling clear about what happened. A beautiful button that submits the form twice is a UI success and a UX failure. Wireframes settle the UX structure before colour arrives.</p>
+      <p>A <strong>low-fidelity wireframe</strong> is boxes, lines, and real labels. It is supposed to look unfinished, so critics talk about the flow.</p>
+    </div>
+    <figure>
+      <svg viewBox="0 0 180 230" width="70%" role="img" aria-label="Low-fidelity phone wireframe of a three-screen flow">
+        <rect x="20" y="8" width="140" height="210" rx="16" fill="white" stroke="#16324f" stroke-width="2"/>
+        <text x="90" y="32" text-anchor="middle" font-size="11" fill="#16324f">Library</text>
+        <rect x="34" y="44" width="112" height="22" fill="none" stroke="#0e6b66"/>
+        <text x="40" y="59" font-size="10" fill="#4c5d6c">Search title</text>
+        <rect x="34" y="76" width="112" height="28" fill="#e5f4f3" stroke="#16324f"/>
+        <text x="40" y="94" font-size="10" fill="#16324f">Physics XI · due Fri</text>
+        <rect x="34" y="112" width="112" height="28" fill="#f4f8f8" stroke="#16324f"/>
+        <text x="40" y="130" font-size="10" fill="#16324f">Calculus · on shelf</text>
+        <rect x="34" y="168" width="112" height="28" rx="4" fill="#16324f"/>
+        <text x="90" y="186" text-anchor="middle" font-size="11" fill="white">Reserve</text>
+      </svg>
+      <p class="figcap">Figure 11. A wireframe commits to words and order, not to a brand colour.</p>
+    </figure>
+  </div>
+  <div class="lab">
+    <div class="tag">Lab · Figma, low fidelity first</div>
+    <ol>
+      <li>Create a free account and a new design file. Press F, or choose the frame tool, and place a phone frame.</li>
+      <li>Draw the blocks of Figure 11 with rectangles and text. Name the layers in the left panel.</li>
+      <li>Duplicate the frame for the next step of the task, such as “Reserved”.</li>
+      <li>Switch to Prototype, drag a link from the button to the next frame, and press Present. Click the path yourself.</li>
+      <li>Ask one classmate to complete the task without your help. Change the label they hesitated on.</li>
+    </ol>
+  </div>
+  <div class="check">
+    <h3>Checkpoint</h3>
+    <ol>
+      <li>A form shows errors only by turning the border red. What accessibility principle does it miss, and what would you add?</li>
+      <li>Why is a wireframe allowed to look rough?</li>
+    </ol>
+    <p class="ans">Sketch answers: colour must not be the only signal; add an icon and the words “Date is required”. A rough sketch invites comments on the task. A polished painting invites comments on the shade of blue.</p>
+  </div>
+</section>
+
+<section class="lecture" id="l8">
+  <header class="lec-head">
+    <p class="kicker">Class XII · Lecture 8</p>
+    <h2>Algorithms, efficiency, and data structures</h2>
+    <p class="deck">Prove a small algorithm by tracing it, then store the data in a shape that matches the questions you ask.</p>
+  </header>
+  <ol class="outcomes">
+    <li>Check correctness with a trace table and with stepwise reasoning.</li>
+    <li>Judge clarity (modularity, readability) and efficiency (steps, Big O, the problem in front of you).</li>
+    <li>Refine an algorithm, and choose among arrays, linked lists, stacks, queues, trees, and graphs.</li>
+  </ol>
+
+  <h3>Trace tables and stepwise reasoning</h3>
+  <p>An algorithm is correct when every valid input produces the expected output. A <strong>trace table</strong> is a paper execution. Columns hold the line, the variables, the condition, and any input or output. One row is one moment. <strong>Stepwise reasoning</strong> argues in sentences: this line can only increase the counter, the loop ends because the index reaches the length, therefore the counter equals the number of matches.</p>
+  <p>Count how many scores in \([42, 50, 77, 91]\) lie from 50 to 100 inclusive.</p>
+<pre>count = 0
+for score in scores:
+    if 50 &lt;= score &lt;= 100:
+        count = count + 1</pre>
+  <table class="tt">
+    <tr><th>score</th><th>50 ≤ score ≤ 100</th><th>count afterward</th></tr>
+    <tr><td>42</td><td>no</td><td>0</td></tr>
+    <tr><td>50</td><td>yes</td><td>1</td></tr>
+    <tr><td>77</td><td>yes</td><td>2</td></tr>
+    <tr><td>91</td><td>yes</td><td>3</td></tr>
+  </table>
+  <p>The boundary values matter. 50 must be counted because the test is inclusive. A trace that never includes a boundary has not tested the algorithm.</p>
+
+  <h3>Clarity and Big O</h3>
+  <p><strong>Modularity</strong> puts one job in one named piece, so a fault has an address. <strong>Readability</strong> is names, order, and a layout another student can follow next week. Both are clarity. An algorithm can be correct and still be a poor algorithm if nobody can safely change it.</p>
+  <p><strong>Big O</strong> describes how the number of steps grows with the input size \(n\), ignoring constants. It is a comparison tool, not a stopwatch.</p>
+  \[
+  O(1),\quad O(\log n),\quad O(n),\quad O(n\log n),\quad O(n^{2})
+  \]
+  <table>
+    <tr><th>Class</th><th>Typical cause</th><th>Example from this course</th></tr>
+    <tr><td>\(O(1)\)</td><td>The work does not depend on \(n\)</td><td>Read array index 0. Push or pop a stack. Enqueue or dequeue when the ends are known.</td></tr>
+    <tr><td>\(O(\log n)\)</td><td>The problem halves each step</td><td>Binary search on a sorted list</td></tr>
+    <tr><td>\(O(n)\)</td><td>One pass</td><td>Linear search, or printing every item</td></tr>
+    <tr><td>\(O(n^{2})\)</td><td>A loop inside a loop over the same data</td><td>Bubble sort, selection sort</td></tr>
+  </table>
+  <p>Also count branches and repetitions in plain language. A nest of special cases can be slow and unreadable even when the Big O looks acceptable. Efficiency includes the real problem: an \(O(n^{2})\) sort of twenty names is fine; the same sort of a national exam file is not. Refinement renames muddled steps, removes repeated work, extracts a module, or picks a structure whose cheap operation is the one you perform most.</p>
+
+  <h3>Linear structures</h3>
+  <div class="pair">
+    <figure>
+      <svg viewBox="0 0 360 108" width="100%" role="img" aria-label="Array cells with indexes beside a linked list of nodes">
+        <text x="4" y="16" font-size="12" fill="#16324f">Array · one block</text>
+        <g font-size="12" fill="#16324f">
+          <rect x="8" y="28" width="40" height="28" fill="#e5f4f3" stroke="#16324f"/><text x="28" y="46" text-anchor="middle">12</text>
+          <rect x="48" y="28" width="40" height="28" fill="#e5f4f3" stroke="#16324f"/><text x="68" y="46" text-anchor="middle">7</text>
+          <rect x="88" y="28" width="40" height="28" fill="#e5f4f3" stroke="#16324f"/><text x="108" y="46" text-anchor="middle">19</text>
+          <rect x="128" y="28" width="40" height="28" fill="#e5f4f3" stroke="#16324f"/><text x="148" y="46" text-anchor="middle">4</text>
+        </g>
+        <g font-size="10" fill="#4c5d6c"><text x="24" y="70">0</text><text x="64" y="70">1</text><text x="100" y="70">2</text><text x="144" y="70">3</text></g>
+        <text x="4" y="96" font-size="11" fill="#4c5d6c">Index 2 is immediate: O(1)</text>
+      </svg>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 400 80" width="100%" role="img" aria-label="Linked list of three nodes ending in null">
+        <g fill="#f8efe2" stroke="#16324f" stroke-width="1.5" font-size="12">
+          <rect x="8" y="20" width="78" height="32"/><text x="30" y="40" fill="#16324f">12</text><text x="62" y="40" fill="#9a4524">•</text>
+          <rect x="130" y="20" width="78" height="32"/><text x="152" y="40" fill="#16324f">7</text><text x="184" y="40" fill="#9a4524">•</text>
+          <rect x="252" y="20" width="78" height="32"/><text x="270" y="40" fill="#16324f">19</text><text x="306" y="40" fill="#9a4524">•</text>
+        </g>
+        <path d="M86 36 H130" stroke="#9a4524" stroke-width="1.5"/>
+        <path d="M208 36 H252" stroke="#9a4524" stroke-width="1.5"/>
+        <text x="340" y="40" font-size="12" fill="#4c5d6c">null</text>
+      </svg>
+      <p class="figcap">Figure 12. A linked list pays for easy insertion with a walk from the head. There is no index.</p>
+    </figure>
+  </div>
+  <div class="pair">
+    <figure>
+      <svg viewBox="0 0 200 132" width="100%" role="img" aria-label="Stack with push and pop at the top">
+        <text x="100" y="14" text-anchor="middle" font-size="12" fill="#16324f">Stack · LIFO</text>
+        <rect x="60" y="22" width="80" height="26" fill="#f6e4da" stroke="#16324f"/><text x="100" y="40" text-anchor="middle" font-size="12">30 ← top</text>
+        <rect x="60" y="48" width="80" height="26" fill="#e5f4f3" stroke="#16324f"/><text x="100" y="66" text-anchor="middle" font-size="12">20</text>
+        <rect x="60" y="74" width="80" height="26" fill="#e5f4f3" stroke="#16324f"/><text x="100" y="92" text-anchor="middle" font-size="12">10</text>
+        <text x="100" y="118" text-anchor="middle" font-size="11" fill="#4c5d6c">push and pop at the top</text>
+      </svg>
+      <p class="figcap">Figure 13. The call stack and undo both behave like a pile of plates.</p>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 360 110" width="100%" role="img" aria-label="Queue with dequeue at the front and enqueue at the rear">
+        <text x="120" y="16" font-size="12" fill="#16324f">Queue · FIFO</text>
+        <g font-size="12" fill="#16324f">
+          <rect x="70" y="36" width="60" height="32" fill="#f6e4da" stroke="#16324f"/><text x="100" y="56" text-anchor="middle">10</text>
+          <rect x="130" y="36" width="60" height="32" fill="#e5f4f3" stroke="#16324f"/><text x="160" y="56" text-anchor="middle">20</text>
+          <rect x="190" y="36" width="60" height="32" fill="#e5f4f3" stroke="#16324f"/><text x="220" y="56" text-anchor="middle">30</text>
+        </g>
+        <text x="100" y="88" text-anchor="middle" font-size="11" fill="#9a4524">front · dequeue</text>
+        <text x="220" y="88" text-anchor="middle" font-size="11" fill="#0e6b66">rear · enqueue</text>
+      </svg>
+      <p class="figcap">Figure 14. A print queue and a ticket line remove the item that has waited longest.</p>
+    </figure>
+  </div>
+
+  <h3>Trees and graphs</h3>
+  <div class="pair">
+    <figure>
+      <svg viewBox="0 0 240 140" width="100%" role="img" aria-label="Tree with root A and children B and C">
+        <g fill="#e5f4f3" stroke="#16324f" stroke-width="1.5">
+          <circle cx="120" cy="24" r="14"/><circle cx="70" cy="70" r="14"/><circle cx="170" cy="70" r="14"/>
+          <circle cx="40" cy="114" r="14"/><circle cx="100" cy="114" r="14"/>
+        </g>
+        <g stroke="#16324f"><line x1="120" y1="38" x2="70" y2="56"/><line x1="120" y1="38" x2="170" y2="56"/><line x1="70" y1="84" x2="40" y2="100"/><line x1="70" y1="84" x2="100" y2="100"/></g>
+        <g font-size="12" fill="#16324f" text-anchor="middle"><text x="120" y="28">A</text><text x="70" y="74">B</text><text x="170" y="74">C</text><text x="40" y="118">D</text><text x="100" y="118">E</text></g>
+      </svg>
+      <p class="figcap">Figure 15. A tree has one root. A is the parent of B and C. D and E are leaves.</p>
+    </figure>
+    <div>
+      <p>A <strong>tree</strong> organises data by hierarchy. A family tree, folders on a disk, and the staff of a college (principal, then heads, then teachers) are trees. Each node except the root has one parent.</p>
+      <p>A <strong>graph</strong> is a set of vertices joined by edges, with no requirement of a single root. A friendship network and a road map are graphs: Multan may connect to several cities, and the roads can form a loop. Use a tree when “what contains this?” has one answer. Use a graph when connections are many-way.</p>
+      <p>Arrays suit random access. Linked lists suit frequent inserts and deletes in the middle, if you already hold the place. Stacks suit undo and nested calls. Queues suit fair waiting. Trees suit hierarchies. Graphs suit networks.</p>
+    </div>
+  </div>
+  <div class="check">
+    <h3>Checkpoint</h3>
+    <ol>
+      <li>Which structure removes the most recently added item?</li>
+      <li>Why is reading <code>a[3]</code> described as \(O(1)\), while finding a value in an unsorted array is \(O(n)\)?</li>
+      <li>A map of bus routes between towns is which structure, and what are the vertices and the edges?</li>
+    </ol>
+    <p class="ans">Sketch answers: a stack. The index computes the address directly; a search may have to inspect every cell. A graph: towns are vertices, routes are edges.</p>
+  </div>
+</section>
+
+<section class="lecture" id="l9">
+  <header class="lec-head">
+    <p class="kicker">Class XII · Lecture 9</p>
+    <h2>Python collections, functions, and files</h2>
+    <p class="deck">Choose the collection that matches the data, hide a sub-problem inside a function, and let a file outlive the program.</p>
+  </header>
+  <ol class="outcomes">
+    <li>Use lists, tuples, sets, and dictionaries, and say what each one refuses to do.</li>
+    <li>Write functions with parameters and return values, and respect scope.</li>
+    <li>Decompose a problem into functions.</li>
+    <li>Read and write text files.</li>
+  </ol>
+  <table>
+    <tr><th></th><th>Written as</th><th>Order</th><th>Change later?</th><th>Duplicates</th><th>Reach an item by</th></tr>
+    <tr><td>List</td><td><code>[1, 2, 2]</code></td><td>Kept</td><td>Yes</td><td>Yes</td><td>Index</td></tr>
+    <tr><td>Tuple</td><td><code>(1, 2, 2)</code></td><td>Kept</td><td>No</td><td>Yes</td><td>Index</td></tr>
+    <tr><td>Set</td><td><code>{1, 2}</code></td><td>Not kept</td><td>Yes, add and remove</td><td>No</td><td>Membership, <code>in</code></td></tr>
+    <tr><td>Dictionary</td><td><code>{"a": 1}</code></td><td>By insertion in modern Python</td><td>Yes</td><td>Keys are unique</td><td>Key</td></tr>
+  </table>
+  <div class="pair">
+    <div>
+      <h4>Lists</h4>
+<pre>marks = [78, 64, 91, 64]
+marks.append(70)
+marks[1] = 66
+print(marks[0], len(marks))
+print(marks[1:3])</pre>
+      <p>A slice such as <code>[1:3]</code> returns a new list and does not change the original. It starts at index 1 and stops before index 3.</p>
+    </div>
+    <div>
+      <h4>Tuples</h4>
+<pre>point = (3, 5)
+x, y = point
+# point[0] = 9  raises TypeError</pre>
+      <p>Use a tuple for a record that must stay fixed: a coordinate, an RGB colour, a row you only want to read. If the tuple holds a list, that inner list can still change. Immutability is about the tuple’s own slots.</p>
+    </div>
+  </div>
+  <h4>Sets</h4>
+  <p>A set answers “is this already here?” quickly and supports the algebra you write in mathematics.</p>
+<pre>passed = {11, 14, 18}
+late = {14, 22}
+print(passed | late)   # union        {11, 14, 18, 22}
+print(passed &amp; late)   # intersection {14}
+print(passed - late)   # difference   {11, 18}</pre>
+  \[
+  A \cup B,\qquad A \cap B,\qquad A \setminus B
+  \]
+  <p><code>discard</code> removes a member if it is present and stays quiet if it is absent. <code>remove</code> raises an error when the member is absent. There is no <code>set[0]</code>.</p>
+  <h4>Dictionaries</h4>
+<pre>student = {"name": "Hina", "marks": 82}
+print(student["name"])
+print(student.get("section", "not set"))
+student["section"] = "XI-B"
+for key in student:
+    print(key, student[key])</pre>
+  <p><code>student["section"]</code> fails if the key is missing. <code>get</code> returns the default instead, which is what you want when you are counting words and a new word should start at zero.</p>
+
+  <h3>Functions, scope, and decomposition</h3>
+  <p>A function names a sub-problem. <code>def</code> creates it. Parameters are the inputs. <code>return</code> sends a value back. Without <code>return</code>, the caller receives <code>None</code>.</p>
+<pre>def grade(marks):
+    if marks &gt;= 50:
+        return "pass"
+    return "fail"
+
+def average(values):
+    if len(values) == 0:
+        return 0
+    return sum(values) / len(values)
+
+scores = [78, 64, 91]
+print(grade(scores[0]), average(scores))</pre>
+  <p>A name assigned inside a function is <strong>local</strong>. It disappears when the function returns. A name assigned outside is <strong>global</strong>. Read globals sparingly. Pass what the function needs as parameters so the function can be tested on its own. That is decomposition: <code>average</code> does not know about grades, and <code>grade</code> does not know how the average was computed.</p>
+  <p>Built-in functions (<code>len</code>, <code>sum</code>, <code>print</code>, <code>int</code>) come with the language. The functions you write with <code>def</code> are user-defined. Prefer a user-defined function when the same three lines appear twice.</p>
+
+  <h3>Files</h3>
+  <p>A variable dies when the program ends. A file does not. Use <code>with</code> so the file is closed even when something fails halfway.</p>
+<pre>with open("marks.txt", "w", encoding="utf-8") as handle:
+    handle.write("Hina,82\n")
+    handle.write("Omar,67\n")
+
+with open("marks.txt", "r", encoding="utf-8") as handle:
+    for line in handle:
+        name, marks = line.strip().split(",")
+        print(name, grade(int(marks)))</pre>
+  <table>
+    <tr><th>Mode</th><th>Effect</th></tr>
+    <tr><td><code>"r"</code></td><td>Read. The file must already exist.</td></tr>
+    <tr><td><code>"w"</code></td><td>Write from the start. An existing file is replaced.</td></tr>
+    <tr><td><code>"a"</code></td><td>Append. New text goes at the end.</td></tr>
+  </table>
+  <div class="note"><code>"w"</code> is destructive. If the file holds the only copy of the register, open it with <code>"a"</code> or write a new file and replace the old one only after the new file is complete.</div>
+  <div class="check">
+    <h3>Checkpoint</h3>
+    <ol>
+      <li>You need the distinct cities in a list of a thousand addresses. Which collection, and which operator later tests whether "Lahore" is among them?</li>
+      <li>What does the caller receive if a function never executes <code>return</code>?</li>
+      <li>Which mode empties a file before writing?</li>
+    </ol>
+    <p class="ans">Sketch answers: a set, then <code>in</code>. <code>None</code>. <code>"w"</code>.</p>
+  </div>
+</section>
+
+<section class="lecture" id="l10">
+  <header class="lec-head">
+    <p class="kicker">Class XII · Lecture 10</p>
+    <h2>Data analysis with Python</h2>
+    <p class="deck">Connect to a database, shape a table, draw the right chart, and summarise with a number you can defend.</p>
+  </header>
+  <ol class="outcomes">
+    <li>Name the pieces of a Python database connection and run basic SQL through SQLite.</li>
+    <li>Organise rows in a table or DataFrame and build a frequency distribution.</li>
+    <li>Choose a bar chart, histogram, scatter plot, or box plot.</li>
+    <li>Compute mean, median, mode, range, variance, and standard deviation.</li>
+  </ol>
+  <p>Data analysis examines, organises, and interprets data so a decision can cite a result. A school looks at marks. A shop looks at sales. A clinic looks at visits. Python is the glue: it can read a file or a database, compute, and draw.</p>
+  <h3>Connecting to a database</h3>
+  <p>The connection has five parts. The <strong>database</strong> holds the tables. SQLite is a file database that ships with Python and is the right learning tool; MySQL is a server database used when many clients share one store. The <strong>driver</strong> is the software that lets Python speak to that DBMS. The <strong>connection object</strong> opens and closes the session. The <strong>cursor</strong> runs SQL and fetches rows. The <strong>SQL</strong> itself creates, inserts, selects, updates, and deletes.</p>
+<pre>import sqlite3
+con = sqlite3.connect("school.db")
+cur = con.cursor()
+cur.execute("""
+    CREATE TABLE IF NOT EXISTS student (
+        id INTEGER PRIMARY KEY,
+        name TEXT,
+        marks INTEGER
+    )
+""")
+cur.execute("INSERT INTO student (name, marks) VALUES (?, ?)", ("Hina", 82))
+con.commit()
+rows = cur.execute(
+    "SELECT name, marks FROM student WHERE marks &gt;= ?", (50,)
+).fetchall()
+con.close()
+print(rows)</pre>
+  <p>The question marks are parameters. They keep data out of the SQL text. <code>commit</code> makes the insert permanent. <code>close</code> ends the session. A <code>with</code> statement can own the connection in larger programs.</p>
+  <h3>Tables, frequencies, and charts</h3>
+  <p>A <strong>DataFrame</strong> (from the pandas library) is a labelled table in memory. You can load it from a query or build it directly. A new column may be an arithmetic combination of old ones, such as <code>marks / 100</code>.</p>
+<pre>import pandas as pd
+frame = pd.DataFrame({"name": ["Hina", "Omar", "Sana"], "marks": [82, 67, 82]})
+print(frame["marks"].mean())</pre>
+  <p>A <strong>frequency distribution</strong> groups values into classes and counts each class. Marks 50–59, 60–69, and so on, with a tally column, tell you the shape before any chart does.</p>
+  <div class="pair">
+    <figure>
+      <svg viewBox="0 0 250 130" width="100%" role="img" aria-label="Histogram with touching bars">
+        <line x1="30" y1="100" x2="230" y2="100" stroke="#16324f"/>
+        <line x1="30" y1="100" x2="30" y2="16" stroke="#16324f"/>
+        <rect x="30" y="60" width="40" height="40" fill="#9a4524"/><rect x="70" y="36" width="40" height="64" fill="#9a4524"/>
+        <rect x="110" y="48" width="40" height="52" fill="#9a4524"/><rect x="150" y="72" width="40" height="28" fill="#9a4524"/>
+        <text x="120" y="120" text-anchor="middle" font-size="11" fill="#4c5d6c">Histogram · bins touch</text>
+      </svg>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 250 130" width="100%" role="img" aria-label="Bar chart with gaps between categories">
+        <line x1="30" y1="100" x2="230" y2="100" stroke="#16324f"/>
+        <line x1="30" y1="100" x2="30" y2="16" stroke="#16324f"/>
+        <rect x="46" y="40" width="28" height="60" fill="#0e6b66"/>
+        <rect x="100" y="64" width="28" height="36" fill="#0e6b66"/>
+        <rect x="154" y="28" width="28" height="72" fill="#0e6b66"/>
+        <text x="52" y="116" font-size="10" fill="#4c5d6c">Bio</text>
+        <text x="106" y="116" font-size="10" fill="#4c5d6c">CS</text>
+        <text x="158" y="116" font-size="10" fill="#4c5d6c">Math</text>
+        <text x="130" y="14" text-anchor="middle" font-size="11" fill="#4c5d6c">Bars · gaps, categories</text>
+      </svg>
+    </figure>
+  </div>
+  <table>
+    <tr><th>Chart</th><th>Use</th><th>Python call</th></tr>
+    <tr><td>Bar</td><td>Compare separate categories</td><td><code>plt.bar(labels, heights)</code></td></tr>
+    <tr><td>Histogram</td><td>Distribution of one numeric variable; bars touch because the axis is continuous</td><td><code>plt.hist(values, bins=...)</code></td></tr>
+    <tr><td>Scatter</td><td>Relationship of two numeric variables</td><td><code>plt.scatter(x, y)</code></td></tr>
+    <tr><td>Box plot</td><td>Five-number summary and a glance at spread</td><td><code>plt.boxplot(values)</code></td></tr>
+  </table>
+  <p>An upward scatter is a positive association. A downward scatter is negative. A round cloud is no clear linear association. Association is not a cause. A box plot shows five numbers: minimum, first quartile Q1, median, third quartile Q3, and maximum. Q1 is a classroom median of the lower half. Q3 is a classroom median of the upper half. The box runs from Q1 to Q3. The line inside the box is the median. The whiskers reach the minimum and the maximum when those points are not treated as outliers.</p>
+
+  <h3>Central tendency and spread</h3>
+  <p>For values \(x_1,\ldots,x_n\),</p>
+  \[
+  \bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i,
+  \qquad
+  \text{Range} = x_{\max} - x_{\min},
+  \qquad
+  \sigma^{2} = \frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^{2},
+  \qquad
+  \sigma = \sqrt{\sigma^{2}}.
+  \]
+  <p>This course uses the average of the squared deviations, dividing by \(n\). Some software, including pandas, divides by \(n-1\) unless you say otherwise. Name the choice when you report a variance from a library.</p>
+  <div class="note">
+    <strong>Worked numbers.</strong> Values 2, 4, 6. The mean is \(\bar{x} = 12/3 = 4\). Deviations are \(-2, 0, 2\). Squared deviations are \(4, 0, 4\). Variance is \(8/3 \approx 2.67\). Standard deviation is \(\sqrt{8/3} \approx 1.63\). The range is \(6-2 = 4\). The median is 4. There is no mode, because no value repeats.
+  </div>
+  <table>
+    <tr><th>Measure</th><th>Prefer it when</th></tr>
+    <tr><td>Mean</td><td>Every value should count, and there is no extreme outlier</td></tr>
+    <tr><td>Median</td><td>A few very large or very small values would drag the mean (salaries, house prices)</td></tr>
+    <tr><td>Mode</td><td>You need the most common category (favourite fruit, most frequent shoe size)</td></tr>
+  </table>
+  <p>A deviation \(x_i-\bar{x}\) is positive above the mean, negative below it, and zero on the mean. Variance squares those deviations so the negatives do not cancel. A small variance means the values sit near the mean. Min and max are the ends of the same story the range compresses into one number.</p>
+  <div class="check">
+    <h3>Checkpoint</h3>
+    <ol>
+      <li>Which object runs the SQL, the connection or the cursor?</li>
+      <li>Marks of one class, grouped in bands of ten: histogram or bar chart?</li>
+      <li>The salaries of a company include one owner who earns fifty times a typical wage. Which average do you report beside the mean, and why?</li>
+    </ol>
+    <p class="ans">Sketch answers: the cursor. A histogram, because the axis is a continuous score cut into bins. The median, because the owner’s wage pulls the mean upward.</p>
+  </div>
+</section>
+
+<section class="lecture" id="l11">
+  <header class="lec-head">
+    <p class="kicker">Class XII · Lecture 11</p>
+    <h2>Neural networks, security, and equity</h2>
+    <p class="deck">How a layered model learns a pattern, how collaboration stays safe, and who gets to take part.</p>
+  </header>
+  <ol class="outcomes">
+    <li>Explain machine learning, neural networks, and deep learning, and name their parts.</li>
+    <li>Give applications, including assistive ones.</li>
+    <li>Identify malware, phishing, unauthorised access, data theft, denial of service, and human error, and match a mitigation to each.</li>
+    <li>Explain equity of access in digital collaboration.</li>
+  </ol>
+  <p>A <strong>machine-learning model</strong> is adjusted on examples until its outputs are useful on new examples. A <strong>neural network</strong> is one kind of model. It is inspired by the idea of connected cells, and it is implemented as arithmetic. <strong>Deep learning</strong> trains networks with many hidden layers. Early layers respond to simple pieces (an edge, a short sound). Later layers respond to combinations (an eye, a word). Depth is what makes the hierarchy possible. It is also why these models need a great deal of data and computation.</p>
+  <div class="pair">
+    <figure>
+      <svg viewBox="0 0 360 170" width="100%" role="img" aria-label="One neuron adding weighted inputs and a bias, then an activation">
+        <g font-size="12" fill="#16324f">
+          <text x="8" y="36">x₁</text><text x="8" y="76">x₂</text><text x="8" y="116">x₃</text>
+        </g>
+        <g stroke="#8aa0b0" stroke-width="1.3">
+          <line x1="28" y1="32" x2="120" y2="78"/>
+          <line x1="28" y1="72" x2="120" y2="78"/>
+          <line x1="28" y1="112" x2="120" y2="78"/>
+        </g>
+        <g font-size="11" fill="#9a4524">
+          <text x="48" y="48">w₁</text><text x="48" y="78">w₂</text><text x="48" y="108">w₃</text>
+        </g>
+        <circle cx="140" cy="80" r="22" fill="#e5f4f3" stroke="#16324f" stroke-width="1.8"/>
+        <text x="140" y="76" text-anchor="middle" font-size="11" fill="#16324f">sum</text>
+        <text x="140" y="90" text-anchor="middle" font-size="10" fill="#0e6b66">+ b</text>
+        <rect x="190" y="62" width="70" height="36" rx="6" fill="#f6e4da" stroke="#16324f"/>
+        <text x="225" y="84" text-anchor="middle" font-size="12" fill="#16324f">f(z)</text>
+        <line x1="162" y1="80" x2="190" y2="80" stroke="#16324f"/>
+        <line x1="260" y1="80" x2="300" y2="80" stroke="#16324f"/>
+        <text x="308" y="84" font-size="12" fill="#16324f">y</text>
+      </svg>
+      <p class="figcap">Figure 16. The neuron is a weighted sum, a bias, and a function that shapes the result.</p>
+    </figure>
+    <div>
+      \[
+      z = \sum_{i=1}^{n} w_i x_i + b, \qquad y = f(z)
+      \]
+      <p>The weights \(w_i\) say how much each input matters. The bias \(b\) shifts the sum. The activation \(f\) decides what leaves the neuron. A step function outputs 1 when \(z \ge 0\) and 0 otherwise. A common smooth activation is the sigmoid</p>
+      \[
+      \sigma(z) = \frac{1}{1+e^{-z}},
+      \]
+      <p>which stays between 0 and 1. Training changes the weights and the bias so the outputs move toward the examples. You do not hand-write those numbers for a face recogniser. You do need to know that they are the learned part.</p>
+    </div>
+  </div>
+  <div class="note"><strong>A numeric step.</strong> Inputs \(1, 0, 1\), weights \(0.5, 0.8, -0.2\), bias \(-0.1\). Then \(z = 0.5 + 0 + (-0.2) + (-0.1) = 0.2\). A step activation outputs 1. Change the bias to \(-0.4\) and \(z = -0.1\), so the step outputs 0. The bias moved the decision.</div>
+  <p>Applications follow the same shape. Face unlock classifies a camera image. Speech tools turn sound into text. Translation models map one sentence to another. In a clinic, a model can flag a scan for a human to review. Assistive tools read a screen aloud, describe a scene, or convert speech to captions. The responsible pattern is that a person remains accountable for a high-stakes decision.</p>
+
+  <h3>Secure collaboration</h3>
+  <p>Shared documents, repositories, and class drives are useful because more than one person can touch the work. That is also the risk. Secure collaboration means the right people, the right files, and a way to recover.</p>
+  <div class="cards">
+    <div class="card"><h4>Authenticate</h4><p>A password plus a one-time code is stronger than a password alone. Do not share the password that stands for you.</p></div>
+    <div class="card"><h4>Encrypt</h4><p>Encryption turns readable data into ciphertext. Decryption restores it for someone who holds the key. A stolen disk of ciphertext is not yet a stolen essay.</p></div>
+    <div class="card"><h4>Limit and back up</h4><p>Give each account only the access the task needs. Keep a second copy, and practise restoring it. A backup you have never restored is a hope.</p></div>
+    <div class="card"><h4>Firewall and antivirus</h4><p>A firewall filters network traffic by rules. Antivirus scans files and removable drives for known harmful software. Update both.</p></div>
+  </div>
+  <table>
+    <tr><th>Threat</th><th>What it is</th><th>A fitting mitigation</th></tr>
+    <tr><td>Malware</td><td>Software meant to damage, spy, or lock files: viruses, worms, spyware, ransomware, Trojan horses</td><td>Avoid cracked installers, scan downloads, keep antivirus current, hold backups so ransomware is not the only copy</td></tr>
+    <tr><td>Phishing</td><td>A fake message that urges you to hand over a password or an OTP</td><td>Check the sender, do not follow urgent links, open the service by typing its address yourself</td></tr>
+    <tr><td>Unauthorised access</td><td>Someone enters an account or a file without permission</td><td>Strong unique passwords, lock the screen, do not leave a session open</td></tr>
+    <tr><td>Data theft and identity theft</td><td>Copying personal data, or using it to pretend to be that person</td><td>Encryption, least-privilege access, and a refusal to post identity numbers in a shared chat</td></tr>
+    <tr><td>Denial of service</td><td>A flood of fake requests so real users cannot get in</td><td>Network filtering, rate limits, and a host that can absorb or block the flood</td></tr>
+    <tr><td>Human error</td><td>The wrong recipient, a deleted folder, a weak password</td><td>Confirm the recipient, keep backups, use a checklist before a bulk share</td></tr>
+  </table>
+  <p>A strong password is long and is not a birthday or the word “student” with a digit. A public lab computer is not a place to store the only copy of a file, and it is not a place to leave an account logged in.</p>
+
+  <h3>Equity</h3>
+  <p>Equal access means a collaboration tool can be used by the students the task is for, not only by the students with the newest phone. Equity shows up as a file that still opens on a slow connection, a captioned video, a document that a screen reader can follow, language a class can read, and a deadline that does not assume everyone has broadband at home. A tool that only works for one expensive device quietly removes people from the group. Design the task so the work, not the hardware, is what differs.</p>
+  <div class="check">
+    <h3>Checkpoint</h3>
+    <ol>
+      <li>What extra thing does deep learning have, compared with a network that has a single hidden layer?</li>
+      <li>A message says your class account will close in an hour unless you open a link and type the OTP. Name the threat.</li>
+      <li>Name one design choice that makes a shared assignment fairer for a student on a metered connection.</li>
+    </ol>
+    <p class="ans">Sketch answers: many hidden layers that build features in stages. Phishing. A small file, a text alternative to a long video, or a deadline that allows the download to happen at school.</p>
+  </div>
+</section>
+
+<section class="lecture" id="l12">
+  <header class="lec-head">
+    <p class="kicker">Class XII · Lecture 12</p>
+    <h2>Entrepreneurship in the digital age</h2>
+    <p class="deck">Start from a real problem, show a prototype, and learn from the smallest group that might pay attention.</p>
+  </header>
+  <ol class="outcomes">
+    <li>Define entrepreneur and entrepreneurship, including digital and local examples.</li>
+    <li>Turn a problem into an idea, and compare low-, mid-, and high-fidelity prototypes.</li>
+    <li>Plan an MVP, name the riskiest assumption, and choose a beachhead market.</li>
+    <li>Collect feedback and say what you will change.</li>
+  </ol>
+  <p>An <strong>entrepreneur</strong> is a person who takes a problem, offers a solution, and accepts the risk that people may not want it. <strong>Entrepreneurship</strong> is that activity. In a digital setting the solution may be an app, a site, a WhatsApp catalogue, or a simple form. The risk and the need to learn from users are the same as they are for a stall.</p>
+  <figure>
+    <svg viewBox="0 0 560 78" width="100%" role="img" aria-label="Path from problem to beachhead customers">
+      <g font-size="11" fill="#16324f">
+        <rect x="4" y="18" width="80" height="36" rx="5" fill="#f6e4da" stroke="#16324f"/><text x="44" y="40" text-anchor="middle">Problem</text>
+        <rect x="98" y="18" width="70" height="36" rx="5" fill="#f8efe2" stroke="#16324f"/><text x="133" y="40" text-anchor="middle">Idea</text>
+        <rect x="182" y="18" width="86" height="36" rx="5" fill="#e5f4f3" stroke="#16324f"/><text x="225" y="40" text-anchor="middle">Prototype</text>
+        <rect x="282" y="18" width="80" height="36" rx="5" fill="#e7eef5" stroke="#16324f"/><text x="322" y="40" text-anchor="middle">Feedback</text>
+        <rect x="376" y="18" width="70" height="36" rx="5" fill="#16324f"/><text x="411" y="40" text-anchor="middle" fill="white">MVP</text>
+        <rect x="460" y="18" width="96" height="36" rx="5" fill="#0e6b66"/><text x="508" y="40" text-anchor="middle" fill="white">Beachhead</text>
+      </g>
+    </svg>
+    <p class="figcap">Figure 17. Each arrow is a decision to keep going, change the idea, or stop.</p>
+  </figure>
+  <p>Local problems are enough. A canteen that never posts today’s menu. A tailor whose regular customers cannot see a new cloth until they travel across town. A tuition centre whose parents learn that the van is late only by calling. A student who cannot tell which past paper matches next week’s topic. The digital move is to make the missing information or the missing service reachable. It is not to begin with “we need an app”.</p>
+
+  <h3>Prototypes</h3>
+  <p>A <strong>prototype</strong> is an early model you can show. It answers “what would this look like or how would it work?” It does not have to sell, store data, or survive a crowd. Fidelity means closeness to the final product.</p>
+  <table>
+    <tr><th></th><th>Looks like</th><th>Built with</th><th>Good for</th></tr>
+    <tr><td>Low fidelity</td><td>Rough</td><td>Paper, pencil, a phone photo of a sketch</td><td>The first conversation. Cheap to throw away.</td></tr>
+    <tr><td>Mid fidelity</td><td>Clearer layout, still obviously a model</td><td>Slides, Figma frames, a clickable series of screens</td><td>Testing a path: can someone place an order?</td></tr>
+    <tr><td>High fidelity</td><td>Close to the finished look</td><td>Visual design tools, a careful front end</td><td>A late check of wording and appearance. Expensive to redo.</td></tr>
+  </table>
+  <p>Start low. A common failure is to build a high-fidelity app before anyone has confirmed the problem. The cycle is plan, make, show, and improve. Useful questions are specific: “What do you think this button does?” and “What is missing for you to trust the van’s location?” “Do you like it?” collects politeness. Negative feedback is the prototype working. Ignoring it is the failure.</p>
+
+  <h3>The MVP and the riskiest assumption</h3>
+  <p>A <strong>minimum viable product</strong> is the smallest version someone can actually use, so you can learn whether the idea works in the world. A prototype can be paper. An MVP has to function for one narrow job. A menu board in a class WhatsApp group can be an MVP. A full delivery platform is not.</p>
+  <table>
+    <tr><th></th><th>Prototype</th><th>MVP</th></tr>
+    <tr><td>Purpose</td><td>Learn about the design and the problem</td><td>Learn whether people use a real, minimal offer</td></tr>
+    <tr><td>Must it work?</td><td>Only well enough to react to</td><td>Yes, for one job</td></tr>
+    <tr><td>Audience</td><td>A few users in a test</td><td>The first real group, the beachhead</td></tr>
+  </table>
+  <p>An <strong>assumption</strong> is a belief you have not tested. The <strong>riskiest assumption</strong> is the belief that would make the rest of the plan pointless if it turned out to be wrong. “Parents of this college’s junior classes will open a location message during the commute” is riskier than “we can draw a pleasant icon.” Test the risky belief first. Write the MVP as a short plan: the one job, the features required for that job, a rough cost (time, data, any fee), how you will tell the first users, and how you will collect feedback.</p>
+  <p>A <strong>beachhead market</strong> is the first small, specific group. Not “students in Pakistan.” “Parents of Class XI in this college who already use the class WhatsApp group.” You can reach them, you can talk to them, and a result there teaches you whether a second group is worth the attempt. After the trial, sort feedback into changes you will make, comments you will decline, and questions you still need to ask. Then change the MVP and, if the beachhead responded, consider the next group. If it did not, change the problem or stop. Stopping is a result.</p>
+  <div class="lab">
+    <div class="tag">Studio task</div>
+    <p>In one sitting: write a problem you have seen this month, the user, the riskiest assumption, a six-box paper prototype, five feedback questions, the single MVP feature, and the beachhead in one sentence. Show the paper to two people who are in that beachhead. Record what they did, not only what they said.</p>
+  </div>
+  <div class="check">
+    <h3>Checkpoint</h3>
+    <ol>
+      <li>Why does a college project begin at low fidelity?</li>
+      <li>Give one difference between a prototype and an MVP.</li>
+      <li>Which is a beachhead: “all shops” or “uniform shops on this college’s street”?</li>
+    </ol>
+    <p class="ans">Sketch answers: a rough model is cheap to change after the first honest criticism. A prototype explores; an MVP performs one real job for users. The uniform shops on this street, because you can name them and visit them.</p>
+  </div>
+</section>
+
+<section class="lecture" id="sheet">
+  <header class="lec-head">
+    <p class="kicker">Appendix</p>
+    <h2>Formula and decision sheet</h2>
+    <p class="deck">The relations used in the twelve lectures, in one place.</p>
+  </header>
+  <div class="cards">
+    <div class="card"><h4>Truth table</h4><p>\( \text{rows} = 2^{n} \)</p></div>
+    <div class="card"><h4>Gates</h4><p>\(A\cdot B,\; A+B,\; \overline{A},\; \overline{A\cdot B},\; \overline{A+B},\; A\oplus B\)</p></div>
+    <div class="card"><h4>Search</h4><p>Linear \(O(n)\) on any list. Binary \(O(\log n)\) on a sorted list.</p></div>
+    <div class="card"><h4>Mean and spread</h4><p>\(\bar{x}=\frac{1}{n}\sum x_i,\; \sigma^{2}=\frac{1}{n}\sum (x_i-\bar{x})^{2}\)</p></div>
+    <div class="card"><h4>Neuron</h4><p>\(z=\sum w_i x_i + b,\; y=f(z)\)</p></div>
+    <div class="card"><h4>Data units</h4><p>Data, segment, packet, frame, bits — top to bottom of OSI.</p></div>
+  </div>
+  <table>
+    <tr><th>If the situation is…</th><th>Reach for…</th></tr>
+    <tr><td>Requirements are stable and written</td><td>Waterfall</td></tr>
+    <tr><td>Requirements will move, and users can try a slice</td><td>Agile, in sprints</td></tr>
+    <tr><td>Many-to-many in an ER diagram</td><td>A new table of the two foreign keys</td></tr>
+    <tr><td>Undo, or a function call waiting to return</td><td>Stack</td></tr>
+    <tr><td>Fair waiting</td><td>Queue</td></tr>
+    <tr><td>Hierarchy</td><td>Tree</td></tr>
+    <tr><td>Roads, friendships, arbitrary links</td><td>Graph</td></tr>
+    <tr><td>A fixed pair of values</td><td>Tuple</td></tr>
+    <tr><td>Unique members and unions</td><td>Set</td></tr>
+    <tr><td>Lookup by a name</td><td>Dictionary</td></tr>
+    <tr><td>One numeric distribution</td><td>Histogram or box plot</td></tr>
+    <tr><td>Two numeric variables together</td><td>Scatter plot</td></tr>
+    <tr><td>A belief that could sink the idea</td><td>Test it with the MVP, on the beachhead</td></tr>
+  </table>
+  <p class="closing">Before a test, redraw a gate, the OSI stack, one sort, an ER link, the IoT pipeline, a wireframe, a stack, a queue, a neuron, and the path from problem to beachhead.</p>
+</section>
+
+</body>
+</html>
