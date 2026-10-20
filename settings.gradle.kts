@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "IntimacyGuide"
 include(":app")
+include(":lectures")
+include(":hybridtts")

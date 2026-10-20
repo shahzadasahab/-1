@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy">#16324F</color>
+    <color name="ink">#1C2430</color>
+    <color name="teal">#0E6B66</color>
+    <color name="clay">#9A4524</color>
+    <color name="cream">#F7F4EE</color>
+    <color name="card">#FFFFFF</color>
+    <color name="line">#D3DDE4</color>
+    <color name="muted">#4C5D6C</color>
+    <color name="speaking">#D9EBE9</color>
+    <color name="picked">#F6E4DA</color>
+    <color name="code_bg">#F6F3EC</color>
+    <color name="note_bg">#F3F7F8</color>
+    <color name="white">#FFFFFF</color>
+</resources>

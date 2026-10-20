@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CS Lecture Notes</string>
+    <string name="course_kicker">Classes XI and XII</string>
+    <string name="course_title">Computer Science</string>
+    <string name="course_intro">Twelve lectures with diagrams, formulas, and captions. Listen uses the Piper Amy voice stored in this app, so it works with the network off.</string>
+    <string name="voice_preparing">Preparing the embedded voice…</string>
+    <string name="voice_ready">Embedded voice ready</string>
+    <string name="voice_failed">Voice unavailable: %1$s</string>
+    <string name="listen">Listen</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Resume</string>
+    <string name="stop">Stop</string>
+    <string name="speed_label">Speed %1$s</string>
+    <string name="speaking">Speaking</string>
+    <string name="paused">Paused</string>
+    <string name="starts_here">Listen will start at paragraph %1$d</string>
+    <string name="back">Back</string>
+</resources>
