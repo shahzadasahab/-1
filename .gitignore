@@ -3,6 +3,7 @@
 /build/
 /app/build/
 /lectures/build/
+/hybridtts/build/
 /android-sdk/
 /gradle-8.7/
 *.iml
