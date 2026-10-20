@@ -1,0 +1,11 @@
+{
+  "name": "ch01-computer-systems-lecture-notes",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:pdf": "node build-pdf.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^24.14.0"
+  }
+}

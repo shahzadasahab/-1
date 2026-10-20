@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unit 1 — Computer Systems · Lecture Notes (Chapter 1)</title>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']],
+        processEscapes: true
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    :root {
+      --ink: #1a1f2e;
+      --muted: #4a5568;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e2e8f0;
+      --paper: #ffffff;
+      --wash: #f8fafc;
+      --sidebar-w: 13.5rem;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.55;
+      color: var(--ink);
+      background: var(--wash);
+    }
+
+    /* Flexbox page shell */
+    .page {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      min-height: 100vh;
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 0 0 1px var(--border);
+    }
+
+    .sidebar {
+      flex: 0 0 var(--sidebar-w);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1.25rem 0.9rem;
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+      color: #e2e8f0;
+      font-size: 0.78rem;
+    }
+
+    .sidebar h2 {
+      margin: 0;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #94a3b8;
+    }
+
+    .sidebar nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .sidebar a {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 0.2rem 0;
+      border-left: 2px solid transparent;
+      padding-left: 0.5rem;
+    }
+
+    .sidebar a:hover { color: #fff; border-left-color: var(--accent); }
+
+    .main {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 1.5rem 1.75rem 2rem;
+    }
+
+    header.doc-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    header.doc-header .kicker {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+
+    header.doc-header h1 {
+      margin: 0;
+      font-size: 1.65rem;
+      line-height: 1.2;
+    }
+
+    header.doc-header .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      margin-bottom: 1.35rem;
+      break-inside: avoid;
+    }
+
+    section h2 {
+      font-size: 1.15rem;
+      margin: 0 0 0.5rem;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    section h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 6px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    section h3 {
+      font-size: 0.95rem;
+      margin: 0.85rem 0 0.35rem;
+      color: #334155;
+    }
+
+    p { margin: 0.35rem 0; }
+
+    ul, ol { margin: 0.35rem 0 0.5rem 1.1rem; padding: 0; }
+    li { margin: 0.2rem 0; }
+
+    .outcomes {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+    }
+
+    .outcomes li {
+      flex: 1 1 45%;
+      background: var(--wash);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.45rem 0.6rem;
+      font-size: 0.82rem;
+    }
+
+    .diagram-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0.75rem 0;
+    }
+
+    .diagram-card {
+      flex: 1 1 220px;
+      max-width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.65rem;
+      background: #fff;
+      text-align: center;
+    }
+
+    .diagram-card figcaption {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+    }
+
+    svg.diagram {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    table.data {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin: 0.5rem 0;
+    }
+
+    table.data th, table.data td {
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.45rem;
+      text-align: left;
+    }
+
+    table.data th {
+      background: var(--accent-soft);
+      font-weight: 600;
+    }
+
+    table.truth td { text-align: center; font-family: ui-monospace, monospace; }
+
+    .formula-box {
+      background: var(--wash);
+      border-left: 4px solid var(--accent);
+      padding: 0.5rem 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .two-col {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .two-col > * { flex: 1 1 240px; }
+
+    .callout {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-radius: 8px;
+      padding: 0.55rem 0.75rem;
+      font-size: 0.88rem;
+    }
+
+    footer.doc-footer {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; max-width: none; }
+      .sidebar { background: #1e293b; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <h2>Chapter 1</h2>
+      <nav>
+        <a href="#intro">Overview</a>
+        <a href="#s11">1.1 Digital systems</a>
+        <a href="#s112">Analog vs digital</a>
+        <a href="#s114">Boolean algebra</a>
+        <a href="#s117">Logic gates</a>
+        <a href="#s118">Expressions &amp; K-maps</a>
+        <a href="#s12">1.2 SDLC</a>
+        <a href="#s125">Waterfall case</a>
+        <a href="#s126">Agile case</a>
+        <a href="#s13">1.3 Networks</a>
+        <a href="#s132">OSI model</a>
+        <a href="#s135">TCP/IP</a>
+      </nav>
+      <p style="margin-top:auto;font-size:0.72rem;color:#64748b;">Lecture notes · Unit 1 only</p>
+    </aside>
+
+    <main class="main">
+      <header class="doc-header" id="intro">
+        <span class="kicker">Class XI · Computer Science</span>
+        <h1>Unit 1: Computer Systems</h1>
+        <p class="subtitle">Condensed lecture notes — digital logic, software life cycle, and network models</p>
+      </header>
+
+      <section>
+        <h2><span class="num">✓</span> Learning outcomes</h2>
+        <ul class="outcomes">
+          <li>Differentiate analog vs digital representation and build truth tables</li>
+          <li>Apply Boolean operators and construct logic circuits (e.g. Logisim)</li>
+          <li>Explain SDLC phases, Waterfall vs Agile, with case-study patterns</li>
+          <li>Describe OSI (7 layers) and TCP/IP (4 layers) and compare them</li>
+        </ul>
+      </section>
+
+      <section id="s11">
+        <h2><span class="num">1.1</span> Digital systems foundation</h2>
+        <h3 id="s111">Discrete vs continuous</h3>
+        <div class="two-col">
+          <div>
+            <p><strong>Discrete</strong> quantities are countable (students in a class, books on a shelf). Values jump in steps — like <em>stairs</em>.</p>
+            <p><strong>Continuous</strong> quantities vary smoothly in a range (temperature, height, time) — like a <em>ramp</em>.</p>
+          </div>
+          <figure class="diagram-card">
+            <svg class="diagram" viewBox="0 0 280 120" width="280" height="120" xmlns="http://www.w3.org/2000/svg" aria-label="Stairs versus ramp analogy">
+              <text x="20" y="18" font-size="11" fill="#334155" font-weight="600">Discrete (stairs)</text>
+              <polyline points="20,95 20,75 55,75 55,55 90,55 90,35 125,35" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+              <text x="150" y="18" font-size="11" fill="#334155" font-weight="600">Continuous (ramp)</text>
+              <line x1="150" y1="95" x2="260" y2="35" stroke="#059669" stroke-width="2.5"/>
+              <line x1="15" y1="100" x2="265" y2="100" stroke="#cbd5e1"/>
+            </svg>
+            <figcaption>Digital signals mirror discrete steps; analog mirrors continuous change.</figcaption>
+          </figure>
+        </div>
+
+        <h3 id="s112">Analog vs digital signals</h3>
+        <p>Computers use <strong>digital</strong> data: voltage levels interpreted as binary <strong>0</strong> and <strong>1</strong> (OFF/ON). <strong>Analog</strong> signals vary continuously (e.g. old radio waves, thermometer mercury).</p>
+        <figure class="diagram-card" style="max-width:520px;margin:0.75rem auto;">
+          <svg class="diagram" viewBox="0 0 420 130" width="420" height="130" xmlns="http://www.w3.org/2000/svg">
+            <text x="12" y="16" font-size="11" fill="#64748b">Analog (smooth wave)</text>
+            <path d="M10,70 Q40,30 70,70 T130,70 T190,70 T250,70 T310,70 T370,70" fill="none" stroke="#7c3aed" stroke-width="2"/>
+            <text x="12" y="88" font-size="11" fill="#64748b">Digital (square levels)</text>
+            <polyline points="10,115 50,115 50,105 90,105 90,115 130,115 130,105 170,105 170,115 210,115 210,105 250,105 250,115 290,115 290,105 330,105 330,115 370,115" fill="none" stroke="#2563eb" stroke-width="2"/>
+            <line x1="8" y1="125" x2="410" y2="125" stroke="#e2e8f0"/>
+          </svg>
+          <figcaption>Sampling and quantization convert analog information into digital form.</figcaption>
+        </figure>
+      </section>
+
+      <section id="s114">
+        <h2><span class="num">1.1.4</span> Boolean algebra &amp; operations</h2>
+        <p>Boolean algebra uses two values: \(0\) (false) and \(1\) (true). Standard operators:</p>
+        <div class="formula-box">
+          <p><strong>AND</strong> (\(\cdot\)): \(Y = A \cdot B\) — output 1 only if <em>all</em> inputs are 1.</p>
+          <p><strong>OR</strong> (\(+\)): \(Y = A + B\) — output 1 if <em>any</em> input is 1.</p>
+          <p><strong>NOT</strong> (\('\)): \(Y = A'\) — unary; inverts the input.</p>
+        </div>
+        <p><strong>Precedence:</strong> NOT → AND → OR (use parentheses when in doubt).</p>
+
+        <h3 id="s116">Truth table pattern (2 inputs)</h3>
+        <table class="data truth">
+          <thead><tr><th>A</th><th>B</th><th>\(A \cdot B\)</th><th>\(A + B\)</th><th>\(A \oplus B\) (XOR)</th></tr></thead>
+          <tbody>
+            <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+            <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+            <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="s117">
+        <h2><span class="num">1.1.7</span> Logic gates</h2>
+        <p>Gates implement Boolean functions in hardware. Bubble on output = inversion (NAND, NOR, XNOR).</p>
+        <div class="diagram-row">
+          <figure class="diagram-card">
+            <svg class="diagram" viewBox="0 0 100 50" width="100" height="50" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25,10 L25,40 L45,40 Q65,25 45,10 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+              <text x="38" y="28" font-size="9" fill="#1e40af">AND</text>
+              <line x1="5" y1="20" x2="25" y2="20" stroke="#334155"/><line x1="5" y1="30" x2="25" y2="30" stroke="#334155"/>
+              <line x1="65" y1="25" x2="90" y2="25" stroke="#334155"/>
+            </svg>
+            <figcaption>AND — D-shape</figcaption>
+          </figure>
+          <figure class="diagram-card">
+            <svg class="diagram" viewBox="0 0 100 50" width="100" height="50" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25,10 L25,40 L45,40 Q72,25 45,10 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+              <text x="38" y="28" font-size="9" fill="#1e40af">OR</text>
+              <line x1="5" y1="20" x2="25" y2="20" stroke="#334155"/><line x1="5" y1="30" x2="25" y2="30" stroke="#334155"/>
+              <line x1="72" y1="25" x2="90" y2="25" stroke="#334155"/>
+            </svg>
+            <figcaption>OR — curved back</figcaption>
+          </figure>
+          <figure class="diagram-card">
+            <svg class="diagram" viewBox="0 0 100 50" width="100" height="50" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="30,10 30,40 55,25" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+              <circle cx="62" cy="25" r="4" fill="#fff" stroke="#2563eb"/>
+              <line x1="5" y1="25" x2="30" y2="25" stroke="#334155"/><line x1="66" y1="25" x2="90" y2="25" stroke="#334155"/>
+              <text x="34" y="28" font-size="8" fill="#1e40af">NOT</text>
+            </svg>
+            <figcaption>NOT — triangle + bubble</figcaption>
+          </figure>
+          <figure class="diagram-card">
+            <svg class="diagram" viewBox="0 0 100 50" width="100" height="50" xmlns="http://www.w3.org/2000/svg">
+              <path d="M28,10 L28,40 L48,40 Q68,25 48,10 Z" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+              <line x1="20" y1="25" x2="28" y2="25" stroke="#334155"/>
+              <text x="36" y="28" font-size="8" fill="#92400e">XOR</text>
+              <line x1="5" y1="20" x2="20" y2="25" stroke="#334155"/><line x1="5" y1="30" x2="28" y2="30" stroke="#334155"/>
+              <line x1="68" y1="25" x2="90" y2="25" stroke="#334155"/>
+            </svg>
+            <figcaption>XOR — extra line on input side</figcaption>
+          </figure>
+        </div>
+        <div class="callout">
+          <strong>Universal gates:</strong> NAND and NOR can implement any other gate. XOR outputs 1 when inputs differ; XNOR when they match.
+        </div>
+        <p>Example circuit: 2-input AND for \(Y = A \cdot B\) — inputs A, B; single output Y (Logisim: place gate, input pins, output pin; wire orthogonally).</p>
+      </section>
+
+      <section id="s118">
+        <h2><span class="num">1.1.8</span> Expressions, truth tables &amp; K-maps</h2>
+        <p>From expression → fill truth table row by row. From truth table → sum of minterms (SOP) or product of maxterms (POS).</p>
+        <p><strong>Minterm:</strong> AND of literals where function = 1. <strong>Maxterm:</strong> OR of literals where function = 0.</p>
+        <p><strong>Karnaugh map (K-map):</strong> 2-variable grid for simplifying SOP; group adjacent 1s in powers of two; larger groups drop more variables.</p>
+        <figure class="diagram-card" style="max-width:200px;">
+          <svg class="diagram" viewBox="0 0 120 120" width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="30" width="80" height="80" fill="#fff" stroke="#334155"/>
+            <line x1="70" y1="30" x2="70" y2="110" stroke="#334155"/>
+            <line x1="30" y1="70" x2="110" y2="70" stroke="#334155"/>
+            <text x="48" y="55" font-size="12" fill="#2563eb">1</text>
+            <text x="88" y="55" font-size="12" fill="#2563eb">1</text>
+            <text x="48" y="95" font-size="12" fill="#94a3b8">0</text>
+            <text x="88" y="95" font-size="12" fill="#2563eb">1</text>
+            <text x="8" y="55" font-size="9" fill="#64748b">A</text>
+            <text x="48" y="22" font-size="9" fill="#64748b">B</text>
+            <rect x="38" y="38" width="64" height="34" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="4 2"/>
+          </svg>
+          <figcaption>2×2 K-map — group adjacent 1s</figcaption>
+        </figure>
+      </section>
+
+      <section id="s12">
+        <h2><span class="num">1.2</span> Software development life cycle (SDLC)</h2>
+        <h3 id="s122">What is SDLC?</h3>
+        <p>SDLC is a structured process for planning, building, testing, and maintaining software. It improves quality, cost control, and stakeholder alignment.</p>
+        <h3 id="s123">Typical phases</h3>
+        <ol>
+          <li><strong>Analysis</strong> — gather requirements</li>
+          <li><strong>Design</strong> — architecture, UI, database</li>
+          <li><strong>Implementation</strong> — coding</li>
+          <li><strong>Testing</strong> — verify against requirements</li>
+          <li><strong>Deployment</strong> — release to users</li>
+          <li><strong>Maintenance</strong> — fixes and enhancements</li>
+        </ol>
+        <figure class="diagram-card">
+          <svg class="diagram" viewBox="0 0 400 70" width="400" height="70" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+              </marker>
+            </defs>
+            <g font-size="8" fill="#1e293b" text-anchor="middle">
+              <rect x="5" y="22" width="58" height="28" rx="4" fill="#dbeafe" stroke="#2563eb"/>
+              <text x="34" y="40">Analysis</text>
+              <rect x="72" y="22" width="58" height="28" rx="4" fill="#dbeafe" stroke="#2563eb"/>
+              <text x="101" y="40">Design</text>
+              <rect x="139" y="22" width="58" height="28" rx="4" fill="#dbeafe" stroke="#2563eb"/>
+              <text x="168" y="40">Code</text>
+              <rect x="206" y="22" width="58" height="28" rx="4" fill="#dbeafe" stroke="#2563eb"/>
+              <text x="235" y="40">Test</text>
+              <rect x="273" y="22" width="58" height="28" rx="4" fill="#dbeafe" stroke="#2563eb"/>
+              <text x="302" y="40">Deploy</text>
+              <rect x="340" y="22" width="55" height="28" rx="4" fill="#fef3c7" stroke="#d97706"/>
+              <text x="367" y="40">Maintain</text>
+            </g>
+            <line x1="63" y1="36" x2="72" y2="36" stroke="#64748b" marker-end="url(#arrow)"/>
+            <line x1="130" y1="36" x2="139" y2="36" stroke="#64748b" marker-end="url(#arrow)"/>
+            <line x1="197" y1="36" x2="206" y2="36" stroke="#64748b" marker-end="url(#arrow)"/>
+            <line x1="264" y1="36" x2="273" y2="36" stroke="#64748b" marker-end="url(#arrow)"/>
+            <line x1="331" y1="36" x2="340" y2="36" stroke="#64748b" marker-end="url(#arrow)"/>
+          </svg>
+          <figcaption>Linear phase flow (Waterfall-style)</figcaption>
+        </figure>
+
+        <h3 id="s124">Models at a glance</h3>
+        <table class="data">
+          <thead><tr><th>Aspect</th><th>Waterfall</th><th>Agile (Scrum)</th></tr></thead>
+          <tbody>
+            <tr><td>Requirements</td><td>Fixed upfront</td><td>Evolving; user stories</td></tr>
+            <tr><td>Delivery</td><td>One release at end</td><td>Working software each sprint</td></tr>
+            <tr><td>Testing</td><td>Dedicated late phase</td><td>Continuous within sprints</td></tr>
+            <tr><td>Best when</td><td>Scope stable, regulated docs</td><td>Unclear scope, frequent feedback</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="s125">
+        <h2><span class="num">1.2.5</span> Case study — Waterfall (library LMS)</h2>
+        <p><strong>Al-Noor Library Management System:</strong> fixed requirements, small team, 6-month plan — classic Waterfall fit.</p>
+        <ul>
+          <li>Testing (black box): e.g. search validation, automatic overdue alerts after fixes</li>
+          <li>Deployment: pilot on librarian PC, data migration (~2,400 books), then school-wide</li>
+          <li>Maintenance types: <em>corrective</em>, <em>adaptive</em>, <em>perfective</em>, <em>preventive</em> (backups)</li>
+        </ul>
+      </section>
+
+      <section id="s126">
+        <h2><span class="num">1.2.6</span> Case study — Agile (mobile app)</h2>
+        <p><strong>Al-Noor Student Mobile App:</strong> unclear initial scope, multiple stakeholders, cross-platform (Flutter), 2-week sprints × 5.</p>
+        <figure class="diagram-card">
+          <svg class="diagram" viewBox="0 0 320 140" width="320" height="140" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="160" cy="70" r="55" fill="none" stroke="#2563eb" stroke-width="2"/>
+            <text x="160" y="68" text-anchor="middle" font-size="11" fill="#1e40af" font-weight="600">Sprint</text>
+            <text x="160" y="82" text-anchor="middle" font-size="9" fill="#64748b">(2 weeks)</text>
+            <g font-size="8" fill="#334155">
+              <text x="160" y="18" text-anchor="middle">Plan</text>
+              <text x="268" y="55" text-anchor="middle">Daily</text>
+              <text x="268" y="67" text-anchor="middle">standup</text>
+              <text x="230" y="118" text-anchor="middle">Review</text>
+              <text x="90" y="118" text-anchor="middle">Retro</text>
+              <text x="52" y="62" text-anchor="middle">Build &amp;</text>
+              <text x="52" y="74" text-anchor="middle">test</text>
+            </g>
+            <polygon points="160,8 165,20 155,20" fill="#2563eb"/>
+            <polygon points="278,70 266,65 266,75" fill="#2563eb"/>
+            <polygon points="210,125 205,113 215,113" fill="#2563eb"/>
+            <polygon points="110,125 115,113 105,113" fill="#2563eb"/>
+            <polygon points="42,70 54,65 54,75" fill="#2563eb"/>
+          </svg>
+          <figcaption>Scrum cycle inside each sprint</figcaption>
+        </figure>
+        <p>Artifacts: <strong>Product backlog</strong> (prioritized user stories) → <strong>Sprint backlog</strong> → increment delivered for feedback.</p>
+      </section>
+
+      <section id="s13">
+        <h2><span class="num">1.3</span> Communication models</h2>
+        <p>A <strong>communication model</strong> defines layered rules so heterogeneous devices exchange data reliably — like a postal system with standardized envelopes and addresses.</p>
+        <ul>
+          <li><strong>OSI</strong> — 7-layer reference model (teaching &amp; design)</li>
+          <li><strong>TCP/IP</strong> — 4-layer practical stack used on the Internet</li>
+        </ul>
+      </section>
+
+      <section id="s132">
+        <h2><span class="num">1.3.2</span> OSI seven-layer model</h2>
+        <p class="callout" style="margin-bottom:0.65rem;"><strong>Mnemonic (L1→L7):</strong> “Please Do Not Throw Sausage Pizza Away” — Physical, Data Link, Network, Transport, Session, Presentation, Application.</p>
+        <figure class="diagram-card">
+          <svg class="diagram" viewBox="0 0 280 320" width="280" height="320" xmlns="http://www.w3.org/2000/svg">
+            <g font-size="10">
+              <rect x="40" y="10" width="200" height="38" fill="#fef3c7" stroke="#d97706"/><text x="140" y="33" text-anchor="middle" fill="#78350f">7 Application — HTTP, DNS, SMTP</text>
+              <rect x="40" y="52" width="200" height="38" fill="#fce7f3" stroke="#db2777"/><text x="140" y="75" text-anchor="middle" fill="#831843">6 Presentation — TLS, JPEG, ASCII</text>
+              <rect x="40" y="94" width="200" height="38" fill="#ede9fe" stroke="#7c3aed"/><text x="140" y="117" text-anchor="middle" fill="#4c1d95">5 Session — RPC, NetBIOS</text>
+              <rect x="40" y="136" width="200" height="38" fill="#dbeafe" stroke="#2563eb"/><text x="140" y="159" text-anchor="middle" fill="#1e3a8a">4 Transport — TCP, UDP</text>
+              <rect x="40" y="178" width="200" height="38" fill="#d1fae5" stroke="#059669"/><text x="140" y="201" text-anchor="middle" fill="#065f46">3 Network — IP, ICMP, routing</text>
+              <rect x="40" y="220" width="200" height="38" fill="#ccfbf1" stroke="#0d9488"/><text x="140" y="243" text-anchor="middle" fill="#134e4a">2 Data Link — MAC, Ethernet, Wi‑Fi</text>
+              <rect x="40" y="262" width="200" height="38" fill="#e2e8f0" stroke="#475569"/><text x="140" y="285" text-anchor="middle" fill="#1e293b">1 Physical — cables, hubs, bits</text>
+            </g>
+            <text x="260" y="160" font-size="9" fill="#64748b">Peer</text>
+            <text x="260" y="172" font-size="9" fill="#64748b">layers</text>
+          </svg>
+          <figcaption>Each layer serves the layer above and uses services of the layer below.</figcaption>
+        </figure>
+        <h3 id="s134">Encapsulation (sender → receiver)</h3>
+        <p>Data moves <strong>down</strong> the stack on send (headers added = encapsulation), traverses the medium, then moves <strong>up</strong> on receive (de-encapsulation).</p>
+        <svg class="diagram" viewBox="0 0 400 90" width="400" height="90" xmlns="http://www.w3.org/2000/svg" style="margin:0.5rem auto;">
+          <text x="30" y="20" font-size="10" fill="#334155">Sender</text>
+          <rect x="20" y="28" width="70" height="14" fill="#fef3c7"/><rect x="20" y="42" width="70" height="14" fill="#dbeafe"/>
+          <rect x="20" y="56" width="70" height="14" fill="#d1fae5"/><text x="95" y="52" font-size="9" fill="#64748b">↓ wrap</text>
+          <line x1="120" y1="50" x2="280" y2="50" stroke="#94a3b8" stroke-dasharray="5 3"/>
+          <text x="300" y="20" font-size="10" fill="#334155">Receiver</text>
+          <rect x="290" y="28" width="70" height="14" fill="#fef3c7"/><rect x="290" y="42" width="70" height="14" fill="#dbeafe"/>
+          <rect x="290" y="56" width="70" height="14" fill="#d1fae5"/><text x="265" y="52" font-size="9" fill="#64748b">↑ unwrap</text>
+        </svg>
+      </section>
+
+      <section id="s135">
+        <h2><span class="num">1.3.5</span> TCP/IP model</h2>
+        <div class="two-col">
+          <table class="data">
+            <thead><tr><th>TCP/IP layer</th><th>Maps to OSI</th><th>Examples</th></tr></thead>
+            <tbody>
+              <tr><td>Application</td><td>5–7</td><td>HTTP, FTP, DNS</td></tr>
+              <tr><td>Transport</td><td>4</td><td>TCP (reliable), UDP (fast)</td></tr>
+              <tr><td>Internet</td><td>3</td><td>IP, ICMP</td></tr>
+              <tr><td>Network access</td><td>1–2</td><td>Ethernet, Wi‑Fi driver</td></tr>
+            </tbody>
+          </table>
+          <figure class="diagram-card">
+            <svg class="diagram" viewBox="0 0 160 200" width="160" height="200" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="15" width="120" height="40" fill="#dbeafe" stroke="#2563eb"/><text x="80" y="40" text-anchor="middle" font-size="10">Application</text>
+              <rect x="20" y="60" width="120" height="40" fill="#d1fae5" stroke="#059669"/><text x="80" y="85" text-anchor="middle" font-size="10">Transport</text>
+              <rect x="20" y="105" width="120" height="40" fill="#fef3c7" stroke="#d97706"/><text x="80" y="130" text-anchor="middle" font-size="10">Internet</text>
+              <rect x="20" y="150" width="120" height="40" fill="#e2e8f0" stroke="#475569"/><text x="80" y="175" text-anchor="middle" font-size="9">Network access</text>
+            </svg>
+            <figcaption>TCP/IP — four layers on the real Internet</figcaption>
+          </figure>
+        </div>
+        <p><strong>TCP</strong> — connection-oriented, retransmits lost segments, ordered delivery. <strong>UDP</strong> — connectionless, lower overhead (streaming, DNS queries).</p>
+        <p><strong>Exam tip:</strong> OSI is the detailed reference; TCP/IP is the implementation stack. Know layer names, one protocol each, and direction of data flow.</p>
+      </section>
+
+      <footer class="doc-footer">
+        Unit 1 · Chapter 1 lecture notes — generated for study; align with textbook sections 1.1–1.3 and Logisim lab work.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
