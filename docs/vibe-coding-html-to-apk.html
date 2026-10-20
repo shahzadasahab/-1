@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vibe Coding: From an HTML File to an Android APK</title>
+<meta name="description" content="A specific tutorial for non-coders: describe an app in your own language, use a Claude Code cloud session embedded with GitHub, and build an Android APK from HTML.">
+<style>
+  @page {
+    size: A4;
+    margin: 16mm 13mm 15mm 13mm;
+    @top-left {
+      content: "Vibe Coding  ·  HTML file to APK";
+      font-family: "Inter", "Liberation Sans", sans-serif;
+      font-size: 8pt;
+      color: #4a5562;
+    }
+    @top-right {
+      content: "Claude Code cloud session  ·  GitHub";
+      font-family: "Inter", "Liberation Sans", sans-serif;
+      font-size: 8pt;
+      color: #4a5562;
+    }
+    @bottom-left {
+      content: "Capacitor 8.5.3  ·  checked 20 October 2026";
+      font-family: "Inter", "Liberation Sans", sans-serif;
+      font-size: 8pt;
+      color: #4a5562;
+    }
+    @bottom-right {
+      content: counter(page);
+      font-family: "Inter", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #1c2430;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { font-size: 10.5pt; }
+
+  body {
+    margin: 0;
+    color: #1c2430;
+    font-family: "Inter", "Liberation Sans", "Noto Sans", sans-serif;
+    line-height: 1.42;
+  }
+
+  h1 {
+    font-size: 20pt;
+    line-height: 1.15;
+    margin: 0 0 4px 0;
+    letter-spacing: -0.02em;
+    bookmark-level: 1;
+  }
+
+  .subtitle {
+    margin: 0 0 8px 0;
+    font-size: 11.5pt;
+    color: #24384d;
+  }
+
+  .lede {
+    margin: 0 0 10px 0;
+  }
+
+  h2 {
+    font-size: 13.5pt;
+    line-height: 1.2;
+    margin: 14px 0 6px 0;
+    padding-top: 2px;
+    border-top: 1.5px solid #1e3a5f;
+    bookmark-level: 1;
+    break-after: avoid;
+  }
+
+  h3 {
+    font-size: 11.5pt;
+    line-height: 1.25;
+    margin: 11px 0 4px 0;
+    color: #1e3a5f;
+    bookmark-level: 2;
+    break-after: avoid;
+  }
+
+  p { margin: 0 0 6px 0; }
+
+  ul, ol { margin: 2px 0 8px 0; padding-left: 1.15em; }
+  li { margin: 0 0 2px 0; }
+  li p { margin: 0; }
+
+  strong { font-weight: 650; }
+
+  a { color: #1e3a5f; text-decoration: none; }
+
+  code, pre {
+    font-family: "JetBrains Mono", "Liberation Mono", monospace;
+  }
+
+  code {
+    font-size: 0.88em;
+    background: #eef1f4;
+    padding: 0 2px;
+  }
+
+  pre {
+    margin: 3px 0 8px 0;
+    padding: 6px 8px;
+    background: #f3f5f7;
+    border-left: 3px solid #1e3a5f;
+    font-size: 7.7pt;
+    line-height: 1.32;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-decoration-break: clone;
+  }
+
+  pre code {
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  .prompt {
+    border-left-color: #0d6b4c;
+    background: #f3f7f5;
+  }
+
+  .filecap, .promptcap {
+    margin: 8px 0 1px 0;
+    font-size: 8.5pt;
+    font-weight: 650;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    break-after: avoid;
+  }
+
+  .filecap { color: #1e3a5f; }
+  .promptcap { color: #0d6b4c; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4px 0 8px 0;
+    font-size: 9.4pt;
+    break-inside: auto;
+  }
+
+  th, td {
+    border: 0.4pt solid #c5ced6;
+    padding: 3px 5px;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  th {
+    background: #e7eef5;
+    font-weight: 650;
+  }
+
+  .note {
+    margin: 6px 0 8px 0;
+    padding: 5px 8px;
+    background: #fbf7f1;
+    border-left: 3px solid #8a5a12;
+    box-decoration-break: clone;
+    break-inside: avoid;
+  }
+
+  .note p:last-child { margin-bottom: 0; }
+
+  .toc { margin: 2px 0 8px 0; }
+  .toc a {
+    display: block;
+    color: #1c2430;
+    text-decoration: none;
+    line-height: 1.35;
+  }
+  .toc a::after {
+    content: leader(".") target-counter(attr(href), page);
+  }
+
+  .urdu {
+    font-family: "Noto Naskh Arabic", "Noto Nastaliq Urdu", serif;
+    direction: rtl;
+    text-align: right;
+    font-size: 13pt;
+    line-height: 1.7;
+    margin: 2px 0 6px 0;
+  }
+
+  .small { font-size: 9pt; color: #33404c; }
+</style>
+</head>
+<body>
+
+<h1>Vibe Coding: from an HTML file to an Android APK</h1>
+<p class="subtitle">For non-coders. You describe the app in your own language. A Claude Code cloud session, embedded with a GitHub repository, writes the files. GitHub builds the APK.</p>
+<p class="lede">Vibe coding means you judge the running app, and the model writes the program. Andrej Karpathy gave the practice that name on 2 February 2025. This manual is the version you can ship: every change is a GitHub commit, every installable file is built by a recorded run, and you can say, in plain language, what the app is allowed to do.</p>
+<p>You stay in a browser, and you install the result on an Android phone. The product that does the writing is <strong>Claude Code in the cloud</strong>, at <code>claude.ai/code</code>. The ordinary Claude chat page can draft HTML. It does not clone your repository, push a branch, or leave you a build you can re-run. Use the cloud session.</p>
+
+<h2 id="path">1. The path</h2>
+<ol>
+  <li>You create an empty GitHub repository.</li>
+  <li>You open a cloud session with that repository already selected. That selection is the embedding.</li>
+  <li>You describe the screen in the language you speak. Claude writes <code>www/index.html</code> and the files next to it.</li>
+  <li>In the same session, Claude wraps those files with Capacitor 8. Capacitor makes an Android app whose only screen is your HTML.</li>
+  <li>Claude adds a GitHub Actions workflow. GitHub’s build machine has the Android SDK. The session’s machine does not.</li>
+  <li>You download <code>app-debug.apk</code> and install it.</li>
+  <li>Each later change is a new message, a new branch, and a new APK.</li>
+  <li>When the app is worth keeping, you sign it with one key you store yourself. A version tag produces <code>app-release.apk</code> (install on a phone) and <code>app-release.aab</code> (upload to Google Play).</li>
+</ol>
+<table>
+  <tr><th>Stage</th><th>You send</th><th>You receive</th></tr>
+  <tr><td>HTML</td><td>What the screen does</td><td><code>www/index.html</code></td></tr>
+  <tr><td>Wrap</td><td>The Capacitor instructions in section 6</td><td><code>android/</code> and <code>capacitor.config.json</code></td></tr>
+  <tr><td>Debug</td><td>The workflow file in section 6</td><td><code>app-debug.apk</code></td></tr>
+  <tr><td>Update</td><td>One change, in your language</td><td>A new debug APK</td></tr>
+  <tr><td>Release</td><td>A GitHub Release tagged <code>v1.0.0</code></td><td>Signed APK and AAB</td></tr>
+</table>
+<p>The worked example is a one-screen errand list. Replace the name, the app id, and the description before you send the first message. Use the same three values in every later message.</p>
+<table>
+  <tr><th>Placeholder</th><th>Example value</th><th>Rule</th></tr>
+  <tr><td>App name</td><td><code>Errand List</code></td><td>The name under the icon. You may change it later.</td></tr>
+  <tr><td>App id</td><td><code>com.example.errandlist</code></td><td>Lowercase. At least two parts separated by dots. Each part starts with a letter. Then only letters, digits, and underscores. It is permanent. On your own phone it must be unique among your apps. On Google Play it must be unique worldwide. Use your own id, for example <code>com.maria.errands</code>.</td></tr>
+  <tr><td>Description</td><td>The “App:” paragraph in message 1</td><td>Write this in your language. It is the whole product.</td></tr>
+</table>
+
+<nav class="toc">
+  <a href="#accounts">2. Accounts and the GitHub connection</a>
+  <a href="#embed">3. Embed the repository in a session</a>
+  <a href="#messages">4. How to write a message</a>
+  <a href="#language">5. Your own language</a>
+  <a href="#session1">6. Session 1: HTML, Android project, build</a>
+  <a href="#install">7. Install the debug APK</a>
+  <a href="#change">8. The next change</a>
+  <a href="#rules">9. CLAUDE.md, the standing rules</a>
+  <a href="#key">10. The signing key</a>
+  <a href="#release">11. Signed APK and AAB</a>
+  <a href="#play">12. Google Play</a>
+  <a href="#vm">13. Building on the session machine</a>
+  <a href="#fail">14. Failures and the reply that fixes them</a>
+  <a href="#limits">15. What this APK can do</a>
+  <a href="#ship">16. Before anyone else installs it</a>
+  <a href="#sources">17. Sources</a>
+</nav>
+
+<h2 id="accounts">2. Accounts and the GitHub connection</h2>
+<p>You need a GitHub account, a Claude subscription that includes cloud sessions, a browser, and an Android phone. Cloud sessions are included on Pro, Max, and Team plans, and on Enterprise seats that include Claude Code. The session counts against that plan’s usage. There is no separate charge for the virtual machine. Signing in with an API key does not start a cloud session.</p>
+<h3>Create the repository</h3>
+<ol>
+  <li>On GitHub, choose <strong>New repository</strong>.</li>
+  <li>Name it with letters, numbers, and hyphens, for example <code>errand-list</code>.</li>
+  <li>Choose Private or Public. A private repository works after the Claude GitHub App is installed on it.</li>
+  <li>Check <strong>Add a README file</strong>. The session needs a branch to clone. Leave the license and the ignore template empty.</li>
+  <li>Create the repository. The address is <code>https://github.com/OWNER/REPO</code>. You will type <code>OWNER/REPO</code>.</li>
+</ol>
+<h3>Connect Claude Code to GitHub</h3>
+<ol>
+  <li>Open <code>https://claude.ai/code</code>.</li>
+  <li>Choose <strong>Sign in with GitHub</strong> and approve the request. GitHub sends you back to <code>claude.ai/code</code>.</li>
+  <li>For a private repository, install the <strong>Claude GitHub App</strong> on the account or organization that owns it, and include this repository. An organization owner may have to approve the install. The install also turns on Auto-fix for pull requests in that repository.</li>
+  <li>On Pro and Max, onboarding creates an environment named <strong>Default</strong> with Trusted network access. On Team and Enterprise, leave the prefilled name and network access as they are and choose <strong>Create &amp; finish</strong>. If the page says GitHub access is required, an Owner first turns on the GitHub connector at Organization settings → Connectors, then you reload.</li>
+</ol>
+<p>Default is the right environment for this manual. Trusted access reaches GitHub, npm, Maven, and Gradle. It does not include <code>dl.google.com</code>, which is where Android SDK packages are downloaded. That is why section 6 builds the APK on GitHub Actions, where the SDK is already installed. Section 13 is the optional path that adds <code>dl.google.com</code> and builds inside the session.</p>
+<div class="note">
+  <p>Organizations with Zero Data Retention, the HIPAA configuration, or customer-managed encryption keys cannot start these cloud sessions. If the page says cloud sessions are unavailable, that setting is the reason.</p>
+</div>
+<h3>The same connection from a terminal</h3>
+<p>Use this only if you already use the <code>gh</code> command. In a shell: <code>gh auth login</code>, then <code>gh auth refresh -s workflow</code>. Open the Claude Code CLI, run <code>/login</code> with the same claude.ai account, then run <code>/web-setup</code> and confirm. The <code>workflow</code> scope is what allows a later push of <code>.github/workflows</code>. On Team and Enterprise, <code>/web-setup</code> appears after an Owner turns on Quick setup. Disconnecting GitHub at <code>claude.ai/customize/connectors</code> removes the token from cloud sessions. Your local <code>gh</code> login stays until you revoke it on GitHub.</p>
+
+<h2 id="embed">3. Embed the repository in a session</h2>
+<p>A cloud session runs on an Anthropic-managed virtual machine: Ubuntu 24.04, x86_64, about 4 vCPUs, 16 GB of RAM, and 30 GB of disk. It clones the repository you selected. You do not get a shell. You type what you want, and Claude runs the commands. Closing the browser tab leaves the session running. After a few minutes with no messages, the machine pauses. Open the session again from the sidebar. If the page says the environment expired, the conversation is restored on a new machine; a command that was still running is not restored.</p>
+<h3>From the browser or the phone</h3>
+<ol>
+  <li>Open <code>claude.ai/code</code>, or the <strong>Code</strong> tab in the Claude mobile app.</li>
+  <li>Under the message box, open the repository selector and choose <code>OWNER/REPO</code>. Add no second repository. A session with one repository loads <code>CLAUDE.md</code> and the repo’s Claude settings. A session with several repositories does not load hooks from <code>.claude/settings.json</code>.</li>
+  <li>Leave the branch on the default branch for the first session. Claude will create <code>html-app</code>. For a later session that must continue unmerged work, change the branch in the control next to the repository.</li>
+  <li>Set the permission mode. <strong>Plan</strong>: Claude proposes the approach and waits. <strong>Accept edits</strong>: Claude edits files and pushes. <strong>Auto</strong>: a classifier reviews actions when your plan allows it. Cloud sessions have no Manual mode and no Bypass mode.</li>
+  <li>Paste the message. Press Enter.</li>
+</ol>
+<p>Start message 1 in <strong>Plan</strong>. When the plan matches the message, reply <code>Approved. Build it and push the branch.</code> Switch the mode to <strong>Accept edits</strong> before message 2.</p>
+<h3>Embed with a URL</h3>
+<p>This URL opens a session form with the repository and a short instruction already filled in. Replace <code>OWNER/REPO</code>. Encode spaces as <code>%20</code>. Keep the URL short. Put long instructions in the text box, or, after section 9, in <code>CLAUDE.md</code>.</p>
+<p class="filecap">Session URL</p>
+<pre><code>https://claude.ai/code?repositories=OWNER/REPO&amp;environment=Default&amp;prompt=Follow%20CLAUDE.md</code></pre>
+<table>
+  <tr><th>Parameter</th><th>Meaning</th></tr>
+  <tr><td><code>repositories</code></td><td>Comma-separated <code>owner/repo</code> list. <code>repo</code> is an alias. This manual uses one.</td></tr>
+  <tr><td><code>prompt</code></td><td>Text placed in the box. <code>q</code> is an alias.</td></tr>
+  <tr><td><code>prompt_url</code></td><td>A URL that returns the prompt text. Ignored when <code>prompt</code> is also set. The URL must allow cross-origin reads. A raw GitHub URL usually does not.</td></tr>
+  <tr><td><code>environment</code></td><td>Environment name or id. Use <code>Default</code> until section 13.</td></tr>
+</table>
+<h3>From the Claude Code CLI</h3>
+<p>Push first. <code>claude --cloud</code> clones the GitHub branch, not uncommitted files on your laptop.</p>
+<p class="filecap">Start, then send a follow-up</p>
+<pre><code>claude --cloud "Follow CLAUDE.md. Add a delete-all button."
+claude -p "Make the Add button full width." --cloud SESSION_ID</code></pre>
+<p>The session id is in the <code>claude.ai/code</code> link. To continue on your laptop, run <code>claude --teleport SESSION_ID</code> from a clean checkout of the same repository and the same claude.ai account. The branch must already be pushed.</p>
+<p>Each task gets its own session and branch, so several tasks can run at the same time. For this app, finish session 1 and merge it before you start a second task. Two sessions editing the same HTML will produce two branches you would have to combine.</p>
+
+<h2 id="messages">4. How to write a message</h2>
+<ol>
+  <li>One change per message.</li>
+  <li>Name the visible result: what a person sees, what a tap does, what is still there after the app closes.</li>
+  <li>Name the file when you know it.</li>
+  <li>State what must stay: the app id, the signing setup, and the screens you did not mention.</li>
+  <li>When something fails, paste the error unchanged. Add one sentence: what you expected on the phone.</li>
+  <li>End with: commit, push the branch, leave <code>main</code> unchanged.</li>
+  <li>Read the diff by behavior. You are checking that the words you asked for are present, that <code>appId</code> is yours, and that no <code>.jks</code> file appears.</li>
+</ol>
+<p>The diff view shows a count such as <code>+42 −18</code>. Open it. Select a line, type the correction, and press Enter. The comment waits. Your next message sends it with the rest of the instruction, including the file and line. When the diff is right, choose <strong>Create PR</strong> at the top of the diff view and open a full pull request. Use that button. Inside this session, <code>gh pr create</code> calls GitHub GraphQL, and the session proxy answers <code>GitHub GraphQL is not available from Claude Code sessions</code>.</p>
+
+<h2 id="language">5. Your own language</h2>
+<p>Write every message in the language you already speak. Claude reads that message. The app’s on-screen language is a separate instruction. Say both.</p>
+<table>
+  <tr><th>You want</th><th>Add this sentence</th></tr>
+  <tr><td>English screen</td><td>The visible language is English. Lay the screen out left to right.</td></tr>
+  <tr><td>Another left-to-right language</td><td>The visible language is Spanish. Lay the screen out left to right. <span class="small">La pantalla está en español. El texto va de izquierda a derecha.</span></td></tr>
+  <tr><td>A right-to-left language</td><td>The visible language is Urdu. Lay the screen out right to left. Store the font file under <code>www/fonts/</code> and use it in the CSS.</td></tr>
+</table>
+<p class="urdu">ایپ کی زبان اردو ہو۔ سکرین دائیں سے بائیں ہو۔</p>
+<p>Keep these tokens in ASCII even when the rest of the message is not English: file names, <code>www/</code>, <code>appId</code>, <code>versionCode</code>, <code>versionName</code>, the app id, and <code>.github/workflows/android-apk.yml</code>.</p>
+<p>A font that is linked from the internet will load only when the phone is online. For a right-to-left app that must work offline, the message must say: put the font file in the repository and refer to it with a relative path.</p>
+
+<h2 id="session1">6. Session 1: HTML, Android project, build</h2>
+<p>Use one session for the three messages below. Wait until Claude says the branch is pushed before you send the next message. Replace the app name, the app id, and the “App:” paragraph in all three before you send the first.</p>
+<p>Message 1 creates the HTML. Message 2 wraps it. Wrapping needs Node.js and the Capacitor packages. The cloud image already has Node.js 22, npm, and OpenJDK 21. <code>npx cap add android</code> copies a project template. It does not need the Android SDK, and it was run that way while this manual was written. <code>./gradlew assembleDebug</code> does need the SDK. Message 2 tells Claude not to run Gradle. Message 3 makes GitHub run it.</p>
+
+<p class="promptcap">Message 1 — paste, after replacing the three placeholders</p>
+<pre class="prompt"><code>Work in this repository on a new branch named html-app.
+
+Build a phone app as HTML, CSS, and JavaScript. I will judge it on a phone. I will not edit the files.
+
+App: a private errand list. One screen. A text box, an Add button, and the list. Tapping a row crosses it out. Tapping a crossed-out row deletes it. Save the list in localStorage. Show the version 1.0.0 at the bottom.
+
+Create:
+www/index.html
+www/styles.css
+www/app.js
+
+Constraints:
+The visible language is English. Lay the screen out left to right.
+index.html contains a head element and a viewport meta of width=device-width, initial-scale=1.
+CSS and JavaScript live only in www/styles.css and www/app.js.
+The app works with the phone offline. No CDN and no remote font.
+Body text is at least 18px. Buttons are at least 48px tall.
+A 360px-wide screen does not scroll sideways.
+
+Commit and push the branch. Leave main unchanged.</code></pre>
+<p>In the diff, confirm <code>www/index.html</code> exists and the screen text from your “App:” paragraph is in the files. Then send message 2.</p>
+
+<p class="promptcap">Message 2 — wrap with Capacitor 8</p>
+<pre class="prompt"><code>On this same branch, wrap www/ with Capacitor 8. Do not run ./gradlew. This session has no Android SDK.
+
+Run, in this order:
+npm init -y
+npm install @capacitor/core@8 @capacitor/android@8
+npm install -D @capacitor/cli@8
+npx cap init "Errand List" com.example.errandlist --web-dir www
+npx cap add android
+npx cap sync android
+
+In android/app/build.gradle set versionCode to 1 and versionName to "1.0.0".
+In android/app/src/main/res/values/strings.xml set app_name and title_activity_main to Errand List.
+
+Uncomment the *.jks and *.keystore lines in android/.gitignore.
+Add a root .gitignore with these two lines:
+node_modules/
+*.jks
+*.keystore
+
+capacitor.config.json must contain:
+appId com.example.errandlist
+appName Errand List
+webDir www
+It must not contain server.url.
+
+Commit package.json, package-lock.json, capacitor.config.json, .gitignore, and the android directory. Push the branch.</code></pre>
+<p>On 20 October 2026, <code>@8</code> installed Capacitor 8.5.3. The lockfile keeps that exact version. The generated Android template uses <code>minSdkVersion</code> 24, <code>compileSdkVersion</code> 36, <code>targetSdkVersion</code> 36, Android Gradle Plugin 8.13.0, and Gradle 8.14.3. Phones below Android 7.0 cannot install this app.</p>
+<p><code>android/.gitignore</code> ignores <code>*.apk</code> and ignores <code>app/src/main/assets/public</code>. The HTML you edit stays in <code>www/</code>. The workflow copies it into the Android project at build time with <code>npx cap sync android</code>. A build that skips that copy ships the last synced page, or an empty shell.</p>
+
+<p class="promptcap">Message 3 — workflow, signing block, and standing rules</p>
+<pre class="prompt"><code>On this same branch, create .github/workflows/android-apk.yml with the workflow I paste under this paragraph, unchanged.
+In android/app/build.gradle, replace the existing buildTypes block with the signingConfigs block and the buildTypes block I paste after the workflow.
+Create CLAUDE.md with the standing rules I paste after that.
+Do not change appId. Do not commit a .jks file. Push the branch.</code></pre>
+<p>Paste the three blocks below in the same message, after that paragraph.</p>
+
+<p class="filecap">File: .github/workflows/android-apk.yml</p>
+<pre><code>name: Android APK
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Copy HTML into the Android project
+        run: |
+          npm ci
+          npx cap sync android
+          chmod +x android/gradlew
+
+      - name: Install Android SDK 36
+        run: |
+          SDK="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
+          SM=$(find "$SDK/cmdline-tools" -name sdkmanager \
+            -type f | sort | tail -n 1)
+          yes | "$SM" --sdk_root="$SDK" --licenses \
+            >/dev/null || true
+          "$SM" --sdk_root="$SDK" \
+            "platforms;android-36" "build-tools;36.0.0"
+
+      - name: Debug APK
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+        working-directory: android
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: Upload debug APK
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Decode the release keystore
+        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          if [ -z "$ANDROID_KEYSTORE_BASE64" ]; then
+            echo "Missing secret ANDROID_KEYSTORE_BASE64"
+            exit 1
+          fi
+          echo "$ANDROID_KEYSTORE_BASE64" \
+            | base64 -d > "$RUNNER_TEMP/upload.jks"
+
+      - name: Release APK and AAB
+        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        working-directory: android
+        env:
+          ANDROID_KEYSTORE_FILE: ${{ runner.temp }}/upload.jks
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: ./gradlew assembleRelease bundleRelease --no-daemon
+
+      - name: Verify the release signature
+        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        run: |
+          SDK="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
+          APKSIGNER=$(find "$SDK/build-tools" -name apksigner \
+            -type f | sort | tail -n 1)
+          "$APKSIGNER" verify --print-certs \
+            android/app/build/outputs/apk/release/app-release.apk
+
+      - name: Attach files to the GitHub Release
+        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload "$GITHUB_REF_NAME" \
+            android/app/build/outputs/apk/release/app-release.apk \
+            android/app/build/outputs/bundle/release/app-release.aab \
+            --clobber
+
+      - name: Upload release files
+        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release
+          path: |
+            android/app/build/outputs/apk/release/app-release.apk
+            android/app/build/outputs/bundle/release/app-release.aab
+          if-no-files-found: error
+          retention-days: 30</code></pre>
+<p>The runner is pinned to <code>ubuntu-24.04</code> because the <code>ubuntu-latest</code> label moves to Ubuntu 26.04 in November 2026. Both images can build this project. The pin keeps the run on the image this file was written for. The SDK step installs platform 36 and build-tools 36.0.0, which match Capacitor 8.</p>
+
+<p class="filecap">Replacement inside android/app/build.gradle</p>
+<pre><code>    signingConfigs {
+        release {
+            def keystorePath = System.getenv("ANDROID_KEYSTORE_FILE")
+            if (keystorePath) {
+                storeFile file(keystorePath)
+                storePassword System.getenv("ANDROID_KEYSTORE_PASSWORD")
+                keyAlias System.getenv("ANDROID_KEY_ALIAS")
+                keyPassword System.getenv("ANDROID_KEY_PASSWORD")
+            }
+        }
+    }
+    buildTypes {
+        release {
+            if (System.getenv("ANDROID_KEYSTORE_FILE")) {
+                signingConfig signingConfigs.release
+            }
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }</code></pre>
+<p><code>signingConfigs</code> must sit above <code>buildTypes</code>, still inside the existing <code>android { }</code> block. A debug build leaves <code>ANDROID_KEYSTORE_FILE</code> empty, so Gradle uses its debug signature. A tag build sets the variable, so Gradle signs <code>app-release.apk</code> and <code>app-release.aab</code> with your key. <code>minifyEnabled false</code> leaves the WebView app uncompressed by R8. Turn that on only when you have a failing release that needs it, and expect a separate round of keep-rules.</p>
+
+<p class="filecap">File: CLAUDE.md</p>
+<pre><code># Standing rules
+
+This is an HTML app packaged with Capacitor 8. The user writes messages, not code.
+
+- Edit the UI only under www/. Then run npx cap sync android.
+- webDir is www. Never add server.url.
+- appId is com.example.errandlist. Never change it.
+- Launcher name is app_name and title_activity_main in
+  android/app/src/main/res/values/strings.xml.
+- Do not edit android/app/src/main/assets/public by hand.
+- Do not commit node_modules, build outputs, local.properties, or keystore files.
+- Do not upgrade Capacitor unless the user asks.
+- The on-screen version, versionName, and the Git tag must match.
+  When the user asks for a release, read versionCode and add 1.
+- Visible language and direction are the ones in the latest user message.
+  Default: English, left to right.
+- The page origin inside the APK is https://localhost.
+- Push a branch. Do not push a tag. Do not merge.
+- Do not run gh pr or gh issue.
+- End every task with a plain-language list of Android permissions
+  and every network host the app contacts.</code></pre>
+<p>Replace <code>com.example.errandlist</code> in <code>CLAUDE.md</code> with your app id before you send the message.</p>
+<p>After the push, open the diff. Check the three files, the app id, and the absence of any <code>.jks</code> file. Choose <strong>Create PR</strong>. If Claude reports that GitHub rejected the workflow file, do section 14 before you look for an APK.</p>
+
+<h2 id="install">7. Install the debug APK</h2>
+<ol>
+  <li>Open the pull request on GitHub. Wait until the <strong>Android APK</strong> check is green. The first run downloads Gradle and the Android libraries. A yellow spinner is a running build. A red X is a failed build; go to section 14.</li>
+  <li>Open the run, scroll to <strong>Artifacts</strong>, and download <code>app-debug</code>. You must be logged in. On a private repository, that download is part of your access.</li>
+  <li>Unzip the download. Install the file whose name ends in <code>.apk</code>. It is <code>app-debug.apk</code>, sometimes inside folders.</li>
+  <li>On the phone, open the APK. If Android blocks it, open Settings, search <strong>Install unknown apps</strong>, and allow the app you used to open the file (Chrome or Files).</li>
+  <li>Open the installed app. The screen is the one you described. The bottom shows <code>1.0.0</code>.</li>
+</ol>
+<div class="note">
+  <p>Each debug build on GitHub Actions creates a new debug signature. The next debug APK will not update this one. Uninstall the app, then install the new APK. Uninstalling deletes the saved list. Section 10 is how you get a signature that stays, so later installs keep the data. Play Protect may warn on a debug APK. Choose install anyway only when the file came from this repository’s Actions run.</p>
+</div>
+<p>Use every control. Add an item, close the app, open it, and confirm the item is still there. That is the test of <code>localStorage</code>. Then, on GitHub, merge the pull request. The next session starts from <code>main</code>. Until you merge, point the next session at the branch <code>html-app</code>.</p>
+
+<h2 id="change">8. The next change</h2>
+<p>Open a new cloud session on <code>OWNER/REPO</code>, mode <strong>Accept edits</strong>. Send:</p>
+<p class="promptcap">Message — one change</p>
+<pre class="prompt"><code>Follow CLAUDE.md.
+Change: add a button that deletes every errand after a second tap to confirm.
+Read the current versionCode in android/app/build.gradle and add 1.
+Set versionName and the on-screen version to 1.1.0.
+Run npx cap sync android.
+Push a new branch. Leave main unchanged. Do not change appId.</code></pre>
+<p>Create the pull request, wait for the green check, uninstall the old debug app, and install the new APK. The version at the bottom is <code>1.1.0</code>.</p>
+<p>To correct a line without a new essay, select that line in the diff, write the correction, and send the next message. To repair a red check, paste the log as in section 14, or turn on <strong>Auto-fix</strong> in the session’s CI status bar. Auto-fix requires the Claude GitHub App on the repository. It answers CI failures and review comments. It does not see a merge conflict when <code>main</code> moves. If that happens, send <code>Rebase this branch onto main and push.</code></p>
+<p>Use <strong>Auto</strong> mode after one APK has installed and <code>CLAUDE.md</code> is on <code>main</code>.</p>
+
+<h2 id="rules">9. CLAUDE.md, the standing rules</h2>
+<p>Message 3 already committed <code>CLAUDE.md</code> at the root of the repository. Every later cloud session on this one repository loads it. The copy of instructions on your laptop, in <code>~/.claude/CLAUDE.md</code>, is not loaded. Commit anything the next session must know.</p>
+<p>The session also loads, for a single-repository session, <code>.claude/settings.json</code>, <code>.claude/rules/</code>, <code>.claude/skills/</code>, and a project-scoped <code>.mcp.json</code>. It does not load plugins that are enabled only on your laptop. You do not need any of those files for this app.</p>
+<p>When a session’s diff is wrong in the same way twice, add one line to <code>CLAUDE.md</code> that states the rule. That is the professional habit: the correction becomes a standing rule, and the next session starts with it.</p>
+
+<h2 id="key">10. The signing key</h2>
+<p>Android installs an update only when the new file is signed with the same key as the installed app and <code>versionCode</code> is higher. The debug APK from Actions uses a new debug key every run. A key you create once, and store, is the key for every later sideload update.</p>
+<p>Create it on a computer you control. Java’s <code>keytool</code> is enough. OpenJDK 21 is what this project builds with.</p>
+<p class="filecap">Create upload.jks — run outside the repository folder</p>
+<pre><code>keytool -genkeypair -v \
+  -keystore upload.jks \
+  -storetype JKS \
+  -alias upload \
+  -keyalg RSA \
+  -keysize 2048 \
+  -validity 10000</code></pre>
+<p>Type a long password. When <code>keytool</code> asks for the key password, press Enter so the key uses the same password. Fill in the name it asks for. Validity of 10000 days from October 2026 ends in 2054, which is after the 22 October 2033 date Android requires of a release certificate.</p>
+<p>Copy <code>upload.jks</code> to two places that are not the git repository: a password manager’s file storage, and a second disk. A lost key means every sideload user must uninstall, which deletes the saved list. A new app id produces a second app, not an update.</p>
+<p class="filecap">One-line base64</p>
+<pre><code>base64 -w 0 upload.jks
+base64 -i upload.jks | tr -d '\n'</code></pre>
+<p>The first command is Linux. The second is macOS. The output is one line.</p>
+<p>On GitHub: repository → <strong>Settings</strong> → <strong>Secrets and variables</strong> → <strong>Actions</strong> → <strong>New repository secret</strong>. Create these four. The names must match. Paste the base64 with no quotes and no spaces.</p>
+<table>
+  <tr><th>Secret</th><th>Value</th></tr>
+  <tr><td><code>ANDROID_KEYSTORE_BASE64</code></td><td>The one-line base64 of <code>upload.jks</code></td></tr>
+  <tr><td><code>ANDROID_KEYSTORE_PASSWORD</code></td><td>The password you typed</td></tr>
+  <tr><td><code>ANDROID_KEY_ALIAS</code></td><td><code>upload</code></td></tr>
+  <tr><td><code>ANDROID_KEY_PASSWORD</code></td><td>The same password, if you pressed Enter for the key password</td></tr>
+</table>
+<p>Add the secrets after the workflow from section 6 is merged to <code>main</code>. The debug job never reads them. The tag job reads them.</p>
+<div class="note">
+  <p>Phone-only fallback, for a personal app: in a cloud session, ask Claude to run the <code>keytool</code> command above with <code>-storepass</code> and <code>-keypass</code>, print the base64, delete <code>upload.jks</code>, and confirm <code>git status</code> does not list it. Copy the base64 into the secret, then delete the session. Deleting a session permanently removes that session’s data. The transcript contained the key until then. For an app other people depend on, create the key on a computer you control.</p>
+</div>
+
+<h2 id="release">11. Signed APK and AAB</h2>
+<p>The cloud session proxy accepts branch pushes and rejects tag pushes. You create the tag in the browser. The tag starts the release half of the workflow.</p>
+<ol>
+  <li>Confirm <code>main</code> contains the version you want. The on-screen text, <code>versionName</code>, and the tag must be the same number. <code>versionCode</code> must be an integer higher than any build you already installed or uploaded.</li>
+  <li>On the repository, open <strong>Releases</strong> → <strong>Draft a new release</strong>.</li>
+  <li>In the tag box, type <code>v1.0.0</code> and choose <strong>Create new tag</strong> on <code>main</code>.</li>
+  <li>Title it <code>v1.0.0</code>. Publish the release.</li>
+  <li>Wait for the <strong>Android APK</strong> workflow on that tag. Refresh the release page. Download <code>app-release.apk</code> and <code>app-release.aab</code>. If the release page has no files and the workflow is green, download the <code>app-release</code> artifact from the run. Artifacts are deleted after 30 days. Keep the APK and AAB you ship.</li>
+  <li>The verify step prints the certificate. The alias in that printout is <code>upload</code>.</li>
+</ol>
+<p>Uninstall the debug app first. Its signature is different, and Android will refuse the release APK until the debug copy is gone. Install <code>app-release.apk</code>. Add a list item. Then ship <code>v1.0.1</code> with <code>versionCode</code> increased by 1, and install that APK over the top. The list item must still be there. That test is the proof the key and the version rules are right.</p>
+<p>Keep the APK for sideload. Keep the AAB for Play. Play will not accept the APK as a new app’s package.</p>
+
+<h2 id="play">12. Google Play</h2>
+<p>New apps enroll in Play App Signing. You upload an AAB signed with your upload key. Google signs the APKs that Play delivers, with a key Google holds. If you lose the upload key, Play can reset it. People who installed from Play keep receiving updates. People who installed your sideload APK do not: the sideload file is signed with the upload key, and the Play file is signed with Google’s key. Those two installs do not replace each other. Uninstall one before installing the other.</p>
+<p>Leave Google as the holder of the app signing key. That is the default when you create the app.</p>
+<ol>
+  <li>Open <code>https://play.google.com/console</code> and create the developer account. Pay the one-time fee shown on that page.</li>
+  <li>Create the app. The package name must equal <code>appId</code> character for character.</li>
+  <li>Complete the dashboard tasks the console lists: store listing, the screenshots in the sizes the form names, app access, ads declaration, content rating, target audience, and data safety.</li>
+  <li>For this errand list, data safety is: the list stays on the device in WebView storage, and the app sends no account and no list contents anywhere. Answer the form to match the code. If the form asks for a privacy-policy URL, ask Claude to write <code>docs/privacy.html</code> that says the same thing, merge it, then in the repository open Settings → Pages → branch <code>main</code> → folder <code>/docs</code>. The page is <code>https://OWNER.github.io/REPO/privacy.html</code>.</li>
+  <li>Open Testing → Internal testing → Create release. Upload <code>app-release.aab</code>. Add tester emails. Send the opt-in link. Testers install from Play.</li>
+  <li>Every later upload needs a higher <code>versionCode</code>. Produce it with a new tag, as in section 11.</li>
+</ol>
+<p>Move from internal testing to production when the dashboard has no remaining required task and the testers have installed the build you intend to ship.</p>
+
+<h2 id="vm">13. Building on the session machine</h2>
+<p>Use this when you want the APK before a pull request exists. The reliable build remains section 6.</p>
+<p>At <code>claude.ai/code</code>, create an environment named <code>android-build</code>. Set network access to <strong>Custom</strong>, include the default domain list, and add one domain: <code>dl.google.com</code>. Set two variables:</p>
+<pre><code>BASH_DEFAULT_TIMEOUT_MS=600000
+BASH_MAX_TIMEOUT_MS=1800000</code></pre>
+<p>Those are 10 minutes and 30 minutes. The defaults are shorter: Claude waits 2 minutes for a foreground command and can ask for up to 10, then the command can continue in the background for up to 30 minutes. A first Gradle build often needs the longer window.</p>
+<p>Do not put the SDK install in the environment’s setup script. A setup script is cached only when it finishes in about five minutes. The SDK download is larger than that budget. A script that exceeds it is not cached, and a script that exits non-zero blocks the session from starting.</p>
+<p class="promptcap">Message — build here, then push the APK</p>
+<pre class="prompt"><code>Install the Android SDK into /opt/android-sdk:
+command-line tools, platforms;android-36, and build-tools;36.0.0.
+Download the tools from dl.google.com.
+Set ANDROID_HOME and ANDROID_SDK_ROOT to /opt/android-sdk.
+Run npx cap sync android.
+Run android/gradlew assembleDebug --no-daemon.
+Copy the APK to releases/app-debug.apk.
+Commit only that APK and push this branch.
+Do not commit a keystore.</code></pre>
+<p>Download <code>releases/app-debug.apk</code> from the branch on GitHub. There is no file browser on the session machine. A file leaves the session by a git push, or it does not leave.</p>
+<p>The machine has about 16 GB of RAM and 30 GB of disk. If the build is killed, use the Actions workflow. Packages installed during a session are not there in the next session. The environment cache stores what a setup script installed, and this manual keeps the SDK out of that script on purpose.</p>
+
+<h2 id="fail">14. Failures and the reply that fixes them</h2>
+<p>Open the failed Actions step, copy from the first <code>FAILURE:</code> or <code>Error:</code> through the next 40 lines, and send:</p>
+<p class="promptcap">Message — red build</p>
+<pre class="prompt"><code>Follow CLAUDE.md. The GitHub Android APK run failed. Fix the project and push this branch. Do not change appId. The log is:
+
+PASTE THE LOG HERE</code></pre>
+<table>
+  <tr><th>What you see</th><th>What you send or do</th></tr>
+  <tr><td>Push rejected for <code>.github/workflows</code></td><td>The GitHub token needs the <code>workflow</code> scope. From a shell: <code>gh auth refresh -s workflow</code>, then <code>/web-setup</code> again. If you connected with the GitHub App, accept the App’s updated permissions on GitHub, then tell Claude to push again.</td></tr>
+  <tr><td><code>GitHub GraphQL is not available</code></td><td>Create the pull request with the <strong>Create PR</strong> button. Keep issue and PR commands out of the message.</td></tr>
+  <tr><td>No repository in the selector</td><td>A private repository appears when the Claude GitHub App is installed on the owning account and the install includes that repository. A <code>/web-setup</code> connection sees the repositories that <code>gh</code> can see. Test with <code>gh repo view OWNER/REPO</code>.</td></tr>
+  <tr><td>Setup script failed</td><td>The script exited non-zero, so the session did not start. This manual’s Default environment has no setup script. If you added one, put <code>set -x</code> at the top, or remove the script and use section 6.</td></tr>
+  <tr><td>SDK 36 step failed</td><td>Paste that step’s log with the red-build message. Stay on <code>runs-on: ubuntu-24.04</code>.</td></tr>
+  <tr><td><code>Missing secret ANDROID_KEYSTORE_BASE64</code></td><td>The tag ran before the four secrets existed. Add section 10, then publish the release again.</td></tr>
+  <tr><td>Blank screen in the installed app</td><td><code>The APK opens a blank screen. Run npx cap sync android, confirm www/index.html exists, commit, and push. Do not change appId.</code></td></tr>
+  <tr><td>App not installed, old copy present</td><td>Uninstall the old copy. A debug APK from Actions does not update a previous debug APK. A release APK updates a release APK only when the key matches and <code>versionCode</code> is higher.</td></tr>
+  <tr><td>Release APK will not replace the Play install</td><td>They are signed by different keys. Uninstall one before installing the other.</td></tr>
+  <tr><td>Play says the version is already used</td><td>Increase <code>versionCode</code>, merge, and tag a new version.</td></tr>
+  <tr><td>The phone shows a desktop page, zoomed out</td><td><code>Add the viewport meta width=device-width, initial-scale=1 to www/index.html and cap sync.</code></td></tr>
+  <tr><td>Fetch to your server returns a network error</td><td>The page origin is <code>https://localhost</code>. The server must allow that origin, and the URL must be <code>https://</code>. Plain <code>http://</code> is blocked.</td></tr>
+</table>
+
+<h2 id="limits">15. What this APK can do</h2>
+<p>The installed app is a small Android program with one WebView. Your HTML, CSS, JavaScript, images, and fonts are inside the APK. With the files from section 6, the manifest permission is <code>android.permission.INTERNET</code> only.</p>
+<table>
+  <tr><th>You can have</th><th>How</th></tr>
+  <tr><td>Several screens</td><td>More HTML files in <code>www/</code>, linked with relative paths.</td></tr>
+  <tr><td>Memory on the device</td><td><code>localStorage</code>. Removed when the app is uninstalled or when a different signature replaces it.</td></tr>
+  <tr><td>Images and fonts offline</td><td>Files under <code>www/</code>, relative URLs such as <code>images/logo.png</code>.</td></tr>
+  <tr><td>A server call</td><td><code>fetch</code> to an <code>https://</code> URL. The caller’s origin is <code>https://localhost</code>.</td></tr>
+  <tr><td>A basic file pick</td><td>An <code>input type="file"</code> in the HTML.</td></tr>
+  <tr><td>Camera, location, share sheet, local notifications, files the app stores itself</td><td>Name the official plugin in the message: <code>@capacitor/camera</code>, <code>@capacitor/geolocation</code>, <code>@capacitor/share</code>, <code>@capacitor/local-notifications</code>, <code>@capacitor/filesystem</code>. Tell Claude to <code>npm install</code> it and run <code>npx cap sync android</code>.</td></tr>
+</table>
+<p class="promptcap">Message — add the camera</p>
+<pre class="prompt"><code>Follow CLAUDE.md.
+Add a Take photo button using the official plugin @capacitor/camera.
+Ask for the camera permission when the button is tapped.
+Show the photo on the page.
+Run npm install @capacitor/camera and npx cap sync android.
+Commit the lockfile and any android files the plugin adds.
+Do not change appId. Push a new branch.</code></pre>
+<p>The camera plugin adds permissions. The end of Claude’s reply lists them. That list is part of the review in section 16.</p>
+<p>This packaging is a poor fit for a heavy 3D game, for work that must keep running after the user leaves the app, and for an iOS build. An iOS build needs a Mac and an Apple signing certificate. It is a separate setup.</p>
+<p>A launcher icon other than the Capacitor default is a later message: put a square PNG at <code>www/icon.png</code> and ask Claude to generate the Android icons with <code>@capacitor/assets</code> and commit the generated mipmap files. The app name under the icon is the string <code>app_name</code>, not the HTML title.</p>
+
+<h2 id="ship">16. Before anyone else installs it</h2>
+<ol>
+  <li>You installed this exact APK or Play build on your own phone and used every control.</li>
+  <li>The version on the screen matches <code>versionName</code> and, for a release, the git tag.</li>
+  <li><code>appId</code> is the final id. Changing it later creates a different app.</li>
+  <li>You asked for this list and you accept it: “List every Android permission and every network host this app uses, in plain language, and point to the file for each.”</li>
+  <li>An errand list that asks for SMS, contacts, accessibility, or device-admin is the wrong APK. Send a message to remove that permission and build again.</li>
+  <li>The signing key has two copies outside GitHub. <code>git status</code> does not list <code>upload.jks</code>.</li>
+  <li>The release you hand to someone is <code>app-release.apk</code> from the tag, or the Play listing. A debug APK from a pull request is for you.</li>
+</ol>
+<p>You are responsible for what the APK does on someone else’s phone. You can meet that duty without reading Java: the behavior is on your phone, the permissions are in the list, and the bytes are the artifact from the tag you published.</p>
+
+<h2 id="sources">17. Sources</h2>
+<p class="small">Checked 20 October 2026. Cloud-session behavior, permission modes, the GitHub proxy, installed tools, network allowlists, and resource limits follow Anthropic’s Claude Code docs: <code>https://code.claude.com/docs/en/web-quickstart</code>, <code>https://code.claude.com/docs/en/claude-code-on-the-web</code>, and <code>https://code.claude.com/docs/en/cloud-environments</code>. Capacitor 8.5.3 figures were taken from a local <code>npx cap add android</code> of <code>@capacitor/core@8</code>, <code>@capacitor/cli@8</code>, and <code>@capacitor/android@8</code> on that date: app id fields, <code>minSdkVersion</code> 24, <code>compileSdkVersion</code> 36, Gradle 8.14.3, Android Gradle Plugin 8.13.0, and the default manifest permission <code>INTERNET</code>. Play App Signing behavior follows Google’s Play Console help and Android’s app-signing documentation. Runner image timing follows GitHub’s runner-images announcement that <code>ubuntu-latest</code> moves to Ubuntu 26.04 in November 2026.</p>
+
+</body>
+</html>
