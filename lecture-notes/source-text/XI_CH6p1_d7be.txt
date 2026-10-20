@@ -1,0 +1,1143 @@
+Chapter
+Digital Literacy
+After the completion of this unit students will be able to:
+@
+Perform advanced searches to locate information and/or design a data collection
+approach
+to
+gather
+original
+data
+(e.g.,
+qualitative
+interviews,
+surveys,
+prototypes, simulations)
+Define
+data
+collection
+strategies
+(e.g.
+qualitative
+interviews,
+surveys,
+prototypes, simulations)
+Apply best practices
+to present primary & secondary data for
+a research
+question
+Design data-collection approach to gather original data
+Present data using appropriate digital tools (such as graphs or infographics in
+worksheets, presentations, reports etc.)
+-
+oo
+¢
+6
+—
+— al
+. 6: Digital literacy
+6.1
+Introduction:
+Digital literacy refers to the ability to
+understand and use digital devices, the internet, *
+responsible manner. In our increasingly digital
+3
+ay
+|
+world, possessing digital literacy is essential BS)
+for
+students,
+educators,
+professionals,
+and
+3
+everyone else.
+It enables individuals to find #
+information,
+communicate,
+produce
+digital
+content,
+and
+solve
+problems
+through
+technology.
+A digitally literate student can locate information, organize
+it properly, turn it into
+—_
+useful, and share it responsibly with others.
+Digital literacy is not only using devices; it is using digital
+Figure 6.1 Digital literacy
+information safely and wisely.
+6.2
+Digital Literacy in the Information Age:
+The Information Age is a period where vast amounts of data are produced,
+shared,
+and accessed instantly through the
+internet, mobile devices, and digital
+platforms. In such an environment, simply having access to technology is not enough.
+Students and users must develop the skills to understand, manage, and use information
+wisely.
+Digital literacy goes beyond basic computer skills. It involves a combination of
+technical, cognitive, and social abilities that enable individuals to function successfully
+in a digital society.
+6.3
+Types of Data:
+The data gathered through a survey, investigation, or classroom project, can be
+described with qualitatively and quantitatively , while some data gives numbers that can
+be counted, measured, or compared.
+6.3.1
+Qualitative Data:
+Qualitative data describes what people think, feel, notice, or experience. It is
+useful when the aim is to understand reasons, attitudes, and behaviour rather than
+numbers or measures.
+Examples include students' opinions about online classes, descriptions of study
+habits, and observation notes written during a computer lab activity.
+¢
+¢
+MN)
+lf
+F k
+[
+Unit 6: Digital literacy
+6.3.2 Quantitative Data:
+Quantitative data deals with numbers. It is useful when students need to count,
+measure, compare, calculate averages, or display results in charts and graphs.
+Examples include the number of students using the internet daily, the marks obtained
+in a Computer Science test, or the time spent online per day in hours.
+6.3.3 Comparing Qualitative and Quantitative Data:
+Table 6.1 Comparison of qualitative and quantitative data
+Type of data
+Nature
+Examples
+I mI
+B ie
+.
+_.
+understanding why
+ws
+gs
+Descriptive, | opinions, reasons,
+Qualitative
+.
+;
+and how something
+non-numerical
+behaviour
+happens
+Numerical,
+.
+Quantitative
+countable or
+hours, scores,
+comparing results and
+measurable
+percentages, totals
+making graphs
+6.4
+Data-Collection Strategies:
+Digital literacy is not limited to finding information that already exists. Students
+should also learn how to gather original information.
+c=
+hl
+Data-Collection Strategies
+az,=,0,©
+Collect
+Ask
+Basi early
+Watch
+questions
+© respoines
+SB acsigns
+anne
+Gain
+Gather
+Gather
+Analyze
+qualitative
+broad
+feedback
+behaviour
+insights
+ee
+\
+|
+Figure 6.2 Common methods used to collect data
+© anaiy: and
+© inatyze
+» Predict
+outcomes
+\snenneed
+LA A
+——n
+. 6: Digital literacy
+6.4.1
+Interviews:
+An interview is a planned conversation used to gather information directly from
+a person.
+e
+It may be one-to-one or in a small group.
+®
+Questions are often planned in advance.
+e
+The answers are usually qualitative, although some may be factual.
+6.4.2 Surveys / Questionnaires:
+A survey is useful when the same set of questions needs to be asked from many
+people. It may be prepared on paper or created with digital tools such as Google Forms or
+Microsoft Forms.
+@ © @ — @ https://forms.microsoft.com
+w
+@®
+Forms
+Digital Literacy Survey @EP
+© Preview
+2% Share
+Questions
+Responses
+@ Open v
+Write easing
+Digital Literacy Survey
+This survey is about how students use digital tools for learning and daily life.
+i
+Do you use a computer or smartphone every day?
+©
+Yes
+© No
+B
+How often do you use the internet for study purposes?
+©
+Daily
+©)
+A few times a week
+© Rarely
+© Never
+A
+Which devices do you use most frequently for online learning?
+(0 Smartphone
+L) Laptop
+L) Desktop computer
+=e
+Lo
+:
+|
+Rl
+Pinned
+Pinned
+is
+©
+Recent
+a
+_
+6
+Group forms
+Digital Literacy Survey
+Class Feedback Form
+Tresponses
++
+Last modified
+responses
++
+Last modified
+Today
+Today
+Toon!
+FE
+71
+Customer Satisfaction Survey
+Digital Literacy Survey
+14 responses
++ Last modified
+Tresponses
++
+Last modified
+Yesterday
+Today
+Templates
+See all
+>
+All my forms
+Figure 6.3
+Microsoft Forms interface showing how to create and manage a digital literacy survey form.
+é
+¢
+MN)
+lf
+Unit 6: Digital literacy
+:
+:
+ese
+eee
+&@
+https://docs.google.com/forms/d/ey...
+vr
+Se
+:
+B
+Google Forms
+3
+Q
+Search
+gS
+5
+Digital Literacy Survey
+(2
++r
+@ ee;
+g
+QQ.
+Search
+Recent forms
+v
+Questions
+Responses
+ee
++
+Blank
+aa
+Digital Literacy Survey
+C2
+el
+This survey is about how students use digital tools for learning and daily life.
+i
+See ener
+keke
+|
+wk
+1,
+Do you use a computer or smartphone every day?
+Ean
+|
+—
+©
+Yes
++
+Blank
+Digital Literacy
+Class Feedback
+Event
+©
+No
+Survey
+Form
+Registration
+1 response
+- Opened
+S responses
++ Last
+QS responses
++ Last
+2.
+How often do you use the internet for study purposes?
+eras
+Sesser Fa a0e4
+prmnes Aer 1s oe
+O
+Daily
+©
+A few times
+a week
+fA
+Template gallery
+©
+Rarely
+on
+|
+|
+|
+Digital Literacy
+kek
+k
+Customer Satisfaction
+Survey
+|
+3.
+Which devices do you use most frequently for online learning?
+—-
+|
+:
+(1
+Smartphone
+.
+L
+|
+—
+OO
+Laptop
+Digital Literacy
+Class Feedback
+Event Registration
+C)
+Desktop computer
+Survey
+Form
+32 responses
++ Last apen
+C)
+Tablet
+1 response « Opened
+9 responses
++ Last opened
+Apr 12, 23
+O
+Other
+Apr 13, 2024
+Apr 13, 2024
+Template gallery
+Figure 6.4 Google Forms interface showing the creation of a digital literacy survey form.
+e
+It can collect quantitative data through ratings and multiple-choice questions.
+e
+It can also collect qualitative data through open-ended responses.
+can automatically collect responses and display basic charts,
+making data analysis easier for students.
+gop Onlin
+survey tools such as Google Forms and Microsoft Forms
+@
+6.4.3 Prototypes:
+A prototype is a simple early version of a product, model, or solution. It allows
+an idea to be tested before time and effort are spent on the final version.
+e
+Users try the prototype and give feedback.
+e
+That feedback becomes useful data for improvement.
+6.4.4 Observation:
+In observation, the researcher watches what people do or what happens in a
+situation and records the results carefully.
+e
+No direct questions are asked.
+e
+The data may be qualitative such as notes, or quantitative such as counts.
+6.4.5 Simulations:
+A simulation is a computer-based model of a
+real situation.
+e
+Variables can be changed to see what happens.
+e
+Simulations are useful when real experiments are costly, risky or difficult.
+Sf
+. 6: Digital literacy
+6.5
+Primary and Secondary Data:
+Whenever data is used, it is important to know where it came from. The source
+of data affects how much control the researcher had over collecting
+it and how
+confidently the results can be used. Based on source, the data can be categorized as
+primary and secondary data.
+‘a
+Primary and Secondary Data
+e Primary Data Source: Direct Collection
+|
+Collected first-hand by the researcher
+|
+x
+@
+Interviews
+@
+Observations
+ae
+@
+Surveys
+@ Experiments
+; F |
+_)
+Secondary Data Source: Existing Archives
+=
+Already collected by another source
+a
+4
+553% ®,
+poore a
+Web Statistics
+O Official Reports Oe
+Online Database
+Figure 6.5 Primary and secondary sources oi data
+6.5.1 Primary Data:
+Primary data is collected first-hand by the researcher for a particular purpose.
+It is gathered directly from people, events, or situations rather than taken from an
+already published source. The potential source of primary data can be
+e
+interviews
+@
+surveys
+e
+observations
+@
+experiments
+6.5.2 Secondary Data:
+Secondary data has already been collected by someone else and is being used
+again for a new purpose. The potential source of secondary data can be
+e
+books and research articles
+e
+official reports
+e
+web statistics
+e
+online databases
+Unit 6: Digital i”
+SS
+6.5.3 Difference Between Primary and Secondary Data:
+Table 6.2 Difference between primary and secondary data
+Aspect
+eve
+amc ie!
+Secondary data
+lected
+directl
+th
+Source
+ane
+already collected by others
+researcher
+survey responses, interviews,
+reports, articles, websites,
+Examples
+observations
+databases
+Purpose
+prepared for a specific study
+reused for a new purpose
+high control over questions and ___ limited control because the data
+Control
+.
+collection process
+already exists
+Primary data gives fresh information collected for a specific
+> a
+purpose, while secondary data helps compare new findings with
+information already published by others.
+6.6
+Designing a Data-Collection Approach:
+Before collecting data, it is essential to design a data collection approach. A
+data-collection approach
+is the plan used to gather accurate, relevant, and useful
+information for a study or project.
+The data collection approach usually consists of the following steps.
+Step 1: Define the research question clearly.
+Step 2: Decide the type of data needed: quantitative, qualitative or both.
+Step 3: Select suitable methods such as a survey, interview or observation.
+Step 4: Choose the sample or target group.
+Step 5: Prepare the tools such as forms, questions and observation sheets.
+Step 6: Collect the data carefully and accurately.
+Step 7: Store the data digitally in a spreadsheet and keep a backup copy.
+Step 8: Follow ethical practice and respect privacy.
+6.7
+Presenting Data Using Digital Tools:
+Collecting data is only one part of the work. Students also need to present their
+findings in a form that other people can understand quickly and easily. Digital tools
+make this much easier. The data can be presented using spreadsheets, presentations and
+Unit 6: Digital literacy
+—¥*
+Presenting Data with Digital Tools
+*—
+Simplify:
+Complex
+|
+Qs8%
+concepts
+Explain:
+Visual
+explanation
+|
+|
+|
+@ Study
+|
+i Of
+WZ
+§ Social
+=)
+Organize
+|
+Structure
+pas
+Calculate
+Deliver
+oe
+Summarize:
+i
+Engage
+Data highlights
+|
+E
+-
+&
+Visualize
+Figure 6.6 Digital tools used to present data clearly
+6.7.1 Spreadsheets:
+Spreadsheets such as Excel, Google Sheets, and Apple Numbers help students
+arrange information in rows and columns, carry out simple calculations, and prepare
+data for charts and analysis.
+enter data systematically.
+calculate totals, averages and percentages.
+sort and filter records.
+create charts and graphs automatically.
+6.7.2 Presentations:
+Presentation software such
+as PowerPoint, Google
+Slides, Canva, Adobe
+Express, Gamma, and Slides AI helps students explain their findings to an audience in
+a Clear and organized way.
+e
+begin with a clear title and research question.
+e
+use short bullet points instead of long paragraphs.
+e
+include tables, charts and key findings.
+e@
+keep the design simple and readable.
+6.7.3 Infographics:
+An infographic is a visual way of presenting information, facts, or data so that
+people can understand the main idea quickly and easily. Tools such as Canva, Adobe
+Express, Power BI, Tableau, and Looker Studio can be used to create infographics and
+interactive dashboards.
+e
+choose a format that suits the research question and audience.
+e
+highlight the most important findings, results and conclusions.
+e
+use clear visuals, limited text and accurate information.
+Unit 6: Digital i”
+SS
+get good chart or infographic can explain complex data faster than a
+@
+long paragraph. However, visuals must always be accurate and
+based on real data.
+6.7.4 Reports:
+Reports are structured documents used to present collected data, findings,
+analysis, and conclusions in a clear and organized way. Digital tools such as Microsoft
+Word, Google Docs, Canva Docs, Notion, and Adobe Express can help students create
+well-formatted reports.AI-based tools such as ChatGPT, Microsoft Copilot, Google
+Gemini, Power BI with Copilot, Tableau AI, and Canva Magic Write can also support
+report writing by helping
+students summarize
+data, improve wording,
+organize
+sections, and check grammar.
+6.8
+start with a clear title, introduction, and purpose of the report.
+present the collected data using tables, charts, or graphs where needed.
+explain the main findings in simple and clear language.
+include conclusions and recommendations based on the data.
+use AI tools carefully to summarize, organize, and improve the report, but
+always review the information for accuracy.
+Case Study: Digital Inquiry Project:
+Empowering Students in the Digital Age
+Digital Inquiry Workflow
+From research question to final artifact
+Question
+Search
+Collect
+Analyze
+Create
+What do we
+Find reliable
+Survey or
+Use spreadsheet}
+|Report, slides or
+want to know?
+sources
+interview
+charts
+infographic
+@ OF Cl to
+Figure 6.7 Digital inquiry workflow from research question to final artefact
+»
+YS
+aX aan V
+‘aii
+a
+Sf
+. 6: Digital literacy
+6.8.1 Research Question:
+How does daily mobile phone use affect the study habits of students?
+6.8.2 Case Study Introduction:
+Students today use mobile phones for learning, communication, entertamment,
+and social media. A mobile phone can help students search for information, watch
+educational
+videos,
+attend
+online
+classes,
+and communicate
+with teachers
+and
+classmates. However, excessive use of mobile phones may also distract students from
+their studies.
+In this case study, students investigate how mobile phone use affects the study
+habits of students. They perform advanced searches, collect original data, organize the
+data in a spreadsheet, and create
+a digital artefact such as
+a report, presentation,
+infographic, or dashboard.
+6.8.3 Learning Outcomes Covered:
+e
+perform advanced searches to locate relevant information;
+collect primary data through surveys, interviews, or observations;
+use secondary data from reliable online sources;
+organize and analyze data using digital tools;
+communicate results and conclusions using charts, reports, presentations, or
+infographics;
+e
+create a digital artefact that answers a research question.
+6.8.4 Scenario:
+A group of students notices that many classmates use mobile phones during free
+periods, at home, and sometimes while studying. Some students say mobile phones
+help them learn better, while others say mobile phones waste time and reduce
+concentration.
+The Computer Science teacher asks the class to investigate this issue using
+digital literacy skills. The students must answer whether mobile phone use helps or
+harms the study habits of students.
+6.8.5 Methodology:
+Step 1: Perform Advanced Searches
+Students should first search for background information using search engines
+and reliable websites. They should use advanced search operators to narrow down the
+results and locate more useful information.
+Advance Search and
+Source Evaluation
+AS
+Author/
+2
+Recent
+organization?
+information?
+~~
+°)
+oe
+_—«— 6
+\
+f
+@
+Evidenceor
+=
+reference?
+— ..
+|
+e—""“8
+\
+Figure 6.8 Advanced search and source evaluation
+Suggested Search Queries:
+e
+"mobile phone use" "study habits" students
+"mobile phone use" "academic performance" filetype:pdf
+digital distraction students site:.edu
+student screen time and learning filetype:pdf
+Source Evaluation Checklist:
+Question
+EA
+Is the author or organization clearly mentioned?
+Is the information recent?
+Is
+the
+website
+reliable,
+such
+as
+educational,
+government,
+or
+research-based?
+Does the source provide facts, data, or references?
+Is the information balanced and not biased?
+wre
+GEN
+:
+L*
+Unit 6: Digital literacy
+1
+Step 2: Identify Data Types
+For this project, students will collect both qualitative and quantitative data.
+yan ede ie:
+Examples in this Case Study
+Number
+of hours
+students
+use
+mobile
+phones
+daily;
+Quantitative data
+percentage of students who feel distracted; average study
+time per day.
+Students’ opinions about mobile phone use; reasons
+for
+Qualitative data
+distraction; suggestions for responsible use.
+Step 3: Select Data-Collection Methods
+Students may use one or more of the following methods to collect original data.
+¢
+Survey / Questionnaire: useful when the same questions must be asked to many
+students.
+e
+Interview: useful for understanding opinions and experiences in more detail.
+¢
+Observation: useful for recording visible behaviour in a classroom or computer
+lab without collecting private information.
+Step 4: Prepare the Survey
+Collecting Primary Data
+Daily phone use?
+8 S
+e
+b @|
+Use phone for study? me
+|
+|
+2
+P
+Feel distracted?
+S
+“«
+Figure 6.9 Collecting primary data through a class survey
+iy
+Ly
+Sample Survey Questions:
+F k
+[
+Unit 6: Digital literacy
+responsibly.
+Cs
+Question
+Type of Data
+1
+| How many hours do you use your mobile phone daily?
+Quantitative
+2 | Do you use your mobile phone for study purposes?
+Quantitative
+3. | Which activity do you use your phone for the most?
+Quantitative
+4
+| Does mobile phone use distract you from studying?
+Quantitative
+5
+wd hours do you study daily without using your
+Oeemnienee
+6 | How does your mobile phone help you in your studies?
+Qualitative
+7
+| What problems do you face due to mobile phone use?
+Qualitative
+g
+Suggest one way students can use mobile phones more
+Qualitative
+Step 5: Choose the Sample
+The sample is the group of people from whom data will be collected. For this
+case study, students may collect responses from 30 to 50 Class XI students, including
+students from different sections and students with different mobile phone habits.
+¢ Remember:
+A good sample should represent the group being studied.
+Step 6: Collect Primary Data
+Students should collect original data through their own survey, interview, or
+observation. They should ask permission before collecting responses and must not
+record unnecessary personal information.
+Ethical Guidelines:
+¢
+ask permission before collecting responses;
+¢
+avoid collecting sensitive personal information;
+¢
+do not record names unless necessary;
+e
+keep responses private;
+e
+use the data only for educational purposes.
+LN A
+Step 7: Use Secondary Data
+Students should also include one or two secondary sources, such as research
+articles,
+educational websites,
+official reports,
+or reliable
+statistics
+from online
+databases. These sources help students compare their class findings with information
+already published by others.
+Example:
+An
+online
+article
+explains
+that
+excessive
+screen
+time
+may
+affect
+concentration. Students can compare this idea with their own survey results.
+Step 8: Organize Data in a Spreadsheet
+Unit 6: Digital literacy
+Respecting privacy is an important part of digital literacy. Good
+researchers collect only the information they need.
+A)
+Student Survey Data
+J) Daily phoneuse
+SEE
+Hows
+o
+ooosd
+ono /Study use | Sistrated
+© Ys
+@ No
+Yes
+@ Yes
+No
+@ Yes
+(Sometimes)
+@ Yes
+No
+1-3 hrs
+5
+3-5 hrs
+Figure 6.10 Spreadsheet analysis and chart creation
+Students should enter survey results
+into
+Excel, Google
+Sheets,
+or any
+spreadsheet software. A spreadsheet helps students sort responses, calculate totals, find
+averages, and create charts.
+5 + hrs
+Student
+ET NY
+NAY
+WET
+Feels
+Daily Study
+Cs
+Phone Use
+Use
+PUTA
+IAS
+earl
+OWT:
+1
+3 hours
+Yes
+YouTube
+Sometimes
+2 hours
+lectures
+2
+5 hours
+No
+Social media
+Yes
+1 hour
+3
+2 hours
+Yes
+Searching
+No
+3 hours
+notes
+Face
+Unit 6: Digital i”
+SS
+Students can then calculate the total number of responses, average mobile
+phone use, average study time, percentage of students who feel distracted, and the most
+common mobile phone activity.
+Step 9: Create Charts and Graphs
+Students should create at least two visuals to make their findings easier to
+understand.
+¢
+Bar chart: daily mobile phone usage categories such as less than
+1 hour, 1-3
+hours, 3—5 hours, and more than 5 hours.
+e
+Pie chart: main purpose of mobile phone use, such as study, social media,
+gaming, entertainment, or communication.
+¢
+Column chart: number of students who feel distracted: yes, no, or sometimes.
+Step 10: Analyze the Results
+After collecting responses from 40 students, a group may find that most students
+use mobile phones for 3 to 5 hours daily. About half of the students may report that
+they use mobile phones for educational purposes, such as watching lectures, searching
+notes, and communicating with classmates. However, many students may also report
+that social media notifications disturb their concentration while studying.
+The survey may show that students who use mobile phones mainly for study
+have better time management than students who use phones mostly for entertainment.
+The results suggest that mobile phones can be useful learning tools if they are used
+responsibly.
+Step 11: Write the Conclusion
+The research shows that mobile phones have both positive and negative effects
+on study habits. They help students access learning materials, search for information,
+and communicate with teachers and classmates. However, excessive use of social
+media, gaming, and entertainment apps can reduce study time and concentration.
+Therefore, mobile phones should not be avoided completely. Instead, students should
+learn to use them wisely by setting time limits, turning off unnecessary notifications,
+and using educational apps during study time.
+Step 12: Recommendations
+¢
+use mobile phones mainly for educational purposes;
+¢
+turn off notifications while studying;
+e
+set daily screen-time limits;
+¢
+avoid social media during study hours;
+*
+use apps for notes, dictionaries, lectures, and reminders;
+¢
+take breaks from screens to protect health and concentration.
+,
+.
+| nM
+a
+Unit 6: Digital literacy
+}
+6.8.6 Digital Artefact:
+4
+OE
+CODE eAeaie
+as
++
+Structured
+Slides for
+document
+audience
+O Infographic
+@
+Dashboard
+Qo
+Quick visual
+rv
+Interactive
+summary
+charts
+Figure 6.11 Final artefact options for communicating research findings
+A digital artefact is a final product created using digital technologies. Students
+must create one final artefact that answers the research question. They may choose a
+digital report, presentation, infographic, or dashboard.
+Artefact Option
+Suitable Digital Tools
+Main Purpose
+_
+Microsoft Word, Google
+Explain the full study in a
+ea
+Docs, Canva Docs, Notion
+structured document.
+Presentation
+PowerPoint, Google Slides,
+Share key findings with an
+ese
+0
+Canva, Gamma, Slides AI
+audience.
+Inf
+hi
+Canva, Adobe Express, Power
+Show the main results
+mograpaic
+BI, Tableau, Looker Studio
+visually and quickly.
+Power BI, Tableau, Looker
+Explore data through
+Dashboard
+Studio
+interactive charts and filters.
+tj
+Ly
+F k
+[
+Unit 6: Digital literacy
+Artefact Design Structure:
+1. Title
+2. Research Question
+3. Introduction
+4. Method of Data Collection
+5. Primary Data Findings
+6. Secondary Data Summary
+7. Charts and Graphs
+8. Conclusion
+9. Recommendations
+10. References
+“
+A digital artefact is not only a decorated file. It must answer the
+Jae
+research question, show evidence, communicate findings, and
+ey
+present a clear conclusion.
+This unit develops skills in advanced searching, designing data-collection methods
+such as surveys and interviews, and presenting data effectively using digital tools like graphs
+and infographics. These research and communication skills are valuable across virtually every
+modern profession.
+Market Research Analyst
+Data Journalist
+Designs surveys and interviews to collect
+Uses advanced search and data-collection
+primary data and presents findings to guide
+skills to research stories and present them
+business decisions.
+with visuals and infographics.
+UX Researcher
+Digital Marketing Specialist
+Gathers qualitative and quantitative data
+Collects and analyzes audience data,
+from users through interviews and surveys
+presenting results through dashboards,
+to improve product design.
+graphs, and reports.
+I CK mee NEL
+OOM Mel Cty
+Applies structured data-collection
+Presents primary and secondary research
+approaches (surveys, prototypes,
+findings using engaging digital tools and
+simulations) to support academic or
+visual storytelling.
+scientific research.
+.y 3
+aS
+°
+°
+°
+©
+°
+©
+©
+Digital
+literacy involves
+searching
+carefully,
+checking
+source
+reliability,
+collecting evidence, and communicating findings responsibly.
+A strong project begins with a focused research question and a suitable plan for
+using primary and/or secondary data.
+Interviews, surveys, prototypes, simulations, and observation each produce
+different kinds of evidence and should be chosen thoughtfully.
+Sampling, bias, privacy, consent, and citation all affect the quality and ethics of
+student research.
+Data should be cleaned and organized before analysis so that tables, charts, and
+conclusions are accurate.
+Different visuals serve different purposes: tables show exact values, bar charts
+compare categories, line graphs show trends, and infographics summarize key
+findings quickly.
+A strong digital artefact connects the research question, method, findings,
+conclusion, and references in a clear structure.
+Results should be communicated differently for different audiences while
+remaining accurate, readable, and evidence-based.
+. Encircle the correct answer
+Which of the following best describes digital literacy?
+(a) The ability to type quickly using a keyboard
+(b) The ability to use digital tools to find, evaluate, create, and communicate
+information responsibly
+(c) The ability to install software on a computer
+(d) The ability to use social media for entertainment
+A
+student
+asks
+classmates,
+“How
+does
+mobile phone
+use
+affect
+your
+concentration during study?” What type of data is mainly collected?
+(a) Quantitative data because it can be counted easily
+(b) Secondary data because classmates already know the answer
+(c) Qualitative data because it collects opinions and experiences
+(d) Numerical data because mobile phone use is related to time

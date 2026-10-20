@@ -1,0 +1,1547 @@
+vii)
+viii)
+.
+Fill in the Blanks
+Unit 6: Digital i”
+SS
+Which search query is most suitable for finding a reliable PDF report about
+internet usage in Pakistan?
+(a) internet usage Pakistan
+(b) best internet use in Pakistan social media
+(c) "internet usage in Pakistan" filetype:pdf
+(d) Pakistan internet all websites latest
+Which option is the best example of primary data?
+(a) A government report downloaded from the internet
+(b) A research article written by another author
+(c) Survey responses collected directly from Class XI students
+(d) Statistics copied from an online database
+Why are spreadsheets useful when presenting research data?
+(a) They automatically make the research question correct
+(b) They help organize data, perform calculations, and create charts
+(c) They replace the need for collecting original data
+(d) They ensure all online information is reliable
+A digital artefact created after research should mainly:
+(a) repeat long paragraphs from websites
+(b) communicate results and conclusions clearly
+(c) include decoration only
+(d) avoid any data visuals
+Data collected directly by the researcher is called:
+(a) Secondary data
+(b) Processed data
+(c) Primary data
+(d) Digital data
+Which search operator helps search within a specific website or domain?
+(a) OR
+(b) AND
+(c) NOT
+(d) site:
+Copying someone else's work without giving credit is called:
+(a) Copyright
+(b) Referencing
+(c) Citation
+(d) Plagiarism
+Asking permission before collecting responses is part of research:
+(a) Analysis
+(b) Sampling
+(c) Presentation
+(d) Ethics
+A well-defined
+helps a student choose suitable data-collection
+methods and stay focused during research.
+Data collected directly by the researcher through surveys, interviews
+or
+observation is called
+data.
+C2)
+aX aA N
+Unit 6: Digital literacy
+Data taken from reports, books, websites or databases prepared by others is
+called
+data.
+Copying words, images or ideas without giving credit is called
+Asking permission before collecting responses is part of research
+Provide short answers to the following questions.
+Define digital literacy in your own words.
+Differentiate between qualitative and quantitative data.
+Define primary data and secondary data with one example of each.
+Write any four steps of designing a data-collection approach.
+Name any three digital tools used to present data.
+4. Provide detailed answers to the following questions.
+ii)
+iii)
+Explain the concept of digital literacy. Why is
+it necessary for students in
+modern education?
+Describe the difference between qualitative and quantitative data with suitable
+examples.
+Explain any four data-collection strategies: interviews, surveys, prototypes,
+observations, and simulations.
+Describe the steps involved in designing
+a data-collection approach for
+a
+research question.
+Explain how spreadsheets, presentations, infographics, and reports can be used
+to communicate research findings.
+Activities
+f
+4
+<
+)
+Sk sy
+In groups of 3-4 students, choose a topic such as smartphone use in college,
+online learning during examinations, or internet habits of students.
+Form a clear research question, identify your target sample, and design a survey
+or interview with at least 8 questions. Make sure the wording is fair, clear, and
+ethical.
+Collect responses from at least 20 students, enter the data into a spreadsheet,
+clean the data, and create at least one table and one chart or infographic.
+Prepare a short digital artefact (3-5 slides, infographic, or brief report) that
+presents findings, conclusions, the reliability of any secondary sources used,
+and one recommendation for the intended audience.
+Terms are listed alphabetically. The unit tag beside each entry shows where the term is first
+introduced.
+Abstraction
+Unit 2
+Hiding unnecessary details and focusing only on the essential
+features required to solve a problem.
+Actuator
+Unit 5
+A device that performs a physical action (such as movement or
+switching) in response to a system command, converting a
+digital signal into a physical action.
+Advanced Search
+Unit 6
+| The use of special search operators (e.g. quotation marks for
+exact phrases, filetype:, site:) to narrow down search results and
+find more relevant, reliable information.
+Agile Model
+Unit 1
+An iterative software development approach that breaks
+a
+project into short cycles called sprints, allowing continuous
+feedback and flexible changes throughout development.
+Algorithm
+Unit2
+A step-by-step
+logical procedure used
+to
+solve
+a specific
+problem, independent of any programming language.
+Alternate Key
+Unit 4
+A candidate key that is not chosen as the primary key, but which
+could still uniquely identify records in a table.
+Analog Signal
+Unit 1
+| A continuous signal that can take any value within a range and
+changes smoothly over time, like a wave (e.g. human voice,
+temperature).
+AND Gate
+Unit 1
+A logic gate whose output is 1 only when all of its inputs are 1.
+Artificial Intelligence
+Unit 3
+The capability of computational systems
+to perform tasks
+(AD)
+typically associated with human intelligence, such as learning,
+reasoning, problem-solving, perception, and decision-making.
+Artificial Intelligence
+Unit 5
+| Technology that enables machines to think, learn, and make
+(AI) Applications
+decisions, often working with IoT and Data Analytics as the
+"brain" of a smart system.
+Assistive Technology
+Unit 5
+| Devices, software, tools, and systems that help people with
+disabilities or functional limitations participate more fully in
+education, communication, mobility, and daily life.
+Attribute
+Unit 4
+A property or characteristic of an entity in a database (e.g.
+Name, Class, and Marks are attributes of a Student entity).
+Binary Digit (Bit)
+Unit 1
+The smallest unit of digital data, having only two possible
+values: 0 (OFF/LOW/FALSE) or 1 (ON/HIGH/TRUE).
+Binary Search
+Unit 2
+A fast searching algorithm that repeatedly divides a sorted list
+in half to locate a target value; it only works on sorted data.
+Boolean (bool)
+Unit 3
+| A Python data type that holds one of only two values: True or
+False.
+AAA A
+Glossary
+Boolean Algebra
+Unit] | A branch of mathematics, developed by George Boole, that
+deals with only two values (TRUE/1 and FALSE/0) and forms
+the foundation of digital electronics and programming logic.
+Bubble Sort
+Unit 2 | A simple sorting algorithm that repeatedly compares adjacent
+items and swaps them if they are in the wrong order, gradually
+"bubbling" the largest values to the end of the list.
+Built-in Library
+Unit 3
+A library that comes packaged with Python and does not need
+to be installed separately before use.
+Candidate Key
+Unit 4
+Any field, or set of fields, in a table that could uniquely identify
+each record; a table may have several candidate keys, only one
+of which becomes the primary key.
+Cascade Update
+/
+Unit 4
+| Referential-integrity operations where
+a change (update) or
+Cascade Delete
+removal (delete) of a record in a parent table is automatically
+applied to all related records in child tables.
+Clarity
+Unit 2 | An evaluation criterion for an algorithm concerned with how
+readable and easy to understand its steps are.
+Cloud Computing
+Unit 5 | A technology that allows users to store data and use services
+over
+the
+internet instead
+of relying
+solely
+on
+their own
+computers or mobile phones.
+Cognitive / Learning
+Unit 5 | An assistive technology category that helps with memory,
+Aid
+reading, writing, and understanding, such as text-to-speech
+software, audiobooks, and digital planners.
+Communication Aid
+Unit 5 | An assistive technology category that helps people with speech
+or expressive difficulties communicate more effectively, such
+as speech-generating devices or communication boards.
+Communication Model
+Unit / | A set ofrules and layers that explains how data travels from one
+device to another through a network, so that sender and receiver
+follow the same steps.
+Correctness
+Unit 2 | An
+evaluation
+criterion
+for
+an
+algorithm concerned with
+whether it produces the right output for all valid inputs.
+Cybersecurity
+Unit 3 | The practice of protecting computer systems, networks, and
+programs from digital attacks.
+Data (Database
+Unit 4
+Unprocessed, raw facts, figures, or observations collected from
+context)
+various sources; it can be quantitative or qualitative and becomes
+information once organized and interpreted.
+Data Analytics
+Unit 5 | The process of collecting, organizing, cleaning, studying, and
+presenting data in order to find useful information and support
+better decision-making.
+Data Collection
+Unit 6 | The process of gathering original information for a study or
+(Digital Literacy)
+project, using methods such as interviews, surveys, prototypes,
+observation, or simulations.
+Data Science
+Unit 3
+The study of data to extract meaningful insights that support
+business or research decisions.
+Us)
+Database
+Unit 4
+An organized collection of related data, stored in a structured
+manner, so that it can be easily accessed, managed, and updated.
+DBMS (Database
+Unit 4
+Software that allows users to create, manage, and interact with a
+Management System)
+database, acting as a bridge between the user and the stored data.
+Debugger
+Unit 3
+A software tool used to find and fix errors in a program.
+Decomposition
+Unit 2
+The process of breaking a complex task or system into smaller,
+more manageable parts.
+Digital Artefact
+Unit 6 | The final product created using digital technologies such as a
+report, presentation, infographic, or dashboard that answers a
+research question.
+Digital Literacy
+Unit 6 | The ability to understand and use digital devices, the internet,
+and online tools in a safe, effective, and responsible manner.
+Digital Signal
+Unit 1 | A signal with only two levels, HIGH (1) and LOW (0), that
+jumps instantly between these values, forming a square-wave
+pattern.
+Discrete Quantity
+Unit 1 | A separate, countable quantity with specific fixed values (e.g.
+the number of students in a class), as opposed to a continuous
+quantity.
+Efficiency
+Unit 2
+An evaluation criterion for an algorithm concerned with how
+well it uses time and memory (space) resources.
+Encapsulation /
+Unit!
+The
+process
+of
+adding
+(encapsulation)
+or
+removing
+Decapsulation
+(decapsulation) header information as data passes down or up
+through the layers of a communication model such as OSI or
+TCP/IP.
+Entity
+Unit 4
+Any real-world object or concept about which data is stored in
+a database (e.g. Student, Teacher, Course).
+ER Model (Entity-
+Unit 4
+A conceptual design tool used to plan a database before it is
+Relationship Model)
+built, showing what data needs to be stored and how different
+pieces of data relate to each other.
+Extension (VS Code)
+Unit 3
+An add-on feature that can be installed in an IDE such as VS
+Code to enhance its functionality.
+Field
+Unit 4
+A column in a database table that represents a specific type of
+data or attribute (e.g. Name, RollNumber).
+Float
+Unit 3
+A Python data type that stores numbers with a decimal point.
+Foreign Key
+Unit 4
+A field in one table that refers to the primary key of another
+table, used to create relationships between tables.
+Frameworks
+Unit 3
+Pre-built structures that automate common tasks and give
+developers a foundation for application development.
+High-Level Language
+Unit 3
+A programming language designed to be easy for humans to read
+and write (e.g. Python), as opposed to low-level machine code.
+oS
+a,
+o
+Glossary
+|
+IDE (Integrated
+Unit 3
+A software tool that combines an editor, compiler/interpreter,
+Development
+and debugger, allowing a programmer to write, run, and manage
+Environment)
+code in one place.
+Indentation
+Unit 3
+The use of spaces at the beginning of a line in Python to define
+and separate blocks of code.
+Infographic
+Unit 6
+A visual way of presenting information, facts, or data including
+interactive reports and dashboards so the main idea can be
+understood quickly.
+Information
+Unit 4
+Data that has been organized, processed, and interpreted so that
+it carries meaning and supports decision-making.
+Information Age
+Unit 6 | The current period in which vast amounts of data are produced,
+shared, and accessed instantly through the internet, mobile
+devices, and digital platforms.
+Integer (int)
+Unit 3
+A Python data type that stores whole numbers without a decimal
+point.
+Internet of Things (IoT)
+|= Unit 5 | A system
+in which physical devices
+are connected to the
+internet and can
+collect and
+share
+data
+to perform tasks
+automatically.
+Interview
+(Data
+Unit6
+A planned conversation, one-to-one or in a small group, used to
+Collection)
+gather information directly from a person; answers are usually
+qualitative.
+| 0
+ee
+Junction (Bridge)
+Unit 4
+A table used to break a many-to-many (M:N) relationship into
+Table
+two one-to-many relationships that a relational database can
+properly support.
+Qs Lee
+Linear Search
+Unit 2
+A searching algorithm that checks each item in a list one by one,
+in order, until the target value is found or the list ends.
+Logic Gate
+Unit 1
+| An electronic circuit that performs a basic Boolean operation
+(such as AND, OR, or NOT) on one or more binary inputs to
+produce a single binary output.
+Logical Error
+Unit 3 | An error in which a program runs without crashing but produces
+the wrong output, due to a mistake in the program's logic.
+Low-Level Language
+Unit 3
+A programming language that is closer to binary machine code
+and therefore more difficult for humans to read and write.
+Mid-Level Language
+Unit3
+A programming language that bridges the gap between low-
+level and high-level languages, offering both hardware access
+and human readability.
+Mobility Aid
+Unit 5
+An assistive technology category that helps people move from
+one place to another, such as wheelchairs, walkers, or crutches.
+Unit 1
+A universal logic gate that gives the opposite output of an AND
+gate, output is 0 only when all inputs are 1.
+NOR Gate
+Unit 1 | A universal logic gate that gives the opposite output of an OR
+gate , output is 1 only when all inputs are 0.
+NOT Gate (Inverter)
+Unit 1
+A logic gate that reverses its single input, a 0 becomes 1, anda
+1 becomes 0.
+Observation (Data
+Unit 6
+A data-collection method in which the researcher watches and
+Collection)
+records what people do, without asking direct questions.
+OR Gate
+Unit 1
+A logic gate whose output is 1 when at least one of its inputs is
+1.
+OSI Model
+Unit] | A 7-layer reference model (Open Systems Interconnection)
+used to explain and design how data communication happens
+between devices on a network.
+Pattern Recognition
+Unit 2
+Identifying regularities, repetitions,
+or predictable changes
+within data to simplify a solution.
+Primary Data
+Unit 6 | Data collected first-hand by the researcher for
+a particular
+purpose, gathered directly from people, events, or situations.
+Primary Key
+Unit 4 | A field, or combination of fields, that uniquely identifies each
+record in a table; a table has exactly one primary key, and it
+cannot be NULL.
+Primary Source
+Unit 5 | A source that gives original, first-hand information collected
+directly from people, places, events, or official records (e.g. an
+interview or an official record such as NADRA).
+Privacy/Ethics
+Unit 6 | The responsible-research practice of asking permission before
+collecting data, avoiding unnecessary personal information, and
+using data only for its intended purpose.
+Program
+Unit 3
+A set of instructions given to a computer to perform a specific
+task.
+Programming
+Unit 3 | A special language, with clearly defined rules (syntax), used to
+Language
+write instructions for a computer to follow.
+Protocol
+Unit 1 | An agreed set of rules that governs how data is formatted,
+transmitted, and received between devices in a network.
+Prototype
+Unit 6 | A simple, early version of a product, model, or solution that
+allows an idea to be tested and improved through user feedback
+before the final version is built.
+Pseudocode
+Unit 2
+| Ahuman-readable, semi-formal representation of an algorithm,
+written in plain English with structured keywords (e.g.
+IF,
+FOR), used before writing actual code.
+Qualitative Data
+Unit 6
+Descriptive, non-numerical data that describes what people
+think, feel, notice, or experience.
+Quantitative Data
+Unit 6 | Numerical data that can be counted, measured, or compared.
+Query
+Unit 4 | A request made to a database to retrieve, filter, or summarize
+specific data from one or more tables.
+oS
+Glossary
+RDBMS (Relational
+Unit 4
+A DBMS that organizes data into related tables, based on the
+Database Management
+relational model, and is one of the most widely used database
+System)
+models in modern computing.
+Record
+Unit 4
+| Arow ina database table representing a single entry or instance
+of data (e.g. one student's complete details).
+Referential Integrity
+Unit 4 | A rule ensuring that a foreign key in one table always refers to
+an existing, valid record in another (parent) table, keeping data
+across related tables consistent.
+Relational Schema
+Unit 4
+A formal representation of a database's structure, defining how
+data is organized into tables and what fields each table contains.
+Relationship (1:1, 1:M,
+Unit 4 | The way entities in a database are logically connected: one-to-
+M:N)
+one (1:1), one-to-many (1:M), or many-to-many (M:N).
+Report (Digital
+Unit 6
+| A structured document used to present collected data, findings,
+Literacy)
+analysis, and conclusions in a clear and organized way.
+Research Question
+Unit 6 | The clearly defined question that a study or project sets out to
+answer, guiding the choice of data type and data-collection
+method.
+Runtime Error
+Unit 3
+An error that occurs while
+a program
+is actually running,
+interrupting its execution.
+SDLC (Software
+Unit 1
+A structured process, made up of defined phases (requirement
+Development Life
+analysis, design, coding, testing, deployment, maintenance), that
+Cycle)
+guides software development from beginning to end.
+Searching
+Unit 2
+The process of locating a specific element's position or existence
+within a list of data.
+Secondary Data
+Unit 6 | Data that has already been collected by someone else and is
+reused for a new purpose (e.g. books, official reports, online
+databases).
+Secondary Source
+Unit 5
+A
+source
+that
+presents
+information
+already
+collected
+and
+explained by someone else, used to summarize
+or analyze
+primary-source information (e.g. a textbook or a news report).
+Selection Sort
+Unit 2.
+A sorting algorithm that repeatedly finds the smallest (or largest)
+remaining item and moves it into its correct position.
+Sensor
+Unit 5
+A device that collects information from the physical world, such
+as temperature, light, sound, movement, or pressure.
+Sensory Aid
+Unit 5 | An assistive technology category that supports vision or hearing,
+such as hearing aids, screen readers, or Braille displays.
+Simulation
+Unit 6
+A computer-based model of a real situation in which variables
+can
+be
+changed
+to
+observe
+outcomes;
+useful
+when
+real
+experiments are costly, risky, or difficult.
+Sorting
+Unit 2 | Arranging a collection of items into a specific order (ascending,
+descending, or chronological).
+ae
+x
+r
+Glossary
+Source Evaluation
+Unit 6
+The process
+of judging whether
+an information
+source
+is
+trustworthy, by checking its author, currency, reliability, and
+evidence.
+Spreadsheet
+Unit 6 | Software used to arrange information in rows and columns,
+perform calculations, sort/filter records, and create charts and
+graphs.
+String (str)
+Unit 3
+A Python data type that stores text or a sequence of characters.
+Survey / Questionnaire § Unit 6
+A data-collection method that asks the same set of questions to
+many people, which can gather both quantitative and qualitative
+data.
+Syntax Error
+Unit 3
+An error that occurs when the rules of a programming language
+are not followed, preventing the program from running at all.
+Table
+Unit 4
+The basic structure of a database used to store data in rows
+(records) and columns (fields), similar to a spreadsheet.
+TCP/IP Model
+Unit 1
+A 4-layer model (Application, Transport, Internet, Network
+Access) that
+is actually used to run communication on the
+Internet today.
+Tertiary Source
+Unit 5 | A source that provides summarized, organized information
+derived from both primary and secondary sources, such as an
+encyclopedia or dictionary, mainly used for quick reference.
+Third-Party Library
+Unit 3
+A library that is not included with Python by default and must
+be installed separately (e.g. via pip) before it can be used.
+Traceback
+Unit 3
+A detailed error message provided by Python that identifies the
+type, location, and cause of an error in a program.
+Truth Table
+Unit 1
+A table that lists every possible combination of inputs to a logic
+circuit or Boolean expression, along with the resulting output.
+VS Code (Visual Studio
+Unii3 A
+free, lightweight, and powerful code editor used to write and
+Code)
+manage code in multiple programming languages.
+Waterfall Model
+Unit 1
+A sequential software development model in which each phase
+(requirements,
+design,
+coding,
+testing,
+deployment,
+maintenance) must be completed before the next one begins.
+XNOR Gate
+Unit 1
+A logic gate whose output is 1 when its two inputs are the same
+(both 0 or both 1).
+XOR Gate
+Unit 1 | A logic gate whose output is
+1 only when its two inputs are
+different from each other.
+oS
+Teacher Guide
+Teacher's Companion
+How to use this guide:
+For each unit, this guide provides an overview, learning objectives, a topic breakdown with
+suggested time and teaching approach, recommended activities, assessment guidance, and common
+misconceptions to address. Teachers may adapt period counts to their own timetable.
+UNITS AT A GLANCE
+UNIT
+TITLE
+DURATION
+FOCUS
+3 weeks
+Digital logic, SDLC,
+ee
+(9-10 periods)
+networking models
+Computational Thinking and
+3 weeks
+CT strategies, sorting &
+Algorithms
+(9-10 periods)
+searching
+Programming Fundamentals
+as
+Bene
+(12-14 periods)
+fundamentals
+De tseneeen enneerront
+4 weeks
+Relational databases & MS
+(12-14 periods)
+Access
+Applications and Impacts of
+3 weeks
+Al, IoT, data analytics,
+Computing
+(8-9 periods)
+impacts, assistive tech
+.
+3 weeks
+Digital literacy
+& inqui
+Digital Literacy
+(9-10 periods)
+8
+proj io
+t
+quiry
+c
+~
+COMPUTER SYSTEMS
+This unit introduces three foundational areas of computing: Digital Logic (how computers
+represent and process data using binary values and logic gates), the Software Development Life
+Cycle “SDLC” (how software is planned, built, tested and maintained, comparing Waterfall and
+Agile models), and Communication Models (how devices exchange data over networks using the
+OSI and TCP/IP models). (Suggested duration: 3 weeks (9-10 periods)).
+Learning Objectives:
+¢
+Differentiate analog vs. digital data and discrete vs. continuous quantities.
+¢
+Apply Boolean algebra/operators; build and read truth tables and logic expressions.
+¢
+Identify logic gates and build circuits in LogiSim.
+¢
+Explain SDLC phases and compare Waterfall and Agile models using case studies.
+¢
+Describe the OSI 7-layer model and TCP/IP 4-layer model, and the role/protocols of each
+layer.
+ao
+<
+MN)
+lf
+2)
+Topic Breakdown & Suggested Time:
+Topic
+EMO erg
+Suggested Teaching Approach
+Analog vs digital, Boolean
+Use the stairs-vs-ramp analogy;
+1.1 Digital Logic
+algebra, logic gates, truth
+demonstrate each gate live in LogiSim;
+(4 periods)
+tables, logic diagrams,
+have students build truth tables before
+LogiSim
+circuits
+1.2 SDLC
+SDLC phases, Waterfall
+Walk through both case studies; use a
+(3 periods)
+model, Agile model, testing
+group activity comparing Waterfall VS
+types, maintenance
+Agile for different project types
+Ise
+.
+ee
+Teach the mnemonic "Please Do Not
+Can
+ioe
+Throw Sausage Pizza Away"; run the
+pin
+Models
+encapsulation/decapsulation,
+activity
+fo — hands-on as palin
+6
+(3 periods)
+TCP/IP 4 layers
+y
+Resources & Materials Needed:
+e
+Computer lab with internet access; LogiSim Evolution installed (or web-based version)
+¢
+Projector/whiteboard for circuit diagrams and OSI/TCP-IP layer charts
+¢
+Command prompt/terminal access for the ping activity
+Recommended Activities:
+¢
+Build and verify a truth table for a compound Boolean expression in LogiSim.
+¢
+Design a logic circuit for a burglar alarm (OR-gate application).
+¢
+Draft a simple SRS document for a calculator app.
+¢
+Run "ping www.google.com" and identify the OSI layer/protocol involved.
+Assessment:
+¢
+MCQs and fill-in-the-blanks for quick recall of terms (gates, SDLC phases, layers).
+e
+Short-answer questions comparing concepts (analog vs digital; TCP vs UDP; Waterfall vs
+Agile).
+¢
+Detailed/long questions:
+full
+gate truth tables, SDLC phase explanation, OSI layer
+functions with protocols.
+¢
+Practical/lab assessment: LogiSim circuit built correctly from a given expression.
+Common Misconceptions to Address:
+¢
+Students confuse the OSI model (7 layers, conceptual) with TCP/IP (4 layers, practical),
+stress they describe the same process at different granularity.
+e
+Students
+assume
+Agile
+has
+no planning/documentation,
+clarify
+it
+is
+iterative,
+not
+undocumented.
+e
+Students think NOR/NAND are just "opposite" gates rather than universal gates that can
+build any other gate.
+( 2
+~ COMPUTATIONAL THINKING AND ALGORITHMS
+This unit builds computational thinking skills: analyzing real-world problems and solving
+them using algorithmic strategies decomposition, pattern recognition, and abstraction. Students
+learn to design, evaluate and compare algorithms, focusing on two sorting algorithms (Bubble Sort,
+Selection Sort) and two searching algorithms (Linear Search, Binary Search), and how to judge an
+algorithm's correctness, efficiency, and clarity. (Suggested duration: 3 weeks (9-10 periods))
+»
+Yy
+C2)
+Teacher Guide
+Learning Objectives:
+¢
+Analyze real-world problems and apply computational thinking to solve them.
+e
+Explain the importance and properties of a good algorithm, and write pseudocode.
+¢
+Apply the strategies of decomposition, pattern recognition, and abstraction to a problem.
+¢
+Trace, compare and implement Bubble Sort and Selection Sort.
+¢
+Trace, compare and implement Linear Search and Binary Search.
+¢
+Evaluate an algorithm's correctness, efficiency (time/space), and clarity, and choose the
+right algorithm for a given problem.
+Topic Breakdown & Suggested Time
+sue
+Key Concepts
+Suggested Teaching Approach
+Computational thinking,
+Start with an everyday task (making
+2.1-2.2 CT &
+.
+.
+.
+‘Algorithms
+what is an algorithm,
+tea) to introduce step-by-step
+(Or aaees)
+importance of algorithms,
+thinking; contrast algorithm vs
+P
+algorithm vs pseudocode
+pseudocode with a simple example
+2.3 Algorithmic
+ws
+Use relatable real-life examples for
+.
+Decomposition, Pattern
+j
+.
+.
+Strategies
+Recoenition. Abstraction
+each strategy; have students identify
+(2 periods)
+g
+°
+the strategy used in short scenarios
+2A Sorting
+&
+Bubble Sort, Selection Sort, | Trace each algorithm step-by-step on
+“Searchi e
+Linear Search, Binary Search
+the board with a small list of numbers;
+een ds)
+algorithm, pseudocode,
+have students hand-trace before
+P
+worked example
+coding/pseudocoding
+2.5—2.6 Evaluating &
+Correctness, efficiency,
+Use the simple decision guide (sorted?
+Choosing Algorithms
+clarity; decision guide for | size? speed vs memory?) with practice
+(2 periods)
+choosing an algorithm
+scenarios to pick the right algorithm
+Resources & Materials Needed:
+¢
+Whiteboard/projector for tracing sorting and searching steps
+¢
+Attendance register or similar real data set for hands-on sorting/searching activities
+¢
+Index cards or number cards for a physical sorting demonstration
+Recommended Activities:
+e
+Arrange students in the assembly queue by height, physical demonstration of sorting.
+¢
+Sort names in the attendance register in descending alphabetical order by hand.
+¢
+Finda classmate's name in the attendance register using the Binary Search technique.
+¢
+Trace Bubble Sort and Selection Sort on the same list and compare the number of
+swaps/comparisons.
+Assessment:
+¢
+MCQs and fill-in-the-blanks for quick recall of terms (algorithm, sorting, searching, CT
+strategies).
+e
+Short-answer
+questions
+defining
+pattern
+recognition,
+decomposition,
+correctness,
+efficiency, and clarity.
+¢
+Detailed/long questions: write steps of Selection Sort and Binary Search; justify choice of
+searching algorithm for large datasets.
+¢
+Practical assessment: manually trace a sort/search algorithm on a given list and show
+intermediate steps.
+y
+¢
+7, LM | Ls
+Ee
+tae
+|
+Common Misconceptions to Address:
+¢
+Students confuse an algorithm (language-independent logic) with actual program code,
+reinforce that pseudocode/algorithm precedes coding.
+e
+Students think Binary Search works on any list, stress it requires sorted data first.
+¢
+Students assume a faster algorithm is always "better", clarify that clarity and correctness
+matter alongside efficiency, especially for small datasets.
+( >
+~ PROGRAMMING FUNDAMENTALS
+This
+unit
+introduces
+Python programming:
+what programming
+and programming
+languages are, setting up and using an IDE (VS Code), Python basics (variables, data types,
+input/output), operators (arithmetic, assignment, relational, logical, membership, bitwise), control
+structures (sequence, selection, repetition), built-in and third-party libraries, and debugging (syntax,
+runtime, and logical errors). (Suggested duration: 4 weeks (12—14 periods))
+Learning Objectives:
+¢
+Understand the concept of programming and identify real-world applications of Python.
+¢
+Use the elements of an IDE (VS Code) to write, run, and debug Python code.
+¢
+Understand variables, data types, and use input()/print() for I/O handling.
+¢
+Apply arithmetic, assignment, relational, logical, membership, and bitwise operators.
+¢
+Use selection (if/elif/else) and repetition (for/while) control constructs to solve problems.
+¢
+Use built-in and third-party Python libraries, and debug code by identifying error types.
+Topic Breakdown & Suggested Time:
+Kyu
+Key Concepts
+NUM eC
+emeWe)
+ire
+Programming
+ee ae 7 Sah =e
+Demo real-world Python use cases; do
+Basics & IDE (2
+cms
+yt
+a guided tour of VS Code before
+applications, VS Code
+;
+periods)
+nterface
+coding starts
+Variables, Data
+.
+.
+Use the
+container/storage box
+Variables, dynamic typing,
+analogy for variables; live-code
+Types & I/O
+.
+.
+:
+.
+.
+.
+.
+input()/print(), type conversion
+input()/print() and show that input()
+(2 periods)
+.
+always returns a string
+Arithmetic. assignment
+Build a single running example
+Operators
+HG,
+ASSIE
+°
+program, adding one operator category
+.
+relational, logical,
+.
+(2 periods)
+er
+at a time; use truth tables for
+membership, bitwise operators
+.
+va
+logical/bitwise operators
+Control
+Sequence; Selection (if, if-else, _ Trace flowcharts alongside code; have
+if-elif-else, nested if);
+students convert everyday
+Structures
+‘tion
+(f
+hil
+d
+decisjons/
+d
+tasks
+into
+if/1
+(4 periods)
+Repetition (for, w
+e, neste
+ecisions/repeated
+tas.
+Into 11/loop
+loops, break/continue
+structures before
+typing
+code
+Pp
+yping
+Built-in libraries (math,
+.s
+—
+Libraries &
+random, datetime), third-party.
+Pe
+PIP ee ae
+.
+“oe
+.
+intentionally break a working program
+Debugging
+libraries (pip install),
+°
+.
+to show each error type and how to
+(2-3 periods)
+syntax/runtime/logical errors,
+d
+back
+tracebacks
+read
+a tracebac
+Resources & Materials Needed:
+Computer lab with Python and VS Code installed (with Python extension)
+Internet access for pip install demonstrations (third-party libraries)
+Projector for live-coding and error/traceback demonstrations
+Recommended Activities:
+Write and execute a first Python program in VS Code.
+Build a program combining sequence, selection, and repetition (e.g. grading or number-
+checking program).
+Generate a student report card using built-in library functions.
+Build an arithmetic calculator, a "guess the number" game, or a simple ATM simulation.
+Assessment:
+MCQs and fill-in-the-blanks on syntax basics (comments, variable names, indentation, data
+types).
+Short-answer questions comparing for vs while loops, break vs continue, and error types.
+Detailed/long questions: explain data types and operators with tables and code, and write
+control-structure programs with syntax.
+Practical/lab assessment: write, run and debug a short Python program.
+Common Misconceptions to Address:
+Students think input() returns a number by default, stress it always returns a string that
+must be explicitly converted.
+Students confuse
+'=' (assignment) with '==' (comparison), reinforce with side-by-side
+examples.
+Students assume any error means the program is completely wrong, clarify syntax vs
+runtime vs logical errors.
+‘4
+’ DATABASE MANAGEMENT
+This unit introduces relational database concepts and practical database management using
+MS Access. Students learn database components (tables, keys, constraints), the Entity-Relationship
+(ER) Model and relationship types (1:1, 1:M, M:N), referential integrity (cascade update/delete),
+relational schema development through a Library Management System case study, and hands-on
+creation of tables, forms, queries, and data summaries/visualizations in MS Access.
+(Suggested
+duration: 4 weeks (12—14 periods))
+Learning Objectives:
+Understand database concepts, elements, and the role of a DBMS.
+Understand
+relationship
+types
+(1:1,
+1:M,
+M:N)
+and
+referential
+integrity
+(cascade
+update/delete).
+Develop a relational schema and Entity-Relationship (ER) Model from a real-life scenario.
+Create tables in MS Access using appropriate data types, keys, and constraints.
+Create forms and queries based on defined criteria, and design reports.
+Analyze datasets to produce summary statistics and data visuals using a relational DBMS.
+S-esy
+a
+pe |
+x
+|
+Teacher Guide
+Topic Breakdown & Suggested Time:
+Knute
+Key Concepts
+Suggested Teaching Approach
+Database
+Deen
+ene ToD NIG!
+Use a familiar dataset (class
+Concepts &
+attendance/marks register); identify
+tables/records/fields, keys and
+.
+Components
+integrity constraints, RDBMS
+fields, records, and a primary key
+(2 periods)
+or
+°
+together
+ER Model &
+Entities, attributes, relationships | Draw simple ER diagrams together on
+Referential
+.
+.
+Inteori
+(1:1, 1:M, M:N), referential
+the board; use a junction-table example
+tegrity
+.
+:
+:
+.
+.
+integrity, cascade update/delete
+to resolve an M:N relationship
+(3 periods)
+Pee
+Lees) ae Se
+Walk through the case study step-by-
+Schema Case
+requirement analysis — entities
+.
+.
+:
+er
+step; have students replicate the same
+SL
+a ia
+steps for their own mini-scenario
+(2 periods)
+final ER schema
+P
+Creating tables
+Tables, Forms &
+(Datasheet/Desi gn view, data
+Hands-on lab: build one table, one form,
+Queries in MS
+types), Form Wizard, SELECT
+.
+.
+.
+.
+;
+and 2—3 queries progressively in the
+Access
+queries, filtering (AND/OR),
+.
++
+ge
+same MS Access database
+(4-5 periods)
+grouping, summary statistics,
+charts
+Resources & Materials Needed:
+¢
+Computer lab with Microsoft Access installed
+¢
+Sample dataset (e.g. student records) for hands-on table/form/query practice
+¢
+Projector/whiteboard for ER diagrams and schema walkthroughs
+Recommended Activities:
+¢
+Create a Student table with at least five fields and assign a primary key.
+¢
+Design an ER diagram for a school system (Student—Course—Teacher).
+¢
+Create a data-entry form using the Form Wizard.
+¢
+Build queries with AND/OR conditions and a grouped query; create a bar/pie chart from
+the summary.
+Assessment:
+¢
+MCQsand fill-in-the-blanks on database terms (DBMS, ER Model symbols, junction table,
+cascade rules, candidate key).
+¢
+Short-answer questions distinguishing data vs information, field vs record, and explaining
+referential integrity.
+¢
+Detailed/long questions: design a full ER model and relational schema for a given scenario.
+¢
+Practical/lab assessment: build a table, form, and at least one filtered/grouped query in MS
+Access.
+Common Misconceptions to Address:
+e
+Students confuse a table's primary key with any unique-looking field, clarify only one key
+is chosen to uniquely identify each record.
+¢
+Students
+think M:N relationships
+can be modeled
+directly,
+stress
+the need
+for
+a
+junction/linking table.
+¢
+Students treat forms, queries, and reports as interchangeable, clarify their distinct roles.
+»
+aX aA N
+75 “SPPTICTTTON? AND IMPACTS OF COMPUTING
+This unit explores how computing
+is applied across daily
+life and various sectors
+(education, healthcare, banking, agriculture, industry). It covers Artificial Intelligence (AI), the
+Internet of Things (IoT), Data Analytics, and how these work together; evaluating information
+sources (primary, secondary, tertiary); the positive and negative impacts of computing on society
+and responsible/ethical use; and assistive technologies
+that support people with disabilities.
+(Suggested duration: 3 weeks (8—9 periods))
+Learning Objectives:
+Explain how AI, IoT, and Data Analytics work together in smart systems (e.g. smart homes,
+smart irrigation).
+Describe real-world uses of IoT and AI in different areas, including career and skill
+connections.
+Distinguish primary, secondary, and tertiary information sources and judge their reliability.
+Analyze the positive and negative impacts of computing across fields of life and identify
+responsible-use practices.
+Describe categories of assistive technologies and their importance.
+Identify career opportunities and required skills related to AI, IoT, Data Analytics, and
+Assistive Technologies.
+Topic Breakdown & Suggested Time:
+ete
+Key Concepts
+NUK Me emeR Riera
+Al, IloT & Data
+Coe
+ue
+ane
+Use the smart-home/smart-irrigation
+;
+how they work together, IoT
+Analytics
+components. uses in different
+example to trace the flow: sensor (IoT)
+(3 periods)
+P
+areas
+— data (Analytics) — decision (Al)
+Information
+Primary, secondary, and tertiary
+Bring examples (textbook, interview,
+Sources
+sources; judging reliability of
+social media post) and have students
+(1-2 periods)
+information
+classify and rate reliability
+Impacts of
+ee
+Impacts across
+Use the impacts table as a discussion
+.
+education, communication,
+Computing
+busi
+health
+‘culture:
+starter; have students debate one
+(2 periods)
+USINESS,
+Nea ues, agric ae
+positive vs one negative impact per field
+responsible and ethical use
+Mobility, sensory,
+Assistive
+communication,
+Show real examples/videos of screen
+Technologies
+cognitive/learning aids;
+readers, speech-to-text, mobility aids;
+(2 periods)
+importance for inclusion; related
+connect to relatable scenarios
+careers
+Resources & Materials Needed:
+Projector/internet access to show short videos/demos of AI, IoT devices, and assistive
+technologies
+Sample information sources (textbook excerpt, news article, social media post) for the
+reliability activity
+Whiteboard for the positive/negative impacts discussion table
+<
+a
+pe |
+x
+|
+Teacher Guide
+Recommended Activities:
+¢
+Trace a smart irrigation system end-to-end: sensor — data processing — actuator decision.
+¢
+Classify a set of given sources as primary, secondary, or tertiary and justify reliability.
+¢
+Debate the positive vs. negative impact of computing in one chosen field.
+¢
+Research and present one assistive technology and the career path connected to building it.
+Assessment:
+¢
+MCQs on recognizing technology use-cases (sensor vs actuator, IoT vs AI, source type).
+¢
+Short-answer questions on how AI/IoT/Data Analytics work together and the difference
+between a sensor and an actuator.
+¢
+Detailed/long questions: explain a full IoT system for a real scenario; analyze positive and
+negative impacts.
+¢
+Reflective assessment: a short written response on responsible/ethical technology use.
+Common Misconceptions to Address:
+¢
+Students think AI, IoT, and Data Analytics are the same thing, clarify their distinct but
+connected roles (collect — analyze — decide).
+e
+Students assume all online information is equally reliable, reinforce checking authorship,
+sourcing, and cross-referencing.
+¢
+Students view assistive technologies as only for severe disabilities, broaden understanding
+to everyday accessibility tools.
+'G
+DIGITAL LITERACY
+This unit develops digital literacy: using advanced search techniques and evaluating
+information sources; distinguishing qualitative vs quantitative and primary vs secondary data;
+designing data-collection approaches (interviews, surveys, prototypes, observation, simulations);
+and presenting findings responsibly using digital tools (spreadsheets, presentations, infographics).
+It culminates in a Digital Inquiry Project where students research a question and produce a final
+digital artefact. (Suggested duration: 3 weeks (9-10 periods))
+Learning Objectives:
+¢
+Perform advanced searches to locate information and evaluate source reliability.
+¢
+Differentiate qualitative vs quantitative data, and primary vs secondary data.
+¢
+Design a suitable data-collection approach (interview, survey, prototype, observation, or
+simulation) for a research question.
+¢
+Apply best practices to present primary and secondary data for a research question.
+¢
+Present data using appropriate digital tools such as spreadsheets, graphs, and infographics.
+e
+Plan and produce a digital artefact that answers a research question.
+Topic Breakdown & Suggested Time:
+Suggested Teaching
+Approach
+Key Concepts
+Digital literacy in the Information
+Digital Literacy &
+Perec ner
+Demonstrate a live uments
+Data Types
+search (quotation marks, site:
+.
+advanced search operators, source
+(2 periods)
+operator) and compare results
+evaluation
+— al
+Se
+Guide
+Le
+I
+e
+La
+Data-Collection
+Interviews, surveys/questionnaires,
+Give each strategy a real
+(1-2 periods)
+privacy/consent/ethics
+Strategies
+prototypes, observation, simulations;
+scenario and have students
+(2 periods)
+primary vs secondary data
+match the best method to it
+Designing a Data-
+Choosing a method based on the
+Have students draft a research
+Collection Approach
+research question,
+question and justify their
+chosen data-collection method
+Show the same dataset as a
+Presenting Data
+Spreadsheets, presentations,
+table, bar chart, and
+with Digital Tools
+infographics, choosing the right
+.
+4.
+.
+.
+infographic; discuss when each
+(2 periods)
+visual for the message
+;
+.
+is most effective
+Digital Inquiry
+Research question — methodology
+Ce eS
+.
+.
+:
+a model, then have students
+Project Case Study
+— primary/secondary findings —
+lan their own mini research
+(2-3 periods)
+digital artefact
+P
+question and artefact
+Resources & Materials Needed:
+Computer lab/internet access for advanced search and data-presentation practice
+Spreadsheet software and a presentation/infographic tool (e.g. Canva, PowerPoint)
+Sample datasets and example survey/interview questions for practice
+Recommended Activities:
+Run advanced searches using quotation marks and the site: operator, and compare result
+quality.
+Draft a short survey/questionnaire for a chosen research question and identify possible bias.
+Turn a small dataset into a spreadsheet chart and an infographic, then compare their impact.
+Plan and outline a mini Digital Inquiry Project: research question, method, and final
+artefact choice.
+Assessment:
+MCQs and fill-in-the-blanks on key terms (primary/secondary data, advanced search
+operators, digital artefact).
+Short-answer questions comparing qualitative
+vs
+quantitative
+data and primary
+vs
+secondary data.
+Detailed/long questions: design a data-collection approach for a given research question.
+Project-based assessment: a complete digital artefact answering a research question.
+Common Misconceptions to Address:
+Students think any online information is trustworthy, reinforce checking author, date,
+evidence, and source reliability.
+Students confuse primary and secondary data,
+clarify primary
+is collected directly,
+secondary comes from existing sources.
+Students assume more visuals automatically make a presentation better, stress choosing the
+visual that fits the message.
+4
+(17
+Pl
+sea
+Se
+All rights are reserved with the SINDH TEXTBOOK, BOARD, JAMSHORO.
+Prepared by
+Reviewed by Directorate of Curriculum Assessment and Research Sindh, Jamshoro
+Prescribed by the Board of Intermediate and Secondary Education Hyderabad, Sukkur,
+Shaheed Benazirabad,Larkana, Mirpurkhas and Karachi for Secondary School Examination.
+Approved by the Education and Literacy Department, Government of Sindh.
+NAS
+es
+eo J
+st
+9
+We
+=
+3S
+eo
+3
+4
+\
+'
+oS
+$
+x
+B
+TIAN
+yes
+1
+Eni
+SA
+Ub EF Ue F
+Serial No.
+Publisher Code No.
+Month and Year
+of Publication
+Edition
+Quant ity
+Price

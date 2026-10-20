@@ -1,0 +1,277 @@
+/* IT Lecture Notes — print-oriented flexbox layout */
+:root {
+  --ink: #1a1a2e;
+  --muted: #4a5568;
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+  --border: #cbd5e1;
+  --page-bg: #ffffff;
+  --callout-bg: #f8fafc;
+  --font-serif: "Georgia", "Times New Roman", serif;
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 11pt;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+  background: var(--page-bg);
+}
+
+.page {
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 14mm 16mm;
+}
+
+/* Flexbox primitives */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.flex-grow {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.flex-shrink-0 {
+  flex: 0 0 auto;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.cover {
+  min-height: 240mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  page-break-after: always;
+}
+
+.cover h1 {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--accent);
+}
+
+.cover .subtitle {
+  font-size: 1.25rem;
+  color: var(--muted);
+  max-width: 32rem;
+}
+
+.cover .meta {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+h1.chapter-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent-soft);
+  padding-bottom: 0.35rem;
+  margin: 1.5rem 0 1rem;
+  page-break-after: avoid;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 1.25rem 0 0.5rem;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 1rem 0 0.35rem;
+  color: var(--muted);
+  page-break-after: avoid;
+}
+
+p {
+  margin: 0.4rem 0 0.75rem;
+}
+
+ul, ol {
+  margin: 0.35rem 0 0.75rem;
+  padding-left: 1.35rem;
+}
+
+li {
+  margin: 0.2rem 0;
+}
+
+.outcomes {
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0 1.25rem;
+  border-radius: 0 6px 6px 0;
+}
+
+.outcomes strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.diagram-box {
+  flex: 0 1 320px;
+  max-width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  background: var(--callout-bg);
+  page-break-inside: avoid;
+}
+
+.diagram-box figcaption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.diagram-box svg,
+.diagram-box img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0 1rem;
+  font-size: 0.92rem;
+  page-break-inside: avoid;
+}
+
+table.data th,
+table.data td {
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.55rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.data th {
+  background: var(--accent-soft);
+  font-weight: 600;
+}
+
+.callout {
+  background: var(--callout-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  margin: 0.75rem 0;
+  page-break-inside: avoid;
+}
+
+.callout.tip {
+  border-left: 4px solid #16a34a;
+}
+
+.callout.exam {
+  border-left: 4px solid #d97706;
+}
+
+.toc {
+  page-break-after: always;
+}
+
+.toc ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+.toc li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted var(--border);
+  padding: 0.35rem 0;
+}
+
+.toc a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+mjx-container {
+  font-size: 105% !important;
+}
+
+code {
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 0.9em;
+  background: #f1f5f9;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  page-break-inside: avoid;
+}
+
+.chapter {
+  page-break-before: always;
+}
+
+.chapter:first-of-type {
+  page-break-before: auto;
+}
+
+@media print {
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .page {
+    max-width: none;
+    padding: 0;
+  }
+
+  a[href^="#"] {
+    color: inherit;
+    text-decoration: none;
+  }
+}

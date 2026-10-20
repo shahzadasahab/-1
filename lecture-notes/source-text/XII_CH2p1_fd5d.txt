@@ -1,0 +1,1365 @@
+Computational Thinking
+and Algorithas
+‘Student Learning Outcomes:
+‘After the completion of this unit students will be able to:
+Analyze algorithms for correctness using trace tables or stepwise reasoning.
+Evaluate the clarity of an algorithm (modularity, readability).
+:
+Assess
+ue
+efficiency
+| concepiualy: mbes of steps, suet
+for
+7
+problem type). .
+ss:
+Suggest refinements to. improve clarity or efficiency
+Understand concept of Data structure
+Identify linear and non-linear data structures in problem scenarios.
+Trace data retrieval in arrays, ‘lists and TNE
+oO
+EL ELS
+0000
+000 :
+introduction to Unit:
+This unit focuses on the understand
+,
+SERreT
+Sen
+ng
+,
+as
+4th respect to their efficiency, clarity,
+ented
+mr computation
+‘ta
+het
+Wetaae
+a
+ne
+solutions ©
+1
+‘a
+study of data structures and the met
+ds of data tettjeval in both |i
+j
+y
+near and Non-linear
+eo
+An algorithm is a step-by-step
+logical
+procedure
+vo
+: %
+programming language.
+orithms for correctness;
+21.
+Analyze alg
+‘tr
+|
+An algorithm 1s considered correct, if its output matches the expected results
+for a given input. Analyzing an algorithm for correctness involves desconstroting tha
+it consistently produces the intended output for all valid inputs. Two commonly used
+effective methods for this analysis are:
+.
+Trace tables
+Stepwise reasoning
+a technique used to monitor how the values of variables
+tion of ani algorithm. It is essentially a “paper execution” of
+] walkthrough.
+3.1.1. Trace Tables:
+A trace table
+is
+change during the execu
+the code, often referred to as a manua
+j)
+Purpose of Trace Tables:
+Dry Running: Manually acting as the computer to execute the algorithm line
+e
+by line.
+¢
+Debugging: Ident
+s but produces
+incorrect outputs.
+»
+Validation: Ensuring the a
+Components of a Trace Table:
+A typical trace table includes:
+¢
+Line Number: The line of algori
++
+Variables; A column for every variable.
+¢
+Input/Output; A column(s) for user inputs and printed output.
+©
+Condition Check: A space to evaluate conditions (IF, WHILE, FOR, etc.).
+ifying logical errors where an algorithm run
+Igorithm does what
+it is intended to do.
+ji)
+thm being executed.
+For Example:
+|
+a This algorithm counts the
+criteria based on height requirements, To qualify, a soldier's hei
+1.57 and 1,91 meters, inclusive of both limits.
+number of soldiers who meet the training eligibility
+ght must be between
+qt VSS eu
+sy
+e.
+sik
+ae
+Inputs: All soldiers’ heights.
+1
+W
+Output: Count the number of soldiers having help
+between 1. $1 and 1.91 meters.
+:
+|
+|
+=
+. Unit 2: Computational Thinking &
+Algorithm:
+[Step 1:
+Start
+7
+|
+Fi
+‘Step 2:
+SET Total = 0
+ue
+‘Step 3:
+- Set AllHeights = [1.91,
+2. a1, 1. 87,
+1.57,
+1. 48)
+Step
+4:
+| FOR EACH height FROM AllHeights DO
+4
+|
+IF height >= 1.57 AND height <= 1.91 THEN
+,
+|
+oa ‘Total
+= Total if; Leeks
+‘ola
+|
+_
+END IF
+i
+i
+eae
+--
+Print Total | a tae
+ts Ai a
+ae
+“Bnd
+< i uo Beene Cou
+aed ees
+ee
+Le
+ao
+:
+ee
+ow
+#6
+#8
+#8
+oF
+oe
+WOMOWdSN
+Oo
+—
+Oo
+ae
+)
+a
+i
+£
+Trace Table:
+meee
+ect
+$f e] "’ ig
+eo
+YY
+e
+{ft 2
+Al
+2.1.2 Stepwise Reasoning:
+|
+Stepwise reasoning involves breaking an algorithm into logical sections and
+7
+verifying the “state” of the algorithm at each stage.
+It is'also known as logic —
+’
+verification. This method checks correctness by carefully thinking enone the logic
+rather than using a table. The steps are:
+1.
+Analyze each step of the algorithm,
+2.
+Check:
+> Does the algorithm start in a valid state?
+>
+Does it handle all possible cases?
+>
+Are the conditions correct?
+>
+Ifthe loop is correct at ie
+start of an iteration, does it remain correct at
+the end?.
+>
+;
+_ For Example:
+The following algorithm calculates the sum of numbers from 1 to N. Where N
+©
+is an integer input number entered by user.
+Algorithm:
+Step 1:
+Step 2:
+Step 7:
+2
+os
+Print ‘Sun
+eC
+Ae a
+Seta a
+noua ae
+Step 8:
+End) 0
+:
+i)
+Stepwise Reasoning: .
+e
+Initially, Sum =0
+¢
+Loop runs from 1 to N
+«
+Each number is added
+to Sum
+©
+After loop ends, Sum contains total
+ii)
+For Example:
+¢
+In Normal case, If N = 5 then Sum= 15
+e
+In Edge case, IfN = 0 then Sum= 0
+ICTR TY
+Best For
+Small algorithtn blocks,
+| Large systems, architectural logic,
+|
+|
+complex loops, and beginners,
+and abstract proofs.
+|
+Effort
+High (tedious for 1,000
+Moderate (requires logical
+|
+|
+|
+iterations),
+|
+deduction),
+:
+*
+Catching syntax/arithmetic
+Catching conceptual/structural
+i.
+=
+errors.
+|
+;
+.
+flaws.
+“|
+2.2.
+Evaluating the Clarity of an Algorithm:
+Clarity in an algorithm means it is easy to read, understand, and modify. In
+many cases, evaluating clarity is even more important than optimizing for speed. A
+clear algorithm is easier to maintain, debug, and extend over time.
+It involves
+assessing how easily a person can follow the logic and work with the aigotau
+|
+two key aspects of clarity are:
+>
+Modularity
+>
+Readability
+2.2.1. Modularity:
+3
+Modularity means breaking.an algorithm into smaller, ‘epealba parts such
+as functions, classes, or modules. This makes the agonte | more organized and
+easier to work with.
+Why it matters:
+9
+-
+»
+It makes the digotithen
+e
+easier to understand -
+» -Itsimplifies debugging
+_
+>
+It encourages algorithm reuse
+>
+It helps reduce overall complexity
+i)
+How to Evaluate Modularity:
+>
+Single Responsibility Principle (SRP): The SRP suggests that each module
+should focus on one specific task. If a function is handling multiple tasks, it
+likely violates modularity by mixing different pieces of logic.
+Coupling: Modules should be designed so they can be reused easily in
+_ different contexts, Good modularity means loose coupling, where changes in
+_
+one part of the algorithm do not negatively affect others,
+_» Abstraction;
+A well-designed algorithm
+hides complex implementation
+details. For example, a user can call a sorting function without needing to
+know whether it uses Bubble Sort or Selection Sort internally,
+W
+Y tational Thinking & Algorith
+'
+For Example
+=):
+gece
+wy
+Find the average of an integer list.
+‘Step i:
+—
+Start
+=
+Step
+2:
+Set A = (1.23, 4,3)
+Step 3:
+Set
+n
+=
+Step
+4: .
+Set Pay
+=
+0
+Step-$s
+4,
+i Set avai]
+Oo
+sy
+i
+Step 6:
+Mer
+Por lak
+1s
+ton
+wien
+Step
+iso.
+oe
+_
+total
+=
+total + aC
+Step
+8:
+End For
+Step
+9:
+avg
+= total
+/- ne
+Step 10:
+EE
+as
+Step 11:
+End_
+This is a poor stati because all the weie' is in a single block, makeing it
+harder to reuse and test:
+sum = ‘caleulatesun, ay
+Avg
+= Sum fo Ts
+Vas
+Return Be
+End Function
+Function CalculateSum (A, ay
+Set Total = 0
+For
+I ='1
+£0 Nes:
+Total = Total + ACI)
+Bnd For we eg
+tas
+4
+Return Total
+|Sad Function
+This
+is
+a good example because
+it divides
+CalculateSum() and F indAverage().
+the task
+into two functions:
+Ve preet ae e
+:
+4 —
+@):
+|
+‘
+ae
+4
+it 2: Computational Thinking
+2.2.2. Readability:
+Readability refers to how easily another person can understand the purpose
+r
+and logic of an algorithm without actually running it. In simple terms, it is about how
+|
+clear and easy the algorithm is to read and interpret.
+How to evaluate readability:
+.
+i) | Naming conventions: These are rules for naming variables, functions, and
+files in a consistent way. Good ane makes an algorithm easier to search,
+understand, and maintain. -
+o
+Bad:v=d/t
+o
+Good: velocity
+= distance / time
+ii)
+Self-documentation: An algorithm should be written clearly enough’ to
+explain itself, reducing the need for extra comments or documentation. Using
+meaningful names,
+proper structure, and clean formatting helps oe the
+purpose of the algorithm obvious.
+iii)
+Control flow simplicity: The logic of the algorithm should be. sraiohitorward
+ie
+andeasy
+~
+to
+follow.
+This
+means avoiding
+deep
+nesting,
+limiting
+unnecessary conditions (like too many IF or SWITCH statements), and
+keeping functions focused onasingletask.
+iv)
+Consistency: Following a standard style throughout the algorithm, such as .
+consistent
+indentation, spacing, and naming, makes the algorithm easier
+to read, allowing the
+ber to stand out more clearly.
+2.3.
+Assess Algorithm Efficiency:
+Algorithm efficiency is measured in terms of time and space that is, how’ fast
+it runs and how much memory it uses.
+The key considerations for assessing apotutn efficiency are:
+>» Number of steps.
+:
+>» Number of Conditions.
+> Number of Repetitions.
+2. 3.1. Number of Steps:
+.
+When discussing
+efficiency,
+we usually
+focus
+on ‘how
+an algorithm’s
+performance is affected as the input size (n) increases. Instead of counting every
+single instruction, the focus is on how often the main operation is repeated.
+Big O Notation:
+It is a method used to describe the efficiency of an algorithm by measuring
+how the running time or memory usage grows as the input size increases.
+Alt
+Big O notation helps to:
+|
+>
+Compare algorithms
+VY
+>
+Predict performance for large inputs
+,
+>
+Identify efficient and inefficient solutions
+Key metrics:
+>
+Constant Time (O(1)): The execution time remains constant regardless of the
+size of the input. Whether the dataset contains 10 elements or 10 million
+elements, the operation takes approximately the same amount of time to
+complete.
+:
+- For Example: Accessing the first element of an array, as its location is known
+directly and does not depend on the number of elements stored inthe array.
+_»
+Linear Time (O(n)): The execution time increases proportionally with the
+size of the input. As the number of input-elements grows, the time required to
+complete the operation grows at a similar rate. If the input.size doubles, the
+execution time will approximately double as well.
+,
+:
+For Example: Searching for a specific name in an unsorted list, where
+each
+element may need to be examined until the desired item is found or the end of
+the list is reached..
+.
+>
+Logarithmic Time (O(loga)): The execution time increases very slowly as the
+_
+size of the input grows, making it highly efficient for handling large datasets.
+Rather than examining every element, the algorithm repeatedly reduces the
+problem size, allowing it to reach a solution in significantly fewer steps.
+For Example: Binary search, where the search space is divided in half during
+each step until the target value is found or the search space is exhausted.
+> Quadratic Time (O(m’)): The execution:-time increases proportionally to the
+‘square of the input size. This complexity commonly occurs in algorithms that
+use nested loops, where each element is compared or processed against every
+other element. As the input size grows, the number of operations increases
+rapidly, making such algorithms inefficient for large datasets.
+For Example: Comparing every item in a list with every other item, such as
+when checking for duplicate values using two nested loops.
+2.3.2, Number of Conditions:
+Conditions represent logical decision
+ain
+within an algorithm. Although
+these operations generally require minimal execution time, they increase the overall
+complexity
+of
+the
+algorithm.
+Excessive
+conditional
+branching
+may
+reduce
+performance.
+Branch misprediction
+is
+a- phenomenon
+in which
+the processor
+incorrectly predicts the path of execution, resulting in additional processing delays.
+wists
+SP
+)
+Soaccak De -
+r
+LS
+|
+Barer
+Ve
+a
+Following are the types of conditions and their impact on Ney:
+i)
+The Computational Cost of Decisions:
+Each time an algorithm encounters a condition, the somputer must evaluate
+"whether the stated condition is true or false. As the number of conditional
+statements increases, the algorithm requires more decision- making operations,
+which may reduce overall efficiency.
+ii)
+Nested Conditions:
+The use of conditions within other conditions, commonly referred to as nested.
+conditions or nested If statements, often indicates a less efficient or brute-
+force approach
+to problem solving. Deeply
+nested
+structures
+increase
+complexity, reduce readability, and may require additional processing time.
+iii)
+Conceptual Goal: Short-Circuiting:
+.
+An important design objective in efficient algorithons 18 short-eircuting
+This
+approach aims to terminate the evaluation process as soon as the required
+result is obtained, rather than examining every possible condition or branch.
+Short-circuiting reduces unnecessary computations and improves overall
+algorithm performance.
+2.3.3. Number of Renelitions:
+Repetitions, commonly implemented through loops, are considered the most
+significant factor in determining algorithm efficiency. The number of repetitions
+directly affects how the execution time of an algorithm grows in relation to the input.
+size (n). As the amount of data increases, the structure and. frequency of looping
+operations largely determine the overall performance of the algorithm.
+The following chart
+BW
+the types of
+ee their voneepiual impact and
+efficiency grade.
+:
+bear oe
+ava
+ti
+Fay
+Efficiency Grade
+The aor
+processes each element
+|
+|
+Linear ep | |
+exactly once. The execution time increases
+Good (0 (n) )
+__ proportionally with the input size:
+Cee
+i
+|
+fe
+Uae
+|
+; | The algorithm reduces the problem size by
+\
+| Logarithmic
+half during each iteration, as seen in Binary
+_
+Repetition
+|
+Search, This significantly decreases the
+|
+Excellent (O (logs) )
+“Ae
+number of required operations,
+bs
+‘For each element, the algorithm repeatedly
+processes all other elements, This greatly
+|
+:
+increases the number of operations as the
+|
+Poor (O(n)
+if _input size grows,
+Ra
+MIGHTY
+(ad
+od
+cya
+1} CamScanner
+=
+-
+———E
+;
+sh
+f
+x
+wat
+_
+-
+r
+j
+"
+y
+Po.
+ee" |
+»
+f
+ef
+,
+i
+as
+31 @)
+A
+Ls
+4
+NPP
+‘
+“
+.
+*
+“ine
+2.3.4, The Efficiency Evaluation Framework:
+i"
+To
+evaluate
+an
+algorithm
+at
+a conceptial
+level,
+the
+following
+three
+=
+7
+fundamental questions should be considered.
+.
+1.
+Does it scale?
+:
+If the input size incteases significantly say 10 times larger does the running
+time also increase by 10 times (linear growth), or does it jump to something
+like
+100 times (quadratic growth)? In practice, quadratic solutions often
+become too slow for large-scale use.
+2.
+What is the bottleneck?
+When evaluating an algorithm, attention should be focused on the most time-
+consuming section, which is typically located within the deepest loop or the
+most frequently repeated operation. The objective is to identify whether the
+same result can be achieved through a more efficient approach that requires
+fewer iterations or fewer passes over the data.
+3.
+Isthe cost worthit?
+= =~
+on
+:
+In some situations, a more theoretically efficient algorithm, such as one with
+logarithmic time complexity (O (log,)), may not be the most practical choice
+if it is significantly more difficult to develop, understand, or maintain.
+For example, for-a list containing only 50 items, a simpler linear solution (O
+(n)) may be more appropriate. Although
+it is less efficient in theory, its
+simplicity, readability, and ease of maintenance can make it the more effective
+and practical option in real-world applications.
+In the end, good algorithm
+design is about. balancing performance with
+simplicity and practicality.
+a
+om
+55
+Conceptual “Work”
+ie
+HOUSE a
+os ae
+Lookup
+ss HashTable =| Constant (O(1))
+| Sorted Search
+| —_BimarySearch
+| _—_—_Logarithmic (O(logn))
+General Processing
+—-SingleLoop
+| ~——sLinear(O@))
+a
+____
+Sorting
+| Divide and Conquer
+| _Linear-Logarithmic
+(O(n logn))
+2.4.
+Refinements to improve clarity and efficiency of algorithm:
+Improving an algorithm usually comes down to making it clearer, faster, and
+less demanding on resources. A good way to approach this is by reviewing it step by
+step simplifying the logic so it is easier to follow, spotting any unnecessary work that
+‘can be removed, and looking for smarter ways to handle data, By systematically
+analyzing and evaluating each component, the algorithm can be progressively refined
+into a solution that is both efficient and easy to comprehend,
+’
+i)
+it)
+iv)
+Unit 2: Computational Thinking &
+2.4.1, Refinement to improve Clarity:
+Following are some guidelines for improving clarity of algorithm
+Use Meaningful Names:
+Replace vague variable names with descriptive ones.
+For Example:
+Bad variable names: ¢=t/n
+Good variable names: average = totalSum / totalltems
+Break into Modules:
+be
+Instead of dealing with a single complex block of logic, the process is divided
+into manageable sections that aré easier to understand, maintain, and reuse.
+For Example:
+Improve Structure. & Indentation:
+Jt makes both the documentation and the algorithm easier to
+feaid
+and
+maintain,
+so people do not feel butdened while trying to understand
+it.
+Organized and clear logic reduces the mental effort needed to follow what’s
+going on. This approach is especially helpful when working with conditions or
+loops, where things can quickly become confusing if everything is packed
+together,
+|
+Add Comments:
+Adding comments is definitely
+a good habit, but more is not always better,
+The goal is to keep comments short and meaningful, just enough
+| to clarify
+tricky parts or explain why something | is done,
+, 2.4.2, Refinement to improve Efficiency:
+Following are some guidelines for improving efficiency of algorithm
+~ Reduce Unnecessary Steps:
+-
+value settles at the end. So there is no point in checking that part again. With every
+outer loop, it can shrink the inner loop because those elements are already in place. It
+is a small tweak, but
+it saves extra work and that is what optimization is all about.
+i)
+i)
+utational Thinking & A
+For Example:
+It is basically about making an algorithm smarter and more precise.
+- Rather than repeating the same operations unnecessarily, the objective
+i is to
+eliminate redundant steps, utilize more efficient methods for storing and
+accessing data, and: organize the logic in a manner that improves execution
+speed while minimizing memory usage.
+ner eran
+In the above Bubble Sort example, after each pass through the list, the largest
+Use Better Algorithms:
+-
+Improving efficiency is not about always sing: the “best” algorithm, it is
+about picking the one that fits the situation. .
+Different problems have different needs, 50 a good solution is choosing or
+designing steps that make things faster, use less memory, or give accurate
+results,
+1} CamScanner
+iv
+J
+>
+ksi
+:
+it 2: Computational Thinking &
+mi,
+*)
+For Example:
+\s
+Linear Search Algorithm
+Step 1; = Start
+me
+Step 2:
+Set DATA
+:=
+(8,
+3,
+Gr
+1, 1
+2,4; ‘sf
+fas
+Step 3:
+Set N
+t=
+8.
+te
+Step 4:
+Set FindValue
+:=
+ri
+Step
+5:
+Set ValueFound
+:= 0,
+Step
+6:
+Repeat Step
+7 for PTR
+=
+1 to N.
+step
+7:
+If DATA([PTR)
+= FindValue then
+.
+a. ValueFound
+:=
+1.
+2
+b.
+Goto Step
+8.
+Step 8:
+‘If ValueFound
+=
+1 then
+Print DATA[PTR].
+DH
+2
+RES
+2a
+RISO
+|
+1
+ea
+aaa
+3
+Print “Data not Found”
+~~
+ce ae
+Step 9:
+End
+~
+et
+Fi
+ee
+ee
+a
+ee
+oy sae beaten
+£2
+ha
+5.
+ete
+‘
+be:
+Binary Search Algorithm
+Step:
+Start.
+<a
+Step 2:
+Set DATA := {1, 2, 3,
+4,
+5, 6,
+i 8, 9h
+Step 3:
+Set BEG
+:= 4.
+Step
+4:
+Set END
+:= 9.
+—
+Step 5:
+~-
+Set MID
+:=
+Step 6:
+.
+Set Item
+:=
+qe
+Step
+7:
+Set Loc
+:=
+0.
+Step 8:
+Repeat
+Step
+9
+and
+10
+While BEG
+< END
+|
+DATA[MID] #
+Iten. .
+|
+Step
+9:
+If Item < DATA[MID] then:
+6
+|.
+4
++ Set END
+:= MID- 1...
+=
+:
+4
+INT ( (BEG < + END). / 2).
+oc
+e
+eae
+3
+Else
+Set BEG
+:= MID+ 1...
+Step 10: Set MID
+:= INT((BEG
++ END)
+/
+2)
+[ Set Middle
+Value
+j
+:
+Step 11:
+If DATA[MID]
+= Item then:
+Set LOC
+:= MID
+Else
+|
+Set LOC
+:=
+0
+Step
+12:
+If LOC
+>
+0 then
+Print DATA[LOC]
+Else
+Print. “Data Not Found”
+End
+data.
+For Example:
+Bad ci
+mputational Thinking & Algori
+’ n
+iti)
+Avoid Re-computing Values:
+This is really about not doing the same work twice.
+When an algorithm has already performed a calculation, it is more efficient to
+store and reuse the result rather than recalculating it repeatedly. This can be
+achieved through techniques such as storing values in variables, implementing
+memoization,
+or
+utilizing
+caching mechanisms
+for
+results
+that remain
+unchanged.
+Such
+practices
+improve: algorithm performance and reduce
+unnecessary computational load on the system.
+In the above example, Binary Search is often called the “best,” but it only.
+works well when the data is sorted and usually when it is large. On the other hand,
+Linear Search is simpler and can actually be the better choice for small or unsorted
+Step.
+Step:
+‘Step
+3:
+‘Step:
+step 9:
+“Step
+‘Step
+~
+Good E siapie
+‘Step
+Step
+Step
+| Step
+Step
+Step
+‘Step.
+Ave:
+;
+2
+3:
+ae:
+6s:
+64%
+V3
+eStart:
+Set A
+Set
+B
+set
+Set D
+20s
+= 30°
+A+B.
+B- A.
+Print C and Dd
+- End
+iv)
+Use Appropriate Data Structures;
+Choosing the right data structure (discussed later in this unit) is like picking
+the right tool for a job; it can make everything faster and easier.
+Ifa value is fixed and would not chaitae during
+execution, there is no need to
+keep re-initializing or re-computing
+it, just assign it once and reuse
+it whenever
+needed. It is a simple idea, but
+it saves a lot of computational effort.
+) - Unit 2: Computational Thinking &
+:
+A
+.
+Different data structures are designed for different purposes; therefore, it is
+OY
+essential to select the one that best aligns with the specific requirements of the
+,
+program. Consider how the data will be accessed, which operations will be
+performed most frequently, and how the data elements are related to one
+another,
+For example:
+>
+Ifa user needs quick, direct access to elements, arrays work well.
+>
+Ifa user wants to find things really fast by a key, hash tables are a great
+choice.
+>- If user data has relationships or connections, like hierarchies or networks,
+trees and graphs make more sense.
+So instead of forcing one structure everywhere, choose the one that
+naturally fits the problem. That is what makes an algorithm more efficient
+and easier to work with.
+2.5.
+Concept of Data Structure:
+|
+A data structure is a systematic way of organizing; storing, and managing data
+to enable efficient access, modification, and processing. It provides a structured
+approach for handling data within an algorithm, enone openitions
+to be performed
+effectively and efficiently.
+—
+Data structures can be understood through real-life examp sess"
+>
+Books on a
+shelf are arranged in a specific order, making it easier to locate a
+particular book quickly.
+> Files stored in folders are grouped systematically, which simplifies thee
+_
+management and retrieval.
+‘-
+Similarly, data structures in algorithms help to:
+»
+Store data in an organized manner, —
+>
+Access and update data efficiently,
+>
+Solve problems using structured and logical approaches, and
+>
+Improve the overall efficiency and performance of algorithms.
+Broadly, data structures are divided into two classes:
+>
+Linear Data Structures
+»
+Non-linear Data Structures
+25,1, Linear Data Structures:
+‘Elements are arranged in a sequence, one after the other, Following are the
+some linear data structures.
+au
+en
+Xe.
+a
+olen
+_baie2- Computations Thinking & Algorithms
+;
+yet
+i)
+= Array:
+| a
+An array is one of the simplest ways to store data; it is like lining up items in a
+7
+sequence.
+It holds a collection of similar items (same data type) placed right next to each
+other in memory. Each item has a position number, called an index, starting from 0.
+This makes it really fast to jump directly to any clement if the user knows its index.
+Figure 2.1 demonstrates the representation of data using an array.
+For example:
+A =[23, 76, 12, 90, 34, 68]
+Here, 23 at index 0, 76 at index 1, and so on.
+Arrays are useful when quick and easy access to elements is needed.
+However, arrays are not suitable for every situation. In scenarios where
+elements need to be inserted or deleted frequently, arrays may become inefficient, as
+existing elements often need to be shifted to accommodate the changes.
+An array is one of
+_ the Eee to store data, it is lining up iters in a sequence.
+B) vero
+ARRAY |
+ELEMENTS
+|
+ae
+INDEX
+¢
+»
+(START FRoMIy >
+|
+|
+|
+|
+ACCESSING ELEMENTS
+A(0] =
+|
+A[l]
+=
+76
+Al2] =
+12
+aera
+nae
+A[3]
+= 90
+a
+index Range
++:
+Oto05
+Ald]
+=
+34
+A[S]
+= 68
+Th
+yj
+<a
+=
+Aye
+nit
+2: Computational
+Thinking
+&
+a aia
+it
+;
+putational
+Thinking
+*|
+ii)
+Linked List;
+WV
+A linked list is a way of storing data in a chain-like structure, wher
+each
+’
+piece of data is connected to the next one.
+Instead of being stored in one continuous block of memory, a linked list is
+made up of separate elements called nodes. Each:node has two parts: the actual data,
+and
+a link (or pointer), which holds the address of the next node. Figure 2.2
+.
+demonstrates the representation of data using a linked list.
+A real-life example is the back and forward functionality in a web browser.
+The browsing history is maintained in a structured manner that allows sequential
+navigation through previously visited web pages, similar to traversal i ina linked i
+.
+data structure.
+er = KEY 2BDY
+<Z. LINKED LIST
+ge 4
+DATA: 23, 76, 2 90, 34, 68
+co
+>
+:
+—_
+)
++a
+Oz
+DEFINITION :
+A linked list is a ‘ray of storing data in a
+tee
+chain-like structure, where each iets of data is connected
+to the next one.
+LINKED LIST REPRESENTATION
+68 | @;-PNULL
+|
+vw
+76 |et-+|
+12 |ets| 90 [ets]
+34 |e
+a a
+-
+a
+77,528 BY ile iW ; :
+Figure 2.2: Data representation in Linked List
+eS
+]
+48
+oa
+=
+:
+g
+ae
+aay
+Cat ¢
+sel".
+“AK
+iii)
+Stack:
+*
+A Stack is a linear data structure that works according to the Last-In, First-
+74
+Out (LIFO) principle. In this architecture, the last element
+ne to the structure is
+“9
+the first one to be removed.
+Adding an item to a stack is called PUSH and removing an item from a stack
+is called POP.
+This behavior is analogous to a physical stack of-items, such as plates or trays,
+where additions and removals occur exclusively at the top.
+Figure 2.3 illustrates the representation of data in a stack and demonstrates the
+PUSH and POP operations.
+a2 STACK DATA. ‘STRUCTURE ==
+=
+Memory Addresses es, ; i
++
+.
+1000
+4
+Push sae into the stack
+ie
+The pointer “s i
+Bg
+tial
+them neds and stack
+|
+:
+_
+| sfack™ that apores vn
+ob
+sas ee
+with thee data to top.
+BAS
+oc arene
+“|
+pointer to the data,
+1008
+POE
+|
+PEEK
+wae
+|
+Remove plate grass stack
+ba
+:
+Peck peek is contranted
+:
+:
+and repun ends on the
+i
+Ue
+and restore from last to
+bottom to the rastick.
+Capea
+_ first on bottom.
+\exrearwrecema Tes
+@
+Top plate to now top (PUSH)
+|
+@
+Push ta tow top plate
+Se. ag
+5
+2
+>
+(Push)
+i
+|»
+Remove plate from top
+Net
+BB —-@ Remove plate
+|
+© From tora plate ta imite plate
+from top (Pop)
+|
+© Cannot pull from bottom (LIFO)
+=® Cannoi pull from
+(©
+Pullimtant plates
+bottom (LIFO)
+i
+ee RO
+wrt ae
+Nee
+ae siren err
+e
+ctrl
+?
+.
+dé
+.
+>
+woe
+A stack data exterination that is
+beginning foots tio ia full data-
+nation agorilms to reigine the
+stack,
+. Figure 2.3: Data representation in Stack
+iv)
+Queue:
+A queue is a simple way of organizing data on First-In, First-Out (FIFO)
+principle, where the order really matters, whoever comes first gets served first.
+A good real-life example is a line at a ticket counter. The person who arrives
+first stands at the front, and everyone else joins behind them. When it is time to be
+served, the person at the front goes first, and the line keeps moving in order.
+The process of adding an element to the “back” or “rear” of the queue is
+called “Enqueue” and the process of removing an element from the “front” of the
+queue is called “Dequeue”.

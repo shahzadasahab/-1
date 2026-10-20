@@ -1,0 +1,1511 @@
+er
+eM ER eae DTT
+ome oe
+2h C*D Saar
+eR A
+:o
+Ni # A
+Sdebere atic
+NY
+Application and s
+Impacts of Computing
+After the completion of
+f this unit students will be able to:
+©
+Explain the basics of neural networks and deep learning.
+©
+Identify applications of neural networks and deep learning models.
+@
+Explain secure collaboration and data protection.
+_
+@
+Identify common security threats and suitable mitigation techniques. |
+@
+Explain the role-of equity and equal access in digital collaboration tools.
+CamScanner
+Pera
+. |
+@
+ba
+u nit 5: Application and Impacts of C
+it
+ei
+«
+*
+\
+»
+@
+:
+Ww
+Introduction to Unit:
+|
+,
+*
+Modem computing
+is changing how people learn, work, communicate, and
+solve problems, Neural networks and deep learning help computers recognize patterns,
+understand data, and make intelligent decisions. These technologies are used in face
+recognition, voice assistants, healthcare, education, online services, and many other
+fields. Safe digital collaboration is important. Students need to know how to protect
+data, avoid security threats, and use appropriate safety measures. Equal access is also
+important so every learner can participate in digital work fairly, safely, and confidently.
+5.1
+Machine Learning, Neural Networks and Deep Learning:
+.
+Machine learning, neural networks and deep learning are important areas of
+artificial intelligence. These technologies help computers learn from data and make
+useful decisions. They are used in many modern systems such as face unlock, speech
+recognition, photo search, online shopping, medical diagnosis and language translation.
+5.1.1 Machine Learning:
+|
+|
+A machine ‘learning model is the system that learns from data and gives an
+output. It is like a trained brain of the computer program. First, the model is given data,
+Then it studies the data and learns patterns. After training, it.can make predictions.
+or
+decisions.
+.
+,
+There are many types of
+machine learning models. Neural
+networks are one important type.
+of machine Icarning model and
+‘Deep learning
+is
+a method of
+. machine learning.
+5.1.2 Neural Networks:
+.
+_
+A neural network is
+a.
+computer
+model
+« that
+~ learns
+patterns from data. It is inspired
+-
+by the human brain, but it works
+|
+as
+-a
+mathematical
+computer
+system. A neural network uses
+smalJ]
+processing
+units’ called
+neurons or nodes. These nodes
+are
+connected
+and _
+pass
+information
+from one
+layer to
+another.
+‘(oJ”
+1]
+er:
+oe.
+|
+‘ {iss
+Ae
+Practical example:
+In face unlock, the system studies face features and compares them with stored
+y
+4
+data. Ifthe features match, the phone unlocks.
+?
+f
+5.1.3 Deep Learning:
+Deep learning is a machine
+|
+learning
+method
+in
+which
+computers use multi-layer neural
+networks
+to
+lear
+complex
+patterns
+from
+data.
+The word
+"deep" is used because data passes
+through several layers before the
+system produces the final output:
+yum
+Each layer learns a different level
+=
+of detail from the data. In the first } "re,
+ort
+tometer
+Ou
+layers,
+the
+system
+may
+learn |
+'
+a
+72
+simple features. In deeper layers,
+it combines
+those
+features
+to
+understand
+more
+complex
+patterns. This makes deep learning |
+4.
+useful for tasks such
+as image |
+—
+recognition,
+speech recognition,
+language
+translation,
+medical
+image
+analysis,
+ame
+intelligent
+predictions.
+For Example:
+A photo
+gallery
+| #
+am
+app can use
+deep
+learning
+to
+|B@ae8 s7-—
+|
+recognize faces, objects, or places —
+in thousands of photos. When a- ‘Qu
+user
+searches
+for
+"car" or
+f
+"flower", the app can show related 4
+photos
+because
+it
+has
+learned “=
+ane
+—
+visual patterns from the images.
+e-- Ga
+Bae Gem
+FM
+Figure 5.2: Deep Learning
+ea
+oe
+ase
+|
+:
+:
+onthe
+|
+eeret
+tree?
+tetee
+etree
+!
+eens
+See ae tise
+——
+How to Understand Neural Network as a Model and Deep Learning as a Method?. -
+A model
+is a system that learns from data and produces results. A neural
+network is a type of model because it has layers,-nodes, and connections that help it
+learn. It takes in data, processes it. in steps, and then gives an output, This lets it find
+patterns in the data.
+1} CamScanner
+7 Tea Pe
+fy
+We
+demo:
+Deep learning is a method that trains neural networks with many hidden layers
+VW
+and lots of data, This helps the network learn more complex patterns.
+.
+For example, ina face unlock system, the neural network is the model that studies the
+face features. Deep learning
+is the method that trains this model using many face
+images, so it can recognize faces correctly.
+5.1.4 Components of Neural Networks:
+ar
+The components of a neural network can be shown through a layered diagram.
+The input layer receives data, while the hidden layers process it with the help of
+neurons, weights, bias, and activation’functions. Finally, the output layer gives the
+prediction, and the loss function checks the error to improve learning. A pictorial
+visualization of these companeuls is
+ven below:
+.
+..
+r
+i
+3,
+image, sound, text, or numbers.
+o| a
+as| "ih,
+bs T
+‘Soon l aes
+It receives data such as
+| "Neurons / Nodes: These are small ©
+processing units that receive and pass
+: information.
+—
+| Hidden Layer: itp processes te data iat |
+learns patterns from ‘it.
+a
+“gy. Weights
+These show the i importance of
+ey
+_ connections between neurons.
+|
+Yaa
+=
+It helps the riba adjust its result and
+mi
+muna SCUTALY,
+ee
+E.
+. ‘Activation: Puinctioat:
+Tt decides which
+'
+information
+eee move to the next ayer
+|
+wot!
+Ra,
+A
+nrane ee
+an
+@
+|
+| Output Layer: It gives the final result or
+at
+prediction.
+|.
+o
+ty
+| Loss Function: I checks how much the =
+fl
+-
+|
+model’s answer is wrong.
+,
+—
+~
+i
+p
+Output 1
+(Prediction)
+|
+“Al
+5.1.5 Components of Deep Learning:
+if
+The components of deep learning can be shown through a connected layered
+Yo
+structure, Large input data enters the deep neural network, where many hidden layers
+4
+process the information and learn important features automatically. During training,
+i
+the learning algorithm reduces errors and improves performance, and finally the system
+gives an accurate prediction or result. A pictorial visualization of these components is
+given below.
+——-
+® Large Tape Date
+Deep learning usually needs a large amount of data
+for better learning.
+@ ae Hidden Fame
+Deep learning uses many hidden layers
+to learn deeper patterns.
+) Deep Neural Network: -
+It is a neural network with several layers
+:
+for advanced learning.
+Q@
+Aacseles Feains Lear
+oe
+Deep learning can learn important features
+by itself from data.
+‘)@ Training Process:
+~ The model is trained again and again
+to improve its performance.
+@
+It helps the system reduce mistakes
+and improve learning.
+“High
+Computing Power:
+Deep learning needs strong computers or GPUs
+for fast processing.
+rev meyaer rene en
+te:
+an yates ee
+sy
+neereetnnan
+cna
+| Q) Large: ‘Scale Applications:
+a
+It is used in face unlock, speech recognition,
+language translation, and
+medical image analysis.
+PRM
+a NE KR,
+4
+d
+3
+i
+en
+)
+,
+|
+Large Data.
+Deep Neural Network
+Training
+Accurate Prediction
+i
+ee eee ee ee
+DOMES
+TE YP
+dH Et
+el
+ee
+Figure; 5.4 Components of Deep Learning
+1} CamScanner
+5: Application and Impacts of C
+Future of Machine Learning, Neural Networks, and Deep Learning in Pakistan:
+Machine learning, neural networks and deep learning will play a key role in
+Pakistan’s future. As the country moves toward digital progress, these technologies can
+help in many areas. The National Al Policy 2025 highlights how artificial intelligence
+is now part of national planning, focusing on innovation, skill-building, ethical use, and
+digital growth.
+:
+In education, these technologies can support students and teachers with smart
+learning systems, online tutoring, automatic assessments, and personalized learning.
+They can find where students need help and recommend the right learning materials.
+In healthcare, deep Icarning can assist doctors with disease detection, medical
+image analysis, and managing hospital data. It can lead to better diagnoses ‘and quicker
+decisions, especially in places where specialist doctors are hard to find.
+In agriculture, machine learning can help. farmers monitor crops, predict
+Weather, manage irrigation, and estimate yields. This is valuable for Pakistan since
+agriculture is a major part of the cconomy.
+In business and banking, these technologies can help with fraud detection,
+customer support, market forecasting, and risk analysis. Banks and companies can use
+ean ts to make smarter choices.
+For language an
+<oiuiiiiention: deep. learning can help create tools for
+Urdu, Sindhi, and other regional languages. These tools ‘might include speech
+recognition, translation, text-to-speech, and apps for learning local languages.
+Ingovernment
+and
+public
+services, machine learning
+can
+help
+with
+traffic
+management, smart city planning, public service delivery, and data-driven planning. It
+allows government departments to make decisions based on evidence rather than
+guesswork.
+However, Pakistan needs skilled people, good data, strong digital infrastructure,
+a research culture, and clear ethical guidelines. Students should learn programming,
+math, data analysis, problem-solving, and responsible technology use.
+5.2
+Applications of Neural Networks and Deep Learning:
+Neural networks and deep learning are widely used in modern life. Many
+intelligent systems use them
+in the background
+to recognize information, make
+predictions, and support users in different fields.
+ft
+only if the features match.
+_
+recognition
+converts
+spoken }
+helps the system
+understand
+speaks to a voice assistant to
+-sets the alarm automatically.
+system analyzes
+the
+sentence
+"
+ae
+4 6 5
+eZ
+3
+f
+>
+plication and Impacts of Computing
+7 s)
+fe}
+2 J
+$
+‘
+Image
+Recognition:
+Image
+,
+1e
+recognition allows computers
+|
+yy
+to identify objects, faces, or |
+patterns in images. It is used in |
+face unlock, security cameras,
+|
+|
+and photo search tools.
+—
+For Example: When
+a student
+|
+unlocks
+a smartphone. using
+|
+face recognition,
+the system
+|
+compares the face with stored
+}
+|
+data and unlocks
+the ‘phone
+\
+Speech Hccopiitien: ‘Sheath
+/
+words
+into
+digital
+text
+or}.
+-
+Cwravsth
+:
+i
+at’s
+the
+commands.
+Deep
+learning
+.
+weather today?
+pronunciation, voice patterns,
+and spoken language.
+For
+Example:
+A_
+student
+set‘ an
+alarm. The. system
+understands the command and
+Natural Language Processing —
+(NLP): NLP * helps computers
+(4
+understand,
+process,
+and
+respond to human language. It is.
+;
+|
+| jHola!
+used
+in
+online
+translators,
+}.| Hello! .
+zEn qué
+|
+chatbots,
+grammar
+tools,
+and
+{How can,
+@ sad
+% Dae
+|
+search engines.
+For Example: A student uses an
+online translator to understand
+difficult
+English
+text.
+The
+—
+‘
+Sg a5
+and
+translates
+it
+into another
+Figure: $7 Natural Language Brocessing
+language.
+Vii.
+For Example: If.a bank account is used
+pa
+an ee
+«ia pin
+a PRC eA a
+ean OD ETE
+Healtheare Systems
+Healthcare Systems:
+Deep learning can help doctors analyze
+medical images such as X-rays, CT scans,
+and
+MRIs.
+These
+systems
+support
+diagnosis by highlighting patterns
+that
+may indicate disease.
+For Example: A hospital systeni may
+assist a doctor by detecting unusual areas
+in an X-ray image.
+.
+Figure: 5.8 Health Care System
+Recommendation Systems:
+Recommendation
+systems
+analyze
+user
+behavior and suggest
+relevant
+content,
+products, or services.
+For Example: When a student watches
+computer science videos, a platform may
+recommend
+more
+videos
+about
+programming, AI, or exam preparation,
+SPAS
+teats
+Leta ae
+i
+Tou May Abe Lda
+,
+Autonomous Vehicles:
+|
+Self-driving vehicles use neural networks to
+understand
+roads,
+traffic
+signals,
+pedestrians, and obstacles. The system uses —
+this information to support decisions such
+as slowing down or stopping.
+For Example: A self-driving car detects a
+fee
+pedestrian crossing
+the
+road and slows
+. downto avoid danger.
+-
+Be RAS
+ies
+"Figure: 5.10 Autonomous Vehicle
+Fraud Detection:
+Banks
+use
+neural
+networks
+to detect w
+Fraud Detection
+unusual transactions. The system compares |
+*"
+_
+current activity with previous spending
+patterns to identify possible fraud.
+TRANSACTION
+© 25,000
+ALERT
+bs
+SUSPICIOUS
+ACTIVITY
+suddenly from an unusual location,
+the
+system may send an alert or temporarily
+block the transaction.
+=
+Figure: 5.11 Fraud Detection
+ation and Impacts of
+viii,
+Assistive Technologies:
+Assistive technologies use Al and deep learning to support people with different
+needs.
+They
+improve
+accessibility,
+independence,
+and participation
+in
+education and daily life.
+For Example: Speech-to-text tools convert spoken words into written text for
+users who have difficulty typing or hearing,
+°
+wg
+Assistive Technologies
+Hello, how -
+|
+ip
+00
+Teer TO SPEECH
+HEARING SUPPORT VISION SUPPORT
+ee
+Fi igure: 5.12 Assistive Technologies
+—
+5.3
+Series Collaboration and Data Protection:
+‘Digital
+tools
+are used
+in
+education,
+business,
+government,
+and
+daily
+communication. These tools allow people to share files, attend online classes, edit
+documents, and work together from different locations. However, collaboration is
+useful only when data is protected, users are
+re veri
+ed, permissions are controlled, and
+communication remains safe.
+5.3.1 Secure Collaboration;
+Secure collaboration means using digital tools to work together in a safe,
+controlled, and responsible way. It ensures that messages, shared files, and online
+activities remain private, accurate, and available only to authorized users. Secure
+collaboration depends on identity verification, access control, accountability, data
+privacy, and safe communication.
+i,
+Authentication
+/ Identity Verification; Authentication is the process of
+confirming the identity of a user before allowing access to a system, file, or
+online service. It may use a username and password, PIN, one-time password
+(OTP), fingerprint, or face recognition.
+For Example: A mobile banking app may require a password and an OTP
+before allowing a customer to access the account
+1} CamScanner
+Access Control: Access control decides what an authenticated user is allowed
+to do. A user may be allowed to view, edit, coniment on, download, or share a
+file depending on the permission given,
+For Example: In a shared Google Does file, a teacher may give students "view
+~ only" permission, while group leaders may receive "edit" permission.
+iii.
+iv.
+Vv.
+§:3.Z
+Accountability and Tracking: Accountability means that user actions can be
+linked to verified accounts. It helps track who opened, edited, deleted, or shared
+a file.
+For Example: In a school LMS, the system can show which teacher uploaded
+an assignment and which student submitted it.
+Data
+Privacy: Data privacy
+means protecting
+personal and
+. sensitive
+information and using
+it only for the purpose for which
+it was collected.
+It
+respects the rights of users and prevents misuse of information.
+:
+>
+Protection of Personal Information: Personal details such as names, contact
+numbers, passwords, marks, and academic records should be kept secure.
+>
+Controlled Data Sharing: Information should be shared only with the right
+people, for the right purpose, and with the correct level of permission.
+>
+Maintaining Confidentiality: Sensitive information should remain private
+during storage, communication, and collaboration.
+>
+Compliance with Rules and Policies: Organizations. should follow legal,
+ethical, and institutional rules for collecting, storing, sharing, and deleting
+data.
+For Example: Exam papers, Bacewordle: student marks, and medical records
+should be accessible only to authorized staff, not to students or unrelated users.
+Safe
+Communication
+df
+Tica
+Safe
+communication
+means
+exchanging information through digital platforms in a secure way. It protects
+messages, files, and discussions from unauthorized access, interception, or
+misuse during transmission.
+For Example: A teacher shares class instructions through an official LMS or
+an approved private group where only enrolled students can see the messages
+and files.
+Data Protection:
+Data protection means keeping digital information safe from unauthorized
+access, misuse, loss, damage, or accidental deletion. It helps ensure that data remains
+secure, accurate, available, and accessible only to the people who are allowed to use it.
+Data protection is important because people often share information across networks,
+cloud platforms, and online collaboration tools.
+'
+lication and Impacts of C
+The following are important features of data protection:
+ii.
+iv.
+a
+«5.4
+Mitigation techniques are protective measures used to prevent threats or reduce
+their impact.
+Data Encryption: Data encryption changes readable data into a coded form
+called ciphertext. This coded data cannot be easily understood by unauthorized
+users.
+Encryption
+protects
+sensitive
+information
+during
+storage
+and
+transmission. There are two common types of encryption:
+>
+Symmetric encryption: The same key is used for both encryption and
+decryption.
+> Asymmetric encryption: Two keys are used: a public key for encryption
+and a private key for decryption.
+Strong Passwords: Strong passwords protect accounts and systems from
+unauthorized access. A strong password usually includes uppercase letters,
+lowercase letters, numbers, and special characters, Passwords should not be
+_
+shared with others. .
+~ For Example: A password such as Zk @2026#Pass j is stronger than a simple
+password such as student123.
+Backup and Recovery Systems: Backup means keeping a copy of important
+‘data in another safe location. Recovery means restoring data from the backup
+after loss, damage, accidental deletion, system failure, or cyberattack.
+For Example: A school stores student records on the main computer and also
+keeps regular backups on cloud storage or an external drive. If the system fails,
+the records can be restored.
+Firewall and Antivirus Software: A firewall is a security barrier between a
+computer or network and the internet. It monitors network traffic and blocks
+suspicious access according to security rules. Antivirus software detects,
+blocks, and removes harmful programs such as viruses, worms, and spyware.
+For Example: In a computer lab, a firewall blocks harmful network traffic,
+while antivirus software scans USB drives and downloaded files to prevent
+infection.
+Ciphertext is the encrypted form of data that cannot be read in normal
+%
+language until it is decrypted (changing ciphertext back into readable
+Qe
+format),
+Security Threats and Mitigation Techniques:
+ahaa
+Ene.
+;
+5
+}
+i
+}
+1
+1} CamScanner
+F
+)
+aw,
+Te
+Pp
+, r=.
+lig
+Ye)
+ee
+a4
+, y= ’
+Unit
+5 Application and Impacts of C:
+5.4.1 Common Security Threats:
+|
+VY
+A security threat is any action, event, or weakness that can harm a computer
+.
+system or its data. The most common security threats are described below:
+|
+i.
+Malware: Malware is harmful software
+designed to damage a computer, steal
+data,
+or
+gain
+unauthorized
+access.
+Viruses, worms, spyware, ransomware,
+and Trojan horses are common types of
+malware.
+7
+For
+Example:
+A_
+student.
+installs
+cracked software
+from
+an unknown
+source.
+The
+software
+may
+contain
+malware that slows down the computer,
+corrupts files, or steals information.
+il.
+Phishing: Phishing
+is a method used to
+trick
+users
+into
+sharing personal
+information such as passwords,. bank
+details, or OTP codes. Attackers often |
+_ use fake emails, messages, or cDepsllss
+|
+that look genuine.
+For Example: A user receives a fake
+email that appears to be from a bank and |
+.
+asks them to verify account details. If
+the
+user
+enters
+the
+information,
+attackers can steal it.
+_
+iii,
+Unauthorized Access: Unauthorized
+~ access occurs when a person enters a
+system,
+account,
+or
+file
+without
+permission. Weak passwords, shared |
+passwords,
+and
+unattended
+devices
+increase this risk.
+For Example: A student guesses
+a
+classmate's simple password and opens
+the classmate's email account without
+permission.
+iv,
+Y plication and Impacts of Compu:
+Data Theft
+/ Identity Theft:
+Data
+theft means stealing, copying, or using
+data without permission. Identity theft
+happens when someone uses another
+person's personal information, such as
+‘name, CNIC number, email account,
+password, or bank details, to pretend to
+be that person.
+ee
+For Example:
+A
+hacker steals
+an
+employee database and uses personal
+details to create fake accounts or access
+services in someone else's name.
+Denial of Service (DoS): A Denial-of-
+-
+Service attack happens when a website
+-or system receives
+too many
+fake
+requests, causing
+it to slow down or
+stop working. As a-result, real users
+cannot access the service.
+.
+_ For Example: An online examination
+vi.
+Human Error: Human error means.
+./
+_
+mistakes made
+by
+users,
+such
+as:
+54,2
+website becomes unavailable during an
+exam because attackers send a very
+large number of fake requests.
+deleting important files, sending data
+to
+the wrong
+person,
+using
+weak
+passwords,
+or
+mishandling
+confidential information.
+For Example: An office staff member
+accidentally
+shares
+a
+confidential
+report with the wrong department,
+which may lead to data exposure and
+administrative problems.
+Identify Security Threats:
+Identifying security threats means noticing signs that data, accounts, or systems
+" may be at risk. Early identification helps users take action before serious damage
+occurs, The following steps can help identify threats:
+ZK
+Vigure: 5.18 Human Error
+}
+1} CamScanner
+'
+es
+Ma
+Ik
+7
+'
+iv.
+vi.
+i.
+ii.
+ses
+il.
+iv.
+\- 5: Application and Impacts of C
+Notice slow performance, missing files, repeated pop-ups, unknown programs,
+or unexpected restarts may indicate malware or unauthorized activity.
+Check failed login attempts, unfamiliar login locations, or changes made by
+unknown users may indicate an attempt to enter the system without permission.
+Phishing messages usually try to make: you act quickly. They might have bad
+grammar, come from unfamiliar email addresses, include strange links, or have
+unexpected attachments.
+Observe unexpected deletion, copying, modification, or movement of records
+may indicate data theft, misuse, or malware activity.
+Detect unusual network traffic,
+a sudden increase in server. requests, slow
+websites, or unexpected data transfer may indicate a DoS attack or data leakage.
+Avoid unsafe downloads, cracked software, unverified websites, and infected
+USB drives can introduce threats into a system.
+Examine user practices, such as passwords, password sharing,
+careless file
+sharing, and lack of awareness can create security risks even when the
+. technofoay
+t is strong.
+Apply Mitigation Techniques:
+Mitigation techniques are actions taken to prevent soil threats or reduce
+their harmful effects. Once a threat is identified, ‘suitable measures should be applied
+to protect data and systems.
+Antivirus Software: Antivirus software detects, blocks, and removes harmful
+programs. It should be updated regularly to protect against new threats.
+For Example: School computer labs use antivirus software to scan USB drives
+before students open files.
+Strong Passwords:
+Strong passwords reduce the chance of unauthorized
+access, A strong password should be difficult to guess and should not be shared
+with others,
+For Example: A student uses Zk@2026#Pass instead of using a simple name
+or date of birth as a password.
+Two-Factor Authentication (2FA): Two-factor authentication adds an extra
+layer of security by requiring two different forms of verification before allowing
+access to an account.
+For Example: A student enters
+a password and then an OTP sent to the
+registered mobile phone to access an online learning portal.
+Firewalls:
+Firewalls
+monitor
+and
+control
+network
+traffic,
+They
+block
+suspicious traffic and help protect internal systems ftom outside threats.
+vi.
+Vii.
+55
+ed
+For Example: A college network uses a fitewall to block harmful websites and
+unauthorized network access,
+User Awareness: User awareness means teaching users how to behave safely
+online. Users should avoid unknown links, suspicious attachments, unsafe
+downloads, and sharing private information.
+For Example: Students are trained not to open
+SHINAI email attachments or
+share OTP codes with anyone.
+Data Encryption: Encryption protects data by sonvestiny it into coded form
+during storage or transmission.
+For Example: When a student logs in to an online learning portal, the password
+is protected during transmission so that it cannot be easily read by attackers.
+Regular Backups: Regular backups help recover data after accidental deletion,
+system failure, malware attack, or hardware damage.
+For Example: A school regularly
+: stores student records on cloud storage or an
+external drive so data can be restored if the main system fails.
+pen SPE
+TA ETE
+fe,
+UTEP OE
+Licensed Sie ys Cra
+Cracked So an
+ne are
+Bee
+=
+rel pats,
+“Equity and Equal
+! Access in Digital Collabaration Tools:
+|
+Collaboration tools are important for online learning, communication, and
+teamwork. To use these tools fairly, all users should be able to participate without
+unnecessary barriers. Equal access means giving everyone the same opportunity to use
+digital tools. Equity means giving additional support to users who
+need it so that they can participate effectively. These principles help create fair,
+5.5.1
+inclusive, and supportive digital environments for students, teachers, and professionals.
+Functions of Equity and Equal Access:
+Equity and equal access support fair participation in digital collaboration. Equal
+access ensures that users can reach the same tools and resources. Equity ensures that
+|
+learners with different needs receive suitable support.
+i,
+Providing Need-Based Support; Equity gives users support eccording to their
+individual needs.
+For Example: A student who cannot hear clearly joins an éulins class. The
+teacher turns on captions so the student can read and understand the lecture.
+1} CamScanner
+~~
+ii.
+iii.
+iv.
+vi.
+L
++
+Riese
+e
+55.2:
+ae
+or
+Removing Barriers
+to Participation:
+Equity reduces
+barriers caused by
+disability, language, location, or lack of resources.
+For Example: Mobile-friendly learning apps help students in temote areas of
+Pakistan attend online classes through smartphones.
+Enabling Active and Equal Participation: All users should be able to take
+part in discussions, group work, and class activities. -
+For Example: Recorded lectures help students who miss a live class because
+of internet problems.
+:
+:
+Supporting
+Different
+L earning
+Needs: Flexible learning
+options help
+students learn in ways that suit them.
+For Example: Some students learn better through videos; while others prefer
+notes, audio explanations, or step-by-step demonstrations.
+Pronioting Fair Use of Technology: Equal access ensures that users are not.
+excluded from digital learning or teamwork due to unfair restrictions.
+For Example: All students in a class use the same ENS to receive assignments
+and submit work.
+|
+Creating
+a Balanced
+Learning. Environment:
+-A_
+balanced «digital
+environment provides fair DEPP common rules, and suitable support
+for all participants.
+For Example: In a group project, every student is given access to’the shared
+‘document and a clear role in the task.
+|
+qual ‘Aecese'o or r Equity?
+ms
+>
+The feachien gives three short online learning situations. ae
+Ze
+Students. decide whether
+enc
+situation shows equal. access,
+—equity,orboth,
+=
+ae ee e
+me Students
+ty how fairness can the improved i in cach situation.
+i cllakoraiten'4 Tools:
+Digital collaboration tools are online platforms that support communication,
+file sharing, learning, and teamwork across different locations. Common examples
+i.
+‘include:
+a
+‘Google Does: Google Docs allows users to write, edit, comment on, and share
+documents in real time.
+ii.
+iii.
+iv.
+vi.
+Zoom: Zoom supports online meetings, virtual classes, screen sharing, and
+video-based communication.
+Microsoft Teams: Microsoft Teams is used for online eens file sharing,
+class groups, and teamwork.
+Google Classroom
+/
+Learning
+Management
+Syatem
+(LMS):
+Google
+Classroom and LMS platforms lielp teachers manage lectures, assignments,
+quizzes, and student activities.
+WhatsApp: WhatsApp
+is commonly
+used for quick class announcements,
+reminders, and group communication. It should be used responsibly and only
+in approved groups for educational purposes.
+Email: Email
+i is used for formal communication, official notices,
+- pestotuteons
+submission, file attachments, a aintainine a written fey of messages.
+[ee ~ &C Google D Does
+lb ‘Zoom | en
+|
+j
+wwe BU
+Ae Bes
+Se
+iii aad Tea
+iv, Google Classroom
+/ LMS
+This unit covers neural networks, deep learning, secure collaboration, data protection,
+and equity in digital tools. Mastery of these concepts opens the Hor to careers in
+artificial intelligence and cybersecurity.
+AS
+nse
+‘* Builds anid trains machine learning | ~«
+4 °Studies and develops new. beta
+F
+and neural network models used i ‘in
+\ in artificial intelligence and deep
+-. applications like face 1 reco gnition
+“earning, often within research pee or
+: Seen: systems. i
+f
+AT Researcher
+Monitors ‘systems Te Seay
+_ threats such as malware and
+tn
+Data oe re women
+- Ensures : an of ganization’ $ data
+:
+fending practices comply witt
+é "privacy principles z and pret user
+es
+information.
+:
+vekeT
+ite wba
+Abe.
+als
+Wie
+ory
+we
+Rigel
+9A inachinie learning model is the Eicioh that
+learns aon oy and gives: an
+output. It is like a trained brain of the computer program.
+a
+®» Neural networks and deep learning help computers learn from data and per form
+intelligent tasks.
+a
+~ A neural network is a computer model inspired by the human brain and made
+of connected
+neurons or nodes,
+‘3
+Le
+—
+S
+~
+d
+=
+vhs
+om
+ae
+.
+@2e-um
+CS]
+6
+.
+‘[@
+[
+a
+4
+:
+“
+-
+|
+2
+|
+bie
+\
+‘
+.
+Soe
+th
+|?
+® An artificial neural network generally contains an ihput layer, one or more
+["
+|
+hidden layers, and an output layer.
+|
+v
+® Deep learning uses neural networks with many layers to understand complex
+|
+"patterns in large datasets.
+® Deep learning
+is used in image recognition, speech recognition, language
+translation,
+healthcare,
+recommendations,
+autonomous
+vehicles,
+fraud
+detection, and assistive technologies.
+i
+* Secure collabération means working dapotbce hough digital tools while
+protecting identity, privacy, permissions, and communication,
+* Secure collaboration includes authentication or identity verifivation, access
+control, accountability, data privacy, and safe communication.
+_® Data privacy protects personal and sensitive ‘information
+and. supports
+controlled data sharing and confidentiality.
+® Data protection. safeguards information from unauthorized access, misuse, loss,
+-
+or damage.
+* Important data protection methods. ‘include encryption,
+strong passwords,
+backup and recovery systems, firewalls, and antivirus software.
+¥ Equity provides need-based support, while equal access gives all users the same
+_ opportunity to use di gital collaboration tools.
+:
+aohigele
+* Common collaboration tools include Google Docs, Zoom, Microsoft Teams, 7
+Saere
+Google Classroom/LMS, WhatsApp, and email.
+:
+pas
+pe
+eae
+aes
+barb
+a
+ort ine
+ee
+¥ Common security threats include malware, phishing, unauthorized access, dita
+theft / identity theft, DoS attacks, and human error.
+7
+oe
+¥ Threats can be identified by observing unusual behavior, suspicious messages,
+unauthorized access attempts, data changes, unusual network traffic, unsafe
+downloads, and weak user practices.
+-¥ Mitigation techniques reduce or prevent the impact of security threats.
+-
+¥ Two-Factor Authentication (2FA) improyes account security by requiring two
+forms of yerification, such as a password and an OTP,
+- (a) Phishing
+.
+Encirele the correct answer.
+Neural networks are inspired by the:
+(a) Microprocessor
+.
+(c) IC (Integrated Circuit) ©
+(b) Database
+(d) Human Brain
+. Deep learning is an advanced learning method related to:
+(a) Neural networks
+(0) Machine Learning
+(c) Learning for hours
+-
+(d)Bothaandb
+Which layer receives data from outside the system?
+(a) Output layer
+(b) Hidden layer
+(c) Input layer
+(d) Bias layer
+Before a user can access a system, which process verifies the user’s identity?
+(a) Data theft
+~
+(b) Authentication —
+(c) Human error
+(d) Translation
+After a user is authenticated, which feature decides what actions the user is
+allowed to perform? -
+ee tere
+|
+~
+(b) Malware:
+(a) Access control
+(c) Phishing
+(d) Decryption
+Which of the following is a collaboration tool?
+-
+(a) Google Docs
+-
+~
+(b) Virus -
+(c) Firewall
+(d) Malware
+_
+Which Al-based technology is sonny used in smartphone face unlock
+systems?
+(a) Mitigation
+(b) Face recognition
+(c) Firewall
+(d) Recovery system.
+Which technique can be used in banking to detect suspicious activities?
+(a) Natural Language Processing
+(b) Screen reader
+(c) Fraud detection
+(d) None of these —
+What type of attack tricks users into sharing their personal information?
+(b) Encryption
+(d) Decryption
+|
+(c) Backup and recovery
+=
+~e
+i)
+it)
+itt)
+4, Provide detailed answers to the following questions.
+i
+i
+iil)
+~ What is the importance of data privacy in an online system?
+plication and Impacts of Comput
+,
+What helps restore lost data after a system failure?
+(a) Human error
+(b) DoS
+(c) Regular backups
+(d) Data theft
+Fill in the blanks:
+|
+|
+Machine learning helps
+computers learn from
+and make useful
+decisions.
+AS
+A photo gallery app can use fei learning to recognize faces, objets
+and
+In Pakistan, Al rechitovie
+can support education through smart ang
+|
+systems and online
+,
+Secure collaboration means working together online
+i ina safe and _
+way.
+Equity
+gives additional
+support to users
++
+according
+to +
+their individval
+Provide short answers to the following questions.
+What are neurons or nodes?
+Are neural networks and deep learning the same, or do
+lo they differ? Explain
+briefly.
+|
+Why is deep learning called "deep"?
+What is Two-Factor Authentication 1(2FA), and how does it improve account security?
+How can neural networks and deep learning be useful in Pakistan? Explain their
+use in any three fields such as education, healthcare, agriculture, banking, or
+public services,
+|
+i
+|
+Why is secure collaboration important when students use online tools?
+_
+Suppose a college starts online classes, but some students have weak internet,
+hearing difficulty, or no personal computer. How can the college ensure both
+equal access and equity for these students? Explain with suitable examples.
+L
+sce [>
+r
+:
+t
+Eyles
+n@y,
+1,
+Phishing Email Scenario
+A student of a government college in Hyderabad receives an email that looks
+like it is from the college IT: office. The email asks the student to share the
+password
+and
+OTP to
+update
+the
+online
+admission
+record.
+Discussion: Identify the security threat. wi
+two safe actions should the
+{
+student a
+:
+Activities
+mw
+.
+Equity Support Beenie
+:
+_ During an online lecture in a school of rural Sindh, one student has hearing
+difficulty
+and
+cannot
+clearly
+understand
+the
+teacher’s
+explanation.
+Discussion: What support can the teacher provide to ensure equal participation
+in the online class?
+|
+3.
+Data Recovery Scenario.
+:
+A school computer lab in Sukkur loses students? Samnepe records after a
+system crash. The staff cannot find the latest marks file on the computer.
+—
+Discussion: Which mitigation Solna’ cs could help the school recover the lost
+records?
+|
+)
+i
+i
+7

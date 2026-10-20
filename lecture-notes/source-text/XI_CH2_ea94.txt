@@ -1,0 +1,1667 @@
+Chapter
+ThnainK
+Or
+i hinking Cu AAIGOr
+A
+\
+| =
+Computationa
+tam
+mi
+Student:}Iearning Outcomes:
+After the completion of this unit students will be able to:
+6060060069909
+Analyze real-world problems and apply computational thinking to solve them.
+Identify and analyze real-world problems.
+Understand the importance of Algorithms in problem-solving.
+List the properties of a Good Algorithm.
+Illustrate Counting and Simple Computational Problems.
+Logical Reasoning for Algorithmic Thinking.
+Understand and apply common Search Algorithms (any two).
+Understand and apply common Sorting Algorithms (any two).
+Understand when and how to apply specific algorithms to solve problems.
+Applying
+algorithmic
+strategies
+(abstraction,
+decomposition,
+pattern
+recognition).
+2.1.
+Introduction:
+Computational Thinking
+is
+a
+systematic
+approach
+to
+solving problems,
+involving breaking them down, identifying patterns, abstracting details, and developing
+algorithms.
+In this chapter, you will learn about problem solving, i.e., analyzing a
+problem and designing algorithms.
+ov
+¢
+@
+Pseudocode is a human-readable representation of an algorithm using
+ey
+plain English and structured programming keywords.
+2.2.
+Algorithm:
+An algorithm is a step-by-step logical procedure used to solve a problem. It is
+conceptual in nature and completely independent of any programming language.
+2.2.1. Importance of Algorithm:
+Algorithms are vital because they provide clear and efficient solutions. Without
+algorithms, we would be forced to reinvent the wheel every time we faced a challenge.
+e
+Algorithms provide a structured approach to problem-solving, making complex
+tasks easier to understand and execute.
+e
+Algorithms help in selecting solutions that optimize time and memory usage,
+which is crucial for large-scale applications.
+e
+Once developed, an algorithm can be reused for similar problems, saving both
+time and effort.
+e
+Algorithms ensure accuracy and consistency, producing correct results when
+followed properly and reducing the likelihood of human error.
+e
+Every computer program is built upon algorithms; they serve as a blueprint
+before actual code implementation.
+2.2.2. Difference between Algorithm and Pseudocode:
+Algorithm
+elie
+ta
+A human-readable representation of an
+algorithm
+using
+plain
+English
+and
+structured programming keywords.
+Semi-formal
+and
+structured
+but
+not
+executable code.
+To
+define
+what
+needs
+to
+be
+done
+To present how it can be implemented in
+logically.
+a readable format before actual coding.
+A step-by-step
+logical procedure
+to
+solve a problem.
+Conceptual and language-independent.
+é
+¢
+MN)
+lf
+Unit 2: Computational Thinking & Algorit
+4 SS
+Usually
+described
+in
+plain
+steps
+Written using structured constructs (IF,
+y
+_?P
+PS;
+FOR, WHILE)
+like programming but
+bullets, or numbered points.
+.
+without syntax.
+Focuses on the logic and steps of the | Focuses on how to represent those steps
+problem.
+clearly before coding.
+Anyone for trying to understand the
+Mainly
+for programmers
+or
+students
+logic, including non-programmers.
+preparing for actual coding.
+No fixed format; can be informal.
+OMS
+re
+jesioutoraenale
+conventions for clarity.
+2.3.
+Algorithmic Strategies for Problem Solving:
+2.3.1. Decomposition:
+It is a problem-solving technique in which a complex task or system is broken
+down into smaller, manageable parts. This approach is a key concept in computational
+thinking and software development, and
+it
+is equally useful in real-life learning
+situations. By dividing
+a big problem into
+simpler
+steps,
+it becomes
+easier
+to
+understand, develop, and solve effectively.
+Real-Life Example: Learning a New Language:
+When a person learns a new language (e.g., Spanish, French, English), they do
+not learn everything at once. They break the process into parts, such as:
+Break it into Subtasks:
+Subtask
+Description
+Learn character sets for people, actions, things
+Learn Vocabulary
+(c.g.,
+"I",
+"eat", "apple")
+Understand Grammar
+Learn structure: Subject — Verb — Object
+Rules
+Learn Tenses
+Present, past, future (e.g., “I eat” vs. “I ate’)
+Combine words using rules
+to create valid
+Practice Sentence Building
+sentences
+Listen & Imitate
+Observe native speakers to improve accuracy
+Check if sentence makes sense (from a teacher
+Get Feedback
+or app)
+>
+\
+aX aan V
+C)
+Unit 2: Computational Thinking & Algorithm
+Why Decomposition Is Useful:
+Benefit
+Description
+Reduces complexity
+Focus on one piece at a time
+Makes learning manageable _ Easier to practice in steps
+Find exactly where the mistake is (e.g., verb
+Helps in debugging
+tense or word order)
+Once you learn how to form a sentence, you
+Promotes reusability
+can apply it to new words
+2.3.2. Pattern Recognition:
+It is the process of identifying regularities, repetitions, or rules in data. In
+programming and algorithm design, this helps you to
+e
+Discover meaningful relationships among elements.
+e
+Reduce overall algorithm complexity
+e
+Develop generic and reusable solutions
+This idea forms the foundation of concepts such as loops, conditions, and data
+structure design.
+How It Works:
+You observe input data and ask:
+e
+What is repeating?
+What changes in a predictable way?
+Can I generalize this?
+Example:
+Consider the triangle of stars, where the first row shows
+1 star, the 2°? row
+shows 2 stars, the 3" row shows 3 stars, and so on.
+*
+2k
+2k 2k 3k
+oF 6 2 ok
+3k ok 3 2
+2
+In the above example, the pattern shows that each row adds 1 star to the previous
+row’s count.
+d
+<
+A BP 7
+it 2: Computational Thinking & Algorithm
+2.3.3. Abstraction:
+Abstraction means hiding unnecessary features and focusing only on the
+essential ones needed to solve
+a problem.
+In simple terms,
+it reduces algorithm
+complexity by ignoring what is not important and concentrating on what truly matters.
+Example:
+Let’s apply abstraction to "Making Tea" by identifying:
+1.
+What is necessary?
+2.
+What can change based on situation?
+3.
+What can we ignore?
+Necessary Steps of making tea:
+These are the minimum steps required, regardless of tea type:
+Boil water
+Add tea leaves or tea bag
+Steep for a few minutes
+Pour into cup
+Serve
+This is the abstracted process; the key logic of “making tea” in all cases.
+ap Boil Water
+we YN
+EP
+Add Tea
+Leaves
+or Tea Bag
+©Q
+Pour into Cup
+Finer
+—,
+Strainer
+Changes based on situation:
+These details can vary depending on:
+Ingredients: Black tea, Green tea, Herbal, Milk tea
+Additions: Sugar, honey, milk, lemon
+Tools: Electric kettle, stove, Tea pot
+Time: Boiling time, steeping time
+These are the inputs or parameters in an algorithm.
+Abstraction items:
+These are not important for understanding the main logic:
+Brand of kettle
+Cup color or design
+Where the tea is being made (kitchen, office, etc.)
+Type of mug (glass, ceramic)
+These details add noise and are excluded from abstraction.
+2.4.
+Sorting and Searching Algorithms:
+Both are the fundamental techniques of computer science and data analysis.
+Both work on lists of the same data type, such as a student’s name, father’s name, or
+age.
+Sorting is the process of arranging a collection of items or data.
+It may be
+ascending (lowest to highest 0-9, a-z, A-Z), descending (highest to lowest > 9-0, z-
+a, Z-A) or chronological order. It is used to organize and make data more accessible
+for searching, retrieval, and analysis.
+Searching algorithms are designed to locate a specific element within list of
+data, like student’s name in the class list. These algorithms help to find the position,
+existence, or value of a target element in a more efficient and systematic manner.
+Both are used in real-life computational problems such as:
+e
+Database queries
+e
+Online shopping filters
+e
+Leaderboards
+e
+File organization
+e
+Recommendation systems
+2.4.1. Sorting Algorithms:
+a.
+Bubble Sort:
+Bubble sort is an elementary sorting algorithm used to arrange elements in a list
+or atray in either ascending or descending order. It is also known as ripple sort. It works
+¢
+¢
+MN)
+lf
+U nit 2: Computational Thinking & Algorit
+4 “SS
+by repeatedly comparing adjacent elements and swapping them if they are in the wrong
+order. This process is repeated until the entire list is sorted.
+Algorithm:
+Step
+1:
+Start
+Step
+2:
+Set
+DATA
+:=
+{8,
+4,
+1,
+9,
+3}.
+[Any
+Input array data]
+Step
+3:
+Set
+N
+:=
+5.
+[
+Total Number
+of
+items
+in DATA array]
+Step
+4:
+Repeat
+Step
+5
+and Step
+6
+for
+K
+= 1
+to
+N-l1.
+Step
+5
+Set
+PTR
+:=
+1.
+[Initializes pass pointer
+PTR]
+Step
+6
+Repeat while
+PTR
+<=
+N-K:
+[Executes
+pass]
+a:
+If DATA[PTR]
+>
+DATA[PTR
++
+1],
+then:
+1.
+Set
+temp
+:= DATA[PTR]
+2.
+Set DATA[PTR]
+:= DATA[PTR
++
+1]
+3.
+Set DATA[PTR
++
+1]
+:= temp
+[End
+of
+If structure]
+b:
+Set
+PTR
+:=
+PTR
++
+l.
+[End
+of
+Step
+6
+inner
+loop]
+[End of Step
+4
+outer
+loop]
+Step
+7:
+End
+Pseudocode:
+Start
+DATA
+=
+{8,
+4,
+1,
+9,
+3}
+/* Array
+of
+an Integer data
+*/
+N
+=
+5
+/*
+Total Number
+of
+Items
+in Array
+*/
+For outerloop
+=
+0
+to N-1
+/* Outer Loop
+*/
+For innerloop
+=
+0
+to N-2-outerloop
+/*
+Inner Loop
+*/
+IF DATA[innerloop]
+> DATA[innerloop
++
+1]
+then
+/*
+Swap Data
+*/
+Temp
+= DATA[innerloop]
+DATA[innerloop
++
+1]
+= DATA[innerloop]
+DATA[innerloop]
+= temp
+End
+If
+End For
+/*
+End of Inner Loop
+*/
+End For
+/*
+End
+of Outer Loop
+*/
+End
+Example:
+Unsorted List: 8, 4, 1, 9, 3
+First Step:
+1* (8) is greater than 2™ (4) > Swap the data.
+24 (8) is greater than 3° (1) > Swap the data.
+3" (8) is not greater than 4 (9) >No change
+4" (9) is greater than 5“ (3) > Swap the data.
+(9) is at its place.
+C)
+LA A
+Unit 2: Computational Thinking & Algorithm
+Second Step:
+4
+4
+4
+8 | 3
+1*
+(4)
+is
+than 2™
+(1)
+> Swap
+the data.
+8 | 3
+2”
+(4)
+is not
+than 3°
+(8)
+> No
+e.
+3°
+(8)
+is
+than 4"
+(3)
+> Swap
+the data.
+3
+8)
+is at its
+place.
+1* (1) is not greater than 2" (4) > No Change
+24 (4) is greater than 3° (3) > Swap the data.
+(4) is at its place.
+Fourth aS
+1 “J )
+9°
+1° (1) is not greater than 2"! (3) > No Change
+1
+S| (3) is at its place
+Sorted
+List: 1, 3, 4, 8,9
+Advantages:
+It is the easiest sorting algorithm to visualize and explain. If you can understand
+"swapping two cards in your hand," you understand Bubble Sort.
+It does not need to create a copy of the list or use extra RAM to do its work. It
+just swaps elements within the original array.
+This means if you have two items with the same value, they stay in their original
+relative order. This is actually pretty important for certain types of database
+work.
+Disadvantages:
+b.
+It uses nested loop, the time it takes to sort grows exponentially. If you double
+the number of items, it takes four times longer to sort.
+Every swap requires the computer to perform three distinct operations. Bubble
+Sort performs a massive amount of swaps compared to other sorting algorithms.
+While it works fine for a list of 10 or 20 items in a classroom exercise, it is
+completely useless for real-world "Big Data."
+Selection Sort:
+Selection sort is a simple sorting algorithm used to arrange elements in a list or
+array in either ascending or descending order. It is a basic sorting algorithm that works
+by repeatedly selecting the smallest element from the unsorted portion of a list and
+moving it to its correct position.
+U nit 2: Computational Thinking & Algorithm
+Algorithm:
+Step
+1:
+Start
+Step
+Set
+DATA
+:=
+{8,
+4,
+1,
+9,
+3}.
+[Any
+Input array data]
+2
+Step
+3
+Step
+4:
+Repeat
+Step
+5
+and Step
+6
+for K=1toON.
+Step
+5
+6
+Step
+Repeat while
+PTR
+<
+N:
+[Executes pass]
+a:
+If DATA[K]
+> DATA[PTR],
+then:
+1.
+Set temp
+:= DATA[K]
+2.
+Set DATA[K]
+:= DATA[PTR]
+3.
+Set DATA[PTR]
+:= temp
+[End
+of
+If structure]
+b:
+Set
+PTR
+:=
+PTR
++
+1.
+[End
+of
+Step
+6
+inner
+loop]
+[End
+of Step
+4
+outer
+loop]
+Step
+7:
+End
+Set
+N
+:=
+5.
+[
+Total Number
+of
+items
+in
+DATA array]
+Set
+PTR
+:=
+K+t+l.
+[Initializes pass pointer
+PTR]
+Pseudocode:
+Start
+N
+=
+5
+/* Total Number
+of
+Items
+in Array
+*/
+For outerloop
+=
+0
+to N-1
+/* Outer Loop
+*/
+/*
+Swap Data
+*/
+Temp
+= DATA[outerloop]
+DATA[innerloop]
+=
+temp
+End
+If
+End For
+/*
+End of Inner Loop
+*/
+End For
+/*
+End
+of Outer Loop
+*/
+DATA
+=
+{8,
+4,
+1,
+9,
+3}
+/* Array
+of
+an Integer data
+*/
+For innerloop
+= outerloop+l
+to N-1
+/*
+Inner Loop
+*/
+IF DATA[outerloop]
+> DATA[innerloop]
+then
+DATA[outerloop]
+= DATA[innerloop]
+End
+Example:
+Unsorted List: 8, 4, 1, 9, 3
+First Step:
+1 | 9 | 3 | 1% (8) is greater than 2" (4) > Swap the data.
+8
+9 | 3 | 1% (4) is greater than 3 (1) > Swap the data.
+1|8|4|91|3 | 1*(1) is not greater than 4" (9) > No Change.
+J 8 | 4 | 9
+|
+3
+|
+1% (1) is not greater than 5" (3) > No Change.
+8 | 4
+|9 | 3 | C1) is at its place.
+y 3
+aX aan
+—F
+Second Step:
+l
+im 4/8
+1
+8
+men 8
+Third Step:
+imeem
+8
+|9 | 4 | 3(8) is not greater than 4" (9) > No Change.
+ia
+9
+3" (8) is greater than 5
+(4) > Swap the data.
+ieee
+9 | 8 | (4) is at its place.
+Fourth Step:
+13
+4
+| 4
+(9) is greater than 5“ (8) > Swap the data.
+|
+cue
+9 | (8) is at its place
+Unit 2: Computational Thinking & Algorithm
+9 | 3 | 2"4(8) is greater than 3°! (4) > Swap the data.
+9 | 3 | 2™4 (4) is not greater than 4
+(9) > No Change.
+9
+2™4 (4) is greater than 5" (3) > Swap the data.
+9 | 4 | (3) 1s at its place.
+Sorted List: 1, 3, 4, 8, 9
+Advantages:
+Like Bubble Sort, it is very easy to code and understand. It is basically just two
+loops: one to keep track of the "sorted" boundary and one to find the minimum
+value.
+This is where it beats Bubble Sort. In every pass, it performs at most one swap.
+If you are sorting items on a system where "writing" or "moving" data is very
+expensive, Selection Sort is actually quite efficient.
+It does not need extra memory.
+It does not matter if the list is already sorted, reversed, or totally random; it will
+always take the same amount of time because
+it always scans the entire
+remaining list.
+Disadvantages:
+Just like Bubble Sort, it has nested loops. As the list grows, the time it takes to
+finish grows very fast.
+Unlike Bubble Sort, Selection Sort must finish every single loop. It is "blind"
+to the fact that a list might already be in order.
+This is a big one for data integrity. If you have two "5s" in your list, Selection
+Sort might swap their relative positions.
+Because of the speed, it is strictly for small datasets. You would not use this to
+sort a database of customers.
+Sorting
+1 million items with Bubble Sort could take hours, while an algorithm
+like Merge Sort would finish in seconds.
+[ nit 2: Computational Thinking & Algorit
+4 SS
+2.4.2. Searching Algorithms:
+a.
+Linear Search
+Linear search also known as sequential search, it is a simple searching algorithm
+used to find a specific element within a list. It works by examining each element in the
+list one by one until the target element is found or until all elements have been checked.
+It is simple and easy to implement and work on sorted and unsorted data list.
+Algorithm:
+Step
+1:
+Start
+Setp
+2:
+Set
+DATA
+:=
+{8,
+3,
+6,
+1,
+7,
+2,
+4,
+5}
+[Aray Data].
+Step
+3:
+Set
+N
+:=
+8.
+[
+Total Number
+of Elements
+].
+Step
+4:
+Set
+FindValue
+:=
+7.
+[
+Searching Value
+].
+Step
+5:
+Set ValueFound
+:=
+0.
+[For Checking
+0
+= Not Found:1= Found
+].
+[
+Start
+Loop
+for
+find text
+in Array
+].
+Step
+6:
+Repeat
+Step
+7
+for
+PTR
+=
+1
+to
+N.
+[Check Current Array Value with Searching value,
+If found Set
+Value
+Found Value].
+Step
+7:
+If DATA[PTR]
+= FindValue
+then
+a.
+ValueFound
+:=
+l.
+B.
+Goto Step
+8.
+[
+End
+of
+If Structure
+]
+[
+End
+of
+For Loop
+]
+Step
+8:
+If ValueFound
+=
+1
+then
+Print DATA3[PTR].
+[
+Show Data
+].
+Else
+Print
+“Data
+not
+Found”
+[
+End
+of
+If Structure
+]
+Step
+9:
+End
+Pseudocode:
+Start
+DATA
+=
+{8,
+3,
+6,
+1,
+7,
+2,
+4,
+5}
+/* Array Data
+*/
+N
+=
+8
+/* Total
+Item in Array
+*/
+FindValue
+=
+7
+/* Searching Item
+*/
+ValueFound
+=
+0
+/*
+For Checking
+0
+=
+For PTR
+=
+0
+to N-1
+/*
+Start Loop
+*/
+If DATA[PTR]
+Not
+Found
+|
+l
+=
+ValueFound
+:=
+1
+/*
+Set
+as Data
+is
+Found
+*/
+Exit
+/* Exit from Loop
+*/
+End
+If
+End For
+If ValueFound
+==
+1
+then
+/* Check ValueFound Data
+*/
+Print DATA[PTR]
+Else
+Print
+“Data Not
+Found”
+End
+Tf
+End
+Found
+*/
+FindValue
+then
+/* Check Data Found
+*/
+aX WAAAY
+Unit 2: Computational Thinking & Algorithm
+Example:
+Data List: 8, 3, 6, 1, 7, 2, 4, 5
+Searching Item: 7
+Step by step process:
+1.
+we wn
+Check the 1“ element > 8 > Not equal to 7 > Not Found
+Check the 2"4 element > 3 > Not equal to 7 > Not Found
+Check the 3" element > 6 > Not equal to 7 > Not Found
+Check the 4" element >
+1 > Not equal to 7 > Not Found
+Check the 5" element > 7 > Equal to 7 > Found
+Advantages:
+This is the biggest plus. Linear Search does not care if your data is scrambled,
+alphabetical, or numerical. It works on any list.
+The code 1s literally just one for loop and an if statement. It is very hard to mess
+up.
+If you only have 10 or 20 items, Linear Search is actually faster than more
+complex algorithms because there is zero "setup" time.
+It does not require any extra space.
+Disadvantages:
+b.
+If you have 1 million items and your target is at the very end, the algorithm has
+to perform | million checks.
+The time taken grows linearly with the number of items. If you double the size
+of the list, you double the search time.
+If you need to search the same list thousands of times, it is much smarter to sort
+it once and use Binary Search instead of doing a Linear Search every time.
+Binary Search:
+It is a highly efficient search algorithm that works by repeatedly dividing the
+search interval in half and comparing the middle element to the target element. If the
+target is equal to the middle element, the search is successful. If the target is smaller,
+the search continues on the left half of the list; if larger, it continues on the right half.
+This process is repeated until the target element is found or it is determined that the
+element does not exist in the list.
+tj
+Le
+The only limitation of Binary Search is that it only works on a sorted list.
+Unit 2: Computational Thinking & Algorit
+Algorithm:
+Step
+1:
+Start
+Step 2:
+Set DATA
+:=
+{1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9}.[ Sorted Array Data].
+Step
+3:
+Set BEG
+:=
+1.
+[
+Set Beginning Value
+]
+Step
+4:
+Set END
+:=
+9.
+[
+Set End Value
+].
+Step
+5:
+Set MID
+:= INT((BEG
++
+END)
+/
+2).
+[
+Set Middle Value
+].
+Step
+6:
+Set Item
+:=
+7.
+[
+Searching Item
+].
+Step
+7:
+Set Loc
+:=
+0.
+[
+Set Location
+value
+is
+0
+or NULL
+].
+[ Check Beginning Value
+is Less than End Value
+or
+Data
+of Middle Location
+is equal
+to finding item
+]
+Step
+8:
+Repeat Step
+9 and
+10 While BEG
+© END and DATA[MID]
+# Item.
+Step
+39:
+If Item
+< DATA[MID]
+then:
+Set END
+:= MID
+-
+1.
+[
+Set End Value
+]
+Else
+Set BEG
+:= MID
++
+1.
+[
+Set Beginning Value
+]
+[
+End
+of
+If Structure
+]
+Step
+10:
+Set MID
+:= INT((BEG
++
+END)
+/
+2)
+[
+Set Middle Value
+]
+[
+End
+of While Loop
+]
+[ Check Item
+is
+Found or Not
+]
+Step
+11:
+If DATA[MID]
+= Item then:
+Set
+LOC
+:= MID
+Else
+Set Loc
+:=
+0
+{
+End of
+If Structure
+]
+[ Display Item is Found otherwise Not Found
+]
+Step
+12:
+If LOC
+>
+0 then
+Print DATA[LOC]
+Else
+Print “Data Not Found”
+[
+End of
+If Structure
+]
+Step
+13:
+End
+Pseudocode:
+Start
+DATA
+=
+{1,2,3,4,5,6,7,8,9}
+/* Sorted Array List
+“/
+BEG
+=
+1
+/* Beginning Array Pointer
+*/
+END
+=
+9
+/* End Array Pointer
+*/
+MID
+= INT((BEG
++ END)
+/
+2)
+/* Middle Array Pointer
+*/
+Item =
+7
+/* Searching Value
+*/
+LOC
+= NULL /* Pointer Location Null means
+No Value
+*/
+/“ Check Beginning Value
+is Less than End Value or
+Data
+of Middle Location
+is equal
+to finding item
+*/
+While
+BEG
+<= END
+OR DATA[MID]
+!=
+Item
+IF
+Item
+<
+DATA[MID]
+then
+/“
+Check
+Item
+is
+less
+then
+Middle Data
+*/
+END
+= MID
+-
+1
+Else
+BEG
+= MID
++
+1
+End
+If
+MID
+= INT((BEG
++ END)
+/
+2)
+End While
+If
+DATA[MID]
+=
+Item
+then
+/“
+Set
+Location
+value
+according
+to
+Data
+Found
+*/
+LOC
+= MID
+Else
+Loc
+= NULL
+End
+If
+If LOC
+>=
+0 then
+/*“
+If Data Found Show otherwise Not Found
+*/
+Print DATA[MID]
+Else
+Print
+“Data Not
+Found”
+End
+If
+End
+Example:
+Data List: 8, 3, 6, 1, 7, 2, 4, 5
+Sorted List: 1, 2, 3, 4, 5, 6, 7, 8
+Searching Item: 3
+Middle Item: Total Item/2 > 8/2 34
+Left (Less than Middle)
+Middle | Right (Greater than Middle)
+1
+|
+2
+|
+3
+5
+|
+6
+|
+7
+|
+8
+Middle Item: 4 > Not Found
+Apply same logic for Left part because searching item (3) is less than middle item (4).
+Searching Item: 3
+Middle Item: Total Item/2 >3/2391.5732
+Note: 1.5 is a decimal number now we change it into integer 2 because list element
+number is always in integer.
+Left (Less than Middle)
+Middle
+Right (Greater than Middle)
+1
+ee
+3
+Middle Item: 2 > Not Found
+Apply same logic for Right part because searching item (3) is greater than middle item
+(2).
+Searching Item: 3
+Middle Item: Total Item/2 91/230.5 71
+é
+¢
+MN)
+lf
+Unit 2: Computational Thinking & Algorit
+4 SS
+Note: 0.5 is a decimal number now we change it into integer
+1 because list element
+number is always in integer.
+3
+Middle Item: 3 > Found
+Advantages:
+e
+This is the biggest advantage. Because it cuts the search area in half every single
+step, it can find an item in a list of 1 million elements in just 20 steps. Linear
+Search would take 1 million.
+e
+It is the go-to for "Big Data." Whether the list has 1,000 items or
+1 billion,
+Binary Search stays incredibly fast.
+e
+If you have a
+static list (like a dictionary or a phone book) that you need to
+search thousands of times, the time saved is massive.
+Disadvantages:
+e
+This is the "catch." Binary Search only works if the data is already in order
+(numerical or alphabetical). If the list is scrambled, the logic fails completely.
+e
+If your list is not sorted, you have to sort it first. Sorting takes time, so if you
+are only searching once, it might actually be faster to just use a Linear Search.
+e
+You need to be able to "jump" to the middle index (mid = (low + high) / 2).
+This means it works great for Arrays.
+e
+While not super hard, it is easier to make a "Logic Error" (like an infinite loop
+or an "off-by-one" error) with Binary Search than with Linear Search.
+Linear Search is used for unsorted and small datasets.
+Binary Search
+is used for sorted and large datasets that also require fast
+searching.
+2.5.
+Evaluation Criteria of Algorithm:
+The following are the most important criteria used to assess the quality of an
+algorithm.
+2.5.1. Correctness:
+An algorithm is considered correct if its output matches the expected outcomes
+for the given input.
+e
+Whether
+the
+algorithm
+solves
+the problem
+exactly
+as
+defined
+in
+the
+requirements ?
+>
+5
+3
+Unit 2: Computational Thinking & Algorithm
+e
+Whether the logic handles typical inputs gracefully, such as negative numbers,
+null values, empty strings, or maximum-capacity data?
+e
+Whether the algorithm is guaranteed to finish its execution? It must reach a
+logical conclusion and avoid falling into an infinite loop.
+In the following example, a number is input and checked: if the remainder when
+divided by 2 is 0, display “Even”; otherwise display “Odd”.
+Example:
+1.
+INPUT number
+2.
+IF number MOD 2 = 0 THEN
+3.
+DISPLAY "Even"
+4.
+ELSE
+5.
+DISPLAY "Odd"
+6.
+ENDIF
+Trace Table:
+Input
+Operation
+NCauelitoe
+een
+(number)
+(Divide by 2 and find remainder)
+oa
+3
+3 / 2 = (Quotient = 1, Remainder = 1)
+No
+Odd
+6
+6 / 2 = (Quotient = 3, Remainder = 0)
+Yes
+Even
+9
+9 / 2 = (Quotient = 4, Remainder = 1)
+No
+Odd
+12
+12 / 2 = (Quotient = 6, Remainder = 0)
+Yes
+Even
+15
+15 / 2 = (Quotient = 7, Remainder = 1)
+No
+Odd
+This algorithm is correct because it always determines even
+/ odd properly.
+2.5.2. Efficiency:
+We measure any algorithm efficiency through time and space or speed and
+memory as resources. In simple words we find how fast it runs as input size grows and
+how much memory it uses. For this we check.
+e
+Does the algorithm scale well with larger input sizes?
+e
+Is there a way to make it faster or use less memory?
+e
+Is the algorithm optimized for real-world use?
+Example:
+A linear search is less efficient than binary search when dealing with large
+sorted data sets.
+tj
+Ly
+Unit 2: Computational Thinking & Algorit
+4 SS
+2.5.3. Clarity (Readability & Understandability):
+Algorithm must be easy to read, understandable and easy to modify by other
+users. For clarity the algorithm should follow the following principles.
+e
+Steps are clearly written.
+e
+Variable names are meaningful.
+e
+The logic structure is coupled with indentation and comments.
+e
+The flow of control (IF, LOOP, etc.) are easy to follow.
+2.6.
+How to Decide Which Algorithm to Use:
+It can be difficult to decide which algorithm to use. Before deciding which
+algorithm is best for our problem, we must consider the following questions.
+e
+What is the type of problem?
+e
+What is input size?
+e
+Is the data sorted?
+e
+Do we need Speed and Memory efficiency?
+2.6.1. Simple Decision Guide:
+Now we have some question and also have some problem to decide what the
+best algorithm for specific problem is.
+If searching on unsorted data then use Linear Search algorithm.
+If searching on sorted data then use Binary Search algorithm.
+If data needs ordering then use Sorting algorithm.
+If problem repeats many times then use Dynamic Programming algorithm.
+Example:
+Find a number in a sorted list
+e
+Is the data sorted?
+e
+Isa fast result needed?
+Choose: Binary Search
+Based
+on
+the
+provided
+document
+on
+Computational
+Thinking
+and
+Algorithms, here is the comprehensive breakdown you requested.
+——n
+. 2: Computational Thinking & Algorithm
+w
+GJ) Career Opportunities
+This unit builds the ability to break problems into smaller parts, recognize patterns,
+and design efficient algorithms for searching and sorting. These computational thinking skills
+are the backbone of nearly every technology career, especially those focused on software and
+data.
+Software Developer
+Data Scientist / Analyst
+Designs step-by-step algorithms and
+Uses algorithmic thinking to clean, sort,
+turns them into working, efficient
+and analyze large datasets to uncover
+computer programs.
+patterns and insights.
+Algorithm / Research Engineer
+Competitive Programmer
+Develops and optimizes search, sorting,
+Solves complex logical and algorithmic
+and decision-making algorithms for
+problems, often a stepping stone to top
+companies and research labs.
+tech-industry roles.
+AI / Machine Learning Engineer
+Systems/Bu
+alyst
+Breaks down real-world organizational
+Applies computational thinking to
+design intelligent systems that learn
+problems and designs logical,
+from data and improve over time.
+algorithmic solutions.
+Summary
+Computational Thinking is a systematic approach to solving problems that involves
+breaking them down into smaller parts, identifying patterns, abstracting
+unnecessary details, and developing algorithms.
+~ An algorithm is a step-by-step logical procedure used to solve a problem. It is
+conceptual in nature and independent of any programming language.
+~ Decomposition is a problem-solving technique in which a complex problem or task
+is divided into smaller, manageable parts.
+~ Pattern Recognition
+is the process of identifying similarities, regularities,
+or
+_
+repeated patterns in data or problems.
+~ Abstraction is the process of hiding unnecessary details and focusing only on the
+essential features needed to solve a problem.
+~ Sorting is the process of arranging a collection of data or items in a specific order,
+_
+suchas ascending (lowest to highest) or descending (highest to lowest).
+~ Common sorting algorithms include:
+~ Bubble Sort
+~ Selection Sort
+¢
+d
+¢
+MW) If
+U nit 2: Computational Thinking & Algorit
+)
+4 NS
+~» Searching is the process of locating a specific element within a collection of data.
+© Common searching algorithms include:
+~ Linear Search
+~ Binary Search
+~
+Correctness is the property of an algorithm that ensures it produces the expected
+output for every valid input.
+~ Efficiency of an algorithm is measured by the amount of time it takes to execute
+_
+(time complexity) and the amount of memory it uses (space complexity).
+~ Clarity refers to how easy an algorithm is to read, understand, and modify by others.
+1. Encircle the correct answer
+i)
+Which strategy involves ignoring the brand of a kettle when learning how to
+make tea?
+(a) Decomposition
+(b) Pattern Recognition
+(c) Abstraction
+(d) Sorting
+1i)
+| Bubble Sort is also commonly known as:
+(a) Linear Sort
+(b) Ripple Sort
+(c) Selection Sort
+(d) Binary Sort
+iii) | Which searching algorithm requires the data to be sorted before it can be used?
+(a) Linear Search
+(b) Sequential Search
+(c) Binary Search
+(d) Bubble Search
+iv)
+What is the main disadvantage of Selection Sort?
+(a) It uses extra RAM
+(b) It is difficult to code
+(c) It must finish every loop even if the list is sorted
+(d) It only works on alphabetical data
+v)
+An algorithm is considered "correct" if:
+(a) It runs very fast
+(b) Its output matches expected outcomes for given inputs
+(c) It uses minimal memory
+(d) It is written in a specific programming language
+vi)
+| What does the abbreviation CT stand for?
+(a) Computer Technology
+(b) Computational Thinking
+(c) Central Terminal
+(d) Coding Technique
+vii)
+| Which operation is represented by MOD?
+(a) Multiplication
+(b) Division
+(c) Subtraction
+(d) Finding the remainder after division
+> \
+©
+~~
+C)
+aX wa
+V
+.
+ii)
+iii)
+Iv)
+7, LM | Ls
+Unit 2: Computational Thinking & Algorithm
+In algorithms, what is the purpose of a PTR?
+(a) To store text data
+(b) To perform calculations
+(c) To track positions in an array
+(d) To display output
+What does INT represent in an algorithm?
+(a) Internet
+(b) Integer
+(c) Interval
+(d) Input
+In the Binary Search algorithm,
+the abbreviations BEG, END, and MID
+represent:
+(a) Input, Process, and Output
+(b) Beginning, End, and Middle positions
+(c) First, Last, and Next values
+(d) Start, Stop, and Result
+.
+Fill in the Blanks
+is a step-by-step logical procedure to solve a problem.
+Sorting may be Ascending or
+.
+Algorithm is
+and language-independent.
+algorithm is designed to locate a specific element within list of
+data.
+We measure any algorithm efficiency through
+and
+as resources.
+.
+Provide short answers to the following questions.
+Define pattern recognition.
+Explain the concept of decomposition.
+What is meant by correctness in problem-solving?
+Why is efficiency important in problem-solving?
+What do you understand by clarity in problem-solving?
+.
+Provide detailed answers to the following questions.
+What is the difference between an algorithm and pseudocode?
+What is abstraction in an algorithm, and why is it used?
+Write the steps of the Selection Sort algorithm.
+Write the steps of the Binary Search algorithm.
+Which searching algorithm is best for large datasets? Explain your answer.
+Activities
+Arrange the assembly queue according to students' heights.
+Arrange the names in the attendance register in descending alphabetical order.
+Find the name of your class monitor in the attendance register using the binary
+search technique.
+<

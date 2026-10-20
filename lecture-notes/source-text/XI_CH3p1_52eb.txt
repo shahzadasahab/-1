@@ -1,0 +1,1917 @@
+Chapter
+nrw#
+(i
+a
+rn
+a,
+a
+WN
+SE CERRRE REE
+Be
+L_~
+—e
+—]]
+im
+nian
+ZA
+ra
+—I
+@h
+Ww
+KN
+=
+a> BSE
+eS EE
+Se
+eee
+— SS
+ee
+Student:earning Outcomes:
+After the completion of this unit students will be able to:
+Understand the concept of programming
+Identify real-world applications of Python
+Use and explore the elements of IDE
+Understand the basic concept of Python
+Understand the use of selection and repetition control constructs in Python
+Write and execute program in Python
+Use built-in and third-party libraries in Python
+aH
+HOH O09
+4
+DO
+Unit 3: Programming Fundamentals
+Introduction:
+In this chapter, students will learn about the
+basics of Python programming and how it is used in real-
+world applications. Students will learn to write, run and
+debug simple programs while understanding variables,
+data-types, operators and coding practices. This chapter
+also covers decision making and loops to solve problems
+logically, along with the use of common Python libraries
+to build more practical and useful programs.
+3.1
+Programming:
+Computer are dumb machines. They cannot think and do anything by themselves
+without instructions. A set of instructions is called program and the language through
+which we give instructions to computer is called programming language. It uses special
+words and writing rules to create programs that tell the computer what to do. These
+instructions can make the computer perform tasks like solving problems, playing games,
+or running apps.
+3.1.1 Programming Language Types:
+Programming languages are classified into the following types.
+i.
+Low Level Language: are closer to the native language of computer (binary Os
+& 1s) and difficult to understand by human.
+ii.
+Mid-Level Language: bridges the gap between low-level and high-level
+languages it has both hardware access capabilities and easier to read and write
+than low-level code.
+iii.
+High-Level Language: are designed to be easy for humans to read and write
+codes.
+wi
+Programming Languages
+nm
+mem
+Use 1's & 0's
+Use mnemonics
+to create
+to create
+instructions
+instructions
+Similar to
+= |
+human
+language
+=>
+C+t, JAVA,
+Ea = PYTHON
+Example
+TOU
+Binary
+WOU
+Language
+Figure 3.1 Programming Language Type
+Example
+Assembly
+Language
+rere
+I
+pk
+Unit 3: Programming Fundamentals
+Programming is not just about code;
+it is about logic, structure, and turning
+ideas into something a computer can execute. Different languages are designed for
+different purposes. The following are some common programming languages:
+e
+C++is a powerful programming language that is closer to the
+hardware compared to Python and Java. It is often used to
+develop system software, operating systems, and computer
+games. C++ also allows programmers to control memory and
+performance, making programs run faster.
+e
+Java is a language that is widely used in professional software
+development. It follows the principle “write once, run anywhere,”
+«
+meaning a Java program can run on different platforms without
+<—)
+changes. Java is commonly used to develop large applications,
+<“==—_
+desktop software, Android mobile apps, web-based programs,
+;
+scripts and server programming.
+Java
+e
+Python is a high-level programming language known for its
+simple and readable syntax. It is easy to learn, which makes it
+very popular for beginners and students. It is used to create
+simple programs, games, and graphical drawings and also
+widely used in data analysis, artificial intelligence, and web
+development.
+3.2
+Career Growth with Python:
+Python
+is used
+in many areas such as
+education,
+web
+development,
+data
+analysis,
+artificial intelligence, and automation.
+It allows
+programmers to focus more on problem-solving
+and logic rather than complex rules.
+Learning Python in the first year of college can
+strongly shape a student’s future and open many
+career paths. Python is one of the most in-demand
+programming languages because
+it
+is easy to
+learn,
+powerful,
+and
+widely
+used
+across
+industries.
+Future opportunities after learning Python
+“+
+Software Development:
+Python
+is
+used
+to
+build
+desktop
+applications, web applications, and APIs.
+a,
+y
+Unit 3: Programming Fundamentals
+|
+~ Data Science and Data Analysis:
+*
+vthon
+is the main language used for analyzing data, creating reports, and
+making predictions.
+Artificial Intelligence and Machine Learning:
+Python
+is
+widely
+used
+to
+develop
+intelligent
+systems,
+chatbots,
+and
+recommendation systems.
+Web Development:
+Frameworks like Django and Flask allow students to build complete websites
+and web services.
+Automation and Scripting:
+Python is used to automate repetitive tasks in offices, labs, and industries.
+Cybersecurity and Networking:
+Python helps in writing security tools and analyzing network data.
+| 2 Activity
+3.3
+Demonstrate the different frameworks of Python.
+Integrated Development Environment (IDE):
+An IDE (Integrated Development Environment) is a software tool that helps
+write, run, and manage code in one place. An IDE
+is
+a complete workspace for
+programming. Following are the key features of an IDE
+3.3.1 Visual Studio Code:
+free,
+lightweight
+and powerful
+code
+editor
+widely used for Python, JavaScript, C#, and
+many other languages.
+It is not a full IDE by
+default, but can turn
+it into one by installing
+°
+°
+extensions. VS code can be downloaded from Visual
+Studio Code
+Code Editor: write and edit code
+Syntax Highlighting: makes code easier to read
+Auto completion: suggest code while typing
+Run/Execute Tool: execute program
+Debugger: find and fix errors.
+Visual Studio Code (VS Code)
+is
+a
+following link
+©) https://code.visualstudio.com/Download
+Explore User Interface:
+After installing the VS Code from above link. Open VS Code by double
+clicking on the icon J from computer desktop. A welcome screen will appear as
+gy
+=
+€
+>
+Q. Search
+Sr-ritoed
+-
+Oo
+he
+J Welcome
+xX
+Start
+Walkthroughs
+[& New File.
+Pet started with VS Code
+rts)
+Open File...
+Customize your editor, learn the
+basics, and start coding
+© Open Folder...
+EP
+clone Git Repository.
+Q
+Learn the Fundamentals
+>
+Connect to...
++,
+*
+(= Generate New Workspace...
+ee
+Get Started with Py...
+Recent
+More...
+You have no recent folders, open a folderto
+start.
+[)
+Show welcome page on startup
+Figure 3.2 VS Code Welcome Screen
+Unit 3: Programming a
+SS
+x] Welcome
+xX
+Start
+“Walkthroughs
+fe
+New File...
+1) open File...
+Y Get started with VS Code
+Customize your editor, learn the basics, and start coding
+6 Open Folder...
+¥ See Nepean
+Q
+Learn the Fundamentals
+>
+connectio...
+> Generate New Workspace...
+A Get Started with Python Development Pigskig
+Recent
+—
+You have no recent folders, open a folderto start.
+A
+|
+Show welcome page on startup
+(RvAan
+Figure 3.3 VS Code Interface Overview
+x)
+File
+Edit
+Selection
+View
+Go
+Run
+~
+€ >
+Oe:
+Search
+| ({¥ +)
+bOoed
+-
+oO
+a
+Unit 3: Programming Fundamentals
+1.
+Top Menus Bar:
+gives complete control over the
+files,
+code editing,
+navigation, debugging, and workspace all organized into logical groups for
+easy access.
+2.
+Start Section: provides option to get start quickly New File, Open File, Open
+Folder, Recent Section (quickly jump back into previous projects with one
+click).
+3.
+Side Bar: contains Explorer, Search, Source control, Run & Debug, Extension
+and Manage configuration.
+a.
+Explorer: Shows project files and folders,
+it helps to create, open and
+manage files.
+(a
+EXPLORER
+~ AO FOLDER OPENED
+You have not yet opened a folder.
+Ofelia
+el (tla
+Opening a folder will close all
+currently open editors. To keep them
+open, add a folder instead.
+Figure 3.4 VS Code Explorer Overview
+b.
+Search: Provides the searching and replacing any text in the currently open
+file.
+SEARCH
+GS
+2
+fae
+p
+| Search
+Aa ab *
+hat
+Replace
+AB.
+Figure 3.5 VS Code Search Overview
+7, Ly y a ii
+Unit 3: Programming Fundamentals
+c.
+Source Control: Connects with Git. Git is a free, open-source version
+control system that tracks and records every change made to the code over
+time, so that the user can save progress, undo mistakes, and collaborate
+with other developers easily.
+SOURCE CONTROL
+In order to use Git features, you can
+open a folder containing a Git
+repository or clone from a URL.
+is
+Open Folder
+Clone Repository
+Figure 3.6 VS Code Source Control Overview
+d.
+Run & Debug: Allows to execute code, find errors, pause at specific lines,
+and inspect variables.
+RUN AND DEBUG
+~* RUN
+oe
+Qpen a file which can be debuaged
+or run.
+Run and Debug
+To customize Run and Debug, opena
+folder and create a launch.json file.
+Figure 3.7 VS Code Run & Debug Overview
+——n
+. 3: Programming Fundamentals
+e.
+Extensions: are like apps for VS Code; users can install them to add new
+features, language support, and tools that are not built-in.
+EXTENSIONS
+ce
+Search Extensions in Mark..
+ve
+~* INSTALLED
+12
+inteHiCede
+2) 3148ms
+Al-assisted development
+@ Microsoft
+Migrate
+/\, ft
+hrteHi€edeAPL....
+©) 2698ms
+See relevant code examples
+..,
+@ Microsoft
+Migrate
+/\, ie}
+Pylance
+©) 4012ms
+A performant, feature-rich la...
+licrosoft
+Restart Extensions
+33
+Python
+<2) 6383ms
+Python language support wi...
+icrosoft
+Restart Extensions
+fet
+bude
+C/C++
+C/C++ Intellisense, debuqai...
+@ Microsoft
+fog
+Figure 3.8 VS Code Extension Overview
+* Recommended Extensions
+for Python Programming:
+search the
+following extensions and install it in vs code.
+Prettier-Code
+Python
+Formatter
+Python Debugger
+ms-python
+Cj) 212.5M
+|
+prettierio
+> 67.3M
+ms-python
+{> 117.8M
+4
+.
+Figure 3.9 VS Code Recommended Extensions
+f.
+Manage Setting: provides quick access to
+all settings, configurations,
+themes, keyboard shortcuts, and account options and acting as the main
+control center for the entire VS Code environment.
+MN)
+lf
+aes
+Unit 3: Programming a
+SS
+4.
+Search Bar: is the master navigator of VS Code. It instantly finds and jumps to
+anything inside project with just a few keystrokes.
+| Search files by name (append
+: to go to line or @ to go to symbol)
+i
+Go to File
+Ce
+Show and Run Commands
+>
+Ctri
++
+Shift
++
+P
+Search for Text %
+Open Quick Chat
+Ctrl
++
+Shift
++
+Alt
++
+L
+Go to Symbol in Editor @
+Ctr
++
+Shift
++
+O
+Start Debugging debug
+Run Task task
+More
+?
+4] Welcome
+recently opened
+|
+Figure 3.10 VS Code Search Bar Overview
+3.4
+Fundamentals of Python Programming:
+The basic structure of a Python program is simple and clear. A Python program
+usually starts with comments, which are written using the # symbol. Comments are
+lines ignored by the Python interpreter and are used for documentation and explanation
+within the code. The program processes the data using statements and expression, and
+finally shows the output. Python uses indentation (spaces at the beginning of a line) to
+define blocks of code, instead of curly brackets. Indentation 1s mandatory in Python,
+standard indentation = 4 spaces per level (also use 1 tab).
+© SimpleProgram.py
+*
+@ SimpleProgram.py
+1
+# This
+is
+a simple Python program
+2
+print("Hello,
+World!")
+3
+print("Welcome
+to Python")
+4
+print(100)
+PROBLEMS
+OUTPUT
+DEBUGCONSOLE
+TERMINAL
+PORTS
+fJ Python +-
+(D
+W
+thon Code>
+Hello,
+World!
+Welcome
+ta Python
+188
+PSE Python Code>
+ff
+Output
+Figure 3.11 Simple Python Program
+>
+YAY
+aX wa
+V
+\
+:
+os ,
+a
+Unit 3: Programming Fundamentals
+|
+In this program, the first line is a comment. The second, third and fourth lines
+displays output. Python programs run from top to bottom, making them easy to
+understand and follow.
+3.4.1 Variables and Data Types:
+A variable
+is
+a name space of computer memory used to store data in a
+program. Think of it as a container that holds information which can change during
+program execution. In Python, there
+is no need to declare the type of a variable
+explicitly. Python automatically determines it based on the assigned value. Following
+are some rules for naming variables in Python:
+> cneonan letters, numbers and underscores
+(yame
+=
+"Ali"
+>
+must start with a letter or underscore, nota
+|age
+=
+16
+number.
+>
+are
+case-sensitive
+(
+age
+and
+Age
+are
+height
+= 5.7
+different).
+is student
+= True
+>
+Avoid using keywords such as if, while, or
+for as variable names.
+Figure 3.12 Variable Naming
+Data types specify the kind of data a variable
+Example
+holds. Python has several built-in data types which are as follows:
+P
+Int
+Integer numbers
+20
+1.5
+Float
+vee)
+Decimal numbers
+35.75
+Pay
+Complex
+1 +3]
+Complex numbers
+@
+True, False
+B
+(2.4.6
+{1: 'a’, 2: 'b’}
+e
+PYTHON
+Data Types
+=
+~\
+4
+String
+paca
+)
+Text data
+List
+ry
+|=
+es changeable [2,
+a, 5.7]
+()
+Tuple
+(3, 4.5, i)
+Ordered, unchangeable
+Figure 3.13 Data Types in Python
+Unit 3: Programming a
+SS
+Name
+Type
+DTT
+wt
+a iyi)
+Integers
+int
+Whole numbers, suchas3
+300
+200
+“anne
+float
+Number with a decimal point:
+2.3
+4.6
+100.56
+Strings
+str
+Text or sequence of characters: “hello”
+‘Sammy’ “2026”
+Boolean
+bool
+Logical value indicating True or False
+Lists
+list | Ordered changeable collection [1,2,3,4,5,6]
+Dictionaries
+dict
+ynorsered Key:Value pairs: {“name”:’Ahmed”,
+“age”: 16
+Ordered unchangeable sequence of object (10, “hello”,
+200.3)
+Sets
+set
+Unordered collection of unique objects:
+{ “p”,’d’,”’f” }
+Tuples
+tup
+3.4.2 Input Output Handling:
+For a program to be useful, it usually
+needs to communicate with the outside world.
+wal ~—
+Information provided by the user to the
+_..
+computer is called input, and the information Rag
+oe?
+7
+displayed on the screen after processing that
+§
+input is cal led output. Input and output are
+essential for interactive programs.
+i;
+Python uses the print() function to J
+display information on the screen. User can
+eo
+print strings, numbers, variables,
+01 —
+:
+——
+combinations of them.
+print() function has following syntax too.
+Figure 3.14 Input Output Handling
+(ws following print function takes only string message
+print ("message")
+# following print function takes string message and variable
+print("message”, variable)
+# following print function takes multiple string message and variable
+print("message",variablel,
+"message" ,variable2)
+# following print function takes string message with variable names
+[print (f"message {variablename} message {variablename}")
+)
+Figure 3.15 print() function syntax
+LN A
+pe
+A
+Unit 3: Programming Fundamentals
+|
+Example 1: Printing multiple values:
+1
+(—
+Online code editor
+</>’
+Online code editor such as the
+following can be used to verify
+the output of a code block:
+www.online-python.com
+}
+ra) www.onecompilter.com/python
+)
+J |
+www.pythononlinecompiler.com }
+i
+Example 2: Advance output using f-strings:
+_
+:
+f-strings make output more readable and easier to format.
+name
+=
+"Ali"
+name
+=
+“Ali”
+age
+= 16
+print("“Name:",
+name,
+"“Age:",
+age)
+age
+= 16
+print(f"My name
+is
+{name} and
+I
+am {age} years old.")
+Output:
+[Hy
+name
+is Ali
+and
+I
+am 16 years old. |
+Python uses the input() function to take input from the user while program is
+running. It allows the program to pause, wait for the user to enter some data, and then
+save that data into a variable for further processing. Whatever the user types is always
+treated as a string (data type), Unless converted into another data type.
+Basic Syntax: input(prompt)
+* prompt(optional) — a message shown to the user before taking input
+variable
+= input("Prompt message:
+|
+Example 1 - taking name as input and print:
+= input{"“Enter your name:
+“)
+print(“Hello,”,
+name)
+The code prompts the user to input their name, stores it in the variable "name"
+and then prints a greeting message addressing the user by their entered name.
+Example 2 - taking numeric input and print:
+age
+= int{input("Enter your age:
+"))
+height
+= float(input{"Enter your height
+in meters:
+“))
+print("Your age is",
+age)
+print("Your height is",
+height)
+é
+¢
+MN)
+lf
+ik
+Unit 3: Programming a
+SS
+The code prompts the user to input their age and height, stores it in the variable
+"age", “height” and then prints a message addressing the user by their entered age and
+height.
+Since age is always expressed as a whole number, it is stored in an integer (int)
+variable. On the other hand, height is typically expressed as a decimal or fractional
+value, therefore it is stored in a floating-point (float) variable. This ensures accurate
+representation and efficient use of memory in a program.
+Cop
+[
+Instructions for Teachers
+Teacher should demonstrate the conversion from string to other datatypes in Python.
+Activity:
+Writing and Executing Python Program using IDE (VS Code)
+Step 1: Open Visual Studio Code
+Step 2: Create Python File
+e
+Open VS Code, go to File menu and click on New File
+e
+Save the file as program.py
+e
+Write the following code as shown in the image
+yg
+=
+Python Code
+~
+=
+&
+a
+EXPLORER
+”
+© program.py
+EY ©
+=
+‘v PYTHON CODE
+* program.py
+@ program-py
+1
+# This
+is
+a simple Python program
+2
+print("Hello, World!")
+3
+print("Welcome to Python")
+4
+print(10@e)
+> OUTLINE
+> TIMELINE
+Ln4,Col11
+Spaces:4
+UTF-8
+CRLF
+{} Python
+8%
+3142
+@Prettier
+(3
+Unit 3: Programming Fundamentals
+e
+Following are two options to execute the program, programmer can choose
+either of them.
+1)
+Right click in the file and select > Run Python File in Terminal
+® programpy
+Go to Definition
+F12
+Pe
+(]
+® program.py
+Go to Declaration
+_
+1
+# This
+is
+a simple Python
+pr
+Goto type Definition
+2
+print("Hello,
+world!")
+Go to Implementations
+Ctrl+F12
+i
+3
+print("Welcome to Python”)
+Go to References
+Shift+F12
+4
+print(10@)
+Peek
+Find All References
+Shift+Alt+F12
+Find All Implementations
+Show Call Hierarchy
+Shift+Alt+H
+Show Type Hierarchy
+Add File to Chat
+Open Inline Chat
+Ctrl+1
+Explain
+Fix
+Code Review
+Rename Symbol
+F2
+Change All Occurrences
+Ctrl+F2
+Refactor...
+Ctrl+Shift+R
+Source Action...
+Cut
+Ctrl+X
+Copy
+Ctrl+c
+Paste
+ctiev
+Run in Interactive window
+?
+Run Python
+>
+Run Python File in Terminal
+2)
+Click the Play button located at the top-right corner of the VS Code
+window to execute the program.
+Ct
+»
+—
+Oo
+x
+@ program.py
+X
+| py IE
+ee
+@ program.py
+1
++#
+This
+is
+a simple Python program
+2
+print("Hello, World!")
+e
+After clicking on the play button, the code will execute and a terminal window
+is open where the execution/output of the program will show.
+A BP 7
+i
+ik
+Unit 3: Programming a
+SS
+e
+Output of the program
+® program.py
+te Tee
+® program.py
+1
+# This
+is
+a simple Python program
+print("Hello,
+World!")
+2
+3.
+print(“Welcome to Python")
+4
+print(106)
+,
+TERMINAL
+=>
+b] Python +»
+(U Ws | C3
+@® PS E:\Python Code>
+Hello, World!
+Welcome to Python
+1668
+>
+PS E:\Python Code>
+|
+| Cy Activity
+1.
+Write a program that takes input and display it.
+2.
+Write a program that takes student bio data and display with welcome message.
+3.4.3
+Operators and Operands:
+An Operand is the value, or a variable on which the operation is performed.
+An Operator is a symbol that tells Python to perform an operation on one or more
+operand.
+10
++
+20
+a
+a
+a
+Operand
+|
+Operand
+Operator
+Operators
+are building blocks used
+to calculate results, compare values,
+combine conditions, manipulate data and control the program flow. Some of the
+operators are as follows:
+Unit 3: Programming Fundamentals
+e
+Arithmetic
+Operators:
+These
+operators
+are
+used
+for
+mathematical
+calculations.
+Operator
+Purpose
+Example
+Result
++
+Addition
+5+3
+8
+-
+Subtraction
+10-4
+6
+*
+Multiplication
+4*2
+8
+/
+Division
+9/2
+4.5
+/
+Floor division
+9 //2
+4
+%
+Modulus (remainder)
+9%2
+1
+we
+Exponentiation
+2 ** 3
+8
+Code Example:
+® ArithmeticOperatorProgram.py
+® ArithmeticOperatorProgram.py > ...
+1
+# Simple Arithmetic Operation Program
+2
+a=
+10
+3
+b=3
+4
+5
+print(f"Addition:
+{a}
++ {b} =",a
++
+b)
+#13
+- Addition
+6
+print(f"Subtraction:
+{a}
+-
+{b} =",a
+-
+b)
+#7
+> Subtraction
+7
+print(f"Multiplication:
+{a}
+* {b} =",a
+*
+b)
+# 30
+- Multiplication
+8
+print(f"Division:
+{a}
+/ {b} =",a
+/
+b)
+# 3.33 + Division
+9
+print(f"Floor Division:
+{a}
+//
+{b} =",a
+//
+b)
+#
+3
++ Floor Division
+10
+print(f"Modulus:
+{a}
+% {b} =",a
+%
+b)
+#1
+> Modulus
+11
+= print(f"Exponent:
+{a}
+** {b} =",a
+**
+b)
+# 1000 > Exponent
+TERMINAL
+PS D:\Python Code> & D:\Programs\Python\Python314\python.exe "d:/Python Code/ArithmeticOperatorProgram.
+py"
+Addition:
+10 +
+3
+= 13
+Subtraction:
+10 -3=7
+Multiplication:
+10
+*
+3 = 30
+Division:
+10
+/
+3
+= 3,.3333333333333335
+Floor Division:
+10 // 3
+= 3
+Modulus:
+10%3=1
+Exponent:
+10 **
+3 = 10@0
+|
+y
+bj,
+at
+Ts
+U
+pk
+Unit 3: Programming Fundamentals
+e
+Assignment Operators: These operators assign values to variables.
+Operator
+Example
+ea wre
+=
+x=5
+Assign 5 to x
+4a
+xt+=2
+Add 2 to x value and assign it to x
+X=x+2
+_
+x<1
+Subtract 1 from x value and assign it to x
+x=x-1
+*
+x*=3
+Multiply 3 to the value of x and assign it to x.
+K=x*3
+_
+Divide 2 to the value of x and assign it to x.
+/=
+x /=2
+_
+x=x/2
+Code Example:
+@ AssignmentOperatorProgram.py
+Dy
+—M
+«
+@ AssiqgnmentOperatorProgram.py >...
+1
+# Simple Assginment Operation Program
+2
+a=
+10
+# Assign
+10
+3
+print(a)
+4
+at=5
+#a=at+5
+315
+5
+print(a)
+6
+a-= 3
+#a=a-3
+312
+7
+print(a)
+&
+a
+t=
+2
+#a=a*¥2
+3 24
+9
+print(a)
+10
+a /=4
+#az=a/4
+36.9
+11
+print(a)
+12
+a //=
+2
+#az=a//2-> 3.0
+13.
+print(a)
+14
+a
+**=
+3
+#a=a
+**
+3
++ 27.0
+15
+print(a)
+16
+a %= 5
+#a=a%5
+>» 2.8
+17.
+print(a)
+# 2.0
+TERMINAL
+bJpyhon +~
+(] Wo | [2
+x
+10
+15
+12
+24
+6.0
+3.0
+27.0
+2.0
+Unit 3: Programming Fundamentals
+e
+Relational Operators: These operators compare two values and return either
+True or False
+Operator
+Description
+Example __— Result
+==
+Equal to
+10 ==10
+True
+{=
+Not equal to
+10 !=5
+True
+>
+Greater than
+10>5
+True
+<
+Less than
+10<5
+False
+>=
+Greater than or equalto
+10>=10
+True
+<=
+Less than or equal to
+10<=9
+False
+Example:
+® ComparisonOperatorProgram.py
+By
+@ ComparisonOperatorProgram.py >
+...
+# Simple Comparison Operation Program
+== b)
+l=
+b)
+> b)
+<
+b)
+>=
+10)
+<=
+9)
+False
++
+Equal to
+True
+— Not equal to
+False
+> Greater than
+True
+- Less than
+True
+-— Greater
+or equal
+False
+~
+Less
+or equal
++
+St
+St Ht OH
++
+b_) Python
++
+(DO
+W
+=
+|
+[3
+1
+2
+a-=10
+3
+b=
+20
+4
+|
+5S
+print(a
+6
+print(a
+7
+print(a
+8
+print(a
+9
+print(a
+1@
+print(a
+TERMINAL
+@
+False
+True
+False
+True
+True
+False
+tj
+Ly
+Unit 3: Programming a
+SS
+e
+Logical Operators: Logical operators are used to combine conditions.
+Operator
+PTO
+gt erect
+and
+True if both conditions are true
+or
+True if at least one condition is
+true
+not
+Reverses the result
+Example:
+® LogicalOperatorProgram.py
+Cy
+QO
+-
+®@ LogicalOperatorProgram.py > ...
+1
+# Simple Logical Operator Program
+2
+a= True
+3
+b
+=
+False
+4
+5
+print(a and
+b)
+# False + Both must be True
+6
+print(a or
+b)
+# True
+> At least one True
+7
+print(not
+a)
+# False » reverse the result of variable
+a
+8
+print(not
+(a or b))
+# False > reverse the result of
+(a or b)
+TERMINAL
+bJrynon +» (QW
+-
+|
+03
+xX
+False
+True
+False
+False
+e
+Membership Operators: Used to check if a value exists in a sequence.
+Operator
+Description
+Example
+in
+True if value exists
+“a” in “apple”
+not in
+True if value does not exist | “z” not in “apple”
+Example:
+& MembershipOperatorProgram.py
+C-~
+(
+MembershipOperatorProgram.py
+> ...
+1
+# Simple Membership Operator Program
+2
+name
+=
+"Python"
+3.
+print("P"
+in name)
+# True
+4
+print("z"
+not
+in name)
+# True
+TERMINAL
+® True
+True
+Unit 3: Programming Fundamentals
+Bitwise Operators: A Bit is the smallest unit of data in a computer, it can only
+be 0 or 1. Bitwise operators treat numbers as binary digits (bits) and perform
+operations bit by bit — like a switch that turns each 0 and 1 ON or OFF. Python
+uses bin() function to convert number to binary.
+Operator
+Symbol
+Name
+Description
+AND
+&
+Bitwise AND | 1 only if both bits are 1
+OR
+|
+Bitwise OR
+1 if at least one bit is 1
+XOR
+“
+Bitwise XOR
+1 only if bits are different
+NOT
+~
+Bitwise NOT | Flip or inverts all bits
+Left Shift
+<<
+Left Shift
+Shifts bits to the LEFT
+Right Shift
+>>
+Right Shift
+Shifts bits to the RIGHT
+1)
+Bitwise AND ( & ):
+Returns
+1 only when BOTH corresponding bits are
+1 — otherwise
+returns 0.
+Bit A
+Bit B
+A&B
+0
+0
+0
+0
+1
+0
+1
+0
+0
+1
+1
+1
+@ Bitwise AND Program.py
+Xx
+by
+©
+=
+@ Bitwise AND Program.py >
+...
+1
+# Bitwise AND Operator Program
+2
+a=
+10
+# Binary:
+1010
+3
+bes
+# Binary:
+01120
+4
+print("Binary of
+a
+",bin(a))
+S
+print("Binary of
+b
+",bin(b))
+6
+7
+result =a&b
+8
+9
+print("Result
+= ",result)
+#2
+1@
+print("Binary of Result =",bin(result))
+# @bee1e
+TERMINAL
+Step by step explain
+a-10
+7
+10186
+@
+Binary
+of
+a
+6b1010
+b=
+46
+%»
+01180
+Binary
+of
+b
+@b110
+Result
+=
+2
+a&b
+%
+00180
+=
+2
+Binary of Result
+= @b10@
+Face
+|
+1
+Unit 3: Programming Fundamentals
+* Compare each bit and give 1 where both are 1.
+2)
+Bitwise OR (| ):
+Returns 1 when AT LEAST ONE of the corresponding bits is
+1 returns 0
+only when BOTH are 0.
+Bit A
+Bit B
+A|B
+0
+0
+0
+0
+1
+1
+1
+0
+1
+1
+1
+1
+® Bitwise OR Program.py
+X
+@ Bitwise OR Program.py > ...
+P=
+1
+# Bitwise OR Operator Program
+2
+a= 10
+# Binary:
+1010
++
+bes
+# Binary:
+0110
+4
+S
+result =a
+|b
+6
+7
+print(result)
+# 14
+8
+print(bin(result))
+# @b1110
+TERMINAL
+ae by = one)
+Se
+a=10
+3
+10160
+®
+14
+b=
+6
+*
+86110
+@b1110
+a
+|b
+>
+11106
+=
+14
+©
+.y 3
+aX aan
+Unit 3: Programming Fundamentals
+3)
+Bitwise XOR
+(“%
+):
+Returns 1 only when the two corresponding bits are DIFFERENT,
+returns 0 when bits are the SAME.
+Truth Table
+Bit A
+Bit B
+A|B
+0
+0
+0
+0
+1
+1
+1
+0
+1
+1
+1
+0
+Bitwise XOR Program.py
+X
+Pp
+@ Bitwise XOR Program.py > ...
+1
+# Bitwise XOR Operator Program
+2
+a=
+ie
+# Binary:
+1016
+3
+b=6
+# Binary:
+9110
+4
+S
+result =a*b
+6
+7
+print(result)
+# 12
+8
+print(bin(result))
+# @b110e
+Step by step explain
+Bachata
+a=10
+> 1010
+13
+b=
+6
++
+6110
+@b110@
+a“
+b
++ 1166
+=
+I12
+tj
+Ly
+4)
+Bitwise NOT (~):
+It inverts/flips ALL bits of the number, every 0 becomes 1 and every 1
+becomes 0. It is also called ones complement.
+® Bitwise NOT Program.py
+Truth Table
+Bit A
+~A
+0
+1
+1
+0
+® Bitwise NOT Program.py >...
+1
+oor au
+b&w
+Nb
+TERMINAL
+e
+-11
+-6
+-1
+9
+a
+=
+18
+result
+=
+~a
+by ©
+-
+# Bitwise NOT Operator Program
+# Binary:
+9@ee 1010
+ra
+©
+| fo
+x
+print(result)
+# -11
+print(~5)
+#
+-6
+print (~@)
+#
+-1
+print(«(-1))
+#
+@
+b_] Python
++~
+O
+W
+«
+Step by step explain
+a=10
+> 1010
+~a
+>
+©1601
+=
+-11
+WEIS
+UE
+e Mae
+LITLE
+1010
+a=10
+It inverts ALL bits of the
+~a
+0101
+-11
+number, every 0 becomes
+1 and every 1 becomes 0
+0101
+5
+It inverts ALL bits of the
+~5
+1010
+-6
+number, every 0 becomes
+1 and every 1 becomes 0
+0000
+0
+It inverts ALL bits of the
+~0
+1111
+-1
+number, every 0 becomes
+1 and every 1 becomes 0
+1111
+4
+It inverts ALL bits of the
+~-1
+0000
+0
+number, every 0 becomes
+1 and every 1 becomes 0
+>
+>
+aX WAY
+al
+;
+L
+Unit 3: Programming Fundamentals
+3
+Unit 3: Programming Fundamentals
+5)
+Bitwise Shift LEFT (<<):
+Shifts all bits to the LEFT by a specified number of positions, empty
+positions on the right are filled with zeros.
+Bitwise Shift left Program.py
+*
+by
+O
+®
+Bitwise Shift left Program.py
+>
+...
+1
+# Bitwise Shift
+LEFT Operator Program
+a=5
+# Binary:
+9000 @1061
+print(a << 2)
+#28
++ 9001 @10@ Step by step explain
+print(a
+<<
+3)
+#48
+3 @@10 1000
+|7°°
+7 9999 0101
+a<<1
+9% 00001010
+=
+10
+TERMINAL
+*
+|
+|
+(9 added on right)
+2
+3
+4
+print(a
+<<
+1)
+#410
+~~
+@00@ 1010
+,
+\
+6
+6
+10
+20
+a<<2
+> 0061 0100
+=
+20
+48
+”
+(two
+@s added
+on
+right)
+6)
+Bitwise Shift RIGHT (>>):
+Shifts all bits to the RIGHT by a specified number of positions, bits
+shifted out are discarded and empty positions on the left are filled with
+Zeros.
+® Bitwise Shift Right Program.py
+Pe=
+fT)
+® Bitwise Shift Right Program.py > ...
+.
+1
+# Bitwise Shift RIGHT Operator Program
+a
+=
+20
+# Binary:
+9061 6190
+print(a
+>>
+2)
+#5
++ @g@@ e101
+2
+3
+4
+print(a
+>>
+1)
+#10
++ e908 1010
+5
+6
+print(a
+>>
+3)
+#2
+-- 6800 6010
+Step by step explain
+TERMINAL
+a=2?0
+7 0001
+6010608906
+° 10
+a>>
+1%?
+0600060
+1601060
+= 10
+°
+‘
+(0 added
+on
+left)
+» PS E:\Python Code>
+a>>2
+9
+9000
+80101
+=
+5
++o
+(two
+Os
+added
+on
+left)
+tj
+Ly

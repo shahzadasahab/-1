@@ -1,0 +1,1614 @@
+Chapter
+Computer Systems
+Student}earning Outcomes:
+After the completion of this unit students will be able to:
+00090000
+S00000
+Differentiate between analog and digital data representation.
+Understand and apply logic gates in digital systems.
+Construct truth tables using Boolean operators.
+Build logic circuits, from Boolean functions and logic diagrams.
+Use the given simulation tool (LogiSim) for logic gate representation.
+Identify and understand stages of the software development life cycle
+(analysis, design, coding and testing etc.).
+Software development methodologies.
+Understand the importance of SDLC.
+Understand water fall model with case study.
+Understand agile model with case study.
+Understand and explain the communication models.
+Explain 7 layered OSI model and role of each layer.
+Identify the purpose of protocols at each layer.
+Understand TCP/IP model.
+=
+“ie
+ba
+‘|
+Sf
+. 1: Computer Systems
+a
+Introduction:
+This
+chapter introduces
+three important areas
+of computing.
+First, how
+computers store and process information using simple ON and OFF signals, called
+digital data, and how basic building blocks called logic gates are used to perform
+operations. Students will use a tool “LogiSim” for building logic circuits.
+Second, we
+will discover how software is created step by step through a process called the Software
+Development Life Cycle (SDLC), and we will compare two popular approaches - the
+Waterfall model and the Agile model - using real examples. Finally, we will learn how
+computers and devices communicate with each other over a network, including a well-
+known seven-layer model called the OSI model and the TCP/IP model that powers the
+internet. By the end of this chapter, we will have
+a clear understanding of how
+computers think, how software is built, and how devices talk to each other.
+——<
+NN
+1.1.1 Discrete and Continuous Quantities:
+In our daily life, we deal with two types of quantities: discrete and continuous.
+Discrete quantities are separate, countable items with specific values. We can count
+them one by one. Examples include:
+e
+Number of students in a classroom
+e
+Number of books on a shelf
+e
+Number of cars in a parking lot
+e
+Number of fingers on our hand
+Continuous quantities can take any value within a range. They flow smoothly without
+breaks. Examples include:
+e
+Temperature of water
+e
+Height ofa person
+e
+Time passing on a clock
+e
+Speed of a moving car
+Simple Analogy: Stairs vs Ramp
+Think about climbing stairs versus walking up a ramp:
+Table 1.1: Analogy of Discrete vs Continuous behavior
+Stairs (Discrete)
+Ramp (Continuous)
+We step on specific heights only
+We can stop at any height
+We cannot stand between two steps
+We can stand anywhere
+Values are fixed (step 1, step 2, step 3)
+Values can be anything (1.5m, 1.73m, 2.1m)
+Similar to digital signals
+Similar to analog signals
+ay
+re
+Unit 1: Computer
+aw
+SS
+Discrete
+Figure 1.1: Stairs and Ramp Comparison
+1.1.2 Introduction to Digital Systems:
+A digital system is an electronic system that uses only two values: 0 and 1.
+These two values are called binary digits or bits.
+e
+Orepresents OFF, LOW, or FALSE
+e
+1represents ON, HIGH, or TRUE
+Why Use Digital Systems?
+Digital systems are used in almost all modern electronic devices because they
+are:
+Reliable: Less affected by noise and interference
+Accurate: No loss of quality when copying data
+Easy to design: Only two states to handle
+Programmable: Can be easily controlled by software
+Table 1.2: Examples of Digital Systems
+eC Mmmm
+t
+Ky
+Computer
+Processes data as 0s and 1s
+Smartphone
+Stores photos, music as binary data
+Digital watch
+Displays time using electronic circuits
+Calculator
+Performs math using logic gates
+Traffic light
+Switches between states (red, yellow, green)
+Digital camera
+Captures images as binary data
+1.1.3 Analog and Digital Signals:
+Signal:
+A signal is a function of one or more variables that indicate some (usually
+physical) phenomenon. Signals are carriers of information. They can convey different
+types of information depending on the application. Signals can be of different forms.
+LX XN va
+Analog Signals:
+signals
+signals
+that can take any value within
+a
+range. They change smoothly over time, like
+Analog
+a wave.
+Examples of analog signals:
+e
+Human voice
+e
+Music from a guitar
+e
+Temperature changes
+e
+Radio waves
+e
+Voltage in old telephones
+Digital Signals:
+VA
+are
+continuous
+Unit 1: Computer Systems
+/
+Analog Signal
+LDN
+Digital signals have only two levels:
+HIGH (1) and LOW (0). They jump between
+these two values instantly, creating a square
+wave pattern.
+Examples of digital signals:
+e
+Data in computers
+e
+USB communication
+e
+HDMI video signals
+e
+Data on the internet
+Feature
+Nature of Data
+Basic Unit
+Representation
+Form
+Range of Values
+Reliability
+Common
+Examples
+d
+¢
+A BP 7
+aV
+Figure 1.2: Analog Signal
+Digital Signal
+>
+Figure 1.3: Digital Signal
+(Include a square wave graph showing
+only HIGH and LOW levels)
+Table 1.3: Comparison of Analog and Digital Signal
+FUE e eM Cae
+eT a(t
+Continuous:
+Data
+flows
+smoothly and can take any value.
+Represented
+by
+physical
+quantities
+(like
+voltage
+or
+frequency).
+Uses
+a Smooth Wave pattern
+(Sine wave).
+Infinite: There are no fixed steps
+between values.
+Low: Easily affected by “noise”
+or interference.
+Human
+voice,
+mercury
+thermometers, vinyl records.
+Digital Data
+oes
+La (iyi
+Discrete: Data consists of
+separate, countable values.
+Represented
+by
+Binary
+Digits (Bits): 0 and 1.
+Uses
+a
+Square
+Wave
+pattern (Steps).
+Fixed:
+Only
+two _
+levels
+exist (HIGH/LOW).
+High:
+Very
+resistant
+to
+noise and interference.
+Computers,
+smartphones,
+digital watches.
+re
+|
+x
+|
+Unit 1: Computer Systems
+1.1.4 Boolean Algebra:
+Boolean algebra is a branch of mathematics that deals with only two values:
+TRUE
+(1)
+and FALSE
+(0).
+It was developed by George Boole,
+an English
+mathematician, in the 1850s. Boolean algebra is the foundation of all digital electronics
+and computer programming.
+It is a form of symbolic logic that shows how logic
+operations are performed. A Boolean expression represents the outcome when logic
+operations are applied to variables.
+Table 1.4: Key
+Concepts in Boolean Algebra
+Concept
+Tawra Cyi
+Example
+Variables
+Letters that hold values 0 or 1
+A, B, C, X, Y
+Constants
+Fixed values
+0 or 1
+Operations
+Actions performed on variables
+AND, OR, NOT
+Expressions
+| Combinations of variables and operations
+A AND B, AORB
+1.1.5 Boolean Operations:
+There are three basic Boolean operations:
+1.
+AND Operation (:):
+The AND
+operation gives output 1 only when ALL inputs are 1.
+Symbol:
+- (dot) or A (wedge)
+Expression: Y=A*BorY=AANDB
+Real-life example: A door with two locks. The door opens only when BOTH locks are
+unlocked.
+Truth Table:
+|
+impute
+|
+Output
+A
+B
+Y=A:B
+0
+0
+0
+1
+0
+1
+0
+0
+1
+1
+1
+LA A
+‘aii
+a
+fF
+. 1: Computer Systems
+OR Operation (+):
+The OR operation gives output 1 when ANY input is 1.
+Symbol: + (plus) or V (vee)
+Expression: Y= A+BorY=AORB
+Real-life example: A room with two doors. We can enter if EITHER door is open.
+Truth Table:
+|
+input
+|
+Output
+A
+B
+Y=A+B
+0
+0
+0
+0
+1
+1
+1
+0
+1
+1
+1
+1
+3.
+NOT Operation ( or '):
+The NOT operation inverts the input. If input is 1, output is 0. If input is 0,
+output is 1. NOT operation is a unary operation, meaning that it operates on only one
+operand.
+Symbol: — (negation sign) or ' (prime/apostrophe) or (bar)
+Expression: Y = A' or Y= NOT A or Y=Aor Y=7A
+Real-life example: A light switch. When the switch is ON, the room is lit. When OFF,
+the room is dark.
+Truth Table:
+A
+Y=A'
+0
+1
+1
+0
+1.1.6 Truth Tables:
+A truth table shows all possible input combinations and their corresponding
+outputs for a logic gate or circuit.
+How to create a truth table:
+I.
+| Count the number of inputs (n)
+II.
+Calculate total rows = 2
+Il.
+List all input combinations
+IV.
+Calculate output for each combination
+d
+¢
+MM) If
+Aes
+©
+a) x
+|
+Unit 1: Computer Systems
+Example: For 2 inputs, rows = 2?
+=
+: For 3 inputs, rows = 23
+= 3
+Example of a 2-Input Template:
+When building a table, we always list inputs in binary order to ensure we do not
+miss any combination.
+#
+A
+B
+Logical result
+Result would be 0 (zero) or 1
+1
+0
+0
+(one) depending
+7
+0
+1
+on the values of the inputs
+and the operation performed
+3
+1
+0
+1
+1
+1.1.7 Logic Gates:
+Logic gates are electronic circuits that perform Boolean operations. They are
+the building blocks of all digital systems.
+Each gate has:
+e
+One or more inputs
+e
+Only one output
+e
+A specific function
+Logic Gate Symbols:
+AND
+NAND
+OR
+NOR
+\
+\
+/.
+7.
+NOT
+XOR
+XNOR
+Figure 1.4: Logic Gate Symbols
+‘aii
+a
+o al
+. 1: Computer Systems
+AND Gate:
+The AND gate produces output 1 only when all inputs are 1.
+Symbol:
+A=
+Y=A-B
+B=
+Figure 1.5: AND Gate Symbol
+Boolean Expression: Y= A~-B
+Note: Truth Table of 2-input AND gate is same as 2-input AND operation given in
+Section 1.1.5
+Truth Table (3-input AND gate):
+A
+B
+C
+Y=A:B:C
+0
+0
+0
+0
+0
+0
+1
+0
+0
+l
+0
+0
+0
+l
+l
+0
+1
+0
+0
+0
+1
+0
+1
+0
+1
+1
+0
+0
+1
+1
+1
+1
+Real-life example: A car starts only when the key is inserted AND the driver presses
+the start button.
+2.
+OR Gate:
+The OR gate produces output
+1 when any input is 1, will produces output 0
+only when all the inputs are 0.
+Symbol:
+A
+Y=A+B
+B
+Figure 1.6: OR Gate Symbol
+Boolean Expression: Y= A+B
+Note: Truth Table of 2-input OR gate is same as 2-input OR operation given in Section
+1.1.5.
+MN) lf
+Truth Table (3-input OR gate):
+Unit 1: Computer
+aw
+SS
+A
+B
+C
+Y=A+B+C
+0
+0
+0
+0
+0
+0
+1
+1
+0
+1
+0
+1
+0
+1
+1
+1
+1
+0
+0
+1
+1
+0
+1
+1
+1
+1
+0
+1
+1
+1
+1
+1
+Real-life example: An alarm sounds if the front door OR the back door is opened.
+3.
+NOT Gate (Inverter):
+The NOT gate inverts/ complements the input. It is also called an inverter.
+Symbol:
+A
+Y=A
+Figure 1.7: NOT Gate Symbol
+Boolean Expression: Y = A' or Y= A
+or Y=—A
+Truth Table (NOT gate):
+Real-life example:
+A refrigerator light turns ON when the door is open and turns OFF when the
+©)
+door is closed.
+LX ww
+I
+Le
+Unit 1: Computer Systems
+4.
+NAND Gate:
+The NAND gate is the opposite of AND gate. It produces output 0 only when
+all inputs are 1. NAND means "NOT AND".
+Symbol:
+A
+Y=(A-B)
+B=
+Figure 1.8: NAND Gate Symbol and equivalent circuit
+Boolean Expression: Y = (A - B)' or Y= A NANDB
+Truth Table (2-input NAND gate):
+A
+B
+Y=(A-B)'
+0
+0
+1
+0
+1
+1
+1
+0
+1
+1
+1
+0
+s@
+NAND gate is called a universal gate because any other gate can be
+AU
+built using only NAND gates.
+5.
+NOR Gate:
+The NOR gate is the opposite of OR gate. It produces output 1 only when all
+inputs are 0. NOR means "NOT OR".
+Symbol:
+A
+Y=(A7B)
+B
+Figure 1.9: NOR Gate Symbol and equivalent circuit
+Unit 1: Computer
+aw
+SS
+Boolean Expression: Y = (A+ B)' or Y= A NOR B
+Truth Table (2-input NOR gate):
+B
+Y=(A+B)'
+0
+1
+1
+0
+1
+ele|olo!|
+>
+0
+0
+0
+Sa
+.
+aiaLuly
+NOR gate is also a universal gate.
+6.
+XOR Gate (Exclusive OR):
+The XOR gate produces output 1 when the inputs are different.
+Symbol:
+A
+Y=AQB
+B
+Figure 1.10: XOR Gate Symbol
+Boolean Expression: Y = A & B or Y = A'B + AB'
+Truth Table:
+|
+Input
+| Output _|
+A
+B
+Y=AQ@B
+0
+0
+0
+0
+]
+1
+1
+0
+]
+1
+]
+0
+Memory trick: XOR gives 1 when inputs are "eXclusively" different.
+Real-life example: A two-way light switch. The light changes state when EITHER
+switch changes, but not when both change together.
+C)
+aX AAS N
+Unit 1: Computer Systems
+7.
+XNOR Gate (Exclusive NOR):
+The XNOR gate produces output 1 when the inputs are same.
+Symbol:
+A =
+Y = (A@B)
+tS
+Figure 1.11: XNOR Gate Symbol
+Boolean Expression: Y = (A @ B)' or Y= AB + A'B'
+Truth Table:
+|
+Input
+| Output _|
+A
+B
+Y=A+B
+0
+0
+1
+0
+1
+0
+1
+0
+0
+1
+1
+1
+Memory trick: XNOR gives 1 when inputs are the SAME.
+Table 1.5: Summary of All Logic Gates
+LOLI i:
+Symbol
+Dreyer
+Output = 1 when
+AND _ D-shape
+1}
+Y=A°B
+All inputs are 1
+OR
+Arrow-shape
+>
+Y=A+B
+Any input is 1
+NOT
+Triangle
+>
+Y=A'
+Input is 0
+NAND_
+AND + bubble
+|
+Y =(A:B)'
+Any input is 0
+NOR
+OR + bubble
+Y =(A+B)'
+All inputs are 0
+XOR = OR+~+ line
+Y=A@Q@B
+Inputs are different
+XNOR
+XOR + bubble
+tj
+Ly
+>
+>
+>
+Y=(A @B)'
+Inputs are same
+Unit 1: Computer
+aw
+SS
+1.1.8 Logic Expressions:
+A logic expression (Boolean expression) is a mathematical statement that uses
+binary (Boolean) variables and logical (Boolean) operators.
+i)
+Components of Logic Expressions:
+1.
+Variables: A, B, C, X, Y (can be 0 or lonly)
+2.
+Operators: AND (-), OR (+), NOT (’‘)
+3.
+Parentheses: Control order of operations
+ii)
+Order of Operations (Precedence):
+Parentheses — First (highest)
+NOT - Second
+AND
+- Third
+OR -— Last (lowest)
+PYeNE
+Example 1: Evaluate Y = A'+ B for A= 1, B=0
+Step 1: Calculate A'= 1'=0
+Step 2: Calculate Y=0+0=0
+Answer: Y = 0
+Example 2: Evaluate Y = (A + B)- C for A=1, B=0, C=1
+Step 1: Calculate (A + B)=1+0=1
+Step 2: Calculate Y=1-1=1
+Answer: Y = 1
+Example 3: Evaluate Y=A->B+C' for A=1,B=1,C=1
+Step 1: Calculate C'= 1'=0
+Step 2: Calculate A-B=1-1=1
+Step 3: Calculate Y=1+0=1
+Answer: Y = 1
+1.1.9 Creating Truth Tables from Logic Expressions:
+Steps:
+Identify all variables
+Calculate number of rows (2°, where n is the number of variables)
+List all input combinations
+Calculate intermediate values for the operation with highest precedence using
+truth table of that operation, do the same for the operation with lower precedence.
+PwNP
+Example: Create truth table for Y=A-B+C
+Variables: A, B, C (3 variables)
+Rows: 2? = 8 rows
+Unit 1: Computer Systems
+A
+B
+C
+A:B
+Y=A:°B+C
+0
+0
+0
+0
+0
+0
+0
+1
+0
+1
+0
+1
+0
+0
+0
+0
+1
+1
+0
+1
+1
+0
+0
+0
+0
+1
+0
+1
+0
+1
+1
+1
+0
+1
+1
+1
+1
+1
+1
+1
+1.1.10 Creating logical expression from Truth Table:
+Minterm and Maxterms are canonical forms used in Boolean algebra to
+represent logical functions.
+Minterm
+is a product (AND) of all variables (true or complemented) that
+output a 1, used in sum of products (SOP). A variable is complemented (A‘) if its value
+is 0 and uncomplemented (A) if its value is 1.
+Maxterm is a sum (OR) of all variables (true or complemented) that output a
+0, used in product of sums (POS). A variable is complemented (A‘) if its value is 1 and
+uncomplemented (A) if its value is 0.
+Example: for two variables, A and B
+0
+0
+A'B'
+A+B
+0
+1
+A'B
+A+B'
+1
+0
+AB'
+A'tB
+1
+1
+AB
+A't+B'
+From the given truth table identify all the minterms and sum them up to form a
+Boolean expression.
+y
+¢
+7, LM | Ls
+Sy at
+Example:
+A
+0
+0
+1
+1
+the truth table above.
+Unit 1: Computer
+aw
+SS
+B
+0
+1
+0
+1
+there are two minterms A‘'B and AB.
+Therefore output in SOP is Y = A'B + AB or
+there are two maxterms A+B and A'+B
+Maxterm
+Minterm
+Maxterm
+Minterm
+Therefore output in POS is Y= (A +B): (A'+B)
+8 Woe
+1.11
+Logic Diagrams:
+A logic diagram shows how logic gates are connected to create a circuit.
+Steps to Draw Logic Diagrams:
+1.
+Identify the expression
+Onward we will use SOP for creating and representing the logical
+expressions.
+2.
+Break it into parts based on the precedence of the operation.
+3.
+Draw gate for each part, operation with the highest precedence will be drawn
+first and with lower will be drawn after.
+4.
+Connect gates with lines
+Example: Draw logic diagram for Y=A:B+C
+AND
+operation has higher precedence, so we will draw AND gate with inputs
+A and B first, than OR gate with one input from AND gate, drawn previously, and other
+input from C.
+A=
+B
+C
+A? B
+Y=A:B+C
+Figure 1.12: Logic Diagram for Y= A-B+C
+CY
+az
+2.)
+ET
+u|
+BR
+Unit
+1: Computer
+Systems
+Example: Draw logic diagram for Y = (A + B): C'
+Parenthesis have higher precedence in this case, so we will draw OR gate with
+inputs A and B first, than AND gate with one input from OR gate, drawn previously,
+and other input from C.
+A
+A+B
+B
+Y=(A+B):C’
+c—p—
+Figure 1.13: Logic Diagram for Y = (A + B)
+: C'
+1.1.13 Introduction to Karnaugh Maps (K-Maps):
+A Karnaugh map (K-map)
+is
+a graphical tool used to simplify Boolean
+expressions. It was invented by Maurice Karnaugh in 1953. K-maps help us reduce the
+number of logic gates needed in a circuit, making circuits simpler, cheaper, and faster.
+Why Use K-Maps?
+When we have a Boolean expression with many terms, simplifying
+it using
+Boolean algebra can be difficult and time-consuming. K-maps provide a visual and
+systematic method to find the simplest form.
+Benefits of K-Maps:
+e
+Easier than algebraic simplification
+Visual method - you can see patterns
+Always gives the simplest result
+Reduces errors
+Works well for 2, 3, and 4 variables
+Structure of K-Maps:
+A K-map is a grid where:
+e
+Each cell represents one row of the
+B=0
+Bal
+truth table
+A=0
+0
+1
+e
+Adjacent cells differ by only one
+variable (Gray code order)
+A=1
+1
+1
+e
+Adjacent cells, including wrapping
+around with a 1 can be grouped to simplify expressions. In general, we can make
+groups of 2" cells (1, 2, 4, 8...), where n > 0. Make as large as possible groups of cells,
+even if the groups are overlapping.
+Important Rule: In K-maps, cells that are next to each other (including wrapping
+around edges) differ by only ONE bit. This is called Gray code arrangement.
+>
+\
+Sf
+. 1: Computer Systems
+Two-Variable K-Map (2 Variables):
+For a Boolean expression with 2 variables (A and B), we need a K-map with 4
+cells (2? = 4), a2 x 2 grid (two rows and two columns).
+Structure:
+B=0
+B=1
+A=0 | Cell 0 (A'B') | Cell 1 (A'B)
+A=
+Cell 2 (AB') | Cell 3 (AB)
+Cell Values:
+e
+Cell 0: A=0,B=0-— represents term A'B' (minterm mo)
+e
+Cell 1: A=0, B= 1- represents term A'B (minterm m:)
+e
+Cell 2: A=1,B=0-— represents term AB' (minterm mz)
+e
+Cell3: A=1,B=1-—
+represents term AB (minterm ms)
+Example 1: Simplify using 2-Variable K-Map:
+Given Truth Table:
+A
+B
+Y
+0
+0
+0
+0
+1
+1
+1
+0
+1
+1
+1
+1
+Boolean Expression: Y = A'B + AB'+ AB
+Step 1: Draw the K-map and fill in values from truth table
+B=0
+B=1
+A=0
+0
+1
+A=
+1
+1
+Unit 1: Computer
+aw
+SS
+Step 2: Group the 1s
+We can make two groups:
+B=0
+B=l
+e Group
+1: Bottom row (A =
+1, B=0) and (A=
+1, B=1),
+A=0
+0
+1
+from this group, we have
+A
+B'
+A
+B
+A
+x
+B and B' will be canceled out — This gives us A
+e
+Group 2: Right column (A = 0, B = 1) and (A = 1, B = 1) from this group, we have
+A’
+B
+A
+B
+x
+B
+e
+Aand A' will be canceled out — This gives us B
+A=1
+1
+1
+Step 3: Write the simplified expression
+Y=A+B
+Verification: This matches the OR gate truth table!
+Three-Variable K-Map (3 Variables):
+For 3 variables (A, B, C), we need a K-map with 8 cells (2? = 8), this can be a
+2 x 4 grid (two rows and four columns) or a 4 x 2 grid (four rows and two columns).
+Structure:
+BC=00
+BC=01
+BC=11
+BC=10
+A=0
+Cell 0
+Cell 1
+Cell 3
+Cell 2
+(A'B'C’) | (A'B’C) | (A’BC) | (A’BC’)
+A-1
+Cell 4
+Cell 5
+Cell 7
+Cell 6
+(AB'C’) | (AB’C) | (ABC) | (ABC’)
+Or
+C=0
+C=1
+AB=00 | Cell 0 (A'B'C’) | Cell 1 (A'B’C)
+AB=01 | Cell2(A’BC) | Cell 3 (A’BC’)
+Ab=11 | Cell6 (AB'C’) | Cell 7 (AB’C)
+AB=10 | Cell4 (ABC) | Cell 5 (ABC’)
+=@
+<erraq Notice the column order is 00, 01, 11, 10 (NOT 00, 01, 10, 11). This
+iMPO
+is Gray code - only one bit changes between adjacent columns.
+>
+\
+aX aan V
+Unit 1: Computer Systems
+Gray Code Sequence:
+e
+00-01 (C changes)
+e
+01 -—
+11 (B changes)
+e
+11-+10(C changes)
+This ensures adjacent cells differ by only one variable.
+Example 2: Simplify using 3-Variable K-Map
+Simplify: Y = A'B'C + A'BC + AB'C + ABC
+Step 1: Identify the minterms
+e
+A'B'C=001 =m
+e
+A'BC =011=ms
+e
+ABC =101=ms
+e
+ABC =111=m
+Step 2: Fill the K-map with 1s in those positions
+BC=00
+BC=01
+BC=11
+BC=10
+0
+0
+1
+1
+0
+1
+0
+1
+1
+0
+A
+A
+Step 3: Group the 1s
+BC=00
+BC=01
+BC=11
+BC=10
+A=0
+0
+1
+1
+0
+A=1
+0
+1
+1
+0
+Looking at the K-map, we see that cells mi, ms, ms, m7 form a square group of
+4 in columns BC = 01 and BC = 11.
+What do these cells have in common? C = 1 in all of them!
+Step 4: Write simplified expression
+Y=C
+Original expression: A'B'C + A'BC + AB'C + ABC (4 terms,
+12 literals)
+Simplified expression: C (1 term, 1 literal)
+This is a huge simplification!
+Example 3: Simplify using 3-Variable K-Map
+Simplify: Y = A'B'C' + A'BC'+ A'B'C + A'BC + AB'C + ABC
+Step 1: Identify the minterms
+e
+= A'B'IC'= 000 = mo
+e
+A'B'IC=001 =m
+e
+A'BC'=010=m
+d
+¢
+Phys),
+Unit 1: Computer
+aw
+SS
+e
+A'BC =011=ms
+e
+AB'C =101=ms
+e
+ABC =1ll=m
+Step 2: Fill the K-map with 1s in those positions
+BC=00
+BC=01
+BC=11
+BC=10
+A=0
+1
+1
+1
+1
+A=1
+0
+1
+1
+0
+Step 3: Group the 1s
+BC=00
+BC=01
+BC=11
+BC=10
+A=0
+1
+1
+1
+1
+A=1
+0
+1
+1
+0
+Looking at the K-map, we see that cells mi, ms, ms, m7 form a square group of
+4 in columns BC = 01 and BC =
+1 1also cells mo, m1, m2, m3 form a Horizontal group
+of 4 inrow A=0.
+What do the former group have in common? C = 1 in all of them!
+What do the latter group have in common? A = 0 in all of them!
+Step 4: Write simplified expression
+Y=A+C
+Original expression: A'B'C'+ A'BC' + A'B'C + A'BC + AB'C + ABC (6 terms, 18
+literals)
+Simplified expression: A + C (2 term, 2 literal)
+Another huge simplification!
+Simulation tool for Logic Gates (LogiSim):
+.
+.
+Bani
+1.1.14 Downloading and Installing
+Re endure ceca aren
+LogiSim Evolution:
+simulating logic circuits
+1.
+Downloading the Software:
+?
+m4
+LogiSim Evolution is available free of
+—p
+°
+charge from its official GitHub repository.
+>».
+Figure 1.14 shows the GitHub releases page
+a
+where the software can be downloaded.
+.
+ics
+——n
+. 1: Computer Systems
+I
+https: //github.comslogisim-evolution/logisim-evolution/releases
+logisim-evolution / logisim-evolution
+Digital logic design tool and simulator
+Releases
+Latest release:
+v3.9.0
+(Logisim-Evolution)
+Released: February 2025
+|
+Requires Java 21 or newer
+Oo Assets (Download Files):
+[e Click here to download for Windows
+|
+0
+Windows Installer (64-bit) — RECOMMENDED
+28.4MB
+9 Plattorm-independent JAR file [requires Java)
+12.1MB
+Installation Steps (Windows):
+@ Click the Windows Installer link above to download the .msi file.
+@ Also download and install Java 21 from https://adoptium.net if not already installed.
+® Double-click the downloaded .msi file and follow the installation wizard.
+@ Launch Logisim Evolution from the Start menu or desktop shortcut.
+& System Requirements
+* Operating System: Windows 10 / 11 (64-bit)
+* Java Runtime: Java ?1 or newer (download free from adoptium.net)
+*RAM:512 MB minimum
+|
+DiskSpace: 100 MB
+|
+Screen: 1024*768
+or higher
+Figure 1.14: LogiSim Evolution Download Page (GitHub Releases)
+Follow these steps to download LogiSim Evolution for Windows:
+e
+Open a
+web browser and go to: https://github.com/logisim-evolution/logisim-
+evolution/releases
+e
+Click on the latest release (for example, v3.9.0 or newer).
+e
+Under 'Assets', click the
+file named logisim-evolution-X.X.X-win-x86_64-
+installer.msi to download the Windows installer.
+e
+IfJava 21 is not installed, also download and install it from https://adoptium.net
+before proceeding.
+The .msi installer for Windows includes everything needed to run
+¢
+LogiSim Evolution on a 64-bit Windows system. If you are unsure
+Note:
+whether Java is installed, you can check by opening the Windows
+Command Prompt and typing: java —version.
+2.
+Installing LogiSim Evolution on Windows:
+Once the installer file has been downloaded, follow these steps to install the
+software:
+e
+Locate the downloaded .msi file in your Downloads folder.
+e
+Double-click the file to launch the installation wizard.
+e
+When Windows asks 'Do you want to allow this app to make changes to your
+device?', click Yes.
+b,
+Sk sy
+e
+az
+2.)
+ET
+u|
+BR
+Unit
+1: Computer
+Systems
+e
+Follow the on-screen instructions: accept the license agreement, choose an
+installation folder (the default is recommended), and click Install.
+e
+When the installation is complete, click Finish. A shortcut is added to the
+Windows Start menu and optionally to the desktop.
+e
+To launch LogiSim Evolution, click the shortcut in the Start menu or double-
+click the desktop icon.
+3.
+The LogiSim Evolution Interface:
+When LogiSim Evolution starts, it opens with a blank project ready for circuit
+design. The interface is divided into four main areas. Figure 1.15 shows the complete
+interface and Figure 1.16 shows the interface with each area labelled.
+aa ee em Rata
+File
+Edit
+Project
+Simulate
+Window
+Help
+Jaffee
+ae)
+| arlnelin|
+onl [Pht
+Ga
+CSE
+_
+Explorer Panel
+O My Project
+main
+0 Gates
+AND Gate
+‘OR Gate
+NOT Gate
+NOR Gate
+XOR Gate
+XNOR Gate
+O Wiring
+Pin
+Clock
+gue
+LED
+7-Segment
+Attribute Table
+Gate Size
+Medium
+# Inputs
+2
+Facing
+East
+Ready
+| Zoom:100%
+|
+Circuit: main
+| Mo simulation errors
+Figure 1.15: LogiSim Evolution Main Interface
+C)
+LA A
+Unit 1: Computer Systems
+Om a eC eee Te
+1 et Lae
+oe
+Simulate
+Window
+Help
+"
+DO]
+OR | NOT]
+NAND)
+NOR|
+XOR | XNOR
+|
+A
+O My Project
+Oo
+OR Gate
+NOT Gate
+NANO Gate
+NOR Gate
+SOR Gate
+XNOR Gate
+O Wiring
+Pin
+ov
+LED
+‘Attribute Table
+-
+Gate Size
+Medium
+# Inputs
+2
+Facing
+East
+Label
+sce
+ERG) Status Bar SO
+Figure 1.16: LogiSim Evolution Interface
+Annotated Areas
+(a)
+The Menu Bar:
+The Menu Bar at the top of the window provides access to all program functions
+organized into six menus:
+Table 1.6: Menu Bar
+Menus and Their Main Functions
+MY Can
+Main Functions
+File
+New project, Open, Save, Save As, Print, Export image, Exit
+Edit
+Undo, Redo, Cut, Copy, Paste, Select All, Duplicate
+.
+Add new circuit, Load library, Edit circuit appearance, Project
+Project
+options
+.
+Start/stop
+simulation,
+Reset,
+Step
+clock,
+Simulation speed
+Simulate
+.
+settings
+Window
+Zoom in/out, toggle panels, switch between open projects
+Help
+Online documentation, About LogiSim Evolution
+tj
+Ly
+Unit 1: Computer
+aw
+SS
+(b)
+The Toolbar:
+The Toolbar provides one-click access to the most frequently used tools and
+gates. Table 1.7 describes each tool in the default toolbar.
+Table 1.7: Toolbar Tools and Their Functions
+Tool
+Coy
+CQ baw
+rice
+Edit / Select
+N
+Art
+.
+Select,
+move,
+and
+edit
+components
+Tool
+ow eunse
+already on the canvas
+Wiring
+Tool
+Line withtwo
+| Draw wires between component pins
+iyi
+000
+~~
+dots
+(horizontal or vertical only)
+Pointing finger
+Toggle input values during simulation;
+Poke Tool
+»
+.
+.
+(w)
+inspect wire states
+Text Tool
+A
+Letter A
+Add text labels and annotations to the
+circuit
+Input Pin
+(0)
+Square with aQ
+Adda logic input (switch) to the circuit
+inside
+Output Pin
+©
+Circle with aQ | Adda
+logic output (LED) to the circuit
+inside
+AND Gate
+D
+D-shaped symbol
+Place a 2-input AND gate on the canvas
+Arrow-sh
+Pl
+2-input
+OR
+gat
+th
+OR Gate
+>
+ow-shaped
+ace a
+2-input
+OR
+gate on
+the canvas
+symbol
+Triangle with
+Place
+a NOT
+(inverter) gate on the
+T Gat
+NOT
+Gate
+be
+bubble
+canvas
+Pl
+NAND gate
+(NOT AND) on th
+NAND Gate
+[>
+AND + bubble
+="
+gate (N
+) on
+the
+canvas
+NOR Gate
+>
+OR + bubble
+Place a NOR gate (NOT OR) on the
+canvas
+Pl
+Exclusi
+R
+XOR
+XOR/
+Ie
+OR* extra line /
+exclusive NOR wate OXNOR) “om the
+XNOR Gate
+XOR + bubble
+.
+’
+canvas
+(c)
+The Explorer Panel:
+The Explorer Panel on the left side of the window contains two sections. The
+upper section shows your project structure, including all circuits in the project. The
+lower section shows component libraries (Gates, Wiring, I/O, Memory, etc.) from
+which you can select and place components onto the canvas. Clicking any component
+in the Explorer Panel selects it for placement on the canvas.
+AX AAS N
+Unit 1: Computer Systems
+(d)
+The Attribute Table:
+The Attribute Table appears below the Explorer Panel. When you click on a
+component (either in the Explorer Panel or on the canvas), its properties appear in the
+Attribute Table. For example, selecting an AND gate shows attributes such as Gate
+Size, Number of Inputs, and Facing (direction). You can click on any attribute value to
+change it.
+(e)
+The Drawing Canvas:
+The Drawing Canvas is the large white area on the right side of the window.
+This is where you design your circuit by placing components and connecting them with
+wires. The canvas has a grey dot grid to help you align components neatly. You can
+zoom in and out using Ctrl+= and Ctrl+- or using the mouse scroll wheel. The canvas
+background is white by default; the grid dots are light grey and do not appear in printed
+or exported versions of the circuit.
+4.
+Understanding Wire Colors in Simulation:
+During simulation, LogiSim Evolution uses wire colors to show the logical state
+of each wire. Table 1.8 explains what each color means.
+Table 1.8: Wire Color Meanings in LogiSim Evolution
+Wire Color
+Meaning
+What to Do
+Bright green
+Logie
+1
+(HIGH)
+the
+wire Llts
+is correct. The signal is
+carries a 1 signal
+active.
+Dark green
+Logic 0 (LOW) the wire carries
+This is correct. The signal is
+a 0 signal
+inactive.
+Unknown value
+, the wire has
+Check
+that
+all
+imputs
+are
+Blue
+.
+no defined signal
+connected to a pin.
+Gre
+Unconnected
+, the wire is not
+Connect both ends of the wire
+y
+connected to anything
+to component pins.
+Error, short circuit or multiple
+Check
+for
+wires connectin
+Orange/Red
+“
+a
+“
+2
+outputs connected
+two outputs together.
+Sm)
+Before testing a circuit, make sure no wires are blue or grey. Blue
+TU ALULY means an input has not been connected to a Pin, and grey means a wire
+is floating and not connected to any component at one or both ends.

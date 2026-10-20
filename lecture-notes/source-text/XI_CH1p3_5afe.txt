@@ -1,0 +1,1574 @@
+a) x
+|
+Unit 1: Computer Systems
+application
+for
+students,
+teachers,
+and parents.
+Unlike
+the
+library system,
+the
+requirements for the mobile application were not well defined at the outset. Different
+stakeholders requested different features, and the school expected requirements to
+evolve as the project progressed.
+Because
+of these
+characteristics,
+unclear
+initial
+requirements,
+multiple
+stakeholders with changing priorities, and a desire to see working software at frequent
+intervals, the project team selected the Agile model, specifically using the Scrum
+framework, as the most appropriate development approach.
+Table 1.25: Project Overview
+Parameter
+ETI
+Project Name
+Al-Noor Student Mobile Application
+Client
+Al-Noor
+High
+School
+(Principal,
+Teachers,
+°
+Students, Parents)
+Development Team
+3 Developers, 1 UI Designer, 1 Tester (Scrum team)
+Sprint Duration
+2 weeks per sprint
+Total Sprints
+5 sprints (10 weeks total)
+SDLC Model
+Agile Model (Scrum Framework)
+Platform
+Android and iOS (cross-platform using Flutter)
+2.
+Why the Agile Model Was Selected:
+The Agile model was selected for the mobile application project for the
+following reasons:
+e
+Unclear requirements: No single stakeholder could define all the required
+features at the start. Requirements emerged gradually through discussions with
+students, teachers, and parents.
+e
+Rapidly changing
+technology:
+Mobile
+application development
+involves
+platforms (Android, iOS) that update frequently. Agile allows the team to adapt
+to these changes between sprints.
+e
+Need for early delivery: The school wanted to see
+a working application
+quickly, not wait six months for a complete product.
+e
+Continuous feedback required: Students and teachers needed to test features and
+provide feedback before further development could proceed.
+e
+Complex
+project:
+Integrating
+notifications,
+library
+booking,
+attendance
+marking, and homework submission in
+a single app
+is significantly more
+complex than the library system.
+>
+\
+aX aan V
+Unit 1: Computer Systems
+3.
+The Agile Scrum Cycle:
+In the Agile Scrum framework, software is developed in short cycles called
+sprints. Each sprint follows the same process: planning, daily standups, development,
+review, and retrospective. At the end of every sprint, working software is delivered to
+the client for feedback. Figure 2.9 illustrates the Scrum cycle.
+Sprint
+(2 Weeks)
+Figure 1.29: Agile Scrum Cycle
+, Sprint-Based Development Process
+4.
+Product Backlog:
+Before the first sprint, the project team conducted a requirements-gathering
+workshop with all stakeholders. Feature requests were written as User Stories, short
+statements written from the perspective of the user, and compiled into
+a Product
+Backlog. Stories were assigned a priority level (High, Medium, or Low) based on
+stakeholder input.
+f
+<¢
+A BP 7
+a) x
+|
+Unit 1: Computer Systems
+Table 1.26: Initial Product Backlog
+Story ID
+User Story
+Priority
+US-01
+| Asa student, I want to see my class timetable on my phone.
+High
+As a student, I want to see my exam results when they are
+US-02
+published.
+High
+US-03
+As a parent, I want to receive a notification when my child is
+Een
+absent.
+US-04
+As a student, I want to search and reserve library books from
+High
+my phone.
+US-05
+| Asateacher, I want to mark student attendance on my phone.
+Medium
+US-06 | Asastudent, I want to submit my homework through the app.
+Medium
+As
+a student,
+I want to view school announcements and
+US-07
+.
+Medium
+upcoming events.
+US-08
+As a parent,
+I want to view my child's fees and payment
+Low
+history.
+US-09
+Asa student, I want a school bus tracking feature.
+Low
+US-10
+As
+a teacher,
+I want to share study notes with students
+Low
+through the app.
+Agile Principle: Unlike the Waterfall model, the Product Backlog is not fixed. After
+each sprint, new stories can be added, existing stories can be reprioritized, and
+completed stories are removed. The backlog evolves as the project progresses.
+5.
+The Five Sprints:
+Sprint 1, Class Timetable and Application Setup (Weeks 1-2):
+Sprint Goal: Build the basic application structure and deliver the Class
+Timetable feature (US-01).
+Work completed during Sprint 1:
+e
+Days
+1-2:
+The team
+set
+up
+the development environment,
+created the
+application project structure, and built the login screen.
+e
+Days 3-8: Developer
+1 built the timetable display screen. Developer 2 set up
+the SQLite database structure. Developer 3 worked on the login authentication
+logic.
+e
+Days 9-10: The tester checked the timetable feature. The designer finalized the
+application color scheme and typography.
+»
+Yy
+aX aan V
+ba
+‘|
+Sf
+. 1: Computer Systems
+a
+=
+“ie
+——<
+NN
+Sprint Review feedback (received from the principal and five students):
+"The timetable is clear and easy to read. However, could you also show the
+subject teacher's name next to each lesson?"
+Action taken: A new sub-task was added to US-01 for inclusion in Sprint 2. No other
+changes were made to the sprint plan.
+Table 1.27: Sprint 1 Summary
+Item
+Jee
+User Stories Completed
+US-01 (Class Timetable)
+Features Delivered
+Login screen, Class timetable for all year groups
+Bugs Found
+None
+Key Feedback
+Add teacher names to timetable
+, added to Sprint 2 plan
+App Installed On
+10 student phones for real-world testing during Sprint 2
+Sprint 2, Exam Results and Timetable Improvement (Weeks 3-4):
+Sprint Goal: Deliver the Exam Results feature (US-02) and add teacher names
+to the timetable from Sprint 1 feedback.
+Notable events during Sprint 2:
+e
+Daily Standup meetings were
+held
+every morning.
+Each team member
+answered three questions: What did I complete yesterday? What will I work on
+today? Is anything blocking my progress?
+e
+Developer 1 built the Exam Results screen. Developer 2 updated the timetable
+to include teacher names and room numbers.
+e
+The tester found one bug: the results screen crashed when a student had no
+recorded result for a subject (caused by an unhandled null value). This was fixed
+on the same day.
+Sprint Review feedback:
+is absent?"
+"The results screen
+is exactly what we needed. However, parents are now
+asking
+, can they see the full attendance record, not just notifications when their child
+Action taken: A new User Story was added to the Product Backlog, 'As a parent, I
+want to see my child's full weekly attendance record.' This story was scheduled for
+Sprint 3.
+d
+<
+MN)
+lf
+Unit 1: Computer
+aw
+SS
+Sprint 3, Absence Notifications and Teacher Attendance Marking
+(Weeks 5-6):
+Sprint Goal:
+Deliver parent absence
+notifications (US-03)
+and teacher
+attendance marking (US-05).
+This sprint introduced the most technically challenging feature, integrating the
+application with the school's existing SMS gateway service.
+Key events:
+e
+The
+sprint
+planning
+meeting
+estimated
+that US-03
+would
+require
+six
+development days and US-05 would require three development days.
+e
+During development, the school's SMS provider experienced a two-day outage.
+The team adapted by temporarily switching to email notifications, allowing
+development and testing to continue without delay.
+e
+Developer 3 built the connection between the app and the school's existing
+student records database, enabling real attendance data to trigger notifications
+automatically.
+e
+Sprint Review results:
+e
+95% of test notifications were received by parents within two minutes of the
+teacher marking a student absent.
+e
+Teachers reported that marking attendance on the mobile app took less than one
+minute per class, compared to approximately ten minutes using the previous
+paper register.
+Sprint 4, Library Booking and School Announcements (Weeks 7- 8):
+Sprint
+Goal:
+Deliver
+library
+book
+reservation
+(US-04)
+and _ school
+announcements (US-07).
+This sprint connected the mobile application to the Library Management
+System built in Case Study 1.
+Key events:
+e
+The team spent the first two days reviewing the database structure of the
+existing library system to understand how to read and write data without
+disrupting the existing application.
+e
+An API (Application Programming Interface) layer was built to allow the
+mobile app to query the library database without direct access.
+e
+Sprint Review feedback: Students appreciated the book reservation feature but
+requested that the number of available copies be displayed. This small addition
+took 30 minutes and was added immediately.
+Action taken: The available copies counter was added to the app before the sprint
+ended, a good example of Agile's ability to incorporate small changes rapidly.
+>»
+Yy
+CG)
+Sf
+. 1: Computer Systems
+‘aii
+a
+Sprint 5, Homework Submission and Final Testing (Weeks 9-10):
+Sprint Goal: Deliver homework submission (US-06) and complete full system
+testing before the official launch.
+Key events:
+6.
+Students can photograph their completed homework and submit
+it directly
+through the app. Teachers receive a notification and can mark the submission
+as received.
+The full system test, testing all features together for the first time
+, identified
+three bugs: (1) slow loading on older Android phones, (2) images larger than 5
+MB caused an upload error, and (3) the login screen did not render correctly on
+iOS 15.
+All three bugs were fixed within two days.
+The final Sprint Review was attended by the school principal, 20 students, 10
+teachers, and 5 parents. All stakeholders approved the application for official
+launch.
+Sprint Progress:
+Figure 2.10 shows the number of User Stories delivered in each sprint and the
+cumulative total across the project. Of the original 10 User Stories in the Product
+Backlog,
+5
+high-
+and medium-priority
+stories were completed
+in
+the
+10-week
+development period. The remaining 5 lower-priority stories were deferred to a planned
+second release.
+User
+Stories
+10
+10
+[Bj Stories per Sprint
+@ Cumulative Total
+8
+Completed -
+6
+Sprint 1
+Sprint 2
+Sprint 3
+Sprint 4
+Sprint 5
+(Wk 1-2)
+(Wk 3-4)
+(Wk 5-6)
+(Wk 7-8)
+(Wk 9-10)
+Figure 1.30: Al-Noor Student App
+, Sprint Progress Chart
+bj,
+©
+Unit 1: Computer
+aw
+SS
+Table 1.28: All Sprints Summary
+Sprint
+Weeks
+User Stories Delivered
+CAO Eee iggilitesl
+Teacher names added to
+Sprint 1
+1-2
+US-01 (Timetable)
+timetable (from review
+feedback)
+New story added: full
+Sprint2 |
+3-4
+US-02 (Exam Results)
+attendance record for parents
+Sprint 3
+56
+US-03, US-05
+Switched to email during SMS
+P
+(Notifications, Attendance)
+outage; SMS restored
+.
+US-04, US-07 (Library, | Available copies counter added
+Sprint4
+7-8
+Announcements)
+(30-minute change)
+.
+_
+US-06 (Homework
+Full system test; 3 bugs found
+egal
+|
+eat
+Submission)
+and fixed; app launched
+7.
+Project Outcome:
+The Al-Noor Student Mobile Application was officially launched at the school
+assembly at the end of Week 10.
+e
+The application was downloaded by 1,100 students,
+80 teachers, and 900
+parents within the first week of launch.
+e
+Teacher attendance marking reduced administrative time from approximately
+10 minutes to under 1 minute per class.
+e
+The parent notification system resulted in a 45% reduction in unexplained
+absences within the first month.
+e
+Five of the ten original User Stories were delivered. The remaining five stories
+were planned for a second release six months later.
+e
+The project received a regional award for 'Best School Technology Initiative’.
+Key Observation: The Agile model's greatest advantage in this project was its ability
+to incorporate feedback and changing requirements between sprints
+, for example,
+adding teacher names to the timetable, creating the full attendance record feature, and
+adding the book availability counter , without disrupting the overall project plan. ai
+aX AVN
+Unit 1: Computer Systems
+1.2.7. Comparative Analysis: Waterfall vs Agile
+1.
+Side-by-Side Comparison:
+The two case studies illustrate how the same school chose different SDLC
+models for two different projects, based on the specific characteristics of each project.
+Table 2.19 compares the two models across the key dimensions observed in this study.
+Table 1.29: Waterfall vs Agile
+, Comparison Based on Case Studies
+DTIC
+Waterfall (Case Study 1)
+Agile (Case Study 2)
+Requirements
+Fully defined and fixed
+before coding began
+Partially defined; evolved
+throughout the project
+Client involvement
+At the start (SRS sign-off)
+and at the end (delivery)
+After every sprint
+,
+continuous throughout the
+project
+First working
+product
+After 6 months (full system
+at deployment)
+After 2 weeks (basic login +
+timetable after Sprint 1)
+Response to change
+Difficult
+, changes require
+going back to Phase 1
+Easy
+, changes are
+incorporated in the next
+sprint
+Documentation
+Heavy SRS, Design
+Document, Test Report
+required
+Light
+, emphasis on
+working software over
+documentation
+Testing
+One dedicated phase (April)
+after all coding complete
+Continuous
+, testing
+performed within every
+sprint
+Team size
+Small (4 members)
+, easier
+to manage linearly
+Larger (5 members) ,
+Scrum roles and ceremonies
+required
+Risk
+Higher
+, bugs found late are
+expensive to fix
+Lower
+, problems identified
+and fixed every sprint
+Final result
+Complete system delivered
+at end of 6 months
+Partial system delivered
+after 10 weeks; more to
+follow
+Suitable when
+Requirements are fixed and
+Requirements are unclear or
+expected to change
+fully understood at the start
+é
+¢
+MN)
+lf
+Unit 1: Computer
+aw
+SS
+2.
+Comparative Analysis Chart:
+Figure 2.11 compares the two models across six criteria on a scale of 1 to 5. A
+higher score indicates better performance on that criterion for the given model. Note
+that 'Documentation'
+is scored inversely,
+a lower score means less documentation
+required.
+OB waterfall Model
+BB Agile Model
+5
+5
+5
+5
+Score
+(out of 5)
+Flexibility
+Customer
+Documentation
+Delivery
+Risk
+Suitability
+Involvement
+Speed
+Management
+for this project
+Figure 1.31: Waterfall vs Agile
+, Comparison by Criteria (Score out of 5)
+1.3.
+Communication Models:
+1.3.1 What is a Communication Model?
+A communication model is a set of rules and layers that explains how data
+(information) travels from one device to another through a network. Think of it like the
+rules of a postal system; both the sender and the receiver must follow the same steps
+Unit 1: Computer Systems
+Why do we need communication models?
+e
+They allow computers from different companies and countries to talk to each
+other.
+e
+They make it easier to find and fix problems in a network.
+e
+They divide a complex task into smaller, manageable steps called layers.
+e
+They allow engineers to design new technologies without breaking existing
+ones.
+Analogy: Sending data over a network is like sending a letter by post. You write the
+message, put it in an envelope, write the address, hand it to the post office, which sorts
+it and delivers it. Each step is like a layer in a communication model.
+The two most important communication models are:
+e
+OSI Model (Open Systems Interconnection), a 7-layer reference model used
+mainly for learning and design.
+e
+TCP/IP Model (Transmission Control Protocol / Internet Protocol), a 4-layer
+model actually used on the Internet today.
+1.3.2 The OSI Model:
+The Open Systems Interconnection (OSI) Model
+1. Physical
+DND, WWW/HTTP, P2P,
+EMAIL/POP, SMTP, Telnet, FTP
+2. Data Link
+Recognizing data: HTML, DOC,
+JPEG, Mp3, AVI, Sockets
+3. Network
+Session establishment in TCP, SIP,
+RTP, ROC-Named pipes
+4. Transport
+Software
+TCP, UDP, SCTP, SSL, TLS
+Layer
+5. Session
+IP, ARP, Ipsec, ICMP, IGMP, OSPF
+= —* Heart of OSI
+6. Presentation
+Ethernet, 802.11, MAC/LLC, VLAN,
+ATM, HDP, Fiber Channel Frame Relay,
+HDLC, PPP, 0.921, Token Ring
+——
+7. Application
+RS-232, Rj45, V.34, 100 BASE-TX,
+SDH, DSL, 802.11
+—
+Oa
+Hardware
+Layer
+Unit 1: Computer
+aw
+SS
+The OSI model was developed in 1984 by the International Organization for
+Standardization (ISO). OSI model provides a universal framework that describes how
+different computer systems can communicate with each other. The OSI model divides
+network communication into seven separate layers. Each layer has a specific job, and
+each layer only communicates with the layers directly above and below it.
+Memory Tip, Layers 1 to 7 (bottom to top):
+Mnemonic: "Please Do Not Throw Sausage Pizza Away"
+, P=Physical, D=Data Link,
+N=Network, T=Transport, S=Session, P=Presentation, A=Application
+Table 1.30: OSI Model, Seven Layers Overview
+Key Protocols /
+Main Job (Simple
+sis Ne
+Technologies
+Description)
+7
+Application
+HTTP, HTTPS, FTP,
+Provides network services to
+PP
+SMTP, DNS
+user applications
+.
+SSL/TLS, JPEG, MP3,
+Translates, encrypts, and
+6
+Presentation
+ASCII
+compresses data
+5
+Session
+NetBIOS, RPC
+Cis, maintains, gee © eee
+communication sessions
+Reliable delivery, error
+4
+Transport
+TCP, UDP
+checking, port numbers
+3
+Network
+IP,ICMP,RIP,ospr
+- sical addressing (IP) and
+routing between networks
+,
+Ethernet, Wi-Fi
+Physical addressing (MAC)
+2
+Data Link
+(802.11), MAC
+and error detection in frames
+1
+Physical
+Cables, Hubs,
+Transmits raw bits over the
+y
+Repeaters, Radio
+physical medium
+1.3.3 The Seven Layers of the OSI Model in Detail:
+In the following sections, each layer is explained in detail with its role, a real-
+life analogy, the protocols it uses, and its key functions.
+1.
+Layer 7, Application Layer:
+The Application Layer is the topmost layer and the one closest to the end user.
+It provides an interface between the user's application programs (such as a web browser
+or email client) and the network. This layer does not refer to the application program
+itself, but to the networking services that the application uses to communicate.
+Real-life analogy: Ordering food at a restaurant, the menu (application layer) is what
+you interact with directly, even though the kitchen (lower layers) does the actual work.
+@)
+A
+aX aan
+Sf
+. 1: Computer Systems
+Key functions:
+e
+Provides network services directly to user applications (web browsing, email,
+file transfer).
+e
+Identifies
+communication
+partners
+and
+ensures
+sufficient
+resources
+are
+available.
+e
+Supports protocols such as HTTP (web), FTP (file transfer), SMTP (email), and
+DNS (name resolution).
+Table 1.31: Protocols at the Application Layer (Layer 7)
+Protocol
+Full Name
+HTTP
+HyperText Transfer
+Protocol
+HTTPS
+HTTP Secure
+FTP
+File Transfer Protocol
+SMTP
+Simple Mail Transfer
+Protocol
+POP3
+Post Office Protocol
+version 3
+IMAP
+Internet Message Access
+Protocol
+DNS
+Domain Name System
+Telnet
+Telnet
+SNMP
+Simple Network
+Management Protocol
+Purpose
+Transfers web pages from server to
+browser (unencrypted)
+Same as HTTP but encrypted using TLS
+Transfers files between computers and
+servers
+Sends outgoing email to a mail server
+Retrieves incoming email from a mail
+server
+Manages and retrieves email on the
+server
+Translates domain names (e.g.
+google.com) into IP addresses
+Provides remote login access to another
+computer
+Monitors and manages network devices
+2.
+Layer 6, Presentation Layer:
+The Presentation Layer acts as a translator for the network. It ensures that data
+sent by one computer can be understood by another, even if they use different data
+formats.
+This layer
+is also responsible
+for encryption (making data secret) and
+compression (making data smaller for faster transmission).
+Real-life analogy: A translator at an international meeting who converts one language
+into another so everyone understands.
+d
+«
+yy)
+Unit 1: Computer
+aw
+SS
+Key functions:
+Translation: Converts data between different formats (e.g. EBCDIC to ASCII,
+or Unicode to UTF-8).
+Encryption: Scrambles data before transmission
+so
+it cannot be read by
+unauthorised parties (e.g. TLS/SSL).
+Decryption: Unscrambles encrypted data received from the network.
+Compression: Reduces the size of data to speed up transmission (e.g. ZIP,
+JPEG, MP3).
+Decompression: Restores compressed data to its original size at the receiver.
+Protocols and standards at Layer 6:
+3.
+SSL/TLS (used for HTTPS secure websites)
+JPEG, PNG (image formats)
+MP3, MPEG (audio and video compression)
+ASCII, Unicode (character encoding standards)
+Layer 5, Session Layer:
+The Session Layer manages communication sessions between two computers.
+A session is a connection that is established, maintained, and eventually terminated
+between two devices. This layer ensures that a conversation, once started, can be
+continued, paused, and resumed in an orderly way.
+Real-life analogy: A telephone call, you say "Hello" to start, speak until you are done,
+and say "Goodbye" to end. The session layer handles this opening, maintenance, and
+closing.
+Key functions:
+Session Establishment: Sets up a session between two communicating devices.
+Session Maintenance: Keeps the session active and coordinates data exchange.
+Session Termination: Closes the session properly when communication ends.
+Checkpointing: Saves the progress of a data transfer so
+it can resume
+if
+interrupted, avoiding the need to restart from the beginning.
+Dialog Control: Manages whether communication is half-duplex (one direction
+at a time) or full-duplex (both directions simultaneously).
+Protocols at Layer 5:
+NetBIOS (Network Basic Input/Output System)
+RPC (Remote Procedure Call)
+PPTP (Point-to-Point Tunneling Protocol)
+‘| T
+a
+Unit 1: Computer Systems
+|
+4.
+Layer 4, Transport Layer:
+The Transport Layer
+is responsible for reliable end-to-end communication
+between two devices on a network. It breaks large messages into smaller pieces called
+segments, ensures they all arrive correctly, and reassembles them at the destination. It
+also uses port numbers to identify which application should receive the data.
+Real-life analogy: A courier company that guarantees your parcel arrives safely and
+completely, and tracks each package so nothing is lost.
+Key functions:
+e
+Segmentation: Divides large data into smaller segments for transmission.
+e
+Reassembly: Puts segments back together in the correct order at the destination.
+e
+Error
+Control:
+Detects
+missing
+or
+damaged
+segments
+and _
+requests
+retransmission.
+e
+Flow Control: Prevents a fast sender from overwhelming a slow receiver.
+e
+Port Numbering: Uses port numbers to route data to the correct application (e.g.
+port 80 for HTTP, port 443 for HTTPS, port 21 for FTP, port 25 for SMTP).
+Table 1.32: TCP vs UDP at the Transport Layer (Layer 4)
+Protocol
+Full Name
+oy ire
+AWTS Om OLY:
+Web browsing, email,
+TCP
+Transmission Control
+Connection-
+Fle
+oan here
+Protocol
+oriented (reliable)
+accuracy matters
+Video streaming, online
+UDP
+User Datagram
+Connectionless
+gaming, live calls
+,
+Protocol
+(fast)
+where speed matters
+more than perfection
+5.
+Layer 3, Network Layer:
+The Network Layer is responsible for logical addressing and routing. Every
+device connected to the Internet has an IP address, which works like a home address.
+The Network Layer decides the best route for data to travel from the source device to
+the destination device, even across many different networks. Routers operate at this
+layer.
+Real-life analogy: A GPS navigation system that finds the best route from your home
+to a destination, even if the route passes through many towns.
+Key functions:
+e
+Logical Addressing: Assigns IP addresses to every device (IPv4: 32-bit, e.g.
+192.168.1.1
+| IPv6: 128-bit, e.g. 2001:db8::1).
+e
+Routing: Determines
+the best path
+for packets
+to travel from source
+to
+destination across multiple networks.
+Unit 1: Computer
+aw
+SS
+e
+Packet Forwarding: Routers read the destination IP address and forward each
+packet toward its destination.
+e
+Fragmentation: Breaks packets
+into smaller pieces when required by the
+network, and reassembles them at the destination.
+e
+Error Reporting: ICMP sends error messages (e.g. the "ping" command uses
+ICMP to test connectivity).
+Table 1.34: Protocols at the Network Layer (Layer 3)
+ance
+UB MET ire
+Purpose
+IPv4
+Internet Protocol version 4 Se most
+Ae
+version
+IPv6
+Internet Protocol version 6
+128-bit addressing; designed to replace
+Internet Control Message
+Error reporting and network diagnostics
+ICMP
+;
+Protocol
+(ping)
+Address Resolution
+Resolves IP addresses to MAC addresses
+ARP
+Protocol
+on a local network
+Routing Information
+Distance-vector routing protocol for small
+RIP
+Protocol
+networks
+OSPF
+Open Shortest Path First
+Link-state routing protocol for larger
+networks
+Routes data between large networks and
+BGP
+Border Gateway Protocol
+ISPs on the Internet
+6.
+Layer 2, Data Link Layer:
+The Data Link Layer is responsible for communication between two directly
+connected devices on the same local network (LAN). It organises data into frames, adds
+physical (MAC) addresses, and detects errors in transmission. Network switches and
+wireless access points operate at this layer. The Data Link Layer has two sub-layers:
+LLC (Logical Link Control) and MAC (Media Access Control).
+Real-life analogy: A local postal worker who delivers letters within the same town
+using house numbers (MAC addresses) as identifiers.
+Key functions:
+e
+Framing: Organises bits from the Physical Layer into structured blocks called
+frames.
+e
+Physical (MAC) Addressing: Adds the sender's and receiver's MAC addresses
+to each frame. A MAC address is a unique hardware address permanently
+assigned to a network interface card (e.g. AA: BB:CC:DD:EE:FF).
+e
+Error Detection: Uses CRC (Cyclic Redundancy Check)
+to detect frames
+damaged during transmission.
+aX wa
+SF
+. 1: Computer Systems
+Flow Control: Prevents a fast sender from overwhelming a slow receiver on the
+local network.
+Media Access Control: Manages which device may use the shared network
+medium at a given time (e.g. CSMA/CD for Ethernet, CSMA/CA for Wi-Fi).
+Protocols and technologies at Layer 2:
+7.
+Ethernet (IEEE 802.3)
+, wired local area network standard
+Wi-Fi (IEEE 802.11)
+, wireless local area network standard
+PPP (Point-to-Point Protocol)
+, used for direct connections
+MAC addresses
+, unique hardware identifiers for network interfaces
+Switches
+, the main hardware device at this layer
+Layer 1, Physical Layer:
+The Physical Layer is the lowest layer of the OSI model. It deals with the actual
+physical transmission of raw bits (Os and 1s) over a physical medium. This includes
+electrical signals over copper cables, light pulses over fibre-optic cables, and radio
+waves for wireless communication. The Physical Layer defines the hardware: cables,
+connectors, voltage levels, frequencies, and data rates.
+Real-life analogy: The roads and highways that vehicles travel on
+, without roads, no
+delivery is possible, regardless of how well the postal system is organised.
+Key functions:
+7, LM | Ls
+Bit Transmission: Sends and receives raw bits (Os and 1s) over the physical
+medium.
+Physical Medium: Defines the type of cable or wireless signal used (copper
+wire, fibre optic, radio waves, infrared).
+Signal Encoding: Converts bits into electrical signals, light pulses, or radio
+waves for transmission.
+Data Rate (Bandwidth): Defines the transmission speed (e.g.
+100 Mbps,
+1
+Gbps).
+Physical Topology: Defines the physical arrangement of devices (star, bus, ring,
+mesh).
+Connectors and Cables: Specifies plug types, cable categories (Cat5, Cat6), and
+connector standards.
+Hardware devices at Layer 1:
+Hubs
+, broadcast data to all connected devices
+Repeaters
+, amplify and retransmit signals over long distances
+Network cables (Cat5e, Cat6, Cat7 Ethernet cables)
+Fibre-optic cables
+, transmit data as pulses of light
+Network Interface Cards (NICs)
+, the hardware that connects a device to the
+network
+<
+i
+!
+Unit 1: Computer
+aw
+SS
+1.3.4 How Data Travels Through the OSI Layers:
+When a user sends data (for example, loading a webpage), the data travels
+downward through all seven layers on the sender's device. At each layer, additional
+information called a header is added. This process is called encapsulation. When the
+data arrives at the destination, it travels upward through all seven layers. At each layer,
+the corresponding header
+is read and removed.
+This reverse process
+is called
+decapsulation.
+Table 1.35: Encapsulation
+, Data Travelling Down the OSI Layers (Sending, top to bottom)
+Eo
+ET Its
+What Happens
+Data Unit
+ED ITs
+1
+Decapsulation, Data Travelling Up the OSI Layers (Receiving, bottom to top):
+At the receiving device, the process is reversed. The Physical Layer receives
+the raw signals and passes them up as bits. Each layer reads and removes its own
+header, until the original data reaches the Application Layer and is presented to the
+user.
+Application
+Presentation
+Session
+Transport
+Network
+Data Link
+Physical
+User creates data (e.g. types URL). Application
+header added.
+Data is encrypted and/or compressed.
+Presentation header added.
+Session is opened. Session header added.
+Data split into segments. TCP/UDP header added
+(includes port numbers).
+IP header added (source and destination IP
+addresses). Segment becomes a packet.
+MAC header and trailer added (MAC addresses,
+error check). Packet becomes a frame.
+Frame converted to electrical signals/light/radio
+waves and sent over the medium.
+Data
+Data
+Data
+Segment
+Packet
+Frame
+Bits
+Key point: The data unit at each layer has a specific name: Data (Layers 7-5), Segment
+(Layer 4), Packet (Layer 3), Frame (Layer 2), Bits (Layer 1).
+LA A
+I
+Le
+Unit 1: Computer Systems
+1.3.5 The TCP/IP Model:
+The TCP/IP model (Transmission
+Control Protocol / Internet Protocol) is the
+\
+practical model that the Internet actually
+uses today. It was developed in the 1970s
+(
+by
+the
+United
+States
+Department
+of
+Defense. While the OSI model
+is used
+mainly as
+a reference for learning and
+design,
+the TCP/IP model
+is
+the
+one
+~
+running on every device connected to the
+(/
+Ethernet, Wireless LAN
+Internet,
+including
+your
+smartphone,
+|
+computer, and smart television.
+Figure 1.33: 4 layers of TCP/IP model and protocols
+HTTPS, TLS DNS
+Key fact: Every device that connects to the Internet uses the TCP/IP model. When you
+visit
+a website, send an email,
+or make
+a video
+call, TCP/IP
+is working
+in the
+background at every step.
+The TCP/IP model has four layers. Each layer corresponds to one or more layers
+of the OSI model:
+Table 1.36: TCP/IP Model Layers and Corresponding OSI Layers
+TCP/IP Layer
+Corresponding OSI Layer(s)
+ae U NG
+Application
+Application (7), Presentation
+HTTP, HTTPS, FTP, SMTP,
+PP
+(6), Session (5)
+DNS, IMAP, POP3
+Transport
+Transport (4)
+TCP, UDP
+IPv4, IPv6, ICMP, ARP,
+Internet
+Network (3)
+OSPF, BGP
+Network
+.
+.
+Ethernet, Wi-Fi (802.11),
+Access
+Data Link (2), Physical (1)
+Cables, MAC
+1.
+Application Layer (TCP/IP):
+The TCP/IP Application Layer combines the functions of the OSI Application,
+Presentation, and Session layers into a single layer. It provides all the services that user-
+facing applications need to communicate over the network, including data formatting,
+encryption, session management, and the actual application protocols (HTTP, FTP,
+SMTP, DNS, etc.).
+2.
+Transport Layer (TCP/IP):
+Identical in function to OSI Layer 4. The Transport Layer provides end-to-end
+communication services.
+It uses TCP for reliable, connection-oriented delivery and
+UDP for fast, connectionless delivery. Port numbers are used at this layer to identify
+applications.
+d
+«
+yy)
+Unit 1: Computer
+aw
+SS
+3.
+Internet Layer (TCP/IP):
+The Internet Layer corresponds to the OSI Network Layer. It is responsible for
+logical (IP) addressing and routing packets across multiple networks. The Internet
+Protocol (IP) is the core protocol at this layer. Routers operate at the Internet Layer to
+forward packets toward their destinations.
+4.
+Network Access Layer (TCP/IP):
+The Network Access Layer (also called the Link Layer) combines the OSI Data
+Link and Physical layers. It handles everything related to the local physical network:
+MAC addressing, framing, error detection, and the actual physical transmission of bits
+over cables or wireless signals. Ethernet, Wi-Fi, and the underlying hardware all
+operate at this layer.
+1.3.6 Comparing the OSI and TCP/IP Models:
+The OSI and TCP/IP models both describe how network communication works,
+but they differ in the number of layers and level of detail. The table below summarises
+the key similarities and differences.
+Table 1.37: OSI vs TCP/IP
+, Comparison
+Aspect
+OSI Model
+TCP/IP Model
+Number of layers
+7
+4
+US Department of
+Developed by
+ISO (1984)
+Defense (1970s)
+.
+Reference model for learning and __— Practical model used on
+Primary use
+design
+the Internet
+Application laver
+Three separate layers:
+Combined into one
+PP
+y
+Application, Presentation, Session
+Application layer
+Transport layer
+Transport layer
+Layer 4 (Transport)
+(TCP/UDP)
+Network layer
+Layer 3 (Network)
+Internet layer (IP)
+Two separate layers: Data Link,
+Combined into Network
+Lower layers
+;
+Physical
+Access layer
+Protocol
+Model is defined first; protocols
+Model was built around
+independence
+fit into it
+existing protocols
+Used for teaching and
+Still used today?
+Yes
+, powers the Internet
+troubleshooting
+LA A
+fn
+-
+a
+Unit 1: Computer Systems
+|
+vs
+TCP/IP Models
+Ou
+¢
+I &
+Network process
+to application
+BD Presentation
+my
+PETE Bag aoe Ly
+and encryption
+Tita
+tis
+PCD Eek Co
+7
+Diem Kimi
+connections and
+reliability
+em Carow en
+and logical addressing
+AY CCN EP Cae eT IKE
+binary transmission
+Consists of
+applications and
+URN ICAL
+DHCP, DNS, FTP,
+the network
+HTTP, HTTPS, POP,
+SMTP, SSH, HTML,
+JPEG, etc.
+aE
+—
+Transport
+@&
+Provides end to
+oO
+e Le:
+delivery services
+-
+suf
+|
+~~
+IP Address:
+&
+Ipv4, Apv6
+|
+Internet
+7
+.
+MAC Address
+Nes ge
+AB,
+Al
+59
+————
+ao
+Naa
+aL eee ey
+Ethernet cable, fibre,
+haba
+wireless, RS-232,
+,
+;
+Rj45, SDH, DSL, etc...
+LU physical
+network
+a
+Both models share the same Transport and Network (Internet) concepts. The
+main difference is that TCP/IP collapses the top three OSI layers into one Application
+é
+<
+y /,
+Sh 4a
+layer, and the bottom two OSI layers into one Network Access layer.
+ar =
+Unit 1: Computer
+aw
+SS
+w
+GJ) Career Opportunities
+This unit covers digital logic, logic gates, the software development life cycle (SDLC),
+and how computers communicate through networks and the OSI model. Mastery of these
+foundational concepts opens the door to a wide range of technical careers in hardware design,
+software engineering, and networking.
+PE
+Elem ee
+noo
+Software Engineer / Developer
+Designs and tests digital circuits and
+Applies SDLC models such as
+logic gates used inside computers,
+Waterfall and Agile to design, build,
+calculators, and embedded devices.
+and maintain reliable software applications.
+Network Engineer / Administrator
+Systems Analyst
+Designs, configures, and maintains
+computer networks using the OSI and
+TCP/IP models to keep organizations
+Studies business needs and translates
+them into technical requirements using
+Renee
+structured development methodologies.
+Embedded Systems Engineer
+Oo awe
+Sean
+Builds the logic and firmware that
+Installs, troubleshoots, and maintains
+power smart appliances, vehicles, and
+hardware, cabling, and networked
+IoT devices.
+systems for businesses and institutions.
+~
+Discrete signals have countable values, while continuous signals can take any
+value within a range.
+«
+Digital systems use only binary values (0 and 1) and form the basis of modern
+electronics.
+~
+Analog signals vary continuously, whereas digital signals use discrete values.
+«
+The binary number system uses only the digits 0 and 1.
+«
+Boolean algebra performs operations using two logical values: TRUE (1) and
+FALSE (0).
+«
+The basic Boolean operations are AND, OR, and NOT.
+«©
+Logic gates are electronic circuits that implement Boolean operations.
+Unit 1: Computer Systems
+Truth tables show all possible input and output combinations of a logic circuit.
+Logic expressions represent logical operations using variables and operators.
+Logic diagrams provide a graphical representation of digital circuits.
+Software is a set of instructions that directs a computer to perform tasks.
+The Software Development Life Cycle (SDLC)
+is
+a structured process for
+planning, developing, testing, deploying, and maintaining software.
+Common SDLC
+models
+include
+the
+Waterfall
+model,
+which
+follows
+a
+sequential
+approach,
+and
+the
+Agile
+model,
+which
+emphasizes
+iterative
+development and continuous improvement.
+«
+Software testing includes Black Box Testing (external testing) and White Box
+Testing (internal testing).
+~
+Software maintenance involves corrective, adaptive, perfective, and preventive
+updates after deployment.
+~
+Inthe communication model, data is transmitted from a sender to a receiver
+through a communication channel.
+«
+The OSI model
+consists
+of seven
+layers:
+Physical,
+Data
+Link, Network,
+Transport, Session, Presentation, and Application.
+«
+The TCP/IP model consists of four layers: Network Access, Internet, Transport,
+and Application.
+©
+Encapsulation is the process of adding protocol headers to data as it moves down
+the network layers.
+«
+Decapsulation is the process of removing headers as data moves up the receiving
+layers.
+©¢¢
+@
+©
+«The Physical layer transmits raw bits over communication media.
+«
+The Data Link layer handles MAC addressing, framing, error detection, and
+hardware communication.
+«
+The Network layer performs IP addressing and routing.
+«
+The Transport layer ensures end-to-end communication using TCP or UDP.
+~
+The Session layer establishes, manages, and terminates communication sessions.
+«
+The
+Presentation
+layer
+translates,
+encrypts/decrypts,
+and
+compresses/decompresses data.
+«The Application layer provides network services for applications such as HTTP,
+HTTPS, FTP, SMTP, and DNS.
+«
+TCP is connection-oriented and reliable, while UDP is connectionless and faster
+with lower overhead.
+«
+An IP address is a logical address used to identify devices on a network.
+«
+AMAC address is a unique physical hardware address permanently assigned to
+a network interface.
+b,
+Sh 4a
+ii)
+iii)
+Iv)
+vi)
+vii)
+viii)
+ii)
+iii)
+Unit 1: Computer
+aw
+SS
+Encircle the correct answer:
+A digital signal has:
+(a) Infinite values
+(b) Only two values
+(c) Three values
+(d) Ten values
+Which gate gives output 1 only when all inputs are 1?
+(a) OR gate
+(b) AND gate
+(c) NOT gate
+(d) NOR gate
+XOR gate gives output 1 when inputs are:
+(a) Same
+(b) Different
+(c) Both 0
+(d) Both 1
+Which phase comes first in SDLC?
+(a) Testing
+(b) Requirement Analysis
+(c) Coding
+(d) Design
+In Agile, a short development cycle is called:
+(a) Phase
+(b) Sprint
+(c) Module
+(d) Release
+Which testing type does NOT require knowledge of code?
+(a) White box testing
+(b) Black box testing
+(c) Unit testing
+(d) Code review
+What device operates at the Network layer (Layer 3) of the OSI model?
+(a) Hub
+(b) Switch
+(c) Router
+(d) Repeater
+How many layers does the TCP/IP model have?
+(a) 3
+(b) 4
+(c) 5
+(d) 7
+UDP is preferred over TCP for video streaming because:
+(a) UDP is more reliable
+(b) UDP is slower but more accurate
+(c) UDP is faster and has lower delay(d) UDP guarantees delivery
+Which OSI layer is responsible for routing packets between networks?
+(a) Physical
+(b) Data Link
+(c) Network
+(d) Transport
+Fill in the Blanks:
+An
+gate gives output 1 only when both the inputs are same.
+The
+gate is also called an inverter.
+In Agile, a short development cycle is called a
+LN ww
+Sf
+. 1: Computer Systems
+1v)
+SRS stands for
+v)
+UDP stands for
+3.
+Provide short descriptive answers of the following questions.
+i)
+Define digital logic and give two examples of digital devices.
+ii)
+What is the difference between analog and digital signals?
+iii) | Compare Waterfall and Agile models. When would we use each?
+1v)
+| What is the difference between an IP address and a MAC address?
+v)
+Explain the difference between TCP and UDP. Give one real-life example of
+each.
+4.
+Provide detailed answers of the following questions.
+i)
+Explain all seven logic gates with their symbols, Boolean expressions, and truth
+tables.
+ii)
+Draw the truth table for the expression: Y = A': B+ C
+iii)
+Explain all phases of SDLC in detail with activities and deliverables.
+iv)
+Explain each layer of the OSI model in detail. For each layer, state its main
+function, one real-life analogy, and two protocols used.
+v)
+Describe the four types of software maintenance with examples.
+q{Q@y
+-
+~
+Activities
+Activity 1.
+Create a truth table for Y=A-B:C+A':B
+Activity 2.
+Design a logic circuit for a simple burglar alarm that sounds when
+EITHER the door OR window is opened.
+Activity 3.
+Use an online LogiSim to verify your truth tables.
+Activity 4.
+Create an SRS document for a simple calculator app.
+Activity 5.
+Draw a flowchart for a program that checks if a number is even or odd.
+Activity 6.
+Open the command prompt (Windows) or terminal (Mac/Linux) and
+type: ping www.google.com. Record the results. Which OSI layer and
+protocol is being used? What does the output tell you about network
+connectivity?
+Activity 7.
+Draw a diagram showing the seven layers of the OSI model. For each
+layer, write its name, main function, and at least one protocol. Use the
+mnemonic "Please Do Not Throw Sausage Pizza Away" to help you
+remember the order.
+Activity 8.
+Create
+a comparison table of TCP and UDP, listing
+at least five
+differences. For each protocol, give two examples of applications that
+use it and explain why.

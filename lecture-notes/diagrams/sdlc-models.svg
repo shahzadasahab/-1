@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 240" role="img" aria-label="Waterfall versus Agile SDLC">
+  <text x="130" y="22" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="13" font-weight="600" fill="#1a1a2e">Waterfall</text>
+  <text x="390" y="22" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="13" font-weight="600" fill="#1a1a2e">Agile (Scrum)</text>
+  <g font-family="Segoe UI,sans-serif" font-size="10" fill="#1a1a2e">
+    <rect x="40" y="35" width="180" height="28" rx="4" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="130" y="53" text-anchor="middle">Requirements</text>
+    <path d="M130 63 L130 72" stroke="#475569" marker-end="url(#arr)"/>
+    <rect x="40" y="72" width="180" height="28" rx="4" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="130" y="90" text-anchor="middle">Design</text>
+    <rect x="40" y="109" width="180" height="28" rx="4" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="130" y="127" text-anchor="middle">Implementation</text>
+    <rect x="40" y="146" width="180" height="28" rx="4" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="130" y="164" text-anchor="middle">Testing</text>
+    <rect x="40" y="183" width="180" height="28" rx="4" fill="#bbf7d0" stroke="#16a34a"/>
+    <text x="130" y="201" text-anchor="middle">Deployment / Maintenance</text>
+  </g>
+  <g font-family="Segoe UI,sans-serif" font-size="10">
+    <rect x="300" y="40" width="180" height="160" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="390" y="58" text-anchor="middle" fill="#1a1a2e">Product backlog</text>
+    <rect x="320" y="68" width="140" height="50" rx="4" fill="#fef3c7" stroke="#d97706"/>
+    <text x="390" y="88" text-anchor="middle" fill="#1a1a2e">Sprint 1</text>
+    <text x="390" y="102" text-anchor="middle" fill="#64748b" font-size="9">plan ’ build ’ test ’ review</text>
+    <rect x="320" y="125" width="140" height="50" rx="4" fill="#fef3c7" stroke="#d97706"/>
+    <text x="390" y="145" text-anchor="middle" fill="#1a1a2e">Sprint 2 &</text>
+    <text x="390" y="159" text-anchor="middle" fill="#64748b" font-size="9">incremental working software</text>
+    <text x="390" y="185" text-anchor="middle" fill="#16a34a" font-size="9">Feedback loop each sprint</text>
+  </g>
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#475569"/>
+    </marker>
+  </defs>
+</svg>

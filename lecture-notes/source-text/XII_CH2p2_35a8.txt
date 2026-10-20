@@ -1,0 +1,917 @@
+Wie
+ESP.
+Js i) f
+@)}3
+d
++ ] 2 )
+<
+®
+&
+|
+fine |
+Figure 2.4 illustrates the representation of data in a queue and demonstrates
+W
+the Enqueve and Dequeue operations in queue.
+QUEUE DATA
+os
+ee
+{ pata:ss
+}
+elated
+| DEQUELIE: Removes element a Fone (76) Ou}
+os
+Rear hT
+pata: 76
+[ PRONTE (Poxtion of next element toreméve))
+|
+ONE tar dement
+DATA: 90 tj
+Li
+remem
+fe
+:
+DATA: 77
+DATA: 23
+DATA: 76
+*
+A linear data structure that.
+© Two Pointers:
+Front and Rear.
+| follows the First-In, First-Out
+© Faqucuet Adds to Re
+1
+|
+(FLEO) principle. Elements
+os
+:
+| creadded
+wtithe Rear and
+© Dequeue: Removes from Front (O(1)}.
+t removed from the.Front.
+“© Time Compbexity: O(1) for both,
+Figure 2.4: Data representation in Queue
+2.5.2. Non-Linear Data Structures:
+|
+Elements are connected i in hierarchical or ‘interconnected
+ways.
+i)
+Tree:
+~
+A tree is a way of organizing data in a boierarhy, where everything branches
+out from a single starting point.
+A tree spreads out like branches. It évins with one main element called the
+root, and from there,
+it splits into smaller parts, which can ‘Split further; just like
+branches growing fromatrunk.
+5
+A simple real-life example is a furnily tree. It usually starts with an ancestor
+(grandfather), and then branches out to his children, grandchildren, and so on. Each
+shown in figure 2.5.
+level comes from the one above
+it, forming a clear structure of relationships. As
+ae
+alee ma
+ymputational Thinking
+& Algorithms
+ii)
+Graph:
+A graph is a way of organizing data when things are connected in a more
+flexible and complex way.
+%
+It is made up of nodes (or. vertices), which represent items, and edges, which
+are the connections between them.
+Unlike simpler structures, there
+is no
+strict
+hierarchy or sequence; any node can be connected to any other node.
+A social network is an example of a graph. Each person is a node, and the
+friendships between them are the connections. One person can be connected to many -
+others, and those connections can form all kinds of patterns,
+Another example is a road network map, where cities represent nodes and the
+roads connecting them represent edges. A single city may be connected to multiple
+other cities, and there are often several possible routes to travel from one location to
+san:
+f As: Saw
+in figure 2.6.
+XX]
+A
+AIRS ial aD oe
+Figure 2.6; An example of Graph
+2.5.3. Operations on Data Structures:
+-
+When working with any data structure, there are
+a few basic operations
+_ performed repeatedly.
+The following operations are performed on Data,
+_»
+Insertion Adding a new item into the structure.
+}
+Deletion is the opposite: removing an item when it is no longer needed.
+1} CamScanner
+a 1
+®
+OOS
+< Unit 2: Computational Thinking
+>
+Traversal Going through each item one by one.
+>»
+Searching is trying to find a specific item inside the structure.
+>
+Sorting Arranging items in a proper order, like Ascending, Descending and
+Chronological order,
+2.6.
+Identify data structures in problem scenarios:
+To select an appropriate data structure, it is essential to understand how the
+data is organized and how the elements are related within the problem domain.
+If each item has a clear “before and after” relationship, like a straight line
+_ where one element leads to the next then it is a linear structure.
+If an item can be connected to multiple other items at the same time, forming
+layers, branches, or networks, then it becomes a non-linear structure.
+.
+In simple terms, the focus is not only on the data itself, but also on how the
+data is organized and how each element is related within the. actual problem. This
+understanding helps determine whether a linear or non-linear data structure is s the
+most suitable choice for a particular problem.
+2.6.1. Linear Data Structure Scenarios: -
+In the scenarios given below, these structures should be used when the data
+follows a clear and sequential order.
+i)
+Storing Student Grades for a Class:
+An array is used to store student grades because it is a simple and efficient way to
+keep a fixed set of similar values together.
+All the grades belong to the same type of data, and we usually know how many
+students are in the class. Since arrays let us store items in order and access each one
+using its index. It is a quick and easy way to find or update aii
+student’s grade.
+ii)
+Music Playlist:
+A linked list is used in algorithms where fheauene insertions and deletions are
+required, such as playlists and browser history.
+A playlist where every song knows what comes after it. When one song finishes, the
+system does not have to search again, ‘it just follows the link to the next song and
+plays it.
+iii)
+Undo or Redo Functionality in Text Editors:
+A Stack is a linear data structure that works on the Last-In, | First-Out (LIFO)
+principle,
+In big / redo features, a stack
+i is used because it naturally keeps track of actions in
+or
+Every time a user does something, like typing, deleting, or formatting, it gets
+added on top of a stack, When the user presses “Undo,” the most recent action
+is removed first, which makes sense because that is usually the one the user
+wants to reverse,
+wife
+4
+Toate
+ube
+1B 16
+mputational Thinking & Algorithms ,
+7 Bs
+’
+eg
+.
+tg
+Alle
+Therefore everything. is handled from top to bottom, step by step, just like
+moving back
+the latest actions one at a time until it reaches the desired state.
+WY
+iv)
+Printer Task Scheduling:
+.
+A queue is a simple way of organizing data on First-In, First-Out (FIFO) principle
+When sending multiple documents to
+a printer, they are handled using
+a
+-.
+queue. This: makes sure everything
+is printed
+in the same order it was
+received. So the first document sent is printed first, and the others wait for
+their turn.
+A real-life example ofa queue whoever comes first is served first.
+2.6.2. Non-Linéar Data Structure Scenarios:
+“3
+It is used when data is complex, hierarchical, or interconnected.
+i)
+Organizational Chart of a College:
+A tree is a hierarchical data structure used to organize and represent data i in parent-
+child relationships. It is commonly used to model systems with multiple levels, such
+as organizational structures.
+At the top, there is one main point, the Principal, who acts as the root. From there, the
+structure branches out into vice principal, Administrative Head, Academic Dean and
+each head can further branch out into sub heads. Fig. 2.7:shows the derailed hierarchy
+tree for the vollege-
+Figure 2.7; An example of College Organizational Hierarchy
+This creates a clear “one-to-many” relationship, where one person can be
+connected to many others below them, but everything still traces back toa single top
+a | yes pie
+Py
+Ve Vers
+it 2:
+de te 1:
+;
+it
+2: Computational Thinking
+1 y. -s] ®
+°
+:
+.
+Bait
+ia
+f
+.
+fi)
+GPS Navigation and Maps:
+4
+A graph is a way of organizing data when things are contiected i in a more flexible anq
+it
+.
+complex way.
+A graph
+is used to represent Global Positioting System (GPS)
+4
+navigation and maps.
+" VISUALIZING GPS NAVIGATION AND MAPPING DATA STRUCTURE
+NK
+e
+~
+Oy
+co
+ae
+mn
+MAP DATA LAYER
+REAL-TIME POSITION
+A 2D vector map of
+(Pointer Logic)
+(Graph Structure)
+=
+ee
+LAT: 34,0522 N
+ated
+re
+ton. See >
+Ba 5 +
+Ca
+2-5 0 ge
+a
+L———————= Sequential Memory Allocation
++
+‘
+ig }
+) arent Wea
+Aw RCo
+m
+Nes
+yf
+eee ses TS
+WaT eli
+(Mavigutioa and Map Data:
+,
+O4
+Tolantians aenalie diitole aakeg
+. Large, multilayered cel acer
+retrieving. and manipulating gcograph’c data.
+. © Fast spatial grows for proximity (e.g.
+i
+Maps can be represented as graphs (with
+“nearest point of interest”).
++ | nodes for intersection’
+and edges for ronds),
+© Route caleidations
+on complex,
+“|
+while positions can be traced and routes
+(essentially updated raph) structures
+tan be calculatec with specd-optimired
+O(log Nj for many: operations).
+12 eee
+Lisanne
+4 Constant sation tracking and update -
+Example: Ro.te|modein} - 2] -» [node2, weight)
+_ of Yout
+Ave Here,
+Figure 2.8: An example of GPs
+§ Navigation and Map
+This is useful because it allows the system to find. multiple possible routes
+between places, just like when choosing different roads to reach the same destination
+depending on traffic or distance.
+:
+If there is uncertainty regarding the sien tb which a scenario
+» belongs, the
+eee qe evaluation method may be used.
+“Follows a "Next" or Previous
+logic |
+:
+Me
+‘Linear
+"Array, Linked List -
+“Follows a "Parent" or "Child logic
+ua
+| ‘Non-Linear
+Poo
+RB.
+\
+| Follows 2 “First- “come, First: said logic
+Linea
+&
+Queue
+|
+Follows a "Connections/Relationships
+logic
+| Nor Linear
+|
+Graph
+|
+Needs to be accessed i in the reverse order of
+“entry
+Linear
+|
+Stack
+‘c mputational Thinking & Algorithms /
+Trace data retrieval in Array, List and Queue;
+Tracing data retrieval means following
+the step-by-step path of how an
+algorithm finds or accesses data,
+- Rather than focusing solely on the final result, attention is given to.the entire
+process, including how the data is stored, how it moves within the structure, and the
+steps involved in accessing or removing elements from data structures such as arrays,
+linked
+lists,
+or queues.
+This approach provides
+a clearer understanding a the
+operations performed.
+Even though the Array, | Linked List, and Queue data structures are all linear,
+the effort needed to find an item can be very different. It depends on how the data is
+2.7.
+stored and organized internally; some allow quick access, while others may require
+checking items one by one. Tracing makes it easier.
+2.7.1. Retrieval in Array:
+In an array, every element has a fixed
+ditiod number (from 0 to n-1), and
+that index directly points to a specific spot in memory. So when using something like
+array [index], the algorithm does not search; it goes straight to that location. This one-
+to-one relationship between index and. value makes arrays. very fast for accessing
+data.
+:
+To understand or track this process, simple techniques are often used:
+> Forward or backward looping: where moving through the array step by
+~
+step, either from start to end (0 to n-1) or in reverse (n~1 to 0). This helps to
+see how each element is accessed in order.
+;
+_ >
+Direct access: where you go straight to a specific element using its index, For
+example X = array [2], whicli immediately returns the value at position 2.
+In simple terms, tracing array access
+is just following how the index leads
+directly to the exact data stored in memory.
+For Example:
+Array
+= [10, 50, 20, 70, 90, 30]
+Index
+0.
+|
+2
+3
+Array
+10
+50
+20
+710
+Direct Access: Array[2] =
+j
+a
+SRA
+SEAL
+yO
+Array{0]
+Hye
+ea
+Array(1] _
+|
+50
+|
+ee
+Array2]
+20
+ARYL
+| aD
+Sena
+are
+a
+Ce
+eo
+ATS oad]
+2.7.2, Retrieval in Linked List:
+Retrieving data from a linked list works a bit differently vantpated to an array.
+Ina linked list, the process starts from the first node (the head) and move step
+by step through each connection. Since linked lists do not have index-based access,
+the only way to find something is by following the links one node at a time. A
+temporary pointer is used to move Hote the list until the hemes node i is found or the
+end is reached. .
+.
+There are two common ways to do this:
+.
+>
+Access by position: Start at the head and move through each node until the
+_ required position is reached.
+>
+Search by value (key): Start at the head and check each node’s value one by
+- one until a match is found or the end of the list is reached.
+Linked List:.
+es >| 56|—> NULL
+Example I;
+Search Key: 87
+Output: True
+.
+Explanation: 87 is found in the linked list
+Example 2;
+Search Key; 97
+Output: False
+Explanation: 97 is not found in the linked list
+3| @)
+,
+=
+:'
+2.7.3, Retrieval in Queue:
+|
+‘°
+Retrieving data from a queue is all about order and fairness. A queue works
+Vos
+on the First-In, First-Out (FIFO) principle, which means the element that was
+’
+added first is the one that comes out first; So the oldest item at the front of the queue
+is always removed before the newer ones.
+For example think of it like people standing in queue, whoever joins
+first gets
+served first, and everyone else waits for their turn.
+Front _
+?
+ew
+oan
+_
+Rear
+Dequeue ——>
+| | |
+2.|
+3
+| 4/15
+| 6] 7 | 8 |= Enqueue
+This
+unit covers
+algorithm. analysis (correctness,
+clarity, efficiency)
+and data
+structures (arrays, linked lists, ‘Stacks, queues, trees, and graphs). Mastery of these
+foundational concepts opens the door to a wide range of software Scie necrits careers.
+ay agtuh Engineer
+- Designs, Balas and maintains
+~ Specializes i in designing and
+_ software systems, relying daily in
+ee
+. optimizing algorithms for
+data structures and efficient. .
+ny performance-critical systems such as.
+_ algorithms to solve problems. ae
+_ search engines, logistics, 0 or
+r finance. _ au
+Faas
+a eT
+ones
+Aid ae
+Bee
+us Lo
+ia
+3
+Builds the server-side lo gic —
+_ Evaluates and
+j improves the efficiency
+;
+applications, where choosing the sight
+~ and clarity of existing computer
+Q
+data structure (array, queue, tree)
+be ~ systems and processes within an
+directly affects performance, a : :
+Rae
+organization.
+Cr,
+ee ray
+an ie aa eta
+erie
+_ Solves complex algorithmic nnalene | Teaches programming logic,
+7
+under time constraints, a skill path
+= —_ algorithms, and data structures to
+that also strengthens interview
+/ Students: or new developers in schools,
+readiness fortoptechroles,
+bootoamps, or companies,
+1} CamScanner
+\ Unit 2: Computational Thinking &
+RET
+A
+PA
+* Summary
+tS
+S
+iB
+An algorithm is considered correct if its output matches the expected results
+for a given input.
+Commonly used and
+effective methods
+for soalvring
+an algorithm
+for
+correctness are: Trace tables and Stepwise reasoning.
+Clarity in an algorithm means
+it alu iy easy to read, understand, and
+modify by others.
+The key aspects of clarity are Modularity and Readability.
+Algorithm efficiency is measured in terms of time and Spies that
+i is, how fast
+it runs and how much memory it uses.
+-
+The key considerations for assessing algorithm efficiency are: Number om
+Steps, Number of Conditions, and Number of Repetitions.
+To improve clarity: refinement use meaningful variable names, beak into
+modules, improve structure and Indentation, and add minimal but inene
+~ comments.
+:
+To improve. oilieney. refinement use reduced unnecessary work, better
+algorithm; avoid re-computing values, and appropriate data structure.
+Data structures provide.
+a systematic way to manage data
+for efficient
+processing.
+Linear Data
+Strugiurest
+Elements follow
+a
+sequence. Aa (fixed
+sequence with fast direct access), Linked Lists (nodes connected by pointers),
+Stacks (Last-In, First-Out for undo functions), and Queues
+(Fi irst-In, First-Out
+for tasks like printer scheduling).
+Non-Linear Data Structures: Elements are interconnected hierarchically or
+in networks, Trees represent parent- -child relationships (organizational charts),
+while Graphs manage complex connections (GPS maps or social networks).
+Selecting the right structure depends on the problem logic; for example, a
+graph
+is recommended for relationships, while a stack is best for reverse-order
+access,
+:
+5
+|
+Common
+operations
+across these
+structures
+include
+insertion, deletion,
+traversal, searching, and sorting.
+Tracing retrieval involves following the step-
+-by-step
+path to access data. In
+Arrays, this is often instantaneous via direct index access, whereas in Linked
+Lists, the algorithm must traverse nodes one by one starting from the "head"
+until the desired value or position is reached
+4
+vi)
+vil)
+is
+(a) Stepwise reasoning
+*
+(b) Big O Notation
+-(c) Trace table
+(d) Modularization
+Stepwise reasoning is also known as:
+(a) Syntax checking
+___
+(b) Logic verification
+(c) Modular reasoning
+(d) Recursive analysis
+Algorithm efficiency is primarily measured in terms of:
+Encircle the correct answer.
+Which technique involves a "paper execution" of an algorithm to monitor how
+variable values change?
+Breaking an algorithm into smaller, independent parts like functions or classes
+is known as:
+ie
+Long
+math
+(a) Readability
+§~
+_
+(b) Efficiency
+-
+(c) Modularity
+(d) Sorting
+Which principle suggests that each modyle should focus on only one specific
+task?
+-
+(a) Single Responsibility Principle
+(b) Short-Circuiting Principle
+(c) Loose Coupling Principle
+(d) Linear Logic Principle
+"velocity = distance / time" is an example of good readability because of:
+(a) Control flow simplicity
+‘(b) Naming conventions
+(c) Self-documentation
+(d) Consistency
+(a) Clarity and Modularity
+(b) Time and Space
+(c) Number of comments and Indentation
+(d) Programming language and Syntax
+The objective of "Short-Circuiting" in algorithm design is to;
+(a) Add more conditions for better accuracy
+(b) Terminate evaluation as soon as the required result is obtained
+(c) Ensure every branch of code is executed
+(d) Increase the complexity of the decision-making process
+1} CamScanner
+Le
+y
+Cy
+4) .
+*
+r
+1 {ae
+viii)
+Ina
+linked list, each element is called a:
+Vv
+(a) Link
+(b) Index
+.
+(c) Node
+.
+(d) Edge
+ix)
+Ina Graph data structure, what do the "edges" represent?
+(a) The individual data items
+(b) The starting point of the structure
+(c) The connections between nodes
+(d) The hierarchical levels
+x)
+Ina Queue data structure, what is the specific term for the process of adding an
+element to the "rear"?
+(a) Push
+(b) Pop
+(c) Enqueue
+(d) Dequeue
+2.
+Fillin the blanks.
+i)
+The
+suggests that each module should focus on exactly
+one specific task.
+ii)
+Algorithm efficiency is measured in terms of
+and
+iii)
+The
+is used to describe how the running time or memory
+usage grows as the input size increases.
+iv)
+The
+_ data structure follows the Last-In, First-Out (LIFO)
+principle.
+v)
+Ina graph, items are represented by nodes (or vertices) and their connections
+are represented by
+3,
+Provide short descriptive answers of the following questions.
+i)
+| What is a trace table and what is its primary purpose?
+ii) | What are the two key aspects used to evaluate algorithm clarity?
+iii)
+Define Big O Notation and state its purpose.
+)
+iv)
+Differentiate between O(1) and O(n) time complexity with examples,
+v)
+Compare the retrieval principles of a Stack and a Queue. -
+. 4,
+Provide detailed answers of the following questions.
+1)
+Compare stepwise reasoning and preudocode as techniques for designing
+and representing algorithms? Give suitable examples.
+li)
+Explain-the Concept of alogrithm decomposition, How can a complex.
+problem be divided into smaller, manageable steps? Give a suitable exampl
+2.
+Explain above class activity with trace table.
+- Demonstrate the LIFO principle, using books with following procedures,
+Discuss their importance in alogirthm analysis.
+.
+.
+Write an algorithm that counts the number of students who pass their class test.
+>». Students place cards on
+a pile one by one.
+-
+». Label each card with a number.
+>
+Ask students to forma line.
+>»
+Ask questions suchas:
+. >utational Thinking & Algor
+Analyze the rol Big O Notation in measuring the efficiency and scalabilty
+of algorithms. Explain with suitable examples.
+7
+Describe thé main characteristics and applications of linear data structure.
+’
+Compare arrays and Linked list with suilable example.
+Explain the three fundamental questaions used to evalute an alogirthm:
+“Does it scale?” “What is te bottle neck?” and “Is the cost worth it?”
+Activi ties
+Passing marks is greater than or equal to 40 out of 100. :
+>
+Students to place books one on top of another.
+>
+Adding a book isa PUSH operation. °
+>
+Remove books one at a time from the top (POP Soren
+>
+Observe that the last book placed is the first one removed. —
+Visualize stack operation clearly with following procedures
+>
+Remove cards from the top and record the order.
+>»
+Compare insertion and removal orders.
+Demonstrates FIFO. behavior with following proc edures.
+>
+‘Students join at the rear (ENQUEUE).
+>
+Students leave from the front (DEQUEUE).
+Demonstrates indexed access and fixed positions in an array with following
+procedures.
+»
+Arrange chairs ina straight line and label them with indices (0, 1, 2, 3, whe:
+»
+Assign students to sit in the chairs.
+¢
+Who is sitting at index 3?
+e
+Replace the student at index 2 with another irda
+»
+Discuss how data in an array can be accessed directly using an index.
+1} CamScanner
+r
+Know?
+An infographic (combination of "information" and "graphic")
+is
+a. visual
+representation of information, data, or knowledge. Its primary purpose is to present
+complex information quickly and clearly using a combination of
+i images, charts, and
+minimal text.
+.
+at
+Key Components of an Infographic
+Visuals: Icons, illustrations, or photos that represent the aibiéet matter.
+Data Visualization: Charts oe bar, By and graphs that turn
+| mumbers
+into
+—
+easy-to-read shapes.
+Typography: Clear headings and short snippets of text that guide the chee.
+Visual Hierarchy: Using size, color, and placement to draw attention to the
+most important points first.
+es
+Common Types of Infographics
+Statistical: Focused on data, using large numbers and charts to show research
+findings.
+Process: Explains a "how-to" or a sequence cw events (e.g., "How to sites a
+Rubik's Cube"),
+~ Timeline; Shows how a subject has changed over time in chronological order.
+Comparison; Lists two different things side-by-side to show their differences
+and similarities (e,g., "Laptop vs. Tablet").
+Informational: Primarily text-based but uses,icons and layout to explain a
+concept (like the summaries | provided for your document earlier).
+Why are they used’.
+»
+Speed: Humans process visuals much faster than text.
+>
+Engagement: They are more eye-catching than a standard report or article.
+>
+Simplification: They break down intimidating topics into "bite-sized" pieces.
+>
+Memory: People are more likely to remember information when it is paired
+with an image.
+:
+Following i is the infographic for this unit.
+Master ing Computational Thinking: Algorithms & Data Structure
+A High level overview on analyzing algorithm correctness, evaluating efficiency
+and selecting the eS ie: data structure for complex aes solving.
+z atqgati
+Iii rlatla® ate
+PRIN eaters
+Selection
+Ng
+NATE
+=o Be
+PJ remove Melted thy
+<6
+& Masta
+Correctness: Trace Tables vs. Stepwise Reasoning
+~ _Big O Notation: Measuring Growth
+Trace Tables
+|
+Stepwise Reasoning
+;
+(Manual Dry Runs)
+(High-Level Logic)
+Big O Notation
+(Hierarchical)
+Predicts how execution
+tole anmert (rae
+Mierarchical (Trees. Graphs)
+time incrcases as the size
+Amy!
+{
+Tree
+s
+S 4
+- of the input
+data grows.
+bees
+1
+& | 2
+3. | See
+=
+:
+php
+:
+Clarity through Modularity & Readability
+Ay
+_*
+RFO
+fe
+Q
+“Logie Requirement & Recommended Structure
+¥2
+0:
+;
+.
+Logarithmic loops
+Nested loops (On') often
+Pruner,
+yoy
+@ hs)
+(Olog
+n) are excellent.
+indicate poor efficiency.
+wb
+:
+Larios
+:
+ee isteened
+|
+“ll Queue
+a
+we
+The Efficiency Evaluation Framework
+-
+“T
+ieee
+_ The Single Responsibility Principle (SRP)
+weary (ds
+Fach module or functica should
+é
+Identify
+Optimizati
+j mas
+(rae hi)
+hf
+Te
+ee:
+focus on one specific taskto
+Bottleneck
+ate:
+Teduce complexity.
+é
+‘
+Ba
+: .
+&e Graph
+‘
+ey)
+|
+The Repetition Hicrarchy
+: “2
+ee
+Verifies high-level logic.
+|
+Or
+;
+Graph
+{
+pees
+|
+Saas
+aly
+ie
+RY

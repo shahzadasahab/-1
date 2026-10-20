@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Class XI IT — Lecture Notes</title>
+  <link rel="stylesheet" href="css/lecture.css"/>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        packages: {'[+]': ['ams']}
+      },
+      svg: { fontCache: 'global' },
+      startup: { typeset: false }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+
+  <header class="cover">
+    <h1>Information Technology</h1>
+    <p class="subtitle">Class XI — Condensed Lecture Notes<br/>Computer Systems · Computational Thinking · Python · Databases · Emerging Tech · Digital Literacy</p>
+    <p class="meta">Draft · SVG diagrams · MathJax · Flexbox layout · Aligned to uploaded curriculum PDFs</p>
+  </header>
+
+  <nav class="toc">
+    <h1 class="chapter-title">Contents</h1>
+    <ol>
+      <li><a href="#u1">Unit 1 — Computer Systems</a></li>
+      <li><a href="#u2">Unit 2 — Computational Thinking</a></li>
+      <li><a href="#u3">Unit 3 — Programming in Python</a></li>
+      <li><a href="#u4">Unit 4 — Data and Analysis</a></li>
+      <li><a href="#u5">Unit 5 — Emerging Technologies</a></li>
+      <li><a href="#u6">Unit 6 — Digital Literacy</a></li>
+    </ol>
+  </nav>
+
+  <!-- UNIT 1 -->
+  <section id="u1" class="chapter">
+    <h1 class="chapter-title">Unit 1 — Computer Systems</h1>
+    <div class="outcomes">
+      <strong>Learning outcomes (summary)</strong>
+      <ul>
+        <li>Differentiate analog vs digital representation; build and simulate logic circuits.</li>
+        <li>Apply Boolean algebra, truth tables, and Logisim for gate-level design.</li>
+        <li>Explain SDLC phases; compare Waterfall and Agile (Scrum) with case studies.</li>
+        <li>Describe OSI and TCP/IP layers, encapsulation, and common protocols.</li>
+      </ul>
+    </div>
+
+    <h2>1.1 Digital foundations</h2>
+    <div class="flex-row">
+      <div class="flex-grow">
+        <p><strong>Discrete</strong> quantities are countable (students in a class, books on a shelf). <strong>Continuous</strong> quantities vary smoothly (temperature, time, height). Digital systems encode information with two states: bit <code>0</code> (LOW/OFF/FALSE) and bit <code>1</code> (HIGH/ON/TRUE).</p>
+        <p><strong>Analog signals</strong> can take many amplitude levels; <strong>digital signals</strong> switch between defined levels (typically two). Digital storage and copying resist noise better than analog chains of amplification.</p>
+      </div>
+      <figure class="diagram-box flex-shrink-0">
+        <img src="diagrams/stairs-ramp.svg" alt="Stairs versus ramp analogy"/>
+        <figcaption>Figure 1.1 — Stairs (discrete) vs ramp (continuous)</figcaption>
+      </figure>
+    </div>
+
+    <h2>1.2 Boolean algebra &amp; logic gates</h2>
+    <p>Boolean variables \(A, B, C \in \{0,1\}\). Basic operations:</p>
+    <ul>
+      <li>AND (product): \(A \cdot B\) — true only when both inputs are 1.</li>
+      <li>OR (sum): \(A + B\) — true when at least one input is 1.</li>
+      <li>NOT (complement): \(\overline{A}\).</li>
+    </ul>
+    <p>De Morgan’s laws (exam favourites):</p>
+    <p>\[ \overline{A \cdot B} = \overline{A} + \overline{B}, \qquad \overline{A + B} = \overline{A} \cdot \overline{B} \]</p>
+    <p>Any Boolean function can be written in <strong>SOP</strong> (sum of products) or <strong>POS</strong> (product of sums) form, e.g. \(F = A\overline{B} + BC\).</p>
+
+    <div class="flex-row align-center">
+      <figure class="diagram-box">
+        <img src="diagrams/logic-gates.svg" alt="Logic gates AND OR NOT XOR"/>
+        <figcaption>Figure 1.2 — Standard logic gates</figcaption>
+      </figure>
+      <div class="flex-grow callout tip">
+        <strong>Logisim workflow</strong>
+        <ol>
+          <li>Create project → place gates from Explorer.</li>
+          <li>Add input pins (square) and output pin/LED (circle).</li>
+          <li>Wire inputs → gate → output; toggle inputs to verify truth table.</li>
+          <li>Example: 2-input AND with \(Y = A \cdot B\).</li>
+        </ol>
+      </div>
+    </div>
+
+    <h3>Sample truth table — 2-input XOR</h3>
+    <table class="data">
+      <thead><tr><th>A</th><th>B</th><th>\(A \oplus B\)</th></tr></thead>
+      <tbody>
+        <tr><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>0</td></tr>
+      </tbody>
+    </table>
+
+    <h2>1.3 Software Development Life Cycle (SDLC)</h2>
+    <p>SDLC phases: <strong>planning / requirements → analysis → design → implementation (coding) → testing → deployment → maintenance</strong>. Choosing a model depends on requirement stability, stakeholder count, and need for early feedback.</p>
+    <div class="flex-row">
+      <figure class="diagram-box flex-grow">
+        <img src="diagrams/sdlc-models.svg" alt="Waterfall vs Agile"/>
+        <figcaption>Figure 1.3 — Waterfall vs Agile (Scrum sprints)</figcaption>
+      </figure>
+      <div class="flex-grow">
+        <p><strong>Waterfall</strong> suits fixed specs (e.g. library management system with clear modules: catalog, issue/return, fines).</p>
+        <p><strong>Agile / Scrum</strong> suits evolving mobile apps (e.g. school portal with shifting features): 2-week sprints, product backlog, review with users each increment.</p>
+      </div>
+    </div>
+
+    <h2>1.4 Networking — OSI &amp; TCP/IP</h2>
+    <div class="flex-row">
+      <figure class="diagram-box">
+        <img src="diagrams/osi-model.svg" alt="OSI seven layers"/>
+        <figcaption>Figure 1.4 — OSI reference model</figcaption>
+      </figure>
+      <div class="flex-grow">
+        <p><strong>Encapsulation:</strong> each layer adds its header (and sometimes trailer) as data moves down the stack; the receiver strips headers moving up.</p>
+        <p><strong>TCP/IP</strong> (practical Internet stack): Application → Transport (TCP/UDP) → Internet (IP) → Network Access (link + physical). OSI is a teaching model; TCP/IP is what most implementations follow.</p>
+        <table class="data">
+          <thead><tr><th>Layer (OSI)</th><th>PDU / role</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td>Application (7)</td><td>Data</td><td>HTTP, DNS, SMTP</td></tr>
+            <tr><td>Transport (4)</td><td>Segment</td><td>TCP (reliable), UDP (fast)</td></tr>
+            <tr><td>Network (3)</td><td>Packet</td><td>IP, routers</td></tr>
+            <tr><td>Data Link (2)</td><td>Frame</td><td>MAC, switches</td></tr>
+            <tr><td>Physical (1)</td><td>Bits</td><td>Cables, Wi‑Fi radio</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIT 2 -->
+  <section id="u2" class="chapter">
+    <h1 class="chapter-title">Unit 2 — Computational Thinking</h1>
+    <div class="outcomes">
+      <strong>Learning outcomes (summary)</strong>
+      <ul>
+        <li>Decompose problems; recognize patterns; abstract details; design algorithms.</li>
+        <li>Write pseudocode; state properties of good algorithms (correct, finite, efficient).</li>
+        <li>Apply search (linear, binary) and sorting (bubble, selection, insertion) algorithms.</li>
+      </ul>
+    </div>
+
+    <div class="flex-row">
+      <figure class="diagram-box">
+        <img src="diagrams/computational-thinking.svg" alt="Computational thinking pillars"/>
+        <figcaption>Figure 2.1 — Four pillars of computational thinking</figcaption>
+      </figure>
+      <div class="flex-grow">
+        <p><strong>Algorithm</strong> — finite, step-by-step procedure solving a class of problems. <strong>Pseudocode</strong> mixes English with structured keywords (<code>IF</code>, <code>WHILE</code>, <code>FOR</code>) without language syntax.</p>
+        <div class="callout exam">
+          <strong>Good algorithm properties:</strong> input/output defined, steps are clear, must terminate, each step is feasible, correctness for all valid inputs.
+        </div>
+      </div>
+    </div>
+
+    <h2>2.1 Searching</h2>
+    <ul>
+      <li><strong>Linear search</strong> — scan all \(n\) elements; worst case \(O(n)\).</li>
+      <li><strong>Binary search</strong> — requires sorted array; halve search space each step; \(O(\log n)\).</li>
+    </ul>
+
+    <h2>2.2 Sorting (know any two)</h2>
+    <table class="data">
+      <thead><tr><th>Algorithm</th><th>Idea</th><th>Typical use</th></tr></thead>
+      <tbody>
+        <tr><td>Bubble sort</td><td>Swap adjacent out-of-order pairs until sorted</td><td>Teaching; small \(n\)</td></tr>
+        <tr><td>Selection sort</td><td>Repeatedly pick minimum for current position</td><td>Simple, few swaps</td></tr>
+        <tr><td>Insertion sort</td><td>Build sorted prefix by inserting each element</td><td>Nearly sorted data</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- UNIT 3 -->
+  <section id="u3" class="chapter">
+    <h1 class="chapter-title">Unit 3 — Programming in Python</h1>
+    <div class="outcomes">
+      <strong>Learning outcomes (summary)</strong>
+      <ul>
+        <li>Distinguish low-level vs high-level languages; use Python IDEs (e.g. VS Code).</li>
+        <li>Apply variables, data types, operators, control structures, functions, and modules.</li>
+        <li>Understand frameworks/libraries ecosystem for career growth.</li>
+      </ul>
+    </div>
+
+    <h2>3.1 Language &amp; environment</h2>
+    <p>Python is <strong>interpreted</strong>, <strong>high-level</strong>, and emphasizes readable syntax. Use virtual environments and linters in VS Code; run via integrated terminal.</p>
+
+    <h2>3.2 Control structures</h2>
+    <ul>
+      <li><strong>Sequence</strong> — statements execute in order.</li>
+      <li><strong>Selection</strong> — <code>if / elif / else</code> for branching.</li>
+      <li><strong>Iteration</strong> — <code>while</code> and <code>for</code> loops (often with <code>range()</code>).</li>
+    </ul>
+    <pre><code># Selection + loop example
+total = 0
+for mark in [72, 85, 91]:
+    if mark >= 50:
+        total += mark
+print("Passing sum:", total)</code></pre>
+
+    <h2>3.3 Functions &amp; good style</h2>
+    <p>Functions encapsulate reusable logic; use descriptive names, docstrings, and avoid magic numbers. Import standard modules (<code>math</code>, <code>random</code>) before third-party packages.</p>
+  </section>
+
+  <!-- UNIT 4 -->
+  <section id="u4" class="chapter">
+    <h1 class="chapter-title">Unit 4 — Data and Analysis</h1>
+    <div class="outcomes">
+      <strong>Learning outcomes (summary)</strong>
+      <ul>
+        <li>Relate data, information, database, and DBMS; identify components and keys.</li>
+        <li>Design tables, relationships, forms, queries, and reports (e.g. LibreOffice Base).</li>
+        <li>Apply integrity constraints and appropriate data types.</li>
+      </ul>
+    </div>
+
+    <h2>4.1 Core concepts</h2>
+    <p><strong>Data</strong> are raw facts; <strong>information</strong> is processed, meaningful data. A <strong>database</strong> is an organized collection; a <strong>DBMS</strong> manages storage, security, and concurrent access.</p>
+
+    <h2>4.2 Keys &amp; integrity</h2>
+    <ul>
+      <li><strong>Primary key</strong> — uniquely identifies a row.</li>
+      <li><strong>Foreign key</strong> — links to a primary key in another table (referential integrity).</li>
+      <li><strong>Constraints</strong> — NOT NULL, UNIQUE, CHECK, DEFAULT.</li>
+    </ul>
+
+    <h2>4.3 Forms &amp; user interface</h2>
+    <p>Forms provide structured data entry: identify data source, layout fields with validation, use wizards for quick prototypes, then refine labels and tab order for usability.</p>
+  </section>
+
+  <!-- UNIT 5 -->
+  <section id="u5" class="chapter">
+    <h1 class="chapter-title">Unit 5 — Emerging Technologies</h1>
+    <div class="outcomes">
+      <strong>Learning outcomes (summary)</strong>
+      <ul>
+        <li>Define AI, IoT, and data analytics at a high level.</li>
+        <li>Discuss benefits, risks, ethics, and assistive applications.</li>
+      </ul>
+    </div>
+
+    <h2>5.1 Artificial Intelligence</h2>
+    <p>AI systems perceive, reason, learn, and act. Machine learning is a subset where models improve from data rather than explicit rule lists only.</p>
+
+    <h2>5.2 Internet of Things (IoT)</h2>
+    <p>Network of sensors/actuators exchanging data with cloud services — smart home, agriculture, healthcare monitors. Security (firmware updates, strong passwords) is critical.</p>
+
+    <h2>5.3 Data analytics pipeline</h2>
+    <p>Collect → clean → explore → model → visualize → decide. Emphasize privacy, consent, and bias when interpreting results.</p>
+  </section>
+
+  <!-- UNIT 6 -->
+  <section id="u6" class="chapter">
+    <h1 class="chapter-title">Unit 6 — Digital Literacy</h1>
+    <div class="outcomes">
+      <strong>Learning outcomes (summary)</strong>
+      <ul>
+        <li>Compare qualitative vs quantitative data; choose collection strategies.</li>
+        <li>Practice safe, ethical use of digital tools and online information.</li>
+        <li>Plan small digital projects from problem statement to prototype.</li>
+      </ul>
+    </div>
+
+    <h2>6.1 Types of data</h2>
+    <table class="data">
+      <thead><tr><th>Type</th><th>Nature</th><th>Examples</th></tr></thead>
+      <tbody>
+        <tr><td>Qualitative</td><td>Descriptive, categories</td><td>Interview themes, open-ended survey text</td></tr>
+        <tr><td>Quantitative</td><td>Numeric, measurable</td><td>Test scores, response times, counts</td></tr>
+      </tbody>
+    </table>
+
+    <h2>6.2 Collection methods</h2>
+    <ul>
+      <li><strong>Interviews / surveys</strong> — attitudes and self-reported behaviour.</li>
+      <li><strong>Observation</strong> — record actions in context.</li>
+      <li><strong>Prototypes &amp; simulations</strong> — test ideas before full build.</li>
+    </ul>
+
+    <div class="callout tip">
+      <strong>Digital literacy</strong> includes evaluating sources (CRAAP: Currency, Relevance, Authority, Accuracy, Purpose), managing digital footprint, and respecting copyright.
+    </div>
+  </section>
+
+  <footer class="flex-row justify-between" style="margin-top:2rem;color:var(--muted);font-size:0.85rem;">
+    <span>Class XI IT Lecture Notes (draft)</span>
+    <span>End of document</span>
+  </footer>
+</div>
+</body>
+</html>
