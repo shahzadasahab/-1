@@ -1,0 +1,2320 @@
+{
+ "title": "Computer Science Lecture Notes",
+ "voice": "Piper Amy, int8, embedded offline",
+ "lectures": [
+  {
+   "id": "l1",
+   "kicker": "Class XI · Lecture 1",
+   "title": "Computer systems",
+   "deck": "From two electrical states, to a software process, to a message crossing a network.",
+   "blocks": [
+    {
+     "kind": "p",
+     "display": "From two electrical states, to a software process, to a message crossing a network.",
+     "speech": "From two electrical states, to a software process, to a message crossing a network."
+    },
+    {
+     "kind": "item",
+     "display": "Distinguish discrete and continuous quantities, and analog and digital representation.",
+     "speech": "Distinguish discrete and continuous quantities, and analog and digital representation."
+    },
+    {
+     "kind": "item",
+     "display": "Apply Boolean operations, build truth tables, and read logic-gate diagrams.",
+     "speech": "Apply Boolean operations, build truth tables, and read logic-gate diagrams."
+    },
+    {
+     "kind": "item",
+     "display": "Describe the six phases of the software development life cycle, and choose between Waterfall and Agile.",
+     "speech": "Describe the six phases of the software development life cycle, and choose between Waterfall and Agile."
+    },
+    {
+     "kind": "item",
+     "display": "Explain the OSI and TCP/IP models, the job of each layer, and encapsulation.",
+     "speech": "Explain the OSI and TCP/IP models, the job of each layer, and encapsulation."
+    },
+    {
+     "kind": "h",
+     "display": "Discrete, continuous, analog, digital",
+     "speech": "Discrete, continuous, analog, digital"
+    },
+    {
+     "kind": "p",
+     "display": "A discrete quantity jumps from one countable value to the next: students in a room, books on a shelf. A continuous quantity can fall anywhere inside a range: temperature, height, the position of a car along a road.",
+     "speech": "A discrete quantity jumps from one countable value to the next: students in a room, books on a shelf. A continuous quantity can fall anywhere inside a range: temperature, height, the position of a car along a road."
+    },
+    {
+     "kind": "p",
+     "display": "An analog signal follows a continuous quantity. A microphone voltage rises and falls with the sound. A digital signal uses a finite set of symbols. Inside a computer those symbols are two voltages, written 0 and 1. A clock, a calculator, and a processor all reduce their work to patterns of those two states.",
+     "speech": "An analog signal follows a continuous quantity. A microphone voltage rises and falls with the sound. A digital signal uses a finite set of symbols. Inside a computer those symbols are two voltages, written 0 and 1. A clock, a calculator, and a processor all reduce their work to patterns of those two states."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 1. Stairs are discrete. A ramp is continuous.",
+     "speech": "Figure 1. Stairs are discrete. A ramp is continuous."
+    },
+    {
+     "kind": "note",
+     "display": "One sentence. Digital systems store and process information as symbols from a finite set, and modern computers use the two symbols 0 and 1.",
+     "speech": "One sentence. Digital systems store and process information as symbols from a finite set, and modern computers use the two symbols 0 and 1."
+    },
+    {
+     "kind": "h",
+     "display": "Boolean algebra",
+     "speech": "Boolean algebra"
+    },
+    {
+     "kind": "p",
+     "display": "Boolean algebra, introduced by George Boole, uses only the values 0 and 1. A letter such as A or B is a variable. An expression combines variables with operations. With n inputs a complete truth table has",
+     "speech": "Boolean algebra, introduced by George Boole, uses only the values 0 and 1. A letter such as A or B is a variable. An expression combines variables with operations. With n inputs a complete truth table has"
+    },
+    {
+     "kind": "p",
+     "display": "rows = 2^n.",
+     "speech": "rows = 2 to the power n."
+    },
+    {
+     "kind": "p",
+     "display": "Two inputs need 4 rows. Three inputs need 8. List the input combinations in binary order so none are missed.",
+     "speech": "Two inputs need 4 rows. Three inputs need 8. List the input combinations in binary order so none are missed."
+    },
+    {
+     "kind": "p",
+     "display": "Operation · Reading · Expression · Output is 1 when\nAND · both · Y = A · B · every input is 1\nOR · either · Y = A + B · at least one input is 1\nNOT · opposite · Y = not (A) · the single input is 0",
+     "speech": "Operation. Reading. Expression. Output is 1 when AND. both. Y = A times B. every input is 1 OR. either. Y = A + B. at least one input is 1 NOT. opposite. Y = the opposite of A. the single input is 0"
+    },
+    {
+     "kind": "p",
+     "display": "A door with two locks is AND: both must be open. A room with two doors is OR: either door is enough. A switch that turns a lamp off when it was on is NOT. NOT has one input; AND and OR have two or more.",
+     "speech": "A door with two locks is AND: both must be open. A room with two doors is OR: either door is enough. A switch that turns a lamp off when it was on is NOT. NOT has one input; AND and OR have two or more."
+    },
+    {
+     "kind": "h",
+     "display": "Logic gates",
+     "speech": "Logic gates"
+    },
+    {
+     "kind": "p",
+     "display": "A logic gate is a circuit that performs one Boolean operation. Each gate in this course has one output. NAND and NOR are universal: either one, used repeatedly, can build AND, OR, and NOT. XOR is 1 when the inputs differ. XNOR is 1 when they match.",
+     "speech": "A logic gate is a circuit that performs one Boolean operation. Each gate in this course has one output. NAND and NOR are universal: either one, used repeatedly, can build AND, OR, and NOT. XOR is 1 when the inputs differ. XNOR is 1 when they match."
+    },
+    {
+     "kind": "h",
+     "display": "AND · Y=A· B",
+     "speech": "AND · Y=A times B"
+    },
+    {
+     "kind": "p",
+     "display": "A · B · Y\n0 · 0 · 0\n0 · 1 · 0\n1 · 0 · 0\n1 · 1 · 1",
+     "speech": "A. B. Y 0. 0. 0 0. 1. 0 1. 0. 0 1. 1. 1"
+    },
+    {
+     "kind": "h",
+     "display": "OR · Y=A+B",
+     "speech": "OR · Y=A+B"
+    },
+    {
+     "kind": "p",
+     "display": "A · B · Y\n0 · 0 · 0\n0 · 1 · 1\n1 · 0 · 1\n1 · 1 · 1",
+     "speech": "A. B. Y 0. 0. 0 0. 1. 1 1. 0. 1 1. 1. 1"
+    },
+    {
+     "kind": "h",
+     "display": "NOT · Y=not (A)",
+     "speech": "NOT · Y=the opposite of A"
+    },
+    {
+     "kind": "p",
+     "display": "A · Y\n0 · 1\n1 · 0",
+     "speech": "A. Y 0. 1 1. 0"
+    },
+    {
+     "kind": "h",
+     "display": "NAND · Y=not (A· B)",
+     "speech": "NAND · Y=the opposite of A times B"
+    },
+    {
+     "kind": "p",
+     "display": "A · B · Y\n0 · 0 · 1\n0 · 1 · 1\n1 · 0 · 1\n1 · 1 · 0",
+     "speech": "A. B. Y 0. 0. 1 0. 1. 1 1. 0. 1 1. 1. 0"
+    },
+    {
+     "kind": "h",
+     "display": "NOR · Y=not (A+B)",
+     "speech": "NOR · Y=the opposite of A+B"
+    },
+    {
+     "kind": "p",
+     "display": "A · B · Y\n0 · 0 · 1\n0 · 1 · 0\n1 · 0 · 0\n1 · 1 · 0",
+     "speech": "A. B. Y 0. 0. 1 0. 1. 0 1. 0. 0 1. 1. 0"
+    },
+    {
+     "kind": "h",
+     "display": "XOR · Y=A⊕ B",
+     "speech": "XOR · Y=A exclusive or B"
+    },
+    {
+     "kind": "p",
+     "display": "A · B · Y\n0 · 0 · 0\n0 · 1 · 1\n1 · 0 · 1\n1 · 1 · 0",
+     "speech": "A. B. Y 0. 0. 0 0. 1. 1 1. 0. 1 1. 1. 0"
+    },
+    {
+     "kind": "p",
+     "display": "XNOR is XOR followed by a bubble: Y=not (A⊕ B). It is 1 only on the rows 00 and 11.",
+     "speech": "XNOR is XOR followed by a bubble: Y=the opposite of A exclusive or B. It is 1 only on the rows 00 and 11."
+    },
+    {
+     "kind": "p",
+     "display": "The small circle, or bubble, means inversion. NAND is AND then NOT. NOR is OR then NOT. Read a bubble on the output before you memorise the table: build the inner gate, then flip every output bit.",
+     "speech": "The small circle, or bubble, means inversion. NAND is AND then NOT. NOR is OR then NOT. Read a bubble on the output before you memorise the table: build the inner gate, then flip every output bit."
+    },
+    {
+     "kind": "h",
+     "display": "Worked circuit: a night alarm",
+     "speech": "Worked circuit: a night alarm"
+    },
+    {
+     "kind": "p",
+     "display": "A shop alarm should sound when it is night and either the door or the window opens. Let D be the door sensor, W the window sensor, and N the night switch.",
+     "speech": "A shop alarm should sound when it is night and either the door or the window opens. Let D be the door sensor, W the window sensor, and N the night switch."
+    },
+    {
+     "kind": "p",
+     "display": "Y = (D + W)· N",
+     "speech": "Y = (D + W) times N"
+    },
+    {
+     "kind": "p",
+     "display": "Build it as an OR gate feeding an AND gate. The truth table has 2³ = 8 rows. Y is 1 only for (D,W,N) = (1,0,1), (0,1,1), and (1,1,1). In daylight N=0, so Y=0 even if a sensor trips. That is the circuit the Boolean expression demanded.",
+     "speech": "Build it as an OR gate feeding an AND gate. The truth table has 2 to the power 3 = 8 rows. Y is 1 only for (D,W,N) = (1,0,1), (0,1,1), and (1,1,1). In daylight N=0, so Y=0 even if a sensor trips. That is the circuit the Boolean expression demanded."
+    },
+    {
+     "kind": "h",
+     "display": "Lab · Logisim Evolution",
+     "speech": "Lab · Logisim Evolution"
+    },
+    {
+     "kind": "p",
+     "display": "The textbook calls the simulator LogiSim. The steps below build the two-input AND circuit Y=A· B.",
+     "speech": "The textbook calls the simulator LogiSim. The steps below build the two-input AND circuit Y=A times B."
+    },
+    {
+     "kind": "item",
+     "display": "Start a project, then use File → Save As. The file ends in .circ .",
+     "speech": "Start a project, then use File → Save As. The file ends in .circ ."
+    },
+    {
+     "kind": "item",
+     "display": "In the explorer, open Gates and place an AND gate on the canvas.",
+     "speech": "In the explorer, open Gates and place an AND gate on the canvas."
+    },
+    {
+     "kind": "item",
+     "display": "Place two input pins on the left and one output pin on the right. Label them A, B, and Y.",
+     "speech": "Place two input pins on the left and one output pin on the right. Label them A, B, and Y."
+    },
+    {
+     "kind": "item",
+     "display": "Draw wires from A and B into the gate and from the gate to Y. Escape returns you to the select tool.",
+     "speech": "Draw wires from A and B into the gate and from the gate to Y. Escape returns you to the select tool."
+    },
+    {
+     "kind": "item",
+     "display": "Use the poke tool. Click the inputs through 00, 01, 10, and 11. The output must match the AND table.",
+     "speech": "Use the poke tool. Click the inputs through 00, 01, 10, and 11. The output must match the AND table."
+    },
+    {
+     "kind": "h",
+     "display": "The software development life cycle",
+     "speech": "The software development life cycle"
+    },
+    {
+     "kind": "p",
+     "display": "The SDLC is a planned route from a need to working software that can be maintained. The course uses six phases. Each phase has a reason and a deliverable.",
+     "speech": "The SDLC is a planned route from a need to working software that can be maintained. The course uses six phases. Each phase has a reason and a deliverable."
+    },
+    {
+     "kind": "item",
+     "display": "1 Requirement analysis. Ask users what the system must do. Write the Software Requirements Specification (SRS).",
+     "speech": "1 Requirement analysis. Ask users what the system must do. Write the Software Requirements Specification (SRS)."
+    },
+    {
+     "kind": "item",
+     "display": "2 System design. Decide structure (high-level design), components (low-level design), the database, and the screens. Deliver a design document.",
+     "speech": "2 System design. Decide structure (high-level design), components (low-level design), the database, and the screens. Deliver a design document."
+    },
+    {
+     "kind": "item",
+     "display": "3 Implementation. Write readable code, comment the hard parts, and review it with another person.",
+     "speech": "3 Implementation. Write readable code, comment the hard parts, and review it with another person."
+    },
+    {
+     "kind": "item",
+     "display": "4 Testing. Unit tests check one piece. Integration tests check pieces together. System testing checks the whole product. User acceptance testing is done by the people who will use it.",
+     "speech": "4 Testing. Unit tests check one piece. Integration tests check pieces together. System testing checks the whole product. User acceptance testing is done by the people who will use it."
+    },
+    {
+     "kind": "item",
+     "display": "5 Deployment. Release the software to its users.",
+     "speech": "5 Deployment. Release the software to its users."
+    },
+    {
+     "kind": "item",
+     "display": "6 Maintenance. Fix faults, adapt to new rules, and improve what real use reveals.",
+     "speech": "6 Maintenance. Fix faults, adapt to new rules, and improve what real use reveals."
+    },
+    {
+     "kind": "note",
+     "display": "Black-box testing looks only at inputs and outputs. The tester need not see the code. A login trial is black-box: correct details enter, and either the account opens or it does not. White-box testing reads the code and checks that branches and conditions behave. Developers usually do this work.",
+     "speech": "Black-box testing looks only at inputs and outputs. The tester need not see the code. A login trial is black-box: correct details enter, and either the account opens or it does not. White-box testing reads the code and checks that branches and conditions behave. Developers usually do this work."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 2. Waterfall finishes one phase before the next begins.",
+     "speech": "Figure 2. Waterfall finishes one phase before the next begins."
+    },
+    {
+     "kind": "h",
+     "display": "Waterfall and Agile",
+     "speech": "Waterfall and Agile"
+    },
+    {
+     "kind": "p",
+     "display": "Waterfall is a strong choice when the requirements are already clear and are unlikely to move. The textbook’s library system is that kind of project: the records, the loans, and the reports can be specified before coding starts. The cost of Waterfall is late discovery. Testing sits after coding, so a misunderstood requirement may appear only when the build is large.",
+     "speech": "Waterfall is a strong choice when the requirements are already clear and are unlikely to move. The textbook’s library system is that kind of project: the records, the loans, and the reports can be specified before coding starts. The cost of Waterfall is late discovery. Testing sits after coding, so a misunderstood requirement may appear only when the build is large."
+    },
+    {
+     "kind": "p",
+     "display": "Agile, in the Scrum form used for the textbook’s school mobile app, expects the requirements to change. Work is divided into short sprints. The textbook case uses two-week sprints. Each sprint has planning, daily stand-up, building, a review of working software, and a retrospective on the team’s process. The product backlog is allowed to change after feedback. That fits an app whose students, teachers, and parents discover features as they try them.",
+     "speech": "Agile, in the Scrum form used for the textbook’s school mobile app, expects the requirements to change. Work is divided into short sprints. The textbook case uses two-week sprints. Each sprint has planning, daily stand-up, building, a review of working software, and a retrospective on the team’s process. The product backlog is allowed to change after feedback. That fits an app whose students, teachers, and parents discover features as they try them."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 3. A Scrum sprint returns something usable, then plans the next slice.",
+     "speech": "Figure 3. A Scrum sprint returns something usable, then plans the next slice."
+    },
+    {
+     "kind": "p",
+     "display": "· Waterfall · Agile / Scrum\nRequirements · Written up front in an SRS · Emerge and change in the backlog\nDelivery · One release after the late phases · Working software every sprint\nTesting · A dedicated phase after coding · Continuous, inside the sprint\nBest fit · Stable, well-understood work · Unclear needs, fast feedback",
+     "speech": ". Waterfall. Agile / Scrum Requirements. Written up front in an SRS. Emerge and change in the backlog Delivery. One release after the late phases. Working software every sprint Testing. A dedicated phase after coding. Continuous, inside the sprint Best fit. Stable, well-understood work. Unclear needs, fast feedback"
+    },
+    {
+     "kind": "h",
+     "display": "OSI and TCP/IP",
+     "speech": "OSI and TCP/IP"
+    },
+    {
+     "kind": "p",
+     "display": "A communication model divides the work of sending a message into layers. Each layer has one job and talks to the layers next to it. The OSI model (Open Systems Interconnection), published by ISO, is a seven-layer reference. The TCP/IP model is the four-layer model the Internet actually runs. A top-to-bottom memory line for OSI is “All People Seem To Need Data Processing.”",
+     "speech": "A communication model divides the work of sending a message into layers. Each layer has one job and talks to the layers next to it. The OSI model (Open Systems Interconnection), published by ISO, is a seven-layer reference. The TCP/IP model is the four-layer model the Internet actually runs. A top-to-bottom memory line for OSI is “All People Seem To Need Data Processing.”"
+    },
+    {
+     "kind": "p",
+     "display": "# · OSI layer · Main job · You will meet\n7 · Application · The service the user touches · HTTP, HTTPS, FTP, SMTP, DNS\n6 · Presentation · Format, compression, encryption · Translation between data formats\n5 · Session · Open, keep, and close a dialogue · Session setup and recovery\n4 · Transport · End-to-end delivery and ports · TCP, UDP\n3 · Network · Logical addresses and routing · IP, ICMP · IPv4 is 32-bit, IPv6 is 128-bit\n2 · Data link · Frames, MAC addresses, error check · Ethernet, a switch\n1 · Physical · Bits as signals on a medium · Cable, fibre, radio, a hub",
+     "speech": "#. OSI layer. Main job. You will meet 7. Application. The service the user touches. HTTP, HTTPS, FTP, SMTP, DNS 6. Presentation. Format, compression, encryption. Translation between data formats 5. Session. Open, keep, and close a dialogue. Session setup and recovery 4. Transport. End-to-end delivery and ports. TCP, UDP 3. Network. Logical addresses and routing. IP, ICMP · IPv4 is 32-bit, IPv6 is 128-bit 2. Data link. Frames, MAC addresses, error check. Ethernet, a switch 1. Physical. Bits as signals on a medium. Cable, fibre, radio, a hub"
+    },
+    {
+     "kind": "h",
+     "display": "TCP and UDP",
+     "speech": "TCP and UDP"
+    },
+    {
+     "kind": "p",
+     "display": "TCP sets up a connection, numbers data so it can be reassembled, and resends what is lost. Web pages, email, and file transfer use it. UDP sends datagrams without that handshake. It is lighter, and it is used where a late packet is worse than a missing one: live video, online games, and many DNS queries.",
+     "speech": "TCP sets up a connection, numbers data so it can be reassembled, and resends what is lost. Web pages, email, and file transfer use it. UDP sends datagrams without that handshake. It is lighter, and it is used where a late packet is worse than a missing one: live video, online games, and many DNS queries."
+    },
+    {
+     "kind": "h",
+     "display": "TCP/IP in four layers",
+     "speech": "TCP/IP in four layers"
+    },
+    {
+     "kind": "p",
+     "display": "Application in TCP/IP covers OSI layers 7, 6, and 5. Transport matches OSI layer 4. Internet matches OSI layer 3. Network Access covers OSI layers 2 and 1. Every device on the Internet uses this stack.",
+     "speech": "Application in TCP/IP covers OSI layers 7, 6, and 5. Transport matches OSI layer 4. Internet matches OSI layer 3. Network Access covers OSI layers 2 and 1. Every device on the Internet uses this stack."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 4. Encapsulation going down. Decapsulation climbs back up.",
+     "speech": "Figure 4. Encapsulation going down. Decapsulation climbs back up."
+    },
+    {
+     "kind": "note",
+     "display": "One sentence. OSI is the seven-layer map we use to explain networks; TCP/IP is the four-layer stack that carries Internet traffic.",
+     "speech": "One sentence. OSI is the seven-layer map we use to explain networks; TCP/IP is the four-layer stack that carries Internet traffic."
+    },
+    {
+     "kind": "h",
+     "display": "Checkpoint",
+     "speech": "Checkpoint"
+    },
+    {
+     "kind": "item",
+     "display": "How many rows does a truth table with 4 inputs have?",
+     "speech": "How many rows does a truth table with 4 inputs have?"
+    },
+    {
+     "kind": "item",
+     "display": "A gate outputs 0 only when both inputs are 1. Name it, and write the expression.",
+     "speech": "A gate outputs 0 only when both inputs are 1. Name it, and write the expression."
+    },
+    {
+     "kind": "item",
+     "display": "Name the SDLC phase whose deliverable is the SRS, and the two testing methods that differ by whether the tester sees the code.",
+     "speech": "Name the SDLC phase whose deliverable is the SRS, and the two testing methods that differ by whether the tester sees the code."
+    },
+    {
+     "kind": "item",
+     "display": "Which OSI layer adds port numbers, and which data-unit name belongs to that layer?",
+     "speech": "Which OSI layer adds port numbers, and which data-unit name belongs to that layer?"
+    },
+    {
+     "kind": "p",
+     "display": "Sketch answers: 16 rows. NAND, Y=not (A· B). Requirement analysis; black-box and white-box. Transport layer; the segment.",
+     "speech": "Sketch answers: 16 rows. NAND, Y=the opposite of A times B. Requirement analysis; black-box and white-box. Transport layer; the segment."
+    }
+   ]
+  },
+  {
+   "id": "l2",
+   "kicker": "Class XI · Lecture 2",
+   "title": "Computational thinking and algorithms",
+   "deck": "Break the problem down, then choose a search or a sort that fits the data.",
+   "blocks": [
+    {
+     "kind": "p",
+     "display": "Break the problem down, then choose a search or a sort that fits the data.",
+     "speech": "Break the problem down, then choose a search or a sort that fits the data."
+    },
+    {
+     "kind": "item",
+     "display": "Use decomposition, pattern recognition, and abstraction on a real problem.",
+     "speech": "Use decomposition, pattern recognition, and abstraction on a real problem."
+    },
+    {
+     "kind": "item",
+     "display": "State what an algorithm is, how it differs from pseudocode, and what makes one good.",
+     "speech": "State what an algorithm is, how it differs from pseudocode, and what makes one good."
+    },
+    {
+     "kind": "item",
+     "display": "Trace bubble sort and selection sort, and linear search and binary search.",
+     "speech": "Trace bubble sort and selection sort, and linear search and binary search."
+    },
+    {
+     "kind": "item",
+     "display": "Choose an algorithm from the shape of the data and the cost of a wrong choice.",
+     "speech": "Choose an algorithm from the shape of the data and the cost of a wrong choice."
+    },
+    {
+     "kind": "h",
+     "display": "Three strategies",
+     "speech": "Three strategies"
+    },
+    {
+     "kind": "h",
+     "display": "Decomposition",
+     "speech": "Decomposition"
+    },
+    {
+     "kind": "p",
+     "display": "Split one hard job into smaller jobs that can be solved and checked on their own. Planning a school trip becomes transport, permissions, food, and a headcount. A bug is easier to find when only one of those jobs is wrong.",
+     "speech": "Split one hard job into smaller jobs that can be solved and checked on their own. Planning a school trip becomes transport, permissions, food, and a headcount. A bug is easier to find when only one of those jobs is wrong."
+    },
+    {
+     "kind": "h",
+     "display": "Pattern recognition",
+     "speech": "Pattern recognition"
+    },
+    {
+     "kind": "p",
+     "display": "Look for a repeat. If every pass of a sort compares neighbours, you do not invent a new method for each pair. The same comparison is the pattern; the data values change.",
+     "speech": "Look for a repeat. If every pass of a sort compares neighbours, you do not invent a new method for each pair. The same comparison is the pattern; the data values change."
+    },
+    {
+     "kind": "h",
+     "display": "Abstraction",
+     "speech": "Abstraction"
+    },
+    {
+     "kind": "p",
+     "display": "Keep the details that change the result, and set the rest aside. A search cares about the order of the values and the target. It does not care whether those values are roll numbers or prices.",
+     "speech": "Keep the details that change the result, and set the rest aside. A search cares about the order of the values and the target. It does not care whether those values are roll numbers or prices."
+    },
+    {
+     "kind": "h",
+     "display": "Algorithms and pseudocode",
+     "speech": "Algorithms and pseudocode"
+    },
+    {
+     "kind": "p",
+     "display": "An algorithm is a finite sequence of clear steps that produces a result. It is an idea, not a file in a particular language. Pseudocode writes that idea in structured English so a programmer can turn it into code. The algorithm says what must happen. The pseudocode shows one readable way to carry it out.",
+     "speech": "An algorithm is a finite sequence of clear steps that produces a result. It is an idea, not a file in a particular language. Pseudocode writes that idea in structured English so a programmer can turn it into code. The algorithm says what must happen. The pseudocode shows one readable way to carry it out."
+    },
+    {
+     "kind": "p",
+     "display": "A good algorithm has · Meaning in practice\nInput · The data it is allowed to receive is stated.\nOutput · What it returns, or prints, is stated.\nDefiniteness · Each step has one meaning. “Sort it somehow” is not a step.\nFiniteness · It stops. A loop needs a condition that becomes false.\nEffectiveness · Each step is small enough to do, by hand or by a machine.",
+     "speech": "A good algorithm has. Meaning in practice Input. The data it is allowed to receive is stated. Output. What it returns, or prints, is stated. Definiteness. Each step has one meaning. “Sort it somehow” is not a step. Finiteness. It stops. A loop needs a condition that becomes false. Effectiveness. Each step is small enough to do, by hand or by a machine."
+    },
+    {
+     "kind": "p",
+     "display": "Later you will judge the same algorithm on three further questions: correctness (the output matches the expected result on valid input), efficiency (how the work grows as the input grows), and clarity (another person can read it and change it).",
+     "speech": "Later you will judge the same algorithm on three further questions: correctness (the output matches the expected result on valid input), efficiency (how the work grows as the input grows), and clarity (another person can read it and change it)."
+    },
+    {
+     "kind": "h",
+     "display": "Bubble sort and selection sort",
+     "speech": "Bubble sort and selection sort"
+    },
+    {
+     "kind": "p",
+     "display": "Both sorts taught here are simple and both do about n² comparisons. They are teaching algorithms. On a million items a faster method such as merge sort finishes in far less time. Use these two when the list is short or when the goal is to understand swapping.",
+     "speech": "Both sorts taught here are simple and both do about n squared comparisons. They are teaching algorithms. On a million items a faster method such as merge sort finishes in far less time. Use these two when the list is short or when the goal is to understand swapping."
+    },
+    {
+     "kind": "h",
+     "display": "Bubble sort",
+     "speech": "Bubble sort"
+    },
+    {
+     "kind": "p",
+     "display": "Walk along the list. If two neighbours are out of order, swap them. After one pass the largest item has bubbled to the end. Repeat on the unsorted prefix. If a whole pass makes no swap, the list is already sorted and you may stop.",
+     "speech": "Walk along the list. If two neighbours are out of order, swap them. After one pass the largest item has bubbled to the end. Repeat on the unsorted prefix. If a whole pass makes no swap, the list is already sorted and you may stop."
+    },
+    {
+     "kind": "p",
+     "display": "One pass on [5, 1, 4]: compare 5 and 1, swap to [1, 5, 4]; compare 5 and 4, swap to [1, 4, 5].",
+     "speech": "One pass on [5, 1, 4]: compare 5 and 1, swap to [1, 5, 4]; compare 5 and 4, swap to [1, 4, 5]."
+    },
+    {
+     "kind": "h",
+     "display": "Selection sort",
+     "speech": "Selection sort"
+    },
+    {
+     "kind": "p",
+     "display": "On pass i, find the smallest item in the unsorted tail and swap it into position i. There is at most one swap per pass. Unlike bubble sort, selection sort does not stop early: it still scans the remaining tail even when the tail is already ordered.",
+     "speech": "On pass i, find the smallest item in the unsorted tail and swap it into position i. There is at most one swap per pass. Unlike bubble sort, selection sort does not stop early: it still scans the remaining tail even when the tail is already ordered."
+    },
+    {
+     "kind": "p",
+     "display": "On [5, 1, 4]: the minimum is 1, swap with 5 to get [1, 5, 4]. The minimum of the tail is 4, swap with 5 to get [1, 4, 5].",
+     "speech": "On [5, 1, 4]: the minimum is 1, swap with 5 to get [1, 5, 4]. The minimum of the tail is 4, swap with 5 to get [1, 4, 5]."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 5. Bubble sort swaps neighbours until the largest bar sits at the end of the pass.",
+     "speech": "Figure 5. Bubble sort swaps neighbours until the largest bar sits at the end of the pass."
+    },
+    {
+     "kind": "h",
+     "display": "Linear search and binary search",
+     "speech": "Linear search and binary search"
+    },
+    {
+     "kind": "p",
+     "display": "Linear search starts at the first item and checks one by one until it finds the target or runs out of items. The list may be unsorted. On n items the worst case looks at all n of them: order n, written O(n) in the next class. For a dozen items this is often the right tool.",
+     "speech": "Linear search starts at the first item and checks one by one until it finds the target or runs out of items. The list may be unsorted. On n items the worst case looks at all n of them: order n, written big O of n in the next class. For a dozen items this is often the right tool."
+    },
+    {
+     "kind": "p",
+     "display": "Binary search requires a sorted list. Compare the target with the middle item. If the target is smaller, discard the right half. If it is larger, discard the left half. Repeat. The worst-case number of comparisons grows like the logarithm:",
+     "speech": "Binary search requires a sorted list. Compare the target with the middle item. If the target is smaller, discard the right half. If it is larger, discard the left half. Repeat. The worst-case number of comparisons grows like the logarithm:"
+    },
+    {
+     "kind": "p",
+     "display": "steps ≈ ⌊ log_2 n ⌋ + 1.",
+     "speech": "steps approximately log base 2 of n + 1."
+    },
+    {
+     "kind": "note",
+     "display": "Worked binary search. Sorted list [4, 9, 15, 21, 28, 33, 40], target 21. Indices run from 0 to 6. beg=0, end=6, mid=⌊(0+6)/2⌋=3. Value 21. Found. Target 33 on the same list: mid=3, value 21. 33 is larger, so beg=4. mid=⌊(4+6)/2⌋=5, value 33. Found in two comparisons, not seven. An off-by-one error in beg or end is the usual bug. Update the bound to the item after or before the middle, and stop when the range is empty.",
+     "speech": "Worked binary search. Sorted list [4, 9, 15, 21, 28, 33, 40], target 21. Indices run from 0 to 6. beg=0, end=6, mid=(0+6)/2=3. Value 21. Found. Target 33 on the same list: mid=3, value 21. 33 is larger, so beg=4. mid=(4+6)/2=5, value 33. Found in two comparisons, not seven. An off-by-one error in beg or end is the usual bug. Update the bound to the item after or before the middle, and stop when the range is empty."
+    },
+    {
+     "kind": "note",
+     "display": "Decision. Unsorted, or a one-off search of a short list: linear search. Sorted, and searched often: binary search. The cost of sorting is paid once; every later search is cheap.",
+     "speech": "Decision. Unsorted, or a one-off search of a short list: linear search. Sorted, and searched often: binary search. The cost of sorting is paid once; every later search is cheap."
+    },
+    {
+     "kind": "p",
+     "display": "Question · Choose\nIs the data unordered, or tiny? · Linear search\nIs the data sorted, and will you search it many times? · Binary search\nDo you need a sort you can explain with swaps, and the list is short? · Bubble sort or selection sort\nMight the list already be nearly sorted, and may you stop early? · Bubble sort, with the no-swap stop\nAre swaps expensive, so you want at most one swap per pass? · Selection sort",
+     "speech": "Question. Choose Is the data unordered, or tiny?. Linear search Is the data sorted, and will you search it many times?. Binary search Do you need a sort you can explain with swaps, and the list is short?. Bubble sort or selection sort Might the list already be nearly sorted, and may you stop early?. Bubble sort, with the no-swap stop Are swaps expensive, so you want at most one swap per pass?. Selection sort"
+    },
+    {
+     "kind": "h",
+     "display": "Checkpoint",
+     "speech": "Checkpoint"
+    },
+    {
+     "kind": "item",
+     "display": "Name the strategy that throws away details which do not affect the result.",
+     "speech": "Name the strategy that throws away details which do not affect the result."
+    },
+    {
+     "kind": "item",
+     "display": "After one bubble-sort pass on [3, 8, 2, 6], what is the last value, and why?",
+     "speech": "After one bubble-sort pass on [3, 8, 2, 6], what is the last value, and why?"
+    },
+    {
+     "kind": "item",
+     "display": "Why does binary search refuse an unsorted list?",
+     "speech": "Why does binary search refuse an unsorted list?"
+    },
+    {
+     "kind": "p",
+     "display": "Sketch answers: abstraction. The last value is 8, because each swap moved the current largest item rightward and 8 is the maximum. The half you discard is only safe to discard when you know every value on that side is too small or too large, which sorting guarantees.",
+     "speech": "Sketch answers: abstraction. The last value is 8, because each swap moved the current largest item rightward and 8 is the maximum. The half you discard is only safe to discard when you know every value on that side is too small or too large, which sorting guarantees."
+    }
+   ]
+  },
+  {
+   "id": "l3",
+   "kicker": "Class XI · Lecture 3",
+   "title": "Programming fundamentals",
+   "deck": "Python as a readable language: data, decisions, repetition, libraries, and faults.",
+   "blocks": [
+    {
+     "kind": "p",
+     "display": "Python as a readable language: data, decisions, repetition, libraries, and faults.",
+     "speech": "Python as a readable language: data, decisions, repetition, libraries, and faults."
+    },
+    {
+     "kind": "item",
+     "display": "Place a language on the path from machine code to Python, and name real uses of Python.",
+     "speech": "Place a language on the path from machine code to Python, and name real uses of Python."
+    },
+    {
+     "kind": "item",
+     "display": "Use variables, types, input, output, and operators.",
+     "speech": "Use variables, types, input, output, and operators."
+    },
+    {
+     "kind": "item",
+     "display": "Direct a program with sequence, selection, and repetition.",
+     "speech": "Direct a program with sequence, selection, and repetition."
+    },
+    {
+     "kind": "item",
+     "display": "Call a library and separate a syntax error from a logic error.",
+     "speech": "Call a library and separate a syntax error from a logic error."
+    },
+    {
+     "kind": "h",
+     "display": "Languages and why Python",
+     "speech": "Languages and why Python"
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 6. Closer to the machine at the bottom, closer to speech at the top.",
+     "speech": "Figure 6. Closer to the machine at the bottom, closer to speech at the top."
+    },
+    {
+     "kind": "p",
+     "display": "A low-level language sits near the processor. Machine code is bits. Assembly replaces some of those bits with short mnemonics. A mid-level language such as C still lets the programmer talk about memory, but it reads more like a procedure. A high-level language hides the machine. Python, Java, and C++ programs describe the problem in words and structures a person can review.",
+     "speech": "A low-level language sits near the processor. Machine code is bits. Assembly replaces some of those bits with short mnemonics. A mid-level language such as C still lets the programmer talk about memory, but it reads more like a procedure. A high-level language hides the machine. Python, Java, and C++ programs describe the problem in words and structures a person can review."
+    },
+    {
+     "kind": "p",
+     "display": "Python shows up in data work, small web tools, automation, and teaching because the same idea is short to write. The editor used in this course is Visual Studio Code: the explorer holds files, the editor holds the program, the terminal runs it, and the debugger stops on a chosen line.",
+     "speech": "Python shows up in data work, small web tools, automation, and teaching because the same idea is short to write. The editor used in this course is Visual Studio Code: the explorer holds files, the editor holds the program, the terminal runs it, and the debugger stops on a chosen line."
+    },
+    {
+     "kind": "h",
+     "display": "Data, input, and operators",
+     "speech": "Data, input, and operators"
+    },
+    {
+     "kind": "p",
+     "display": "A variable is a name bound to a value. Names describe the value: score , not s2 . Python types you will use immediately are int , float , str , and bool .",
+     "speech": "A variable is a name bound to a value. Names describe the value: score , not s2 . Python types you will use immediately are int , float , str , and bool ."
+    },
+    {
+     "kind": "code",
+     "display": "name = input(\"Student name: \")\nmarks = int(input(\"Marks: \"))\npassed = marks >= 50\nprint(name, \"passed:\", passed)",
+     "speech": "Code. name equals input(\"Student name: \") marks equals int(input(\"Marks: \")) passed equals marks greater than or equal to 50 print(name, \"passed:\", passed)"
+    },
+    {
+     "kind": "p",
+     "display": "input always returns text. Arithmetic needs int or float around it. print writes values separated by spaces.",
+     "speech": "input always returns text. Arithmetic needs int or float around it. print writes values separated by spaces."
+    },
+    {
+     "kind": "p",
+     "display": "Kind · Symbols · Watch this\nArithmetic · + − * / // % ** · / is true division. // is floor division. % is the remainder.\nComparison · == != > < >= <= · = assigns. == asks a question. The result is True or False .\nLogical · and or not · and needs both sides true. or needs one. not flips the value.",
+     "speech": "Kind. Symbols. Watch this Arithmetic. + − * / // % **. / is true division. // is floor division. % is the remainder. Comparison. == != > < >= <=. = assigns. == asks a question. The result is True or False . Logical. and or not. and needs both sides true. or needs one. not flips the value."
+    },
+    {
+     "kind": "p",
+     "display": "Try these before you trust a condition: 4 == 5 - 1 is true, 55 >= 11 * 5 is true because both sides are 55, and 22 != 23 - 1 is false because both sides are 22.",
+     "speech": "Try these before you trust a condition: 4 == 5 - 1 is true, 55 >= 11 * 5 is true because both sides are 55, and 22 != 23 - 1 is false because both sides are 22."
+    },
+    {
+     "kind": "h",
+     "display": "Sequence, selection, repetition",
+     "speech": "Sequence, selection, repetition"
+    },
+    {
+     "kind": "p",
+     "display": "Sequence is the default: the next line runs after the line above it. Selection chooses a block. Repetition runs a block while a condition holds, or once for each item.",
+     "speech": "Sequence is the default: the next line runs after the line above it. Selection chooses a block. Repetition runs a block while a condition holds, or once for each item."
+    },
+    {
+     "kind": "code",
+     "display": "marks = int(input(\"Marks: \"))\nif marks >= 85:\n    grade = \"A\"\nelif marks >= 70:\n    grade = \"B\"\nelif marks >= 50:\n    grade = \"C\"\nelse:\n    grade = \"F\"\nprint(grade)",
+     "speech": "Code. marks equals int(input(\"Marks: \")) if marks greater than or equal to 85: grade equals \"A\" elif marks greater than or equal to 70: grade equals \"B\" elif marks greater than or equal to 50: grade equals \"C\" else: grade equals \"F\" print(grade)"
+    },
+    {
+     "kind": "p",
+     "display": "The colon opens the block. The indent is the block. if alone skips the block when the test fails. if / else always takes one of the two paths. elif tries further tests only when earlier tests failed. Conditions are checked from top to bottom, so put the stricter test first.",
+     "speech": "The colon opens the block. The indent is the block. if alone skips the block when the test fails. if / else always takes one of the two paths. elif tries further tests only when earlier tests failed. Conditions are checked from top to bottom, so put the stricter test first."
+    },
+    {
+     "kind": "code",
+     "display": "total = 0\nfor subject in (78, 64, 91, 55):\n    total = total + subject\nprint(\"Average:\", total / 4)\n\nn = 3\nwhile n > 0:\n    print(n)\n    n = n - 1",
+     "speech": "Code. total equals 0 for subject in (78, 64, 91, 55): total equals total + subject print(\"Average:\", total / 4) n equals 3 while n > 0: print(n) n equals n - 1"
+    },
+    {
+     "kind": "p",
+     "display": "A for loop is the natural choice when you know the collection. A while loop is the natural choice when you know the stopping test. Every while needs a line that moves toward that test. Forgetting n = n - 1 is an infinite loop: the algorithm is no longer finite.",
+     "speech": "A for loop is the natural choice when you know the collection. A while loop is the natural choice when you know the stopping test. Every while needs a line that moves toward that test. Forgetting n = n - 1 is an infinite loop: the algorithm is no longer finite."
+    },
+    {
+     "kind": "h",
+     "display": "Libraries and debugging",
+     "speech": "Libraries and debugging"
+    },
+    {
+     "kind": "p",
+     "display": "A library is code someone else has tested. A built-in library ships with Python. Import it, then use the name you imported.",
+     "speech": "A library is code someone else has tested. A built-in library ships with Python. Import it, then use the name you imported."
+    },
+    {
+     "kind": "code",
+     "display": "import math\nprint(math.sqrt(49))\nprint(math.floor(6.8))\nprint(math.pi)",
+     "speech": "Code. import math print(math.sqrt(49)) print(math.floor(6.8)) print(math.pi)"
+    },
+    {
+     "kind": "p",
+     "display": "A third-party library is installed separately. Later units use libraries of that kind for tables and charts. Import only what the program uses.",
+     "speech": "A third-party library is installed separately. Later units use libraries of that kind for tables and charts. Import only what the program uses."
+    },
+    {
+     "kind": "h",
+     "display": "Syntax error",
+     "speech": "Syntax error"
+    },
+    {
+     "kind": "p",
+     "display": "The program does not start. A missing colon, a broken indent, or a bracket that never closes. Read the line number Python prints. Fix that line, then run again.",
+     "speech": "The program does not start. A missing colon, a broken indent, or a bracket that never closes. Read the line number Python prints. Fix that line, then run again."
+    },
+    {
+     "kind": "h",
+     "display": "Runtime error",
+     "speech": "Runtime error"
+    },
+    {
+     "kind": "p",
+     "display": "The program starts and then fails. int(\"Ali\") and division by zero are runtime errors. Guard the input, or catch the case before the operation.",
+     "speech": "The program starts and then fails. int(\"Ali\") and division by zero are runtime errors. Guard the input, or catch the case before the operation."
+    },
+    {
+     "kind": "h",
+     "display": "Logic error",
+     "speech": "Logic error"
+    },
+    {
+     "kind": "p",
+     "display": "The program finishes and the answer is wrong. Using = inside a comparison, or averaging with the wrong count, is a logic error. Trace the variables by hand.",
+     "speech": "The program finishes and the answer is wrong. Using = inside a comparison, or averaging with the wrong count, is a logic error. Trace the variables by hand."
+    },
+    {
+     "kind": "note",
+     "display": "One sentence. Sequence does the steps in order, selection chooses a step, and repetition repeats a step until the data or the test says stop.",
+     "speech": "One sentence. Sequence does the steps in order, selection chooses a step, and repetition repeats a step until the data or the test says stop."
+    },
+    {
+     "kind": "h",
+     "display": "Checkpoint",
+     "speech": "Checkpoint"
+    },
+    {
+     "kind": "item",
+     "display": "Why does int(input(...)) appear so often around numbers?",
+     "speech": "Why does int(input(...)) appear so often around numbers?"
+    },
+    {
+     "kind": "item",
+     "display": "Rewrite “print the first multiple of 7 that is greater than 50” as a while idea in one or two lines of reasoning.",
+     "speech": "Rewrite “print the first multiple of 7 that is greater than 50” as a while idea in one or two lines of reasoning."
+    },
+    {
+     "kind": "item",
+     "display": "The program runs and prints 10 for the marks 10 and 6, where the average should be 8. What class of error is that, and what is a likely cause?",
+     "speech": "The program runs and prints 10 for the marks 10 and 6, where the average should be 8. What class of error is that, and what is a likely cause?"
+    },
+    {
+     "kind": "p",
+     "display": "Sketch answers: input returns a string, and int makes a number. Start at 7 and keep adding 7 until the value exceeds 50, then print it. A logic error: the code likely printed one of the marks again, or added the marks and forgot to divide by 2.",
+     "speech": "Sketch answers: input returns a string, and int makes a number. Start at 7 and keep adding 7 until the value exceeds 50, then print it. A logic error: the code likely printed one of the marks again, or added the marks and forgot to divide by 2."
+    }
+   ]
+  },
+  {
+   "id": "l4",
+   "kicker": "Class XI · Lecture 4",
+   "title": "Data and analysis",
+   "deck": "Turn facts into a relational database, then ask it questions.",
+   "blocks": [
+    {
+     "kind": "p",
+     "display": "Turn facts into a relational database, then ask it questions.",
+     "speech": "Turn facts into a relational database, then ask it questions."
+    },
+    {
+     "kind": "item",
+     "display": "Separate data from information, and name the parts of a database.",
+     "speech": "Separate data from information, and name the parts of a database."
+    },
+    {
+     "kind": "item",
+     "display": "Use keys, cardinality, and referential integrity, including cascade update and delete.",
+     "speech": "Use keys, cardinality, and referential integrity, including cascade update and delete."
+    },
+    {
+     "kind": "item",
+     "display": "Draw an ER model and turn a many-to-many relationship into a schema.",
+     "speech": "Draw an ER model and turn a many-to-many relationship into a schema."
+    },
+    {
+     "kind": "item",
+     "display": "Create tables, forms, queries, and reports, and summarise a result with a chart.",
+     "speech": "Create tables, forms, queries, and reports, and summarise a result with a chart."
+    },
+    {
+     "kind": "h",
+     "display": "From facts to a database",
+     "speech": "From facts to a database"
+    },
+    {
+     "kind": "p",
+     "display": "Data are recorded facts: 80, 75, 90, 70, 85. Information is data after it has been organised for a decision: the class average is 80. A database stores related data so it can be retrieved without copying the same fact into a dozen files. A DBMS is the software that creates, protects, and queries that database. Microsoft Access is the DBMS used for the practical work in this unit.",
+     "speech": "Data are recorded facts: 80, 75, 90, 70, 85. Information is data after it has been organised for a decision: the class average is 80. A database stores related data so it can be retrieved without copying the same fact into a dozen files. A DBMS is the software that creates, protects, and queries that database. Microsoft Access is the DBMS used for the practical work in this unit."
+    },
+    {
+     "kind": "h",
+     "display": "Field",
+     "speech": "Field"
+    },
+    {
+     "kind": "p",
+     "display": "One fact about one thing: a student’s name. A field has a data type.",
+     "speech": "One fact about one thing: a student’s name. A field has a data type."
+    },
+    {
+     "kind": "h",
+     "display": "Record",
+     "speech": "Record"
+    },
+    {
+     "kind": "p",
+     "display": "All the fields for one thing: one student’s row.",
+     "speech": "All the fields for one thing: one student’s row."
+    },
+    {
+     "kind": "h",
+     "display": "Table",
+     "speech": "Table"
+    },
+    {
+     "kind": "p",
+     "display": "The records of one kind of thing. A database is the set of related tables.",
+     "speech": "The records of one kind of thing. A database is the set of related tables."
+    },
+    {
+     "kind": "p",
+     "display": "Choose types on purpose. Short Text for names, Number for ages and marks, Date/Time for a loan date, Yes/No for a Boolean flag, AutoNumber for a key the DBMS can mint itself. Design view is where you set the type, a required field, a validation rule, and the primary key. Datasheet view looks like a grid and is a fast way to type the first rows once the design is settled.",
+     "speech": "Choose types on purpose. Short Text for names, Number for ages and marks, Date/Time for a loan date, Yes/No for a Boolean flag, AutoNumber for a key the DBMS can mint itself. Design view is where you set the type, a required field, a validation rule, and the primary key. Datasheet view looks like a grid and is a fast way to type the first rows once the design is settled."
+    },
+    {
+     "kind": "h",
+     "display": "Keys, relationships, integrity",
+     "speech": "Keys, relationships, integrity"
+    },
+    {
+     "kind": "p",
+     "display": "A primary key identifies one record and does not repeat. A foreign key is a field in one table that stores the primary key of another table. That is how a row in Loans points at exactly one row in Students.",
+     "speech": "A primary key identifies one record and does not repeat. A foreign key is a field in one table that stores the primary key of another table. That is how a row in Loans points at exactly one row in Students."
+    },
+    {
+     "kind": "p",
+     "display": "Cardinality · Reading · Example\nOne-to-one · Each A matches at most one B · A student and that student’s identity card\nOne-to-many · One A matches many B · One class, many students\nMany-to-many · Many A match many B · Students and the books they borrow",
+     "speech": "Cardinality. Reading. Example One-to-one. Each A matches at most one B. A student and that student’s identity card One-to-many. One A matches many B. One class, many students Many-to-many. Many A match many B. Students and the books they borrow"
+    },
+    {
+     "kind": "p",
+     "display": "Referential integrity means a foreign key must point at a real primary key, or be empty when the design allows that. You cannot record a loan for a student who is not in the student table. Cascade update copies a changed primary key into the foreign keys that use it. Cascade delete removes the dependent rows when the parent row is deleted. Use cascade delete only when the dependent rows have no meaning alone. Deleting a student and silently deleting every fee receipt is usually the wrong cascade.",
+     "speech": "Referential integrity means a foreign key must point at a real primary key, or be empty when the design allows that. You cannot record a loan for a student who is not in the student table. Cascade update copies a changed primary key into the foreign keys that use it. Cascade delete removes the dependent rows when the parent row is deleted. Use cascade delete only when the dependent rows have no meaning alone. Deleting a student and silently deleting every fee receipt is usually the wrong cascade."
+    },
+    {
+     "kind": "h",
+     "display": "An ER model, including the library pattern",
+     "speech": "An ER model, including the library pattern"
+    },
+    {
+     "kind": "p",
+     "display": "An entity-relationship diagram names the things (rectangles), their attributes (ovals or a list), and the relationships (diamonds or a labelled line). Cardinality is written at the ends of the line.",
+     "speech": "An entity-relationship diagram names the things (rectangles), their attributes (ovals or a list), and the relationships (diamonds or a labelled line). Cardinality is written at the ends of the line."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 7. The loan is its own entity because the date belongs to the pair, not to the person or the book alone.",
+     "speech": "Figure 7. The loan is its own entity because the date belongs to the pair, not to the person or the book alone."
+    },
+    {
+     "kind": "p",
+     "display": "Build a schema in this order: list the requirements, name the entities, list attributes, name relationships, mark cardinality, and replace every many-to-many link with a new table that holds both foreign keys. In a library, Member and Book are many-to-many, because one member borrows many books and one book is borrowed by many members over time. Issue (or Loan) stores MemberID, BookID, and the dates. Each foreign key is many-to-one back to its parent.",
+     "speech": "Build a schema in this order: list the requirements, name the entities, list attributes, name relationships, mark cardinality, and replace every many-to-many link with a new table that holds both foreign keys. In a library, Member and Book are many-to-many, because one member borrows many books and one book is borrowed by many members over time. Issue (or Loan) stores MemberID, BookID, and the dates. Each foreign key is many-to-one back to its parent."
+    },
+    {
+     "kind": "h",
+     "display": "Objects you build in Access",
+     "speech": "Objects you build in Access"
+    },
+    {
+     "kind": "h",
+     "display": "Table",
+     "speech": "Table"
+    },
+    {
+     "kind": "p",
+     "display": "Stores the rows. Design the keys before you type a hundred records.",
+     "speech": "Stores the rows. Design the keys before you type a hundred records."
+    },
+    {
+     "kind": "h",
+     "display": "Form",
+     "speech": "Form"
+    },
+    {
+     "kind": "p",
+     "display": "A screen for one job, such as registering a student. The form’s data source is a table or a query. The wizard is a fair start; then align the controls.",
+     "speech": "A screen for one job, such as registering a student. The form’s data source is a table or a query. The wizard is a fair start; then align the controls."
+    },
+    {
+     "kind": "h",
+     "display": "Query",
+     "speech": "Query"
+    },
+    {
+     "kind": "p",
+     "display": "A question. A select query chooses columns and rows. Criteria on the same row combine with AND. Criteria on different rows combine with OR.",
+     "speech": "A question. A select query chooses columns and rows. Criteria on the same row combine with AND. Criteria on different rows combine with OR."
+    },
+    {
+     "kind": "h",
+     "display": "Report",
+     "speech": "Report"
+    },
+    {
+     "kind": "p",
+     "display": "A formatted printout or PDF of a query: a class list, a loan reminder, a summary.",
+     "speech": "A formatted printout or PDF of a query: a class list, a loan reminder, a summary."
+    },
+    {
+     "kind": "p",
+     "display": "Totals in a query use Group By with Sum, Avg, or Count. A bar or column chart compares categories. A pie chart shows parts of one whole, and only when there are few slices. A line chart shows a value across time. The chart is an argument about the data, so the title should state the finding, not only the word “Chart”.",
+     "speech": "Totals in a query use Group By with Sum, Avg, or Count. A bar or column chart compares categories. A pie chart shows parts of one whole, and only when there are few slices. A line chart shows a value across time. The chart is an argument about the data, so the title should state the finding, not only the word “Chart”."
+    },
+    {
+     "kind": "note",
+     "display": "One sentence. A relational database keeps each fact in one place and uses keys so a query can reassemble the facts the question needs.",
+     "speech": "One sentence. A relational database keeps each fact in one place and uses keys so a query can reassemble the facts the question needs."
+    },
+    {
+     "kind": "h",
+     "display": "Checkpoint",
+     "speech": "Checkpoint"
+    },
+    {
+     "kind": "item",
+     "display": "A course has many students and a student enrols in many courses. What extra table does the schema need?",
+     "speech": "A course has many students and a student enrols in many courses. What extra table does the schema need?"
+    },
+    {
+     "kind": "item",
+     "display": "Where do you put two criteria so that both must be true?",
+     "speech": "Where do you put two criteria so that both must be true?"
+    },
+    {
+     "kind": "item",
+     "display": "What does cascade delete do, and when is it dangerous?",
+     "speech": "What does cascade delete do, and when is it dangerous?"
+    },
+    {
+     "kind": "p",
+     "display": "Sketch answers: an enrolment table with CourseID and StudentID. On the same criteria row. It deletes child rows when the parent disappears; it is dangerous when those rows are records you still need, such as payments.",
+     "speech": "Sketch answers: an enrolment table with CourseID and StudentID. On the same criteria row. It deletes child rows when the parent disappears; it is dangerous when those rows are records you still need, such as payments."
+    }
+   ]
+  },
+  {
+   "id": "l5",
+   "kicker": "Class XI · Lecture 5",
+   "title": "Applications and impacts of computing",
+   "deck": "Sensors collect, analytics explain, and AI decides. Then you decide which source to trust.",
+   "blocks": [
+    {
+     "kind": "p",
+     "display": "Sensors collect, analytics explain, and AI decides. Then you decide which source to trust.",
+     "speech": "Sensors collect, analytics explain, and AI decides. Then you decide which source to trust."
+    },
+    {
+     "kind": "item",
+     "display": "Describe artificial intelligence, the Internet of Things, and data analytics as one pipeline.",
+     "speech": "Describe artificial intelligence, the Internet of Things, and data analytics as one pipeline."
+    },
+    {
+     "kind": "item",
+     "display": "Give a concrete use of IoT in cities, industry, health, education, homes, energy, farms, and wearables.",
+     "speech": "Give a concrete use of IoT in cities, industry, health, education, homes, energy, farms, and wearables."
+    },
+    {
+     "kind": "item",
+     "display": "Tell a reliable information source from an unreliable one.",
+     "speech": "Tell a reliable information source from an unreliable one."
+    },
+    {
+     "kind": "p",
+     "display": "Artificial intelligence is computing that carries out tasks we associate with noticing, predicting, or choosing. A phone that unlocks on a face, a video site that suggests the next clip, and a site assistant that answers a short question are everyday cases. The system is not wise. It is using data to map an input to an output that used to require a person.",
+     "speech": "Artificial intelligence is computing that carries out tasks we associate with noticing, predicting, or choosing. A phone that unlocks on a face, a video site that suggests the next clip, and a site assistant that answers a short question are everyday cases. The system is not wise. It is using data to map an input to an output that used to require a person."
+    },
+    {
+     "kind": "p",
+     "display": "The Internet of Things is the network of physical devices that sense the world, send those readings, and sometimes act. A smartwatch, a soil probe, a meter, and a camera become IoT devices when they share data and take part in a task.",
+     "speech": "The Internet of Things is the network of physical devices that sense the world, send those readings, and sometimes act. A smartwatch, a soil probe, a meter, and a camera become IoT devices when they share data and take part in a task."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 8. A hot room: the sensor reports, the model decides, the actuator starts the fan.",
+     "speech": "Figure 8. A hot room: the sensor reports, the model decides, the actuator starts the fan."
+    },
+    {
+     "kind": "p",
+     "display": "Four pieces repeat in every example.",
+     "speech": "Four pieces repeat in every example."
+    },
+    {
+     "kind": "item",
+     "display": "Sensor. Temperature, motion, fingerprint, camera, smoke, soil moisture.",
+     "speech": "Sensor. Temperature, motion, fingerprint, camera, smoke, soil moisture."
+    },
+    {
+     "kind": "item",
+     "display": "Connectivity. Wi-Fi, mobile data, or Bluetooth, so the reading can leave the device.",
+     "speech": "Connectivity. Wi-Fi, mobile data, or Bluetooth, so the reading can leave the device."
+    },
+    {
+     "kind": "item",
+     "display": "Processing. Analytics turns readings into a summary. AI uses that summary to choose.",
+     "speech": "Processing. Analytics turns readings into a summary. AI uses that summary to choose."
+    },
+    {
+     "kind": "item",
+     "display": "Actuator. A motor, a lock, a valve, or a relay that changes the world.",
+     "speech": "Actuator. A motor, a lock, a valve, or a relay that changes the world."
+    },
+    {
+     "kind": "p",
+     "display": "Data analytics is the work of cleaning, grouping, and reading data so a person or a model can act. IoT without analytics is a pile of readings. Analytics without a question is a chart nobody uses. AI without reliable data repeats the bias in that data.",
+     "speech": "Data analytics is the work of cleaning, grouping, and reading data so a person or a model can act. IoT without analytics is a pile of readings. Analytics without a question is a chart nobody uses. AI without reliable data repeats the bias in that data."
+    },
+    {
+     "kind": "p",
+     "display": "Setting · What is sensed · What changes\nSmart city · Traffic, air, bins, street lights · Signal timing, collection routes\nIndustry · Vibration, temperature, product checks · Maintenance before a breakdown\nHealthcare · Pulse, ward occupancy, medicine stores · Alerts and stock orders\nEducation · Attendance devices, lab conditions · Records that no longer depend on a paper roll\nHome · Motion, smoke, temperature · A door, an alarm, a fan\nSmart grid · Meters in homes and on lines · Load shifted away from the peak hour\nFarming · Soil moisture, local weather · Irrigation only where the soil is dry\nWearables · Steps, heart rate · A prompt on the wearer’s phone",
+     "speech": "Setting. What is sensed. What changes Smart city. Traffic, air, bins, street lights. Signal timing, collection routes Industry. Vibration, temperature, product checks. Maintenance before a breakdown Healthcare. Pulse, ward occupancy, medicine stores. Alerts and stock orders Education. Attendance devices, lab conditions. Records that no longer depend on a paper roll Home. Motion, smoke, temperature. A door, an alarm, a fan Smart grid. Meters in homes and on lines. Load shifted away from the peak hour Farming. Soil moisture, local weather. Irrigation only where the soil is dry Wearables. Steps, heart rate. A prompt on the wearer’s phone"
+    },
+    {
+     "kind": "h",
+     "display": "Reliable and unreliable sources",
+     "speech": "Reliable and unreliable sources"
+    },
+    {
+     "kind": "note",
+     "display": "Lean toward a source when you can name the author or the institution, the date is visible, the method or the data is described, and the claim matches what other serious sources say. Government statistics offices, university pages, standards bodies, and papers that cite their data sit here. A .gov or .edu address is a clue, not a proof.",
+     "speech": "Lean toward a source when you can name the author or the institution, the date is visible, the method or the data is described, and the claim matches what other serious sources say. Government statistics offices, university pages, standards bodies, and papers that cite their data sit here. A .gov or .edu address is a clue, not a proof."
+    },
+    {
+     "kind": "note",
+     "display": "Step back when there is no author, no date, and no path to the original numbers. Sensational headlines, undated screenshots, and a shop that is selling the thing it “proves” are weak sources. If two pages disagree, open the table they both claim to quote.",
+     "speech": "Step back when there is no author, no date, and no path to the original numbers. Sensational headlines, undated screenshots, and a shop that is selling the thing it “proves” are weak sources. If two pages disagree, open the table they both claim to quote."
+    },
+    {
+     "kind": "note",
+     "display": "One sentence. IoT gathers the world’s readings, analytics makes them readable, and AI uses the result to recommend or to act.",
+     "speech": "One sentence. IoT gathers the world’s readings, analytics makes them readable, and AI uses the result to recommend or to act."
+    },
+    {
+     "kind": "h",
+     "display": "Checkpoint",
+     "speech": "Checkpoint"
+    },
+    {
+     "kind": "item",
+     "display": "In an automatic door, which part is the sensor and which part is the actuator?",
+     "speech": "In an automatic door, which part is the sensor and which part is the actuator?"
+    },
+    {
+     "kind": "item",
+     "display": "Name two checks you make before you cite a web page in a school report.",
+     "speech": "Name two checks you make before you cite a web page in a school report."
+    },
+    {
+     "kind": "p",
+     "display": "Sketch answers: a motion sensor detects a person; the motor that swings the door is the actuator. Name the author or organisation, and check that a date and a source for the figures are visible.",
+     "speech": "Sketch answers: a motion sensor detects a person; the motor that swings the door is the actuator. Name the author or organisation, and check that a date and a source for the figures are visible."
+    }
+   ]
+  },
+  {
+   "id": "l6",
+   "kicker": "Class XI · Lecture 6",
+   "title": "Digital literacy",
+   "deck": "Ask a sharp question, collect the right data, and present it without taking credit for someone else’s work.",
+   "blocks": [
+    {
+     "kind": "p",
+     "display": "Ask a sharp question, collect the right data, and present it without taking credit for someone else’s work.",
+     "speech": "Ask a sharp question, collect the right data, and present it without taking credit for someone else’s work."
+    },
+    {
+     "kind": "item",
+     "display": "Distinguish qualitative and quantitative data, and primary and secondary data.",
+     "speech": "Distinguish qualitative and quantitative data, and primary and secondary data."
+    },
+    {
+     "kind": "item",
+     "display": "Choose among interviews, surveys, prototypes, observation, and simulations.",
+     "speech": "Choose among interviews, surveys, prototypes, observation, and simulations."
+    },
+    {
+     "kind": "item",
+     "display": "Design a collection plan and present the result in a fitting digital form.",
+     "speech": "Design a collection plan and present the result in a fitting digital form."
+    },
+    {
+     "kind": "item",
+     "display": "Search with operators, and follow consent, privacy, and citation.",
+     "speech": "Search with operators, and follow consent, privacy, and citation."
+    },
+    {
+     "kind": "p",
+     "display": "Digital literacy is the ability to find, judge, create, and share information with digital tools, safely and with credit. Owning a phone is not the same skill.",
+     "speech": "Digital literacy is the ability to find, judge, create, and share information with digital tools, safely and with credit. Owning a phone is not the same skill."
+    },
+    {
+     "kind": "h",
+     "display": "Qualitative and quantitative",
+     "speech": "Qualitative and quantitative"
+    },
+    {
+     "kind": "p",
+     "display": "Qualitative data describes experience in words: why a student prefers printed notes, what a shopkeeper says about closing time. Quantitative data is counted or measured: 18 out of 30 students, a download time of 2.4 seconds. Many studies need both. The count says how widespread a problem is. The interview says why it happens.",
+     "speech": "Qualitative data describes experience in words: why a student prefers printed notes, what a shopkeeper says about closing time. Quantitative data is counted or measured: 18 out of 30 students, a download time of 2.4 seconds. Many studies need both. The count says how widespread a problem is. The interview says why it happens."
+    },
+    {
+     "kind": "h",
+     "display": "Primary and secondary",
+     "speech": "Primary and secondary"
+    },
+    {
+     "kind": "p",
+     "display": "Primary data is collected by you for this question: your survey, your interview, your observation sheet. Secondary data was collected by someone else: a census table, a published report, a textbook. Secondary data is faster and sometimes better, because a national sample is larger than a class. It can also answer a slightly different question from yours. Say which kind you used.",
+     "speech": "Primary data is collected by you for this question: your survey, your interview, your observation sheet. Secondary data was collected by someone else: a census table, a published report, a textbook. Secondary data is faster and sometimes better, because a national sample is larger than a class. It can also answer a slightly different question from yours. Say which kind you used."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 9. The question chooses the method. The artefact answers the question.",
+     "speech": "Figure 9. The question chooses the method. The artefact answers the question."
+    },
+    {
+     "kind": "p",
+     "display": "Method · Use it when · Limit\nInterview · You need reasons, in the person’s own words · Few people, easy to lead the witness\nSurvey · You need the same questions from many people · Shallow if the questions are vague\nObservation · You need what people do, not what they say · Your presence can change the behaviour\nPrototype · You need a reaction to an idea you can point at · People comment on the sketch, not on a finished product\nSimulation · A real trial is unsafe, slow, or expensive · The result is only as fair as the model",
+     "speech": "Method. Use it when. Limit Interview. You need reasons, in the person’s own words. Few people, easy to lead the witness Survey. You need the same questions from many people. Shallow if the questions are vague Observation. You need what people do, not what they say. Your presence can change the behaviour Prototype. You need a reaction to an idea you can point at. People comment on the sketch, not on a finished product Simulation. A real trial is unsafe, slow, or expensive. The result is only as fair as the model"
+    },
+    {
+     "kind": "h",
+     "display": "A collection plan",
+     "speech": "A collection plan"
+    },
+    {
+     "kind": "item",
+     "display": "Write one question a stranger could understand. “How does phone use during homework relate to time spent on one assignment?” is a question. “Phones are bad” is a slogan.",
+     "speech": "Write one question a stranger could understand. “How does phone use during homework relate to time spent on one assignment?” is a question. “Phones are bad” is a slogan."
+    },
+    {
+     "kind": "item",
+     "display": "Name the group. “Class XI in this college” is a population you can actually reach.",
+     "speech": "Name the group. “Class XI in this college” is a population you can actually reach."
+    },
+    {
+     "kind": "item",
+     "display": "Pick the method from the table, and draft the instrument: five to eight survey items, or an interview guide.",
+     "speech": "Pick the method from the table, and draft the instrument: five to eight survey items, or an interview guide."
+    },
+    {
+     "kind": "item",
+     "display": "Decide the sample. Asking only your friends is a biased sample if the question is about the whole class.",
+     "speech": "Decide the sample. Asking only your friends is a biased sample if the question is about the whole class."
+    },
+    {
+     "kind": "item",
+     "display": "State the ethics before you collect anything: what you will ask, whether names are stored, and how someone refuses.",
+     "speech": "State the ethics before you collect anything: what you will ask, whether names are stored, and how someone refuses."
+    },
+    {
+     "kind": "h",
+     "display": "Search operators",
+     "speech": "Search operators"
+    },
+    {
+     "kind": "p",
+     "display": "A search box is a tool, not a slot for a sentence. Quotes force a phrase. site: stays inside one site or kind of site. filetype: asks for a format. OR allows alternatives. A minus sign excludes a word.",
+     "speech": "A search box is a tool, not a slot for a sentence. Quotes force a phrase. site: stays inside one site or kind of site. filetype: asks for a format. OR allows alternatives. A minus sign excludes a word."
+    },
+    {
+     "kind": "code",
+     "display": "\"internet usage in Pakistan\" filetype:pdf\ndigital literacy students site:.edu\nsmartphone homework -advertisement",
+     "speech": "Code. \"internet usage in Pakistan\" filetype:pdf digital literacy students site:.edu smartphone homework -advertisement"
+    },
+    {
+     "kind": "h",
+     "display": "Presenting, and the ethics that sit underneath",
+     "speech": "Presenting, and the ethics that sit underneath"
+    },
+    {
+     "kind": "p",
+     "display": "A spreadsheet holds the table, computes an average, and draws the chart. Slides are for a spoken explanation with one idea on a slide. An infographic is for a single result a passer-by can read. A report is for the question, the method, the result, and the limit. Pick the form that matches the audience. A chart with no title and no units is decoration.",
+     "speech": "A spreadsheet holds the table, computes an average, and draws the chart. Slides are for a spoken explanation with one idea on a slide. An infographic is for a single result a passer-by can read. A report is for the question, the method, the result, and the limit. Pick the form that matches the audience. A chart with no title and no units is decoration."
+    },
+    {
+     "kind": "note",
+     "display": "Consent, privacy, citation. Ask before you record an answer. Collect only what the question needs. Do not publish names if the answers could embarrass a classmate. Plagiarism is presenting someone else’s words, images, or ideas as your own. Quote, paraphrase, and write the source. A digital artefact that copies three paragraphs from a website has not finished the inquiry.",
+     "speech": "Consent, privacy, citation. Ask before you record an answer. Collect only what the question needs. Do not publish names if the answers could embarrass a classmate. Plagiarism is presenting someone else’s words, images, or ideas as your own. Quote, paraphrase, and write the source. A digital artefact that copies three paragraphs from a website has not finished the inquiry."
+    },
+    {
+     "kind": "h",
+     "display": "Checkpoint",
+     "speech": "Checkpoint"
+    },
+    {
+     "kind": "item",
+     "display": "A student copies a government table of enrolment, then interviews twelve classmates about why they chose the college. Which part is primary, and which is secondary?",
+     "speech": "A student copies a government table of enrolment, then interviews twelve classmates about why they chose the college. Which part is primary, and which is secondary?"
+    },
+    {
+     "kind": "item",
+     "display": "Write a query that looks for a PDF report on the PTA website about broadband.",
+     "speech": "Write a query that looks for a PDF report on the PTA website about broadband."
+    },
+    {
+     "kind": "item",
+     "display": "Why is “Do you agree that our canteen is excellent?” a weak survey item?",
+     "speech": "Why is “Do you agree that our canteen is excellent?” a weak survey item?"
+    },
+    {
+     "kind": "p",
+     "display": "Sketch answers: the interviews are primary; the government table is secondary. broadband Pakistan filetype:pdf site:pta.gov.pk is one reasonable query. The item leads the respondent and offers no room for a careful answer.",
+     "speech": "Sketch answers: the interviews are primary; the government table is secondary. broadband Pakistan filetype:pdf site:pta.gov.pk is one reasonable query. The item leads the respondent and offers no room for a careful answer."
+    }
+   ]
+  },
+  {
+   "id": "l7",
+   "kicker": "Class XII · Lecture 7",
+   "title": "Human–computer interaction",
+   "deck": "Design the exchange between a person and a system so more people can finish the task.",
+   "blocks": [
+    {
+     "kind": "p",
+     "display": "Design the exchange between a person and a system so more people can finish the task.",
+     "speech": "Design the exchange between a person and a system so more people can finish the task."
+    },
+    {
+     "kind": "item",
+     "display": "Describe HCI, the human side and the computer side, and where it appears in daily tools.",
+     "speech": "Describe HCI, the human side and the computer side, and where it appears in daily tools."
+    },
+    {
+     "kind": "item",
+     "display": "Apply accessibility: contrast, readable type, colour-blind-safe colour, and inclusive navigation.",
+     "speech": "Apply accessibility: contrast, readable type, colour-blind-safe colour, and inclusive navigation."
+    },
+    {
+     "kind": "item",
+     "display": "Analyse a user’s need, name common interface failures, and choose a way to improve them.",
+     "speech": "Analyse a user’s need, name common interface failures, and choose a way to improve them."
+    },
+    {
+     "kind": "item",
+     "display": "Separate UI from UX, sketch a low-fidelity wireframe, and outline a Figma prototype.",
+     "speech": "Separate UI from UX, sketch a low-fidelity wireframe, and outline a Figma prototype."
+    },
+    {
+     "kind": "p",
+     "display": "Human–computer interaction is the design of the exchange between people and digital systems. The older names CHI and man–machine interaction point at the same study. A person senses the system, decides, and acts. The system receives that act through an input device, computes, and responds through an output device.",
+     "speech": "Human–computer interaction is the design of the exchange between people and digital systems. The older names CHI and man–machine interaction point at the same study. A person senses the system, decides, and acts. The system receives that act through an input device, computes, and responds through an output device."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 10. Sight, hearing, and touch are the human channels. Screens, speakers, and vibration are the machine’s reply.",
+     "speech": "Figure 10. Sight, hearing, and touch are the human channels. Screens, speakers, and vibration are the machine’s reply."
+    },
+    {
+     "kind": "h",
+     "display": "GUI",
+     "speech": "GUI"
+    },
+    {
+     "kind": "p",
+     "display": "Windows, icons, menus, pointer. The usual desktop and phone home screen.",
+     "speech": "Windows, icons, menus, pointer. The usual desktop and phone home screen."
+    },
+    {
+     "kind": "h",
+     "display": "Command line",
+     "speech": "Command line"
+    },
+    {
+     "kind": "p",
+     "display": "Typed commands. Fast for a person who knows the language, opaque for everyone else.",
+     "speech": "Typed commands. Fast for a person who knows the language, opaque for everyone else."
+    },
+    {
+     "kind": "h",
+     "display": "Touch",
+     "speech": "Touch"
+    },
+    {
+     "kind": "p",
+     "display": "The finger is the pointer. Targets must be large enough to hit.",
+     "speech": "The finger is the pointer. Targets must be large enough to hit."
+    },
+    {
+     "kind": "h",
+     "display": "Voice and natural UI",
+     "speech": "Voice and natural UI"
+    },
+    {
+     "kind": "p",
+     "display": "Speech, and interfaces that track a gesture or a headset. Powerful, and easy to design so that only one kind of body can use them.",
+     "speech": "Speech, and interfaces that track a gesture or a headset. Powerful, and easy to design so that only one kind of body can use them."
+    },
+    {
+     "kind": "p",
+     "display": "Traditional interaction expected a trained user at a keyboard. Natural interaction tries to meet the user with speech, touch, and gesture. Both still fail when the task itself was never understood.",
+     "speech": "Traditional interaction expected a trained user at a keyboard. Natural interaction tries to meet the user with speech, touch, and gesture. Both still fail when the task itself was never understood."
+    },
+    {
+     "kind": "h",
+     "display": "Accessibility is part of the design, not a patch",
+     "speech": "Accessibility is part of the design, not a patch"
+    },
+    {
+     "kind": "h",
+     "display": "Contrast",
+     "speech": "Contrast"
+    },
+    {
+     "kind": "p",
+     "display": "Text must stand off the background. Pale grey on white looks delicate and fails in sunlight and for low vision. Dark text on a light surface, or the reverse, is the default.",
+     "speech": "Text must stand off the background. Pale grey on white looks delicate and fails in sunlight and for low vision. Dark text on a light surface, or the reverse, is the default."
+    },
+    {
+     "kind": "h",
+     "display": "Readability",
+     "speech": "Readability"
+    },
+    {
+     "kind": "p",
+     "display": "A familiar typeface, a size a person can read at arm’s length, generous line height, and short lines. All capitals slow reading.",
+     "speech": "A familiar typeface, a size a person can read at arm’s length, generous line height, and short lines. All capitals slow reading."
+    },
+    {
+     "kind": "h",
+     "display": "Colour is not the only signal",
+     "speech": "Colour is not the only signal"
+    },
+    {
+     "kind": "p",
+     "display": "Red against green disappears for many colour-blind users. Pair colour with a word, an icon, or a pattern: “Paid” beside a tick, not a green dot alone.",
+     "speech": "Red against green disappears for many colour-blind users. Pair colour with a word, an icon, or a pattern: “Paid” beside a tick, not a green dot alone."
+    },
+    {
+     "kind": "h",
+     "display": "Inclusive navigation",
+     "speech": "Inclusive navigation"
+    },
+    {
+     "kind": "p",
+     "display": "A keyboard path, a visible focus, labels a screen reader can speak, and captions on video. Do not hide the only route inside a gesture.",
+     "speech": "A keyboard path, a visible focus, labels a screen reader can speak, and captions on video. Do not hide the only route inside a gesture."
+    },
+    {
+     "kind": "h",
+     "display": "Needs, failures, and repairs",
+     "speech": "Needs, failures, and repairs"
+    },
+    {
+     "kind": "p",
+     "display": "Need analysis asks who the user is, what they are trying to finish, where they are (a bright courtyard, a noisy lab), and what happens if they make a mistake. Write those answers before you decorate a screen.",
+     "speech": "Need analysis asks who the user is, what they are trying to finish, where they are (a bright courtyard, a noisy lab), and what happens if they make a mistake. Write those answers before you decorate a screen."
+    },
+    {
+     "kind": "p",
+     "display": "Common failures are clutter, low contrast, labels that differ from the user’s words, no confirmation after a tap, and a path that only a mouse can follow. The repairs in this unit are practical: talk to users, sketch, test the sketch, change it, and test again. Continuous testing means a small check every time the interface changes, not a single demonstration on the last day.",
+     "speech": "Common failures are clutter, low contrast, labels that differ from the user’s words, no confirmation after a tap, and a path that only a mouse can follow. The repairs in this unit are practical: talk to users, sketch, test the sketch, change it, and test again. Continuous testing means a small check every time the interface changes, not a single demonstration on the last day."
+    },
+    {
+     "kind": "h",
+     "display": "UI and UX",
+     "speech": "UI and UX"
+    },
+    {
+     "kind": "p",
+     "display": "The user interface is what is on the screen and under the finger: controls, layout, words, colour. The user experience is whether the person finishes the task feeling clear about what happened. A beautiful button that submits the form twice is a UI success and a UX failure. Wireframes settle the UX structure before colour arrives.",
+     "speech": "The user interface is what is on the screen and under the finger: controls, layout, words, colour. The user experience is whether the person finishes the task feeling clear about what happened. A beautiful button that submits the form twice is a UI success and a UX failure. Wireframes settle the UX structure before colour arrives."
+    },
+    {
+     "kind": "p",
+     "display": "A low-fidelity wireframe is boxes, lines, and real labels. It is supposed to look unfinished, so critics talk about the flow.",
+     "speech": "A low-fidelity wireframe is boxes, lines, and real labels. It is supposed to look unfinished, so critics talk about the flow."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 11. A wireframe commits to words and order, not to a brand colour.",
+     "speech": "Figure 11. A wireframe commits to words and order, not to a brand colour."
+    },
+    {
+     "kind": "h",
+     "display": "Lab · Figma, low fidelity first",
+     "speech": "Lab · Figma, low fidelity first"
+    },
+    {
+     "kind": "item",
+     "display": "Create a free account and a new design file. Press F, or choose the frame tool, and place a phone frame.",
+     "speech": "Create a free account and a new design file. Press F, or choose the frame tool, and place a phone frame."
+    },
+    {
+     "kind": "item",
+     "display": "Draw the blocks of Figure 11 with rectangles and text. Name the layers in the left panel.",
+     "speech": "Draw the blocks of Figure 11 with rectangles and text. Name the layers in the left panel."
+    },
+    {
+     "kind": "item",
+     "display": "Duplicate the frame for the next step of the task, such as “Reserved”.",
+     "speech": "Duplicate the frame for the next step of the task, such as “Reserved”."
+    },
+    {
+     "kind": "item",
+     "display": "Switch to Prototype, drag a link from the button to the next frame, and press Present. Click the path yourself.",
+     "speech": "Switch to Prototype, drag a link from the button to the next frame, and press Present. Click the path yourself."
+    },
+    {
+     "kind": "item",
+     "display": "Ask one classmate to complete the task without your help. Change the label they hesitated on.",
+     "speech": "Ask one classmate to complete the task without your help. Change the label they hesitated on."
+    },
+    {
+     "kind": "h",
+     "display": "Checkpoint",
+     "speech": "Checkpoint"
+    },
+    {
+     "kind": "item",
+     "display": "A form shows errors only by turning the border red. What accessibility principle does it miss, and what would you add?",
+     "speech": "A form shows errors only by turning the border red. What accessibility principle does it miss, and what would you add?"
+    },
+    {
+     "kind": "item",
+     "display": "Why is a wireframe allowed to look rough?",
+     "speech": "Why is a wireframe allowed to look rough?"
+    },
+    {
+     "kind": "p",
+     "display": "Sketch answers: colour must not be the only signal; add an icon and the words “Date is required”. A rough sketch invites comments on the task. A polished painting invites comments on the shade of blue.",
+     "speech": "Sketch answers: colour must not be the only signal; add an icon and the words “Date is required”. A rough sketch invites comments on the task. A polished painting invites comments on the shade of blue."
+    }
+   ]
+  },
+  {
+   "id": "l8",
+   "kicker": "Class XII · Lecture 8",
+   "title": "Algorithms, efficiency, and data structures",
+   "deck": "Prove a small algorithm by tracing it, then store the data in a shape that matches the questions you ask.",
+   "blocks": [
+    {
+     "kind": "p",
+     "display": "Prove a small algorithm by tracing it, then store the data in a shape that matches the questions you ask.",
+     "speech": "Prove a small algorithm by tracing it, then store the data in a shape that matches the questions you ask."
+    },
+    {
+     "kind": "item",
+     "display": "Check correctness with a trace table and with stepwise reasoning.",
+     "speech": "Check correctness with a trace table and with stepwise reasoning."
+    },
+    {
+     "kind": "item",
+     "display": "Judge clarity (modularity, readability) and efficiency (steps, Big O, the problem in front of you).",
+     "speech": "Judge clarity (modularity, readability) and efficiency (steps, Big O, the problem in front of you)."
+    },
+    {
+     "kind": "item",
+     "display": "Refine an algorithm, and choose among arrays, linked lists, stacks, queues, trees, and graphs.",
+     "speech": "Refine an algorithm, and choose among arrays, linked lists, stacks, queues, trees, and graphs."
+    },
+    {
+     "kind": "h",
+     "display": "Trace tables and stepwise reasoning",
+     "speech": "Trace tables and stepwise reasoning"
+    },
+    {
+     "kind": "p",
+     "display": "An algorithm is correct when every valid input produces the expected output. A trace table is a paper execution. Columns hold the line, the variables, the condition, and any input or output. One row is one moment. Stepwise reasoning argues in sentences: this line can only increase the counter, the loop ends because the index reaches the length, therefore the counter equals the number of matches.",
+     "speech": "An algorithm is correct when every valid input produces the expected output. A trace table is a paper execution. Columns hold the line, the variables, the condition, and any input or output. One row is one moment. Stepwise reasoning argues in sentences: this line can only increase the counter, the loop ends because the index reaches the length, therefore the counter equals the number of matches."
+    },
+    {
+     "kind": "p",
+     "display": "Count how many scores in [42, 50, 77, 91] lie from 50 to 100 inclusive.",
+     "speech": "Count how many scores in [42, 50, 77, 91] lie from 50 to 100 inclusive."
+    },
+    {
+     "kind": "code",
+     "display": "count = 0\nfor score in scores:\n    if 50 <= score <= 100:\n        count = count + 1",
+     "speech": "Code. count equals 0 for score in scores: if 50 less than or equal to score less than or equal to 100: count equals count + 1"
+    },
+    {
+     "kind": "p",
+     "display": "score · 50 ≤ score ≤ 100 · count afterward\n42 · no · 0\n50 · yes · 1\n77 · yes · 2\n91 · yes · 3",
+     "speech": "score. 50 ≤ score ≤ 100. count afterward 42. no. 0 50. yes. 1 77. yes. 2 91. yes. 3"
+    },
+    {
+     "kind": "p",
+     "display": "The boundary values matter. 50 must be counted because the test is inclusive. A trace that never includes a boundary has not tested the algorithm.",
+     "speech": "The boundary values matter. 50 must be counted because the test is inclusive. A trace that never includes a boundary has not tested the algorithm."
+    },
+    {
+     "kind": "h",
+     "display": "Clarity and Big O",
+     "speech": "Clarity and Big O"
+    },
+    {
+     "kind": "p",
+     "display": "Modularity puts one job in one named piece, so a fault has an address. Readability is names, order, and a layout another student can follow next week. Both are clarity. An algorithm can be correct and still be a poor algorithm if nobody can safely change it.",
+     "speech": "Modularity puts one job in one named piece, so a fault has an address. Readability is names, order, and a layout another student can follow next week. Both are clarity. An algorithm can be correct and still be a poor algorithm if nobody can safely change it."
+    },
+    {
+     "kind": "p",
+     "display": "Big O describes how the number of steps grows with the input size n, ignoring constants. It is a comparison tool, not a stopwatch.",
+     "speech": "Big O describes how the number of steps grows with the input size n, ignoring constants. It is a comparison tool, not a stopwatch."
+    },
+    {
+     "kind": "p",
+     "display": "O(1), O(log n), O(n), O(nlog n), O(n²)",
+     "speech": "big O of 1, big O of log n, big O of n, big O of n log n, big O of n squared"
+    },
+    {
+     "kind": "p",
+     "display": "Class · Typical cause · Example from this course\nO(1) · The work does not depend on n · Read array index 0. Push or pop a stack. Enqueue or dequeue when the ends are known.\nO(log n) · The problem halves each step · Binary search on a sorted list\nO(n) · One pass · Linear search, or printing every item\nO(n²) · A loop inside a loop over the same data · Bubble sort, selection sort",
+     "speech": "Class. Typical cause. Example from this course big O of 1. The work does not depend on n. Read array index 0. Push or pop a stack. Enqueue or dequeue when the ends are known. big O of log n. The problem halves each step. Binary search on a sorted list big O of n. One pass. Linear search, or printing every item big O of n squared. A loop inside a loop over the same data. Bubble sort, selection sort"
+    },
+    {
+     "kind": "p",
+     "display": "Also count branches and repetitions in plain language. A nest of special cases can be slow and unreadable even when the Big O looks acceptable. Efficiency includes the real problem: an O(n²) sort of twenty names is fine; the same sort of a national exam file is not. Refinement renames muddled steps, removes repeated work, extracts a module, or picks a structure whose cheap operation is the one you perform most.",
+     "speech": "Also count branches and repetitions in plain language. A nest of special cases can be slow and unreadable even when the Big O looks acceptable. Efficiency includes the real problem: an big O of n squared sort of twenty names is fine; the same sort of a national exam file is not. Refinement renames muddled steps, removes repeated work, extracts a module, or picks a structure whose cheap operation is the one you perform most."
+    },
+    {
+     "kind": "h",
+     "display": "Linear structures",
+     "speech": "Linear structures"
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 12. A linked list pays for easy insertion with a walk from the head. There is no index.",
+     "speech": "Figure 12. A linked list pays for easy insertion with a walk from the head. There is no index."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 13. The call stack and undo both behave like a pile of plates.",
+     "speech": "Figure 13. The call stack and undo both behave like a pile of plates."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 14. A print queue and a ticket line remove the item that has waited longest.",
+     "speech": "Figure 14. A print queue and a ticket line remove the item that has waited longest."
+    },
+    {
+     "kind": "h",
+     "display": "Trees and graphs",
+     "speech": "Trees and graphs"
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 15. A tree has one root. A is the parent of B and C. D and E are leaves.",
+     "speech": "Figure 15. A tree has one root. A is the parent of B and C. D and E are leaves."
+    },
+    {
+     "kind": "p",
+     "display": "A tree organises data by hierarchy. A family tree, folders on a disk, and the staff of a college (principal, then heads, then teachers) are trees. Each node except the root has one parent.",
+     "speech": "A tree organises data by hierarchy. A family tree, folders on a disk, and the staff of a college (principal, then heads, then teachers) are trees. Each node except the root has one parent."
+    },
+    {
+     "kind": "p",
+     "display": "A graph is a set of vertices joined by edges, with no requirement of a single root. A friendship network and a road map are graphs: Multan may connect to several cities, and the roads can form a loop. Use a tree when “what contains this?” has one answer. Use a graph when connections are many-way.",
+     "speech": "A graph is a set of vertices joined by edges, with no requirement of a single root. A friendship network and a road map are graphs: Multan may connect to several cities, and the roads can form a loop. Use a tree when “what contains this?” has one answer. Use a graph when connections are many-way."
+    },
+    {
+     "kind": "p",
+     "display": "Arrays suit random access. Linked lists suit frequent inserts and deletes in the middle, if you already hold the place. Stacks suit undo and nested calls. Queues suit fair waiting. Trees suit hierarchies. Graphs suit networks.",
+     "speech": "Arrays suit random access. Linked lists suit frequent inserts and deletes in the middle, if you already hold the place. Stacks suit undo and nested calls. Queues suit fair waiting. Trees suit hierarchies. Graphs suit networks."
+    },
+    {
+     "kind": "h",
+     "display": "Checkpoint",
+     "speech": "Checkpoint"
+    },
+    {
+     "kind": "item",
+     "display": "Which structure removes the most recently added item?",
+     "speech": "Which structure removes the most recently added item?"
+    },
+    {
+     "kind": "item",
+     "display": "Why is reading a[3] described as O(1), while finding a value in an unsorted array is O(n)?",
+     "speech": "Why is reading a[3] described as big O of 1, while finding a value in an unsorted array is big O of n?"
+    },
+    {
+     "kind": "item",
+     "display": "A map of bus routes between towns is which structure, and what are the vertices and the edges?",
+     "speech": "A map of bus routes between towns is which structure, and what are the vertices and the edges?"
+    },
+    {
+     "kind": "p",
+     "display": "Sketch answers: a stack. The index computes the address directly; a search may have to inspect every cell. A graph: towns are vertices, routes are edges.",
+     "speech": "Sketch answers: a stack. The index computes the address directly; a search may have to inspect every cell. A graph: towns are vertices, routes are edges."
+    }
+   ]
+  },
+  {
+   "id": "l9",
+   "kicker": "Class XII · Lecture 9",
+   "title": "Python collections, functions, and files",
+   "deck": "Choose the collection that matches the data, hide a sub-problem inside a function, and let a file outlive the program.",
+   "blocks": [
+    {
+     "kind": "p",
+     "display": "Choose the collection that matches the data, hide a sub-problem inside a function, and let a file outlive the program.",
+     "speech": "Choose the collection that matches the data, hide a sub-problem inside a function, and let a file outlive the program."
+    },
+    {
+     "kind": "item",
+     "display": "Use lists, tuples, sets, and dictionaries, and say what each one refuses to do.",
+     "speech": "Use lists, tuples, sets, and dictionaries, and say what each one refuses to do."
+    },
+    {
+     "kind": "item",
+     "display": "Write functions with parameters and return values, and respect scope.",
+     "speech": "Write functions with parameters and return values, and respect scope."
+    },
+    {
+     "kind": "item",
+     "display": "Decompose a problem into functions.",
+     "speech": "Decompose a problem into functions."
+    },
+    {
+     "kind": "item",
+     "display": "Read and write text files.",
+     "speech": "Read and write text files."
+    },
+    {
+     "kind": "p",
+     "display": "· Written as · Order · Change later? · Duplicates · Reach an item by\nList · [1, 2, 2] · Kept · Yes · Yes · Index\nTuple · (1, 2, 2) · Kept · No · Yes · Index\nSet · {1, 2} · Not kept · Yes, add and remove · No · Membership, in\nDictionary · {\"a\": 1} · By insertion in modern Python · Yes · Keys are unique · Key",
+     "speech": ". Written as. Order. Change later?. Duplicates. Reach an item by List. [1, 2, 2]. Kept. Yes. Yes. Index Tuple. (1, 2, 2). Kept. No. Yes. Index Set. {1, 2}. Not kept. Yes, add and remove. No. Membership, in Dictionary. {\"a\": 1}. By insertion in modern Python. Yes. Keys are unique. Key"
+    },
+    {
+     "kind": "h",
+     "display": "Lists",
+     "speech": "Lists"
+    },
+    {
+     "kind": "code",
+     "display": "marks = [78, 64, 91, 64]\nmarks.append(70)\nmarks[1] = 66\nprint(marks[0], len(marks))\nprint(marks[1:3])",
+     "speech": "Code. marks equals [78, 64, 91, 64] marks.append(70) marks[1] equals 66 print(marks[0], len(marks)) print(marks[1:3])"
+    },
+    {
+     "kind": "p",
+     "display": "A slice such as [1:3] returns a new list and does not change the original. It starts at index 1 and stops before index 3.",
+     "speech": "A slice such as [1:3] returns a new list and does not change the original. It starts at index 1 and stops before index 3."
+    },
+    {
+     "kind": "h",
+     "display": "Tuples",
+     "speech": "Tuples"
+    },
+    {
+     "kind": "code",
+     "display": "point = (3, 5)\nx, y = point\n# point[0] = 9  raises TypeError",
+     "speech": "Code. point equals (3, 5) x, y equals point comment point[0] equals 9 raises TypeError"
+    },
+    {
+     "kind": "p",
+     "display": "Use a tuple for a record that must stay fixed: a coordinate, an RGB colour, a row you only want to read. If the tuple holds a list, that inner list can still change. Immutability is about the tuple’s own slots.",
+     "speech": "Use a tuple for a record that must stay fixed: a coordinate, an RGB colour, a row you only want to read. If the tuple holds a list, that inner list can still change. Immutability is about the tuple’s own slots."
+    },
+    {
+     "kind": "h",
+     "display": "Sets",
+     "speech": "Sets"
+    },
+    {
+     "kind": "p",
+     "display": "A set answers “is this already here?” quickly and supports the algebra you write in mathematics.",
+     "speech": "A set answers “is this already here?” quickly and supports the algebra you write in mathematics."
+    },
+    {
+     "kind": "code",
+     "display": "passed = {11, 14, 18}\nlate = {14, 22}\nprint(passed | late)   # union        {11, 14, 18, 22}\nprint(passed & late)   # intersection {14}\nprint(passed - late)   # difference   {11, 18}",
+     "speech": "Code. passed equals {11, 14, 18} late equals {14, 22} print(passed | late) comment union {11, 14, 18, 22} print(passed & late) comment intersection {14} print(passed - late) comment difference {11, 18}"
+    },
+    {
+     "kind": "p",
+     "display": "A ∪ B, A ∩ B, A ∖ B",
+     "speech": "A union B, A intersection B, A minus B"
+    },
+    {
+     "kind": "p",
+     "display": "discard removes a member if it is present and stays quiet if it is absent. remove raises an error when the member is absent. There is no set[0] .",
+     "speech": "discard removes a member if it is present and stays quiet if it is absent. remove raises an error when the member is absent. There is no set[0] ."
+    },
+    {
+     "kind": "h",
+     "display": "Dictionaries",
+     "speech": "Dictionaries"
+    },
+    {
+     "kind": "code",
+     "display": "student = {\"name\": \"Hina\", \"marks\": 82}\nprint(student[\"name\"])\nprint(student.get(\"section\", \"not set\"))\nstudent[\"section\"] = \"XI-B\"\nfor key in student:\n    print(key, student[key])",
+     "speech": "Code. student equals {\"name\": \"Hina\", \"marks\": 82} print(student[\"name\"]) print(student.get(\"section\", \"not set\")) student[\"section\"] equals \"XI-B\" for key in student: print(key, student[key])"
+    },
+    {
+     "kind": "p",
+     "display": "student[\"section\"] fails if the key is missing. get returns the default instead, which is what you want when you are counting words and a new word should start at zero.",
+     "speech": "student[\"section\"] fails if the key is missing. get returns the default instead, which is what you want when you are counting words and a new word should start at zero."
+    },
+    {
+     "kind": "h",
+     "display": "Functions, scope, and decomposition",
+     "speech": "Functions, scope, and decomposition"
+    },
+    {
+     "kind": "p",
+     "display": "A function names a sub-problem. def creates it. Parameters are the inputs. return sends a value back. Without return , the caller receives None .",
+     "speech": "A function names a sub-problem. def creates it. Parameters are the inputs. return sends a value back. Without return , the caller receives None ."
+    },
+    {
+     "kind": "code",
+     "display": "def grade(marks):\n    if marks >= 50:\n        return \"pass\"\n    return \"fail\"\n\ndef average(values):\n    if len(values) == 0:\n        return 0\n    return sum(values) / len(values)\n\nscores = [78, 64, 91]\nprint(grade(scores[0]), average(scores))",
+     "speech": "Code. def grade(marks): if marks greater than or equal to 50: return \"pass\" return \"fail\" def average(values): if len(values) equals 0: return 0 return sum(values) / len(values) scores equals [78, 64, 91] print(grade(scores[0]), average(scores))"
+    },
+    {
+     "kind": "p",
+     "display": "A name assigned inside a function is local . It disappears when the function returns. A name assigned outside is global . Read globals sparingly. Pass what the function needs as parameters so the function can be tested on its own. That is decomposition: average does not know about grades, and grade does not know how the average was computed.",
+     "speech": "A name assigned inside a function is local . It disappears when the function returns. A name assigned outside is global . Read globals sparingly. Pass what the function needs as parameters so the function can be tested on its own. That is decomposition: average does not know about grades, and grade does not know how the average was computed."
+    },
+    {
+     "kind": "p",
+     "display": "Built-in functions ( len , sum , print , int ) come with the language. The functions you write with def are user-defined. Prefer a user-defined function when the same three lines appear twice.",
+     "speech": "Built-in functions ( len , sum , print , int ) come with the language. The functions you write with def are user-defined. Prefer a user-defined function when the same three lines appear twice."
+    },
+    {
+     "kind": "h",
+     "display": "Files",
+     "speech": "Files"
+    },
+    {
+     "kind": "p",
+     "display": "A variable dies when the program ends. A file does not. Use with so the file is closed even when something fails halfway.",
+     "speech": "A variable dies when the program ends. A file does not. Use with so the file is closed even when something fails halfway."
+    },
+    {
+     "kind": "code",
+     "display": "with open(\"marks.txt\", \"w\", encoding=\"utf-8\") as handle:\n    handle.write(\"Hina,82\\n\")\n    handle.write(\"Omar,67\\n\")\n\nwith open(\"marks.txt\", \"r\", encoding=\"utf-8\") as handle:\n    for line in handle:\n        name, marks = line.strip().split(\",\")\n        print(name, grade(int(marks)))",
+     "speech": "Code. with open(\"marks.txt\", \"w\", encoding equals \"utf-8\") as handle: handle.write(\"Hina,82\\n\") handle.write(\"Omar,67\\n\") with open(\"marks.txt\", \"r\", encoding equals \"utf-8\") as handle: for line in handle: name, marks equals line.strip().split(\",\") print(name, grade(int(marks)))"
+    },
+    {
+     "kind": "p",
+     "display": "Mode · Effect\n\"r\" · Read. The file must already exist.\n\"w\" · Write from the start. An existing file is replaced.\n\"a\" · Append. New text goes at the end.",
+     "speech": "Mode. Effect \"r\". Read. The file must already exist. \"w\". Write from the start. An existing file is replaced. \"a\". Append. New text goes at the end."
+    },
+    {
+     "kind": "note",
+     "display": "\"w\" is destructive. If the file holds the only copy of the register, open it with \"a\" or write a new file and replace the old one only after the new file is complete.",
+     "speech": "\"w\" is destructive. If the file holds the only copy of the register, open it with \"a\" or write a new file and replace the old one only after the new file is complete."
+    },
+    {
+     "kind": "h",
+     "display": "Checkpoint",
+     "speech": "Checkpoint"
+    },
+    {
+     "kind": "item",
+     "display": "You need the distinct cities in a list of a thousand addresses. Which collection, and which operator later tests whether \"Lahore\" is among them?",
+     "speech": "You need the distinct cities in a list of a thousand addresses. Which collection, and which operator later tests whether \"Lahore\" is among them?"
+    },
+    {
+     "kind": "item",
+     "display": "What does the caller receive if a function never executes return ?",
+     "speech": "What does the caller receive if a function never executes return ?"
+    },
+    {
+     "kind": "item",
+     "display": "Which mode empties a file before writing?",
+     "speech": "Which mode empties a file before writing?"
+    },
+    {
+     "kind": "p",
+     "display": "Sketch answers: a set, then in . None . \"w\" .",
+     "speech": "Sketch answers: a set, then in . None . \"w\" ."
+    }
+   ]
+  },
+  {
+   "id": "l10",
+   "kicker": "Class XII · Lecture 10",
+   "title": "Data analysis with Python",
+   "deck": "Connect to a database, shape a table, draw the right chart, and summarise with a number you can defend.",
+   "blocks": [
+    {
+     "kind": "p",
+     "display": "Connect to a database, shape a table, draw the right chart, and summarise with a number you can defend.",
+     "speech": "Connect to a database, shape a table, draw the right chart, and summarise with a number you can defend."
+    },
+    {
+     "kind": "item",
+     "display": "Name the pieces of a Python database connection and run basic SQL through SQLite.",
+     "speech": "Name the pieces of a Python database connection and run basic SQL through SQLite."
+    },
+    {
+     "kind": "item",
+     "display": "Organise rows in a table or DataFrame and build a frequency distribution.",
+     "speech": "Organise rows in a table or DataFrame and build a frequency distribution."
+    },
+    {
+     "kind": "item",
+     "display": "Choose a bar chart, histogram, scatter plot, or box plot.",
+     "speech": "Choose a bar chart, histogram, scatter plot, or box plot."
+    },
+    {
+     "kind": "item",
+     "display": "Compute mean, median, mode, range, variance, and standard deviation.",
+     "speech": "Compute mean, median, mode, range, variance, and standard deviation."
+    },
+    {
+     "kind": "p",
+     "display": "Data analysis examines, organises, and interprets data so a decision can cite a result. A school looks at marks. A shop looks at sales. A clinic looks at visits. Python is the glue: it can read a file or a database, compute, and draw.",
+     "speech": "Data analysis examines, organises, and interprets data so a decision can cite a result. A school looks at marks. A shop looks at sales. A clinic looks at visits. Python is the glue: it can read a file or a database, compute, and draw."
+    },
+    {
+     "kind": "h",
+     "display": "Connecting to a database",
+     "speech": "Connecting to a database"
+    },
+    {
+     "kind": "p",
+     "display": "The connection has five parts. The database holds the tables. SQLite is a file database that ships with Python and is the right learning tool; MySQL is a server database used when many clients share one store. The driver is the software that lets Python speak to that DBMS. The connection object opens and closes the session. The cursor runs SQL and fetches rows. The SQL itself creates, inserts, selects, updates, and deletes.",
+     "speech": "The connection has five parts. The database holds the tables. SQLite is a file database that ships with Python and is the right learning tool; MySQL is a server database used when many clients share one store. The driver is the software that lets Python speak to that DBMS. The connection object opens and closes the session. The cursor runs SQL and fetches rows. The SQL itself creates, inserts, selects, updates, and deletes."
+    },
+    {
+     "kind": "code",
+     "display": "import sqlite3\ncon = sqlite3.connect(\"school.db\")\ncur = con.cursor()\ncur.execute(\"\"\"\n    CREATE TABLE IF NOT EXISTS student (\n        id INTEGER PRIMARY KEY,\n        name TEXT,\n        marks INTEGER\n    )\n\"\"\")\ncur.execute(\"INSERT INTO student (name, marks) VALUES (?, ?)\", (\"Hina\", 82))\ncon.commit()\nrows = cur.execute(\n    \"SELECT name, marks FROM student WHERE marks >= ?\", (50,)\n).fetchall()\ncon.close()\nprint(rows)",
+     "speech": "Code. import sqlite3 con equals sqlite3.connect(\"school.db\") cur equals con.cursor() cur.execute(\"\"\" CREATE TABLE IF NOT EXISTS student ( id INTEGER PRIMARY KEY, name TEXT, marks INTEGER ) \"\"\") cur.execute(\"INSERT INTO student (name, marks) VALUES (?, ?)\", (\"Hina\", 82)) con.commit() rows equals cur.execute( \"SELECT name, marks FROM student WHERE marks greater than or equal to ?\", (50,) ).fetchall() con.close() print(rows)"
+    },
+    {
+     "kind": "p",
+     "display": "The question marks are parameters. They keep data out of the SQL text. commit makes the insert permanent. close ends the session. A with statement can own the connection in larger programs.",
+     "speech": "The question marks are parameters. They keep data out of the SQL text. commit makes the insert permanent. close ends the session. A with statement can own the connection in larger programs."
+    },
+    {
+     "kind": "h",
+     "display": "Tables, frequencies, and charts",
+     "speech": "Tables, frequencies, and charts"
+    },
+    {
+     "kind": "p",
+     "display": "A DataFrame (from the pandas library) is a labelled table in memory. You can load it from a query or build it directly. A new column may be an arithmetic combination of old ones, such as marks / 100 .",
+     "speech": "A DataFrame (from the pandas library) is a labelled table in memory. You can load it from a query or build it directly. A new column may be an arithmetic combination of old ones, such as marks / 100 ."
+    },
+    {
+     "kind": "code",
+     "display": "import pandas as pd\nframe = pd.DataFrame({\"name\": [\"Hina\", \"Omar\", \"Sana\"], \"marks\": [82, 67, 82]})\nprint(frame[\"marks\"].mean())",
+     "speech": "Code. import pandas as pd frame equals pd.DataFrame({\"name\": [\"Hina\", \"Omar\", \"Sana\"], \"marks\": [82, 67, 82]}) print(frame[\"marks\"].mean())"
+    },
+    {
+     "kind": "p",
+     "display": "A frequency distribution groups values into classes and counts each class. Marks 50–59, 60–69, and so on, with a tally column, tell you the shape before any chart does.",
+     "speech": "A frequency distribution groups values into classes and counts each class. Marks 50–59, 60–69, and so on, with a tally column, tell you the shape before any chart does."
+    },
+    {
+     "kind": "p",
+     "display": "Chart · Use · Python call\nBar · Compare separate categories · plt.bar(labels, heights)\nHistogram · Distribution of one numeric variable; bars touch because the axis is continuous · plt.hist(values, bins=...)\nScatter · Relationship of two numeric variables · plt.scatter(x, y)\nBox plot · Five-number summary and a glance at spread · plt.boxplot(values)",
+     "speech": "Chart. Use. Python call Bar. Compare separate categories. plt.bar(labels, heights) Histogram. Distribution of one numeric variable; bars touch because the axis is continuous. plt.hist(values, bins=...) Scatter. Relationship of two numeric variables. plt.scatter(x, y) Box plot. Five-number summary and a glance at spread. plt.boxplot(values)"
+    },
+    {
+     "kind": "p",
+     "display": "An upward scatter is a positive association. A downward scatter is negative. A round cloud is no clear linear association. Association is not a cause. A box plot shows five numbers: minimum, first quartile Q1, median, third quartile Q3, and maximum. Q1 is a classroom median of the lower half. Q3 is a classroom median of the upper half. The box runs from Q1 to Q3. The line inside the box is the median. The whiskers reach the minimum and the maximum when those points are not treated as outliers.",
+     "speech": "An upward scatter is a positive association. A downward scatter is negative. A round cloud is no clear linear association. Association is not a cause. A box plot shows five numbers: minimum, first quartile Q1, median, third quartile Q3, and maximum. Q1 is a classroom median of the lower half. Q3 is a classroom median of the upper half. The box runs from Q1 to Q3. The line inside the box is the median. The whiskers reach the minimum and the maximum when those points are not treated as outliers."
+    },
+    {
+     "kind": "h",
+     "display": "Central tendency and spread",
+     "speech": "Central tendency and spread"
+    },
+    {
+     "kind": "p",
+     "display": "For values x1,ldots,x_n,",
+     "speech": "For values x 1,ldots,x n,"
+    },
+    {
+     "kind": "p",
+     "display": "x̄ = (1)/(n)Σ from i=1 to n x_i, Range = x_max - x_min, σ² = (1)/(n)Σ from i=1 to n(x_i-x̄)², σ = √(σ²).",
+     "speech": "x bar = 1 over n sum from i=1 to n of x i, Range = x max - x min, sigma squared = 1 over n sum from i=1 to n of(x i-x bar) squared, sigma = square root of sigma squared."
+    },
+    {
+     "kind": "p",
+     "display": "This course uses the average of the squared deviations, dividing by n. Some software, including pandas, divides by n-1 unless you say otherwise. Name the choice when you report a variance from a library.",
+     "speech": "This course uses the average of the squared deviations, dividing by n. Some software, including pandas, divides by n-1 unless you say otherwise. Name the choice when you report a variance from a library."
+    },
+    {
+     "kind": "note",
+     "display": "Worked numbers. Values 2, 4, 6. The mean is x̄ = 12/3 = 4. Deviations are -2, 0, 2. Squared deviations are 4, 0, 4. Variance is 8/3 ≈ 2.67. Standard deviation is √(8/3) ≈ 1.63. The range is 6-2 = 4. The median is 4. There is no mode, because no value repeats.",
+     "speech": "Worked numbers. Values 2, 4, 6. The mean is x bar = 12/3 = 4. Deviations are -2, 0, 2. Squared deviations are 4, 0, 4. Variance is 8/3 approximately 2.67. Standard deviation is square root of 8/3 approximately 1.63. The range is 6-2 = 4. The median is 4. There is no mode, because no value repeats."
+    },
+    {
+     "kind": "p",
+     "display": "Measure · Prefer it when\nMean · Every value should count, and there is no extreme outlier\nMedian · A few very large or very small values would drag the mean (salaries, house prices)\nMode · You need the most common category (favourite fruit, most frequent shoe size)",
+     "speech": "Measure. Prefer it when Mean. Every value should count, and there is no extreme outlier Median. A few very large or very small values would drag the mean (salaries, house prices) Mode. You need the most common category (favourite fruit, most frequent shoe size)"
+    },
+    {
+     "kind": "p",
+     "display": "A deviation x_i-x̄ is positive above the mean, negative below it, and zero on the mean. Variance squares those deviations so the negatives do not cancel. A small variance means the values sit near the mean. Min and max are the ends of the same story the range compresses into one number.",
+     "speech": "A deviation x i-x bar is positive above the mean, negative below it, and zero on the mean. Variance squares those deviations so the negatives do not cancel. A small variance means the values sit near the mean. Min and max are the ends of the same story the range compresses into one number."
+    },
+    {
+     "kind": "h",
+     "display": "Checkpoint",
+     "speech": "Checkpoint"
+    },
+    {
+     "kind": "item",
+     "display": "Which object runs the SQL, the connection or the cursor?",
+     "speech": "Which object runs the SQL, the connection or the cursor?"
+    },
+    {
+     "kind": "item",
+     "display": "Marks of one class, grouped in bands of ten: histogram or bar chart?",
+     "speech": "Marks of one class, grouped in bands of ten: histogram or bar chart?"
+    },
+    {
+     "kind": "item",
+     "display": "The salaries of a company include one owner who earns fifty times a typical wage. Which average do you report beside the mean, and why?",
+     "speech": "The salaries of a company include one owner who earns fifty times a typical wage. Which average do you report beside the mean, and why?"
+    },
+    {
+     "kind": "p",
+     "display": "Sketch answers: the cursor. A histogram, because the axis is a continuous score cut into bins. The median, because the owner’s wage pulls the mean upward.",
+     "speech": "Sketch answers: the cursor. A histogram, because the axis is a continuous score cut into bins. The median, because the owner’s wage pulls the mean upward."
+    }
+   ]
+  },
+  {
+   "id": "l11",
+   "kicker": "Class XII · Lecture 11",
+   "title": "Neural networks, security, and equity",
+   "deck": "How a layered model learns a pattern, how collaboration stays safe, and who gets to take part.",
+   "blocks": [
+    {
+     "kind": "p",
+     "display": "How a layered model learns a pattern, how collaboration stays safe, and who gets to take part.",
+     "speech": "How a layered model learns a pattern, how collaboration stays safe, and who gets to take part."
+    },
+    {
+     "kind": "item",
+     "display": "Explain machine learning, neural networks, and deep learning, and name their parts.",
+     "speech": "Explain machine learning, neural networks, and deep learning, and name their parts."
+    },
+    {
+     "kind": "item",
+     "display": "Give applications, including assistive ones.",
+     "speech": "Give applications, including assistive ones."
+    },
+    {
+     "kind": "item",
+     "display": "Identify malware, phishing, unauthorised access, data theft, denial of service, and human error, and match a mitigation to each.",
+     "speech": "Identify malware, phishing, unauthorised access, data theft, denial of service, and human error, and match a mitigation to each."
+    },
+    {
+     "kind": "item",
+     "display": "Explain equity of access in digital collaboration.",
+     "speech": "Explain equity of access in digital collaboration."
+    },
+    {
+     "kind": "p",
+     "display": "A machine-learning model is adjusted on examples until its outputs are useful on new examples. A neural network is one kind of model. It is inspired by the idea of connected cells, and it is implemented as arithmetic. Deep learning trains networks with many hidden layers. Early layers respond to simple pieces (an edge, a short sound). Later layers respond to combinations (an eye, a word). Depth is what makes the hierarchy possible. It is also why these models need a great deal of data and computation.",
+     "speech": "A machine-learning model is adjusted on examples until its outputs are useful on new examples. A neural network is one kind of model. It is inspired by the idea of connected cells, and it is implemented as arithmetic. Deep learning trains networks with many hidden layers. Early layers respond to simple pieces (an edge, a short sound). Later layers respond to combinations (an eye, a word). Depth is what makes the hierarchy possible. It is also why these models need a great deal of data and computation."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 16. The neuron is a weighted sum, a bias, and a function that shapes the result.",
+     "speech": "Figure 16. The neuron is a weighted sum, a bias, and a function that shapes the result."
+    },
+    {
+     "kind": "p",
+     "display": "z = Σ from i=1 to n w_i x_i + b, y = f(z)",
+     "speech": "z = sum from i=1 to n of w i x i + b, y = f(z)"
+    },
+    {
+     "kind": "p",
+     "display": "The weights w_i say how much each input matters. The bias b shifts the sum. The activation f decides what leaves the neuron. A step function outputs 1 when z ≥ 0 and 0 otherwise. A common smooth activation is the sigmoid",
+     "speech": "The weights w i say how much each input matters. The bias b shifts the sum. The activation f decides what leaves the neuron. A step function outputs 1 when z greater than or equal to 0 and 0 otherwise. A common smooth activation is the sigmoid"
+    },
+    {
+     "kind": "p",
+     "display": "σ(z) = (1)/(1+e^-z),",
+     "speech": "sigma(z) = 1 over 1+e to the power -z,"
+    },
+    {
+     "kind": "p",
+     "display": "which stays between 0 and 1. Training changes the weights and the bias so the outputs move toward the examples. You do not hand-write those numbers for a face recogniser. You do need to know that they are the learned part.",
+     "speech": "which stays between 0 and 1. Training changes the weights and the bias so the outputs move toward the examples. You do not hand-write those numbers for a face recogniser. You do need to know that they are the learned part."
+    },
+    {
+     "kind": "note",
+     "display": "A numeric step. Inputs 1, 0, 1, weights 0.5, 0.8, -0.2, bias -0.1. Then z = 0.5 + 0 + (-0.2) + (-0.1) = 0.2. A step activation outputs 1. Change the bias to -0.4 and z = -0.1, so the step outputs 0. The bias moved the decision.",
+     "speech": "A numeric step. Inputs 1, 0, 1, weights 0.5, 0.8, -0.2, bias -0.1. Then z = 0.5 + 0 + (-0.2) + (-0.1) = 0.2. A step activation outputs 1. Change the bias to -0.4 and z = -0.1, so the step outputs 0. The bias moved the decision."
+    },
+    {
+     "kind": "p",
+     "display": "Applications follow the same shape. Face unlock classifies a camera image. Speech tools turn sound into text. Translation models map one sentence to another. In a clinic, a model can flag a scan for a human to review. Assistive tools read a screen aloud, describe a scene, or convert speech to captions. The responsible pattern is that a person remains accountable for a high-stakes decision.",
+     "speech": "Applications follow the same shape. Face unlock classifies a camera image. Speech tools turn sound into text. Translation models map one sentence to another. In a clinic, a model can flag a scan for a human to review. Assistive tools read a screen aloud, describe a scene, or convert speech to captions. The responsible pattern is that a person remains accountable for a high-stakes decision."
+    },
+    {
+     "kind": "h",
+     "display": "Secure collaboration",
+     "speech": "Secure collaboration"
+    },
+    {
+     "kind": "p",
+     "display": "Shared documents, repositories, and class drives are useful because more than one person can touch the work. That is also the risk. Secure collaboration means the right people, the right files, and a way to recover.",
+     "speech": "Shared documents, repositories, and class drives are useful because more than one person can touch the work. That is also the risk. Secure collaboration means the right people, the right files, and a way to recover."
+    },
+    {
+     "kind": "h",
+     "display": "Authenticate",
+     "speech": "Authenticate"
+    },
+    {
+     "kind": "p",
+     "display": "A password plus a one-time code is stronger than a password alone. Do not share the password that stands for you.",
+     "speech": "A password plus a one-time code is stronger than a password alone. Do not share the password that stands for you."
+    },
+    {
+     "kind": "h",
+     "display": "Encrypt",
+     "speech": "Encrypt"
+    },
+    {
+     "kind": "p",
+     "display": "Encryption turns readable data into ciphertext. Decryption restores it for someone who holds the key. A stolen disk of ciphertext is not yet a stolen essay.",
+     "speech": "Encryption turns readable data into ciphertext. Decryption restores it for someone who holds the key. A stolen disk of ciphertext is not yet a stolen essay."
+    },
+    {
+     "kind": "h",
+     "display": "Limit and back up",
+     "speech": "Limit and back up"
+    },
+    {
+     "kind": "p",
+     "display": "Give each account only the access the task needs. Keep a second copy, and practise restoring it. A backup you have never restored is a hope.",
+     "speech": "Give each account only the access the task needs. Keep a second copy, and practise restoring it. A backup you have never restored is a hope."
+    },
+    {
+     "kind": "h",
+     "display": "Firewall and antivirus",
+     "speech": "Firewall and antivirus"
+    },
+    {
+     "kind": "p",
+     "display": "A firewall filters network traffic by rules. Antivirus scans files and removable drives for known harmful software. Update both.",
+     "speech": "A firewall filters network traffic by rules. Antivirus scans files and removable drives for known harmful software. Update both."
+    },
+    {
+     "kind": "p",
+     "display": "Threat · What it is · A fitting mitigation\nMalware · Software meant to damage, spy, or lock files: viruses, worms, spyware, ransomware, Trojan horses · Avoid cracked installers, scan downloads, keep antivirus current, hold backups so ransomware is not the only copy\nPhishing · A fake message that urges you to hand over a password or an OTP · Check the sender, do not follow urgent links, open the service by typing its address yourself\nUnauthorised access · Someone enters an account or a file without permission · Strong unique passwords, lock the screen, do not leave a session open\nData theft and identity theft · Copying personal data, or using it to pretend to be that person · Encryption, least-privilege access, and a refusal to post identity numbers in a shared chat\nDenial of service · A flood of fake requests so real users cannot get in · Network filtering, rate limits, and a host that can absorb or block the flood\nHuman error · The wrong recipient, a deleted folder, a weak password · Confirm the recipient, keep backups, use a checklist before a bulk share",
+     "speech": "Threat. What it is. A fitting mitigation Malware. Software meant to damage, spy, or lock files: viruses, worms, spyware, ransomware, Trojan horses. Avoid cracked installers, scan downloads, keep antivirus current, hold backups so ransomware is not the only copy Phishing. A fake message that urges you to hand over a password or an OTP. Check the sender, do not follow urgent links, open the service by typing its address yourself Unauthorised access. Someone enters an account or a file without permission. Strong unique passwords, lock the screen, do not leave a session open Data theft and identity theft. Copying personal data, or using it to pretend to be that person. Encryption, least-privilege access, and a refusal to post identity numbers in a shared chat Denial of service. A flood of fake requests so real users cannot get in. Network filtering, rate limits, and a host that can absorb or block the flood Human error. The wrong recipient, a deleted folder, a weak password. Confirm the recipient, keep backups, use a checklist before a bulk share"
+    },
+    {
+     "kind": "p",
+     "display": "A strong password is long and is not a birthday or the word “student” with a digit. A public lab computer is not a place to store the only copy of a file, and it is not a place to leave an account logged in.",
+     "speech": "A strong password is long and is not a birthday or the word “student” with a digit. A public lab computer is not a place to store the only copy of a file, and it is not a place to leave an account logged in."
+    },
+    {
+     "kind": "h",
+     "display": "Equity",
+     "speech": "Equity"
+    },
+    {
+     "kind": "p",
+     "display": "Equal access means a collaboration tool can be used by the students the task is for, not only by the students with the newest phone. Equity shows up as a file that still opens on a slow connection, a captioned video, a document that a screen reader can follow, language a class can read, and a deadline that does not assume everyone has broadband at home. A tool that only works for one expensive device quietly removes people from the group. Design the task so the work, not the hardware, is what differs.",
+     "speech": "Equal access means a collaboration tool can be used by the students the task is for, not only by the students with the newest phone. Equity shows up as a file that still opens on a slow connection, a captioned video, a document that a screen reader can follow, language a class can read, and a deadline that does not assume everyone has broadband at home. A tool that only works for one expensive device quietly removes people from the group. Design the task so the work, not the hardware, is what differs."
+    },
+    {
+     "kind": "h",
+     "display": "Checkpoint",
+     "speech": "Checkpoint"
+    },
+    {
+     "kind": "item",
+     "display": "What extra thing does deep learning have, compared with a network that has a single hidden layer?",
+     "speech": "What extra thing does deep learning have, compared with a network that has a single hidden layer?"
+    },
+    {
+     "kind": "item",
+     "display": "A message says your class account will close in an hour unless you open a link and type the OTP. Name the threat.",
+     "speech": "A message says your class account will close in an hour unless you open a link and type the OTP. Name the threat."
+    },
+    {
+     "kind": "item",
+     "display": "Name one design choice that makes a shared assignment fairer for a student on a metered connection.",
+     "speech": "Name one design choice that makes a shared assignment fairer for a student on a metered connection."
+    },
+    {
+     "kind": "p",
+     "display": "Sketch answers: many hidden layers that build features in stages. Phishing. A small file, a text alternative to a long video, or a deadline that allows the download to happen at school.",
+     "speech": "Sketch answers: many hidden layers that build features in stages. Phishing. A small file, a text alternative to a long video, or a deadline that allows the download to happen at school."
+    }
+   ]
+  },
+  {
+   "id": "l12",
+   "kicker": "Class XII · Lecture 12",
+   "title": "Entrepreneurship in the digital age",
+   "deck": "Start from a real problem, show a prototype, and learn from the smallest group that might pay attention.",
+   "blocks": [
+    {
+     "kind": "p",
+     "display": "Start from a real problem, show a prototype, and learn from the smallest group that might pay attention.",
+     "speech": "Start from a real problem, show a prototype, and learn from the smallest group that might pay attention."
+    },
+    {
+     "kind": "item",
+     "display": "Define entrepreneur and entrepreneurship, including digital and local examples.",
+     "speech": "Define entrepreneur and entrepreneurship, including digital and local examples."
+    },
+    {
+     "kind": "item",
+     "display": "Turn a problem into an idea, and compare low-, mid-, and high-fidelity prototypes.",
+     "speech": "Turn a problem into an idea, and compare low-, mid-, and high-fidelity prototypes."
+    },
+    {
+     "kind": "item",
+     "display": "Plan an MVP, name the riskiest assumption, and choose a beachhead market.",
+     "speech": "Plan an MVP, name the riskiest assumption, and choose a beachhead market."
+    },
+    {
+     "kind": "item",
+     "display": "Collect feedback and say what you will change.",
+     "speech": "Collect feedback and say what you will change."
+    },
+    {
+     "kind": "p",
+     "display": "An entrepreneur is a person who takes a problem, offers a solution, and accepts the risk that people may not want it. Entrepreneurship is that activity. In a digital setting the solution may be an app, a site, a WhatsApp catalogue, or a simple form. The risk and the need to learn from users are the same as they are for a stall.",
+     "speech": "An entrepreneur is a person who takes a problem, offers a solution, and accepts the risk that people may not want it. Entrepreneurship is that activity. In a digital setting the solution may be an app, a site, a WhatsApp catalogue, or a simple form. The risk and the need to learn from users are the same as they are for a stall."
+    },
+    {
+     "kind": "caption",
+     "display": "Figure 17. Each arrow is a decision to keep going, change the idea, or stop.",
+     "speech": "Figure 17. Each arrow is a decision to keep going, change the idea, or stop."
+    },
+    {
+     "kind": "p",
+     "display": "Local problems are enough. A canteen that never posts today’s menu. A tailor whose regular customers cannot see a new cloth until they travel across town. A tuition centre whose parents learn that the van is late only by calling. A student who cannot tell which past paper matches next week’s topic. The digital move is to make the missing information or the missing service reachable. It is not to begin with “we need an app”.",
+     "speech": "Local problems are enough. A canteen that never posts today’s menu. A tailor whose regular customers cannot see a new cloth until they travel across town. A tuition centre whose parents learn that the van is late only by calling. A student who cannot tell which past paper matches next week’s topic. The digital move is to make the missing information or the missing service reachable. It is not to begin with “we need an app”."
+    },
+    {
+     "kind": "h",
+     "display": "Prototypes",
+     "speech": "Prototypes"
+    },
+    {
+     "kind": "p",
+     "display": "A prototype is an early model you can show. It answers “what would this look like or how would it work?” It does not have to sell, store data, or survive a crowd. Fidelity means closeness to the final product.",
+     "speech": "A prototype is an early model you can show. It answers “what would this look like or how would it work?” It does not have to sell, store data, or survive a crowd. Fidelity means closeness to the final product."
+    },
+    {
+     "kind": "p",
+     "display": "· Looks like · Built with · Good for\nLow fidelity · Rough · Paper, pencil, a phone photo of a sketch · The first conversation. Cheap to throw away.\nMid fidelity · Clearer layout, still obviously a model · Slides, Figma frames, a clickable series of screens · Testing a path: can someone place an order?\nHigh fidelity · Close to the finished look · Visual design tools, a careful front end · A late check of wording and appearance. Expensive to redo.",
+     "speech": ". Looks like. Built with. Good for Low fidelity. Rough. Paper, pencil, a phone photo of a sketch. The first conversation. Cheap to throw away. Mid fidelity. Clearer layout, still obviously a model. Slides, Figma frames, a clickable series of screens. Testing a path: can someone place an order? High fidelity. Close to the finished look. Visual design tools, a careful front end. A late check of wording and appearance. Expensive to redo."
+    },
+    {
+     "kind": "p",
+     "display": "Start low. A common failure is to build a high-fidelity app before anyone has confirmed the problem. The cycle is plan, make, show, and improve. Useful questions are specific: “What do you think this button does?” and “What is missing for you to trust the van’s location?” “Do you like it?” collects politeness. Negative feedback is the prototype working. Ignoring it is the failure.",
+     "speech": "Start low. A common failure is to build a high-fidelity app before anyone has confirmed the problem. The cycle is plan, make, show, and improve. Useful questions are specific: “What do you think this button does?” and “What is missing for you to trust the van’s location?” “Do you like it?” collects politeness. Negative feedback is the prototype working. Ignoring it is the failure."
+    },
+    {
+     "kind": "h",
+     "display": "The MVP and the riskiest assumption",
+     "speech": "The MVP and the riskiest assumption"
+    },
+    {
+     "kind": "p",
+     "display": "A minimum viable product is the smallest version someone can actually use, so you can learn whether the idea works in the world. A prototype can be paper. An MVP has to function for one narrow job. A menu board in a class WhatsApp group can be an MVP. A full delivery platform is not.",
+     "speech": "A minimum viable product is the smallest version someone can actually use, so you can learn whether the idea works in the world. A prototype can be paper. An MVP has to function for one narrow job. A menu board in a class WhatsApp group can be an MVP. A full delivery platform is not."
+    },
+    {
+     "kind": "p",
+     "display": "· Prototype · MVP\nPurpose · Learn about the design and the problem · Learn whether people use a real, minimal offer\nMust it work? · Only well enough to react to · Yes, for one job\nAudience · A few users in a test · The first real group, the beachhead",
+     "speech": ". Prototype. MVP Purpose. Learn about the design and the problem. Learn whether people use a real, minimal offer Must it work?. Only well enough to react to. Yes, for one job Audience. A few users in a test. The first real group, the beachhead"
+    },
+    {
+     "kind": "p",
+     "display": "An assumption is a belief you have not tested. The riskiest assumption is the belief that would make the rest of the plan pointless if it turned out to be wrong. “Parents of this college’s junior classes will open a location message during the commute” is riskier than “we can draw a pleasant icon.” Test the risky belief first. Write the MVP as a short plan: the one job, the features required for that job, a rough cost (time, data, any fee), how you will tell the first users, and how you will collect feedback.",
+     "speech": "An assumption is a belief you have not tested. The riskiest assumption is the belief that would make the rest of the plan pointless if it turned out to be wrong. “Parents of this college’s junior classes will open a location message during the commute” is riskier than “we can draw a pleasant icon.” Test the risky belief first. Write the MVP as a short plan: the one job, the features required for that job, a rough cost (time, data, any fee), how you will tell the first users, and how you will collect feedback."
+    },
+    {
+     "kind": "p",
+     "display": "A beachhead market is the first small, specific group. Not “students in Pakistan.” “Parents of Class XI in this college who already use the class WhatsApp group.” You can reach them, you can talk to them, and a result there teaches you whether a second group is worth the attempt. After the trial, sort feedback into changes you will make, comments you will decline, and questions you still need to ask. Then change the MVP and, if the beachhead responded, consider the next group. If it did not, change the problem or stop. Stopping is a result.",
+     "speech": "A beachhead market is the first small, specific group. Not “students in Pakistan.” “Parents of Class XI in this college who already use the class WhatsApp group.” You can reach them, you can talk to them, and a result there teaches you whether a second group is worth the attempt. After the trial, sort feedback into changes you will make, comments you will decline, and questions you still need to ask. Then change the MVP and, if the beachhead responded, consider the next group. If it did not, change the problem or stop. Stopping is a result."
+    },
+    {
+     "kind": "h",
+     "display": "Studio task",
+     "speech": "Studio task"
+    },
+    {
+     "kind": "p",
+     "display": "In one sitting: write a problem you have seen this month, the user, the riskiest assumption, a six-box paper prototype, five feedback questions, the single MVP feature, and the beachhead in one sentence. Show the paper to two people who are in that beachhead. Record what they did, not only what they said.",
+     "speech": "In one sitting: write a problem you have seen this month, the user, the riskiest assumption, a six-box paper prototype, five feedback questions, the single MVP feature, and the beachhead in one sentence. Show the paper to two people who are in that beachhead. Record what they did, not only what they said."
+    },
+    {
+     "kind": "h",
+     "display": "Checkpoint",
+     "speech": "Checkpoint"
+    },
+    {
+     "kind": "item",
+     "display": "Why does a college project begin at low fidelity?",
+     "speech": "Why does a college project begin at low fidelity?"
+    },
+    {
+     "kind": "item",
+     "display": "Give one difference between a prototype and an MVP.",
+     "speech": "Give one difference between a prototype and an MVP."
+    },
+    {
+     "kind": "item",
+     "display": "Which is a beachhead: “all shops” or “uniform shops on this college’s street”?",
+     "speech": "Which is a beachhead: “all shops” or “uniform shops on this college’s street”?"
+    },
+    {
+     "kind": "p",
+     "display": "Sketch answers: a rough model is cheap to change after the first honest criticism. A prototype explores; an MVP performs one real job for users. The uniform shops on this street, because you can name them and visit them.",
+     "speech": "Sketch answers: a rough model is cheap to change after the first honest criticism. A prototype explores; an MVP performs one real job for users. The uniform shops on this street, because you can name them and visit them."
+    }
+   ]
+  },
+  {
+   "id": "sheet",
+   "kicker": "Appendix",
+   "title": "Formula and decision sheet",
+   "deck": "The relations used in the twelve lectures, in one place.",
+   "blocks": [
+    {
+     "kind": "p",
+     "display": "The relations used in the twelve lectures, in one place.",
+     "speech": "The relations used in the twelve lectures, in one place."
+    },
+    {
+     "kind": "h",
+     "display": "Truth table",
+     "speech": "Truth table"
+    },
+    {
+     "kind": "p",
+     "display": "rows = 2^n",
+     "speech": "rows = 2 to the power n"
+    },
+    {
+     "kind": "h",
+     "display": "Gates",
+     "speech": "Gates"
+    },
+    {
+     "kind": "p",
+     "display": "A· B, A+B, not (A), not (A· B), not (A+B), A⊕ B",
+     "speech": "A times B, A+B, the opposite of A, the opposite of A times B, the opposite of A+B, A exclusive or B"
+    },
+    {
+     "kind": "h",
+     "display": "Search",
+     "speech": "Search"
+    },
+    {
+     "kind": "p",
+     "display": "Linear O(n) on any list. Binary O(log n) on a sorted list.",
+     "speech": "Linear big O of n on any list. Binary big O of log n on a sorted list."
+    },
+    {
+     "kind": "h",
+     "display": "Mean and spread",
+     "speech": "Mean and spread"
+    },
+    {
+     "kind": "p",
+     "display": "x̄=(1)/(n)Σ x_i, σ²=(1)/(n)Σ (x_i-x̄)²",
+     "speech": "x bar=1 over n sum x i, sigma squared=1 over n sum (x i-x bar) squared"
+    },
+    {
+     "kind": "h",
+     "display": "Neuron",
+     "speech": "Neuron"
+    },
+    {
+     "kind": "p",
+     "display": "z=Σ w_i x_i + b, y=f(z)",
+     "speech": "z= sum w i x i + b, y=f(z)"
+    },
+    {
+     "kind": "h",
+     "display": "Data units",
+     "speech": "Data units"
+    },
+    {
+     "kind": "p",
+     "display": "Data, segment, packet, frame, bits — top to bottom of OSI.",
+     "speech": "Data, segment, packet, frame, bits — top to bottom of OSI."
+    },
+    {
+     "kind": "p",
+     "display": "If the situation is… · Reach for…\nRequirements are stable and written · Waterfall\nRequirements will move, and users can try a slice · Agile, in sprints\nMany-to-many in an ER diagram · A new table of the two foreign keys\nUndo, or a function call waiting to return · Stack\nFair waiting · Queue\nHierarchy · Tree\nRoads, friendships, arbitrary links · Graph\nA fixed pair of values · Tuple\nUnique members and unions · Set\nLookup by a name · Dictionary\nOne numeric distribution · Histogram or box plot\nTwo numeric variables together · Scatter plot\nA belief that could sink the idea · Test it with the MVP, on the beachhead",
+     "speech": "If the situation is…. Reach for… Requirements are stable and written. Waterfall Requirements will move, and users can try a slice. Agile, in sprints Many-to-many in an ER diagram. A new table of the two foreign keys Undo, or a function call waiting to return. Stack Fair waiting. Queue Hierarchy. Tree Roads, friendships, arbitrary links. Graph A fixed pair of values. Tuple Unique members and unions. Set Lookup by a name. Dictionary One numeric distribution. Histogram or box plot Two numeric variables together. Scatter plot A belief that could sink the idea. Test it with the MVP, on the beachhead"
+    },
+    {
+     "kind": "p",
+     "display": "Before a test, redraw a gate, the OSI stack, one sort, an ER link, the IoT pipeline, a wireframe, a stack, a queue, a neuron, and the path from problem to beachhead.",
+     "speech": "Before a test, redraw a gate, the OSI stack, one sort, an ER link, the IoT pipeline, a wireframe, a stack, a queue, a neuron, and the path from problem to beachhead."
+    }
+   ]
+  }
+ ]
+}
