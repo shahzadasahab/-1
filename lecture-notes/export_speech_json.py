@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 ROOT = Path(__file__).resolve().parents[1]
 HTML = ROOT / "lecture-notes" / "index.html"
 OUT = ROOT / "lectures" / "src" / "main" / "assets" / "lectures.json"
+OUT_HTML = ROOT / "lectures" / "src" / "main" / "assets" / "notes" / "index.html"
 
 SPEECH_SYMBOL = {
     "cdot": " times ",
@@ -274,13 +275,25 @@ def block(kind: str, display: str, speech: str | None = None) -> dict | None:
     return {"kind": kind, "display": display, "speech": speech}
 
 
+def push(out: list[dict], item: dict | None, node) -> None:
+    if not item:
+        return
+    index = str(len(out))
+    if isinstance(node, Tag):
+        node["data-b"] = index
+    elif isinstance(node, NavigableString) and isinstance(node.parent, Tag):
+        span = node.parent.new_tag("span")
+        span["data-b"] = index
+        span["class"] = "math-line"
+        node.wrap(span)
+    out.append(item)
+
+
 def emit_node(node, out: list[dict]) -> None:
     if isinstance(node, NavigableString):
         raw = str(node).strip()
         if "\\(" in raw or "\\[" in raw:
-            item = block("p", render_math(raw, False), render_math(raw, True))
-            if item:
-                out.append(item)
+            push(out, block("p", render_math(raw, False), render_math(raw, True)), node)
         return
     if isinstance(node, Tag):
         emit_element(node, out)
@@ -296,9 +309,7 @@ def emit_element(el: Tag, out: list[dict]) -> None:
         if cap:
             text = render_math(plain(cap), False)
             speech = render_math(plain(cap), True)
-            item = block("caption", text, speech)
-            if item:
-                out.append(item)
+            push(out, block("caption", text, speech), el)
         return
     if "say" in cls:
         label = el.find("b")
@@ -307,46 +318,32 @@ def emit_element(el: Tag, out: list[dict]) -> None:
         body_text = plain(body) if body else plain(el)
         display = render_math(f"{label_text}. {body_text}", False)
         speech = render_math(f"{label_text}. {body_text}", True)
-        item = block("note", display, speech)
-        if item:
-            out.append(item)
+        push(out, block("note", display, speech), el)
         return
     if "note" in cls:
         display = render_math(plain(el), False)
         speech = render_math(plain(el), True)
-        item = block("note", display, speech)
-        if item:
-            out.append(item)
+        push(out, block("note", display, speech), el)
         return
     if name == "div" and "tag" in cls:
         display = render_math(plain(el), False)
-        item = block("h", display, render_math(plain(el), True))
-        if item:
-            out.append(item)
+        push(out, block("h", display, render_math(plain(el), True)), el)
         return
     if "step" in cls:
         display = render_math(plain(el), False)
-        item = block("item", display, render_math(plain(el), True))
-        if item:
-            out.append(item)
+        push(out, block("item", display, render_math(plain(el), True)), el)
         return
     if name in ("h2", "h3", "h4"):
         display = render_math(plain(el), False)
-        item = block("h", display, render_math(plain(el), True))
-        if item:
-            out.append(item)
+        push(out, block("h", display, render_math(plain(el), True)), el)
         return
     if name == "p":
         display = render_math(plain(el), False)
-        item = block("p", display, render_math(plain(el), True))
-        if item:
-            out.append(item)
+        push(out, block("p", display, render_math(plain(el), True)), el)
         return
     if name == "pre":
         raw = el.get_text("\n", strip=False).strip("\n")
-        item = block("code", raw, code_speech(raw))
-        if item:
-            out.append(item)
+        push(out, block("code", raw, code_speech(raw)), el)
         return
     if name == "table":
         rows_d = []
@@ -357,19 +354,15 @@ def emit_element(el: Tag, out: list[dict]) -> None:
             if any(cells):
                 rows_d.append(" · ".join(cells))
                 rows_s.append(". ".join(cells_s))
-        item = block("p", "\n".join(rows_d), " ".join(rows_s))
-        if item:
-            out.append(item)
+        push(out, block("p", "\n".join(rows_d), " ".join(rows_s)), el)
         return
     if name in ("ul", "ol"):
         for li in el.find_all("li", recursive=False):
             display = render_math(plain(li), False)
             speech = render_math(plain(li), True)
-            item = block("item", display, speech)
-            if item:
-                out.append(item)
+            push(out, block("item", display, speech), li)
         return
-    for child in el.children:
+    for child in list(el.children):
         emit_node(child, out)
 
 
@@ -384,8 +377,10 @@ def lecture_from(section: Tag) -> dict:
     if deck:
         item = block("p", deck, deck_speech)
         if item:
+            if deck_el is not None:
+                deck_el["data-b"] = "0"
             blocks.append(item)
-    for child in section.children:
+    for child in list(section.children):
         if isinstance(child, Tag) and child.name == "header":
             continue
         emit_node(child, blocks)
@@ -408,6 +403,8 @@ def main() -> None:
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
+    OUT_HTML.parent.mkdir(parents=True, exist_ok=True)
+    OUT_HTML.write_text(str(soup), encoding="utf-8")
     words = sum(len(b["speech"].split()) for lec in lectures for b in lec["blocks"])
     print(f"wrote {OUT} lectures={len(lectures)} blocks={sum(len(l['blocks']) for l in lectures)} words={words}")
 

@@ -1,26 +1,28 @@
 package com.cslectures.notes
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.view.WindowManager
+import android.webkit.JavascriptInterface
+import android.net.Uri
+import android.webkit.WebResourceRequest
+import android.webkit.WebResourceResponse
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.webkit.WebViewAssetLoader
 import com.cslectures.notes.databinding.ActivityLectureReaderBinding
-import com.cslectures.notes.databinding.ItemBlockBinding
 
 class LectureReaderActivity : AppCompatActivity(), EmbeddedSpeaker.Listener {
     private lateinit var binding: ActivityLectureReaderBinding
     private lateinit var lecture: Lecture
     private lateinit var speaker: EmbeddedSpeaker
     private var startIndex = 0
-    private var activeIndex = -1
     private var speedIndex = 1
     private val speeds = floatArrayOf(0.9f, 1.0f, 1.15f)
     private val speedLabels = arrayOf("0.9×", "1.0×", "1.15×")
 
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val found = LectureRepository.find(this, intent.getStringExtra(EXTRA_ID).orEmpty())
@@ -38,17 +40,28 @@ class LectureReaderActivity : AppCompatActivity(), EmbeddedSpeaker.Listener {
             speaker.stop()
             finish()
         }
-        val adapter = BlockAdapter(lecture.blocks) { index ->
-            val previous = startIndex
-            startIndex = index
-            if (previous != index) {
-                binding.blockList.adapter?.notifyItemChanged(previous)
-                binding.blockList.adapter?.notifyItemChanged(index)
-            }
-            binding.voiceStatus.text = getString(R.string.starts_here, index + 1)
+
+        val assetLoader = WebViewAssetLoader.Builder()
+            .addPathHandler("/assets/", WebViewAssetLoader.AssetsPathHandler(this))
+            .build()
+        binding.page.settings.javaScriptEnabled = true
+        binding.page.settings.domStorageEnabled = false
+        binding.page.settings.allowFileAccess = false
+        binding.page.settings.builtInZoomControls = false
+        binding.page.settings.displayZoomControls = false
+        binding.page.webViewClient = object : WebViewClient() {
+            override fun shouldInterceptRequest(
+                view: WebView,
+                request: WebResourceRequest,
+            ): WebResourceResponse? = assetLoader.shouldInterceptRequest(request.url)
+
+            @Deprecated("Needed so the main document is also served from assets")
+            override fun shouldInterceptRequest(view: WebView, url: String): WebResourceResponse? =
+                assetLoader.shouldInterceptRequest(Uri.parse(url))
         }
-        binding.blockList.layoutManager = LinearLayoutManager(this)
-        binding.blockList.adapter = adapter
+        binding.page.addJavascriptInterface(Picker(), "LectureBridge")
+        binding.page.loadUrl("$ASSET_ROOT/notes/index.html#${lecture.id}")
+
         binding.play.setOnClickListener {
             speaker.speak(lecture.blocks, startIndex, speeds[speedIndex])
         }
@@ -96,73 +109,28 @@ class LectureReaderActivity : AppCompatActivity(), EmbeddedSpeaker.Listener {
         } else {
             window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
             binding.voiceStatus.text = getString(R.string.voice_ready)
-            setActive(-1)
         }
         binding.pause.isEnabled = speaking && !paused
         binding.resume.isEnabled = speaking && paused
     }
 
     override fun onBlock(index: Int) {
-        setActive(index)
-        binding.blockList.smoothScrollToPosition(index)
+        val id = org.json.JSONObject.quote(lecture.id)
+        binding.page.evaluateJavascript("highlightBlock($id, $index)", null)
     }
 
-    private fun setActive(index: Int) {
-        val previous = activeIndex
-        activeIndex = index
-        val adapter = binding.blockList.adapter ?: return
-        if (previous >= 0) adapter.notifyItemChanged(previous)
-        if (index >= 0) adapter.notifyItemChanged(index)
-    }
-
-    private inner class BlockAdapter(
-        private val blocks: List<Block>,
-        private val onPick: (Int) -> Unit,
-    ) : RecyclerView.Adapter<BlockAdapter.Holder>() {
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-            val binding = ItemBlockBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-            return Holder(binding)
-        }
-
-        override fun onBindViewHolder(holder: Holder, position: Int) {
-            val block = blocks[position]
-            holder.binding.text.text = block.display
-            val context = holder.itemView.context
-            val speaking = position == activeIndex
-            val picked = position == startIndex && activeIndex < 0
-            holder.binding.text.setBackgroundColor(
-                ContextCompat.getColor(
-                    context,
-                    when {
-                        speaking -> R.color.speaking
-                        picked -> R.color.picked
-                        block.kind == "code" -> R.color.code_bg
-                        block.kind == "note" -> R.color.note_bg
-                        else -> android.R.color.transparent
-                    },
-                )
-            )
-            holder.binding.text.setTextAppearance(
-                when (block.kind) {
-                    "h" -> R.style.BlockHeading
-                    "code" -> R.style.BlockCode
-                    "caption" -> R.style.BlockCaption
-                    else -> R.style.BlockBody
-                }
-            )
-            holder.binding.root.setOnClickListener {
-                val index = holder.bindingAdapterPosition
-                if (index != RecyclerView.NO_POSITION) onPick(index)
+    private inner class Picker {
+        @JavascriptInterface
+        fun pick(index: Int) {
+            runOnUiThread {
+                startIndex = index
+                binding.voiceStatus.text = getString(R.string.starts_here, index + 1)
             }
-            holder.binding.root.contentDescription = block.speech
         }
-
-        override fun getItemCount(): Int = blocks.size
-
-        inner class Holder(val binding: ItemBlockBinding) : RecyclerView.ViewHolder(binding.root)
     }
 
     companion object {
         const val EXTRA_ID = "lecture_id"
+        private const val ASSET_ROOT = "https://appassets.androidplatform.net/assets"
     }
 }

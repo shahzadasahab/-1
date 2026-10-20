@@ -17,14 +17,11 @@
         app:subtitleTextColor="#D9EBE9"
         app:titleTextColor="@color/white" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/blockList"
+    <WebView
+        android:id="@+id/page"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:clipToPadding="false"
-        android:paddingTop="8dp"
-        android:paddingBottom="12dp" />
+        android:layout_weight="1" />
 
     <LinearLayout
         android:layout_width="match_parent"

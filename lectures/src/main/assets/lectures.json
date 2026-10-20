@@ -104,6 +104,11 @@
      "speech": "AND · Y=A times B"
     },
     {
+     "kind": "caption",
+     "display": "AND gate. The output is 1 only when both inputs are 1.",
+     "speech": "AND gate. The output is 1 only when both inputs are 1."
+    },
+    {
      "kind": "p",
      "display": "A · B · Y\n0 · 0 · 0\n0 · 1 · 0\n1 · 0 · 0\n1 · 1 · 1",
      "speech": "A. B. Y 0. 0. 0 0. 1. 0 1. 0. 0 1. 1. 1"
@@ -112,6 +117,11 @@
      "kind": "h",
      "display": "OR · Y=A+B",
      "speech": "OR · Y=A+B"
+    },
+    {
+     "kind": "caption",
+     "display": "OR gate. The output is 1 when either input is 1.",
+     "speech": "OR gate. The output is 1 when either input is 1."
     },
     {
      "kind": "p",
@@ -124,6 +134,11 @@
      "speech": "NOT · Y=the opposite of A"
     },
     {
+     "kind": "caption",
+     "display": "NOT gate. The bubble inverts the single input.",
+     "speech": "NOT gate. The bubble inverts the single input."
+    },
+    {
      "kind": "p",
      "display": "A · Y\n0 · 1\n1 · 0",
      "speech": "A. Y 0. 1 1. 0"
@@ -132,6 +147,11 @@
      "kind": "h",
      "display": "NAND · Y=not (A· B)",
      "speech": "NAND · Y=the opposite of A times B"
+    },
+    {
+     "kind": "caption",
+     "display": "NAND gate. AND followed by a bubble. The output is 0 only when both inputs are 1.",
+     "speech": "NAND gate. AND followed by a bubble. The output is 0 only when both inputs are 1."
     },
     {
      "kind": "p",
@@ -144,6 +164,11 @@
      "speech": "NOR · Y=the opposite of A+B"
     },
     {
+     "kind": "caption",
+     "display": "NOR gate. OR followed by a bubble. The output is 1 only when both inputs are 0.",
+     "speech": "NOR gate. OR followed by a bubble. The output is 1 only when both inputs are 0."
+    },
+    {
      "kind": "p",
      "display": "A · B · Y\n0 · 0 · 1\n0 · 1 · 0\n1 · 0 · 0\n1 · 1 · 0",
      "speech": "A. B. Y 0. 0. 1 0. 1. 0 1. 0. 0 1. 1. 0"
@@ -152,6 +177,11 @@
      "kind": "h",
      "display": "XOR · Y=A⊕ B",
      "speech": "XOR · Y=A exclusive or B"
+    },
+    {
+     "kind": "caption",
+     "display": "XOR gate. The extra curve marks exclusive OR. The output is 1 when the inputs differ.",
+     "speech": "XOR gate. The extra curve marks exclusive OR. The output is 1 when the inputs differ."
     },
     {
      "kind": "p",
@@ -1541,6 +1571,11 @@
     },
     {
      "kind": "caption",
+     "display": "Array. The four values sit in one block. Index 2 is read directly, without walking the earlier cells.",
+     "speech": "Array. The four values sit in one block. Index 2 is read directly, without walking the earlier cells."
+    },
+    {
+     "kind": "caption",
      "display": "Figure 12. A linked list pays for easy insertion with a walk from the head. There is no index.",
      "speech": "Figure 12. A linked list pays for easy insertion with a walk from the head. There is no index."
     },
@@ -1578,6 +1613,11 @@
      "kind": "p",
      "display": "Arrays suit random access. Linked lists suit frequent inserts and deletes in the middle, if you already hold the place. Stacks suit undo and nested calls. Queues suit fair waiting. Trees suit hierarchies. Graphs suit networks.",
      "speech": "Arrays suit random access. Linked lists suit frequent inserts and deletes in the middle, if you already hold the place. Stacks suit undo and nested calls. Queues suit fair waiting. Trees suit hierarchies. Graphs suit networks."
+    },
+    {
+     "kind": "caption",
+     "display": "A graph. The dots are vertices and the lines are edges. A path can return to where it started, so this is not a tree.",
+     "speech": "A graph. The dots are vertices and the lines are edges. A path can return to where it started, so this is not a tree."
     },
     {
      "kind": "h",
@@ -1864,6 +1904,16 @@
      "kind": "p",
      "display": "A frequency distribution groups values into classes and counts each class. Marks 50–59, 60–69, and so on, with a tally column, tell you the shape before any chart does.",
      "speech": "A frequency distribution groups values into classes and counts each class. Marks 50–59, 60–69, and so on, with a tally column, tell you the shape before any chart does."
+    },
+    {
+     "kind": "caption",
+     "display": "Histogram. The bars touch because the axis is one continuous measurement cut into bins.",
+     "speech": "Histogram. The bars touch because the axis is one continuous measurement cut into bins."
+    },
+    {
+     "kind": "caption",
+     "display": "Bar chart. The gaps keep Bio, CS, and Math as separate categories.",
+     "speech": "Bar chart. The gaps keep Bio, CS, and Math as separate categories."
     },
     {
      "kind": "p",
