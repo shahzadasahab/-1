@@ -1,0 +1,2945 @@
+Programming
+Fundamentals
+After the completion of this unit students will be able to:
+@ Use Lists, Tuples, Sets and Dictionaries in Python |
+@ Develop Functions
+in Python
+@ Decomposea
+problem into sub-problems and implement those sub- problems using
+functions in Python
+@ Differentiate between built-in and userdeniied fuinctions
+@ Understand the concept: of file handling, naw datai is stored and retrieved uste files.
+Ho
+nit 3: Programming Fundar e
+a rs
+é J
+:
+&
+Introduction to Unit:
+In this chapter, students will learn about
+core
+VY
+Python concepts used to build practical programs. We
+will learn how to use data structures like lists, tuples,
+sets and dictionaries
+to store and manage data
+efficiently. This chapter also introduces functions,
+helping to organize code into reusable parts and
+understand the concepts like arguments, return value
+and scope. Finally, we explore file handling to read,
+write, and manage data using files. Together, these skills
+enable students to solve real-world problems in a clear
+and structured way.
+3.1
+Data Structures i in Python:
+Data Structures are fundamental components: of programming languages on
+which programs are built. Python helps to learn the fundamentals of these data
+structures in a simpler way as compared to other programming languages. Python has
+built-in support for several data structures, such as lists, dictionaries, and sets, etc.
+These are categorized into two categories.
+i
+|
+>
+Primitive Data Structures:
+ae
+They are basic data structures provided by programming languages
+to represent
+single values, such as integers, floating-point numbers, characters, and boolean.
+>
+Abstract Data Structures:
+:
+oo
+They are higher-level data structures that are built using i ctl data types
+and provide more complex
+and
+specialized
+° operations. Some common
+examples of abstract data structures include arrays, linked lists, tuples, sets, and
+dictionaries etc.
+os
+:
+3.1.1
+Lists:
+|
+|
+A list is Python's most versatile built-in data-structure. It stores an ordered
+collection of items in a single variable. Items can be of any type: integers, strings, floats,
+and booleans. List allows duplicate values. List is an ordered collection defined with
+square brackets [ ] and commas. Syntax to create a list is as follows:
+oe eee ee ee
+ee
+ee ee
+ee
+ee
+; "list. name
+: Variable name of the list!
+Syntax:
+a.
+.
+Square
+frcere: used
+to
+list_ name = [item], item2, item3,item...]
++
+“+ define a list
+‘
+‘ item1,
+' Elements/items separated
+«
+» item2
+| by commas
+'
+we
+:
+Fe
+Ae
+Example:
+iV:
+ene 2, 15, 14, 3, 33]
+# List having integer values
+.
+names
+=
+["Hassan", "Qasim", "Malika", "Asghar"] # List having string values
+|
+mixed = [1, "Python", 3.14]
+# List having mixed values
+|
+.
+|
+As shown in the examples above, a list can hold integers (number), strings
+|
+(names), or a mix of different data types (mixed).
+|
+i)
+Indexing with List:
+Indexing or accessing the list elements, square brackets with’an index number
+are used to read or update any element, List indexing in python starts from 0. Python
+supports both positive Usterneht
+and negative (rightleft): indexing as shown in fig
+3.1 below.
+.
+Each element sits ina
+ee slot starting from index 0. Think of it like a row of labelled boxes,
+“apple”
+“mango”
+;
+“ponana*
+,
+“grape”
+;
+%
+edi"
+oO
+A
+7)
+cr
+B)
+fy
+t5)
+Cl
+“|.
+[3]
+~
+[-2)
+[-1}
+Alistwith 5 items has indices 0, 1,2, 3, 4—and also-5, -4,-3,-2,-1 counting from the end.
+ae
+es,
+.
+Figure 3.1 List indexing both positive and negative numbers
+The following program demonstrates how a list item can be accessed using
+index number.
+|
+© Indexing
+with Listpy X
+aang ua
+;
+ah
+a
+ee
+fruits = [“apple" , “mango”, "banana", “grape”,
+“kiwi"}
+1
+2
+3
+# Positive indexing (left to right,
+starts at. Q)
+4
+print(fruits[@])
+# apple
+- first item
+‘S
+print(fruits[1])
+. # mango
+se
+TERMINAL
+|
+print(fruits[4])
+# kiwi
+.
+- last dtem
+a a
+mango
+8
+# Negative indexing (right to left, starts at -1)
+kiwd
+9
+print(fruits[-1])
+# kiwi
+- last item
+ee
+1@
+print(fruits[-2])
+# grape
+"|
+apple
+11
+print(fruits[-5])
+# apple
+- first dtem
+"|
+orange
+12
+-
+12
+# Iindate an elamant hv index
+range
+Figure 3.2 Program demonstrate List indexing
+r it 3: Programming Fundam
+1
+ii) Slicing with List:
+Slicing is the process of extracting a portion of a list by specifying a start, stop
+and step index. It returns a new list without modifying the original,
+The Syntax: _ list[start : stop : step]
+Boece ey. eden Te
+so ye
+Re anneag eco
+aa gon aE
+Parameter
+—_ Description
+Ha
+ee
+Default
+!
+;
+a
+_
+‘
+_
+Index where slice begins (inclusive)
+:
+|—
+:
+|
+I
+Se
+iis
+|
+stop)
+.
+Index where slice ends (exclusive)
+—_
+[len(list)}
+1
+cx
+relcendsecuie)
+(ens)
+a
+oy
+Peg
+pike
+|
+4
+|
+Howmanyelementstoskip
+=
+(2)
+a
+Ne ee ee et AS A
+eR
+Mee Hn
+a om
+ee meh tana tee
+Se
+oe Se Se em a
+ee SR He
+Se
+eS
+Following is the program that demonstrates the slicing process on List.
+4 Sing whitey
+ee
+jas
+pe
+bo
++ Slicing with ist py
+> ..
+1 - nums = [0,1,2 134, 55575 a Fr) |
+q
+2
+4
+3
+# list{start:stop]
+- stop is excluded
+4
+4
+print(nums[2:6])
+©
+# (2,
+3, 4, 5]
+i
+6
+# Omit start + from beginning
+-anhcinaei
+ath
+io
+bhai
+sind
+7
+print (nums[67]J)
+¢# {6,
+1, 2, 3]
+TERMINAL
+2
+:
+;
+Olu +- TB
+-
+X
+e:
+ae
+© PS E:\Python Code> (SA ae
+# Omit stop + to end
+.
+P4345)
+1¢ print (nums[6:])
+$(6,7,8,9)
+bbe d
+11
+ee
+:
+(8, 12 3.455, 6) 1 89
+‘
+712
+Omit both
+» full copy
+if is! : |
+j
+13
+pation
+lt
+# (841,2....59) | [98
+7) 6.5, 4,3; 2) 1, 0)
+f
+14
+n
+{_ 6
+os
+5) 4, 3)
+m
+{
+15
+# Step
++ every Nth item
+'
+16 print (nums[::2])
+# (9,2, 4,6,8)
+¢ every Ind
+17. print (nums(:: 2J)
+# (1,3,5,7,9] add indices
+©
+18
+:
+19
+# Negative step
++ reverses
+2@ © «print(nums = 1)
+# {9,8,7,,..,0] reversed
+21
+print(nums 72
+1|)
+# [7,6,5,4,3]
+Figure 3,3 Program demonstrate slicing
+iii)
+Traversal with List:
+Traversal means visiting or accessing dach element of a list one by one in
+sequence. Repetition allows the same operation to be applied to all items in a list using
+loops.
+1} CamScanner
+Ir,
+th Y
+construct.
+id ogramming Fundament
+Following code will demonstrate how to access every element of list using loop
+apes
+—
+ik
+® Loops with Listpy X
+@ Loops with List.py > ...
+1
+numsList = [0,1)2)3)4,5)6,7)8,9]
+-
+TERMINAL
+3
+# For Loop
+0
+4
+for num in numsList:
+1
+5
+|
+print(num)
+;
+6
+4.
+7
+«©# For Loop with range function
+4
+8
+for
+i
+in range(len(numsList)
+):
+7
+9
+print(numsList[i])
+8
+10
+2
+11
+# While Loop
+12
+index=0
+-
+# this variable use for indexing
+13.
+while index<len(numsList) :
+14
+print(numsList pander
+ye
+15
+index+=1
+iv)
+Vil)
+vill)
+Ix)
+. Figure 3. 4 Traverse list using Loop constructs
+Built-in Common Methods:
+_ Following are some common methods of List.
+e
+len( object ):
+it will return the number of items in an object (is anything that
+can be stored in a variable and has both a type and a value).
+.append( object/value ): it will Add an item to the end of the list.
+insert(index
+, object/value); Insert an item at a given position. The first
+argument
+is
+the
+index
+of
+the
+element
+before
+which
+to
+insert,
+so List.insert(0, x) inserts at the front of the list, and List.insert(len(a), x) is
+equivalent to List.append(x).
+remove(object/value): Remove the first item from the list whose value is equal
+to value, It raises a ValueError if there is no such item.
+.clear( ): it will remove all the items from the
+list.
+-count(value): Return the number of occurrences of a value in the list.
+-index(value): Return zero-based index of the first occurrence of valve in the
+list. Raises a ValueError if there is no such item,
+-sort( ): Sort the items of the list in place by ascending order. For descending
+order pass reverse=True as an argument( List.sort(reverse=True) ).
+-reverse( ): Reverse the elements of the list in place.
+@ List program py > —
+fruits
+= ["orange’,
+‘apple’,
+‘pear’, ‘banana’,
+"kiwd',
+en »
+‘banana')
+print(fruits.count(‘apple" \jamiouiiialy
+v)
+Advantages of using lists:
+Activity to search an element in List:
+list.
+1
+2
+3
+4 print (Frults.count( ‘tangerine’
+)
+:
+6
+print(fruits.count(banana’))——
+7
+8
+print(fruits.index('banana’, 4)
+nd next banana starting at position 4
+18
+fruits. reverse(
+11 print (fruits)
+TERMINAL
+53 -
+-truits.
+(‘grape’)
+| Be E:\Python Code> & ene eee erences \pytho
+14
+print(fruits)
++8
+15
+.
+3
+oa:
+~
+2
+i
+<
+16
+pret (ita pee,
+fone ae ae
+tet
+“banana", ‘pear’,
+ee "orange"]
+ma
+"banana
+A
+le
+banana
+»
+‘pear
+.
+e*, "orange",
+“grape'
+17
+print(fruits
+S
+apple’, ‘apple’, “ba
+; , *banana®, ‘grape’, “kiel*, “orange! *pear’]
+18
+:
+["pear’,
+‘orange’,
+‘hint’,
+"grape’,
+"banana",
+"banana",
+‘apple’, "apple’)
+;
+'
+19
+fruits.sort(reverse=True)—+
+2 PS E:\python
+et
+;
+t
+2@»
+print(fruits)
+Figure 3 5 Built-in Functiosis
+i)
+Lists are mutable, elements can-be added, rennavea: or modified
+ii)
+A single list can store many values, aot item in a list has an index, starting
+from 0.
+;
+iii) Lists are easier to manage than many separate variables
+iv) Able to store different data pes
+Following program takes input from user and searches for that number in the
+.
+numbers = [5, 10, 15, 28, 25]
+search = int(input("Enter number to search:
+“))
+found = False
+_
+for num in numbers:
+if num == search:
+found
+= True
+break
+if found:
+-
+print("Number found in the list.")
+else:
+print ("Number not found in the list.")
+Figure 3.6 Searching in List
+ern s
+~~
+OF
+we
+a
+®
+y Sas De
+ie ye):
+x
+unit 3) Programming —
+®
+:
+3.1.2 Tuple:
++.¥
+A tuple is a built-in Python data structure that stores an ordered, immutable
+J
+(unable to be changed) collection of items. Think of it as a "tead-only list" once
+created, its contents cannot be changed. Tuples allow duplicate values and can store
+different data types like List. We can view the objects and their arrangements but we
+cannot add, remove, or rearrange them. Tuples also use index like List. Syntax to create
+a Tuple as follows:
+a eo 8 ot
+oe
+ad amaoma= aes ee
+™
+j ible. natn
+1 ‘Variable name of the tuple
+|
+Synt
+F
+pee gnment operator
+yntax:
+oe
+ame
+omams
+af tn dotne al
+tuple_name = (iteml, item2, item...)
+1 ()
+Sia
+used to define
+a 7
+bisat’
+~~ tHlenciisicns sopaial byt
+|
+* Item2
+* commas
+ae
+|
+tae =e ee Se oe dee
+me
+em
+eee mess
+,
+Example:
+t=(10, 20, 30, 40, 50)
+Following is the program that demonstrates how to create a tuple and access its
+elements.
+:
+® Tuples programpy X
+oie ie
+1 t= (10, 20, 38, 40, » 50) puget
+2
+3
+# Indexing (@-based) »
+4
+print(t{e])
+#10.
+5
+print(t[-1])
+#58
+«negative indexing
+-
+6
+:
+:
+7
+# Slicing
+8
+print(t[1:4])
+# (28, 30, 40)
+9
+pre
+ieayt | it fans
+40, 30,
+20, ”
+€ reversed
+a
+a
+i daedwrche
+nie
+eas Ritts ott
+al
+aad sisi
+ea Smee)
+/? thoi iy iHOn AT AAOVENT exe TRL FPVEBON COU TWD LNS DEOZTON
+10
+.
+50
+(20, 30, 40)
+(58, 40, 38, 20, 10
+O PS E:\Python Code> |
+Figure 3.7 Code demonstrate Tuple creation
+t jit 3: Programming Funda i
+i)
+Tuple Immutability:
+~The biggest advantage of tuples is immutability. Once a tuple is created, its
+elements cannot be changed, added, or removed.
+t= (1, 2, 3)
+t [0} = 99
+:@
+TypeError: ‘tuple’ object does not support item assignment
+.
+You cannot add, remove, or modify elements
+after creation. However, if a tuple
+contains a mutable object (like a list), that object’s contents can change:
+t = ([1, 2],[3, 4])
+t [0].append(99)
+.-
+print(t) — # (1, 2, 991, {3, 41). @
+- the list inside changed’
+7
+Bare
+3.8 Tuple immutability
+ii)
+Traversal with Tuple:
+A tuple is traversed the same way as a list. Since tuples are immutable, friverat
+is mainly used for reading data, not modifying. it. ‘The following ‘program
+demonstrates the traversal of each element of Tuple.
+1
+# Create Tuple with different Datatypes
+.
+2
+‘student = ("Ali", 26, "Computer Science")
+3
+hacer
+oe
+4
+#Traverse each element
+_
+5
+for item in student:.
+2
+2
+TEM.
+6
+print(item)
+lan
+3
+ae
+als
+és
+8
+#Traverse each element using Index number
+Ee ae
+a.
+9
+for
+i in range(len(student)):
+,
+Index:
+1 Value: 20
+18
+print("Index:",
+i,
+"Value:", student[i]) es a, OE
+11
+;
+20-
+:
+12
+#Traverse with While Loop using Index number
+computer Science
+13
+i=8@
+:
+,
+14
+while
+i
+< len(student):
+45
+|
+print(student[i])
+16
+|
+i+=1
+Figure 3.9 Traversal with Tuple
+o
+iii)
+Advantages of using Tuple:
+V
+i)
+Tuples are immutable, so their elements cannot be changed after creation.
+’
+ii) They help protect data from accidental modification.
+iil) Tuples can store multiple data types together.
+iv) They allow duplicate values.
+v) Tuples maintain the order of elements.
+iv)
+Built-in Methods;
+Tuples are immutable, so only a few methods exist which are listed below.
+i)
+.count(value): Return the number of occurrences of a va/ue
+in the Tuple.
+ii) .index(value): find the position of element in Tuple.
+3.1.3 Sets:
+:
+A Set is a built-in Python data structure that stores an unordered, unindexed
+collection of unique elements. A set will only hold one instance even if the same value
+is added to it more than once. It is inspired by mathematical sets and is optimized for
+membership testing, deduplication, and set operations like union, intersection, and
+difference. Syntax to create a Set as follows:
+set name | ria
+ofthe
+Set
+|
+Se cvuce
+: Assignment operator
+!
+-
+Syntax:
+F
+poe
+« Curly braces used to define at
+set_name
+= {item|, item? item.. 3
+LY
+‘.
+be
+ae
+: item!, an
+' Elements/items | separated by:
+‘item? _-_ j commas iaha eeniccnarsiibies
+aioe
+ak i
+Following program demonstrates how to create a Set, adie an element in Set
+and checking whether a particular element exists in a set or not by using the ‘in’
+Operator.
+@ Sets programpy X
+:
+:
+{0
++
+© Sets program py >...
+:
+1
+fruits = {“apple", "banana", 135}
+3
+3
+print("apple”
+in fruits)
+# True
+4
+print("kiwi" in fruits)
+# False
+5
+TERA
+6
+# Sets automatically remove duplicates
+® Is
+,
+r
+7
+nuns
+= {1, 4, 3,
+3, 2, 2}
+|
+aaa
+8
+print(nums)
+# {1,
+2,
+3, 4}
+{1, 2,3, 4, 40}
+9
+16
+«# Mutable
+- you can add/remove elements
+ph hindi
+11
+nums.add(40)
+# works fine
+12
+print (nums)
+#{1,
+2,
+3,
+4, 40}
+Figure 3,10 Code demonstrates Set creation
+bs
+Unit 3: Programming Fundament:
+Built-in Methods:
+.add(value): adds an element to the Set.
+.update(values): Update the set, adding multiple elements at once.
+.remove(value): removes an element from Set.
+.discard(value): Remove an element from a set if it is a member. Unlike
+sremove(), the discard() method does not raise an exception when an element is
+missing from the set.
+.clear(): Removes all elements
+©
+VVVVO
+Vv
+ii)
+Adding, Updating and Removing Elements
+The following program demonstrates the adding, updating, and removing of
+elements from a Set.
+.
+:
+=
+s= 1,
+2,
+3}
+a,
+# --- Adding ---
+s.add(4)
+# adds a single element
+> {1, 2,-3, 4}
+©
+s.update([5,
+6, 7])
+# adds multiple elements > {1,
+2,
+3, 4, 5,
+6, 7}
+s.update({8},
+(9,))
+# can mix any iterables
+# --- Removing ---
+;
+s.remove(3)
+# removes 3; raises KeyError if not found
+s.discard(99)
+# removes 99; does NOT raise error if missing @
+| s.clear()
+'
+# removes ALL elements > set()
+j
+J
+Figure 3.11 Adding, Updating and Removing Elements from Set
+iii)
+Mathematical Operations with Sets
+Python
+sets
+support. mathematical
+operations.
+The
+following
+program
+demonstrates the mathematical operations on sets.
+& Set Operation maths py
+x
+Op
+Set Operation maths py »
+—
+1
+A= (1, 2,3, 4)
+2
+8 = (3, 4,
+5, 6)
+3
+.
+4
+# Union
+|
+~-
+all elements from both
+aa
+5
+print(A
+|
+B)
+#
+{1,
+2,
+3,
+4, 5, 6}
+a =
+6
+print(A.union(B))
+# same result
+© PS E:\Python Code> & "C:/Pyth
+=
+?
+(1, 2, 3, 4, 5, 6}
+8
+# Intefsection
+&
+~ elements common to both
+f pes
+9
+print(A & B)
+H (3, 4)
+‘
+GQ, 4)
+10
+print(A.dntersection(B))
+# same result
+.
+x! R
+ul
+(1, 2.5, 6)
+12
+# Difference
++
+~ elements in A but NOT in @
+{1 2, 5. 6)
+13
+print(A - B)
+4 {1,
+2)
+14
+print(A.difference(s))
+4 same result
+15
+16
+# Symmetric Difference
+*
+~- elements in either,
+but NOT both
+17
+print(A 4 B)
+" {1,
+2,
+5,
+6}
+18
+print(A.symmetric_difference(s))
+# same result
+Figure 3.12 Mathematical Operations on Set
+pom!
+pend
+aamne |
+\
+west
+~~
+Nad
+bee
+DO
+oT
+f
++
+~
+*
+ri
+T= Bo
+sy Cols
+“eno
+tolls
+l¢
+@
+,
+.
+t
+{
+iy)
+Traversal with
+a Set
+er ¥
+Since sets do not support indexing, traversal is commonly performed using loop
+bh
+constructs along with membership operators. The following program demonstrates the
+traversal of set elements using “in” membership operator with loop construct.
+@ Loops with Sets program
+py X
+@ Loops with Sets program.py > ..
+1
+colors = {"red", "green", "blue"}
+2
+3
+# Basic iteration
+eae
+4
+for color in colors:
+green
+5
+print(color)
+# order
+is NOT guaranteed
+blue
+6
+blue, green, red,
+7
+# With sorted() to force order
+gs
+for color in sorted(colors):
+3
+print(color, end=", ")
+# alphabetical: blue,
+green,
+red
+Figure 3.13 Traversal with Set
+Advantages of using Set
+Sets are mutable, and unordered and do not support indexing.
+©
+- Removes duplicate values automatically.
+Supports mathematical set operations
+Useful for unique collections of data.
+—
+VVVV
+3.1.4 Dictionary:
+|
+a
+A dictionary is a built-in Python data structure that stores data as key-value
+pairs. Each key is unique and is used to access its associated value. Dictionaries are
+ordered, mutable, and do not allow duplicate keys. Think of it like a real-world
+dictionary, you look up a word (key) to find its definition (value).
+ms
+:
+A dictionary is defined using curly braces {
+} with each key and its value
+separated by colon : and pairs are separated by commas. Syntax to create a dictionary
+is below.
+dona name," Variable ine of the ditionary
+Syntax
+a
+Assignment operator oo. 3
+‘dictionary name={ Ah...
+curly braces used to define a Clstionay
+key!: valuel,
+:
+|
+: A unique identifier is used to access a:
+;
+« Key
+t
+t
+key2: value2,
+bn
+acne ene: DE womammespeeminnsndananl
+thie
+Se ; Data associated
+with the Key | __
+ewnmemnmenens separate Key and Vane occ omewess !
+=
+|
+: Separate multiple key-value pairs
+|
+:
+pe
+oo
+i
+4
+it 3: Programming Fundamet
+t
+:o" ie
+® Dictionary programpy
+x
+@ Dictionary program py
+>
+1
+d= {"name": "Alice", "age": 30}
+)
+32.
+°#
+Ordered
+- insertion order is preserved
+4
+print(d)
+# {'name’:
+‘Alice’,
+‘age’:
+30}
+always in this order
+5
+6
+#
+Mutable
+- keys/values can be added, changed, or removed
+7
+d["age")
+= 31
+# modify
+8
+d["city"] = “NYC” # add new key
+9
+print(d)
+# {'name':
+‘Alice’,
+‘age’:
+31,
+‘city’:
+'NYC'}
+always in this order
+10.
+‘
+11~«del d["city"]
+°
+# delete city key
+12
+print(d)
+_
+# {'name":
+‘Alice’,
+‘age’: 31}
+13
+14
+#
+Duplicate keys NOT allowed
+- last value wins
+‘45
+d= {"a"s 1, “a”: ye 3}
+16
+print(d)
+# {'a':
+3}
+.
+Figure 3. 4 Demonstration of Dictionary Creation
+The python code in the figure described as spllows.
+~
+Line 1 creates a dictionary d with two key-value pairs "nam e" mapped to "Alice" and
+"age" mapped to. 30.
+- Line 4 prints the dictionary, demonstrating that Python 3.7+ preserves insertion
+order, so the output will always be {'name': ‘Alice’, ‘age’: 30} in the same onder it was
+defined.
+Line 7 modifies the existing "age" key by updating its vale from 30 to 31, showcasing
+that dictionaries are mutable and existing values can be changed at any time.
+Line 8 adds a new key "city" with the value "NYC" to the dictionary, proving that new
+key-value pairs can be inserted dynamically after the dictionary is created.
+Line 9 prints the updated dictionary, which now contains three keys {'name'’: ‘Alice’,
+‘age’: 31, ‘city’: 'NYC’} still in insertion order.
+Line 11 uses the del keyword to permanently remove the “city" key and its value from
+the dictionary entirely.
+.
+Line 12 prints the dictionary again after deletion, confirming that "city" is gone and
+only {'name': ‘Alice’, 'age': 31} remains,
+Line 15 creates a new dictionary where the key "a" is defined three times with values
+1, 2, and 3, which tests Python's behavior with duplicate keys.
+Line 16 prints the result, showing {'a': 3} demonstrating that when duplicate keys
+exist, the last assigned value always wins and
+all previous values are silently
+overwritten.
+Unit 3: Programming
+oy
+-
+i)
+Aécessing Elements of Dictionary:
+The following program demonstrates how Dictionary values are accessed using
+keys, and also the use of the membership operator to check the value of a dictionary
+element.
+@ Accessing Dictionary program.py X
+@ Accessing Dictionary program py
+>
+1
+person
+= {"name": “Alice”, “age":
+30, "city": "Karachi"}
+2
+3
+# Direct key access
+4
+print(person["name”])
+# Alice
+S
+print(person["salary"])
+.
+# $€ KeyError if key doesn't exist
+6
+7
+#
+.get()
+- safe access,
+returns None
+(or default)
+if missing
+8
+print(person.get("age"))
+# 30
+9
+print(person. get("salary"))
+# None
+«no error
+1@
+print(person.get("salary", @))
+# @
+« custon default
+1i
+r
+.
+12
+# Check key existence
+13.
+print(“name“ in person)
+# True
+14
+print(“salary"
+in person)
+# False
+15
+print("salary" not in person)
+# True
+Figure 3.15 Accessing elements in | Dictionary
+Line 1 creates a dictionary called person with three key-value pairs "name" mapped to
+"Alice", "age" mapped to 30, and "city" mapped to "Karachi".
+Direct Key Access (Lines 3-5):
+Line
+4
+accesses
+the value
+of the "name"
+key
+using
+direct bracket notation
+person{"name"] and prints Alice as the output.
+Line 5 attempts to access "salary" using the same direct bracket notation, but since
+"salary" does not exist in the dictionary, Python raises a KeyError and the program
+crashes, making this an unsafe way to access missing keys.
+Safe Access with .get() (Lines 7-10):
+Line 8 uses the .get() method to retrieve the value of "age", which exists in the
+dictionary, so it safely returns and prints 30.
+;
+Line 9 uses .get() to access "salary", which does not exist, instead of raising a KeyError,
+it safely returns None with no error, making .get() the preferred and safer access
+method.
+Line 10 also accesses the missing "salary" key using .get(), but this time passes 50 asa
+custom default value, so instead of None, it returns and prints 0, very useful for setting
+fallback values.
+Unit 3: Programming Fundamentals
+,
+-
+4
+Checking Key Existence (Lines 12-15):
+|
+Line 13 uses the in operator to check whether "name" exists in the dictionary, which
+returns and prints True since "name" is indeed a valid key,
+“
+«
+Line 14 checks whether "salary" exists in the dictionary using in, which returns and
+~
+prints False because "salary" was never added as a key.
+Line 15 uses not in to check whether "salary" is absent from the dictionary, which
+returns and prints True confirming that "salary" does not exist as a key in person.
+ii)
+Dictionary views (keys, values, items)
+These return live view objects that reflect any changes to the dictionary:
+Dictionary views are special objects in Python that provide a dynamie view of
+dictionary data. They allow to access the keys, values, and key-value pairs stored ina
+dictionary. Following are three built-in dictionary view methods:
+“All dito
+ee
+keys)
+|
+9g
+_ Values()
+L
+All dictionary values
+|
+items()
+|
+Ks
+Key-value pars as tuples —
+|
+Following program emonitiates the uses of above methods.
+® Live View Dictionary programpy *
+,
+.
+‘
+De
+© Live View Dictionary
+program py > ‘©! dict >,@ person
+1
+person = {"name": “Asghar”, "age": 30, “city's sxarachi*)
+# .keys()
+- all keys
+.
+print(person.keys()) -
+# dict_keys({'name’,
+‘age’,
+‘city'])
+# .values()
+- all values
+©
+.
+;
+print(person.values())
+| # dict_values({'Asghar', 30, ‘Karachi’
+])
+.
+9
+#-.items()
+- all key-value pairs as tuples
+18
+print(person.items())
+# dict_items([(‘name',
+'Asghar'), (‘age’,3@),(‘city', ‘Karachi')])
+12
+# Views are LIVE
+- they update automatically!
+|
+13.
+person{“job"].= "Engineer"
+14
+print(person.keys())
+# dict_keys({'name',
+‘age’,
+‘city’, ‘job'])
+© auto-updated &
+15
+print(person.values())"
+# dict_values([{ ‘Asghar’, 36,
+‘Karachi’,
+'Engineer'])
+« auto-updated Ej
+én
+rus
+cus
+ue
+Figure 3.16 Dictionary Views
+iii)
+Traversing Dictionary:
+Traversal of a dictionary means accessing and processing cach element of the
+dictionary one by one using loop constructs. A dictionary can be traversed in three
+ways:
+|
+»
+Traversing keys
+>»
+Traversing values
+>
+Traversing key-value pairs
+Following program demonstrates how to create a dictionary and traverse a
+dictionary with above three ways.
+@ eration over Dictionary program.py
+@ Iteration over Dictionary program
+py
+>...
+inventory = {"apple": 50, "banana":
+30, “cherry”: 20}
+1
+2
+3
+#1. Iterate over keys (default)
+.
+4
+for key in inventory:
+,
+oe
+‘
+5
+print(key)
+# apple, banana, cherry
+6
+.
+;
+7
+#2. Iterate over values
+g
+for value in inventory.values() |
+9
+|
+print(value)
+#50, 30, 20
+18
+i
+11
+#3. Iterate over key-value pairs (most common)
+12
+for key, value in inventory. items():
+13
+print(f"{key}: {value}")
+. # apple: .5@
+...
+14
+.
+,
+15
+#4. Sorted iteration
+.
+16
+for key in sorted(inventory):
+17
+print(key, inventory[key])
+# alphabetical order
+18
+.
+=!
+*
+-
+-
+ve
+y
+x
+19
+#5. Enumerate with index
+20
+for i,
+(key, value)
+in enumerate(inventory.items()):.
+21
+print(i, key, value)
+#.0 apple 58,
+1 banana 30
+...
+Figure 3.17 Traversing Dictionary
+Note: Lines 20-21 use a for loop with enumerate() wrapped around inventory.items(),
+which adds an automatic numeric index (i) to each key-value pair during iteration. It
+unpacks three values at once the index i, the key, and the value — and prints all three
+together, producing output like 0 apple 50,
+1 banana 30, 2 cherry 20. This is especially’
+useful when you need to track the position of each item while iterating,
+3.1.5 Common Built-in Functions:
+Python provides several built-in functions that work with different data
+V4
+structures such as Lists, Tuples, Sets, and Dictionaries. These functions help perform
+common operations like finding the minimum value, maximum value, total number of
+elements, sum of elements, and sorting data. Following are some functions.
+Teeth
+Works On
+“ie Si
+Retums largest alate
+.
+List, Tuple, Set, Dictionary
+Counts elements
+ss
+; Adds numeric elements
+Reuven
+The following program demonstrates the above functions working on Set.
+r
+s = {5, 1, 9,3,
+7}
+number of elements
+Len(s)
+#5
+-
+min(s)
+#1
+- smallest element
+max(s)
+# 9
+- largest element
+sum(s)
+|
+# 25
+- sum of all elements
+sorted(s)
+#1,
+3,
+5,
+7,
+9]
+- returns
+a sorted LIST }
+Figure 3.18 Common built-in function on Sets
+3.1.6 Activity Create Students Attendance program:
+In many schools, teachers record student attendance on paper. This takes time,
+mistakes happen, and totals are hard to calculate at the end of the month,
+Here’s what matters:
+|
+¥
+|
+.
+CO
+es
+yy
+3: Programming Fundam
+7 8 |
+L .
+'
+@
+|
+Teachers need a quick and accurate way to record attendance and see how many
+7
+VW
+days a student was present.
+,
+We are creating a small Python program that:
+>
+Stores student names in a list
+‘
+>
+Asks whether each student is present or absent
+>»
+Counts total present students
+>
+Displays the attendance result
+This solution is simple, saves time, and reduces errors.
+Implementation in Python:
+@ Activity DataStructure programpy X
+® Activity DataStructure program.py > ...
+# A List stores student
+(mutable | & ordered)
+students = ["AU", ~*~,“
+, “Ayesha")
+present_count
+=)
+print(“Attendance System\n")
+for student in students: # Loop to iterate over students record
+# Take input from User yes/no and save it in variable
+status =-input(f"Is Sena
+present? (yes/no): Me meer
+if status.
+=...
+present_ count + 1 #
+Add 1- in variable if contition in true
+WOON
+OW & ww
+Ee
+BNE
+S
+_
+>
+print("\nattendance Surmary” .
+print(*Total Students:",
+* 2n(students))
+print(“Students Present.
+, present_count)-
+print(*Students Absent:
+, len(students)
+- present_count)
+pe
+VOM
+Figure 3.19 Students attendance program
+—
+How it works:
+»
+Input: Teacher enters yes or no for each student
+>
+Process: The program counts present students
+>
+Output: Total present and absent students are displayed
+The above code example shows how a real classroom problem can be solved
+using basic Python concepts like lists, input, loops, and simple logic.
+ABA
+un
+3: Programming Fu
+3.1.7 Activity Create Word Frequency Counter program:
+A sentence is split into words and counted using a dictionary with .get(). Each
+word's frequency is displayed with number, The following program also shows how to
+find the most frequent word froma given sentence.
+@ Word Frequency programpy xX
+|
+:
+ps
+=
+© Word Frequency program py >...
+:
+é
+# Sentence will use to count words in it,
+sentence
+= “python is easy python
+is fun python is powerfol and pytion is popular"
+1
+2
+3
+(
+4
+words
+= = sentence. split()
+5
+word_freq = {}
+# Empty dictionary used for word frequency
+6
+# Count each ‘word
+7
+8
+for word. in words:
+Tose
+word_freq[word)
+= word_freq.get(word,
+@) +
+1
+Seotence + “Wha $a “il
+a 6b fs
+ion St sei a pla eg’
+9
+;
+i
+—
+Tord Frequency:
+18
+print(f"\n Sentence : \{sentence}\"")
+c.
+11
+. print(f"Word Frequency:”)
+‘a
+12
+for word, count in word_freq. items():|
+13.
+|
+print(f"
+— {word:<12} 2 {count}")
+—
+14
+15.
+# Host veniniiél wick
+i
+16
+top_word
+= max(word_ freq,
+key=ward_ freq.get)
+v7 print(f\a Most Frequent Word : “{top_word}” ({word_freq{top_word}} tines)")
+34
+14
+ie |
+Figure 3.20 Word frequency counter program
+Line 2 defines a variable called sentence and assigns
+it a string value, which is the text
+that will be analyzed: for word
+ree
+Preparing the Data (Lines 4-5):
+Line 4 calls:the .split() method on the sentence, which
+breaks the string into a list of
+individual words by splitting on spaces, and stores the result in a variable called words.
+Line 5 creates an empty dictionary called word | freq = {} which will be used to store
+each word as a key. and its count as the value.
+Counting Each Word (Llnes 6-8):
+Lines 7-8 use a for loop to iterate over every word in the words list one by one.
+Line 8 is the core counting logic, word_freq.get(word, 0) safely retrieves the current
+count of the word from the dictionary, returning 0 if the word has not been seen yet.
+Then + | increases the count by one, and the result is stored back into word_freq[word].
+This means every time a word is encountered, its count increases by 1,
+Printing the Sentence and Frequency Table (Lines 10-13):
+Line 10 prints the original sentence using an f-string, wrapping it in quotes for clean
+formatting, with \n adding a blank line before it.
+1} CamScanner
+Line 11 prints the heading "Word Frequency:" as a label before the results,
+Lines 12-13 use a for loop with .items() to iterate over every key-value pair in the
+re
+word_freq dictionary, and prints cach word left-aligned
+in
+a 12-character wide
+column {word:<12} followed by its count producing a neat, tabular output.
+Finding the Most Frequent Word (Lines 15-17):
+Line 16 uses the max() function on the word_freq dictionary with key=word_freq. get,
+which: compares all values (counts) and returns the key (word) with the highest count,
+storing it in top_word.
+Line 17 prints the final result using an f-string displaying the most fretuent word
+top_word and its count word_freq[top_ word] in a readable sentence format like Most
+Frequent Word : ‘python! (4 times).
+3.2.
+Functions iit Pytho
+When the same: set of
+|
+instructions is written again and
+TPN
+Code k
+Oni
+again
+in a program, it is called
+~
+St
+Ga
+duplicate code. Duplicate code
+makes programs longer, harder
+to read, and difficult to update.
+Functions solve.this problem. |
+by allowing us to write the code’
+|
+*
+once
+and
+reuse
+it wherever © Xe
+needed.
+Functions -‘ ‘compress: code into reusable blocks that perform specific tasks, —
+allowing programmer to avoid repeating the same code. Functions make Progra
+more organized, understandable, and maintainable.
+A function is created using the def keyword.
+Simple Function.py x
+4 ‘Simple Fimetion
+def greet():
+.# function definition.
+print(“Hella, World!")
+.
+@ Simple
+Ft
+Function, Py Da
+print("Simple Function”)
+4
+2
+3
+4
+5
+6
+greet()
+.
+# function calling
+‘Figure 3.21 Function program
+,
+aE
+é 4
+ec
+te we,
+S
+‘a
+SO
+ae
+‘Ay
+fe
+eX
+nit 3: Programming Fundament,
+sie)
+ay
+¥
+|
+* fis
+Following are the key components ofa furiction
+\@
+a) Function Name: The identifier
+:
+Y
+used to call the function,
+=,
+Oe eee
+—
+;
+;
+b) Parameter (input):
+Values
+1a
+passed into the function
+"def function_name(parameters):
+c) Function Body: The block of
+|
+# statement /}—————L» Boyt
+,
+code:
+that
+runs
+-when
+the
+/—feturn expression
+functioniscalled,
+:
+d) Return
+Statement: Sends
+a
+result back to the caller.
+"Function return
+pa
+Code level examples:
+ce
+area
+eae
+a) Function Name
+) Parameter
+eat
+meade.
+>
+:
+:
+:
+pr
+n t(tne
+"#20)
+F
+:
+23
+print(*Hello, {nane}")
+c) Body.
+APE
+aT
+ES
+Be 203g
+e
+- print("Simple Function" NE
+_fame=input (“Enter your names")
+- Breet (name)
+f
+# function weal
+Lng:
+—
+ar Function oe ei Parameter
+def add(a,
+—
+print_(#"Addition of {a} + {b}")
+d) Return
+|
+fee
+a
+pede
+dy
+Statemént
+ees
+cr
+=
+print ("Simple Function").
+print (add(20, 5)) # function ‘calling |
+|
+with arguments
+3.2.1 Types Of Functions:
+-Mainly there are two types of functions
+a)
+Built-in Functions: are predefined in Python. For example len( ), range( ),
+sum(
+), etc.
+een!
+ee
+oe
+LN oF
+Wee.
+f
+all’
+|
+|
+b)
+User defined Functions: are custom functions developed by the programmer.
+>
+Ape
+_
+For example, following program code is to check whether the input given is
+a
+~~ even or odd.
+~
+num = int(input("Enter
+a number:
+))
+if num
+% 2 == 0:
+print("Even")
+else:
+print("0dd")
+The above logic is needed in many places and rewriting
+it each time
+is
+inefficient. Therefore, we place this repeated. code inside a function, which is
+__as follows
+def check_ even oun):
+at num % 2=
+print("Even")
+ude
+:
+4
+selser 6 oe
+ae
+Been
+eek
+Be
+print ("Odd")
+Now, instead of reaeniing the code, simply call the user-defined function.
+eat
+check_even. _odd(10)
+—
+# Print Even
+check_even_odd(7). # Print Odd
+~check_even_odd(25) # Print Odd_
+3.2.2 Functions with Return Values: -
+eae.
+Functions can send results. back using the re
+r
+7
+A statement.
+;
+- def add(a, b):
+return a+b
+result
+= add(5,
+3).
+print(result)
+Return statement: “return a + b” returns the result of addition operation to the caller.
+Function Call and Output: result
+= add(5,3) calls the add function with arguments 5
+_and 3. The function computes the sum of the arguments (5+3) and returns 8.
+the output: 8.
+BA
+une 3: Programming Fun damenta
+ca
+3.2.3 Activity Arithmetic Calculator Using Functions:
+We are developing a program in python in which each arithmetic operation is
+written as a separate function. The user will input the values of num{ and num2, and
+these variables will be passed as arguments to the functioris, and each function returns
+a value.
+at ar
+aie
+A
+ee
+# Arithmetic operation functions
+mrtmee a
+|
+The student will
+|
+|
+|
+_ enhance the
+|
+:
+:
+|
+programby
+|
+def aula; b):
+|
+x
+? applying
+a selection
+|
+return
+a +b
+pL
+|
+ey Be
+ae
+;
+1 user will input their
+:
+|
+| choice of arithmetic
+|
+def subtract(a, b):
+eS
+return a -.b
+.
+~
+*.
+def multiply(a, b):
+TERMINAL
+return a * b
+Enter first number: 10
+eis
+«ff
+Enter second number:
+5
+“dat dividela, bye
+2
+Sh ee
+wag
+ee
+i
+ta
+_
+§
+> Subtraction:
+5.0
+if b
+!= 0:
+ne
+ER
+Multiplication: 50.0
+returna-/bo
+°°
+Division: 2.0
+:
+J
+PS D:\Python Code>
+fj
+else;
+..
+1
+3
+return “cannot divide by
+zero”
+|
+# Main progran (sequence)
+1
+num1 = float(input("Enter first number: "y)
+num2
+= float(input("Enter second number:
+“))
+print("Addition:", add(num1, num2))
+print("Subtraction;", subtract(num1, num2))
+print("Multiplication;", multiply(num1, num2))
+print("Division:", divide(numt, num2))
+Unit
+3: Programming Fundamenta
+3.2.4 Scope of Local and Global Variables in Function:
+Variable scope refers to the area of a progtam wheré a vatiable can be accessed
+or used. Mainly there are two types of scope:
+,
+|
+i)
+Local Scope:
+.
+A local variable
+is defined inside a function and can only be used within that
+function, In the following code, variables result; a and b
+are local variables and
+cannot be used outside of the function add().
+|
+def add(a, b):
+ae
+result = a+b # local variable
+return result
+ii) Global Scope:
+e
+Te
+ii
+2
+SEP
+ac
+ahaa
+aetna
+St
+rg
+1 tgs
+A global variable
+is defined outside of all functions and can be accessed
+~ anywhere in the program. In the following code variable x is global variable
+and can be accessed throughout the program.
+x= 10 # global variable —
+def show(): See
+SE
+pRbntey
+on
+show(). ae
+)
+3.3
+File Handling:
+File handling is the ability ofa
+program to create, read, write, update,
+-
+and delete files stored on a computer's
+disk. Unlike variables, which
+lose .
+their values when a program ends,
+files keep data persistent on storage.
+In
+Python,
+file
+handling
+mainly means reading data from
+files and writing data
+to files.
+In
+Python, files are mainly of two types:
+Le
+Init 3: Programming Fundam
+i
+Text File: A text file stores data in a human-readable format. The data is stored as
+characters (strings), and you can open and read it using any text editor. Examples are
+xyz.txt, abe.csv, XyZ.py
+|
+3
+’
+Binary File: A binary file stores data in a non-readable format (bytes). It is used for
+complex data like images, videos,
+or compiled programs. Examples are xyz.jpg,
+abc.mp3, xyz.dat
+Data in files ftom storage devices is brought up in RAM, where functions like
+creation of new file, reading, updating of already existing
+file etc. can be performed,
+Eplowine are the file handling methods that are used in Python to interact with files.
+3.4
+File Operations:
+File handling is the ability ofa pro gram to create, as write, update, and delete
+files stored on a computer's disk.
+;
+To open a file in python Open( ) method is used to access a file from the hard-drive.
+Syntax: _file_object=open(filepath, mode)
+-
+/
+%
+la
+Operations mn: bile
+aeyata ligt
+_ Using the’
+na
+Statement
+Open(
+) function have 2 arguments. One is filepath (full name of the file or
+complete path) while the other is the desired mode of operation. This method will return
+a file object. Following are the modes of operations
+=
+7:
+—.——— . 7
+Teadlines( ) this method reads: all the lines
+at once.
+Cee Pg
+"te:
+e|
+.
+W
+A) CUS
+tt
+EST e cn
+ULL
+Cite
+ee
+position
+|
+‘Read fe ‘ ode
+for reading, only. Begining
+_
+Mast exist
+|
+IT
+|
+sg
+-|
+:
+.
+| Opens for writing. Overwrites all
+leat,
+|
+ofeates
+|
+:
+7
+|
+2
+— — content.
+peguning
+|
+missiig
+|
+ee
+' Opens for
+writing,
+“Adds
+_to
+7
+e
+Creates if
+wy
+en
+the en of existing | content.
+fi
+Ys
+see
+missing
+|
+=
+5
+ace
+is
+:
+fragt
+a Pe
+‘rb’
+ee
+Reads
+eee mode (images,
+| Beginning
+|
+Must exist
+|
+Binary / executables).
+|
+4
+|
+De
+=
+ea
+)
+acl
+a
+Write
+Wrnes 3 in bina
+mode, overwrites
+|
+Sage
+ot
+Creates if
+|
+3
+‘wh'
+ty
+| Beginning |
+_
+ips
+Binary — content.
+{
+LE
+missing
+fe
+pees
+ge oe eae
+le
+eee
+ie
+CA
+ie
+The defiult eae} is 'rt' (Open for reading text). Following are 2 the methods of _
+BE
+file object.
+_
+ae
+>
+.tead()
+After the file opened in read mode, its contents can be exacted by
+5
+fileObject.read(
+) function and it. see return: the camp
+contents of the file as
+z
+a string.
+|
+“®
+ade
+Bear,
+:
+te
+5
+>
+.teadline( ) this method reads one line at a time. -
+.write(“text”) writes a'string (remember to add \n for new lines).
+Sai ss
+Vv
+Vv
+-close() this method is used to close the file and flush: the buffer (space) to disk
+and free OS resources (like RAM). This method. ensures the datas is properly
+saved and prevents the file from corruption..
+Vv
+3.5
+Activity: Program to create an empty file and write content
+in it.
+In this activity we are going to create and write a simple sentence i in a file my
+using python programming.
+:
+>
+Open VS Code and create a rape
+file named “File Handling, py’ "and save it
+into a folder.
+BBN von 3: Programming Fut
+18)"
+.
+.
+2
+q
+4
+|
+|
+>
+Write down the following code as shown below
+,
+is
+‘
+® File Handlinggy x
+|
+@ File Handling
+py >...
+i
+1
+new_file = open('myfile.txt',
+‘w')
+2
+new_file.write("the quick brown fox jumps over the lazy dog !!!")
+3
+print("file has been created with text sucessfully")
+4
+new_file.close()
+>
+Line 1: This opens a file named myfile.txt with mode 'w' means writable mode
+(if
+file does not exist python creates and if already exists its old content is
+erased/overwritten).
+>
+Line 2: new_ file. write() function will write the given text into the file.
+>
+Line 3: print function will display a ‘user-friendly message
+that the file is created
+with text successfully.
+>
+Line 4: new_file. élosit) function wil close the file and save it on the same path
+where the “File Handling.py” file i
+Is already located.
+@ File Handling py >.
+;
+1
+new_file = open(‘ayfile. at,
+‘w')
+2
+new_file.write(“the quick brown fox junps over the ‘ay dog
+5
+3
+print("file has been created with text sey
+4
+new_file.close()
+.
+q
+Hone
+‘shave
+View
+v bd
+if
+~ 4 [hs Wewveume(@) > Python Code
+= &
+|
+A
+Name”
+Dates.
+yee
+i
+|
+# Oita
+3 hie
+AQUI...
+Python Source Fe
+:
+* Bl Desktop
+|
+|
+a
+"a (eee) cnn. = VetDocumm
+|
+$Downloxs
+i
+|
+BR Ovcurenss
+#
+After the code execution file is created
+|
+|
+pictues
+=|
+onthe same location of your python code!
+t
+[A HR Zaidi Doxs #
+}
+7
+(| Gass!
+|
+Gaus.
+|
+Mena
+¥
+§ Macdccastck amanda ieee
+=)
+=
+{ 2heme rere AT OH IAAT TTA TTS opps
+®
+8
+~ t
+an
+Orem
++y OO
+x
+PSE: hago
+Coder 4 “E.Pregram Files\Pythond
+id \pythan.exe" fe: Python Code\File andl bag .py*
+file has been created with text sucessfully
+<<}
+© PS E:\Python Code>
+{]
+Figure 3.22 File handling program
+“|
+@
+IE
+Yip
+le
+i:
+|
+be N
+o)
+nit 3: Programming Fundamenta
+“9 Il*
+3
+3.6
+with Statement:
+r
+V7
+Manually closing files is easy to
+.
+,
+°
+forget. Python gives a cleaner way. The
+Context Manager
+with block acts as a context manager
+automatically manages
+that guaranteés the file closes cleanly
+—
+,
+_‘Fesources, setting them
+even if an exception is raised mid-way.
+&
+Oy.
+up before the block runs
+-Think of it like this: when you
+Oe
+and cleaning them up
+open a water tap to fill a glass, you must
+after, whether the block
+close the tap after you are done. If you
+completes normally or
+forget, water keeps flowing and gets
+raises an expection.
+wasted. In the same way, when a user
+opens a file in Python, it must be closed after usc. If the user forgets, it wastes computer
+memory. The with statement acts like an automatic tap that closes the file by itself
+when our work is done, so users do not have to worry about forgetting
+it. In the
+following code with statement is used to write a line in file.
+@ File Handling
+with statement py X
+@ File Handling with statement
+py > ..
+with open('myfile,txt’,
+‘w ry as new file:
+-
+|
+new_file.write("the quick brown fox. Jumps over the lazy dog !!!")
+Re
+2
+3
+4
+printi"file h has. been created with text ‘successfully’
+ly")
+Figure 3.23 File handling with statement program
+3.7
+Activity: Program to read file’s content:
+>
+Write down ine following mae as shown
+i in the figure bale
+‘* File Handing Read py
+x
+_% File Handling Read.py > ...
+1
+«with open('myfile.txt’,
+'r') as new_file:
+for char in new_file.read():
+|
+print (char, end="")
+print("file
+read character by character successfully”)]
+Figure 3.24 File handling Read program
+»
+Line 1; Opens myfile.txt in read mode ('r’), by using the “with” statement it
+erisures the
+file
+is automatically closed after use,
+|
+<
+«Sa
+a
+Be
+Unit 3: Programming Fu
+1 @
+f¢
+;
+4
+>
+Line 2-3: new_file.read( ) function will load the entire file content as 4 single
+ag
+string and the for loop then iterates over that string one character at a time by
+using the print()
+function. In print() function the argument end="" prevents
+adding a new line after each character result: the text appears normally, even
+though it’s printed character by character.
+>
+Line 5: displays a user-friendly confirmation message once the loop finishes.
+Note: new_file.read() is not the most efficient approach for large files, because:
+>
+It loads the entire file into memory
+>
+Then processes each character
+In real programs, we usually read line by line, not character by character, or
+read all its content once for better performance and readability.
+@
+File Handling Read.py X
+te)
+#
+File Handling Read.py
+> ..
+:
+1
+with open
+nyfile.t txt",
+‘r") as new_file:
+2
+for line in new_file:
+-
+~# Iterate Line by line
+print(line,end="")
+-
+2
+print("\nfile read character by character successfully”)
+with open( ‘myfile.txt',
+*p')
+as new file:
+print(new_file. readlines())
+#Read entire content at once
+Figure 3.25 anaes
+File handling Read program
+3
+4
+5
+6
+7
+8
+3.8
+Errors and Exceptions:
+:
+|
+Errors (exceptions) may arise while dealing with files and ‘may result
+in
+abnormal termination of the program. Typical issues
+include. trying
+to open
+a
+nonexistent file, reading from a file or running into issues when writing data.
+KK
+Exception:
+86
+saat
+is an error that occurs during the execution ofa program which
+4 -@:
+interrupts the normal flow of instructions or program terminate
+abnormally.
+To avoid this, Try-except blocks are used to handle possible problems while
+accessing and working with files, Alternative actions (like user-friendly message
+display) can be implemented by enclosing file operations in a try block and addressing
+‘particular exceptions such as FileNotFoundError, PermissionError or 10Error in
+the except block as shown.
+ES
+SE
+Fe
+YS
+|
+The iit
+6hi
+[@)s
+oes
+eT
+a
+© Try Block File Handling
+Reed py x
+‘
+Ng yW
+© Try Block File Handing Read py > ..
+v
+he
+<
+try:
+"iH
+with open(‘myfile.txt', ‘r') as new_file:
+rh
+is
+for line in new.file:
+# Iterate Line by line
+‘
+print (Line, end=“")
+print(“\nFile read successfully” )
+except FileNotFoundError:
+print(“Error: The file does not exist.")
+.
+except [0Errort
+~
+print(“Ernor: An issue occured while reading the file,")
+Figure 3.26 en File handling program
+wan
+nu & wr
+3.9
+Mini File Handling Project:
+A mini student grade tracker is a small Python prograrnit
+| that is designed
+to store,
+manage, and retrieve student grades using.a
+file.. This project brings together and
+demonstrates all the important file handling concepts that we have learned so far such
+as opening a file, writing data into it, reading data from it, appending new data, closing
+the file properly, and using the with statement to manage resources automatically.
+Instead of learning each concept sepatately, this project shows us how all these
+concepts work together in one complete program to solve a real-world problem which
+-
+is keeping track of the grades of students in a ‘simple and organized manner.
+‘© Grade Tracker py X
+:
+;
+oe
+.
+© Grade Tracker py > ..
+Sa tet wet on, a
+eR
+(ol
+-
+# Grade Tracker - Demonstrates. all File modes
+1
+2
+# STEP 1: Write initial grades (creates the file)
+3
+with open("grades.txt", “w") as f:
+4
+f.write(“Alice: 88\n")
+=
+5
+f.write(“Bob: 75\n")
+|
+Rome
+6
+-
+F.write("Carol: 92\n")
+» sea
+"Tes Eswrython coder
+sid
+:
+.
+:
+7
+f
+.
+: _print("¥ Grades file created.")>
+Jee aie seen,
+'
+Z
+Alice scored 8&
+3
+# STEP 2: Append a new student later
+— aoe
+1@
+with open("grades.txt", "a") as f%
+;
+11s
+f.write("David: B1\n")
+_——
+12
+print("¥ New student appended,”).
+4 Clade awernges 8
+13
+;
+14
+# STEP 3: Read all grades and compute average
+15
+with open("grades,txt", “r*) as f:|
+16°
+lines = f.readlines()
+17
+:
+18
+total:
+@
+19
+for line in lines;
+20
+Mate, grade = Line,strip().split(":
+")
+21
+print({
+{name} scored (grade)")
+22
+total +» int(grade)
+23
+24
+average = total
+/ Jen(lines)
+25
+print(f’\ny Class average: (average:.1f)")
+Figure 3,27 Grade tracker program
+7
+f
+:
+[NG Unit 3: Programming Fundamentals
+This
+unit covers core Python programming,
+data structures
+(lists,
+tuples,
+sets,
+dictionaries), functions, and file handling. Mastery of these concepts opens the door to
+a wide mnes.o of software Canes careers.
+Software Developer
+Site aid aS SASS Tee
+ere
+S
+"Builds wae scripts, and tools - |
+Designs and develops software
+—
+using Python, one of the most widely
+L Slichits across web, desktop, or |
+eu programming lApRuages in the
+aa de is oni eae using structured,
+industry.
+—
+Sei
+e
+code,
+a
+| Writes scripts and programs (ofter i in
+Wits test cits and ican
+| Petion) to automate repetitive tasks
+1 in
+- cases to. verify that software behaves _
+‘business, testing, or IT operations. - ut tee
+oe and ay oe
+Uses pro eramining
+7 findamentale
+| aeactions data structures, and logic t to
+~ applications for clients,
+an
+a
+build interactive gamesand
+Fan point for young Sect
+‘
+simulation.
+=
+a lee
+ce DMDS a portfolio.
+rein aad
+TSS aOR AE eS ce
+~ Data Structures are about how data can be stored in different structures.
+~ Python provides
+built-in
+data
+structures such
+as
+lists,
+tuples,
+sets,
+and
+dictionaries.
+~
+An object in Python is a basic unit that contains data and behavior together.
+~
+Lists store multiple values in one variable
+~
+Lists are ordered, mutable, and allow duplicate values.
+~
+Lists can be searched and modified using loops and conditions
+Tuples are ordered but immutable.
+Sets store unique elements and support mathematical operations.
+©
+|
+2 ‘Exception baal
+preven prperamis fror
+Unit 3: Programming Fundamentals
+© Indexing and slicing are used to access data
+in
+collection
+. Dictionary a key-value pair data aiructlire led
+© Functions are one of the most fundamental tulding
+the basis for modular and clean code design, ©
+* Functions help reduce duplicate code and improve progam
+© Functions receive values using arguments
+eee
+- Functions send results back. using return
+ie
+te
+© Variables inside functions are local.
+=
+‘ ‘Variables outside functions! are
+oie
+|
+data scam
+Oh
+Bee
+© The with statement aia
+8 manages file closing.
+1.
+Encircle the correct answer
+i)
+The key characteristic of List in Python?
+(a) Immutable.
+_.
+(b) Unordered
+(c) Mutable
+.
+(d) Hashable
+ii)
+List with mixed datatype
+(a) [“apple”, 42, 3.142, True]
+(b) “apple”, 42, 3.142, True)
+(c) {“apple”, 42, 3.142, True }
+(d) Set([“apple”, 42, 3.142, True])
+iti)
+Output of fruits=[“apple”, “banana”, “cherry”] Print( fruits[-1])?
+(a) Apple
+(b) Banana
+(c) Cherry
+|
+_
+(d) TypeError
+iv)
+data={“geck’:10, “for’:45, “gecks’:90} print (“geek” in data) Ouipu
+of the
+program is?
+(a) 10
+(b) False
+(c) True
+(d) Error
+vi)
+vii)
+viii)
+i)
+ii)
+iil)
+iv)
+i)
+ii)
+iii)
+}
+it 3: Programming
+Correct way to create a set in python
+(a) S={1,
+2, 3}
+(b) S=[1,
+2, 3]
+(c) S=(1, 2, 3)
+(d) S={l:"One”, 2:"T wo”, 3: Three”)
+Which exception occurs when accessing a missing dictionary key directly?
+(a) TypeError
+(b) IndexError
+(c) KeyError
+(d) ValueError
+Which Data Structure is unordered and unindexed?
+(a) List
+(b) Tuple
+(c) Dictionary
+.
+_
+(d) Set
+Which Built-in function returns the largest element? —
+(a) Max()
+_
+_*(b) HighO)
+(c) Top)
+-
+(d) Large()
+Which statement automatically closes files?
+(a) Max()
+:
+-(b) High0
+(c) Top()
+|
+_
+(dd) Large()
+Which method removes all elements from list?
+(a) Delete(Q)
+—
+(b) Clear()
+- (c) Remove()
+(d) Pop()
+Fill in the Blanks
+,
+Python lists are created using
+brackets.
+A tuple is an _
+data structure
+Dictionaries store data as
+pairs
+The
+statement automatically closes files
+The
+function returns the number of elements in a collection.
+Provide short answers of the following questions.
+Define Data Structure and its types?
+Differentiate between List and Tuple in python.
+Define different modes in file handling?
+What is the benefit of using “with” statement while working with files in
+python?
+|
+.
+Differentiate between local and global variables.
+as
+N
+Ls I
+ay)
+®
+*
+:
+(
+'
+@
+4
+mW
+i)
+pe
+iil)
+iv)
+w
+Unit 3: Programming Fundamenta ¢
+Provide detailed answers of the following questions.
+Discuss common built-in functions used with Python data structures.
+Explain Functions in Python with components and types of functions.
+Describe functions with return values using suitable examples.
+Define following terms:
+.
+=!
+(i)
+Indexing in List
+—
+(ii)
+‘Dictionary’
+(iii)
+Slicing
+(iv)
+Sets.
+: Oy,
+Activities
+pay
+Create apyihion program to find the largest number in the list [45, 22, 89, 34 ,60]
+without using any built-in function.
+Write a Python program to create a file named data, txt, ate a string by fits
+input from user and then read the content of the nts and oe ey
+the sau
+with
+|
+= user-friendly message.
+Write a program.to.open the file “abe, txt” in read- diane Create oie file
+“xyz.txt” and write the contents of abc.txt by reading character by character.

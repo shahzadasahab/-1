@@ -1,0 +1,1894 @@
+Data and Analysis
+After the completion of this unit students will be able to:
+@ Connect Python programs with databases
+@
+Program basic data operations using Python
+@
+Apply visualization techniques such as
+»
+Bar plots, histograms and scatter plots
+>»
+Boxplot
+»
+Measures of central tendency and spread
+Introduction to Unit:
+The purpose of this chapter is to help students understand how the collected
+data can be processed for decision making. The students will also learn how to use
+Python Language to connect to data sources and the use of different libraries to process
+data into valuable insights and how to present the data using different visualization
+techniques.
+4.1
+Concept of Data Analysis:
+Data analysis is the process of examining, organizing, and interpreting data to
+extract useful information.
+In real
+life, organizations use data analysis
+to make
+decisions, identify trends, and solve problems.
+For example:
+>
+Schools analyze student results to improve performance
+> Businesses analyze sales data to increase profits.
+>
+Hospitals analyze patient records to improve treatment
+Python is one of the most popular programming languages for data analysis
+because it is simple, advanced, and supports many libraries. Python can:
+e
+Read data from different sources such as files and databases
+e
+Organize data into structured formats
+e
+Perform calculations and statistical analysis
+¢
+Create visual representations like graphs and charts
+Thus, Python acts as a bridge between the concept of data analysis and its real-world
+implementation, enabling us to turn raw data into useful information,
+4.1.1 Data Sources and Need for Connectivity:
+.
+Data sources are the origins of information used for processing and analysis.
+Common data sources include schools, businesses, websites, mobile applications,
+sensors, and databases. To use this data, a program must communicate with the data
+source.
+.
+oe
+To work with this data, a program must communicate with the data source. This
+communication, known as data connectivity, enables applications to access, retrieve,
+store, update, and manage data efficiently.
+4.1.2 Key Components of a Database Connection:
+A database connection requires the following components:
+Unit 4: Data and
+Database: A database is an organized collection of related data that stores
+information in a structured form for easy storage, retrieval, and management.
+Example of databases includes,
+o
+SQLite (sqlite3): A lightweight, built-in Python database used for
+small applications and learning.
+o
+MySQL: A popular relational database used for websites and large
+business applications.
+e
+Driver: A Software that enables communication between the Python program
+and the database management system.
+'
+e
+Connection Object: An object that establishes, manages, and closes the
+connection between Python and the database. It is created before performing
+any database operation.
+e Cursor Object: An object that executes SQL queries and retrieves results from
+the database. It is used after a connection is established to interact with the
+database.
+e
+SQL Queries: Structured commands are used to create, insert, retrieve, update,
+and delete data in a database. They are executed through the cursor object to
+perform database operations.-
+o)(
+@
+}f
+©
+)( 0 )( @
+Driver
+Connection —
+Cursor
+SQL
+Database
+|
+Object
+|.
+Object
+Queries
+Op
+|
+EB PI
+r
+sal
+Software that
+Creates, maintains,
+Executes SQL
+enables communication
+and closes the
+queriegand
+ae
+between Python and
+connection between
+processes the data
+cues gist
+—
+the database.
+Python andthe
+‘
+returned by the
+be
+:
+e,
+database.
+database.
+Ls.
+delete data.
+a
+Nemec!
+\rnsmeenens
+\
+rere
+pone
+Python
+neuen
+|
+L:
+* Application
+|
+Figure 4.1: Flowchart of Python connecting the database
+4.2 Creating a SQLite Database in Python:
+The figure below presents the step-by-step process of establishing a connection
+between Python and an SQLite database and performing database operations.
+Ea CARD)
+Explanation
+_ import sqlite’
+|
+Loads the SQLite library s0 Python can talk tp the database,
+? 3
+etan sulted conect{ “echo,
+)
+Connection object Crestes or opens a database file named schon!
+IF doesn exit, Python makes it stematcally
+~
+|
+Cursor object is created from the connection (cur * conn cursor{)).
+Geet corme | car
+= conn.cursor()
+© Its Function fs Exceute queries lke SELECT, INSERT, UPDATE, DFLETE.
+© Fetch results back into Python with car. ftchall().
+© Handle multiple commands
+step by step.
+—
+car.enecate("CREATE TABLE stadents
+© Execute method is used with a cursor object to run SQL commands
+A Create table
+(id INTEGER, name TEXT,
+(like CREATE, INSERT, SELECT, UPDATE, DELETE).
+parks INTEGER)")
+© Create Table command is table name and then define its columns
+with datatypes (ike INTEGER, TEXT) and optional rules (constrains),
+elec
+Insert into command wsed to adds one record (student Ai with 85 marks),
+sexecute("INSERT INTO studen
+[3 Insert data | ™
+VALLES
+(1, ‘Mi’, ee
+Where Id=1, name= ‘Ali’ , marks= 85, the name wil be in single quotation
+mark
+'
+a
+ee
+The conn.comit() wock wih connection object, comnts
+all 4
+B Srdengs | mcomitl)
+* changes permanently inthe database ile.
+Rees
+|
+|
+a tie sarc «ost students, the cursor bods the rest
+cig
+Tt surah
+elel ( les none
+—
+@ Curr. fetchall() used with a cursor object to retrieve all rows
+Display
+mms = cat feel)
+from the result ofaque.
+oomlia
+_ herr in rows:
+¢ The (fr...) keywords in Python is sed to create a loop
+,
+print(r)
+|
+that repeats actions
+ee
+|
+@ The print () fnction in Python is used to display output on the screen.
+Close
+Ce
+Cona.close work wich connection objec, it ends communication safely
+connection |
+_‘inm-clovel)
+with the database
+Figure 4.2; Database connectivity of Python with SQLite
+4.3
+Implementation of Basic Operations on Data using Python:
+In most real-world situations, raw data is not immediately useful because it may
+be:
+»
+Unstructured
+>
+Incomplete
+»
+Difficult to interpret
+Therefore, we apply basic data operations
+to transform raw data into
+a
+structured and meaningful form,
+Unit 4: Data and
+Python
+provides
+powerfull
+|
+tools for this purpose, particularly
+The Python Libraries catt be
+|
+the
+Pandas
+library,
+which
+is
+rile
+installed sing the “pip”
+|
+specifically designed for handling
+& Q:
+conunnad, For exanate
+|
+and
+analyzing
+structured
+data
+sip install asia’
+7
+|
+efficiently. These operations form
+oe
+|
+the foundation for further analysis,
+such as statistical computation and visualization, which are discussed later in this unit.
+4.3.1 Introduction to DataFrames:
+A DataFrame is the core data structure in Pandas. It is a 2D (Two Dimensional)
+table that stores data in rows (records) and columns (attributes), similar to an Excel
+sheet or a database table.
+It is important because it:
+> Organizes data in a structured format
+»
+Allows easy access to specific rows and columns
+>
+Supports operations like filtering, sorting, and aggregation
+The general syntax to create a DataFrame is given below:
+DataFrame_name = pd.DataFrame(data, index, columns, dtype, copy)
+Where:
+pd is a reference to Pandas library.
+Different parameters of this command are explained below:
+data — Input data (can be dictionary, list, array, etc.)
+index (optional) > Row labels
+columns (optional) + Column names |
+dtype (optional) — Data type of elements (e. g., int, float, str)
+copy (optional) +> Whether to copy data (True/False)
+VVVWV
+WV
+4.3.2 Creating and Loading Data:
+Data collection involves gathering raw data from various sources such as files,
+spreadsheets, databases, or online platforms. Python simplifies this process through
+specialized libraries.
+i)
+Pandas for File-based Data Collection:
+The pandas library is commonly used to import structured data tei
+CSV and
+Excel files.
+This library contains functions to automatically interpret column names, data
+types, and missing values.
+Commonly used pandas functions to load data Include:
+@D reed_csvi)
+- termes dete trom w CSV fe
+deport pandas pe pe
+Beorrets Guipt
+® Lesd CoV file
+Of
+oe pe rend_revt ‘teterte cre)
+|
+0 Dientay Mat © hom
+pednt(et. bead())
+saxead
+Note: rend_cey() reacts tate trom 2 CSV (Commmna Separated Values) fe
+ahd Borer Rin bp Datetame,
+e read_ercel() - Loads data from an Excel file
+import pandas es pd
+|
+|
+# oes Excel file
+|
+|e |
+OF © pd.read_ercel
+( ‘students, x]an', sheet_names ‘Sheeti')
+|
+1
+.o
+|
+® Display first 5 ras
+i
+2)
+7
+Print( df. head())
+ody
+|
+\
+ere
+Teen
+asa
+a
+|
+|
+'
+i
+i
+T
+'
+|
+Note: read excel() reads data from an Excel file (.xlsx, .xs)
+ay
+4
+|
+.
+and stores it in a DataFreme.
+|
+u
+D> Tex Always check the fle path and sheet name (tor Excel files) before hoading data,
+|
+hci ct
+nannies
+.
+seikeabeclicneasth
+wit
+>
+dfhead() displays the first five records by default, allowing quick inspection
+e
+Creating New Variables (Data Manipulation)
+Data manipulation often involves deriving new information to extract
+deeper insights. The code below will create and add a new column that
+represents wheat yield per millimeter of the rainfall.
+|
+Ee
+vie
+.
+# Inport pandas.
+as . @
+ts:
+Ad
+|
+Total:
+f
+import pandas as pd
+cH
+Sum
+of Math and
+# Sample data
+|
+|)
+Sclence marks.
+|
+data
+=
+{
+i
+i
+by
+,
+:
+o
+abas,
+tae,
+Sia:
+Mati:
+|
+|
+& Average:
+|
+~~
+:
+{ ‘Ali
+,
+‘Sara’,
+t
+“ayesha'],
+i
+i
+Average of Total
+|
+‘Wath’
++ (85, 9@, 78, 92],
+at
+a
+marks (Total divided =
+j
+‘Science’: (80, &8, 78, 95]
+il
+ae
+;
+hid
+:
+;
+df = pd.DataFrame(data)
+marta
+print(*Original Data:*)
+;
+print(d¥)
+#1, Create
+a new variable: Total Marks
+df{‘Total’]
+= df(*Math*]
++ df{ ‘Science’
+#2. Create a new variable: Average Marks
+df[‘average')
+= df(‘Total’]
+/
+2
+print(“\nDate with New Varizbles:*)
+print(df)
+Key Point: Creating new variables using simple arithmetic operations helps us derive meaningful information
+|
+.
+from existing data and improves analysis.
+i)
+Handling Missing values:
+Missing values occur when some data is unavailable of not entered, In Pandan,
+missing values are represented as NaN (Not 4 Number), Before analyzing data,
+missing values should be identified and handled.
+‘
+@ seep: Import the Pandas Library
+| amport pandas aS pd
+_|
+e@
+se _ a DataFrame with
+Output
+“data = {
+tle
+om
+5.0
+oo
+ems
+“Sara”, ye “hyesha"),
+1
+Sara
+NaN
+Ae
+o
+= fone, 78,
+92),
+|
+2
+Ahmed
+78.4
+Nay
+eek
+ee nd
+;
+yesh
+90
+A
+> df = pd.DataFrame(data)
+A | siavesismiaiiptiaabis
+| Hore, NaN indicates missing values,
+{erty
+Pcie
+©}
+Step 3: Check for Missing Values
+Bn
+“Use the isnull() function to identify missing aes
+{ print (df. tsmw1()
+False
+=
+False
+False
+False
+True
+False
+False
+False
+True
+3
+False
+False
+False
+© Tue Indicate aig vain,
+_ while False indicates available data,
+»
+-
+@&
+0 Step 4: Count Missing Values
+~ Output
+Use sum( to cout he ming va
+In ach oar,
+rl
+;
+|
+Grade
+print (df. isnull(). sun())
+|
+i
+ition Sheth
+@ Step 5: Replace Missing Values
+Output
+Replace the missing value in Marks with the column = {Name
+Marks
+Grade
+average and the missing value in Grade with a
+default value,
+6
+Ali
+85.0
+A
+dt{"Marks*) w df {"Rarks*).fillna(df[ Warks*].voan()) | 2
+Sart
+O50
+as
+df ("Grade") = df Grade"). fillna("Not Assigned")
+2
+Ahmed
+=—-78.8
+Not Assigned
+tas
+3
+Ayesha
+92.0
+A
+@ Step 6: Remove Rows with Missing Values
+Output
+(Optional
+ST
+EEE
+TURE
+FEED
+If you want to remove rows containing missing values
+Nama
+Marks
+Grade
+Instead of replacing them:
+0
+Ali
+85.6
+A
+df = df,dropna()
+the ef
+“print (df)
+'
+|
+| Rows with missing yalues (if any) are removed,
+4: Data and Analysis
+¢
+Common Panadas library Functions for Handling Missing Values
+V
+Function Purpose
+isnull():
+Identifies missing values.
+sum():
+Counts missing values.
+fillna():
+Replaces missing values.
+mean():
+Calculates the average of numeric values.
+dropna(): Removes rows containing missing values.
+4.4
+Data Organization and Representation:
+Data organization and representation is the process of arranging collected data
+in a structured form to make
+it easier to understand, analyze, and communicate.
+Common methods of data representation include tables, frequency distributions, and
+graphs. Fig. 4.2. illustrates different ways of organizing and representing data.
+Tabular
+Frequency
+§
+_—Grraphical
+Representation
+Distribution Table
+. Representation
+Range of
+Frequency
+Marks
+:
+:
+rer reser
+OTT Uae EIS U ONY EICEEt
+Ca rT
+Inaya
+88
+76
+92°
+‘Bilal =70) 6075
+‘Saba
+90 6488
+“Saba
+90S 84-86
+i
+‘i
+od
+Figure 4.2: Different ways to organize and represent data
+4.4.1 Tabular Representation:
+.
+Tables organize data into rows and columns, making it easy to compare values
+and summarize information. For example, consider the following table showing
+students’ scores in different subjects along with their average marks.
+Unit 4: Data and
++ ia
+‘
+a
+$
+Mee
+;
+<
+|
+@
+«
+i
+Student
+Fivglish
+Wath
+Setehee
+Averave
+3
+E
+os
+:
+‘o
+>
+|
+sae
+ee
+Cr
+hi
+ales he
+en
+nih
+78
+82
+80
+~~
+80
+a
+4.4.2 Frequency Distribution Table:
+When dealing with large amounts of data, grouping the data into intervals or
+ranges makes
+it easier to analyze and interpret. This
+is done using frequency
+distribution tables, which show how many data points fall within each range.
+For example, if marks of many students are grouped into ranges, a frequency
+table ae
+look like ts
+Range of Su
+SO yay
+This table helps us see
+ms student marks are spread across different score
+ranges, showmg where most students’ scores lie.
+4.4.3, Graphical ihenvesenteiiens
+|
+The visual presentation of data using graphs and charts to make trends, patterns,
+and comparisons easier to understand is called graphical representation.
+> Libraries for data visualization:
+Python uses powerful libraries for data visualization, with Matplotlib being the
+most common. It is used to create charts like line graphs, bar charts, and scatter
+plots. Matplotlib is widely used in education and research due to its simplicity
+1} CamScanner
+gy
+wees
+i ST
+and flexibility. For example, a teacher uses the following Python code to
+IV
+visualize students’ exam performance over time using 4 line graph (Fig. 4.3).
+DB
+a
+Import Library
+a
+import watplotiib.pyplot as pit
+Create Dota
+Define yearsand =
+years « ["2021", *2022", “2023", "2074"
+percentage marks = marks = (65, 70, 75, 80]
+Create
+@ Fewre Setup
+nei
+pit. Figure()
+Graph
+Draw line
+_
+plt.plot(years, marks, marker='0',
+o
+m
+oe
+|
+color='blue', linewidth=2)
+CG
+X-axis Label
+-
+rt
+| plt,xlabel(“Year")
+;
+label
+i
+6
+Y-axis Label
+sve
+| plt.ylabel("Percentage Marks”)
+@
+Title
+|
+_ Add graph
+pit. este Stade
+Performance Over csabill
+|
+heading
+6
+Display
+Show final graph
+“pit. shou()
+3B
+Percentage Marks
+“Ss
+0 2
+j
+220
+Year
+9 9
+Key Point: This code creates a simple line graph showing students’ percentage marks over the years,
+Figure 4.3; Line graph to show the year-wise percentage increasing.
+j
+Unit 4: Data and A
+ie)
+6a)
+s (f 4.
+A\y
+Types of Graphs:
+|
+Bar Graphs:
+y
+%
+A bar graph is used to compare values across different categories using
+a
+rectangular bars. The height (or length) of each bar represents the corresponding
+value, making comparisons easy to understand, such as students’ marks or
+subject-wise scores,
+.
+The syntax for creating a bar graph is:
+plt.bar(var!, var2)
+Where:
+;
+¢
+pit refers to the matplotlib, pyplot library.
+e
+varl represents the category values (x-axis).
+»
+var? represents the corresponding numerical values (y-axis).
+Example:
+The following Python program creates a bar graph to compare students’ marks.
+The comesponding publ
+is shown in Figure 4. 4.
+. bh)
+Action
+Purpose
+Code Example
+f
+Hee
+eS
+data = {
+:
+Create a DataFrame
+ge
+ope
+se
+2
+Sareea
+© ee
+ead:
+ee eee
+Marks
+vs Students
+t
+DataFrame
+’
+Science",
+"Social Science"],
+|
+100
+_ thelr marks
+"parks": (45, 57, 88, 65, 50]
+i}
+ef = pd.DataFrane(data)
+import natplotlib.pyplot as plt
+Q
+Plot a bar chart
+Crate
+plt. figure(Figsize=(8,5))
+-
+BarChart
+“SED HATITG
+ae sbar(af[Mane"], dF["Marks"),
+edgecolor="black', color=*skyblue')
+i Add chart ttle
+plt.title("Marks vs Students")
+Add Titles
+@
+plt.xlabel ("Students")
+andtabels
+—andauislabels
+ple. ylabel ("Marks")
+Add
+grid lines on
+:
+.
+@
+rehie
+ci a
+Itgrid(axis='y'
+ae’,
+alphaed.7
+y-
+f
+plt.grid(axis='y', linstyle=‘--', alpha=2.7)
+!
+readability
+;
+0
+;
+cae
+Arabic
+English = Math,
+«Science: Social Science
+©
+@ %
+Show the final
+pt. tight_layout()
+Chart
+bar chart
+plt. show()
+9
+Key Point: This code creates a bar chart to compare marks of different subjects,
+Figure 4.4: Bar chart showing student performance subject wise
+@
+Beets is
+p>
+®
+a
+Klos
+S Yh
+and Analysis
+f
+: | \
++
+@|'*
+,
+t
+*|
+li)
+Line Graphs:
+VW
+A line graph is used to show how data changes over time by connecting data
+,
+points with straight lines. It helps identify trends, patterns, and variations in
+values over days, months, or years.
+The syntax for creating a line graph is:
+plt.plot(months, temps)
+Where:
+e
+pit refers to the matplotlib.pyplot library.
+*
+months represents the data displayed on the x-axis.
+e
+temps represents the corresponding temperature values displayed
+on the y-
+axis.
+Example:
+The following Python program creates a line’ graph showing the average
+monthly temperature throughout the yea
+The corresponding output is shown
+in Figure 4
+Ea
+:
+eit) Ee fee ae
+—
+|
+teport matplotlib.pyplot es plt
+Iee
+g
+en
+ae Monty Temperature
+4
+2
+3
+# Dote: Months and overage temperatures (in °C)
+i
+:
+i
+;
+4
+eorths
+= fr", "Feb", “wor”,
+"hor", "way", “Jun”,
+\
+i
+- B peter
+h
+be
+anadnssunbmewn
+"aul", “hag”, "Sen", "Oct", "Wow", “Dec
+|
+temps
+« B2,
+15, 22, 25, 20, 3, 38, 37, 3,
+28,. 23,
+18]
+}
+{
+'
+lam
+:
+i?
+ee
+i
+i
+‘
+i
+i
+6
+s
+if
+;
+i
+:
+:
+7
+Plot Line gregh
+at
+BB
+Dn ene
+Pan
+cabs eet
+eee
+be
+&
+pit.plot(months, temps, morkers'c', colore'blue’)
+i
+t
+§
+F
+f had title and lobels
+10
+plt.title(“Average Monthly Temperoture’, fontsize=14)
+j
+pit.xlabel(“Honths”, fontsize=i2)
+*
+plt.ylabel(“Terpercture (*C)", fontsize=12)
+4)
+fn
+Feo Mar Apr May” Jun Jul Aly Sap Oct Now Dec
+t
+Months
+{
+|
+.
+}
+12
+§ Add grid
+pit wate)
+‘o|
+port nights pp spt
+“Sepa
+0 Metge
+rey,
+| @ Line graphs are used to show how values change over time.
+@) monthe, temps
+Lists containing martha and thelr average temperstures,
+| @
+markera'o’ adds circular markers at each data point.
+e pit.plat()
+Draws the line gregh with circular markers,
+|
+®
+color="blue’ sets tha line color to blue,
+0 _
+eG, abe, abe
+‘the wr ial tot gach
+1
+@ = grid(True) adds grid lines for better readability,
+|
+e
+mah
+From January to July, the average temperature rises,
+ic)
+Grid(True)
+Ad ord
+Ines to grove roadotliy,
+||
+then it gradually decreases towards December.
+|
+inintnipainsaniaeibicligiaaniaatsipimiigiesaicaiaipg
+iD
+Figure 4.5: Line Graph showing average temperature month wise
+Unit 4: Data and
+1)
+is)
+4) ‘
+9]
+iii)
+Pie Charts:
+Ey
+A pie chart displays data as parts of a whole. Each slice of the circle represents
+VY
+*
+the proportion or percentage of a category.
+‘4a
+ae
+The syntax for creating a pie chart is:
+plt.pie(students, labels=subjects)
+i
+‘
+1
+Where:
+. pit refers to the matplotlib. pyplot library.
+«students represent the numerical data values.
+¢
+subjects represent the labels for each category.
+Example:
+The following Python program creates a pie chart showing the percentage of
+students choosing different subjects. The eon POnENE output is shown in
+Figure 4.6.
+,
+_ BAGO
+inport matplotlib.pyplot as plt
+Percentage of Students Choosing Different Subjects
+# bata: Subjects and nunber of students
+subjects
+= ['wath', ‘Physics', ‘Computer Science’,
+"Biclogy’, ‘Chemistey']
+students
+= (25, 15, 30 10, 20] .
+Se
+# Create ple chart
+plt.figureQ)
+plt.pie(students, Labels=subjects, autopct="§),
+1f kx",
+startangle=9¢)
+‘
+# Title of the chart
+~
+plt.titleCrPercentage oF Students Choosiig
+Different Subjects*, fontsizes14, fontwel ght» "botd")
+ROR
+ER
+S&S ewan nw eawne
+& Shon chert
+plt.show()
+‘
+|
+Nh
+¢ Explanation (Step-by-Step)
+Import matplotlib.pyplot as pit: imports the Matploti
+library.
+|
+| 4 Apie chart shows parts of a whole in percentage.
+|
+t
+;
+*
+|
+SS
+k
+e
+| subjects and students: Lists containing subject names and number of students
+Each slice represents
+a category
+j
+|
+€)
+ii nigurtd): Creates a new figure for the pia chart
+| | @ aulopcl="¥1.1/0% displays percentage up to one decimal
+place.
+pil. pied): Draws the ple chart. autopct=%1, 11%! shows parcentage on slices,
+4 The total of at percentages is 100%,
+wy
+Hike): Adds a Ute to the
+chart,
+t s
+:
+.
+|
+@ [helps in quick comparison of categories.
+Pit. 6heaw(): Displays
+the final pie chart,
+Figure 4,6; Example of Pie Chart:
+we
+and Analysis
+va
+E /
+Histograms:
+A histogram shows the distribution of numerical data by grouping values into
+.
+ranges (bins), Unlike a bar graph, the bars in a histogram touch each other
+because the data is continuous,
+The syntax for creating a histogram is:
+plt.hist(scores, bins)
+Where:
+e
+pit refers to the matplotlib. pyplot library.
+©
+scores represent the numerical data,
+¢
+bins represent the score ranges.
+Example;
+7
+Bag
+heey
+|
+The following Python program creates a histogram showing the distribution of
+student scores. The corresponding output is shown in Figure 4.7.
+.
+Output {Histogram}
+import matplotlib.pyplot as plt
+Distribution of Student Scores
+i
+2
+es
+3.
+# Sample dota: Student scores
+as
+.
+bes a
+:
+4
+scores = [45, 58, 55, 68, 62, 65, 68
+5B,
+i}
+|
+5
+78, 86, 82, 85, 88, 99, 92,
+“# Define score ronges (bins)
+bins
+= [48, 5¢, 68, 78, 88, 99, 100)
+€
+6
+9
+10
+# Create histogran
+}
+LL
+plt.hist(scores, binsebins, edgecolor='black’)
+=
+13
+Number of Studentsa
+# Add Labels ond title
+/
+4
+plt. title(“Distribution of Student Scores”)
+15
+plt.xlabel (“Score Range“)
+16
+plt.ylobel("Mumber of Students”)
+Key: Points
+D scores: List of student scores.
+Q bins: Defines scare ranges forthe histogram.
+© pit.hist(): Creates
+the histogram
+using scores and bins.
+—D edgecolors'black’:
+Adds black border to bars.
+—@ titled, xtabel(), ylabel(): Add ttle and labels,
+— @ pric): Adds grid fines for better readability
+| Each bar represents the numberof stuxlents in a score range.
+|
+®
+X-axis shows score ranges (bins).
+|
+@ Y-axis shows the number of students in each range.
+|
+© Helps to understand
+the distribution of data.
+Figure 4.7: Histogram
+of student score in different score ranges
+y
+Scatter Plot:
+A scatter plot is a graph that uses dots to show the relationship between two
+numerical variables. Each dot represents one data point.
+The syntax for creating a scatter plot is:
+plt.scatter(x_values, y_values)
+Unit 4: Data
+Where:
+¢
+pit refers to the matplotlib.pyplot library.
++
+x_values represents the data on the x-axis.
+e
+y_values represents the data on the y-axis.
+Example;
+The following Python program creates a scatter plot using x-values and y-
+values. The corresponding output is shown in Figure 4.8.
+Ta Riri grey
+1
+import natplotlib.pyplot as plt
+|
+Example Scatter Plot
+2
+1}
+By
+—]
+3
+#1. Define your X ond Y data points
+-
+i
+®
+4
+xvolues = [1,
+2, 3, 4,5, 6, 7, 8, 9, 10]
+4
+[3
+ee
+3
+y.volues = (2, 4,5, 4, 7, 8,9, 22, 44, 15]
+I
+4--
+Last
+ibe
+ca
+th
+ches
+i
+6
+ale
+||
+®
+7
+#2. Create the scatter plot
+-
+Pp} it
+ep
+8
+plt.scotter(xvolues, y.values, color="blue’, alphasl.7) | $
+;
+}
+6
+9
+\
+“es
+Ee |
+10
+#3, Add labels and o title for clarity
+i i a.
+be he _
+q
+11
+plt.titlec'Exanple Scatter Plot’)
+e
+12
+plt.xlobel('X-oxis Velues')
+,
+Lf
+affects a emer pn presse
+13
+plt.ylobel(' Y-axis Values’)
+:
+"ll
+i
+.
+;
+4“
+|
+, 24
+ere
+15
+#4, Dspley
+the plot
+rr Tt?)
+te
+16
+plt.show()
+|
+ads Values
+OAS TUEP EET ony Stop}
+x values, y_ values: Lists containing the data points
+—
+Q cotors'blue’:
+Sets the color o the points,
+© Helps to identify patterns, trends, or relationships between variables,
+© sptia=0.7: Makes points eighty tranaparent.
+® Useful ln folds Ika science, stataica, and data analysis,
+6 tite), wel), ylabel) Add te and labo
+to the axes
+® Higher values of x are generally associated with higher values
+© pit.showi):
+Displays the scatter plot.
+||
+ayn Neen
+Figure 4.8: Scatter graph showing average crop yield per mm of rain
+vi
+fox Pot
+:
+A hox plot is a graph used to eurrenarize the diste tution of murnerical data org
+five key values: minimum, first quartile (CJ), median (()2), third quartile
+(Q3), and maximum. It helps compare datascts and shows herw the data @
+spread.
+The syntax for creating a hox plot is:
+ph boxplot( data)
+Where:
+*
+pit refers to the matplotlib.pyplot library.
+* data represents
+one or more datasets.
+Example:
+The following Python program creates
+a box plot to compare the distribution
+of rainfall and crop yield. The corresponding output is shown in Figure 4.9
+:
+a TO Oh
+og HA
+Bex Prat of Fetal seek Cay Yok
+in oie
+ms
+2
+4 aie meat) ek
+i
+4 etal - Loy ine De HY
+>
+z=
+ee
+$
+ie te Te to
+rod
+j
+T
+4
+&
+i
+t
+7
+heiiges
+Seat fied na Costiad era
+my
+ee
+8 sutasotae ae oe a eee
+j
+i
+}
+s
+te me
+oe oe ol
+a
+-
+a
+i
+i
+i
+Zoe
+os pe
+al
+i
+2
+Fai
+=
+Weetisttsictsl: (y's “oe Heid Sees
+mi
+4
+4
+§i@ Hr HB
+i
+i
+i
+=
+EES © Pate oe
+0d © Sat
+a
+_
+-——f
+2
+te dttamete fin |
+i
+-&
+a
+Ntgligine Wetton,
+=:
+;
+-
+BS
+ptsco
+Fart wat
+Cos “at nome
+6
+pitheapter: Crates fhe nx sict
+5 The Sex stows he racie 5% of te es COB
+* ae ie, seman Soli tach ek.
+» Tas re rece fe 2x 5 fe node
+| pace pret tee: File oases ei
+lors
+. then ros be meu ot re
+ees
+eo. |
+tel, pf patel: bet te ad yon eat.
+a
+amekd tor
+4s
+sew uc
+2
+o | ee hoe exceed 72 ees bo eter ey
+Figure 4.9: Box plot showing
+rainfall and crep yield distribution
+4.6
+Descriptive Statistics:
+Descriptive statistics are techniques used to summarize and describe data using
+measures such as mean, median, and mode, which help simplify large datasets for
+analysis and comparison.
+Example:
+Instead of examining the marks of every student, the mean, median, or mode can be
+used to quickly summarize the overall class performance.
+Unit 4: Data and
+4.6.1 Meaure of Central Tendency:
+Measures of central tendency are statistical methods used to find the central or
+typical value ofa dataset. They provide a single value that represents the overall data.
+The three common measures are tnean, median, and mode.
+i)
+Mean
+The mean, or average,
+is calculated by adding all the values and
+dividing by the total number of observations. It uses every data value to
+summarize the dataset.
+Sum of all values
+Number of values
+If three students score 70, 80, and 90 in an examination:
+Mean =
+ean)
+05 00
+0
+\.
+Ti
+Sia
+usb cach dots lies
+> Taitly close to each other and there are Po extreme values.
+ii)
+Median:
+The median
+is the middle value of a dataset arranged
+in ascending or
+descending order. It is not affected by extreme values.
+e
+Odd number of values: the middle value.
+~e
+Even number of values: the average of the two middle values.
+‘Exaunple:
+Marks: 35, 10, 15, 70, 95
+F ¥.
+le Is
+eo and aAnarysis
+ay,
+: ne
+>
+iii)
+Mode:
+7
+The mode is the value that appears most often in a set of values, A set of values
+«
+may have one, more than one, or no mode.
+Example:
+A shop records the number of water bottles sold each day:
+20, 28, 20, 30, 20, 25, 20
+Mode = 20, because 20 bottles were sold most frequently.
+Table 3 lists some examples where each of the measures of central tendency
+is suitable to be used.
+Table 3: Choosing the right measure of central tendency
+rn
+STUB ECE
+Rae ‘Wheat e
+EAR
+Test scores
+:
+_
+|
+Usesall values to
+of students -
+SS
+4
+find the average.
+Salariesina
+]
+|
+Not affected by
+<j company (few
+|
+extremely high or
+|
+ae
+very high salaries)}
+;
+low values.
+Favorite fruit
+_
+|
+Shows the most
+ofstudents
+|’
+_
+common choice.
+median, a best Tones it and why.
+4.6. 2 Measures af Snread (Dispersina):
+Measures of spread (dispersion) are statistical measures that indicate how
+widely data values are distributed around the center of a group of values.
+i)
+Range:
+|
+_
+The range is the difference between the highest and lowest values. It provides
+a quick measure of how spread out the data is.
+Formula:
+Range = Highest Value — Lowest Value
+For Example:
+VY
+:
+A shop sold 120, 150, and 180 notebooks on three days.
+"
+© This means the daily sales varied by 60 notebooks.
+|
+ji) | Variance:
+Variance measures how much data values differ fron the mean (average). It
+indicates whether the values are close to or far from the mean. A small variance
+means the values are close to the mean, while a large variance means they are
+more spread out
+For a dataset with n values Mya Ay» ,X,and mean x, the variance o7is.
+calculated a: as:
+:
+= 1S
+-#
+Vaaae Formula Explained
+#
+SORENESS SEIT
+SS mbol
+event
+[ * 28 iDesertutun
+Where:
+o
+Variance
+| Average of squared deviations from the mean,
+panne
+went
+-
+oe
+’
+n
+Number of Obseration
+Total count of data points.
+aoe
+ene
+anion
+.
+y; an
+Summation §ynba
+- |Add up all values that follow,
+».
+ea
+ere
+ee
+en
+a
+A
+ce
+a a
+a
+RE mn a A
+|
+Xj
+Individual Data Value
+Each observation in the dataset.
+cali eal cael cenit
+isenaininiinatineiiiaieldnle
+xX
+Mean (Average)
+The central value ofall observations
+.
+naan eh
+ee eee
+i
+t
+——
+Te
+aia
+.
+=\2
+Mcerres how a each vale aoe
+he ean,
+(x; ~ x)
+Squared Deviation
+squared to remove negatives.
+4
+\
+;
+SNC
+ons
+\ Unit 4: Data and Analysis
+Following example illustrate the low and high varlance:
+Daily Sales Varlance_|
+|
+bvanple
+ts
+bow Viritiie
+BU UOIRMU
+CEA MHS
+‘|
+-
+.
+c
+.
+af
+”
+i
+-
+A shop sold 100, 102, 101, 99, and
+A shop sold §0, 80, 100, 130, and 149
+98 bottles of water over five days.
+bottles of water over five days.
+RA”
+Dally Water Sales
+Soul”
+Dally Water Sales
+Day 1
+Day? Day 3
+Day4 Days
+Dal Day? Days
+Day4 bys
+|
+Sales are consistent
+|
+Sales fluctuate widely
+et SN
+at
+ae
+Standard Deviation:
+Deviation is the difference between a data point and the mean 1 of the dataset
+It shows how far each observation lies from the average.
+«Positive deviation: value is above the mean.
+¢
+Negative deyiation: value is below the mean.
+¢
+Zero deviation: value equals the mean.
+Example: -I
+A shop’s average daily sales are 100 bottles of water.
+¢
+Ona day with 105 sales, deviation
+= +5.
+e
+Ona day with 95 sales, deviation = =+5,
+‘p
+This helps
+the shopkeepe
+see _ Whether
+sales
+are consistent
+or
+fluctuating.
+- Example: - II
+If the average travel time « on a route is 30 minutes:
+¢
+One day it takes 28 minutes, deviation = —2.
+«
+Another day it takes 35 minutes, deviation = +5.
+¢p This shows variability in traffic conditions.
+Minimum Value (Min):
+The smallest value in a dataset.
+“p Example: Marks
+= 70, 80, 90, 60, 75 + Min
+= 60
+Maximum Value (Max):
+The largest value in a dataset.
+’p Example: Marks = 70, 80, 90, 60, 75 — Max = 90
+This unit covers data analysis with Python, database connectivity, DataFrames, dats
+visualization, and descriptive statistics. Mastery of these concepts opens the door to a
+wide range of data-focused careers.
+.
+4
+Data Scientist
+“Collects, cleans; and ‘analyzes datato.
+“Applies statistics, programming, and
+" uncover trends’and support business.
+modeling to extract deeper insights
+decisions, using tools like eo
+. and predictions from large datasets.
+~ Pandas, and matplotlib. ©
+A
+Uae
+agentes noc
+:
+BR
+ar,
+Ei Builds dashboards and east ‘hit
+Manages an
+and rains SRS
+‘translate raw data into visualizations. : & (e. g. SQLite, MySQL), ensuring data
+_ decision-makers can vact OM
+vis organized, secure, and accessible
+f
+= for eee:
+‘Focuses on presenting complex data
+Uses descriptive statistics and data
+clearly through charts, graphs, and
+7
+analysis techniques to support
+interactive dashboards.
+Oe
+academic, market, or policy research.
+a=
+a=
+pacer
+me tr err shang
+en
+8
+Summary
+|
+~
+Data plays.a crucial role in decision-making in the modern world, influencing
+business, science, education, and governance.
+~
+Data organization involves the use of tables and frequency: distributions to
+summarize information clearly.
+~
+Visual storytelling with data helps communicate insights effectively to various
+audiences.
+©
+Creating basic plots (bar charts, line graphs, scatterplots, histograms, box plots)
+in Python helps automate data visualization.
+ike Somme!
+a
+anid Analysis
+> Di
+hain i Ahianh 7
+po a Data organization -
+> Statistical analysis
+1.
+Encircle the correct answer
+i)
+Data Analysis is used to
+(a)DeleteData
+=
+(b) Interpret Data
+(c) Encrypt Data
+__
+(d) Compress Data
+ii)
+Which library is commonly used for data anilveidi in Python?
+.
+(a) Numpy
+- (b) TensorFlow
+(c)Flak
+~~
+—(d) Pandas
+“tti)
+| Which among the following is not a data source?
+(a) CSV
+oS
+(b) Database
+(c) Compiler
+(APL
+iv)
+The connector acts as a
+_
+(a) Storage
+-.
+-
+(b) Interface
+(c) Output device
+~~. (d) Processor
+v)
+Which comes first in the database connection?
+(a) Execute Query
+(b) Fetch results
+(c) Import library
+(d) Close Connection
+pate
+@
+Unit
+4: Data a
+vi)
+What does a data frame represent in Pandas?
+(a) A single value
+(b) A one-dimensional artay
+(c) A two-dimensional table-like structure
+(d) A graph
+vii)
+Which command is used to create a new graph figure in Matplotlib?
+(a) plt.show()
+(b) plt.plotQ)
+(c) plt.figure()
+(d) plt.draw()
+viii)
+Which visualization is best for showing trends over time?
+(a) bar graph
+(b) pie chart
+(c) Line graph
+(d) Histogram
+ix)
+What does histogram mainly show?
+(a) Categories comparison
+—_—(b) Relationship between variables
+(c) Distribution of continuous data
+.
+(d) Percentage of whole
+x)
+Which measure of central tendency is most affected by extreme values?
+(a) Median
+|
+stg
+(b) Mode
+(c) Mean
+aE
+(d) Range
+2,
+Fillin the Blanks
+:
+.
+i)
+Python can read data fromfilesand
+ii)
+The process of linking Python with a database is called database
+,
+iii)
+The sqlite3 module is used to connect Python with
+_
+|
+database.
+iv)
+The first step in database connection isto
+the required library.
+v)
+The function used to read csv files in pandas is _
+3.
+Provide short answers of the following questions.
+i)
+Define data analysis with an example.
+|
+ii) | Why is Python popular for data analysis?
+iii) | What is database connectivity?
+iv)
+Differentiate between connection object and cursor object.
+v)
+What is the purpose of data cleaning?
+rt
+@)!
+‘
+X
+i)
+ii)
+inl)
+iv)
+y)
+.
+Provide detailed answers of the following questions.
+Ai Data and Analysis
+Explain DataFrame with an example.
+Describe any two data visualization techniques,
+Define mean, median, and mode with examples.
+Why is the mean not always a good measure of center? Explain with an
+example.
+How can visualization aid in interpreting data? Explain.
+aay Activities
+Perform these activities and report the findings.
+Conduct-a
+small survey on mobile phone usage among students. Organize the
+data and create appropriate graphs (bar or pie chart). Present your findings and
+discuss usage patterns.
+Obtain a dataset containing missing values (e.g., student marks). Use Python
+(Pandas) to identify and replace missing values with the average. Present the
+cleaned dataset and explain the importance of data cleaning.
+Collect rainfall and crop yield data for different months. Use Python to create a
+scatter plot. Analyze the relationship between rainfall and crop production and
+explain your observations.
+Take a dataset of student scores and group them into ranges se. g., 30-60, 60-
+70). Create a frequency distribution table and a histogram. Explain where most
+students’ scores lie.
+Collect data about your daily activities (study, sleep, entertainment). Represent
+the data using a pie chart. Analyze how your time is distributed and suggest
+improvements.
+ln cement

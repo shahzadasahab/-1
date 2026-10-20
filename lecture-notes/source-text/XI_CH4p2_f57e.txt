@@ -1,0 +1,1385 @@
+Bee
+iS
+I
+Unit 4: Data and Analysis
+ey
+DATASHEET VIEW OPENS
+4) Se
+| [a Tablet
+[ Tablet
+Fieldt =
+Field2
+z
+Field3
+z
+Fieldl = -
+Field2
+.
+Field3
+.
+*
+(New)
+1
+John
+21
+BCA
+2
+Priya
+22
+BCOM
+3
+Rahul
+20
+BBA
+4 Ananya
+19
+BA
+*
+(New)
+A new table appears in Datasheet View,
+Enter data directly into the cells. Access automatically
+resembling a spreadsheet interface.
+assigns default field names (e.g., Field1, Field2).
+RENAME FIELDS
+|
+Tablet
+|
+ap
+Name
+~-
+Age
+-
+Course
+-
+1 John
+21
+BCA
+2
+Priya
+22
+BCOM
+3
+Rahul
+20
+BBA
+4 Ananya
+19
+BA
+*
+(New)
+Rename fields by double-clicking on the column
+header and typing a new name.
+Fast and easy method for beginners.
+cis
+Data is entered directly in a
+spreadsheet-like grid.
+Ss
+Field names are assigned automatically
+(Field1, Field2, ...).
+&
+Limited control over field properties
+|
+and validation rules.
+&
+©
+Datasheet View provides a quick and simple way to create a table
+and start entering data in Microsoft Access.
+Figure 4.8: Illustration of creating table in Datasheet view
+(9)
+Unit 4: Data and Analysis
+CREATING A TABLE USING
+IN
+MS
+4 ANE
+STEP-BY-STEP
+Design View allows you to define the structure of the table before entering data,
+giving you full control over field names, data types, properties, and the primary keys.
+©
+OPEN MICROSOFT ACCESS
+ey
+GO TO CREATE TAB > TABLE DESIGN
+Click the Create tab, then select Table Design.
+Open
+[seta
+|
+Database Tools
+lll)
+® Tell me
+©
+Recent
+lee}
+cy
+ER
+ad
+pa
+Application
+Table | Table | SharePoint
+Query
+Query
+Form
+= Form
+ty) StudentDB.acedb
+Parts »
+Design |
+Lists -
+Wizard
+Design
+Design
+Documents
+oe
+Pen
+Templates
+Table
+Queries
+tel)
+| Company.acedb
+be [er
+Documents
+Passel lag
+|gey
+Browse
+‘Options
+©
+A new table opens in Design View.
+|
+& DEFINE FIELD NAMES AND DATA TYPES
+& SET THE PRIMARY KEY
+Enter each field name and choose an appropriate data type.
+Select the field that uniquely identifies each record,
+right-click, and choose Primary Key.
+|
+Tablet
+Field Name
+Data Type
+Description (Optional)
+FA Tablet
+"
+Field Name
+Data Type
+Description
+(Optional
+StudentID
+AutoNumber
+Unique student ID
+:
+ae
+senator
+iOptions))
+(Q)studentio
+- AutoNumber
+Unique student |D
+Name
+Short Text
+Student full name
+Name
+Short Text
+Student full name
+Department
+Short Text
+Student department
+3
+Department
+Short Text
+Student department
+Age
+Number
+Student age in years
+.
+Age
+Number
+Student age in years
+Email
+Short Text
+»
+|
+Student email address
+Email
+Short Text
+mail
+ort
+Tex
+:
+*
+Short Text
+.
+:
+©
+Primary Key
+Number
+)
+%&
+Cut
+Date/Time
+Choosethe
+|
+chranicy
+right data type
+a
+|
+ft
+Paste
+Yes/No
+esac
+|
+Akey icon appears
+t+
+Insert Rows
+Meme
+———
+)
+next to the primary
+55
+Delete Rows
+Lookup Wizard...
+key
+field.
+mee
+[=]
+Properties
+"
+Go
+SET FIELD PROPERTIES (OPTIONAL BUT RECOMMENDED)
+©
+SAVE THE TABLE
+\
+#
+Select a field, then set its properties in the Field Properties
+Click the Save button (Ctrl + 5), enter a meaningful
+pane to control how data is stored and validated.
+table name, and click OK.
+pease reies
+LOE LS letcEs
+entDB.acedb (A,
+[ Soneral:|
+Lookup
+Home
+[ere
+Cua gece]
+Database Tools
+Help
+a Ma
+Field Size
+255
+Common Properties:
+1
+Format
+a)
+IK)
+K
+?
+af
+Insert Rows
+rg
+Input Mask
+©
+Field Size
+:
+a
+Z
+F)t Delete Rows
+a
+isd
+i
+ave
+ews | Primary
+z
+.
+Prop
+indexes
+Caption
+Student Name
+©
+Fo
+se
+| Key
+"2 Modify Lookups
+Sheet
+Default Value
+4
+al
+ies: Show/Hide
+Validation Rule
+Is Not Null
+©
+Default Value
+Save As
+x
+|
+Validation Text
+Name is required.
+a
+RraGred
+Vas
+@ Validation Rule
+Table Name:
+Allow Zero Length
+No
+Required
+Students}
+Indexed
+No
+Unicode Compression
+Yes
+©
+Input Mack:
+cael
+|
+IME Mode
+No Control
+IME Sentence Mode
+None
+KEY BENEFITS OF DESIGN VIEW
+© Define structure before entering data
+© Set data types and rules in advance
+© Ensures data integrity and consistency
+© Better control over field properties
+© Easier to manage and maintain tables
+Figure 4.9: Illustration of creating table in Design View
+y/ ‘ht lai,
+|
+g
+Your table is now saved and ready to use.
+BEST PRACTICE
+Always plan your table structure, choose the correct data types,
+set a primary key, and define field properties to maintain
+clean and reliable data.
+Q
+Ee
+tae
+u|
+BR
+Unit 4: Data and
+aw
+SS
+4.9.4
+Selecting appropriate data types:
+Choosing the correct data type for each field is a critical design decision. Data
+types define the kind of values a field can store and influence both storage efficiency
+and data validation.
+Common data types in Microsoft Access include:
+e
+Short Text: Used for alphanumeric data such as names, addresses, and email
+IDs.
+Number: Suitable for numeric values used in calculations.
+Date/Time: Stores date and time information.
+Currency: Designed for financial values with precision.
+AutoNumber: Automatically generates unique values, often used for primary
+keys.
+Selecting inappropriate data types can lead to data inconsistencies, increased
+storage requirements, and limitations in performing operations.
+4.10
+Designing Forms for Data Manipulation:
+Forms in Microsoft Access serve as an essential interface for data manipulation,
+enabling users to efficiently enter, modify, and view records stored in database tables.
+Unlike
+direct
+interaction with
+tables,
+forms provide
+a
+structured, user-friendly
+environment that minimizes input errors, enforces validation rules, and enhances
+overall usability. Designing appropriate forms is therefore a critical step in developing
+a reliable and efficient database system.
+4.10.1 Understanding the purpose of forms:
+Before designing a form, it is important to clearly define its purpose. Forms are
+primarily used for:
+e
+Data Entry: Allowing users to input new records
+e
+Data Modification: Updating existing records
+e
+Data Viewing: Displaying information in an organized layout
+A well-designed form ensures that users interact with the database efficiently
+and accurately, without needing to understand the underlying table structure.
+4.10.2 Identifying the Data Source:
+Every form must be linked to a data source, which can be either a table or a
+query.
+e
+A table-based form is suitable for simple data entry tasks
+e
+A query-based form is useful when data from multiple tables needs to be
+displayed
+Proper selection of the data source ensures that the form retrieves and updates data
+correctly.
+aX AAS N
+Sf
+. 4: Data and Analysis
+4.10.3 Designing forms in Form Wizard:
+The Form Wizard
+in Microsoft Access provides
+a structured and guided
+approach to creating forms.
+It
+is especially useful for beginners and for quickly
+generating forms for data entry, viewing, and modification without requiring manual
+design.
+In this section, a sample form (Student Registration Form) will be created step by step
+using the Form Wizard.
+Before creating a form, ensure that a table with following structure already exists.
+Example Table: Student
+StudentID
+StudentName
+FatherName
+CNIC
+Department
+e
+ContactNumber
+This table will act as the data source for the form. Now follow the following list of
+steps to create a form
+e
+Open your database in Microsoft Access
+e
+Click on the Create tab in the Ribbon
+e
+Select Form Wizard, this will launch a step-by-step wizard to guide form
+creation as shown in the Fig. 4.10.
+Form Wizard
+Tables /Queries
+(ESE
+xe |
+Available Fields:
+Selected Fields:
+Which fields do you want on your form?
+You can choose from more than one table or query.
+FirstName
+bax el
+LastName
+a
+Address
+1
+Address?
+Figure 4.10: Form Wizard
+e
+Choose the Student table from the dropdown as the main Data Source.
+é
+¢
+MN)
+lf
+Face
+Unit 4: Data and
+aw
+SS
+Select required fields:
+o
+StudentID
+StudentName
+FatherName
+CNIC
+Department
+o
+ContactNumber
+Or, Click the >> (Add All) button to include all fields
+Click Next
+From the List of Available Layouts, choose a form Layout. MS Access supports
+the following form layouts.
+o
+Columnar > One record at a time (best for data entry)
+o
+Tabular > Multiple records in rows
+o
+Datasheet > Spread-sheet like format
+o
+Justified > Compact arrangement
+For Student registration form layout, we select columnar layout.
+Enter a meaningful name, e.g., StudentRegistrationForm
+Choose:
+o
+Open the form to view or enter information
+Click Finish
+Es] StudentRegistration
+%
+[2] Student
+x
+StudentRegistration
+O00
+0
+iad
+StudentiD
+Tan
+StudentName
+FatherName
+CNIC
+|
+|
+Department
+|
+|
+ContactNumber
+Record:
+4
+4/20f2
+|
++)
+HI
+| S2Mo
+Fitter|
+[Search
+|
+Figure 4.11: Student Registration Form
+The Form Wizard in Microsoft Access provides
+a systematic and efficient
+method for creating forms. By following these steps, users can quickly generate a
+functional form for managing student data as shown in Fig. 4.11. Although the wizard
+automates the process, further customization using Design View can significantly
+enhance the usability, appearance, and functionality of the form.
+LN A
+‘aii
+a
+Sf
+. 4: Data and Analysis
+4.11
+Creating Queries in MS Access:
+Queries are one of the most powerful features of Microsoft Access. They allow
+users to retrieve, filter, and analyze data stored in tables based on specific conditions
+or criteria. In a student database system, queries are particularly useful for extracting
+meaningful information such as lists of students from a specific department, students
+enrolled in a particular year, or records matching certain conditions.
+In this section, we will focus on basic queries using the previously created
+Student table.
+4.11.1 Introduction to Queries:
+A query is a request to retrieve specific data from one or more tables based on
+defined criteria. Instead of displaying all records, queries allow users to focus only on
+relevant data.
+Purpose of Queries:
+e
+Filter records based on conditions
+Sort data in ascending or descending order
+Display selected fields only
+Perform simple calculations (in advanced cases)
+4.11.2 Creating a simple SELECT Query:
+For demonstration purpose of query creation, we will consider the Student
+Table created previously. The query creation will follow the following steps.
+1.
+Open the database in Microsoft Access
+Go to the Create tab
+Click on Query Design
+Add the Student table
+Select required fields (e.g., StudentName, Department)
+Click Run (!) to execute the query
+The process of creating a simple SELECT query is elaborated in Fig. 4.12.
+AwPYwDs
+4.11.3 Filtering Data:
+When a query is created in Microsoft Access by selecting all or some of the
+fields, by default, the query retrieves all the records from the table that contain those
+fields. This means that every row stored in the table will appear in the query results,
+which can be overwhelming if the table contains a large amount of data. Often, we are
+interested in only a specific subset of the data, such as students from a particular
+department, students who scored above a certain mark, or records created within a
+specific time period. To achieve this, we use data filtering techniques. Filtering allows
+us to define criteria or conditions so that the query displays only the records that match
+y
+¢
+Unit 4: Data and
+aw
+SS
+those conditions. By applying filters, we can focus on relevant information, make data
+analysis easier, and create more meaningful reports without modifying the underlying
+table.
+CREATING A SIMPLE SELECT QUERY
+IN MS ACCESS:
+rae
+Open the database in Microsoft Access
+P.
+(ai On the Ribbon, click the Create tab.
+ir)
+Launch Access and open your database
+(e.g., StudentDB.acedb).
+Open
+Recent
+Browse
+ee
+Date medified
+StudentDB.accdb
+6/15/2024 10:30 AM
+Documents
+>
+Open an existing database that contains
+the tables you want to query.
+alt}
+au
+Database Tools
+TT
+Raa
+a
+Boao
+Application
+Table
+Table
+SharePoint
+Query
+Parts ~
+Design
+lists ~
+Wizard
+aoe ELE
+=
+—=
+—
+wat: |
+[ay
+Form
+Ferm
+Blank
+Design
+Form
+Templates
+Sardines
+‘Query Tes
+Forms
+All Access Objects
+©
+*
+Create
+Search...
+Build forms, reports, and queries
+Tables
+>
+El Students
+Queries
+|
+We will use Query Design to create a new query.
+0
+Click on Query Design
+©
+Add the Student table
+In the Queries group, click Query Design.
+Home
+Create
+CUCL Le]
+BB
+AAM
+RR Sas
+t
+Application
+Table
+Table
+SharePoint
+Query
+Query
+Form
+Form
+Blank
+Parts ~
+Design
+—_Lists
+Wizard | Design
+Design = Form
+Templates
+Sartins
+Query tes
+All Access Objects
+© =
+\
+Search...
+P
+Tables
+*
+This opens anew
+fi)
+Students
+query in Design View.
+Forms
+Queries
+Select required fields
+Double-click the fields you want (eg., StudentName,
+y Department). They appear in the design grid.
+Students
+we Only selected
+fields will
+appear in the
+results.
+%
+StudentiD
+StudentName
+FatherName
+cNic
+Department
+DateofMember
+ContactNumber
+Field:
+© StudentName
+Department
+Table:
+Students
+Students
+Sort:
+Show:
+4
+a}
+Criteria:
+[
+The design grid contains only the selected fields.
+Figure 4.12: Hlustration of Query Design
+Dre acl
+ere] )
+Oe
+In the Show Table dialog box, select Students
+and click Add, then Close.
+Students
+Show Table
+x
+@
+StudentID
+StudentName
+FatherName
+ee
+CNIC
+Department
+DateofMember
+ContactNumber
+Tables
+Queries
+Both
+The Students table is now added to the query design.
+@
+Click Run (!) to execute the query
+ica
+Click the Run button to view the results.
+cer ED]
+acta EL 1c)
+e) fa +!
+Pear its
+Peele tees
+Design
+AE
+Kk
+&
+@
+é
+E
+ax
+a
+|
+View
+Select
+Make
+Append
+Update
+Crosstab
+Delete
+Query
+Show/Hide
+=.
+Table
+Setup
+'
+Query Type
+All Access Objects 9
+*
+[7 Query1
+Search..
+2
+StudentName
++
+Department
+.
+Tables
+¥
+AliRaza
+Computer Science
+Sash
+Sara Bho
+Software ehamieering
+Ahmed Ali
+Computer Science
+Queries
+‘i
+Fatima Noor
+Information Technology
+query
+Usman Tariq
+Software Engineering
+@
+The query runs and shows only the selected
+fields from the Students table.
+.y 3
+aX Aw
+Unit 4: Data and Analysis
+i)
+Filtering by a Single Criteria:
+Example 1:
+In the query design grid, under the Department column, enter the criterion:
+“Computer Science” and Click Run (!). Only students from the Computer Science
+department are displayed.
+Example 2:
+In the query design grid, under the Contact Number column, enter the criterion:
+“0223865856” and Click Run (!). Only students with the given contact number will be
+displayed.
+ii)
+Filtering by multiple Criteria:
+Queries can often be written with multiple conditions. The effects of these
+conditions can be combined using AND or OR operators, which are known as logical
+operators. Their working principles are as follows:
+e
+AND: All conditions must be true.
+e
+OR: Any one of the conditions can be true.
+For Example,
+to
+display students
+from
+either
+IT
+or Computer
+Science
+department, we need to Mention “IT” and “Computer Science” in the criteria under
+department column in the query design wizard as shown below:
+Field:
+Department
+5
+Table:
+Student
+Sort:
+Show:
+LC]
+|
+LJ
+LJ
+LJ
+Criteria:
+"IT"
+or:
+“Computer Science"
+v
+<==
+>
+Figure 4.13: Multiple Criteria using OR
+Similarly, if we want to display all the students having StudentName “Aslam”
+and are from “IT” Department, we need to mention the criteria on the same row as
+shown in the figure 4.14.
+Jf
+<
+A By
+,
+Field:
+Department
+Student
+Unit 4: Data and
+aw
+SS
+é
+Table:
+Student
+Student
+Sort:
+Show:
+4
+¥
+O
+O
+O
+Oo
+Criteria:
+"IT"
+‘Aslam’
+or:
+v
+<>
+>
+Figure 4.14: Multiple Criteria using AND
+Whereas, for applying OR Operation, we need to specify criteria on different
+rows as shown in figure 4.15.
+|
+|
+|
+|
+“
+Field: Departn Student
+|
+|
+|
+|
+|
+Table: Student Student
+|
+|
+|
+|
+.
+Sort:
+|
+|
+|
+|
+|
+Show:
+2
+o
+|
+o@
+|
+of]
+ao
+| io
+Criteria:/"IT"
+|
+|
+|
+|
+Or:
+"Aslam'
+.
+Figure 4.15: Multiple Criteria using OR
+4.11.4 Data Summarization and Grouping in MS Access:
+Data summarization is a fundamental operation in relational databases that
+enables users to condense large datasets into meaningful aggregates. In Microsoft
+Access, this is typically achieved through aggregate functions and grouping queries.
+Grouping Queries allows records with similar values in a selected field to be
+combined into a single category, enabling the calculation of summary values for each
+group.
+For Example:
+Group students in the Department to determine:
+e
+Total number of students
+e
+Highest marks in each department
+e
+Total marks per department
+The following aggregate functions are widely used in MS Access for grouping:
+e
+COUNT() — Counts number of records
+e
+SUMO — Calculates total values
+LN A
+Unit 4: Data and Analysis
+e
+MINO — Finds the smallest value
+MAX() — Finds the largest value
+AVG() — Computes average values
+The following list of steps allows us to create a grouping query in MS Access.
+Open the database in Microsoft Access
+Navigate to Create — Query Design
+Add the relevant table (e.g., Student)
+Select fields such as Department and StudentID
+Click the Totals (2) button to enable grouping
+In the Total row:
+o
+Set Department — Group By
+o
+Set StudentID — Count
+7.
+Run the query
+This Query Lists the number of students registered in each department.
+AMP WNSE
+4.11.5 Statistical Analysis using Average and Related Measures:
+In Microsoft Access, statistical aggregation functions can be applied through
+Query Design View using the Totals (2) option. Common functions include:
+e
+Avg for calculating mean values
+e
+Mode can be determined by grouping and identifying the most frequently
+occurring value
+e
+Mod operations can be used in calculated fields for remainder-based analysis.
+One of the most important measures is the average (mean), which provides a
+representative value of a dataset. The AVG() function is used to compute the arithmetic
+mean of a numeric field. For example, the query to obtain the average marks of each
+student, grouped by department, can be created as follows:
+Open the database in Microsoft Access
+Navigate to Create — Query Design
+Add the relevant table (e.g., Student)
+Select fields such as Department and Marks
+Click the Totals (2) button to enable grouping
+In the Total row:
+o
+Set Department — Group By
+o
+Set Marks > Avg
+7.
+Run the query
+AWPWN
+EP
+Department
+Ave Of Marks
+IT
+55
+Science
+80
+Systems
+80
+ee
+4 -
+It
+Unit 4: Data and
+aw
+—
+The output shows average performance per department and Helps identify:
+e
+High-performing groups
+e
+Underperforming groups
+e
+Trends across categories
+4.11.6 Data Visualization in MS Access:
+While summary
+statistics
+provide
+numerical
+insights,
+data
+visualization
+transforms these insights into graphical representations, making patterns easier to
+understand. Microsoft Access offers integrated tools to generate charts directly from
+queries or tables.
+The following type of charts can be generated using MS Access.
+1.
+Bar Chart:
+A Bar Chart represents data using horizontal bars, where the length of each bar
+corresponds to the value it represents. It is particularly effective for comparing
+discrete categories.
+Bar charts are useful when categories have long names or when there are many
+categories to compare. They emphasize differences in magnitude and are easy
+to interpret visually.
+For Example, the average score obtained by students in each subject as shown
+in Fig. 4.16.
+100
+80
+60
+—
+40
++
+20
+5
+Marks obtained by a student out of 100
+English
+Hindi
+|
+Maths
+Science
+"Science
+Subjects
+Figure 4.16: Example of Bar Chart
+t;,
+2.
+Unit 4: Data and Analysis
+Column Chart:
+A Column Chart is similar to a bar chart but uses vertical bars. It is widely used
+to show comparisons across categories and is often preferred for time-based or
+ordered data. Column charts highlight variation across categories and are
+visually intuitive when the number of categories is limited. They are commonly
+used in academic reports and dashboards as shown in Fig. 4.17.
+A
+B
+Cc
+D
+E
+F
+G
+H
+|
+|
+1 Months
+|TeacherA| B |
+Cc |
+D_
+2
+| Accountancy
+41
+30
+48
+21
+3 Economics
+37
+22 | 29 |
+11
+4 maths
+29
+15 | 46 | 39
+3
+Science
+39
+30 | 26
+18
+6
+7
+Lectures taken-Stacked chart
+8
+9
+10
+a
+13
+14
+15
+16
+17
+i
+18
+Strela
+19
+aR
+teeel ie: |a le)
+steele) oe
+ge
+aie ae
+20
+Figure 4.17: Example of Column Chart
+Pie Chart:
+Number of Students
+A Pie Chart divides a circle into slices,
+where each slice represents a proportion
+of the
+whole.
+Pie
+charts
+are
+most
+;
+.
+€
+in
+effective when illustrating percentage
+"25%, /
+or proportional relationships. However,
+they are less suitable when there are too
+ist 9a
+ro
+many categories
+or when values
+are
+very similar. For example, pie charts
+can be used to show the distribution of
+students across departments as shown in
+Fig. 4.18.
+Figure 4.18: Example of Pie Chart
+Science
+f
+Website Users
+at
+4.
+90k
+72k
+54k
+36k
+18k
+Ok
+Unit 4: Data and
+aw
+SS
+Line Chart:
+A Line Chart connects data points with lines to show trends over time or ordered
+sequences. Line charts are particularly useful for analyzing temporal changes,
+such
+as performance
+trends, growth patterns,
+or progress over multiple
+observations. For example, the average number of website users per month as
+shown below:
+Website Users by Months
+Average = 37.4k
+Jan
+Feb
+Mar
+Apr
+May
+Jun
+Jul
+Aug
+Sep
+Oct
+Months
+Figure 4.19: Example of Line Chart
+The following sequence of steps can be followed to create charts in MS Access.
+Prepare a query with summarized data
+Go to Create — Form Design or Report Design
+Insert a Chart control
+Select the query as the data source
+Choose chart type (bar, pie, line, etc.)
+Assign fields to axes and values
+Format and customize the chart
+SAM RWHP
+LN A
+‘aii
+a
+FT
+Xx
+4: Data and Analysis
+This unit covers how data is organized, related, and managed using relational database
+concepts such as entities, relationships, referential integrity, tables, queries, and reports. These
+skills are essential for careers that involve storing, securing, and making sense of organizational
+data.
+Database Administrator (DBA)
+Data Analyst
+Designs, secures, and maintains
+Writes queries and builds reports to turn
+databases to ensure accurate, reliable,
+raw data into meaningful business
+and available data for organizations.
+insights.
+Data Engineer
+Business Intelligence (BI) Analyst
+Builds and maintains the systems and
+Designs dashboards and reports from
+pipelines that collect, store, and organize
+relational databases to support
+large volumes of data.
+management decision-making.
+Backend/Full-StackDeveloper
+8 =
+Dain Scientist, =
+Designs relational schemas and connects
+Uses structured datasets from relational
+applications to databases to store and
+databases to build models and generate
+retrieve information.
+predictive insights.
+Summary
+Data plays a crucial role in decision-making in the modern world, influencing
+business, science, education, and governance.
+Data consists of raw facts and figures (such as text, numbers and observations)
+When data is processed, organized and interpreted it becomes information
+As data grows in volume and complexity in modern environments (schools,
+businesses, governments), there arises a need to store it in an organized manner.
+A database fulfills this need by providing a structured collection of related data
+that can be easily accessed, updated, and managed.
+To efficiently interact with databases, specialized software known as a DBMS
+(e.g., Microsoft Access) is used.
+bj,
+&
+©
+@©F¢¢
+©
+Unit 4: Data and Analysis
+A database is composed of tables, which store data in rows and columns.
+Each row is a record representing a single entity instance, and each column is a
+field representing an attribute.
+The primary key is used to uniquely identify each record, ensuring accuracy and
+preventing duplication.
+The Entity-Relationship (ER) Model provides
+a way to represent real-world
+systems
+using
+entities
+(objects),
+attributes
+(properties),
+and
+relationships
+(associations).
+ER diagrams visually illustrate how data elements are connected.
+Relationships can be:
+o
+One-to-One (1:1)
+o
+One-to-Many (1:M)
+o
+Many-to-Many (M:N) (resolved using a junction table)
+To maintain correctness across related tables, the concept of referential integrity
+is introduced.
+Referential integrity ensures that relationships remain valid by enforcing rules on
+foreign keys.
+Mechanisms such as cascade update and cascade delete automatically maintain
+consistency across tables.
+A relational schema acts as a blueprint of the database.
+Forms provide a user-friendly interface for entering, updating, and viewing data
+without directly interacting with tables.
+Queries are used to retrieve, filter, and analyze specific data from one or more
+tables based on defined criteria.
+Reports are used to present data in a formatted and organized manner, suitable
+for printing and sharing.
+e¢
+¢
+6
+©
+©
+¢
+$0
+©
+©
+©
+1.
+Encircle the correct answer:
+i)
+Which of the following is a DBMS?
+(a) MS Word
+(b) MS Excel
+(c) MS Access
+(d) MS Paint
+11)
+In an ER Model, a rectangle represents:
+(a) Attribute
+(b) Relationship
+(c) Entity
+(d) Key
+iii)
+A one-to-many relationship means
+(a) One record relates to many
+(b) Many to one only
+(c) One to One
+(d) None
+>»
+Yy
+=@
+vl)
+vii)
+viii)
+ii)
+iii)
+I
+Le
+Unit 4: Data and Analysis
+Which object is used to retrieve data?
+(a) Table
+(b) Form
+(c) Query
+(d) Report
+Which function calculates average?
+(a) Sum()
+(b) Count()
+(c) Avg()
+(d) Max()
+Which key uniquely identifies each record in a table?
+(a) Foreign Key
+(b) Primary Key
+(c) Alternate Key
+(d) Candidate Key
+Which relationship requires a junction table?
+(a) One-to-One
+(b) One-to-Many
+(c) Many-to-Many
+(d) None
+Which database objects provides a user friendly interface for data entry?
+(a) Query
+(b) Table
+(c) Report
+(d) Form
+Which chart is best used to show trends over time?
+(a) Pie Chart
+(b) Bar Chart
+(c) Line Chart
+(d) Column Chart
+Which query operation combines records into categories for summarization?
+(a) Sorting
+(b) Filtering
+(c) Group by
+(d) Validation
+Fill in the Blanks:
+In a relational database, a
+key is used to establish a link between
+two tables by referring to the primary key of another table.
+If two entities are connected through an intermediate entity instead of directly,
+this usually indicates the resolution of a
+relationship.
+When a record in one table is deleted, and related records in another table must
+also be removed automatically, this is controlled through
+rules.
+A table created to resolve a many-to-many relationship is commonly referred
+to asa
+table.
+A candidate key that is not chosen as the primary key is known as
+Provide short descriptive answers of the following questions.
+Differentiate between a field and a record.
+What is referential integrity?
+Explain the role of a Database Management System (DBMS).
+Explain a one-to-many relationship with an example.
+Define data visualization and give one example.
+Unit 4: Data and
+aw
+SS
+Provide detailed answers to the following questions.
+Define data and information with examples. Also explain the concept of a
+database and its advantages.
+What is a Database Management System (DBMS)? Explain its functions and
+advantages.
+Explain the Entity-Relationship (ER) Model. Define entities, attributes, and
+relationships with suitable examples.

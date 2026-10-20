@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>IT Lecture Notes — Complete (XI + XII)</title>
+  <link rel="stylesheet" href="css/lecture.css"/>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+      svg: { fontCache: 'global' },
+      startup: { typeset: false }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page cover">
+  <h1>Information Technology</h1>
+  <p class="subtitle">Complete Lecture Notes — Class XI &amp; Class XII<br/>PDF build merges both volumes; open individual HTML files for smaller exports.</p>
+  <p class="meta">Use <code>npm run build:pdf</code> in <code>lecture-notes/</code> to render all three PDFs.</p>
+</div>
+<div class="page">
+  <h1 class="chapter-title">How this bundle is organized</h1>
+  <ul>
+    <li><strong>class-xi-lecture-notes.html</strong> — Units 1–6 (Class XI)</li>
+    <li><strong>class-xii-lecture-notes.html</strong> — Units 1–6 (Class XII)</li>
+    <li>Shared assets: <code>css/lecture.css</code> (flexbox), <code>diagrams/*.svg</code>, MathJax CDN</li>
+  </ul>
+  <p>For a single printable PDF of both grades, concatenate in your PDF viewer or extend <code>scripts/build-pdf.mjs</code> with a merge step.</p>
+</div>
+</body>
+</html>

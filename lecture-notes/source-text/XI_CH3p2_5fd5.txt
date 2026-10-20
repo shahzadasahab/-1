@@ -1,0 +1,1854 @@
+i
+ik
+Unit 3: Programming a
+SS
+Test Yourself
+Here are some logical tests using python operators which
+are true and which are false?
+A. 4==5-1
+B. 55>=11*5
+C. 22!=23-1
+3.5
+Control Structures:
+Control structures are used to decide the order in which statements are executed
+in a program. Almost every program uses three basic structures: sequence, selection,
+and repetition.
+3.5.1 Sequence:
+Sequence means that statements in a program are executed one after another,
+from top to bottom, in the order they are written. This is the default behavior of a Python
+program.
+print(“Enter two numbers")
+a
+= int(input("Enter first number:
+"))
+b
+= int(input(“Enter second number:
+“))
+sum
+= a+b
+print("Sum =",
+sum)
+Understanding:
+e
+Input is taken first
+e
+The inputQ( function in Python always returns the entered value as a string data
+type. Therefore, in order to perform numerical operations,
+it is necessary to
+convert it into an integer data type by using the int( ) function.
+e
+Processing is done by adding the values taken by user in variable “a” and “b”
+after that assign the result in a variable named “sum”.
+e
+Finally, the Output is displayed.
+Each line runs only after the previous one
+is finished. This simple flow
+is called
+Sequence.
+3.5.2 Selection Statement:
+Selection allows to alter the flow of a program based on decisions. Based on a
+condition, the program chooses which block of code to execute. Selection helps
+programs respond intelligently to different situations. Following are the types of
+selection statement.
+Wy
+aX aA N
+ica
+SF
+. 3: Programming Fundamentals
+I
+if Statement:
+The if statement is the simplest selection statement; it executes a block of code
+only when the given condition is TRUE. Ifthe condition is FALSE, the block
+is completely skipped.
+Syntax:
+TEL
+did
+—_—— if (condition)
+:
+qe
+-— True—> # This block will execute
+Put a colon (:) at the
+end of the logical condition
+All the commands that follow the colon will be indented. That means they will be
+set in a block of code (spaces/ 1 tab at the beginning ofa line). The computer will
+only carry out the indented commands if the test is True.
+®
+if statement program.py
+@
+if statement program.py > ...
+1
+# This
+is
+a
+if statement program
+age
+= int(input("Enter your
+age:
+“))
+print("You are
+an Adult.")
+print("You are eligible to vote.”)
+2
+3
+4
+if age
+>= 18:
+5
+6
+i
+print("Program continues...
+TERMINAL
+@ PS E:\Python Code>
+Enter your age:
+18
+You are eligible to vote.
+Program continues...
+You are an Adult and eligible to vote.
+.")
+bJrytnon +~ DW
+|
+cs
+x
+Condition is true
+@PS E:\Python Code>
+Enter your age:
+16
+Program continues...
+Condition is false
+PS E:\Python Code>
+|
+bj,
+Unit 3: Programming a
+SS
+ii.
+if-else Statement:
+The if-else statement provides two paths, if the condition is TRUE, the if
+block runs; if the condition is FALSE, the else block runs. One of the two
+blocks always executes. In simple words if-else statement is defined as IF
+this is true DO this, ELSE DO that.
+if condition:
+#
+runs when
+condition
+is True
+else:
+#
+runs when condition
+is
+False
+®
+if else statement program.py
+Dy
+O
+-
+@
+if else statement program.py > ...
+1
+# This
+is
+a if-else statement program
+2
+age
+= int(input(“Enter your age:"))
+3
+4
+if age
+>= 18:
+e
+5
+print("You are
+an Adult.")
+6
+print("Apply for CNIC.")
+7
+else:
+8
+print("You are
+a Minor.")
+9
+print("Apply for CRC")
+18
+11
+print("“Ccheck complete.")
+TERMINAL
+GJ] Python +»
+(7)
+[IJ
+-- | 3
+&
+@® PS E:\Python Code>
+Foter youre age Te
+You are an Adult.
+Condition True
+Apply for CNIC.
+Check complete.
+@® PS E:\Python Code>
+Enter your age:12
+You are
+a Minor.
+aps
+Apply for CRC
+Condition False
+“Check complete.
+PS E:\Python Code> |
+Unit 3: Programming Fundamentals
+iii.
+if-elif-else Statement:
+The
+if-elif-else
+statement
+handles
+multiple
+conditions,
+it
+checks
+conditions one by one from top to bottom and executes the first block
+whose condition is TRUE. If none match, the else block runs.
+if condition:
+)
+#
+runs
+if conditionl
+is True
+elif condition?:
+#
+runs
+if condition?
+is True
+elif condition3:
+#
+runs
+if condition3
+is True
+else:
+#
+runs
+if
+ALL
+conditions
+are
+False
+\..
+S/S
+® if elif else statement program.py
+Dy
+O
+-
+@
+if elif else statement program.py >
+...
+1
+# This is
+a if-elif-else statement program
+2
+age
+= int(input("Enter your age:
+"))
+3
+4
+if age <= 0:
+5
+print("Invalid age!")
+6
+elif age <= 12:
+7
+print("Child")
+8
+elif age <= 17:
+9
+print("Teenager")
+16
+elif age <= 35:
+11
+print("Young Adult")
+12.
+elif age <= 60:
+13
+print("Middle-Aged Adult")
+14
+«else:
+15
+|
+print("Senior Citizen")
+TERMINAL
+6) Python
+4v
+Oo
+Ww
+on
+|
+r2
+@ PS E:\Python Code>
+Enter your age:
+17
+Teenager
+P§ E:\Python Code>
+tj
+Le
+Unit 3: Programming a
+SS
+iv.
+Nested if Statement:
+A Nested if Statement is an if statement placed inside another if statement. It
+is used when a decision depends on multiple levels of conditions.
+(iF condition:
+else:
+\.
+\
+# outer
+if
+block
+if condition2:
+#
+inner
+if
+block
+if condition3:
+# deeply nested block
+else:
+# inner
+else
+else:
+#
+inner
+else
+# outer
+else
+J
+® Nested if statement program.py *
+® Nested if statement program.py ? ...
+A,
+oc
+Ww
+OM
+kn &
+WwW
+fh
+a ee
+BUWUN PS
+15
+# This
+age
+salary
+if age
+is
+a nested if statement program
+int(input("Enter your age:"))
+int(input("Enter your monthly Salary:"))
+>=
+18:
+print("Age requirement met”)
+if salary >= 39000:
+print("Salary requirement met")
+print("Loan APPROVED!")
+else:
+else:
+print("Salary too low")
+print("Loan REJECTED!")
+print("Age requirement not met")
+print("Loan REJECTED!)
+TERMINAL
+® PS E:\Python Code>
+Enter your age: 24
+Enter your monthly Salary:35ee0
+Age requirement met
+Salary requirement met
+Loan
+@ PS E:\Python Code>
+APPROVED!
+Enter your age: 24
+Enter your monthly Salary:18688
+Age requirement met
+Salary too low
+Loan REJECTED!
+Elevroe
+ty w | oo x
+LN A
+Unit 3: Programming Fundamentals
+3.5.2.1
+Differentiate between if and if-else:
+easy
+If Statement
+ANRC aILs
+Executes a block only
+Executes
+one
+of
+two
+Definition
+when
+condition
+is_
+blocks
+based
+on
+TRUE
+condition
+Syntax
+if condition
+:
+if condition : ..... else :
+Number of Blocks
+1 block only
+2 blocks ( if + else)
+When Condition is
+;
+TRUE
+Execute if block
+Execute if block
+When Condition is
+Does nothing,
+skips
+FALSE
+mien
+Execute else block
+Action Guaranteed
+No,
+_ may
+perform
+Yes,
+always
+perform
+nothing
+something
+Decision Type
+Optional action
+Mandatory choice
+Example Scenario
+if score
+is
+100
+>
+“if pass > promote, else
+award trophy”
+> fail”
+Code should indent
+ee SO een _en.
+if
+marks
+>=50:
+Code Example
+if marks >=50:
+«cep,
+99
+print(“Pass’’)
+Se
+else: print(“Fail”)
+3.5.3 Repetition Statement:
+Repetition statement (also called a loop) is a control structure that allows a
+block of code to be executed repeatedly based on a condition or a sequence. Loop
+reduces the repetitive code. Python has two primary types of loops:
+1)
+for Loop:
+Used when the number of repetitions/iterations is known.
+It iterates over a
+sequence (string, range, list, tuple, etc.)
+for variable
+in sequence:
+# body
+of loop
+All commands that need to be iterated should come after the colon, and must be
+indented (remember topic 3.5.2 if-statement).
+f
+<
+\
+A BP >
+pel
+{|
+Unit 3: Programming Fundamentals
+® FOR Loop program.py
+@ FOR Loop program.py > ...
+1
+# This
+is
+a For Loop statement program
+2
+3
+for
+i
+in range(5):
+A
+print
+(1)
+TERMINAL
+bl eytnon +
+~
+(
+W
+-
+|
+c2
+x
+enema.
+Cc:
+/Python/Python314/python.exe”
+“e: /Python Code/FOR Loop program. py")
+BWM
+Ee &
+a)
+range() Function:
+The range() function is a built-in Python function that generates a sequence of
+numbers. It is most commonly used with for loops to repeat a block of code a
+specific number of times. The range() function has following three forms
+range(stop)
+start: The beginning value of the
+range(start,
+stop)
+sequence. Default value is 0
+stop: The ending value
+step: The increment between each
+number. Default is 1.
+range(start,
+stop,
+step)
+i)
+range (stop):
+Generates numbers from 0 up to (but not including) stop.
+for
+i
+in range(5):
+print(i)
+# Output:
+O@
+123 4
+ii)
+range (start , stop):
+Generates numbers from start up to (but not including) stop.
+for iin
+range(2,
+8):
+print(i)|
+# Output: 2345
+6/7
+©
+LN A
+“ie
+i
+<<
+Unit 3: Programming Fundamentals
+iii) range (start , stop , step):
+Generates numbers from start to stop, incrementing by step.
+(1) Positive step (count up)
+for
+i
+in
+range(®,
+10,
+2):
+print(i)
+# Output:
+© 24684
+(2) Negative step (count down):
+for
+i
+in range(10,
+9,
+-2):
+print(i)
+HF Output:
+10 8
+6
+4
+2
+Example: Even & Odd number program
+® FOR Loop program2.py
+bP~
+OM
+® FOR Loop programi2.py >...
+1
+# This
+is
+a For Loop statement program
+2
+3
+for
+i
+in range(@,16,2):
+4
+print
+("Even
+",1)
+5
+6
+for
+i
+in range(1,10,2):
+7
+print |("odd “,i)
+TERMINAL
+Bb) Python +»
+()
+Ty
+-
+|
+C3
+x
+Even
+®@
+Even
+2
+Even
+4
+Even
+6
+Even
+38
+a
+x
+r
+Unit 3: Programming Fundamentals
+2)
+while Loop:
+Repeats a block of code as long as a condition is True. Used when the number
+of iterations is not known in advance. Condition controls how many times the loop
+runs.
+while condition:
+# body
+of loop
+Example:
+count
+=
+1
+while count
+<=
+5:
+print(count)
+count
++=
+1
+# Output: 12345
+“*
+Loop Control Statements:
+Following are the statements that alter the flow of Loop.
+e
+break: Exits the loop immediately. Following 1s the program that stops the loop
+when 3 is found.
+for
+i
+in
+range(6):
+if
+i
+==
+break
+print(i)
+# Output:
+0
+1
+2
+e
+continue: Skips the current iteration and moves to the next. Following is the
+program that skips the even number and prints only odd number.
+for
+i
+in
+range(6):
+if i%
+2
+==
+0:
+continue
+print(i)
+# Output:
+13
+5
+©
+LA A
+a
+Unit 3: Programming Fundamentals
+|
+Nested Loop:
+A nested loop is a loop inside another loop. The inner loop runs completely for
+every single iteration of the outer loop. Following is the syntax of nested loop
+for outer
+in range(...):
+for inner
+in range(...):
+# code block
+The outer loop runs first, and for each of its iterations, the inner loop executes
+completely; once the inner loop finishes, the outer loop moves to the next
+iteration and the process repeats.
+A Nested loop is used when a task needs to be repeated inside another repetition.
+It helps
+solve problems involving combinations, patterns, and multi-step
+repetition. However, common mistakes include
+incorrect indentation and
+forgetting that the inner loop restarts and runs completely for each iteration of
+the outer loop.
+® Nested Loop program.py
+f>-~
+OM
+-
+® Nested Loop program.py > ...
+TERMINAL
+i
+i
+i
+i
+i
+i
+i
+i
+i
+1
+now
+& Woh
+1j
+1 j
+1j
+2j
+2j
+2]
+3 j
+3 j
+3]
+tow
+ou
+tow
+ou
+ha
+ha
+tow
+ot
+ha
+# This
+is
+a Nested
+Loop statement program
+for
+1
+in range(1,
+4):
+for
+j
+in range(1,
+A):
+|
+print("i
+=",
+1,
+"J
+="5
+J)
+print("")
+bJjeython
++-~
+(]
+TW
+=
+|
+(3
+&
+Dp:
+Udop Instructions for Teachers
+Teacher should demonstrate the Nested Loop example using mix up
+the for and while.
+ty
+Le
+a
+k
+Unit 3: Programming Fundamentals
+“*
+Differentiate between for Loop vs while Loop:
+for Loop
+while Loop
+When number of iterations is
+When number of iterations is
+known
+unknown but based on condition
+Used for more dynamic scenarios
+fi
+a
+:
+Used to iterate over a
+fixed
+where conditions dictate loop
+sequence of items.
+continuation.
+Cleaner and shorter for counting
+Requires manual update of
+tasks
+condition (risk of infinite loop)
+Activity: Program that uses Sequence, Selection and Repetition
+1.
+Program Check Even Odd number:
+The following program shows that the loop runs three times, takes input from
+the user three times, and checks each time whether the entered number is even or odd.
+4
+~
+for
+1
+in range(3):
+# Repetition
+number
+= int(input("“Enter
+a number:
+“))
+# Sequence
+if number
+%
+2 ==
+@:
+# Selection
+print(“Even")
+else:
+print("Odd")
+Unit 3: Programming Fundamentals
+2.
+Program Shopping Bill Calculator:
+® Combine program.py
+X
+® Combine program.py >...
+1
+#
+Shopping Bill Calculator
+2
+3.
+print("===== SHOPPING
+BILL CALCULATOR =====")
+4
+total
+= 0.0
+# float
+- total bill amount
+5
+count
+=@
+# int
+- number of items
+6
+shopping
+= True
+# bool
+- controls the loop
+7
+8
+# REPETITION:
+Keep adding items
+9
+while shopping:
+18
+item
+= input("\nEnter Item Name
+(or
+‘done’
+to finish):
+")
+11
+# SELECTION:
+Check
+if user wants to stop
+12
+if item.lower()
+== "done":
+13
+shopping
+= False
+14
+else:
+15
+price
+= float(input(f"Enter Price of {item}:
+Rs.
+"))
+16
+# SELECTION: Validate price
+17
+if price <= e;|
+18
+print("Invalid price!
+Try again.")
+19
+else:
+28
+total
+= total
++ price
+21
+count
+= count
++
+1
+22
+print(t"{item} added — Rs. {price:.2f}")
+23
+24
+# — Summary —
+25.
+print("\n======== BILL SUMMARY ========")
+26
+if count
+==
+27
+print("No items purchased.")
+28
+else:
+29
+print(f"Total Items
+:
+{count}")
+30
+print(f"Total Bill
+:
+Rs. {total:.2}")
+31
+32
+# SELECTION: Apply discount based on total
+33
+if total
+>= 5000:
+34
+discount
+= total
+* 6.20
+label
+= "20% Discount"
+elif total
+>= 20e0:
+discount
+= total
+* 6.10
+label
+= "10% Discount"
+else:
+discount
+= ®
+label
+= "No Discount"
+final
+= total
+- discount
+print(f"Discount
+:
+{label}
+(-Rs. {discount:.2f})")
+print(f"Final Bill
+:
+Rs. {final:.2}")
+a
+|
+Unit 3: Programming Fundamentals
+3.6
+Libraries In Python:
+Libraries are pre-written code that
+offer helpful
+functions
+and modules
+to
+complete specific tasks. By using libraries,
+programmers
+can build programs more
+efficiently and with fewer errors, as they do» (ery
+not
+have
+to
+write
+the
+same
+code
+by
+=
+themselves
+repeatedly.
+Libraries
+make
+Python powerful and flexible. They are
+used to:
+e
+Perform mathematical calculations
+e
+Work with files and data
+e
+Create graphics and charts
+e
+Build web and desktop applications
+e
+Automate tasks
+Instead of writing complex code from scratch, programmers use libraries that
+already solve common problems. There are mainly 5 ways to import a library into a
+program.
+1.
+import module:
+Import the entire module. Access functions using module. function()
+import math
+result
+= math.sqrt(25)
+print(result)
+# Output:
+5.0
+result
+= math.pi
+print(result)
+# Output:
+3.141592653589793
+2.
+import module as alias:
+Import module with a short nickname (alias).
+import math
+as
+m
+print(m.sgrt(1é6))
+# Output:
+4.0
+print(m.pi)
+# Output:
+3.141592653589793
+S
+LN A
+Unit 3: Programming Fundamentals
+3.
+from module import function:
+Import only a specific function from a module.
+from math import sqrt
+print(sqrt(36))
+# Dutput:
+6.0
+#
+No
+need
+to write math.sqrt()
+4.
+from module import function 1, function 2:
+Import multiple specific functions at once.
+from math
+import sqrt,
+pi,
+factorial
+print(sqrt(49))
+# Output:
+7.0
+print(pi)
+# Output:
+3.141592653589793
+5.
+from module import *:
+Import everything from a module.
+from math import
+*
+print(sqrt(64))
+# Output:
+8.0
+print(pi)
+# Output:
+3.141592653589793
+print(ceil(4.3))
+# Dutput:
+5
+There are two types of libraries built-in and third-party libraries.
+3.6.1 Built-in Libraries:
+These libraries come with Python and do not need to be installed; users can
+readily use them by importing them into the program. Some of the most common
+libraries are listed below.
+tj
+Ly
+ae
+Unit 3: Programming a
+SS
+Examples:
+e
+math:
+library provides mathematical operations and constants.
+It includes
+functions for trigonometry (like sin 0, cos 8), logarithms, exponentiation and
+constants like pi x.
+® Math Library program.py
+by
+oO
+-
+® Math Library program.py
+1
+import math
+2
+3.
+print(math.pi)
+# Pi value
+> 3.14159...
+4
+print(math.ceil(4.3))
+# Round
+up
+25
+5
+print(math.floor(4.9))
+# Round down
++A
+6
+print(math.pow(2,
+4))
+# Power 244
+> 16.0
+7
+print(math.sqrt(81))
+# Square root
++ 9.0
+TERMINAL
+bl eython
++-~ (FW
+=
+|
+03
+x
+02S 52) chor Cos» ESS
+3. 141592653589793
+5
+4
+16.8
+9.8
+PS E:\Python Code> |
+e
+random: library is used for generating random numbers or making random
+selections.
+® random program.py *
+tec
+|
+=
+® random program.py > ...
+2
+import random
+¥
+4
+# Generating
+a random number between
+1 to
+10
+5
+random_num
+= random.randint(1,1@)
+6
+print("Random Number:
+“,random_num)
+7
+print(random.random())
+# Random float
+8
+print(random.uniform(1.5,
+9.5))
+# Random float
+in range
+o
+TERMINAL
+bl) Python ++
+(]] Ws
+|
+3
+xX
+® PS E:\Python Code>
+Random Number:
+8
+6.5689448558830233
+4.15758310615687
+PS E:\Python Code> |
+LN A
+>
+|
+i
+Unit 3: Programming Fundamentals
+a
+datetime: library provides classes for working with dates and time.
+@ datetime prog.py
+x
+C:
+> Users
+> Hassan Zaidi
+> Python Program
+> @ datetime prog.py > ...
+1
+Oc
+wd How
+&
+Ww
+hw
+=
+S
+import datetime
+# Getting current date and time
+current_datetime
+= datetime.datetime.now()
+print("Current Date and Time:
+", current_datetime)
+formatted date
+= current_datetime.strftime("*Ad-Am-A”Y"
+)
+print
+("Formatted Date:
+",formatted date)
+PROBLEMS
+OUTPUT
+DEBUG CONSOLE
+TERMINAL
+PORTS
+by
+DO
+Formattine
+a date
+aY means year part,
+4m means month part
+4d means date part
+PS C:\Users\Hassan Zaidi> python.exe
+"c:/Users/Hassan Zaidi/Python Program
+{datetime prog.py”
+Current
+Date
+and Time:
+2626-01-19 21:47:00.099923
+Formatted
+Date:
+19-61-2026
+PS C:\Users\Hassan Zaidi>
+i
+Activity: Program that generate student report card by using library functions
+® student report program.py *
+® student report program.py >...
+1
+Ooonw
+nau &
+WwW
+hw
+FPrP
+RFP
+RP
+RFP
+RP
+RP
+RP
+RF
+Be
+Oc
+WN
+mu
+&
+WN
+&
+#
+student Report Card Generator
+#
+Libraries:
+math,
+random, datetime
+import
+math
+# For mathematical calculations
+import random
+# For generating roll number
+import datetime
+# For report date and time
+print("
+STUDENT REPORT CARD GENERATOR")
+# — datetime library —
+# Get current date and time for the report card
+now
+= datetime.datetime.now()
+date
+= now.strftime("4d-%m-%Y"
+)
+# Format: Day-Month-Year
+time
+= now.strttime("41:4M %p")
+# Format: Hour:Min AM/PM
+print(f"Date
+:
+{date} Time
+: {time}")
+# — random library —
+# Generate
+a random Roll Number
+roll_no
+= random.randint(100, 999)
+a) x
+1
+Unit 3: Programming Fundamentals
+2@
+# — Input student information —
+21
+name
+= input({"\nEnter Student Name
+:
+")
+# \n
+is used for new line
+22°
+print("\nEnter Marks for Each Subject
+(Out
+of 100):")
+23
+marksi1
+= float(input("
+Mathematics
+:
+"))
+24
+marks2
+= float(input("
+Science
+>
+"))
+25
+marks3= float(input("
+Computer
+>
+"))
+26
+27
+=# Calculate total and percentage
+28
+total
+= marks1 + marks2 + marks3
+29
+percentage
+= (total
+/ 300)
+* 100
+38
+31
+# — Selection:
+Pass or Fail —
+32
+if percentage
+>= 58:
+33
+status
+=
+"PASS
+"
+34
+«else:
+35
+status
+=
+"FAIL
+"
+36
+37.
+#
+Display Report Card
+38)
+)—oprint("\n
+OFFICIAL
+REPORT CARD")
+39
+=print(t"
+Roll
+No
+:
+{roll_no}")
+48
+print(f"
+Name
+:
+{name}")
+41
+print(f"
+Date
+:
+{date}
+Time:
+{time}")
+42.
+print(f"
+Mathematics\t Out
+of 106
+\t {marks1}
+")
+# \t
+is used for tab
+43.
+print(f"
+Science\t Out of 100
+\t {marks2}")
+44
+print(t"
+Computer\t Out
+of 100
+\t {marks3:<10}")
+45
+print(t"
+Total Marks\t Out
+of 30@
+\t {total:<10}"))
+46
+print(t"
+Percentage\t {percentage: .2T}%")
+47
+print(f"
+Status\t {status}")
+48
+print("
+***
+End of Report Card ***")
+TERMINAL
+62) Python
++.
+oo
+W
+on
+| ae
+® PS E:\Python Code>
+STUDENT REPORT CARD GENERATOR
+Date
+:
+13-64-2626 Time
+:
+61:41 AM
+Enter Student Name
+: Hassan Raza
+Enter Marks for Each Subject (Out of 166):
+Mathematics
+:
+77
+Science
+:
+84
+Computer
+: 92
+OFFICIAL REPORT CARD
+Roll No
+:
+165
+Name
+: Hassan Raza
+Date
+:
+13-64-2026
+Time:
+61:41 AM
+Mathematics
+Out of 196
+7?
+8
+Science
+Out of 198
+84.8
+Computer
+Out of 166
+O78
+Total Marks
+Out of 398
+253.6
+Percentage
+84.33%
+Status
+PASS
+*** End of Report Card ***
+PS E:\Python Code>
+|
+LA A
+B
+——n
+. 3: Programming Fundamentals
+gl
+3.6.2 Third Party Libraries:
+A
+third-party
+library
+is
+not
+included with Python by default.
+It
+is
+installed
+separately
+and
+adds_
+extra
+features, such as data handling, plotting, or
+web access. Before using any third-party
+library, it must be installed using:
+pip install library _name
+Examples:
+e
+Numpy: numerical computing
+e
+Pandas: data analysis, use to handle table like data.
+e
+Matplotlib: graphs and charts
+3.7
+Debugging Code in Python:
+Debugging is the process of identifying and
+resolving
+issues within
+a program to ensure
+it Fl
+functions as intended. This involves locating the
+source
+of errors, understanding
+the underlying
+causes,
+and
+implementing
+the
+necessary
+corrections.
+Bugs
+or errors can cause
+a program to
+crash, produce incorrect results, or behave unexpectedly. These errors can be broadly
+categorized into three main types
+e
+Syntax Errors: Occur when the rules of Python are not followed (any writing
+mistake in keywords). It prevents the program from running at all.
+print("Hello World"
+# Missing closing parenthesis
+e
+Runtime Errors (Exceptions): Occur while the program
+is running. The
+program starts but fails during execution.
+x= 10/0
+# Division
+by zero
+e
+Logical Errors: Occur when the program runs without crashing but produces
+the wrong output. It is harder to detect because there is no error message.
+i=1
+while
+i
+<
+6:
+print(i)
+i
+-=
+1
+#logical error:
+- minus should
+be replace with
++ plus sign
+IZ,
+AE Ee
+<2
+a
+Unit 3: Programming a
+SS
+There is a logical error in the above code, that is instead of increasing “1” to
+eventually reach 6, it is decreasing. This creates an infinite loop.
+Following are some multiple ways to debug code from simple techniques.
+>
+Reading Error Messages (Tracebacks):
+When an error occurs in a Python program, Python provides a detailed error
+message to help the user understand what went wrong. These messages inform
+the user:
+¥
+What type of error occurred
+v
+Where the error happened
+¥
+Which line caused the problem
+Example 1:
+® debug program.py
+by
+oO
+-
+® debug program.py
+> ...
+1
+x= int("abc")
+TERMINAL
+Glenn ++
+(1)
+Wy
+|
+i2
+x
+ee
+=S=SESE
+Traceback (most recent call last):
+File “e:\Python Code\debug program.py",
+line
+1,
+in <module>
+x= int("abc")
+ValueError:
+invalid literal for int(} with base
+198:
+‘abc’
+PS E:\Python Code> |
+This clearly indicates that Python cannot convert text into a number. Error
+messages often point directly to the problem line.
+Example 2:
+® debug program.py
+1
+X
+Dy
+O
+® debug program.py >...
+1
+a=
+33
+2
+b
+= 200
+3
+4
+if b>
+a:
+5
+print("b
+is greater than a")
+TERMINAL
+BJ eython +~ CW
+|
+o2
+x
+@ PS E:\Python Code>
+File “e:\Python Code\debug program.py",
+line
+5
+print("b is greater than a")
+AAA
+IndentationError: expected an indented block after
+"if' statement on line 4
+ne
+ethan adn
+|
+This clearly indicates that at line no
+5 the indentation is expected after if
+statement.
+MW
+‘aaa
+Unit 3: Programming Fundamentals
+This unit introduces Python programming, including variables, control structures,
+loops, and the use of libraries to build practical programs. Programming skills are among the
+most in-demand abilities in the modern job market and open doors across nearly every industry.
+Lada
+le ea
+Lo (io
+Writes, tests, and debugs applications
+ranging from desktop tools to large-
+scale enterprise systems.
+Web Developer
+Builds websites and web applications
+using Python frameworks alongside
+HTML, CSS, and JavaScript.
+DEE AVE ICL
+Uses Python libraries to process,
+visualize, and interpret data for business
+decision-making.
+Automation / Scripting Engineer
+Writes Python scripts to automate
+repetitive tasks and improve workflow
+efficiency.
+Mobile/App Developer
+Applies programming logic learned in
+Python to design and build mobile and
+desktop applications.
+Uses programming fundamentals and
+libraries to design logic, mechanics, and
+interactivity in games.
+tj
+Ly
+eo
+¢
+®
+®
+©¢o?¢
+o¢¢
+oe
+Unit 3: Programming Fundamentals
+Summary
+In Python, the input( ) function allows to capture user input from the keyboard,
+while the print( ) function is to display output to the console.
+input() always returns a string, convert it to int or float data type if needed.
+Variable is a named space of a memory.
+A variable is like container or storage box that holds a value.
+The data type of a variable can change dynamically when a new value
+is
+assigned.
+An IDE
+is
+a
+complete workspace
+that
+includes
+a Code
+Editor,
+Syntax
+Highlighting, Auto Completion, Run/Execute Tool, and Debugger.
+VS Code is a free, lightweight code editor that becomes a full IDE by installing
+extensions.
+Python automatically detects the data type, so do not have to declare it.
+In Python, the data type of a variable is not fixed permanently. It can change
+dynamically whenever a new value of a different type
+is assigned to
+it. This
+characteristic reflects the flexible and dynamic nature of Python's type system.
+Arithmetic Operators perform mathematical calculations (+, -, *, /, //, %, **).
+Assignment Operators assign values to variables (=, +=, -=, *=, /=).
+Relational Operators compare two values and return True or False (=, !=, >,
+<, >=, <=).
+Logical Operators combine conditions (and, or, not).
+Membership Operators check if a value exists in a sequence (in, not in).
+Bitwise Operators operate on binary digits bit by bit (&,
+|, “, ~, <<, >>).
+Sequence, Selection and Repetition controls together form the foundation of all
+Python programs.
+break exits the loop immediately, while continue skips the current iteration.
+Libraries provide pre-made code for common programming tasks.
+Built-in libraries (math, random, datetime) come with Python and do not need
+installation.
+Third-party libraries (NumPy, Pandas, Matplotlib) must be installed separately
+using pip install.
+Debugging is the process of identifying and fixing errors in a program.
+There are three types of errors: Syntax Errors, Runtime Errors, and Logical
+Errors.
+Python provides detailed error messages (Tracebacks) that tell the type,
+location, and line of the error.
+Logical errors are the hardest to detect because the program runs but produces
+wrong output.
+|
+AXA
+KX
+AAN
+‘aii
+a
+Sf
+Xv
+3: Programming Fundamentals
+1.
+Encircle the correct answer:
+i)
+Which is the correct statement to insert Comments in Python code?
+(a) // This is comment
+(b) /* This is comment*/
+(c) # This is comment
+(d) - - This is comment
+11)
+Which one is not a legal variable name?
+(a) _myvar
+(b) my_var
+(c) Myvar
+(d) my-var
+ili)
+Which one is the correct way to write if statement in Python?
+(a) if (condition):
+(b) if(condition );
+(c) if (1):
+(d) none of these
+Iv)
+___ is the operator can be used to compare two values?
+(a) <>
+(b) ==
+(c) ><
+(d) =
+v)
+____ loop is used when the number of iterations is known in advance
+(a) While
+(b) Do while
+(c) For
+(d) For each
+vi)
+Which programming language is closest to binary (Os and 1s)?
+(a) High Level language
+(b) Mid-Level Language
+(c) Low Level language
+(d) Script Language
+vii) | Standard indentation in Python?
+(a) 2 spaces
+(b) 4 spaces
+(c) 6 spaces
+(d) 8 spaces
+vill)
+datatype does the input() function always return.
+(a) Int
+(b) Float
+(c) String
+(d) Bool
+1x)
+____ statement exits a loop immediately
+(a) Pass
+(b) Continue
+(c) Break
+(d) Exit
+X)
+___ bitwise operator returns 1 only when BOTH bits are 1?
+(a) AND
+(b) OR
+(c) NOT
+(d) XOR
+t7,
+Vf),
+pe
+tl
+2.
+i)
+ii)
+iti)
+ii)
+111)
+Iv)
+ii)
+iii)
+Iv)
+u|
+Unit 3: Programming a
+SS
+Fill in the Blanks:
+Remarks or notes added for the developer in the source code are called
+An identifier whose value can change during program execution is called a
+A
+cannot be used as a variable name in Python.
+The extension of Python source code files is
+The statement used to execute different blocks of code based on a condition in
+Python is called the
+statement.
+Provide short descriptive answers of the following questions.
+What is a selection statement? Differentiate between if, elif, and else with an
+example.
+What is the difference between a for loop and a while loop?
+What are the three types of errors in Python? Define each in one line.
+What is debugging? Explain the techniques used for debugging.
+Define following terms:
+(a) Sequence
+(b) Datatype
+(c) Repetition
+(d) Variable
+(e) Arithmetic Operator
+Provide detailed answers of the following questions.
+What are control structures in Python? Explain Sequence, Selection (if, if-
+else, if-elif-else, Nested if), and Repetition (for loop, while loop, Nested loop)
+with syntax and code examples for each.
+Explain variables and data types in Python. List all built-in data types with
+their names, type keywords, descriptions, and examples in the form of a table.
+Describe input and output handling in Python. Explain the print() and input()
+functions with their syntax, purpose, and at least two code examples each.
+Explain all Arithmetic and Assignment Operators in Python with their
+symbols, purpose, examples, and results in tabular form. Also write a code
+example for each.
+What is debugging in Python? Explain the types of errors in detail with code
+examples for each type. Also describe the technique of reading error messages
+(Tracebacks).
+1.
+Unit 3: Programming Fundamentals
+— ~~ Activities
+Write a program of arithmetic calculator that takes two integer input from user
+also take a choice for arithmetic calculation. Display proper messages for
+user.
+Create a “guess the number” game where the player has only one chance to
+guess the correct number. Use Python’s random module to generate a random
+number and compare it with the user’s input. If the guess matches the number,
+print “You win’; otherwise, print “You lose.”
+Write a Python program that simulates a basic ATM Machine using simple
+data types (int, float, str, bool). The program should combine Selection
+(if/elif/else) and Repetition (while loop) statements to perform real-world
+banking operations such as PIN verification, balance inquiry, cash deposit,
+and cash withdrawal. The output of the program should look like as following.
+========== WELCOME TO ATM ==========
+Choose (1-4): 3
+Enter withdrawal amount: Rs. 3000
+Enter PIN: 0000
+Wrong PIN! 2 attempt(s) left.
+Withdrawn Rs. 3000.00
+Enter PIN: 1234
+Remaining Balance: Rs. 12000.00
+Login Successful!
+Choose (1-4): 4
+ween ne nee ATM MENU ----------
+Thank you! Goodbye.
+1. Check Balance
+2. Deposit
+3. Withdraw
+4. Exit
+Choose (1-4):
+1
+Your Balance: Rs. 10000.00
+Choose (1-4): 2
+Enter deposit amount: Rs. 5000
+Deposited Rs. 5000.00
+New Balance: Rs. 15000.00

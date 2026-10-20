@@ -1,0 +1,1512 @@
+PRR
+Ore te
+Entrepreneurship
+in the Digital Age
+Student-Learning Ouicemest
+099900000000
+Define entrepreneur and entrepreneurship in simple words;
+Explain entrepreneurship in the digital age with local examples; .
+Identify a real-life problem and change it into a business idea;
+Explain prototype and its importance in business development;
+Differentiate low-fidelity, mid-fidelity, and high-fidelity prototypes;
+Create, test, and improve a simple prototype using paper or digital tools;
+Define Minimum Viable Product (MVP) and compare it with a proton
+Identify the riskiest assumption in a business model;
+Sketch or plan an MVP for an app, website, product, or service;
+Plan main features, estimated cost, and marketing method for an MVP;
+Collect, analyze, and use user feedback for improving an MVP; and
+Identify a suitable beachhead market for MVP ae
+Teacher Note:
+_
+:
+This unit should not be studied aly by memorizing ‘eanitions Students should select a
+small problem, talk to users, draw a prototype, collect feedback, and
+i improve the idea. Te
+Ve
+learning becomes stronger when students do the activity themselves.
+fe
+Unit Map’
+:
+1
+a
+|
+The unit follows the j journey A a simple idea. First, students deny a problem. Then
+they suggest an idea, create a prototype, collect feedback, prepare an MVP, and finally select
+a small group of first users. This sequence helps students understand entrenreneuterip as a
+practical process, not only. as a business term.
+©
+:
+ae
+ENTER
+4
+(|. What simple | How will
+wist do:
+| arene
+Wha will test:|
+fare
+do people
+solutioncan
+it look or
+- >
+versioncanbe
+|
+| ed
+face?
+hele
+work? ©
+users Baye
+tested?
+AEN
+Market
+Figure 6. 1: From problem
+to first customers
+Low-Resource Classroom Tip
+A prototype or MVP plan does not always need a computer lab. Students can use paper,
+chart paper, mobile phone screenshots, PowerPoint, Canva, WhatsApp Business, Google
+| Forms, or simple hand-drawn screens. This makes the unit possible in rural and small-city
+colleges also.
+r 6: Entrepreneurship in the Digit
+V
+Introduction to Unit:
+’
+Many businesses begin with a simple problem. A student forgets homework. A
+shopkeeper cannot show new designs to customers. A college van arrives late and
+parents do not know its location. A small farmer wants to sell vegetables directly to
+nearby families. In the digital age, such problems can be changed into business ideas
+with the help of mobile phones, internet, social media, websites, and simple digital
+tools.
+This unit explains how students can move from a ecobilen to a useful digital
+solution. Students will learn how to create a prototype, test it with users, improve it,
+and then plan a Minimum Viable Product, which is commonly called MVP. The
+|
+purpose is not only to memorize definitions. The main purpose is to practice how an
+idea can be tested before spending a lot of time-and money.
+_
+For Grade XII students, this topic is important because it connects Computer Science
+with real life. Students already use digital tools such as WhatsApp, Facebook,
+YouTube, Google Forms, online shopping apps, and mobile banking. This unit helps
+them see that the same tools can also be used for solving local problems and creating
+small digital business ideas.
+6.1
+Entrepreneur and Entrepreneurship:
+:
+-
+Anentrepreneur is a person who identifies a problem, thinks of a solution, and
+tries to change that solution into a product or service. An entrepreneur does not always
+begin with a large company or a big office. Many entrepreneurs begin with a small
+idea, limited resources,-and a strong wish to solve a problem. They observe people,
+listen to their needs, take calculated risks, and improve their idea step by step.
+For example, a student who sells handmade cards through Instagram or WhatsApp is
+showing entrepreneurship. A shopkeeper who creates a WhatsApp catalogue for Ajrak,
+Sindhi cap, or clothes is also using entrepreneurship. A group of students who design
+a reminder app for college assignments is practicing digital entrepreneurship because
+they are using technology to solve a student problem,
+Entrepreneurship js the process of planning, starting, testing, and improving a business
+idea,
+It
+involves
+creativity,
+problem-solving,
+teamwork,
+communication,
+and
+calculated risk. In simple words, entrepreneurship means finding a problem and trying
+to solve it in a useful and sustainable way.
+Simple Meaning
+An entrepreneur asks: What problem can I solve? Entrepreneurship is the process. of
+_ testing: and i improving that solution until
+it becomes useful for people.
+|
+Ys,
+j \/\ AN a
+a
+‘
+fee, oer
+6.2.
+Entrepreneurship in the Digital Age:
+|
+Entrepreneurship in the digital age means using digital tools to start, test,
+improve, and grow a business idea. These tools may include mobile phones, social
+media, websites, online forms, digital payments, maps, videos, and simple apps. A
+digital entrepreneur docs not always create a complex mobile app. Sometimes a
+WhatsApp group, a Google Fort
+a Facebook page, or a simple website is enough to
+testanidea,
+In the past, many businesses
+needed large investment, offices, and long
+planning. Today, a small idea can be tested quickly. A student can draw app screens on
+paper, create a small Google Form, share a poster on WhatsApp, or make a simple
+_ webpage. This does not mean every idea will succeed. It means that ideas can be tested
+early with-real users. If users do not like the idea, the team can etait
+it before
+spending too much money.
+Examples F Digital Entrepreneurship
+i in Pakistan
+_
+The following examples show that digital entrepreneurship can begin from
+ordinary problems. These examples are close to the context of Sindh and Pakistan,
+where many students, parents, shopkeepers, and small service BOMUES already use
+mobile phones and social media.
+“Table 6.1L acal examples of digital entrepreneurship
+el
+Possible First Users
+|
+Parents
+1 miss
+ss college
+:
+oe =
+Parents of first-year
+[Fee
+mOtICgs.
+nhs
+“F
+reminder service
+= =
+students.
+a Se
+ae
+np a a tk cn eR el
+RRR
+eR
+____has few customers.
+- catalogue with order form
+— bc Cn
+| _ Students forget test dates
+Simple reminder app or -
+Grate X XII students
+Bor cpt mrs Se rt eres,
+~~ —-
+Sp Acide
+soe
+we ate
+ohana
+citadel
+|
+Caedinin'
+tas
+Waharateaee
+| Pre-order form for snacks _
+ee
+during break
+‘Students and teachers
+College van'timing is
+| © Van update groupor
+i
+|
+|
+_
+Van users and
+parents
+|
+uncertain
+simple tracking idea
+foes:
+a
+Organized study material
+notes
+xam
+students
+website or drive folder
+Board —
+we
+These examples also show an important point, A digital business idea should
+not be selected only because it sounds modern, It should solve a real problem for real
+users. If the problem is weak, the business idea will also be weak.
+°
+6.3
+From Problem to Business Idea:
+V
+A good business idea usually starts from observing daily life. Students should
+.
+look around their home, college, market, village, or city and ask some simple questions.
+What problem do people face? Who faces this problem? How often does it happen?
+What do people currently do to solve it? Can technology help in a simple way?
+For example, if students cannot find study material before exams, the problem
+is not only that students are careless. The real issue may be that notes are shared in
+many places such as WhatsApp, email, photocopy, and class groups. A possible digital
+idea can be a simple subject-wise notes organizer where all files are phe
+in one
+location.
+Students should avoid choosing very large problems at the start. A problem
+such as improving the whole education system is too broad for a classroom project. A
+file submission dates. Smaller problems are easier to test and i improve.
+Table 6.2: From problem to idea
+Notice repeated problems
+|. Students foraet practical
+'
+Bees
+ee
+/
+_
+“Observe 2
+:
+around home, college, or
+|
+fil dates.
+=
+eee
+market.
+7
+Seal
+ee
+Talk to people hd face
+|
+- Ask five classmates how
+Bere
+ede
+_ the problem.
+they remember deadlines. |
+Select One Problem
+Choose a nea |
+Practical file reminder.
+|
+Suggest t Solution
+Think ofa simple digital
+| Reminder form or app
+!
+:
+or paper-based solution,
+Screen,
+Test Earls
+Show the idea to users
+Ask classmates if they
+ay
+before final Idevelopment.
+2
+WIS Th oo
+6.4
+Prototype:
+A prototype is an early model of a product, service, website, or app. It shows
+how the idea may look or work. It is not the final product. It is made to test the idea
+and collect feedback. A prototype helps students and entrepreneurs explain their idea’
+clearly because users can see something instead of only listening to words.
+better problem is smaller and clear, such.as helping ( Grade XII students track practical
+ac
+Entrepreneurship in the Digital A
+A prototype may be a paper sketch, a cardboard model, a clickable PowerPoint,
+|
+a Canva design, a Figma wireframe, a simple website layout, or a. sample service
+Wt
+process chart. For example, if students want to design a canteen pre-order system, they
+¢
+can first draw the screens on paper. One screen may show the menu, the second screen
+may show student name and class, and the third screen may show order confirmation.
+A prototype is useful because it makes the idea visible, It-also helps the team
+find mistakes carly. Users may say that a button is hard to find, a screen has too much
+text, or an important feature is missing. This type of feedback
+is valuable because it
+saves time and money before final development.
+i
+‘Remember’.
+i i(
+ststi<‘CSsS
+3 _A prototype answers: How will this idea’ IGok or
+1 work? It does not need
+to be] Ps
+ot only needs to be cleat enough for users to understand and give feedback. |
+6.5
+Types of Prototypes:
+Prototypes are commonly divided into three types according to the level of
+detail. These are low-fidelity, mid- fidelity, and high-fidelity prototypes. The word
+fidelity means how close the prototype is to the final product. A low-fidelity prototype
+is simple and fog while a high-fidelity prototype looks more like the final product.
+6.5.1 Low-Fidelity Prototype:
+A low-fidelity prototype is a quick and rough model. It is ssually made at the
+very beginning of an idea. It may be drawn on paper or chart paper. It does not focus
+on colors, fonts, or final design. Its purpose is to show the main idea and user flow.
+This type is very. suitable for college students because it is cheap, fast, and easy to
+change.
+6.5.2 Mid-Fidelity Prototype:
+- A mid-fidelity prototype is clearer than a paper sketch.
+It may be aieated
+| in
+PowerPoint, Canva, Figma, or another digital tool. It shows screens and navigation in
+4 more organized way, but it may not contain final graphics or real data, It is useful
+when students want to test whether users can move from one screen to another without
+confusion,
+6.5.3 High-Fidelity Prototype:
+A high-fidelity prototype looks close to the final anndlaet
+It may include
+realistic. colors, buttons, sample data, and some working features, It takes more time
+than low-fidelity and mid-fidelity prototypes. Therefore, students should normally
+create it only after the basic idea has already been tested.
+6: Entrepreneurship in the Digi
+Table 6.3: Types of prototypes
+MANE
+UAL EET y
+Example
+|
+iad
+|
+Hand-drawn app
+i
+FRC
+A
+uick and rou
+|
+| __ screens for
+Low-Fidelity
+as del of the j he
+4 Very oe testing
+ico
+homework
+Pie
+ai
+ne
+aire
+| Aclearer model | |
+Clickable screens
+Mid-Fidelity
+that shows layout
+| Testing navigation
+in PowerPoint or —
+acter coe
+acs
+rica eee
+nae ciecereeeemrice
+mms
+tO
+! A detailed mode!
+T
+| fi
+i fi
+| Working demo ofa.
+High-Fidelity
+al
+close to the final |.
+SNe. eas 2
+-
+small order form
+|
+3
+os. product,
+cS
+1 Aes
+Ps
+we psec
+~ For most school md college projects, students should begin witha low-fidelity
+prototype: A common mistake is to start building a full app before knowing whether
+users need it. A rough prototype protects students from this mistake.
+6.6
+Prototype Development Cycles
+Prototype development i is not a one-time activity. A prototype is creat tested,
+improved, and tested again. This pEnvEss is called iteration. T he main
+n stages are design,
+build, test, and iterate,
+lterate
+| qt the
+\
+t
+|
+Show it to users
+ce
+‘Make
+an early PRs
+ee
+we
+Tnpove ee
+_
+problem and plan
+- Gand at sample. _-
+andcollect- —_ prototype based a
+_ the solution. |
+|e
+“feedback,
+feedback.
+i
+-. Figure 6.2: ‘Design - Build - Test - Iterate cycle
+|
+6.6.1. Design Stage:
+In the design stage, the team understands the siobleih and plans the solution.
+- The team decides what the prototype should show. This stage may include sketches,
+screen flow, user steps, materials, and the main features. For a homework reminder
+app, the design may show an Add Homework screen, a View Homework screen, and a
+Reminder screen,
+"6.6.2 Build Stage:
+In the build stage, the team creates the first version of the prototype. This
+version may be physical or digital, It may be made on paper, cardboard, PowerPoint,
+Canva, Figma, or any simple tool available in the classroom, At this stage, the aim is
+-
+not beauty. The aim is to make the idea visible and understandable.
+7
+i Geet
+\ae
+%
+“f@i",
+pane in the Digital Age
+bn le)
+*
+ila
+A
+3 Test ape
+:
+In the test stage, the team shows the prototype to possible users. Users should
+YT:
+try the prototype without too much explanation. The team observes what users
+“9
+understand, where they stop, and what they find difficult. Testing is not a formality. It
+is the stage where the team learns whether the idea is clear and useful.
+Useful feedback questions include: What do you think this product will do?
+Which part is easy to understand? Which part is confusing? What feature is missing?
+Would you use this solution? Why or why not? These questions help the team collect
+meaningful feedback instead of only asking whether users like the idea.
+_
+6.6.4 Histate Stage:
+|
+Iteration means improving, the prototype after feedback. The team may change
+the design, remove unnecessary parts, add missing features, or make the steps easier.
+Good teams do not feel discouraged by negative feedback. They
+use feedback to
+improve their solution. A prototype has not failed when users give negative feedback.
+It fails only when the team ignores useful feedback.
+_
+Important Point:
+Feedback is not criticism of students. It is evidence that helps. students make the idea .
+stronger.
+.
+6.7
+Class Activity: Créate a Reocitype!
+|
+Business Idea:
+a
+Students often forget homework deadlines, test dates, and required class items. A
+group of students wants to desiea a Simin: Homework Helper. or ClassBuddy
+reminder system.
+In this activity, students will not immediately build a complete mobile app.
+They will first understand the problem, draw a low-fidelity prototype, test
+it with
+classmatés, and improve it. This makes the activity possible even in a classroom with
+limited computers,
+Step 1: Understand the Problem
+The team interviews ten students and asks how often they forget homework or
+class items, what reminder method they use, and what type of reminder would help
+them. After discussion, the team finds that many students forget at least one task in a
+week, Some students want morning reminders, while others want reminders by subject.
+1} CamScanner
+Ye):
+~~
+)
+—
+=F
+—w.
+Us Seecatalg 1S
+.
+eo
+Table 6.4; Understanding user needs
+;
+UC
+Meaning
+Design Decision
+7 out of 10 students
+ae
+_ forget at least one task in
+| The problem is common.
+- del
+birt + 1
+Students want ‘Temindets
+|
+Reminder time is
+Add morning notification
+|
+_ before leaving home, important.
+|
+option.
+"Some students do not use
+The design must be
+_Use large buttons and
+|
+}
+=I
+Ee
+ines
+clear labels,
+___ advanced apps. _
+simple. |
+Peel
+eee say,
+Step 2: Draw a Low-Fidelity Prototype
+The teatn draws three screens on paper. The first screen shows today’s classes.
+The second screen allows the student to add homework or required items. The third
+screen shows the reminder. Arrows are used to show how a user moves from one screen
+to another. At this stage, colors and perfect design are not necessary.
+Step 3: Test fhe Prototype
+The team gives the paper screens to five. classmates. One student: ‘acts as the
+observer. The observer does not explain too much because the team wants to know
+.
+whether users can understand the design by: themselves. Users are asked to add one
+homework task and set
+a reminder. The team notes where users nese or ask
+—
+Secon.
+Step 4: Analyze Feedback
+;
+After testing, ‘the -team studies the feedback. They do- not accept .every
+suggestion blindly. They look for repeated probléms. If many. users cannot find the
+same button, then the button is probably not visible. If only one user asks for an unusual
+extra feature, the team may keep it for later.
+_
+" Table 6.5: Changing feedback into appeaians
+: Thain:
+Paar.
+Rita
+SAME
+:
+” Make Add Homework
+-
+1 cannot quickly find Add
+Button is not visible.
+|
+button larger and place it
+Homework.
+an
+|
+,
+ae
+in the-center.
+a ‘Add subject name and due
+- T want reminders by —
+| | Bantndan’ is too
+o general,
+subject.
+|
+date.
+it want to see all tasks for
+| Only daily view is not
+Ad d
+i
+Weekly Wiaw butien
+the week.
+|
+enough,
+ae
+Ad tn ea
+ees ks. Ane
+a
+chm
+ntrepreneurship in the Digital.
+Step 5: Improve
+the Prototype
+The team redraws the home screen with a larger Add Homework button, a
+Ww
+i
+sibject list, and a weekly view, This second version is clearer than the first version
+’
+because it is based on user feedback. The team may test this improved version again
+: ™ two or three new users.
+68
+Minimum Viable Product (MVP):
+A Minimum Viable Product, or MVP, is the simplest working version of a
+product, It includes only the most important features needed to test the idea with real
+users. The word minimum means it has only essential features. The word viable means
+it 1s usable enough to solve the main problem,
+_
+An MVP is not the final product. It is also not only
+a drawing. It is a small
+working version used to test if users actually n need the solution. For example, a complete
+canteen app may include login, payment, delivery tracking, ratings, and discount offers.
+But the MVP may only be a Google Form where students select snacks before break:
+If students'use the form, then the team has evidence that the idea may be useful.
+rd terion lea
+ren
+<eig
+e
+:
+ests real use, not onl;
+6.9
+Difference between Prototype
+and MV Ps
+Prototype and MVP are related, but they are not the same. A prototype is mealy
+used to show and test the design of an idea. It may be
+a sketch or a model. An MVP is —
+used to test real use. It must work at least ina basic way because real users Interact with
+it.
+~
+For example, a paper drawing ofa college van side app is a prototype. A trial:
+WhatsApp group where the van incharge posts daily van updates for one route can be
+an MVP. The prototype helps users understand the idea. The MVE helps the team see
+whether people will actually use it.
+Table 6.6: Peiipe te
+and MVP cng
+To show. how the Hee may
+| i To test Oeste
+users wi
+E
+sets
+gh
+look or work,
+|
+usethe solution
+!
+|
+Working status
+|
+May not work; can bea
+| “Must work at least ina
+|
+b
+sketch or model,
+basic way.
+|
+|
+eer
+:
+Small group gives
+_
+Early real users test the
+sers
+!
+|
+Ma
+> feedback on design, = = =
+produce
+1} CamScanner
+t 6: Entrepreneurship in the Digi
+:
+|
+Cost
+|
+Vety low cost,
+_
+Low cost but may need
+|
+aR
+___|__
+some development.
+_
+po
+Main question
+| Is the idea understandable?
+— Will users actually
+use it?
+Google Form used for real |
+canteen orders for three
+_
+days.
+Ex
+_
+Paper screens for canteen
+sxample
+|
+order system.
+6.10
+Identifying the Riskiest Assumption:
+Every business idea is based on assumptions. An assumption is something we
+believe to be true, but we have not tested it yet. The riskiest assumption
+is the belief
+that can make the business fail if
+it is wrong. Entrepreneurs should identify and test the
+tiskiest assumption carly because it saves time and money.
+For example, a group. may believe that students will pay for online tutoring,
+This is an assumption. If students are not willing to pay, the whole business model
+becomes weak. Another group may believe that students will order snacks before break
+, through a form. lf students do hot.use the form, the idea needs improvement.
+‘Table & 7: Festing risky seomedt
+2 OM Wat
+Caline tution § rider
+| E - Students will pay for
+“ASK 20 students and offer
+|
+o
+-online tutoring. |
+a trial class.
+an
+a
+| Students will order Jacks
+| Test a Google Form for
+|
+ee,
+|
+Suid
+pecker nt
+ee
+b efore break
+; a
+one week.
+Bee
+oot:
+Share catalogue with 30
+a
+sa
+tits
+E
+Customers will place
+|
+Ajrak online catalogue |
+“customers and record
+:
+ieee
+~
+| orders through WhatsApp.
+:
+|
+orders.
+cele ese ie a Se
+ae Se
+J Sw aas
+College vanupdate
+.
+|
+Parents and students will
+Crate 2 trial Whats
+PP
+’
+update group for one
+system
+_
+check van updates daily,
+rout,
+i
+|
+eel
+6.11.
+Developing an MVP:
+To develop an MVP, the team thust select only the essential features. Extra
+.
+features should be avoided at the beginning, A common mistake is trying to build
+everything at once. This makes the product difficult, costly, and slow. A better
+approach is to build the smallest useful version and test it quickly.
+|
+}
+|
+I
+|
+t ntrepreneurship in the Digital A
+An MVP
+plan should clearly explain the problem, target users, main feature,
+basic design, estimated cost, marketing method, feedback method, and improvement
+plan. These elements help the team remain focused.
+Table 6.8: MVP planning checklist
+MVP Element
+|
+Pen OA
+Example Answer
+NSS
+: What problem; arewe
+| Students wait too long at
+eee
+i
+solving! 3 we a ofa,
+the canteen,
+.
+|
+ier
+t
+|
+Target users.
+Who will use it first?
+Gnde XII students in one
+Se
+college.
+fi
+Nei fans
+Coo
+What is the one feature
+"Pre-order snacks before.
+fe
+7
+sain
+_ that solves the problem?.
+eae
+break.
+-
+i
+sg
+iE
+What scrcens, pages, or
+Mem, name, class, item,
+“Basie design
+steps are needed?
+order time.
+ee
+C 5 '
+o :
+“What free or low-cost
+Google Form or printed
+pee:
+e
+:
+i tools can be used? Seer
+_ ships
+|
+- Mecketing:
+| tow will early users hake
+|
+Class announcement and
+|
+|
+ae
+“about it?
++
+-WhatsApp message.
+aE
+se
+|
+Feedback
+—s_
+| How willy
+users respond?
+_ Short feedback form ane
+es
+Sar
+eee
+three days.
+6.12
+Case Study: MVP for a Canteen Pre-Order System:
+Ina college, students wait in long lines at the canteen during break. Sometimes
+snacks finish before many students reach the counter. A group of students wants to test
+a canteen pre-order idea. Their aim is not to create a complete app immediately. Their
+aim is to test whether students will place orders before break and whether the canteen
+can manage these orders.
+‘
+The team first creates a paper pr ototype. It shows three simple steps: select item,
+enter name and class, and collect order during break, After showing this prototype to
+classmates, the team receives feedback that the process is easy, but the menu should be
+short, Some students also say that payment should be made at collection time, not
+‘earlier,
+For the MVP, the-team uses a Google Form or a paper register. Students select
+one of five items and write their class, The canteen prepares a small number of pre-
+orders, This MVP is tested for three days only, The testing period is short because the
+purpose is to learn quickly.
+|
+LA
+== Ps
+:
+Ayes
+‘ya
+TN
+~
+Unit
+6: Entrepreneurship In the Digital
+/
+a
+i
+7 |
+Table 6.9; MVP plain for canteen pre-order system
+x
+v
+.
+.
+pers
+Features
+Menu list, student name, class, item, and quantity,
+Cost
+Free Google Form
+or printed order sli sip
+Marketing
+Class announcement and WhatsApp group message,
+‘Testing period
+= Three days.
+Ai
+Feedback method
+Ask students if they saved time and would use it again.
+Improvement
+| Keep
+only. five items and close orders 20 minutes before break.
+~
+rr a
+a ee
+After beefing
+the team finds that students liked saving time, but canteen staff
+found too many items difficult to prepare. The team improves the MVP by keeping
+only five items, closing orders 20 minutes before break, and creating one separate
+collection line. This improvement is based on real feedback, not only on guesswork.
+6.13
+Testing an MVP:
+MVP testing means giving the basic vores version to real users ici studying
+their response. The team should collect both numbers and comments. Numbers show
+how many users tried the MVP. and how many may use it again. Comments explain
+what users liked, disliked, or found confusing.
+i
+Testing should be planned before the MVP
+i is launched. The team should decide
+how many users will test it, how long the test will continue, what information will be
+collected, and how feedback will be used. Without a clear testing plan, the team may
+collect random comments that are difficult to‘analyze.
+—
+Table 6.10: Feedback
+during MVP testing
+40 SESS
+‘lee
+the
+~
+Number-based feedback Hv many users tried it?
+&
+“form
+: Nutaber yasel feedback --How many users would S +30 out of 40 said yes.
+=
+suse itagain?-—
+|
+| Contin
+bane feedback |
+What was ooitueing?
+_ Some studenis di
+rose
+tL
+eae
+—? know order closing ¢ time.
+~ Where did users face
+©
+|
+Students forgot to enter :
+Cuaeaink
+Sas
+tol 4
+difficulty?
+=
+class name.
+Data Skill Link:
+ee
+Feedback is useful only
+1 when it is ‘studied, Count the responses, look for repeated
+problems, and decide which improvement should be made first.
+:
+ntrepreneurship in the Digital
+‘ ®) fe
+.
+|
+“is
+6.14
+Beachhead Market:
+A beachhead market is a small and focused group of first users. These users
+Vv
+have a clear need and are likely to' try the product early. Instead of trying to serve
+‘
+everyone, entrepreneurs first focus on one group. This helps them test the MVP
+properly and improve it before expanding.
+A good beachhead market should be specific,
+c, reachable, and willing to test the
+product. It should not be too broad. For example, all students in Pakistan is too broad
+for a new study app. Grade XII students preparing for board exams in one college is
+more focused and easier to reach.
+Table 6.11: Choosing a focused beachhead market
+panes mS =
+Weak First Market
+Better aun Market
+|
+.
+All students in’
+.
+Grade XII students preparing
+oa
+study “PP
+sc tasan
+_
+for board exams in one college _
+|
+One college canteen during
+|
+Canteen pre-order
+:
+All canteens in the ayy
+|
+i elt bk
+|
+.. Existing customers ofone
+|
+so
+ee
+i
+2
+aes catalogue
+“All online shoppers
+HG
+local shop
+Van.update system
+I al feaaspart users
+|
+Snes ad parca Of ne
+beara
+tec
+eat
+=f
+college van route
+Choosing a stall first market does not mean the idea will remain small forever.
+It means the team is starting from a manageable group. After learning from this group,
+the idea can be improved and then expanded.
+6.15
+Complete Student Project:
+Students will work in groups and complete one small entrepreneurship project.
+The project should be simple, local, and possible in the classroom. The purpose of the
+project is to practice the complete journey ftom problem to prototype feedback, MVP
+plan, risky assumption, and beachhead market.
+Each group should select one real problem from osilees
+home, market,
+transport, study, or community life. The group should write the target users clearly,
+create a low-fidelity prototype, test it with at least three classmates or possible users,
+record feedback, improve the prototype, and then plan a small MVP. The group should
+also identify the riskiest assumption and select a suitable beachhead market.
+Surpuestet Project Ideas:
+Students may choose ideas such as a boing and test reminder system,
+college notice organizer, canteen pre-order system, small shop WhatsApp catalogue,
+1} CamScanner
+eae
+No”
+Ob
+w—-
+—~tY
+1 [==
+‘ i
+[>e
+:
+? Entrepreneurship in the 0
+college van update system, lost and found item reporting system, study notes organizer,
+library book availability checker, tuition class
+finder, or online order form for
+handmade crafts.
+Table 6.12: Student project sheet
+~
+ani fade tony
+Stident Response
+_ Problem statement
+Sang
+rpet
+neal wk Ha
+alae
+Uae t |
+AMA
+OE
+io 9
+Tm
+Target users
+7 Business idea
+Ene
+_Low-fidelity prototype description
+oe Be
+oe
+os
+A
+|Feedback from users
+e
+he
+ilee:
+7
+|
+wa
+a a
+sl a
+i
+a
+a
+a nl
+pl
+le
+EE
+a ake
+ea
+J
+_ Improvement made after feedback _
+|
+a
+a rn
+nm
+ener
+meme
+*
+~
+we
+ee ee)
+LINN pl i
+ae ae apie
+-Riskiest assumption
+“i
+?
+“How to test the riskiest soot
+| “Beachhead market
+Marketing method for first users _
+Table 6. 1B: ‘Rubric for project assessment
+Simple Heejed ® Rubiete:
+ee
+Anca Lai
+oS
+ot
+£
+nf
+Ps
+J.
+>
+1
+aan
+nh
+Needs
+pauistactory
+Set
+ae
+ee
+Improvement
+x
+- Problem
+i 18
+<=
+Problem
+|
+Problem i is ‘clear: local,
+Oak feet
+dable but
+| "Problem is vague
+|
+“identification
+— and Amportant for users.
+_
+ortoo broad.
+peo are
+ee needs n more detail.
+3
+3
+|
+|
+|
+Prototypeis
+_
+Prototype shows clear
+Prototype shows
+er
+|
+Prototype
+-
+flow and main features,
+_the basic idea.
+|
+mncomplas a
+|
+-
+Feedback is collected
+|
+Feedback
+i is
+a4 ‘No ae
+feedback
+Feedback
+.
+collected but
+and analyzed propery
+ea
+1
+ds collected.
+eS
+tos BIB SIG AS ORE SES ee ee Sean
+Textntiement | |
+~ Changes are clearly
+Some changes are
+Changes are not
+Bae
+e
+based on feedback.
+made.
+explained,
+Petes
+MVP has essential
+|
+‘MVP has basic. MVP is confused |
+_
+MVP plan
+features and clear testing
+features but needs
+—_with final
+|
+PRE
+es 4
+plan,
+|. larity,
+2 pproduet
+|
+Group explains problem,
+|
+re,
+_ Presentation
+— prototype, feedback, and |
+Group explains
+|
+Presentation i
+_MVP clearly,
+_
+mainidea, =
+unclear.
+6q=7F
+‘
+eit
+“@ (*)
+Al
+: Entrepreneurship in the Digital
+Age
+7 Y :
+o
+j{f@!
+A
+6.16
+Ethical and Safe Use ef Digital Tools:
+|
+Digital entrepreneurship should be responsible, Students must respect privacy,
+VW
+truthfulness, and fairness when collecting user feedback or promoting a product. They
+should not collect unnecessary personal information. They should not share phone
+numbers, photos, or private details without permission. They should also avoid making
+false claims about a product.
+Students should also think about equal access. A good digital solution should
+consider users who have weak internet, limited devices, low digital skills, or language
+difficulty. For example, a design with large buttons, simple Urdu or Sindhi instructions,
+and low data use may help more users. This is important in many areas of Sindh where
+students may not have continuous internet access or
+or personal laptops.
+|
+Equity Point:
+A good digital solution is not only modern. It should also be usable, safe, and fair
+for the people who meet it.
+‘Career Ops
+‘Opportunities
+ee
+_ pee
+This unit covers paren an in the disital age. raring problems into business
+ideas, prototyping, building MVPs, and identifying beachhead markets. Mastery of
+‘these
+ES opens the door to careers in startups and digital innovation.
+>
+*Product Manager
+. Ha,
+;
+Aoaese es
+rate {ee
+ae
+i
+ed Advises businesses or frunient on.
+=
+a
+a
+“Analyzes hostess problems and
+processes to recommend digital
+oad
+§
+“solutions often testing assumptions
+|;
+hee
+ie
+_ before full investment,
+ne ark one TI am
+Plans how a new product or MVP will |
+_ Teach its first (beachhead) market. and
+Brow its user tba
+ra Wi Fe
+Pi
+i
+ee?
+as
+cone
+EDP sais
+ey.
+~
+An entrepreneur identifies a problem and tries to solve it ihrotigh
+a product
+6
+or
+a
+service. In the digital age, entrepreneurs use tools such as mobile phones,
+internet, social media, websites, online forms, and apps to.test and improve their
+ideas. A good business ea often comes from pbsecviny daily life problems and
+talking to users.
+A prototype is an early. model used to show. ane test
+« an idea. It may be iste
+fidelity,
+mid-fidelity, or high-fidelity. The prototype
+» development cycle
+includes design, build, test, and iterate. Feedback i is very important because it
+helps i improve the idea before spending too much time and money.
+An MVP is the simplest working version of a product used to test the idea with
+real users. It is different from a prototype because it must work in a basic way.
+Entrepreneurs should also identify the riskiest assumption and test it early; A
+beachhead market is-a small ‘Broup.e of first: users selected for
+focused MVP.
+testing.
+-1.
+Encircle the correct answer
+An entrepreneur is a person who:
+(a) avoids all risks
+(b) identifies problems and creates solutions
+(c) only works in an office
+(d) copies others blindly
+Digital entrepreneurship mainly uses:
+me
+_ (a) digital tools and platforms
+(b) only handwritten notices
+(c) only physical shops
+(d) no technology
+A prototype is created to:
+|
+(a) hide the idea
+(b) test and improve the idea
+(c) finish the final product immediately
+(d) avoid feedback
+0)
+vil)
+viil)
+.
+Provide short answers of the following questions.
+“
+ese vad SE
+oe
+:
+4°
+-
+‘(at*,
+:
+ntrepreneurship in the Digital
+A
+(6) Vo of
+|
+A paper sketch of app screens is usually a:
+(a) low-fidelity prototype
+' (b) high-fidelity prototype
+¥
+7
+(c) full MVP
+(d) final product
+*
+¢
+The correct prototype cycle is:
+(a) Build - Design - Test — Iterate
+(c) Test - Build - Design — Iterate
+An MVP should include:
+:
+(a) all possible features
+(b) only essential working features
+(c) no working feature
+~
+(d) only a logo
+The riskiest assumption should be tested:
+(b) Design - Build - Test - Iterate
+(d) Design - Iterate - Build — Stop
+(a) after spending all money
+"(b) at the end ciily’
+(c) as early as possible
+(d) never
+A beachhead market is:
+J
+anh,
+(a) all customers in the world
+(b) a small focused group of first users
+(c) only competitors
+—
+(d)a final product design
+:
+Feedback is useful because it:
+(a) shows what needs improvement
+(b) must aiviays be ignored
+(c) makes testing unnecessary. ~
+. (d) removes all risk completely
+Which tool can be used for a low-resource prototype?
+(a) Paper and pencil
+(b) Only exp ensive software
+(c) Only final app store
+~
+@ None
+:
+.
+Fillin the Blanks
+AL
+_is an early model ofa product or service.
+The process of improving a prototype after feedback is called __
+An MVP includes only the most
+features.
+The riskiest_- _
+should be tested early.
+Testing helps collect user
+Define entrepreneur in simple words.
+What is entrepreneurship in the digital age?
+How can students find a business idea from daily life?
+What is iteration?
+Define MVP in simple words,
+4,
+Provide detailed answers of the following questions.
+po
+AY
+i)
+Define prototype and write one example.
+hs
+li)
+Why i is prototyping important before building a final product?
+—
+ili)
+Differentiate between low-fidelity and high-fidelity prototypes.
+iv)
+Write two differences between prototype and MVP.
+v).
+What is a beachhead market? Give one example.
+5.
+Scenario-Based Questions
+Read each scenario carefully. For each scenario, identify the main
+1 problem,
+suggest one digital business idea, select the first prototype type, and write one feedback
+— for users.
+1. Forgotten Practical Files: Many students forget to bring practical journals on
+the required day. The teacher announces the date in class, but some students are
+absent or forget later.
+2. Local Craft Shop: A shop
+sells
+Sindhi
+ii
+beside
+Ajrak, and handmade
+items. Customers ask for pictures before: visiting, but the shop has no digital
+.
+catalogue.
+3.
+College Van Problem: Students using
+a college van do aii its Shetek the
+van is late, on the way, or cancelled. Parents become worried when the van is
+delayed.
+ee de
+|
+:
+ees
+-s
+4.
+Study Material Scattered: A teacher shares notes in WhatsApp,
+email, and
+printed form. Students cannot find all materials in one place before exams.
+“8,
+Canteen Rush: During break time, many students stand in ime, Some students
+miss their snack because the break ends quickly.
+6.
+Higher Order Thinking Questions
+1.
+A group wants to build a complete mobile app before ‘skies
+the idea. Explain
+why this may be risky.
+2.
+Your users say that your prototype is useful but confusing. What steps will you
+take before making the MVP?
+3.
+For an online tuition app, identify the riskiest assumption and explain how you
+will test it with low cost.
+Quy
+¥
+.
+“get
+6
+Sh
+Entrepreneurship in the Digital Agé /
+| J) Ve,
+tee
+4. Choose a better beachhead market for a study app: all students in Pakistan, all
+| z
+students in Sindh, or Grade XII students preparing for board exams in your
+YW
+college. Give reasons.
+,
+’
+5.
+A canteen pre-order MVP gets 50 users, but only 10 use it again. What does
+this result show? What improvement may be needed?
+|
+6.
+Compare two business ideas from your local area. Which one is easier to test as
+an MVP and why?
+“& pee
+|
+~~
+Activities
+Practical Project Task
+soe
+In groups, select one local problem and complete the project sheet given in the
+chapter. Present your improved prototype and MVP plan in three minutes. Your
+presentation should explain the problem, target users, feedback collected, changes
+made, riskiest assumption, and. beachhead market...

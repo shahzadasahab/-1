@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Class XII IT — Lecture Notes</title>
+  <link rel="stylesheet" href="css/lecture.css"/>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        packages: {'[+]': ['ams']}
+      },
+      svg: { fontCache: 'global' },
+      startup: { typeset: false }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+
+  <header class="cover">
+    <h1>Information Technology</h1>
+    <p class="subtitle">Class XII — Condensed Lecture Notes<br/>HCI · Computational Thinking · Data Structures · Data Analysis · AI/ML · Entrepreneurship</p>
+    <p class="meta">Draft · SVG diagrams · MathJax · Flexbox layout · Aligned to uploaded curriculum PDFs</p>
+  </header>
+
+  <nav class="toc">
+    <h1 class="chapter-title">Contents</h1>
+    <ol>
+      <li><a href="#u1">Unit 1 — Human–Computer Interaction (HCI)</a></li>
+      <li><a href="#u2">Unit 2 — Computational Thinking (Advanced)</a></li>
+      <li><a href="#u3">Unit 3 — Data Structures in Python</a></li>
+      <li><a href="#u4">Unit 4 — Data Analysis with Python</a></li>
+      <li><a href="#u5">Unit 5 — Machine Learning &amp; Deep Learning</a></li>
+      <li><a href="#u6">Unit 6 — Entrepreneurship</a></li>
+    </ol>
+  </nav>
+
+  <section id="u1" class="chapter">
+    <h1 class="chapter-title">Unit 1 — Human–Computer Interaction</h1>
+    <div class="outcomes">
+      <strong>Learning outcomes (summary)</strong>
+      <ul>
+        <li>Explain HCI fundamentals, UX/UI principles, and accessibility.</li>
+        <li>Analyse user needs; wireframe and prototype interfaces (e.g. Figma).</li>
+        <li>Test usability: efficiency, learnability, error rate, satisfaction.</li>
+      </ul>
+    </div>
+
+    <h2>1.1 Interaction paradigms</h2>
+    <div class="flex-row">
+      <div class="flex-grow">
+        <p><strong>Traditional interaction</strong> — keyboard, mouse, windows/icons/menus/pointers (WIMP). <strong>Natural interaction</strong> — touch, voice, gesture, pen; reduces visible chrome but needs clear affordances.</p>
+        <p>HCI goal: systems that are <strong>useful, usable, and satisfying</strong> for target users in real contexts (school app vs public kiosk differ).</p>
+      </div>
+      <figure class="diagram-box flex-shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" role="img" aria-label="HCI loop">
+          <rect x="10" y="50" width="90" height="60" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+          <text x="55" y="85" text-anchor="middle" font-size="12" fill="#1a1a2e">User</text>
+          <rect x="220" y="50" width="90" height="60" rx="8" fill="#bbf7d0" stroke="#16a34a"/>
+          <text x="265" y="85" text-anchor="middle" font-size="12" fill="#1a1a2e">System</text>
+          <path d="M100 70 H200" stroke="#475569" marker-end="url(#a1)"/>
+          <path d="M200 90 H100" stroke="#475569" marker-end="url(#a1)"/>
+          <text x="150" y="65" text-anchor="middle" font-size="10" fill="#64748b">input</text>
+          <text x="150" y="105" text-anchor="middle" font-size="10" fill="#64748b">feedback</text>
+          <defs><marker id="a1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#475569"/></marker></defs>
+        </svg>
+        <figcaption>Figure 1.1 — User ↔ system feedback loop</figcaption>
+      </figure>
+    </div>
+
+    <h2>1.2 Accessibility &amp; inclusive design</h2>
+    <ul>
+      <li>Sufficient colour contrast; do not rely on colour alone.</li>
+      <li>Readable typography; scalable text; colour-blind-safe palettes.</li>
+      <li>Keyboard navigation and screen-reader labels for interactive controls.</li>
+    </ul>
+
+    <h2>1.3 Design process (Figma)</h2>
+    <ol>
+      <li>Personas &amp; scenarios from stakeholder interviews.</li>
+      <li>Low-fidelity wireframes → interactive prototype.</li>
+      <li>Heuristic evaluation + user testing; iterate on findings.</li>
+    </ol>
+  </section>
+
+  <section id="u2" class="chapter">
+    <h1 class="chapter-title">Unit 2 — Computational Thinking (Advanced)</h1>
+    <div class="outcomes">
+      <strong>Learning outcomes (summary)</strong>
+      <ul>
+        <li>Apply stepwise reasoning and invariants to harder problems.</li>
+        <li>Analyse algorithm efficiency with Big-O notation.</li>
+        <li>Select appropriate strategies (divide-and-conquer, greedy where suitable).</li>
+      </ul>
+    </div>
+
+    <figure class="diagram-box" style="max-width:420px;margin:0 auto 1rem;">
+      <img src="diagrams/computational-thinking.svg" alt="Computational thinking"/>
+      <figcaption>Figure 2.1 — Problem-solving framework</figcaption>
+    </figure>
+
+    <h2>2.1 Complexity sketch</h2>
+    <p>If an algorithm performs \(3n^2 + 5n + 2\) operations, its growth is written \(O(n^2)\). Compare:</p>
+    <p>\[ O(1) &lt; O(\log n) &lt; O(n) &lt; O(n \log n) &lt; O(n^2) \]</p>
+
+    <h2>2.2 Stepwise reasoning</h2>
+    <p>Break invariants into preconditions, loop guard, and postconditions — e.g. binary search maintains “answer lies in index range [low, high]”.</p>
+  </section>
+
+  <section id="u3" class="chapter">
+    <h1 class="chapter-title">Unit 3 — Data Structures in Python</h1>
+    <div class="outcomes">
+      <strong>Learning outcomes (summary)</strong>
+      <ul>
+        <li>Use lists, tuples, sets, dictionaries; choose structure by access pattern.</li>
+        <li>Implement stacks/queues conceptually; traverse nested structures.</li>
+      </ul>
+    </div>
+
+    <h2>3.1 Lists</h2>
+    <p>Ordered, mutable sequences — indexing \(O(1)\), append amortized \(O(1)\), insert/delete in middle \(O(n)\).</p>
+    <pre><code>scores = [88, 76, 91]
+scores.append(84)
+scores.sort()</code></pre>
+
+    <h2>3.2 Dictionaries &amp; sets</h2>
+    <p><strong>dict</strong> — key→value maps for fast lookup by key. <strong>set</strong> — unique elements; union/intersection for membership tests.</p>
+
+    <table class="data">
+      <thead><tr><th>Structure</th><th>Ordered?</th><th>Mutable?</th><th>Typical use</th></tr></thead>
+      <tbody>
+        <tr><td>list</td><td>Yes</td><td>Yes</td><td>Sequences, stacks (via append/pop)</td></tr>
+        <tr><td>tuple</td><td>Yes</td><td>No</td><td>Fixed records, dict keys</td></tr>
+        <tr><td>set</td><td>No</td><td>Yes</td><td>Unique tags, fast membership</td></tr>
+        <tr><td>dict</td><td>Insertion-ordered (Py3.7+)</td><td>Yes</td><td>Lookup tables, JSON-like data</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="u4" class="chapter">
+    <h1 class="chapter-title">Unit 4 — Data Analysis with Python</h1>
+    <div class="outcomes">
+      <strong>Learning outcomes (summary)</strong>
+      <ul>
+        <li>Connect to SQLite; run CRUD with Python <code>sqlite3</code>.</li>
+        <li>Load and analyse tabular data with pandas DataFrames.</li>
+        <li>Interpret basic aggregates, filtering, and simple visualizations.</li>
+      </ul>
+    </div>
+
+    <h2>4.1 Database connectivity</h2>
+    <p>Components: driver/API, connection string, cursor, commit/rollback. SQLite stores a whole database in one file — ideal for classroom projects.</p>
+    <pre><code>import sqlite3
+conn = sqlite3.connect("school.db")
+cur = conn.cursor()
+cur.execute("CREATE TABLE IF NOT EXISTS student (id INTEGER PRIMARY KEY, name TEXT)")
+conn.commit()
+conn.close()</code></pre>
+
+    <h2>4.2 pandas DataFrames</h2>
+    <pre><code>import pandas as pd
+df = pd.read_csv("marks.csv")
+print(df.describe())
+passed = df[df["score"] >= 50]</code></pre>
+    <p>Cleaning steps: handle missing values, normalize column names, validate types before plotting.</p>
+  </section>
+
+  <section id="u5" class="chapter">
+    <h1 class="chapter-title">Unit 5 — Machine Learning, Neural Networks &amp; Deep Learning</h1>
+    <div class="outcomes">
+      <strong>Learning outcomes (summary)</strong>
+      <ul>
+        <li>Distinguish ML, neural networks, and deep learning.</li>
+        <li>Name components: neurons, layers, weights, activation, loss, optimizer.</li>
+        <li>Discuss training data, overfitting, and ethical deployment.</li>
+      </ul>
+    </div>
+
+    <div class="flex-row align-center">
+      <figure class="diagram-box">
+        <img src="diagrams/neural-network.svg" alt="Neural network diagram"/>
+        <figcaption>Figure 5.1 — Layers of a feedforward network</figcaption>
+      </figure>
+      <div class="flex-grow">
+        <p><strong>Machine learning</strong> — learn parameters from examples (supervised, unsupervised, reinforcement).</p>
+        <p><strong>Neural network</strong> — connected units with non-linear activations; universal approximator in theory.</p>
+        <p><strong>Deep learning</strong> — many hidden layers; excels at vision, speech, NLP when data and compute are sufficient.</p>
+        <p>Training minimizes loss \(L(\theta)\) over weights \(\theta\) using gradient descent variants:</p>
+        <p>\[ \theta \leftarrow \theta - \eta \,\nabla_{\theta} L(\theta) \]</p>
+      </div>
+    </div>
+
+    <div class="callout exam">
+      <strong>Exam checklist:</strong> training vs inference; labelled data; validation split; bias/variance; never deploy without testing on representative users.
+    </div>
+  </section>
+
+  <section id="u6" class="chapter">
+    <h1 class="chapter-title">Unit 6 — Entrepreneurship</h1>
+    <div class="outcomes">
+      <strong>Learning outcomes (summary)</strong>
+      <ul>
+        <li>Differentiate entrepreneur vs entrepreneurship; spot opportunities.</li>
+        <li>Move from problem → idea → prototype → pitch.</li>
+        <li>Compare prototype fidelity: low / mid / high.</li>
+      </ul>
+    </div>
+
+    <h2>6.1 From problem to business idea</h2>
+    <p>Validate pain points through interviews; define MVP scope; map stakeholders (customers, partners, regulators).</p>
+
+    <h2>6.2 Prototype types</h2>
+    <table class="data">
+      <thead><tr><th>Fidelity</th><th>Form</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Low</td><td>Paper sketches, storyboards</td><td>Explore many concepts cheaply</td></tr>
+        <tr><td>Mid</td><td>Clickable wireframes (Figma)</td><td>Test flows with users</td></tr>
+        <tr><td>High</td><td>Working subset with real data</td><td>Pilot deployment, investor demo</td></tr>
+      </tbody>
+    </table>
+
+    <h2>6.3 Business model canvas (one slide)</h2>
+    <p class="flex-row" style="flex-wrap:wrap;gap:0.5rem;">
+      <span class="callout" style="flex:1 1 140px;">Value proposition</span>
+      <span class="callout" style="flex:1 1 140px;">Customer segments</span>
+      <span class="callout" style="flex:1 1 140px;">Channels</span>
+      <span class="callout" style="flex:1 1 140px;">Revenue &amp; costs</span>
+    </p>
+  </section>
+
+  <footer class="flex-row justify-between" style="margin-top:2rem;color:var(--muted);font-size:0.85rem;">
+    <span>Class XII IT Lecture Notes (draft)</span>
+    <span>End of document</span>
+  </footer>
+</div>
+</body>
+</html>

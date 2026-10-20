@@ -1,0 +1,1417 @@
+5.
+Building Your First Circuit, Step-by-Step Guide:
+This section guides you through building a simple 2-input AND gate circuit
+from scratch. The circuit will have two inputs (A and B) and one output (Y), where
+Y=A-B.
+Unit 1: Computer Systems
+Step 1: Start a New Project
+e
+Launch LogiSim Evolution from the Start menu or desktop shortcut.
+e
+A new blank project opens automatically with a circuit named 'main'. If you
+want to start fresh, select File — New.
+e
+Before building, save the file: select File — Save As, type a name such as
+AND gate circuit, and click Save. Files are saved with the .circ extension.
+Step 2: Place an AND Gate
+Figure 1.17 shows how to select a gate from the Explorer Panel and place it on
+the canvas.
+ema eee Ree
+Ti mt Eee
+File
+Edit
+Project
+Simulate
+Window
+Help
+Bee
+Project Explorer
+O My Project
+& main
+AND Gate
+AND Gate
+OR Gate
+NOT Gate
+NAND Gate
+NOR Gate
+XOR Gate
+XMOR Gate
+O Wiring
+Pin
+Clock
+Oo
+LED
+sof anon nef
+How to add a logic gate:
+1.
+Click on the desired gate inthe Explorer Panel on the left.
+2. The curser changes to a “ghost" gate that follows your mouse.
+3.
+Move the mouse to the position on the canvas where you want
+4
+to place the gate, then click the left mouse button.
+The gate is placed, Click again te place another copy:
+Took AND Gate
+| Click on canvas te place gate
+Age Click here to place the gate
+Figure 1.17: Selecting and Placing an AND Gate from the Explorer Panel
+e
+Inthe Explorer Panel, click on 'Gates' to expand the library.
+e
+Click on 'AND Gate'. The cursor changes to show a ghost image of the gate
+following your mouse.
+Unit 1: Computer Systems
+e
+Move the mouse to the center of the canvas and click the left mouse button to
+place the gate.
+e
+Press Escape or click the Select Tool (arrow) in the toolbar to stop placing gates.
+Step 3: Place Input and Output Pins
+Inputs and outputs are represented by Pins. An Input Pin is a square; it acts as
+a switch you can toggle. An Output Pin is a circle; it displays the result.
+e
+Click the Input Pin tool in the toolbar (square icon).
+e
+Click on the canvas to the left of the AND gate
+, place one pin for input A.
+e
+Place a second Input Pin below the first one
+, this will be input B.
+e
+Click the Output Pin tool (circle icon).
+e
+Place an Output Pin to the right of the AND gate
+, this will be the output Y.
+To label the pins, click the Select Tool (arrow), then double-click each pin and
+type its label (A, B, or Y) in the 'Label' field in the Attribute Table.
+Step 4: Draw Wires
+Figure 1.18 shows the wiring process. Wires in LogiSim Evolution must always
+be horizontal or vertical, diagonal wires are not allowed.
+rm aie
+eee
+eae
+File
+Edit
+Project
+Simulate
+Window
+Help
+al
+a
+|
+oF
+|
+&
+o
+|
+AND
+OR
+NOT)
+WAND)
+NOR]
+XOR
+| so
+|
+A
+ae) [=sal eae) ee
+7
+7
+:
+Drawing a Wire:
+My Project
+1. Select the Edit Tool (arrow) from the toolbar.
+main
+2. Hover over a component pin — a green circle appears.
+3. Click and drag to the destination pin, then release.
+Lea
+Wires must be horizontal or-verticat only:
+AND Gate
+OR Gate
+NOT Gate
+MAND Gate
+MOR Gate
+XOR Gate
+XNOR Gate
+O Wiring
+Pin
+AND
+Clock
+ovo
+LED
+7-Segment
+== = Wire being drawn
+=== Unconnected wire
+wee = (Connected
+[| mw)
+Tool: Edit | Drag from pin to pin to draw
+a wire
+Figure 1.18: Drawing Wires Between Component Pins
+bj,
+e
+Sf
+. 1: Computer Systems
+e
+Click on Input Pin B to toggle its value.
+e
+Observe the output pin Y and the wire colors bright green means
+1 (HIGH),
+dark green means 0 (LOW).
+e
+Test all four input combinations (0,0), (0,1), (1,0), and (1,1) and record the
+output Y each time.
+The output Y should match the AND gate truth table: Y =
+1 only when both
+A=1ANDB=1.
+Table 1.9: Expected Simulation Results AND Gate
+Expected Output
+Input A
+Input B
+wea ee
+Wire Color of Y
+0
+0
+0
+Dark green
+0
+1
+0
+Dark green
+1
+0
+0
+Dark green
+1
+1
+1
+Bright green
+Step 6: Save Your Circuit
+It is important to save your work regularly. Figure 1.20 shows the Save As
+dialog.
+Aiea oi
+mace ieee
+ait
+araject
+Simulate
+Window
+Help
+Sazial
+ert
+on | NoT|
+NAND|
+NoR|
+xoR|
+xNOR]|
+A
+Open...
+ctrl+o
+Save
+in:
+Doecuments\Logisirn\,
+Print...
+0 AND_circuit-cire
+Exit
+0 OR circuit.circ
+O NOT _circuitecinc
+B10
+Sel [eee
+oe
+File name:
+AND gate labl
+Save
+Cancel
+Save as type: | Logisim Circuit File (circ)
+Files are saved
+Wr ite a Tore
+etoty
+T
+Type your Tlename here
+Saving file: AND_gate_lablcirc
+Figure 1.20: Saving a Circuit Using the Save As Dialog
+Unit 1: Computer
+aw
+SS
+e
+Select File — Save (Ctrl+S) to save using the current filename.
+e
+Select File — Save As (Ctrl+Shift+S) to save with a new name or in a different
+location.
+e
+Choose a meaningful filename such as AND gate _labl1.circ and click Save.
+e
+LogiSim Evolution saves files with the .circ extension. These files can be
+opened on any computer with LogiSim installed.
+6.
+Placing and Testing Other Logic Gates:
+LogiSim Evolution includes all seven standard logic gates. The procedure for
+placing, wiring, and testing each gate is the same as described in Section 4. Table 1.10
+summarizes all available gates with their Boolean expressions and truth table outputs.
+Table 1.10: Logic Gates Available in LogiSim Evolution
+LETT:
+Symbol
+Boolean Expression
+Output = 1 When
+AND
+D>
+Y=A-B
+All inputs are 1
+OR
+>
+Y=A+B
+Any input is
+1
+NOT
+[>°
+Y=A'
+Input is 0 (inverts)
+NAND
+[ >
+Y =(A
+: B)'
+Any input is 0
+NOR
+De
+Y =(A+B)'
+All inputs are 0
+XOR
+}>
+Y=A@B
+Inputs are DIFFERENT
+XNOR
+pe
+Y =(A @ B)'
+Inputs are the SAME
+(a)
+Changing the Number of Inputs:
+By default, most gates in LogiSim Evolution have 2 inputs. To change this:
+Select the gate on the canvas using the Select Tool (arrow).
+In the Attribute Table (lower-left panel), find the attribute 'Number of Inputs’.
+Click the value and type the new number (between 2 and 32).
+The gate symbol on the canvas updates immediately to show the new number
+of input pins.
+(b)
+Changing Gate Facing Direction:
+By default, gates face East (inputs on the left, output on the right). To rotate a
+gate:
+Select the gate using the Select Tool.
+In the Attribute Table, find the attribute 'Facing'.
+Click the value and choose North, South, East, or West.
+Alternatively, select the gate and press Ctrl+R to rotate it 90 degrees clockwise.
+»
+YS
+aX aan V
+Unit 1: Computer
+aw
+SS
+7.
+Building a Multi-Gate Circuit:
+The real power of LogiSim Evolution is the ability to combine multiple gates
+to build more complex circuits. Figure 1.21 shows the simulation of a circuit that
+implements the Boolean expression Y = A
+- B + C, which requires an AND gate and
+an OR gate.
+De eI
+Deaee
+File
+Edit
+Project
+Simulate
+Window
+Help
+a
+®
+AND |)
+OR | NOT | NAND)
+NOR
+—
+|
+o
+XOR | XNOR
+|
+A
+ae ea elles
+O My Project
+imulation Results:
+main
+0 Gates
+AND Gate
+OR Gate
+fe
+A
+NOT Gate
+NAND Gate
+AND
+NOR Gate
+XOR Gate
+B ——
+[o]
+larer
+eB
+5
+A
+5
+Cc
+A
+¥
+1
+Su
+uu
+ro)
+co
+&
+a
+ll
+=
+™
+XNOR Gate
+‘OR
+0 Wiring
+Pin
+Clock
+Cc
+Oo
+LED
+7-Segment
+CO
+=<
+Attribute Table
+Inputs
+2
+Gate Size
+Medium
+Simulation running
+| Poke Tool active
+| Click input pins to toggle values
+Figure 1.21: Multi-Gate Circuit Simulating Y = A -B+C
+Steps to build the circuit Y= A-B+C:
+e
+Place three Input Pins and label them A, B, and C.
+e
+Place one AND gate and one OR gate on the canvas.
+e
+Connect Input A and Input B to the two inputs of the AND gate.
+e
+Connect the output of the AND gate to one input of the OR gate.
+e
+Connect Input C to the other input of the OR gate.
+e
+Place an Output Pin and connect it to the output of the OR gate. Label it Y.
+e
+Use the Poke Tool to test all 8 input combinations (A,B,C) and verify that the
+output Y matches the truth table.
+I
+Le
+Unit 1: Computer Systems
+Table 1.11: Expected Results Y=A-B+C
+A:B
+Y=A:B+C
+1.2.
+Software Development Life Cycle (SDLC):
+1.2.1 What is Software Development?
+Software development
+is the process of creating software applications.
+It
+includes:
+e
+Planning
+what
+the
+software
+should do (function)
+a
+e
+Designing
+how
+it
+will
+work
+os
+(algorithm)
+‘
+es
+e
+Writing the code (programming)
+\& \
+\
+,
+e
+Testing (debugging)
+WS
+ee
+e
+Releasing to users (deployment)
+2
+e
+Fixing
+problems
+after
+release
+(support)
+Software
+development
+is
+like
+building
+a
+house.
+We
+need a
+plan,
+materials,
+workers,
+and
+inspections
+before people can live in it.
+1.2.2 What is SDLC?
+SDLC (Software Development Life Cycle) is a structured process that guides
+software development from beginning to end.
+It provides
+a clear framework with
+specific phases and deliverables.
+d
+«
+ey
+Unit 1: Computer
+aw
+SS
+Table:1.12 Benefits of using SDLC
+TaCai
+Explanation
+Clear goals
+Everyone knows what to build
+Better planning
+Resources and time are managed well
+Quality assurance
+Testing ensures fewer bugs
+Risk reduction
+Problems are found early
+Documentation
+Records help future maintenance
+Team communication | Everyone follows the same process
+°
+1. Planning & Analysis
+2. Design
+e
+Create a design specification.
+This should answer the question,
+»
+“How will we build this?”
+Gather all relevant information
+from stakeholders and analyze
+this information to determine
+q_
+what will be feasible.
+~e/
+6. Maintenance
+3. Implement (or Code)
+;
+Building the software using
+a programming language
+by the development team.
+Updating and supporting
+|
+the software after it has
+been delivered to the market.
+5. Deployment
+“A. Testing & Integration
+e
+e
+All defects have been fixed
+elease the application to a testing
+and the software has been
+environment, test all areas of the
+built to the agreed upon
+application to spot any defect,
+goals and specifications.
+bugs or other problems.
+Figure 1.22: SDLC Cycle Diagram
+1.2.3 Phases of SDLC:
+SDLC has six main phases:
+Phase 1: Requirement Analysis (Planning)
+This is the first and most important phase. The team gathers information about
+what the software should do.
+Activities:
+Meet with customers/users
+Understand their problems and needs
+List all features required
+Create a document called SRS (Software Requirements Specification)
+Deliverable: SRS Document
+Example: For a school management system:
+e
+Students should be able to see their grades
+e
+Teachers should enter attendance
+e
+Parents should receive notifications
+CY
+LN A
+Unit 1: Computer Systems
+Phase 2: System Design
+Based on requirements, the team designs how the software will work and look.
+Activities:
+e
+Create High-Level Design (HLD): Overall structure
+e
+Create Low-Level Design (LLD): Detailed component design
+e
+Design database structure
+e
+Design user interface (screens)
+Deliverable: Design Document
+Tools used:
+e
+Flowcharts
+e
+UML Diagrams
+e
+ER Diagrams
+e
+Wireframes
+Compare with
+|
+|
+stored credentials
+|
+Figure 1.23: Example of a Simple Flowchart
+tj
+Ly
+By
+-
+x
+Phase 3: Implementation (Coding)
+Developers write the actual code based on design documents.
+Activities:
+e
+Write code in programming languages (Python, Java, C++, etc.)
+e
+Follow coding standards
+e
+Use version control (Git)
+e
+Document the code
+Deliverable: Working code/software
+Best Practices:
+e
+Write clean, readable code
+e
+Add comments to explain complex parts
+e
+Test code as we write
+e
+Review code with team members
+Phase 4: Testing
+The software is tested to find and fix errors (bugs).
+Table 1.13
+: Types of Testing
+Testing Type
+Tea ate e iyi)
+Who Does It
+Unit Testing
+Test individual components
+Developers
+Integration Testing
+Test combined modules
+Testing team
+System Testing
+Test complete system
+Testing team
+User Acceptance Testing (UAT) _ Test by actual users
+End users
+Testing Methods:
+Black Box Testing:
+e
+Tester does NOT see the code
+e
+Tests only inputs and outputs
+e
+Checks if software works correctly for users
+e
+Example: Enter username and password, check if login works
+White Box Testing:
+e
+Tester CAN see the code
+e
+Tests internal logic and structure
+e
+Checks if code is written correctly
+e
+Example: Check if all conditions in the code are tested
+Co
+LN A
+Unit 1: Computer Systems
+Table 1.14
+: Comparison of Black box and White box testing
+Black Box Testing
+White Box Testing
+Does not need code knowledge
+Needs programming knowledge
+Tests functionality
+Tests code structure
+Done by testers
+Done by developers
+Tests what software does
+Tests how software does it
+Deliverable: Test reports, bug-free software
+Phase 5: Deployment
+The software is released to users.
+Table 1.15: Deployment strategies
+Direct Deployment
+Replace old system immediately
+Phased Rollout
+Release to groups of users gradually
+Pilot Release
+Release to small group first, then everyone
+Parallel Running
+Run old and new systems together temporarily
+Deliverable: Live software available to users
+Phase 6: Maintenance
+After release, the software needs ongoing support and updates.
+Table 1.16
+: Types of Maintenance
+Type
+Yaa Cy
+Example
+Corrective
+Fix bugs found after release
+Fixing login error
+Adaptive | Change for new environments | Update for new Windows version
+Perfective
+Add new features orimprove
+Add dark mode
+Preventive | Prevent future problems
+Improve code for better performance
+Deliverable: Updated versions, patches, support
+A BP 7
+By
+-
+x
+1.2.4 SDLC Models:
+Different projects need different approaches. SDLC models define how phases
+are organized.
+(a)
+Waterfall Model:
+The Waterfall model is a linear, sequential approach. Each phase must be
+completed before the next begins. There is no going back.
+Requirements
+,__
+Requirements
+=
+Analysis &
+Specification
+wy
+Design
+System &
+Software Design
+Implementation
+Implementation &
+Coding
+Testing
+Integration
+& Testing
+Next phase begins only
+after previous phase
+is completed
+Next phase begins only
+|
+after previous phase
+is completed
+Deployment
+& Release
+Maintenance
+C
+Maintenance &
+Evolution
+Next phase begins only
+}&
+after previous phase
+is completed
+Figure 1.23: Waterfall Model Diagram
+Characteristics:
+e
+Sequential (one phase after another)
+e
+No overlapping phases
+e
+Heavy documentation
+e
+Changes are difficult and expensive
+When to Use Waterfall:
+e
+Requirements are clear and fixed
+e
+Technology is well understood
+e
+No major changes expected
+Unit 1: Computer Systems
+Table 1.16
+: Advantages of using Waterfall model
+Advantage
+Explanation
+Simple to understand
+Clear, linear process
+Easy to manage
+Defined phases and milestones
+Well documented
+Complete records at each phase
+Works for small projects
+When requirements don't change
+Table 1.17: Disadvantages of using Waterfall model
+Disadvantage
+Explanation
+Not flexible
+Hard to make changes
+Late testing
+Bugs found late in process
+High risk
+Problems discovered late are costly
+Not suitable for complex projects | Cannot handle changing requirements
+(b)
+Agile Model:
+The Agile model is an iterative approach. Software is developed in small cycles
+called sprints (usually 2-4 weeks).
+‘er
+ToDo
+In
+Progress
+|
+y
+Figure 1.24: Agile Model Diagram
+Characteristics:
+e
+Iterative and incremental
+e
+Flexible to changes
+e
+Customer involvement throughout
+e
+Working software delivered frequently
+e
+Team collaboration emphasized
+d
+¢
+Unit 1: Computer
+aw
+SS
+Table 1.18: Key Agile Concepts
+Ma]
+Meaning
+Sprint
+Short development cycle (2-4 weeks)
+User Story
+Feature described from user's perspective
+Scrum
+Popular Agile framework
+Daily Standup
+Short daily team meeting
+Product Backlog
+List of all features to be developed
+When to Use Agile:
+e
+Requirements may change
+e
+Customer wants to see progress frequently
+e
+Project is complex or large
+e
+Innovation and speed are important
+Table 1.19: Advantages of using Agile model
+Advantages
+Explanation
+Flexible
+Easy to add or change features
+Early delivery
+Users see working software quickly
+Customer satisfaction
+Regular feedback and involvement
+Lower risk
+Problems found and fixed early
+Better quality
+Continuous testing
+Table 1.20
+: Disadvantages of using Agile model
+ITEM Ee tered
+Explanation
+Less documentation
+May cause problems later
+Requires commitment
+Customer must be available
+Unpredictable
+Hard to estimate time and cost
+Scope creep
+Features may keep expanding
+1.2.5: Case Study 1: Waterfall Model
+The Al-Noor Library Management System:
+1.
+Background:
+Al-Noor High School has 1,200 students and 80 teachers. The school library
+contains approximately 2,400 books. Before this project, the library used a paper-based
+system where students recorded their name, class, and book title in a handwritten
+»
+4
+aX aan
+Unit 1: Computer Systems
+register when borrowing
+a book. This system had several problems: books were
+frequently lost, records were difficult to search, and the librarian spent considerable
+time each week compiling overdue lists by hand.
+The school administration decided to commission
+a computerized Library
+Management System (LMS). The requirements were discussed in detail with the
+librarian and principal before development began. Because the requirements were
+clear, fixed, and unlikely to change during development, the project team selected the
+Waterfall model as the most appropriate SDLC approach.
+2.
+Table 1.21: Project Overview
+Parameter
+Details
+Project Name
+Al-Noor Library Management System (LMS)
+Client
+Al-Noor High School Administration
+Development Team
+2 Developers, 1 Tester,
+1 Project Manager
+Total Duration
+6 months (January to June)
+SDLC Model
+Waterfall Model
+Technology Stack
+Python 3.10, Tkinter GUI, SQLite database
+Platform
+Windows 10 (no internet connection required)
+Why the Waterfall Model Was Selected:
+The project team evaluated two options
+, the Waterfall model and the Agile
+model, before beginning development. The Waterfall model was chosen for the
+following reasons:
+3.
+Fixed requirements: The school knew exactly what the system had to do. No
+new features were anticipated once development began.
+Clear deadline: The system had to be operational before the start of the new
+academic year, giving the team a firm endpoint.
+Small team: With only four team members, the linear structure of Waterfall was
+easier to manage than iterative sprints.
+Low complexity: The system performed well-understood operations (add,
+search, borrow, return, report) with no experimental features.
+Adequate
+documentation:
+The
+school
+required
+a
+written
+record
+of
+all
+requirements and design decisions for future reference.
+The Waterfall Model:
+The
+Waterfall model
+organizes
+software development
+into
+six
+distinct,
+sequential phases. Each phase must be fully completed and formally approved before
+the next phase begins. Unlike the Agile model, there is no mechanism to return to an
+Unit 1: Computer Systems
+earlier phase once
+it
+is complete. Figure 2.5 illustrates the sequential flow of the
+Waterfall model.
+Leia
+Maintenance
+—
+Figure 1.25: Waterfall Model
+, Sequential Phase Diagram
+4.
+Project Timeline:
+The six phases were planned as follows. Figure 2.6 shows the project timeline
+as a Gantt chart, illustrating the duration and sequence of each phase.
+Phase
+Jan Wk1-2)
+Jan Wk3-4
+Feb
+Mar
+Apr
+WEN
+ADT
+Requirement Analysis
+System Design
+Implementation
+Testing
+Deployment
+Maintenance
+Figure 1.26: Al-Noor Library System
+, Project Timeline (Gantt chart)
+5.
+The Six Phases of the Project:
+Phase 1: Requirement Analysis (January, Weeks 1-2)
+The project manager held two formal meetings with the school librarian, two
+teachers, and the principal. The team used structured interviews and observation to
+document all requirements. The following six core requirements were identified:
+e
+The librarian must be able to add, edit, and remove book records.
+»
+Y
+UU
+xX
+C)
+aX wa
+V
+\
+Unit 1: Computer Systems
+e
+Students must be able to search for books by title or author name.
+e
+The system must record the student name, class, book borrowed, date borrowed,
+and expected return date (14 days).
+e
+The system must display an alert for any book not returned within 14 days.
+e
+The librarian must be able to generate and print a report of all overdue books.
+e
+The system must run on the existing school computers (Windows 10) without
+requiring internet access.
+Deliverable: Software Requirements Specification (SRS) document, reviewed and
+signed by the school principal.
+sd)
+Once the principal signed the SRS document, no new requirements
+WYLUL
+«could be added. This is a fundamental rule of the Waterfall model,
+requirements are frozen after Phase 1.
+Phase 2: System Design (January, Weeks 3-4)
+Using the signed SRS document, the team produced a full design specification
+covering the database structure, screen layouts, and the technology stack.
+The design decisions made during this phase were:
+e
+Programming language: Python 3.10 with Tkinter
+for the graphical user
+interface.
+e
+Database: SQLite, stores all data in a single file on the local computer with no
+server required.
+e
+Five
+screens
+designed:
+Login,
+Home
+Menu,
+Book
+Management,
+Borrow/Return, and Reports.
+Figure 1.27 shows the database schema, the structure of the two main database
+tables and their relationship.
+1 Book has
+many loans
+1 Student
+h
+many loans
+STUDENTS
+Oo BookID
+ments
+H StudentID
+INT (PK)
+Title
+Oo LoanID
+intiek) | FullName
+TEXT
+Author
+BookID
+iInT(rK) | Class
+TEXT
+Category
+StudentID
+int(eK) | Phone
+TEXT
+TotalCopies
+DateBorrowed
+DATE
+DateDue
+DATE
+DateReturned
+DATE
+1
+: Many
+1
+: Many
+Figure 1.27: Library Management System
+, Database Schema
+7, LM | Ls
+Unit 1: Computer Systems
+Table 1.22 Screen Design Summary
+Screen Name
+Purpose
+eviielam@ eho,
+|
+Login Screen
+Password authentication before access
+Librarian
+Home Menu
+Navigation to all features
+Librarian / Student
+Book
+Add, edit, delete, and search book
+4
+Librarian
+Management
+records
+Record borrowing and returning of
+Borrow / Return
+Librarian
+books
+Reports
+View and print list of overdue books
+Librarian
+Deliverable: Design Document,
+all screen layouts,
+database tables, and system
+flowcharts.
+Al-Noor Library Management System — Book Management [Librarian: Ms. Fatima]
+Book Management
+Add, Edit, Delete and
+Search
+allb
+Tama
+el
+File
+Books
+Loans
+Students
+Reports
+Settings
+Help
+MG) Seneca
+Filter by:
+|Category: all
+|¥| [Availability: all
+|¥|
+[Class Level: All
+| ¥|
+Showing 1-10 of 2,418 books
+Book ID | Title
+PTAs
+foetal
+Total
+— oy
+;
+BK-0001 — Digital Logic and Computer Design
+M. Morris Mano
+ComputerSci.
+4
+3
+nvatale
+label
+BK-0002 = Introduction te Python Programming — Eric Matthes
+Programming
+3
+Available
+a)
+Network Fundamentals — CCNA
+oC Fl Rel Ns
+& Overdue Books
+BK-0004
+Computer Architecture & Organisati
+William Stallings
+ComputerSci.
+3
+3
+Available
+eae
+BK-0005 = Calculus and Analytical Geometry
+Thomas Finney
+Mathematics
+6
+4
+Available
+BK-0006 = English Grammiar in Use
+Raymond Murphy
+English
+5
+5
+Available
+eda
+BK-0007
+C++ Howto Program
+Deitel & Deitel
+Programming
+4
+1
+Available
+BK-0008
+= Physics for Scientists
+Serway & Jewett
+Physics
+4
+2
+Available
+BK-0009 ~~ Digital Electronics — Principles
+AP. Malvino
+Electronics
+3
+3
+Available
+BK-0010
+Database Management Systems
+Ramakrishnan
+ComputerSci.
+2
+0
+All Out
+|»
+Selected Book Details:
+BK-0003 — Network Fundamentals — CCNA (Todd Lammle)
+Book ID:
+BK-0003
+Category:
+Networking
+Title:
+Network Fundamentals — CCNA
+ISBN:
+978-1-119-58867-4
+Author:
+Todd Lammile
+Total Copies: 2
+Publisher:
+Sybex / Wiley
+Borrowed:
+2
+(All copies out)
+Year:
+2019
+Available:
+0 4 All Out
+_< || 2 | 3 ||... |[2a2)[ > |
+Book Management
+|
+2.418 total books
+|
+Selected: BKOOO3
+Ms. Fatima Ahmed
+| Al-Noor LMS v1.0
+Figure 1.28: Book Management Screen LMS.
+Phase 3: Implementation, Coding (February and March)
+The two developers divided the coding work according to their specializations.
+Developer 1 built the database layer and all data operations (add, search, borrow, return,
+and generate reports). Developer 2 built all five graphical screens and connected them
+to Developer 1's code.
+=
+“ie
+ba
+‘|
+Sf
+. 1: Computer Systems
+a
+Coding standards followed during this phase:
+e
+All source code was stored in a Git version control repository.
+e
+Each function was documented with a comment explaining its purpose.
+e
+The developers held a 30-minute review meeting every Friday to check progress
+and resolve any problems.
+e
+Code was tested by the developer who wrote it before being passed to the other
+developer.
+——<
+NN
+Deliverable: Working software, Version 1.0 (internal build, not yet tested by the formal
+tester).
+Phase 4: Testing (April)
+A dedicated tester, who had not been involved in coding, tested every feature
+using a formally prepared test plan. This approach is known as Black Box Testing: the
+tester checks inputs and outputs without examining the code itself.
+Table 1.23: Test Results
+Test #
+Feature Tested
+Deere CAL
+Actual Result
+Status
+T-01
+Add anew book
+a
+Saved correctly
+J Pass
+database
+Search by title
+Correct book
+Book found
+T-02
+(exact)
+displayed
+immediately
+v Pass
+T-03
+eee wa
+Se
+System crashed
+X Fail
+misspelling
+result shown
+T-04
+Borrow a book
+Loan recorded with
+Loan saved
+Y Pass
+return date
+correctly
+T-05
+Return a book
+Loan marked as
+Return date
+Y Pass
+returned
+recorded
+Overdue alert
+Alert displayed
+.
+;
+T-06
+after 14 days
+automatically
+Alert not displayed
+X Fail
+T-07
+ST
+Report sent to
+Printed correctly
+J Pass
+report
+printer
+T-08
+Login with wrong
+Access denied
+Access denied
+Y Pass
+password
+message shown
+shown
+¢
+<
+MN)
+lf
+az
+2.)
+ET
+u|
+BR
+Unit
+1: Computer
+Systems
+Two test failures were identified and corrected:
+e
+T-03, Search crash: When a student entered an incomplete or misspelled title,
+the search function raised an unhandled exception.
+The
+fix added input
+validation and a 'no results found' message for unmatched searches.
+e
+T-06, Overdue alert: The alert was coded to run only when the librarian clicked
+a dedicated button, not automatically. The fix added an automatic check that
+runs every time the application starts.
+e
+After applying both fixes, all eight tests were repeated. All tests passed on the
+second run.
+Deliverable: Formal Test Report, listing every test case, its result, and the corrective
+action taken.
+Phase 5: Deployment (May)
+The approved software was installed on two computers in the school library. A
+Pilot Release strategy was used: the librarian used the system alone for two weeks
+before it was opened to students. This allowed any remaining issues to be identified in
+a controlled environment.
+Deployment steps completed:
+e
+Software installed on Library Computer
+1
+(librarian's desk) and Library
+Computer 2 (student search terminal).
+e
+The librarian entered all 2,400 existing book records into the system over three
+working days.
+e
+A one-day training session was held for the librarian and two student helpers.
+e
+A printed Quick-Reference Guide was placed next to each computer.
+e
+After the two-week pilot with no problems, the system was opened to
+all
+students on the first day of the new term.
+Deliverable: Live, operational Library Management System installed and in use.
+Phase 6: Maintenance (June onwards)
+During the first month of operation, the librarian reported a small number of
+issues and requested one additional feature. These were handled as maintenance tasks
+categorized by type.
+>
+\
+Unit 1: Computer Systems
+Table 1.24: Maintenance Tasks
+Issue / Request
+Maintenance Type
+Action Taken
+.
+.
+Fixed a printer driver
+Printer does not print
+sy
+cqe
+.
+Corrective
+compatibility issue in the report
+the report on some days
+module
+‘e-books tothe same
+«Adaptive
+-«—«=«‘Added.a now E-Book’ category
+P
+with a download-link field
+system
+Search is slow when
+Improved the database query
+more than 2,000 books
+Perfective
+speed
+, search now completes in
+are added
+under 1 second
+Automatic daily data
+Preventive
+Added automatic backup to a
+backup needed
+USB drive every day at 5:00 PM
+6.
+Project Outcome:
+The Al-Noor Library Management System was delivered on schedule and
+within the agreed budget. The following results were recorded after the first term of
+operation:
+e
+The system was completed in exactly 6 months as planned, with no schedule
+overrun.
+e
+All 2,400 library books were entered into the database within the first week of
+deployment.
+e
+Students can now locate any available book in under five seconds using the
+search feature.
+e
+Overdue book returns decreased by 70% in the first term compared to the paper-
+based system.
+e
+The librarian estimated a saving of approximately three hours of administrative
+work per week.
+Key Observation:
+The Waterfall model worked well in this project because the
+requirements were completely defined before development began and did not change
+during the six-month period. The model's rigid structure kept the team focused and the
+project on schedule.
+1.2.6. Case Study 2: Agile Model
+The Al-Noor Student Mobile Application
+1.
+Background:
+Following the successful deployment of the Library Management System (Case
+Study
+1), the Al-Noor High School administration decided to develop
+a mobile
+é
+¢
+MN)
+lf

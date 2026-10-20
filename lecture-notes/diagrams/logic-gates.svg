@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 220" role="img" aria-label="Basic logic gates">
+  <style>
+    .lbl { font: 600 11px Segoe UI, sans-serif; fill: #1a1a2e; }
+    .pin { fill: #2563eb; }
+    .wire { stroke: #475569; stroke-width: 2; fill: none; }
+    .gate { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; }
+  </style>
+  <!-- AND -->
+  <text x="60" y="18" class="lbl" text-anchor="middle">AND</text>
+  <path class="gate" d="M55 35 H75 Q95 35 95 55 Q95 75 75 75 H55 Z"/>
+  <text x="75" y="60" class="lbl" text-anchor="middle" font-size="10">&amp;</text>
+  <line class="wire" x1="25" y1="48" x2="55" y2="48"/><circle class="pin" cx="25" cy="48" r="4"/>
+  <line class="wire" x1="25" y1="62" x2="55" y2="62"/><circle class="pin" cx="25" cy="62" r="4"/>
+  <line class="wire" x1="95" y1="55" x2="120" y2="55"/><circle class="pin" cx="120" cy="55" r="4"/>
+  <!-- OR -->
+  <text x="180" y="18" class="lbl" text-anchor="middle">OR</text>
+  <path class="gate" d="M155 35 Q175 55 155 75 Q165 55 155 35 M155 35 L175 55 L155 75" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="168" y="60" class="lbl" text-anchor="middle" font-size="10">e1</text>
+  <line class="wire" x1="125" y1="48" x2="155" y2="48"/><circle class="pin" cx="125" cy="48" r="4"/>
+  <line class="wire" x1="125" y1="62" x2="155" y2="62"/><circle class="pin" cx="125" cy="62" r="4"/>
+  <line class="wire" x1="175" y1="55" x2="200" y2="55"/><circle class="pin" cx="200" cy="55" r="4"/>
+  <!-- NOT -->
+  <text x="260" y="18" class="lbl" text-anchor="middle">NOT</text>
+  <polygon class="gate" points="235,40 235,70 265,55"/>
+  <circle cx="270" cy="55" r="5" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <line class="wire" x1="210" y1="55" x2="235" y2="55"/><circle class="pin" cx="210" cy="55" r="4"/>
+  <line class="wire" x1="275" y1="55" x2="300" y2="55"/><circle class="pin" cx="300" cy="55" r="4"/>
+  <!-- XOR -->
+  <text x="360" y="18" class="lbl" text-anchor="middle">XOR</text>
+  <path class="gate" d="M315 35 H335 Q355 35 355 55 Q355 75 335 75 H315 Z"/>
+  <path fill="none" stroke="#2563eb" stroke-width="2" d="M308 35 Q328 55 308 75"/>
+  <text x="335" y="60" class="lbl" text-anchor="middle" font-size="10">=1</text>
+  <line class="wire" x1="285" y1="48" x2="315" y2="48"/><circle class="pin" cx="285" cy="48" r="4"/>
+  <line class="wire" x1="285" y1="62" x2="315" y2="62"/><circle class="pin" cx="285" cy="62" r="4"/>
+  <line class="wire" x1="355" y1="55" x2="380" y2="55"/><circle class="pin" cx="380" cy="55" r="4"/>
+  <!-- Truth hint row -->
+  <text x="240" y="115" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="12" fill="#4a5568">Build circuits in Logisim: pins ’ gates ’ LED/output</text>
+  <rect x="40" y="130" width="400" height="75" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="55" y="152" font-family="Segoe UI,sans-serif" font-size="11" fill="#1a1a2e">AND: Y = A · B</text>
+  <text x="55" y="172" font-family="Segoe UI,sans-serif" font-size="11" fill="#1a1a2e">OR:  Y = A + B</text>
+  <text x="55" y="192" font-family="Segoe UI,sans-serif" font-size="11" fill="#1a1a2e">NOT: Y = A</text>
+  <text x="240" y="152" font-family="Segoe UI,sans-serif" font-size="11" fill="#1a1a2e">NAND / NOR / XOR  combine for any Boolean function</text>
+  <text x="240" y="172" font-family="Segoe UI,sans-serif" font-size="11" fill="#1a1a2e">Use truth tables to verify before wiring</text>
+</svg>

@@ -1,0 +1,1294 @@
+friendly. Examples of creating step-by-step low-fidelity frames in Figma are given
+below.
+Qo Open Figma and create or apen a file
+s-
+t
+oem
++
+te
+Reet
+4
+mete
+=
+he
+a
+a
+«
+¥
+Peet
+ves
+2 Renee?
+f Rents
+. hom
+rod
+@- T-0O--T-O8
+Be
+Create a new file or open an existing one,
+C Adjust size and position (optional)
+,
+ee
+6
+went
+oe
+oe roe
+=
+=
+Pile
+~
+a
+wes nme
+mee 2:
+i
++
+a
+ee.
+op
+a ce
+1.
+a.
+=
+a beet
+|
+i
+Paws
+Om
+gw
+gg.
+Sheet
+i
+iq
+@
+3
+"==
+a B-D-
+8-1: OF ee
+Use the right pane! to adjust width, height,
+Mignment, padding, and more.
+incre ecemecen enone
+@ Duplicate or create more frames (optional)
+.
+"Chick
+the Frame tool for press Fh.
+s-
+®
+fmtt
+6
+Om
+Ce
+‘Oat
+«
+.
+en ae
+8
+gt 2
+=
+im
+a
+uch
+#
+‘ee
++
+£8 canes
+og’
+Bede
+=
+>
+i
+6
+ete
+ia
+teers
+bs
+ate
+Lopate
+byt
+Esnenrg
+0-0-0 roree
+Customize
+the frame's fil color, stroke,
+3 efiects, or other appearance settings.
+How to Add a Frame in Figma: A Step-by-Step Guide
+?
+wy OS =e)
+Oo
+SAF
+weccea”
+We
+So
+ae
+fos",
+2
+or
+}
+Fe
+@- :-ore-t-o we
+Gack and drag on the carves to
+create 0 frome of the desired size.
+=
+Aad content
+inside the frame
+} ie
+s
+m4
+om
+*|
+fo
+e
+ao
+°
+[tm
+e
+-
+xt
+ou
+ce
+°
+ile
+»
+.
+Be
+amen
+jo
+=
+i Prmmer
+-_—
+°
+som
+eens
+*
+0
+§
+@e-o-vromes
+_
+‘Addd text, shapes, Images, or components
+inside
+the frame.
+B-
+0
+Parett
+‘
+eon i703”
+t
+Be
+©
+Vented
+©
+‘4
+Y
+tot
+,
+remind
+Crate. hose
+| Owes He”
+has
+Qa
+|
+ae
+aw
+@
+oon
++
+| pe
+e
+oe
+1
+|
+Doge
+tapes
+|
+S Peet?
+|
+@ eens
+oF ees
+a)
+@ frame
+steal
+@J-1-0-%-T-O8
+& +
+Create additional
+frames as needed by
+repeating
+the same steps.
+2
+©) Your frame
+is ready!
+eas
+;
+a: n-0-68-TO#8
+Your frame is ready to use in your design,
+Gwe
+ie
+~
+°
+ae,
+Ms g ; Activities .
+Ee
+"Students will design a functional mobile app prototype
+called “E sratoref 8
+HCI.” The aim of this activity is to practice interface design skills and understand how
+HCI principles are applied in real-world projects.
+To do Task:
+Students will follow a step-by. step process to create a basig ptototype in ntiath
+1.
+Create an account and access the Figma nena
+2. ate
+mobile design frames
+3.
+ya
+adjust existing layouts —
+|
+4.
+profile elements such as text, images, and buttons
+,
+> fone
+screens using the Prototype féature
+6.
+Test the design using Presentation View
+Step 1: Sign Up and Access Figma workspace
+e
+Go to https://www.fi gma,com,
+“Create a free account or sign in ‘if you already have one.
+e
+Click Frame Selection to begin ed design Wengepae
+Step 2: Create F rames
+Es
+1. From
+the
+Frame
+Pane,
+select.
+a. Prototype
+of
+“Mobile”
+screen
+“<Phonel7”recommended.
+|
+-
+2. Createtwo frames:
+.
+3
+_ Frame “iPhonel7” — for your main design work.
+.
+oOo
+:
+ers
+F
+rane? -1
+-
+e
+meee?
+I.
+"38
+2
+48
+8
+Seat
+nt
+3
+a:
+wf
+:
+s
+s
+iif pel
+rSftT
+@ou-o-e-T-of
++
+Unit 1: Computer
+System
+elect
+fra ame Design:
+.
+re.
+)
+Title layout: “E-Tutorial of Human Computer Interaction”
+centered
+a
+in ne bold sans-serif font (recommended: Inter or Roboto, 24 pt).
+ii) Illustration placement: A visual of a person at a cae woe te
+oe E iostnig theme and adds approachability.
+7
+ne * “Call-to-eetion button: “Sign-up” button placed below the ‘tad
+ating
+rounded comers (radius=30px)
+and
+a
+contrasting
+color (sky-blue or
+~ royal-blue) for visibility.
+,,
+a
+)
+Background and spacing: nie .
+peraneety
+White
+background ™™*
+|
+_
+(#FFFFFF) with generous
+™
+:
+padding
+§=(©20px) fom
+9
+#
+|
+maintain clarity on mobile
+dik
+;
+|
+.
+=
+gos
+SOreens,
+BE
+aa
+Bee
+vy)
+_ Purpose:
+Serves - as "
+ie
+ements
+entry point for learners to *""""
+register
+and begin. the
+tutorial,
+©
+vi)
+Select . “Fill” go Tibracy
+-
+si
+pick background colour by
+ieee
+x=.
+- colour picker. Be
+ee
+OE
+ta ee
+nee
+SS. 8+:
+% Frame
+Shin
+ND gyi Pee
+pi®
+iss:
+:
+Ea Te )s
+:
+qe
+:
+\ Unit 1: Computer Systems
+ne
+|
+i
+‘
+Step
+3: Duplicate and Modify Desig
+:
+oe ;
+LAY
+|.
+Copy and paste the first frame side-by-side to create a replica.
+bie
+2. Add images by clicking the Image tool.
+i ;
+es
+\
+A
+3,
+Change colours or elements in the second fate (e. ui
+rectangle ¢ “ali
+é
+visual feedback,
+(ater
+er
+<=
+ae
+B--8-0-TOR
+sale
+.
+Sg
+k
+.
+too
+sp uiinacbE ra beni
+\
+aT
+RF.
+Oo
+Peete?
+Proen-d
+a
+Josey
+ere
+'@-
+D a
+United
+Welcome, Alex!
+3
+Delon
+re
+| Dove ee
+ie
+Srudent Sig Up
+ee eae
+es
+oe
+=
+mm
+Eitan
+!
+—
+el
+cian
+cinema
+ere rere
+c
+,
+t
+‘
+=
+~ — Computerineracion
+eer)
+«| BLL Om Ed
+se
+|
+Ee es
+tee
+ial
+,
+}
+“BB bead Addr Eero end
+|
+pewttine
+‘
+Eas Fre
+|.
+7
+=
+i
+fats
+J
+SS
+oS
+mer
+Sq, |
+eee oh
+ar
+& tempt
+|
+9
+a
+[xy
+7
+a
+oe
+aR
+— - + -
+|
+teers
+eu
+ee eee
+fags
+cd
+a
+{age
+th Ser
+Coons
+ee ae |
+ec) eel
+Ses
+& Pen-2
+i
+:
+:
+=
+-
+Spawning Anignmerte
+_———
+!
+*
+|
+:
+Oy
+RN
+:
+="
+>]
+Ups
+’
+% Poe
+canton
+x
+pore
+met
+:
+,
+|
+'
+=
+ts
+| mame
+B toma?
+|
+i raenareee
+>
+wa
+wan
+a!
+t
+i
+ee
+tr
+:
+2
+a
+aad
+os
+secon?
+Ques
+cy
+=)
+i
+mh
+2
+Pr
+“Rt,
+i
+o
+ac
+Ome — Renwood
+| | Mowe ©
+~)
+i
+|
+h
+’
+ae
+:
+fe
+ms
+© >
+a u- a ®-T-OR. Ey
+ies
+co
+ee
+Step 4: Add Design Elements
+In Frame 1, design the User Profile layout:
+Open Frame 1: Confirm device size (e.g., iPhone 16/ 17 Pro).
+Background image: Insert'a subtle, thematic image.
+Text boxes: Add fields for Name, Batch, Role.
+Typography: Apply sans-serif font (Inter/Roboto), set size and alignment.
+Buttons: Draw rectangles for Sign Up, Sign In, Sign Out.
+Appearance:
+Adjust
+opacity,
+fill color (sky- -blue/royal-blue),
+and corner
+radius.
+:
+Consistency: Duplicate button shapes across forms, change only labels.
+c
+An kwWwn
+differences are visible during interaction. This helps you test transitions
+ind
+—=——
+=
+Unit 1: Computer S)
+o- a-o
+®-T-OR alae |
+Pua?
+E Tutorial of Human
+Student Sgn Up
+Computer Interaction
+QB
+fahaee tees pura
+Gh Final Address Enter your end
+"oO
+J
+| aged tothe os blo
+sg
+beady Nave an account?
+| 95)
+OOOO
+|
+A ves reinent sr px paras
+A Cottits Pasneced conden upon
+a
+@-
+ft: O-®+T:
+oO
+8
+“alnje
+Se
+ae
+5
+| 6):
+A rane twjare
+|
+,
+falas
+scat
+ng
+$A eral Aten Ere your onl
+a
+&
+poy
+5 we
+prey
+ree Prsewerd
+ste your prswcrd
+jm ——————_
+& Peer?
+el
+are ae
+See
+“pyuseny cin |
+“9 Noyes
+so
+Semi beh,
+& terug ht
+=o
+Gime
+|
+open
+Prenet?-)» | (Peston
+Soutempewe |
+4
+es
+=
+|
+Queene
+fo
+ee
+& feer-s
+—
+-
+ao
+as
+me
+E Sete!
+) ager
+Hee eis
+| SS
+|
+& Pone-2
+or
+Upaming Aig
+| fg = Emo
+,
+\
+,
+Reneving sconrecton
+x
+=
+yo om
+!
+= Recon!
+Peto ype Uaitny Tet
+(=i
+s
+S
+tea
+4
+Peto
+|e
+:
+& Feet
+-
+© Gmateae
+tt
+Avendy have an aCeeKT
+Lei
+ee
+| Pe
+Step 5:
+3) ane
+and View Prototype
+2. Ty App functionality Press. Sign-Up button i in Pare
+screen,
+oS
+epeiye how the design transitions between frames it ai
+:
+Student Sign Up
+E Tutorial of Human
+- Computer interaction
+Qe Ratan
+cote
+cor Fes
+GB bined bhhen
+«
+@ Weave rowed |:
+QR Con
+Penner Comte jou pms
+‘
+®
+Vagiee to the Sores B\apasiieds
+RAR)
+”
+Already have an account? og
+Unit 1: Computer
+S$
+1.11
+Test and Evaluate HCI:
+Testing and evaluation are important steps in designing
+a product. Testing
+checks if the product works properly, while evaluation determines whether. it meets
+users' needs. Together, these processes improve the product before it is released.
+1.11.1
+Evaluation:
+Evaluation is the process of checking
+the
+quality of a system in terms of
+usability, accessibility, and user satisfaction. It uses tests, oe a
+analytics, and
+feedback to find problems and suggest improvements. Todls like SUS (System
+Usability Scale), NPS (Net Promoter Score), and task success rates help measure
+performance. Evaluation is done during development and after release to guide future
+changes and measure real-world impact. Following are the various evaluation methods.
+its LRA
+Nate eed
+[eel
+eee eae Wa
+Enter number of respondents
+> mit
+a
+a eae |
+3
+~ mai |
+~ sige
+|
+pe
+|
+=i
+= Siete
+Figure 1.19: website of www, npscalculator.com for evaluating the quality of accessibility and
+user experience,
+ee Lod
+TT ies ch) Usability Scale Analysis coat
+Tha System Usileility Scale Analys Toolkit
+Get insights & plots for
+your System Usability
+-
+Sm
+nating
+me
+Scale study. Instantly!
+som
+rey Bort Asem eet Bee
+Figure 1.20: www.sus.tools.com , System usability seale analysis toolkit, for evaluating the
+quality of web contents
+1} CamScanner
+e
+User Centered methods evaluation refers to evaluation techniques where real
+users interact with
+a system to identify usability issues, preferences, and
+behaviour in practical use.
+e
+Formative studies evaluation refers to early-stage evaluations conducted during
+development to collect continuous feedback and improve design iteratively.
+e
+Summative evaluation refers to final-stage assessment used to measure overall
+usability, effectiveness, and goal achievement after system completion.
+e
+Expert
+reviews
+evaluation refers
+to. evaluations conducted
+by usability
+specialists using
+established design standards and best practices.
+:
+e
+Surveys and interviews refer to methods for collecting user feedback, opinions,
+and satisfaction levels. In this context, standardized metrics such as SUS
+(System Usability Scale) and NPS (Net Promoter Score) shown in figure 1.20
+|
+and1.19 are commonly used to quantify usability and user loyalty.
+e
+Accessibility evaluation refers to assessing whether a system is usable by
+individuals with diverse abilities, including those with disabilities.
+1.11.2 Testi ng:
+.
+Testing is the process of checking whether a developed product works correctly
+and meets users’ needs. It helps identify errors, improve performance, and ensure the
+product is ready for use. The following are some common testing methods.
+4
+¢
+Usability testing refers to evaluating a system by observing users while they
+perform realistic tasks to measure efficiency, effectiveness, and satisfaction.
+ee Testing a
+ou ro
+| Sign-Ups
+r
+eene
+WF Time Spent
+'
+50%
+ie B2
+ee
+Which Version Performs Better?
+Figure 1,21: Illustration of usability testing
+Unit 1: Computer Systems
+¢
+Task-based testing refers to assessing system usability by assigning specific
+tasks to users and measuring completion time, success rate, and errors,
+Task-Based Usability Testing
+Task 1; Find
+# Product
+| Task
+2: Add to Cart
+Completion Time
+Suiccens Rate
+;
+Exuct
+_
+Which Version Performs Better?
+Figure 1.22: Illustration of Task Based testing
+e
+Automated audits refer. to the use of software tools to detect technical and
+accessibility issues such as code errors, broken links, and colour contrast
+problems.
+Automated Audits”
+ry Low Contrast me
+goose crete ety
+CamScanner
+a Keyboard and screen-reader walkthroughs refer to testing system navigation
+using only assistive technologies
+to
+ensure accessibility
+for users
+with
+disabilities.
+ai
+‘Genet
+jet
+_Keyboard & & Sereen-Reader Walkthroug IS
+é
+a ee ne ee
+ee
+ee ee ee ee ee ee ea emer
+' Press Tab;
+| Screen Reader:
+| to Navigate
+=>
+ne Pigs
+ee
+Of
+ea)
+i MGdida
+ara UL
+eee
+ne
+-
+?
+q
+Screen Reader
+Pernt tu ate
+Figure 1.24: Iustration of Keyboard and Screen reader walkthrough test
+Prototype testing refers to validating early design models by observing user
+interaction with mock-ups under controlled conditions.
+wrens
+mo
+Shr
+OE,
+MEL Be seen
+,
+|
+Try to find the
+|
+Profile Page
+™
+_~
+-
+Unit 1: Computer Sys
+e'
+e
+A/B testing refers to comparing two versions of an interface by analysing real
+user performance and behaviour data.
+A/B
+Testing
+eve
+‘@ue@
+Re
+50%
+of Users
+Figure 1.26: Illustration of A/B testing
+e
+Compatibility testing refers to verifying t
+that a system functions correctly across
+different browsers, devices, and a bee
+igs
+‘ shes >
+pat
+Eo.
+=.
+wh
+\
+f
+f
+"4a
++
+ee
+“a
+ee
+ee,
+OO Ep
+¥
+|
++
+'
+4
+( ‘ SAN
+.
+Unit 1: Computer Systems
+|
+; '¢ lt
+*
+iv
+a
+’ |
+¢
+Performance and load testing refer to simulating high user traffic to evaluate
+POW
+system speed, stability, and responsiveness.
+This unit covers Hann Coane Interaction (HCI)
+usability, accessibility, and
+concepts pens the ee toa eae ange D of careers in digital product design.
+-
+at Designer
+as
+“and inoatahy. building on
+3 wireframes and eowure
+{
+- satisfying to use,
+are
+erate
+_ Focuses specifically on how: users. ait paces ‘dieu cds are jane by
+- interact with a system across ‘touch,
+"people with diverse physical, sensory,
+ie and gesture, shaping the flow
+ie
+and cognitive abilities, applying
+between screens and actions.
+inclusive design standards.
+ys
+DUONG AR a
+Plans Sea runs
+bite death (c.g. using
+©
+Combines UX, UI, and business.
+SUS or NPS) with real users to evaluate
+—_
+understanding to design end-to-end _
+and improve a product before and after _ digital products, often using tools ike
+launch,
+Plena:
+faitabit
+UI/UX design principles, including hands-on prototyping in Figma. Mastery of these
+|
+f
+ELS.
+hap teigh tah Aart
+Siem,
+Summary
+4
+Ly
+aS ek
+ae
+©
+HCL is the study of how people and computers interact, focusing on designing
+technology that is simple, efficient, and human-centered.
+*
+Modes of Interaction refers as Sight (visuals), Touch (tap/swipe), Hearing
+(audio feedback), Voice (speech commands), Spatial (motion tracking).
+©
+Traditional Interaction such that keyboard, mouse, and touchscreen.
+©
+Natural Interaction such that voice, gestures, smart sensors.
+*
+Applications refers as websites, apps, healthcare, banking, education, and
+communication systems designed for usability and accessibility.
+©
+Computer System: Hardware + software platform where humans and computers
+communicate via input, output, and feedback.
+©
+User Interaction refers to actions (clicking, typing, swiping, speaking) through
+which user intent is transformed into system responses.
+~
+Task means a specific action or activity such as searching, booking, or typing.
+* Environment refers as the pasical
+social,
+and technical - setting where
+interaction occurs.
+’
+Feedback means system or user responses (alerts, confirmations, sounds) that
+support development actions.
+»
+‘Importance of HCI means to makes technology approachable, turning complex
+systems into everyday tools that are enjoyable and inclusive:
+_~
+Accessibility Principles. refers Contrast,
+readability,
+colour-blind friendly
+design, and inclusive navigation.
+User Needs Analysis: Identifying functional, cognitive, sensory, contextual,
+and emotional needs to design intuitive systems.
+~
+Common Problems: Cluttered layouts, poor feedback, inconsistent design, and
+lack of accessibility.
+°
+Improvement Methods: User-centered design, prototyping, iterative testing, and
+usability engineering.
+~
+User-Centered Design (UCD) refers to the design of products based on users’
+needs and feedback.
+©
+Accessibility Testing involves setae
+a system
+is usable
+by everyone,
+including people with disabilities,
+©
+UI (User Interface) refers
+to visual layouts
+for example, buttons, menus,
+typography, colors,
+~
+UX (User Experience) refers to wine
+satisfaction and ease of use. Tools like
+Figma allow collaborative wireframing and prototyping.
+1} CamScanner
+1,
+Encircle the correct answer
+i)
+| What is the main goal of HCI?
+:
+A
+ciety
+2
+(a) Increase system complexity
+(b) Replace humans
+(c) Make systems user-friendly.
+(d) Improve hardware only
+ii)
+| Which interaction type uses voice commands?
+vy)
+— What is the role of a prototype in HCL designe
+(a) Final product release
+:
+(b) Early interactive model for testing ideas
+(c) Marketing tool only
+(d) Error prevention checklist
+vi)
+| What happens when feedback in an interface is weak?
+(a) Users get clear guidance
+(b) Users feel confused and uncertain
+(c) Systems become more consistent
+(d) Accessibility improves
+vii)
+Which factor makes systems harder to use?
+(a) Consistency in design
+(b) Clear davigatlan
+- (c) Inconsistent design
+(d) Strong feedback
+(a) Gesture-based
+-
+= =~
+~~
+(b) Voice interaction
+—
+|
+(c) Menu-driven.
+(dd) Form fill.
+iii)
+Which element of UI detien includes buttons, menus, and layouts?
+(a) Environment
+ft nae bees Xs
+Sg) Interface Design
+(c) Task Flow
+ia
+oe
+(d) Feedback
+.
+iv)
+What is wireframing used for?
+past
+inl
+be
+E.
+_ (a) Finalcoding.
+(b) Testing hardware
+(c) Designing layout
+fate
+(d) Storing data
+|
+al
+ll nil i Ae
+in lel
+es
+aa
+|
+Unit 1: Computer
+!
+' -
+Ye
+viii)
+What is the effect of high cognitive load in HCI?
+"|e
+(a) Users perform tasks faster
+;
+(b) Users become frustrated and make errors
+.
+(c) Systems become more adaptable
+(d) Accessibility improves
+ix)
+| What is the main goal of accessibility testing?
+(a) To check system speed
+(b) To ensure compatibility with devices
+(c) To verify usability for people with disabilities
+(d) To test network performance
+x)
+| Why is usability testing important in HCI?-
+(a) To confuse users)
+(b) To identify problems before release
+(c) To increase system errors
+(d) To reduce accessibility
+2.
+Fill in the Blanks
+i)
+HClis important because it transforms
+iostesna into everyday tools that
+are usable and enjoyable.
+ii)
+In traditional interaction, users rely on dees like
+and
+to
+communicate with computers.
+|
+iii)
+| Accessibility principles saan
+4 as
+an
+_______
+ensure inclusivity for
+colour-blind users.
+iv)
+A prototype is anearly__ model used to test design ideas before final
+development.
+v)
+Ul refers to the visual layout of buttons, menus, and screens, while UX refers
+to the overall
+of using the system.
+3.
+Provide short answers of the following questions.
+i)
+What is accessibility in HCI?
+ii)
+Differentiate between low-fidelity and high-fidelity wireframes.
+iii)
+| What problem occurs when a system is not adaptable across different devices?
+iv)
+| Why is cocsistency important in Human-Computer Interaction (HCI)?
+v)
+What is the main goal of improving HCI?
+|
+4,
+Provide detailed answers of the following questions,
+i)
+Explain the importance of Human-Computer Interaction (HCI).
+ii) | What is User-Centered Design (UDC)?
+iii)
+Differentiate between UI and UX with suitable examples,
+iv)
+Explain testing and evaluation methods in HCI.
+v)
+Sedcribe the role of prototypes in interface design.
+. Unit 1: Computer Systems
+Y
+liracs
+Activities
+“sa
+arank
+Scenario; Design a college attendance app in Figma where students sign up class-wise,
+mark check-in/check-out, and the teacher (admin) approves and manages attendance.
+First create wireframes, then convert them into a functional prototype.
+Activityl: Low-Fidelity Wireframe
+:
+_ (Simple sketch — no colours)
+Task:
+Draw rough layouts on paper
+or whiteboard,
+Screens to-include:
+:
+1. Login Screen
+2.
+Class Selection Screen
+3.. Attendance Marking Screen
+_
+4. ‘Submit/Confirmation Screen |
+Guidelines:
+e
+Use rectangles for battens
+¢
+Use lines for text
+-
+-e
+No colours or images
+«Focus on structure only
+Output: Hand-drawn wireframe
+-
+Activity 2: High-Fidelity Wireframe.
+(Detailed design
+— colours + UI elements)
+Task:
+Convert your sketch into a detailed design using Fisinat or any
+’ tool.
+Add:
+_©
+Colours (¢.g., green
+= present, red
+= absent)
+¢
+Proper buttons and icons
+e
+Font styles and alignment
+¢
+Labels (Student Name, Submit Button)
+Example Features:
+e
+Checkbox for attendance
+e
+Submit button:
+e
+Navigation bar
+- Output: Digital UI design
+i
+nee
+.
+S.
+Activity
+3: Prototype Design
+EY:
+(Interactive model)
+Ene ee
+ohne
+ey,
+Task:
+ae
+Link sereens in Figma to simulate real app behaviour.
+Interactions:
+—«
+Login
+> Class screen
+Class — Attendance screen
+Submit — Confirmation screen
+AUdS
+see
+ae
+e
+Button click transitions:
+e Simple animations (optional)
+»
+Output: Clickable prototype
+=

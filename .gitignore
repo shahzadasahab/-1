@@ -11,3 +11,4 @@ captures/
 *.apk
 !releases/*.apk
 *.aab
+/lecture-notes/node_modules/

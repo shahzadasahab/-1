@@ -1,0 +1,1178 @@
+After ‘tie: caunpiedion of this sine tstiidents will be able to:
+Understand the fundamentals and importance of HCI
+Identifying Accessibility principles such as contrast, readability, colour-blind-
+friendly design, inclusive navigation
+Identify and analyse user needs in context of interface design
+Identify the Common problems regarding HCI
+Identify methods for improving HCI
+=
+Design UI/UX HCI using Figma
+Test and Evaluate HCI
+te
+09000
+006:
+19
+Ps
+; 2) es
+7
+¢ Hl, :
+1
+Introduction to Unit:
+|
+jr
+V
+This unit introduces the basics of Human Computer Interaction (HCI), which
+es
+helps students to understand human behaviour and interaction with digital systems. It
+et
+focuses on User Experience (UX) and User Interface (UI) design principles, and
+usability to support the creation of effective and user-friendly digital products. It also
+includes hands-on practice in creating wireframes and designing PROLIEY eS, enabling
+the development of practical design skills.
+1.1
+Fundamentals of Human Computer Interaction:
+Human-Computer
+Interaction. (HCI) defines
+the
+fundamental design
+of
+technology to serve people. It refers to systems that are easy to use, efficient, and
+or MMI (Man-Machine Interaction). -
+tes action II
+oy)
+a
+AON
+Oy
+Auties
+ea
+Gesture
+|
++ Keyboard”
+= screen UI
+RAW Yoni
+eee eras
+Vee
+=f
+:
+.
+:
+NYe cat)
+EAE
+EARS
+pe
+Q/P
+Speakers | Sensors
+Paves
++speakers
+|
++ vibrations
+ro yis)
+MOUs
++ speakers
+Figure 1.1:: The Model of Human Computer Interaction
+Humans and computers communicate by using the following sensory channels
+of interaction as shown in figure 1.1.
+e
+Sight: Humans see screens, graphics, or videos and computers display visuals.
+responsive to human needs. HCI is also known as CHI (Computer-Human Interface)
+ep
+Th
+at
+— am
+RPP
+*
+<A]
+ic
+e
+Touch: Humans tap, type, or swipe and computers respond with clicks or
+vibrations.
+e
+Hearing: Humans listen to sounds ot voices and computers provide audio
+~ feedback.
+e
+Voice: Humans speak commands and computers process
+eat (e. &: .. “Alexa,
+play music”). _
+e
+Spatial: Humans move
+in space and computers track position or body
+movement in motion games.
+1.1.1
+Traditional Interaction (Interaction I):
+Traditional interaction refers to the basic way people use everyday devices such
+as computers, laptops, and smartphones. It relies on standard input and output methods.
+Following are the examples of traditional interactions.
+i)
+Computer Interaction:
+People give commands by moving a mouse and typing on a keyboard, and the
+computer answers by displaying visuals on a monitor and playing sound
+through speakers.
+|
+ii)
+Smartphone Interaction:
+People give commands by tapping and swiping on a touchscreen, and the
+smartphone answers by lighting up
+the
+screen,
+playing n music, or giving
+|
+vibration feedback.
+1.1.2 Natural Interaction lideravtin ID:
+|
+Natural interaction refers to advanced, smart technology that allows people to
+interact without a mouse or keyboard. It feels more natural, similar to communicating
+with another person. Following are the examples of natural interactions.
+i)
+Voice Interaction
+People give commands by speaking into a device, and the device answers
+through speakers. For example, asking a smart speaker to “Alexa” play a song.
+ii)
+Body & Gesture Interaction
+People give commands through gestures or facial movements detected by
+cameras, and the computer answers by reacting through screens or sensors, For
+example, unlocking a phone with facial recognition or playing a bowling game
+by waving your hands.
+1.2
+Applications of Human-Computer Interaction (HCI);
+The applications of Human Computer Interaction (HCI) extend to the design
+and development of interactive systems such as desktop applications, websites, and
+mobile apps. These interfaces are not just technical products, they are human-centered
+1} CamScanner
+i)
+1.
+ii)
+2,
+solutions built to meet user needs across diverse domains. Following are the examples
+of applications.
+&, Health Care
+7 ete Networking
+& Education
+£ ~-
+Figure 1.2: HCI in Various Domains of Life
+—
+Healthcare: Patient portals, telemedicine apps, and assistive technologies
+improve access to medical services.
+<4
+Banking: Secure, user-friendly mobile bonis apps enable quick transactions
+and financial management.
+Education: E-learning platforms and € exam portale enhance
+teaching, learning,
+and student engagement.
+Networking & Communication: Social Media Platforms, Te Apps.
+and collaboration tools connect people globally.
+1.3 Comenients of HCI
+:
+Human-Computer Interaction
+(HCI)
+is explained through the following
+primary somiponputs,
+User:
+A user is any individual
+or group that interacts with a computer system to
+accomplish specific tasks or achieve defined goals. Users can generally
+be classified
+into two main categories:
+End Users: Individuals who directly operate and interact with the system,
+ranging from beginners to advanced experts.
+Stakeholders:
+People
+or groups who have
+an
+interest
+in
+the system’s
+performance
+or outcomes,
+such
+as
+clients,
+managers,
+administrators;
+or
+decision-makers,
+Computer system:
+;
+A computer system in HCI
+is the platform where humans and computers
+communicate through input, output, and feedback using an interface. It connects human
+actions with machine responses to complete tasks.
+ili)
+Unit 1: Computer Syst
+User interaction:
+User Interaction
+is the process through which a user communicates with
+a
+computer system by performing actions such as clicking, tapping, typing, swiping, or
+speaking. It converts the user’s intention into system responses through input, output,
+and feedback. Following are various types of interaction.
+iv)
+Direct Manipulation: It means that users handle digital objects on a screen in
+the same way physical objects are handled in the real world. For example,
+Dragging files, zooming images with fingers, moving icons on a screen.
+Command-Based:
+It
+means
+giving precise
+instructions through
+typed
+commands or code. For example,Using a command line (C:\Users, Dir and
+Cd..).
+Menu-Driven: It means selecting from predefined lists or options. For example
+an Exam Portal , a student clicks “Start Test,” “Check Results,”
+or.
+“Download Certificate. "
+Form Fill: It means entering structured data into fields. For example, Sign-up
+forms, online admission forms, ticket booking.
+Conversational: It means communicating with systems using natural language
+(text or voice). For examples, Chatbots, Alexa, Google Assistant.
+Gesture-Based:It means using body-or hand movements to control systems.
+For example, Swiping on touchscreens, virtual reality (VR) hand gestures,
+motion-controlled games.
+Voice Interaction: It means speaking commands directly to the system.
+For
+example, “Call Aslam” on a smartphone, voice search in Google.
+Context-Aware:
+It
+means
+systems
+sense
+the environment
+and
+act
+automatically. For example, Smart lighting that turns on when you enter a room,
+GPS apps adjusting routes based on traffic.
+oe
+Biometric:
+Jt
+means
+using
+biological
+features
+for
+interaction
+and
+authentication. For example, Fingerprint unlock, facial recognition, iris scans.
+Haptic & Tactile: It means. providing physical feedback to confirm actions.
+For example, Phone vibration when typing, smartwatch tapping your wrist for
+notifications.
+Multimodal: It means combining two or more interaction types. For examples,
+combination Voice and touch (speaking a search term, then tapping results),
+combination of gesture and voice in VR.
+Task:
+Task is the specific action users pefform with a computer system. For example,
+clicking
+a button, typing text, searching for a product, booking a ticket. The following
+are important characteristics of tasks.
+1} CamScanner
+Unit 1: Computer Systems
+Task Complexity: The difficulty of the user's goal. For example, filling out an
+online form is easy; designing a 3D model in software is complex.
+e
+User Knowledge & Skills: The abilities needed to interact with the system. For
+example, sending a text message requires basic typing skill, programming a
+robot requires advanced technical knowledge.
+e
+Time Requirement: The duration needed to complete the task. For example,
+checking balance at an ATM takes seconds, applying for a passport online may
+take several minutes.
+vy)
+User interface:
+It
+is the medium through which humans interact with computer systems. —
+Following are the examples of user interfaces.
+¢ Graphical User Interface (GUI): Uses the visual elements like windows,
+-
+icons, and menus.
+(ee
+Oe oe Ba
+ed
+ec ats ct) et
+Ree
+ye
+ARETE NAWSTAbe
+} Windows OS
+.
+-
+macOS
+|
+Android Apps
+Figure 1.3: An Illustration of GUI based Interfaces
+e
+Command-Line Interface (CLI): Uses a text-based interface, where users
+type commands to interact with the system.
+jnsure@inux.”
+=
+/
+[hee
+f
+a
+2
+Ss
+2
+Volume in-drive
+€ is DOS—
+user@linux:=§ 16-1
+c
+:
+Directory: of<C;\FILES
+faa aK foe
+Tae sl ae Yee liea Ea etal pe
+pa
+ite
+<DIR>
+Cy es Dee ke RL
+MEY fa etiam is
+Io eas Pay eG
+ee
+her
+te
+pai
+ae
+* iS 4
+A %
+user
+us
+409,
+ET)
+bP
+oe]!
+Ea
+<
+>
+12-05-92
+15:
+,
+er
+tte
+4096
+i:
+i ae rae
+_ DOSPROGS
+Sites
+1 bee
+eb
+usa del
+ee Leeda
+ral
+@ 4 UL
+Tae be ci
+14,320.
+01-10-93. 09:30
+*
+douser
+veer 4096
+Jan
+2°11.
+45 Public
+pata: BAK
+57,644
+12-08-92
+14:15
+ilogaee
+he) eee
+ee Eker Ysa ea Molt
+eS ot do) a
+:
+2 Filets)
+71, 964 bytes
+a
+|
+9
+;
+3 Dir{s)
+12,345 678 butes Free
+Cr\FILES>_
+.
+Linux Terminal
+MS-DOS
+Figure 1.4: An illustration of MS-DOS and Linux command line interfaces
+CamScanner
+Unit 1: Computer
+$ st
+e
+Touch Interface: Refers
+to interaction through gestures such as tapping,
+swiping, or pinching.
+Smartphone’
+| Figure 1.5: An Illustration of touch interface
+e
+Voice User Interface (VUD: A Voice User Interface (VUI) allows users to
+interact through sHOkey commands
+Smart Speaker Assistant
+Mobile Voice Assistant
+Figure 1.6: An Illustration of voice user interface devices
+e
+Natural User Interface (NUI): It means interaction that relies on gestures,
+body movements, or immersive environments.
+VR Headsets
+Microsoft Kinect
+|
+Figure 1.7: An Illustration of Natural user interface. e.g. Headsets
+i
+\ 7p
+|
+ite pe [>
+i
+v \@,
+;
+$a) (@):
+SAR
+4 ee
+°) rh
+*
+Unit 1: Computer Systems
+ey.
+“Eh
+G
+|
+.
+|
+vi)
+Environment:
+YY
+It is the real-world setting where a person uses a
+a computer system, shaped
+Pm
+by the user, hardware, software,
+interface,
+and surrounding physical
+of social
+conditions.
+|
+|
+ina iS a
+The Stakwolld setting where a person uses a computer system,
+’ Figure 1.8: An Illustration of HCI environment
+vii)- Feedback:
+- Feedback is the signal or response given by the ayaten
+to confirm or guide user
+actions during interaction. There are two types of feedbacks one System Feedback
+(computer messages like “Loading... .” or “Error”) and User Feedback (actions like
+tapping, speaking, or rating stars).
+*
+4
+System Feedback Sm
+User Feedback
+Response
+from the Computer
+iain
+J
+@ Message Sent!
+eae
+Hardware, Software
+& Applications
+Seenrrenr
+ma ane
+pe nae
+by Error: incorrect Password
+at i
+a
+te
+\
+Bes
+Unit 1: Computer Syst
+1.4 Importance of HCI
+Human-Computer Interaction (HCI)
+is important because
+it ensures
+that
+machines are approachable and usable, and it turns complex technology into everyday
+tools for people. Good design makes technology simple and enjoyable, for example
+smartphones with touchscreens allow easy access and online learning apps guide
+students clearly. On the other hand, poor design can cause confusion and risks, for
+example unclear buttons on medical devices may lead to errors and crowded websites
+with too many ads frustrate users. Well-designed interfaces help people finish tasks
+faster and with fewer mistakes. This improves efficiency and makes work easier.
+Following are the important implications of HCI.
+|
+i)
+Enhance Productivity: It-refers to how well-designed interfaces help users
+work faster, make fewer mistakes, and achieve goals efficiently.
+ii)
+Promotes Inclusivity: It refers to accessibility features such as screen readers
+and voice commands that anew et Gatginalee
+groups and ensure equal use
+of technology.
+iii) | Drives Innovation: It refers to emerging technologies like AR/VR, Al, and oT
+that rely on HCI principles for successful adoption.
+iv)
+Economic Impact:
+It refers to the advantage’ user-friendly products gain
+through higher. adoption, customer loyalty, and market success.
+vy)
+Ethical Responsibility: It refers to responsible design that ensures technology
+respects privacy, reduces bias, and supports human well- being.
+1.5
+Accessibility Principles:
+Accessibility principles refer to a set of HCI design guidelines that ensure
+digital systems are usable by all individuals, including people with diverse physical,
+sensory, and cognitive abilities. They are recognized as essential practices in inclusive
+design, guiding designers to remove barriers and create equal access.to technology. The
+following usability principles ensure that systems are easy to understand, operate, and
+access for all users.
+:
+e
+Accessibility
+by
+using
+high
+—
+PCr ACLS)
+contrast: This means making text
+SCOR
+and
+pictures
+stand
+out
+clearly
+|
+eta ay
+against the background so they are
+sh Pree
+easy to see. For example, Black text
+PT ctrl
+on a white background ina railway
+—e
+|
+AU Tat
+app helps passengers read easily
+even under bright sunlight.
+Figure 1,10:
+An Illustration of accessibility by high contrast
+1} CamScanner
+ii
+it 1: Computer Systems
+e
+Accessibility by using readable fonts: This means using clear, simple fonts
+V
+with proper size and spacing so reading feels comfortable. For example, a
+ee
+school website using large, clean “Calibri” fonts makes homework instructions
+easier to read for students.
+=
+Lincoln High School
+Hore
+Classes
+Calendar
+Homework Assignments
+® Math: Complete questions 1-10 on page 45.
+e Science: Write a summary of the water cycle
+° English: Read Chapter 5 and answer the questions.
+Figure 1.11: An Illustration of
+of Accesiibility
+by using readable fonts
+e
+Accessibility
+by
+using
+colour-blind
+friendly design:
+This
+means
+not
+depending only on colours to show information, but also using symbols or
+labels. For example, a traffic app showing both coloured routes and text labels
+helps colour-blind users choose the right path.
+Ow
+Route A- see :
+Dy rome 8 - ia
+at
+a
+4
+@ Poutec- “en Tai
+Figure 1.12: An IMustration of Accessibility by using colour-blind friendly design
+e
+Accessibility by using inclusive navigation: This means giving users different
+ways to move around
+a system,
+like keyboard shortcuts or screen reader
+\.
+Na
+support. For example,
+a website that lets you use the “Tab” key to move
+between options helps people who cannot use a mouse.
+Figure 1.13: An Illustration of Accessibility
+by using inclusive navigation
+e
+Accessibility by using multimodal detection (sight, sound, or touch): This
+means presenting information in different formats so everyone can access it.
+. For example, a video with. -captions for hearing-impaired students or a phone
+that vibrates to alert users ensures no one misses important information.
+1.6 Need Analysis for Interface Design:
+:
+Need Analysis is the process of identifying and understanding the gap between
+the existing situation and the desired outcome. “It helps determine what users,
+learners, or organizations need before developing a product, system, or service. In
+Human-Computer Interaction (HCI), need analysis is carried out before designing
+a user interface
+to understand users’ goals, tasks,
+abilities, preferences, and
+_expectations. Information is collected through methods such as interviews, surveys,
+observations, and questionnaires. This helps designers create a system that is useful,
+easy to use, efficient, accessible, and capable of mecting users' needs and solving
+their problems effectively.
+Steps in Need Analysis:
+1.
+Identify the users: Means who will use the system?
+2.
+Information
+Collection:
+Means
+to
+use
+interviews,
+questionnaires,
+observations, or surveys.
+bes
+as
+X"(@):
+:
+)
+4
+e y
+- >
+; 1: Computer Systems
+at
+fa
+|
+as
+|
+-
+_
+3,
+Analyze user needs: Means to identify problems, goals, and requirements.
+|
+VW
+4,
+Prioritize needs: Means to decide which needs are most important.
+ry
+5,
+Develop solutions: Means to design a system that meets those needs.
+}
+,
+For example,
+a bank plans to develop
+a new "Mobile Banking Application." Before
+designing the app, the development team conducts
+a need analysis by interviewing
+customers and observing how they use existing banking services as user needs such as.
+e
+Secure login using fingerprint or face recognition,
+e
+Easy money transfers and bill payments.
+e
+Quick access to account balances and transaction history.
+Large buttons and simple navigation for elderly users.
+Support for both English and local languages.
+Based on these findings, designers create a user-friendly, secure, and accessible interface
+that meets users’ needs and
+i improves their overall experience.
+1.7 Human Computer Intéraction Problems:
+HCI problems are common difficulties that stop users from using technology
+smoothly, these problems happen when systems fail to meet user needs. Following are.
+the common HCI problems:
+e
+Interface Complexity:
+This means the screen has too many options or a ‘confusing layout, ihaking it
+hard to. use. For example, a shopping app’.shows too many menus at once,
+making it hard to find the checkout button.
+e
+Poor Feedback:
+This means the system does not clearly sow ifan action worked or ie an error
+happened. For example, an online form freezes after submission without telling
+the user if it was sent.
+e
+Inconsistency:
+'
+This means different parts of the interface look or act differently, so users
+cannot predict what will happen. For example, a website uses different icons
+for the same action, like two different symbols for “search.”
+e
+Accessibility Gaps:
+This means the design does not support people with disabilities, like missing
+screen reader support or poor contrast. For example, a video platform has no
+captions, so hearing-impaired users cannot follow content.
+¢
+Compatibility Issues:
+This means the interface does not work properly on all devices, browsers, or
+operating systems. For example, a banking site works on desktop but crashes
+on mobile browsers.
+Si
+y
+A
+-_
+”
+:
+eee
+ts
+Pantie
+7
+imminent
+cre ack shes
+Bey eee peer
+eee
+ee
+eee
+ee Cat
+if
+-—
+™“
+,
+Unit 1:
+Syst
+Un
+Computer Sys
+e
+Contextual Neglect:
+This means the system does not adjust well to different situations, like mobile
+versus desktop use. For example, a news app does not adjust to low-light mode,
+.
+making it hard to read at night.
+e
+High Cognitive Load:
+This means users must remember too much or follow complicated steps, which
+makes them frustrated. For example,
+a registration system asks users
+to
+remember multiple codes and steps at once.
+|
+e
+Lack of Testing:
+This means ‘the interface was not checked with asebility tests, so problems
+remain hidden. For example, a classroom app was never tested on ‘older phones,
+so it fails for many students.
+e
+Navigation Barriers:
+This means menus or paths are unclear, Palane
+it difficult to find information.
+For example, a government portal hides important forms deep inside unclear
+menus.
+:
+e
+Trust Deficiency:
+This means the system does not show: security or reliability cues, so users feel -
+less confident. For example, an e-commerce site has no security
+badge or
+confirmation messes, so buyer feel unsafe:
+|
+1.8 Methods for Improving Human Computer Interaction:
+Improving HCI means making technology match human needs and behaviour,
+so people can use it easily. Good systems simplify actions and reduce extra steps, give
+clear feedback arid signals, and make users feel satisfied and confident while using
+them.
+The following methods are commonly used to improve HCI:
+¢
+Enhance Usability refers to simplify navigation and reduce extra steps so tasks
+are quick and easy. Example; A shopping app with a clear “Buy Now” button,
+«
+Strengthen Accessibility refers to Support all users, including those with
+disabilities. Example; Adding captions to videos for hearing-impaired users.
+¢
+Ensure Consistency refers to Keep layouts, icons, and commands uniform
+across the system. Example; Using the same “Save” button design everywhere.
+©
+Provide Clear Feedback refers to Show users what happened after an action.
+Example: A message saying “Payment Successful” after checkout.
+1} CamScanner
+e—rtrrte—
+®
+Ab
+He i ‘ek
+o
+ats
+-
+e v it
+1: Computer Systems
+“~y
+Re
+e
+ti
+ote
+|
+e:
+i
+.
+Improve Adaptability refers to make systems work well on different devices
+VW
+and conditions. Example: A website that adjusts to mobile screens and slow
+:
+internet.
+Apply User-Centered Design refers to focus on user goals and test with real
+people. Example; Pilot testing a school app before full release.
+Use Multimodal Interaction allow different ways to interact like touch, voice,
+or gestures. Example: Smart home systems controlled
+by voice commands,
+Continuous Testing refers to regularly check usability and fix problems.
+Example: Updating apps after user feedback.
+1.9 User interface design
+|
+User Interface (UI) Design is the process of creating and organizing the visual
+elements of a website, application, or software in a way that allows users to interact
+with it easily, efficiently, and in a user-friendly manner. The figure 1.14 shows various
+user interfaces.
+a
+4
+¥
+i
+7
+.
+Re
+te
+:
+:
+|
+oe
+O my
+bees
+oo
+tee Gee Law
+Wits tees
+SL ety
++
+.
+'
+feo
+was
+OD Metis
+Yaa low
+Ate
+ee
+*
+i
+tem
+|
+Oa
+t
+rams
+"i
+.
+pee
+weer
+|
+Waele
+ene ae
+cae
+ae
+ata pe
+re)
+a
+exwe) > Me
+“wn
+wn
+am
+—
+@ lee
+;
+7.
+cee
+|
+STS
+Maw = bbntae
+UEthte
+Aaa)
+teen eeee
+o
+P's
+j
+a
++
+s
+a
+Dashboard Interface
+E-Commerce Interface
+Settings Interface
+Figurel.14; An illustration of various types of user interface designs
+Ome
+.
+F
+{Ae}
+Unit 1: Computer
+5:
+et.
+A\e
+1.9.1 Components of User Interface (UI):
+|
+User Interface (UI) consists of several basic components that work together to
+YY
+:
+help users interact with a system, following are the components of user interface
+ea
+designs.
+i
+e
+Buttons:
+Buttons are clickable elements used to perform actions like sie, cancel, or
+save.
+e
+Menus:
+Menus provide a list of oon
+that help users navigate through different parts
+ofa system.
+e
+Icons:
+Icons are small pictures or symbols that represent apps, tools, or actions.
+e
+Text Fields:
+Text fields are boxes Where users can type information like name, password, or
+search queries.
+e
+Images and Graphics:
+These
+are used to make the ‘interface
+1 more
+attractive and help explain
+information visually.
+5
+e Navigation Bars:
+These help users move from one page or section to another easily.
+e
+Check Boxes and Radio Buttons:
+These allow users to select: one or more ahisin in forms.
+e
+Sliders:
+Sliders let users adit
+values like volume or brightness by moving a bar.
+1.9. 2 User Experience:
+|
+:
+User Experience (UX) refers to the overall experience
+a user has while
+interacting with a system, including the ease, smoothness, and comfort of using it to
+complete tasks. A student uses an online quiz app. If the app is easy to navigate, loads
+quickly, and gives clear results, the student feels comfortable and satisfied while using
+it. For example, in “Food Delivery App” a student wants to order dinner using a food
+delivery app. The app opens quickly, the menu is easy to browse, restaurants can be
+searched easily, payment is secure, and the order can be tracked in real time, The
+student completes the order without confusion or delay and has a smooth, satisfying
+experience.
+1.9.3 Wireframing:
+Wireframing is the process of creating a basic visual outline of a user interface
+before the final design is developed. It helps designers plan the structure, layout, and
+WD If Same [>
+@):
+flow of a system without focusing on colours, graphics, or detailed styling. Wireframes
+act like a blueprint for digital products.
+|
+e
+Low-Fidelity Wireframes: A simple black-and-white sketch that shows the
+basic layout of a user interface, including buttons, menus, and text boxes. It is
+used during the early design stage to quickly create, test, and share design ideas.
+{vai
+army
+Key Features of
+»
+co |)
+Low-Fidelity Prototype
+:
+5, Estate eimpvagioceas
+2
+f
+7 Rast I
+Poly See
+es
+i
+i
+Dx} |
+Sheree the rani structure
+7
+es
+ny}
+By
+andl arrangerent
+as
+|
+!
+of Cermentt,
+1
+er
+Te!
+‘
+|
+a
+mz
+whe
+ne
+7
+foiar a Seite
+7
+Helps
+ted the Dhow
+i
+|
+UVUX Design Basics
+-
+y,
+——
+Pott
+hr 0m
+|»
+.
+a
+Ow
+tem
+turer
+<P? | ES] Quick and Basy
+——e
+é,
+]
+f* <
+\
+Simple to create aod
+bi
+Lea thé tvodametiah
+of LUUX devign,
+JE
+rea
+Aeiy cul Bie:
+L.A
+Inchoding
+wser roscurch, wivctcaming,
+t
+ee
+pring
+ued maierwine,
+LS
+"User Flow Testing
+Ui tewore
+:
+j wf Helps
+test how users
+© 03am Bei Legh
+$
+aan
+ue
+© Cenificae nf Comgietion
+if
+y
+te
+:
+Sah
+b
+|
+ROT)
+Mea Vididation
+} |
+ei
+tbe feet
+i
+ie
+LOS sod improve
+the design
+a
+Figure 1. 15:
+~
+An illustration of initial low fidelity wireframing for prototype designing on paper
+.
+Sketch
+e
+High-F idelity (Hi-Fi) Prototype i is a detailed and advanced version of a design
+that looks very similar to the final product. It includes real colours, images,
+_ fonts, buttons, and often interactive features to show how the final system will
+work.
+I
+EduLearm
+i> ULL Dein Baer
+2 8bttt Boe
+i
+Ovirtew
+Leen
+carer
+ae
+B View
+OD sow Tol Leng’
+et eo
+rot
+an
+Ke
+if
+j
+Nee
+2
+oS
+:
+4¢@
+a a
+.
+ant
+#
+A
+a
+|
+*
+Sj
+P
+ae
+\
+|
+i Jee
+.
+a
+fj
+gl
+ii}
+@
+|
+Alle
+1.9.4 Creating low-fidelity design in Figma:
+|
+Following scenario guides students to create a low-fidelity design in Figma.
+vy
+The focus is not on polished visuals like colours, images, ot detailed styling, but on
+’
+quickly sketching the layout and flow of screens.
+qaryrsesee”
+| PSE
+Rea) PR ea
+Ver
+;
+:
+“=
+2
+poten soca
+7. Final Wireframes
+Figure 1.17: An Illustration of Low fidelity Wireframing
+for prototype design using
+simple shapes.
+1} CamScanner
+1: Computer Systems
+‘AS
+5 Prototype Design:
+A prototype is an early version of a UI design used to test its layout, features,
+and user interaction before the final product is developed. It is given to the targeted
+users to check whether it meets their needs. After testing and feedback, the final UT is
+refined and developed.
+Example; Student Attendance App (Prototype)
+A school designs a prototype of a student attendance app and tests it with teachers and students.
+@ Design
+OQ rrevonre
+© User Testing
+Q) Feesthack & Inpreve
+@ Firat App
+An interactive prototype
+.
+Teachers and students
+Feedback is collected and
+After successful testing,
+ac Urigeaal
+is built to test the idea.
+use the prototype.
+changes are made.
+the final app is developed.
+In this example:
+e The school team designed a prototype oe an Shei: app.
+* Teachers and students tested it by marking attendance, viewing records,
+and checking reports.
+-
+7
+© Their feedback helped improve the app.
+~e@
+After. successful testing, he final app is developed for all users.
+‘Bieute: 1.18 An {lustration of Pretorya pe designing of sequential frames
+1.10
+What is Figma:
+Figma is a web-based tool used to design and collaborate on UI and prototypes.
+It works in a browser and helps create and test interactive designs.
+1.10.1 Creating UI and UX Design Using Figma:
+UI (User Interface) and UX (User Experience) are key parts of Human-
+Computer Interaction (HCI) that help make digital systems simple, efficient, and user-
+|

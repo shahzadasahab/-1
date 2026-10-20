@@ -1,0 +1,1351 @@
+Chapter
+A
+i
+~”
+eS
+—_
+Data and Analys
+Student}.earning Outcomes:
+After the completion of this unit students will be able to:
+0069909090099
+Explain the concepts of a database and its elements.
+Describe basic types of relationship (1:1, 1:M, M:N)
+Explain the concept of referential integrity (cascade update/delete)
+Develop relational schema.
+Develop Entity-Relationship Models using real life examples.
+Use Database Objects (Tables, Forms
+, Queries and Reports)
+Use database objects (tables, forms, and queries)
+Create tables using appropriate datatypes.
+Create queries based on different criteria
+Design reports based on data selection
+Analyze existing datasets to create summary statistics and data visuals using
+relational DBMS.
+fy
+in)
+bn
+14
+iW
+fn
+-
+a
+Unit 4: Data and Analysis
+|
+Introduction to Unit:
+This chapter helps students understand how data is organized, analyzed, and
+used to make informed decisions, covering key concepts, real-world examples, and
+digital tools.
+Data is generated all around us through smartphones, online shopping, social
+media, and smart cities. Organizations across every sector rely on it to plan and improve
+services. However, data alone means nothing;
+it becomes knowledge only when
+analyzed.
+For Example: A month of recorded temperatures is raw data but calculating
+averages or spotting trends turns it into insight. That is data analysis.
+In this unit, students will explore database concepts, real-world applications, and how
+digital tools transform raw data into meaningful decisions.
+4.1
+Concepts of Database and Elements:
+4.1.1
+Data, Information and Database:
+e
+Data:
+Data are unprocessed facts, figures, or observations collected from different
+sources. It can be quantitative (numerical) or qualitative (descriptive).
+Examples of data include:
+The number of students in a class (quantitative).
+The color of cars in a parking lot (qualitative).
+Daily temperature readings (quantitative).
+Feedback about a product (qualitative).
+e
+Information:
+When we organize, process, and interpret this data,
+it becomes information
+which provides meaning and supports decision-making.
+Example 1:
+Raw Data: 80, 75, 90, 70, 85
+Processed Information: The average score of the class is 80%.
+Hence, Data — Processing — Information
+The Table 4.1 highlights the difference between Data and Information
+Table 4.1: Difference between Data and Information
+PX
+rah
+PTE
+ee LT CT
+|
+Definition
+Raw facts and figures
+Processed and Meaningful data
+Example
+85,90,75
+Average Marks = 83.3%
+Usefulness _ Less useful on its own
+Useful for decision making
+Format
+Numbers text, images, symbols, | Reports, Summaries, Charts, etc.
+videos, etc.
+¢
+<
+MN) lf
+Face
+Unit 4: Data and
+aw
+SS
+e
+Database
+A database is an organized collection of related data that is stored in a structured
+manner so that it can be easily accessed, managed, and updated. In traditional
+systems, data was stored in files or books, which made it difficult to search,
+update, or maintain consistency. A database solves these problems by providing
+a systematic way to store and retrieve data.
+4.1.2 Database Management System:
+A Database Management System (DBMS)
+is software that allows users to
+create, manage, and interact with databases. It acts as a bridge between the user and the
+database. Instead of directly handling data files, users interact with DBMS, which
+performs operations such as inserting, updating, deleting, and retrieving data.
+For example, in a school environment, a DBMS can be used to manage student data.
+Instead of writing information in books, the school can store all student data in a
+database. Teachers can quickly search for a student’s data, update marks, or generate
+reports using the DBMS. DBMS provides the following advantages:
+i)
+Less Redundancy: Which means the same data is not stored multiple times
+unnecessarily
+For example, instead of storing a student’s department name in every table
+(Student table, Exam table, Fee table), the department is stored once in the
+Department table, and other tables refer to it using a DepartmentID.
+ii)
+Improved Data Consistency: which ensures that all users see the same correct
+data
+For example, if a student’s contact number is updated in the Student table, every
+query, form, or report that accesses this table will automatically show the
+updated contact number, so all users see the same information.
+iii)
+Improved Security: Allowing only authorized users
+to
+access
+sensitive
+information.
+For example, only the admin or teacher can view students’ exam marks, while
+general staff can only view names and contact details.
+iv)
+Data integrity: It ensures that the data stored in the database is accurate and
+reliable.
+For example,
+a student’s roll number must be unique, and the system will
+prevent duplicate entries.
+Common examples of DBMS include Microsoft Access, MySQL, Oracle, and
+SQL Server. These systems are widely used in educational institutions, businesses,
+banks, and government organizations.
+AX AAS N
+Sf
+. 4: Data and Analysis
+4.2
+Database Components:
+A database is made up of several important components that help organize data
+effectively. The most basic structure of a database is a table. A table is used to store
+data in rows and columns, similar to a spreadsheet in MS Excel. Each table is designed
+to store information about a specific entity, such as students, teachers, or courses. Each
+table will be stored as a separate file.
+The rows in a table are called records. Each record represents a single entry or
+instance of data. For example, in a student table, each row represents one student and
+contains all the information related to that student, such as name, roll number, class,
+and marks.
+The columns in a table are called fields. Each field represents a specific type of
+data or attribute. For example, in a student table, fields may include StudentID, Name,
+Class, and Marks. Each field contains values of a particular type, such as text, numbers,
+or dates. Fig. 4.1 shows an illustration of these components.
+ea
+3)
+3. RECORD AND FIELD |F=)
+data, while a field is a single piece
+of information within a record.
+records stored in tabular form.
+related files organized together.
+L
+Avdatabase isavcallectionat
+|
+(
+AeGiletoncdileciion ofirdlated
+|
+A record is a complete set of related
+.
+COURSE FILE
+NAME
+COURSE
+DATE
+O77. DDD)
+NAME
+| COURSE | DATE | GRADE
+Ashar Wasif |
+IS 101
+FOl
+Bt
+Files in the Database
+|
+Ashar Wasif
+IS 101
+FO1
+B+
+Zara Javed
+|
+au
+Fe
+me
+Inaya
+Ah:
+IS 101
+—
+Course File
+ZaraJaved
+IS101
+FOl
+A
+eer
+ee
+ee ee
+Zaid Kashif
+IS 101
+Inaya Ahsan
+=—‘IS 101
+FOl
+€
+:
+[oe
+BY
+RECORD
+(Entire row)
+Zaid Kashif
+IS 101
+FOL
+B+
+Complete information
+=
+Personal History File
+8
+FIELD
+(Single cell)
+about one student.
+ne
+-
+A single piece of data,
+a
+Each row ina file
+e.g., Course.
+A database helps keep
+represents one record
+a
+aa
+information organized,
+G
+Records contain many fields,
+%
+and fields make up the details.
+structured, and easy to access.
+|
+oe
+Xs
+Pe
+:
+if
+Figure 4.1: Database Components
+4.3.1 Keys and Integrity Constraints:
+Another important concept related to tables is the use of key fields. A key field
+is an attribute (or a set of attributes) that helps uniquely identify records and link tables
+together. Understanding different types of keys is essential for designing efficient and
+reliable database systems. The following types of key fields can exist in the database.
+d
+«
+yy)
+Unit 4: Data and
+aw
+SS
+i)
+Candidate Key: A candidate key is any field (or set of fields) that can uniquely
+identify a record in a table. A table may have multiple candidate keys, but only
+one of them is selected as the primary key.
+Characteristics:
+e
+Miust contain unique values
+e
+Cannot contain NULL values
+e
+There can be multiple candidate keys
+For example, in an Emp table, EmpID, EmpLicense#, and EmpPassport can be
+candidate keys as they uniquely identify each record.
+li)
+Primary Key: A primary key is a field (or combination of fields) that uniquely
+identifies each record in a table. It ensures that no two records have the same
+value and that no value is left null.
+Characteristics:
+e
+Miust contain unique values
+e
+Cannot contain NULL values
+e
+Each table has only one primary key
+For example, in an Emp Table, EmpID is the primary key because it uniquely
+identifies each employee record.
+iii)
+Alternate Key: An alternate key is a candidate key that is not selected as the
+primary key. These keys still uniquely identify records but serve as alternatives.
+Characteristics:
+e
+Derived from candidate keys
+e
+Not chosen as primary key
+e
+Contains unique values
+For example, in an Emp Table, EmpLicense# and EmpPassport will serve as
+alternate keys.
+iv)
+Foreign Key: A foreign key is a field in one table that refers to the primary key
+in another table. It is used to create relationships between tables and maintain
+referential integrity.
+Characteristics:
+e
+Can contain duplicate values
+e
+Can contain NULL (in some cases)
+e
+Establish relationships between tables
+For example,
+“DId”
+will serve
+as Foreign Key between employee
+and
+department table as shown in figure 4.2.
+»
+YS
+aX aan V
+Data and Analysis
+TABLE-2
+Did
+Empld
+EmpName
+EmpLicence
+EmpPassport
+Did
+Designation
+1001
+Matt
+LC1201
+MA100LC
+1
+l
+BPO
+2
+Account
+TABLE-1
+1002
+Maxy
+LC2078
+XY100LC2
+2
+3
+IT
+1003
+Roy
+LK00928
+LK100RO
+3
+ie
+Figure 4.2: Key fields in a database
+4.3
+Relational Database Management System (RDBMS):
+A Relational Database Management System (RDBMS)
+is one of the most
+widely
+used
+database
+models
+in
+modern
+computing.
+A
+Relational
+Database
+Management System (RDBMS) stores data in tables and uses keys and constraints to
+maintain relationships and ensure data integrity. It is a powerful and structured way of
+managing data, widely used
+in applications such as banking systems, university
+databases, and online services. RDBMS offers the following advantages:
+Ensures data consistency and accuracy
+Reduces data redundancy
+Supports data sharing and multi-user access
+Provides security and access control
+Easy to query using SQL
+4.4
+Entity Relationship Model (ER-Model):
+The Entity Relationship (ER) Model
+is
+a conceptual tool used to design
+databases before they are created. It helps in understanding what data needs to be stored
+and how different pieces of data are related to each other. Designing a database without
+proper planning can lead to errors, duplication, and inefficiency. Therefore, the ER
+model plays a very important role in database development.
+An ER model consists of three main components:
+1.
+Entities:
+An entity is any real-world object or concept about which data is stored. For
+example,
+in
+a school database, entities can include Student, Teacher, and
+Course. These are things that exist independently and have their own identity.
+2.
+Attributes:
+Attributes are the properties or characteristics of an entity. For example, the
+Student entity may have attributes such as StudentID, Name, Class, and Marks.
+These attributes provide detailed information about the entity.
+y
+¢
+7, LM | Ls
+at
+Unit 4: Data and
+aw
+SS
+3.
+Relationships:
+Entities in a database are connected through relationships, which define how
+data is stored and linked between tables in the ER model. Understanding these
+relationships is essential for designing efficient and accurate databases.
+There are three main types of relationships:
+e
+One-to-One (1:1): One record is related to only one record of another entity
+(e.g., one student has one ID card). This is rare and used for separation or
+security.
+e
+One-to-Many (1:M): One record is related to multiple records of another
+entity (e.g., one teacher teaches many students). This is the most common
+type.
+e
+Many-to-Many (M:N): Multiple records of one entity relate to multiple
+records of another (e.g., students enroll in many classes, and classes have
+many students).
+Since relational databases do not directly support many-to-many relationships,
+a junction
+(bridge)
+table
+is used
+to break them
+into
+two one-to-many
+relationships.
+For example, many students can enroll in many classes; therefore, this many-
+to-many relationship is represented using a junction table (Enrolment), which
+stores StudentID and ClassID to link students with their respective classes.
+Properly defining relationships
+ensures
+logical
+data organization,
+avoids
+redundancy, and improves data accuracy and retrieval.
+| up Activity
+Teacher must give students a case study (e.g., library system).
+Ask them to list relationships between entities and assign types.
+The ER model is usually represented using an ER diagram. In ER diagram,
+entities are shown as rectangles, attributes as ovals, and relationships as diamonds.
+For example, A school maintains information about Students, Teachers, and Classes.
+e
+Each student is identified by a unique ID and name and can enroll in multiple
+classes.
+e
+Each teacher also has a unique ID and name and may teach several classes.
+e
+Every class has a subject and room number, is taught by one teacher, and can
+include many students.
+e
+To manage student participation in classes, an Enrolment entity is used to record
+which student is registered in which class.
+Sf
+. 4: Data and Analysis
+The ER diagram for this scenario is shown in Fig 4.3. It provide a clear visual
+representation of the database structure, making
+it easier
+to understand and
+communicate.
+w One class has
+many students.
+ey
+STUDENT
+One student can
+enroll in many classes.
+TeacherID
+One teacher
+teaches many classes.
+Figure 4.3: An Example ER Diagram
+Designing a database for a college, the ER model helps identify all required
+data and their connections before implementation. This reduces errors and ensures that
+the database is efficient and well-structured.
+In conclusion, the ER model is an essential step in database design. It provides
+a Clear blueprint that guides the creation of a reliable and efficient database system.
+| Sy Activity
+Teacher must ask students to pick a real-world scenario (school,
+library, hospital, e-commerce store). Also, list all entities they can
+identify (e.g., Student, Teacher, Course, Book, Patient).
+4.5
+Referential Integrity and Its Importance:
+Referential integrity
+is
+a fundamental concept
+in relational databases that
+ensures the accuracy and consistency of data across related tables. When multiple tables
+are connected using foreign keys, it is important that the relationships between them
+remain valid at all times. Referential integrity ensures that a foreign key in one table
+always refers to an existing and valid record in another table.
+To understand this concept, consider a simple example of a school database
+with two tables: a Student table and a Result table. The Student table contains student
+details such as StudentID and Name, while the Result table contains marks along with
+StudentID as a foreign key. Referential integrity ensures that every StudentID in the
+Faz
+Unit 4: Data and
+aw
+SS
+Result table must exist in the Student table. If a StudentID appears in the Result table
+but does not exist in the Student table, it creates inconsistency and confusion.
+There are also operations related to referential integrity, such as cascade update
+and cascade delete. In cascade update, if a primary key value is changed in the parent
+table, the change is automatically updated in all related tables. In cascade delete, if a
+record is deleted from the parent table, all related records in child tables are also deleted
+automatically.
+This helps maintain consistency without manual
+effort.
+Fig.
+4.4
+illustrates the effects of cascade update and cascade delete operations.
+REFERENTIAL INTEGRITY OPERATIONS
+CASCADE UPDATE AND CASCADE DELETE
+Changes in the parent table are automatically reflected in related child tables
+to maintain consistency.
+SEE
+i iNeed
+th
+CASCADE UPDATE
+StudentID
+101
+is
+changed
+to
+201.
+CHILD TABLE: Enrollments
+|
+a *
+When the primary key in the
+| pene Seok eeleuts
+parent table is updated,
+StudentID (PK) | StudentName | | EnrollmentiD | StudentID
+| Course
+|
+AFTER CASCADE UPDATE
+the related foreign key values in
+a
+1
+oh
+:
+101
+Ali
+1
+101 | Math =
+|
+child tables are
+|}
+|
+|
+|
+PARENT TABLE: Students
+|
+CHILD TABLE: Enrollments
+2
+102
+Physics
+automatically updated.
+102
+Sara
+fa
+ce
+| StudentID (PK) | StudentName
+| | EnrolimentID | StudentID (FK)|
+Course
+F
+||
+3
+103
+| English
+-————_
+me
+++
+201
+Ali
+1
+|
+201
+Math
+|
+|
+4
+101
+Computer
+{|
+—_}——
+|
+|
+| KEY POINT:
+|
+102
+Sara
+2
+102
+Physics
+The change in StudentID (101 + 201) in the parent table is
+|
+oz
+=|
+tmet
+|
+2
+103
+Enlish
+automatically updated in all related rows in the child table.
+.
+l
+]
+|
+4
+201
+| Computer
+DELETE FROM PARENT TABLE
+BEFORE DELETE
+CASCADE DELETE
+Delete StudentID = 102 (Sara)
+When a record in the parent
+| PARENT TABLE: —
+CHILD TABLE: Enrollments
+“—y
+table is deleted,
+StudentID (PK)| StudentName | EnrollmentiD | StudentID (FK),
+Course
+|
+all related records in child tables
+1
+I
+}
+}
+]
+AFTER CASCADE DELETE
+.
+201
+Ali
+1
+201
+Math =
+a
+are automatically deleted.
+PARENT TABLE: Students
+CHILD TABLE: Enrollments
+102
+Sara
+2
+102
+Physics
+a
+—
+i
+|
+]
+|
+StudentID
+StudentN.
+EnrollmentID | StudentID
+(FK) |
+C
+103
+uses
+3
+103
+ich
+tudentID
+(PK) |
+Stu
+jame
+|
+nrollment!
+|
+tudentID
+(FK)
+ourse:
+KEY POINT:
+4
+201
+Computer
+201
+|
+Ali
+|
+1
+201
+Math
+Student 102 and all their enrollments are removed automatically,
+103
+Ahiied:
+3
+|
+103
+English
+keeping the database consistent.
+L
+—
+=
+4
+501
+Computer
+SUMMARY
+® Cascade Update: Updates child table foreign keys when parent primary key changes.
+e Cascade Delete: Removes related child records when a parent record is deleted.
+=
+© Maintains data consistency
+© Saves time and manual effort
+© Reduces errors
+BENEFITS
+Figure 4.4: Cascade Update and Cascade Delete Illustration
+In real-life
+systems,
+such
+as
+schools,
+colleges
+and university databases,
+referential integrity is very important. For example, if a student is removed from the
+system, all related records such as attendance, results, and fee records should also be
+handled properly. Without referential integrity, the database may contain incomplete
+or incorrect data.
+aX AAS N
+Sf
+. 4: Data and Analysis
+4.6
+Relational Schema Development:
+A relational schema is a formal representation of the structure of a database. It
+defines how data is organized into tables, what fields each table contains, and how
+different tables are related to each other. In simple terms, a schema acts as a design of
+the database before it is implemented.
+Developing a relational schema is an important step in database design because it helps
+in
+organizing
+data
+logically
+and
+efficiently.
+A well-designed
+schema
+reduces
+redundancy, improves data integrity, and makes the database easier to manage.
+To understand relational schema development, consider a school database system.
+e
+Initially, we identify the main entities such as Student, Course, and Teacher.
+Each of these entities will be represented as a table in the database. For example,
+the student table may contain fields such as StudentID, Name, Class, and
+Address. Similarly, the Course table may include CourseID and CourseName.
+e
+After identifying tables, the next step is to define relationships between them.
+For example,
+students
+enroll
+in courses.
+Since
+this
+is
+a many-to-many
+relationship, we create an additional table called Enrollment. This table contains
+StudentID and CourseID as foreign keys, linking the Student and Course tables.
+e
+Another important aspect of schema design is defining keys. Each table must
+have a primary key that uniquely identifies its records. Foreign keys are used to
+establish relationships between tables.
+4.7
+Case Study — Library Management System:
+This example
+demonstrates
+the
+step-by-step development
+of an
+Entity-
+Relationship (ER) schema, starting from requirement analysis to the final ER diagram.
+In this example, database schema for a Library Management System will be developed.
+This system will be used to organize and manage books, members, and borrowing
+activities in a library.
+4.7.1
+Step-1: Requirement Analysis
+Before designing the database, the system requirements are carefully analyzed.
+Suppose a college library needs to maintain the following information:
+e
+Each book has a unique ID, title, author, and publisher.
+e
+Each member (student
+or teacher)
+has
+a unique
+ID, name,
+and contact
+information.
+e
+A member can borrow multiple books, and a book can be borrowed by different
+members over time.
+The system should record the issue date and return date of each borrowed book.
+by
+Unit 4: Data and
+aw
+SS
+4.7.2
+Step-2: Identification of Entities
+Entities
+represent real-world
+objects
+or
+concepts
+that
+can
+be
+distinctly
+identified. From the requirements, the following entities are identified:
+e
+Book
+e
+Member
+Each Entity represents a separate table in the database.
+4.7.3
+Step-3: Identification of Attributes
+Attributes describe the properties or characteristics of an entity. The selection
+of appropriate attributes is essential to ensure accuracy, completeness, and efficient
+data retrieval. For this particular application the following attributes are identified for
+each entity:
+e
+Book Entity Attributes:
+The Book entity represents all books available in the library. Its attributes are
+defined as follows:
+o
+BookID (Primary Key):
+=
+A unique identifier assigned to each book. This ensures that
+every book can be distinctly recognized in the system, even if
+multiple books have similar titles.
+o
+Title:
+=
+The name of the book. This attribute helps users easily identify
+and search for books in the library.
+o
+Author:
+=
+The name of the person who wrote the book. This attribute is
+useful for categorization and retrieval based on authorship.
+o
+Publisher:
+»
+The organization or company responsible for publishing the
+book.
+This
+information may
+be
+useful
+for
+reference
+and
+classification purposes.
+e
+Member Entity Attributes:
+The Member entity represents individuals who are registered to use the library
+services. Its attributes include:
+o
+MemberID (Primary Key):
+=
+A unique identifier assigned to each member.
+It ensures that
+every member can be uniquely distinguished within the system.
+o
+Name:
+=
+The
+full name
+of the member.
+This
+attribute
+is used
+for
+identification and record-keeping.
+aX AAS N
+‘aii
+a
+Sf
+. 4: Data and Analysis
+o
+ContactInfo:
+=
+The contact details of the member, such as phone number or
+email address. This attribute allows the library administration to
+communicate with members when necessary.
+4.7.4 Step-4: Identification of Relationships:
+Identifying relationships
+is an essential step in ER modeling, as
+it helps in
+understanding how data is linked and how different entities interact with each other. In
+the given scenario, the primary interaction occurs between the Member and Book
+entities. This interaction can be described as:
+e
+A Member borrows a Book
+This relationship indicates that members of the library are able to borrow books
+available in the collection. It reflects a real-world activity and establishes a meaningful
+connection between the two entities.
+4.7.5 Step-5: Determine Cardinality
+It
+is
+a crucial aspect of ER modeling because
+it clarifies the nature of
+relationships and guides the structure of the resulting database design. In the context of
+the Library Management System, the relationship between the Member and Book
+entities is carefully analyzed:
+e
+A member can borrow many books over a period of time. This means a single
+member is not limited to borrowing just one book; instead, they may borrow
+multiple books depending on library policies.
+e
+A book can be borrowed by many members. Although a book may be issued to
+one member at a specific moment, over time it can be borrowed by different
+members.
+This analysis shows that multiple instances of Member can be associated with
+multiple instances of Book, and vice versa. Therefore, the relationship is classified as:
+e
+Many-to-Many (M:N)
+4.7.6 Step-6: Resolving Many to Many Relationship
+Relational database systems are designed to handle relationships primarily
+through one-to-one and one-to-many associations. They do not directly support many-
+to-many (M:N) relationships because such relationships can lead to data redundancy
+Unit 4: Data and
+aw
+SS
+and complexity
+in data management.
+Therefore,
+an M:N relationship must
+be
+transformed into a structure that the relational model can efficiently implement.
+To resolve this issue, a new entity is introduced, commonly referred to as a junction
+entity (or bridge/associative entity). This entity serves as an intermediary that breaks
+the many-to-many relationship into two one-to-many relationships.
+In the Library Management System, the relationship between Member and
+Book is resolved by creating a new entity:
+e
+BorrowRecord
+o
+This entity represents each individual instance of a book being borrowed
+by a member. Instead of directly linking Member and Book in a many-
+to-many manner, each borrowing activity is recorded as a separate entry
+in the BorrowRecord entity.
+e
+BorrowRecord Entity Attributes
+o
+BorrowID (Primary Key):
+=
+A unique identifier assigned to each borrowing record. It ensures
+that every transaction
+is uniquely distinguishable within the
+system.
+o
+MemberID (Foreign Key):
+=
+This attribute references the primary key of the Member entity.
+It identifies which member
+is associated with
+a particular
+borrowing record.
+o
+BookID (Foreign Key):
+=
+This attribute references the primary key of the Book entity. It
+specifies which book is involved in the borrowing record.
+4.7.7
+Step-7: Final ER Schema
+Finally, the ER diagram reflects the following as shown in Fig. 4.5:
+e
+Member — BorrowRecord (One-to-Many):
+o
+One member can be associated with multiple borrowing records. Each
+record in BorrowRecord corresponds to a specific instance of borrowing
+by that member.
+I
+Le
+Unit 4: Data and Analysis
+e
+Book — BorrowRecord (One-to-Many):
+o
+One book can appear in multiple borrowing records over time. Each
+record represents a separate instance in which the book is borrowed.
+P
+BorrowID (PK)
+MemberID
+&
+BorrowRecord
+©
+BorrowID (PK)
+Borrows
+Borrows
+wae
+MemberID (FK)
+© BookID (FK)
+M
+=
+Many
+© Pk = Primary Key
+io FK = Foreign Key
+Figure 4.5: ER Diagram of Library Management System
+4.8
+Different Database Objects:
+In a Database Management System (DBMS), data is not only stored but also
+managed and presented using different tools known as database objects. These objects
+help users interact with the database in an easy and efficient way. The four main
+database objects are:
+e
+Tables
+e
+Forms
+e
+Queries, and
+e
+Reports.
+1.
+Table: The most important object in the database paradigm is the table, which
+is used to store data. A table is organized into rows and columns, where each
+row represents a record and each column represents a field as shown in Fig. 4.6.
+For example, in a student database,
+a table may store information such as
+tj
+Ly
+TCs
+Unit 4: Data and
+aw
+Rows
+i
+Ae
+Columns
+Primary Keys
+Characteristics
+°
+zero or more rows
+*
+one or more columns
+*
+primary key (one or more columns)
+Figure 4.6: Anatomy of the Table
+SS
+StudentID, Name, Class, and Marks. Tables are the foundation of a database
+because all other objects depend on them.
+2.
+Form: The second important object is the form. A form provides a user-friendly
+©
+interface for entering and updating data. Instead of directly typing data into
+tables, users can use forms to input information easily. For example, in a school
+system, an admission form can be designed where users enter student details
+such as name, date of birth, and class. Forms reduce errors and make data entry
+simple, especially for users who are not experts in databases.
+A database form is made up of several interactive and visual components that
+help users enter and manage data efficiently. These components act as the
+building blocks of a form in Database Management Systems. Figure 4.7 shows
+some of these components.
+Query: The third object is the query, which is used to retrieve specific data
+from the database. Queries allow users to ask questions from the database and
+get relevant results. For example, a query can be used to find all students who
+scored more than 80 marks or to count the total number of students in a class.
+Queries are very powerful because they help filter, sort, and analyze data.
+Report: The fourth object is the report, which is used to present data in a
+structured and formatted way. Reports are often used for printing or sharing
+information. For example,
+a school may generate a report showing student
+results, attendance summaries, or fee records.
+aX AAS N
+Unit 4: Data and Analysis
+In conclusion, database objects make it easier to store, manage, retrieve, and
+present data. Tables store data, forms help in data entry, queries retrieve information,
+and reports display results in a readable format.
+STUDENT REGISTRATION FORM
+Enter student details in the form below
+Th
+Labels:
+Descriptive text
+placed next to
+input fields. They
+tell the user what
+— Student ID:
+Full Name:
+information is
+required,
+_
+Father's Name:
+SSS
+Text Boxes:
+Used to enter text [A CNIC (B-Form):
+or numeric data.
+Date of Birth:
+Drop Down List
+Department:
+(Combo List):
+Provides a list of
+Predefined options.
+Email Address:
+Phone Number:
+Sy
+si]
+2] 10
+Save new record
+*
+Ei
+Gender:
+ae
+ener
+Radio Buttons:
+@ Male
+() Female
+() Other <— Allowstheuserto |
+select only one
+Ali Hassan
+option from the
+Hobbies (Select all that apply):
+group.
+Reading
+Muhammad Iqbal
+Sports
+Check Boxes:
+|
+Music
+Allow multiple
+42101-1234567-1
+selections from
+|
+Traveling
+alist.
+Programming
+15-08-2006
+Address:
+Text Area:
+Computer Science
+N
+1
+ee
+House
+No. A-123, Street 5,
+large amount of
+Gulshan-e-lqbal, Karachi,
+textual data,
+ali.hassan@example.com
+0301-2345678
+Data Picker:
+Helps select a date
+easily. Avoids incorrect
+date format.
+Buttons (Action Buttons): Used to perform specific actions.
+HG m1 sc) -a0
+& UPDATE
+eer Teel mice
+Sindh, Pakistan.
+usually multi-line
+data.
+eee
+Delete selected record
+Submit Button:
+Saves the entered
+information as a
+new record.
+Update Button:
+Reset Button:
+Clears all the
+Updates the
+entered fields.
+currently selected
+record.
+Delete Button:
+Deletes the
+currently selected
+record.
+This form includes all the essential components used in a database form for data entry and management.
+Figure 4.7: Example of Database Form
+Unit 4: Data and
+aw
+SS
+4.9
+Creation of Tables in Microsoft Access:
+Creating tables is the fundamental step in developing a database system, as
+tables serve as the primary structure for storing and organizing data. A carefully
+designed table not only ensures data accuracy and consistency, but also improves query
+performance, storage efficiency, and ease of data retrieval. Poor table design, on the
+other hand, can lead to redundancy, inconsistency, and difficulty in maintaining the
+database.
+4.9.1 Planning the Table Structure:
+Before physically creating
+a table
+in Microsoft Access,
+it
+is important to
+perform proper planning. This step ensures that the table structure aligns with the
+requirements of the system and avoids future modifications.
+Key planning activities include:
+e
+Identifying the Purpose of the Table: Clearly define what information the
+table will store and how it will be used.
+e
+Listing Required Fields: Determine all attributes necessary to represent the
+entity completely.
+e
+Selecting Appropriate Data Types: Choose data types that match the nature
+of the data (e.g., text, numeric, date).
+e
+Determining the Primary Key: Identify a field (or combination of fields) that
+uniquely identifies each record.
+Example: Student Table Design
+e
+StudentID (Primary Key)
+-
+AutoNumber
+e
+Name
+-
+Short Text
+e
+Department
+-
+Short Text
+e
+Age
+-
+Number
+e
+Email
+-
+Short Text
+A well-planned table minimizes redundancy and supports efficient database operations.
+4.9.2 Create Table using Datasheet View:
+The Datasheet View
+in Microsoft Access provides
+a straightforward and
+intuitive method for creating tables, particularly suitable for beginners.
+Procedure:
+1.
+Launch Microsoft Access and open a database.
+2.
+Navigate to the Create tab and select Table.
+3.
+A new table appears in Datasheet View, resembling a spreadsheet interface.
+4.
+Enter data directly into the cells. MS Access automatically assigns default field
+names (e.g., Field1, Field2).
+»
+YS
+aX aan V
+(ss)
+‘
+«
+es
+o
+Unit 4: Data and Analysis
+i
+5.
+Rename
+fields
+by double-clicking
+on
+the column headers
+and
+entering
+meaningful names.
+This method allows users to quickly create a table without defining the structure
+in advance. However,
+it offers limited control over advanced settings such as field
+properties and data validation. Figure 4.8 illustrates this entire process of table creation
+in MS. Access.
+4.9.3 Create Table using Design View:
+Design View provides a more structured and flexible approach for creating
+tables, allowing users to define all aspects of the table before entering data.
+Procedure:
+1.
+Go to the Create tab and select Table Design.
+2.
+Enter the Field Name for each attribute.
+3.
+Specify the Data Type corresponding to each field.
+4.
+Optionally, provide a Description to document the purpose of the field.
+5.
+Select a field and assign it as the Primary Key using the toolbar or right-click
+option.
+6.
+Save the table with an appropriate name.
+Design View
+is preferred in professional database development because
+it
+provides complete control over the structure and constraints of the table as shown in
+Fig 4.9.
+".
+Create
+=,
+Form
+Form
+Blank
+More
+Design
+Form
+Forms +
+Query
+Query
+Wizard
+= Design
+Queries
+Application
+Table
+Parts =
+Table
+SharePoint
+Design
+Lists =
+Tables
+All Access Objects
+Search...
+P
+Tables
+Queries
+Forms
+Templates
+Forms
+| @
+Launch Microsoft Access and open a database.
+Reports
+f
+7/14 Jes,
+CREATING A TABLE USING
+BW
+PALO
+Application
+Parts =
+Templates
+All Access Objects
+Search...
+Tables
+Queries
+Forms
+Reports
+A
+Query
+Qorm
+Wizard
+Design
+ee]
+[eA]
+~
+Form
+Blore Fer +
+Queries
+|
+Objects
+PTE Tables
+[Queries
+fi
+Forms
+Gl
+Reports
+8
+Navigate to the Create tab and select Table.

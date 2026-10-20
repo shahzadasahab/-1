@@ -1,0 +1,1311 @@
+Chapter
+FANNMEIRCECEREE CEE EMA
+|
+4
+|
+ane
+Op
+nn
+eee
+=
+a
+a
+BEESON SD OE WEEE OC SEE Ew
+eee
+‘aA
+Pe wae
+~
+SS
+Student}.earning Outcomes:
+After the completion of this unit students will be able to:
+@
+Describe the components of the Internet of Things and Data Analytics.
+@
+Identify uses of Internet of Things
+in smart
+cities,
+industries, healthcare,
+education, automation, smart grid,
+@
+Smart farming, wearable, etc.
+@
+Identify reliable and unreliable information sources.
+<
+and human impact.
+Unit 5: Applications and Impacts of Computin
+— al
+5.1
+Introduction:
+Computing is now an important part of our daily lives. We use computers,
+mobile phones, the internet, smart devices, online learning systems, digital banking,
+and many other technologies.
+In Pakistan,
+it
+is
+also becoming important
+in
+schools,
+colleges,
+offices,
+hospitals, banks, farms, and industries. Students use mobile phones and computers for
+learning. Teachers use online resources and Learning Management Systems. Hospitals
+use digital records. Banks use mobile apps and ATM machines. Farmers can use
+weather
+information
+and
+smart
+irrigation
+systems.
+These
+examples
+show
+that
+computing is not limited to computer labs only; it is used in almost every field of life.
+5.1.1 Artificial Intelligence:
+Al is called “artificial” because it is created by humans, and
+“intelligence”
+means it can perform tasks that require thinking. AI systems use data to make decisions.
+For example, when a mobile phone recognizes a face to unlock the screen, it uses AI.
+When YouTube suggests videos according to a user’s interests, it also uses AI. When
+a chatbot answers simple questions on a website, it is using AI.
+AI in Smart Systems: Artificial Intelligence often works together with other
+technologies like the Internet of Things (IoT) and Data Analytics. loT devices gather
+data from the real world. Data Analytics sorts and studies this information. Then, AI
+uses the results to make decisions.
+For example, in a smart home, a temperature sensor collects data about the
+room temperature. The system analyzes the data. If the room is hot, AI can decide to
+turn on the fan or air conditioner. In this way, AI acts like the “brain” of a smart system.
+5.1.2 Internet of Things:
+The Internet of Things is a system in which devices are connected to the Internet
+and can collect and share data to perform tasks automatically. IoT devices include
+sensors, smart watches, smart cameras, smart meters, smart appliances, machines,
+vehicles, and other connected devices. For example, a smartwatch collects data about
+steps, heart rate, and sleep. It sends this data to a mobile phone. The mobile phone
+shows the information to the user.
+IoT relies on several foundational components that have been strengthened by
+recent technological advancements.
+i.
+Sensors: Sensors are a vital component of IoT systems. Sensors are devices
+that collect information from the physical world. They can detect temperature,
+light, sound, movement, pressure, humidity, or other conditions. The following
+sensor technologies are implemented in devices:
+| ie.
+MW)
+lf
+nit 5: Applications and Impacts of Computi
+Temperature sensor
+Motion sensor
+Fingerprint sensor
+Camera sensor
+Smoke sensor
+Soil moisture sensor
+For example, a fingerprint sensor in mobile phones is a biometric security
+device that identifies and verifies a user based on unique fingerprint patterns.
+When a user places a finger on the sensor, it captures a digital image, converts
+it into a template, and compares it with stored data to verify identity.
+ii.
+Actuators: Actuators are devices that perform actions in response to system
+commands.
+They convert
+digital
+signals
+into
+physical
+actions,
+such
+as
+movement or switching.
+For example, in an automatic door system, a motion sensor detects movement
+and sends a signal to the control unit. The control unit processes this signal and
+sends a command to the actuator (motor), which opens the door smoothly.
+The following actuator technologies are implemented in devices.
+Motor
+Electric switch
+Automatic door opener
+Water valve
+Fan controller
+Alarm system
+iii.
+| Connectivity: Connectivity means the connection between devices. It allows
+IoT devices to send and receive data. Without connectivity, sensors cannot send
+data and devices cannot receive commands.
+Common Connectivity Technologies:
+e
+Wi-Fi
+e
+Bluetooth
+e
+ZigBee
+e
+LoRaWAN
+e
+NB-IoT
+e
+4G/5G
+If the connection is weak or lost, data cannot be transmitted, and devices cannot
+receive commands.
+For example, a smartwatch connects to a mobile phone via Bluetooth and sends
+health data, such as heart rate and steps, for analysis and display.
+aX AAS N
+— all
+Vi.
+Unit 5: Applications and Impacts of Computin
+Data Processing: Data processing means changing raw data into useful
+information. In IoT systems, data collected by sensors is processed to make
+decisions.
+Steps in Data Processing:
+e
+Collecting data
+e
+Organizing data
+e
+Analyzing data
+e
+Making a decision
+For example, a temperature sensor sends data to a smart home system. The
+system checks whether the room is hot or cold. If the room is hot, it turns on
+the fan or air conditioner.
+Cloud Computing:
+It allows users to store data and use services over the
+internet instead of relying solely on their own computers or mobile phones.
+Cloud computing supports IoT because IoT devices often collect large amounts
+of data. This data can be stored and processed on cloud servers.
+Cloud computing provides different types of services:
+e
+Google Drive
+Dropbox
+iCloud
+Google Classroom
+Online Learning Management Systems (LMS)
+For example, students and teachers in Pakistan can use cloud services to share
+notes, assignments, lectures, and educational material. This is especially helpful
+when students cannot attend physical classes regularly.
+User Interface (UD: A UI is the component ofa system that enables interaction
+between the user and a device or applications. Its main functions are:
+e
+Displaying system data
+e
+Allowing user commands
+e
+Monitoring system activity
+It helps users see information and give commands. The following devices or
+applications are examples of UI technologies.
+e
+Mobile app
+Touch screen
+Buttons
+Dashboard
+Voice command system
+nit 5: Applications and Impacts of Computi
+vA
+SS
+5.1.3 Data Analytics:
+Data Analytics is the process of collecting, organizing, cleaning, studying, and
+presenting data to find useful information. Data Analytics helps people make better
+decisions.
+It is used in education, business, healthcare, government offices, banks,
+agriculture, and many other fields.
+For example, a college prepares examination results. Teachers collect marks,
+correct mistakes, calculate percentages, and check which students need help.
+It comprises five key components; each component plays a vital role in making an
+accurate decision.
+i.
+Data Collection: This is the first step in the data analytics process. It collects
+raw information from multiple sources, such as websites, apps, surveys, or
+machines.
+Examples of Data Sources:
+School attendance records
+Examination marks
+Surveys
+Mobile apps
+Websites
+Sensors
+Hospital records
+Bank transactions
+ii.
+Data Storage: After collection, data must be stored safely and properly. Data
+may be stored in files, databases, spreadsheets, or in the cloud.
+For example,
+a college stores students’ admission records, attendance, and
+examination results in a computer system or online storage facilities.
+iii. Data Cleaning: Data cleaning involves identifying and correcting errors in
+data. Raw data may contain errors, duplicate records, missing values, or wrong
+formats. The following issues may arise during data collection and must be
+identified and addressed.
+e
+Duplication of files or records.
+e
+Incorrect values, where
+data entries
+do
+not accurately reflect
+the
+intended information.
+e
+Missing files or records.
+e
+The data is organized in an improper format.
+For example, during result preparation, a teacher may find that one student’s
+marks are missing or a roll number is typed incorrectly. These mistakes must
+be corrected before final results are prepared.
+AX AAS N
+Unit 5: Applications and Impacts of Computin
+>
+iv. Data Analysis: After cleaning, the data is analyzed to identify patterns, trends,
+and relevant information for problem-solving and decision-making. The main
+objective is to obtain useful and meaningful insights from the data.
+For example, teachers analyze exam results to determine:
+e
+Subjects in which students performed poorly.
+e
+Students who require additional support.
+v.
+Data Visualization: It involves creating visual representations of data, such as
+plots, charts, and graphs, to analyze patterns and trends and provide valuable
+insights. By comparing and analyzing datasets, data analysts extract meaningful
+information from raw data.
+For example, schools will show their performance data by using the following
+methods:
+Bar charts to display marks by subject.
+Pie charts to illustrate pass and fail percentages.
+Differentiate
+Internet
+of
+Things
+(IoT), Artificial
+Intelligence
+(AD),
+and Data Analytics
+Internet of Things
+Artificial
+,
+FSI au 5
+Aen y
+RT een eA)
+Data Analytics
+A network of physical
+Mecano
+that
+Process of
+enables machines to
+.
+eye
+devices connected to
+examining data to
+Definition
+.
+think, learn, and
+the internet that collect
+.
+find patterns and
+make decisions like
+and share data
+useful information
+humans
+.
+To collect real-world | To make intelligent
+To analyze data
+Main
+.
+.
+Purpose
+data using sensors and
+decisions and
+and extract
+*P
+devices
+predictions
+meaningful insights
+Key
+Data collection
+Decision making
+Data analysis and
+Function
+and automation
+interpretation
+Sensors, actuators,
+Algorithms,
+Data colection,
+Components | connectivity (Wi-Fi,
+models, machine
+15>
+;
+processing,
+Bluetooth)
+learning
+oe,
+visualization
+Type of
+Works with physical
+= Works with smart
+Works with data
+Work
+devices
+software systems
+§§ (numbers, records)
+Smart home system
+Voice assistants
+Analyzing student
+Example
+controlling lights and
+like Sirior Google | exam results to find
+temperature
+Assistant
+performance trends
+d
+<
+MN)
+lf
+nit 5: Applications and Impacts of Computing
+Raw data from
+Smart decisions or
+Reports, graphs,
+Output
+:
+;
+.
+environment
+actions
+and insights
+Uses data collected
+Generates data for AI | Uses data from IoT
+Dependency
+;
+from IoT or other
+and analytics
+and analytics
+sources
+5.2.
+Uses of IoT In Different Areas:
+The Internet of Things (IoT) has become an essential part of modern life. It is
+widely used in homes, industries, healthcare, education, and agriculture. IoT systems
+improve efficiency, save time, reduce human effort, and enhance the overall quality of
+life. It plays a significant role in the development of smart cities by improving urban
+infrastructure and public services through automation and real-time monitoring.
+i.
+Smart Cities: Various applications are being implemented in different cities.
+e
+Smart Traffic Management: Sensors and cameras monitor traffic flow
+and adjust traffic signals automatically to reduce congestion, E-Challen.
+e
+Smart Street Lighting: Street lights turn ON/OFF automatically based
+on movement or daylight, saving energy.
+e
+Smart Parking Systems: Sensors detect empty parking spaces and
+guide drivers accordingly.
+e
+Waste Management: Smart bins
+send
+alerts when they
+are
+full,
+ensuring timely collection.
+For example:
+In
+large
+cities
+such
+as Karachi, Hyderabad,
+Lahore,
+and
+Islamabad, smart traffic monitoring can help reduce traffic problems and
+improve road safety.
+ii.
+Industrial Automation (Smart Industry): IoT is widely used in industries to
+automate processes and improve productivity.
+e
+Sensors can check machine temperature.
+e
+Vibration sensors can detect machine problems.
+e
+Automated machines can perform repeated tasks.
+e
+Quality control sensors can check products during manufacturing.
+For example: In textile industries of Sindh and Punjab, IoT systems can help
+monitor machines and reduce production delays.
+iii.
+Healthcare (Smart Health Systems): IoT improves healthcare services by
+enabling continuous monitoring and timely medical response.
+e
+Smartwatches can measure heart rate.
+e
+Remote monitoring devices can send patient data to doctors.
+— all
+iv.
+Unit 5: Applications and Impacts of Computin
+e
+Emergency alert devices can inform family members or hospitals.
+e
+Digital medical records can help doctors check patient history.
+For example: In Pakistan, remote patient monitoring can help people living in
+rural areas where hospitals are far away.
+Education
+(Smart Learning
+Environment): IoT
+enhances
+the
+learning
+experience by making classrooms interactive and efficient. The following
+applications are used in the education sector.
+e
+Smart Classrooms: Digital boards, projectors, and connected devices
+improve teaching methods.
+e
+Attendance
+Systems: Biometric
+systems
+automatically
+record
+students’ and teachers’ attendance.
+e
+Resource Management: IoT helps manage lighting, temperature, and
+equipment in classrooms.
+e
+Remote Learning: Students can access lessons through connected
+devices.
+For example:
+In government
+colleges
+and schools
+of Sindh, biometric
+attendance and digital classrooms can help improve management and learning.
+Home Automation (Smart Homes): IoT is widely used in homes to automate
+daily tasks and improve comfort. Commonly useful applications are:
+e
+Smart Lighting: Lights can be controlled remotely or automatically.
+e
+Smart Security Systems: Cameras
+and sensors provide real-time
+monitoring and alerts.
+e
+Smart Appliances: Devices
+like
+refrigerators, ACs,
+and washing
+machines can be controlled via mobile apps.
+e
+Voice Control: Systems such as voice assistants enable users to control
+devices with voice commands.
+For example: A person can use a mobile app to turn off lights or check a
+security camera while away from home.
+Smart
+Farming:
+IoT
+is
+revolutionizing
+agriculture
+by
+enhancing
+crop
+productivity and improving resource efficiency. Smart farming is increasingly
+adopting
+IoT-based
+applications
+to
+improve
+agricultural
+efficiency
+and
+productivity. Agriculture is very important in Pakistan, especially in Sindh. IoT
+can help farmers save water, improve crop production, and monitor weather
+conditions. It helps in different farming methods such as:
+e
+Soil moisture sensors can check water needs.
+e
+Weather sensors can provide weather information.
+5.2.1
+nit 5: Applications and Impacts of Computi
+4
+SS
+e
+Automated irrigation can control water supply.
+e
+Drones and cameras can monitor crops.
+For example: In rural areas of Sindh, farmers grow crops such as wheat, rice,
+cotton, sugarcane, and vegetables. Smart irrigation systems can help farmers
+use water carefully, especially in areas where water shortage
+is
+a serious
+problem.
+Scope of Artificial Intelligence (AI) in Education in Pakistan:
+Artificial Intelligence is gradually becoming an important part of Pakistan’s
+education system. With the increasing use of digital technologies and online learning
+platforms, AI is helping improve teaching, learning, and administrative processes.
+i.
+il.
+Practical Uses of AI in Pakistan:
+e
+Implementation of Learning Management Systems (LMS)
+e
+Growth of online and virtual classrooms, especially after COVID-19
+e
+Use of automated grading systems and digital assessment
+e
+Development
+ofcareer
+counselling
+systems based
+on_
+student
+performance
+e
+Government initiatives promoting digital and AI-based education
+Benefits of AI in Education:
+Help students learn at their own speed
+Support teachers in checking work
+Identify students who need extra help
+Improve online learning
+Support students with disabilities
+Help institutions make better decisions using data
+iii. Major Challenges:
+e
+Limited internet access in many rural areas
+e
+Lack of computers and digital devices
+e
+Need for teacher training
+e
+High cost of Al-based systems
+e
+Data privacy and security issues
+e
+Risk of overdependence on technology
+5.2.2 Career and Skill Connection in IoT and AI:
+IoT and AI are creating new career opportunities in Pakistan. Students who
+learn computing skills can work in software houses, industries, telecom companies,
+banks, hospitals, schools, agriculture, and government departments. Government and
+»
+AX AAS N
+Unit 5: Applications and Impacts of Computin
+— al
+private
+organizations
+such
+as
+the Sindh
+IT
+Department, SITC,
+and
+telecom
+companies
+like Jazzand Telenor
+Pakistan are
+actively
+working
+on
+IoT-based
+solutions, digital infrastructure, and smart systems.
+Future Career:
+e
+IoT Engineer who designs and develops smart systems and connected devices.
+e
+Embedded Systems Engineer, works with sensors, microcontrollers, and
+hardware.
+e
+Network Engineer, manages communication between devices.
+e
+Data Analyst: analyzes data generated by IoT systems.
+e
+System Administrator, maintains IoT infrastructure and services.
+Skill required:
+e
+Programming: Basic coding in Python, Java, C++, etc.
+e
+Electronics: Understanding sensors, circuits and smart devices.
+e
+Networking: Wi-Fi, Bluetooth, and internet communication protocols.
+e
+Data handling: Data collection, cleaning, and analysis.
+e
+Problem-Solving:
+Identifying problems
+and
+finding
+solution
+to
+real-life
+problems.
+e
+Communication: Explaining ideas clearly and building a strong understanding
+for users.
+e
+Ethics: Using technology safely and responsibly.
+5.3.
+Information Sources:
+Information is useful data that helps people understand facts, make decisions,
+and solve problems using computers. Today, the internet provides a lot of information,
+but not all of it is accurate or reliable.
+Information sources are ways to find knowledge and data. Information is
+important for learning, research, and making decisions. These sources are grouped
+into primary,
+secondary, and tertiary sources,
+andeach plays
+a
+different
+role
+in
+academic work.
+nit 5: Applications and Impacts of Computi
+4 SS
+i.
+Primary Sources: Primary sources give original, firsthand information that
+comes straight from people, places, events, experiments, or official records.
+For example, interview, speeches,
+diaries,
+letters, photographs, NADRA
+records, official records, etc.
+The main features of primary sources are as follows:
+e
+Provide original and direct information.
+e
+Accurate and authentic data
+e
+Support research and investigations
+For example, NADRA
+is
+a primary source of information because
+it
+is
+collected directly from individuals and officially verified. For example, when a
+citizen applies for
+a CNIC, personal details like name, date of birth, and
+fingerprints
+are recorded and authenticated.
+Therefore, NADRA records
+constitute original, reliable first-hand information.
+When Primary Sources Become Unreliable:
+Primary sources may become unreliable if:
+e
+Information is incomplete.
+e
+Data is recorded incorrectly.
+e
+False information is provided.
+ii.
+Secondary Sources: A secondary source is information that has already been
+collected and explained by someone else. It does not give original or first-hand
+data. Instead, it helps us understand, summarize, or analyze information from
+primary sources more simply.
+Secondary Sources:
+e
+Textbooks and reference books
+e
+Research papers and review articles
+e
+News reports and documentaries
+e
+Biographies and historical analysis
+These sources are helpful for learning because they organize information and
+make it easier to follow.
+For example, reports published by the Pakistan Bureau of Statistics use data
+collected from censuses and surveys
+to present summaries,
+graphs,
+and
+analysis. These reports are considered secondary sources because they are based
+on already collected primary information.
+Unit 5: Applications and Impacts of Computin
+—
+gl
+When Secondary Sources Become Unreliable:
+Secondary sources may become unreliable if:
+e
+Outdated information
+e
+Lack of proper references
+e
+No expert verification
+iii.
+Tertiary Sources:
+Tertiary sources provide summarized and organized
+information derived from both primary and secondary sources,
+such
+as
+encyclopedias, dictionaries, handbooks, Glossaries, Indexes, etc. These sources
+are mainly used for quick reference and basic understanding. A few common
+features:
+e
+Provide summarized and organized information.
+e
+Based on both primary and secondary sources
+e
+Easy to access and understand
+e
+Useful for quick revision and general knowledge
+For example, Encyclopedias and online databases like Wikipedia articles about
+Pakistan, which summarize information from books, research papers, and
+reports, are considered tertiary sources.
+When Tertiary Sources Become Unreliable:
+Tertiary sources may become unreliable if:
+e
+Unknown or unverified websites
+e
+Oversimplified or incomplete information
+5.3.1 Career and Skill Development through Information Sources:
+In
+Pakistan,
+different
+types
+of information
+sources
+help
+students
+and
+professionals build careers and develop important skills.
+Future Career:
+e
+News hosts and journalists collect news, verify facts, and present accurate and
+reliable information to the public.
+e
+Researchers use trustworthy sources of information to conduct studies and
+share their findings.
+e
+Teachers use
+accurate information
+to
+prepare
+lessons
+and
+help
+students
+understand different topics.
+e
+Content writers create articles and learning materials based on well-checked
+and reliable information.
+e
+Data analysts study data from reliable sources to identify trends and support
+better decision-making.
+¢
+¢
+MN)
+lf
+Skill required:
+nit 5: Applications and Impacts of Computi
+e
+Reading and understanding information
+5.4
+Checking reliable sources
+Writing clearly
+Organizing data
+Avoiding fake news
+Giving references
+Presenting information honestly
+4
+Impacts of Computing In Various Fields of Life:
+Computing has both positive and negative impacts on society. It has made life
+easier, faster, and more connected. At the same time,
+it has created some problems,
+such as overuse of technology, privacy risks, and job changes. Students should
+understand both sides of computing so that they can use technology responsibly.
+Positive and Negative Impacts of Computing:
+ya
+Positive Impact
+CECE eta
+Online classes, e-books,
+;
+;
+TRON Innrn tonne
+Excessive screen time can
+Education
+rr
+.
+reduce attention and affect
+make studying easier and
+health.
+more flexible.
+Emails, messaging apps, and | People may interact less in
+Communication | video calls allow fast and easy |_ person, reducing face-to-
+communication.
+face communication.
+Online shopping, digital
+Some traditional jobs may
+Business
+banking, and automation
+be replaced by machines
+improve speed and efficiency.
+and technology.
+Digital patient records,
+telemedicine, and smart
+Patient data can be misused
+Healthcare
+Ll.
+:
+.
+;
+devices improve diagnosis and
+if not properly secured.
+treatment.
+Weather forecasting and smart | Limited internet access in
+Agriculture
+irrigation systems help
+rural areas can reduce the
+increase crop production.
+use of modern tools.
+Smart devices and online
+oie
+;
+;
+People may become too
+Daily Life
+services save time and make
+d
+;
+;
+ependent on technology.
+life more convenient.
+>
+aX aan V
+SS
+—F
+Unit 5: Applications and Impacts of Computin
+Smart and Responsible Use of Computing:
+Responsible use means using technology safely, ethically, and wisely.
+Students should:
+Protect their personal information
+Use strong passwords
+Avoid sharing false information
+Be respectful to others when you are online.
+Use technology to learn new things and for positive activities
+Make sure to balance your screen time with physical activities.
+An Analytical Approach to the Impacts of Computing:
+3.5
+Computing improves efficiency and accessibility, especially in education and
+healthcare.
+Computing creates new jobs but can also replace some older jobs.
+It helps people around the world communicate, but sometimes we spend less
+time talking face-to-face.
+Technology makes life more convenient, but we can become too dependent on
+it.
+Assistive Technologies:
+Assistive technologies are devices, software, tools, and systems that help people
+with disabilities
+or functional limitations. These technologies support people
+in
+education, communication, movement, learning, and daily life.
+It helps create an
+inclusive
+society. They allow more people
+to participate
+in school, work,
+and
+community life. Assistive technologies can be categorized into different groups based
+on their functions:
+i.
+il.
+iil.
+Mobility aids: Mobility aids help people move from one place to another. The
+following aids are included: wheelchairs, walkers, crutches, and stair lifts.
+For example, a student who has difficulty walking may use a wheelchair to
+move around the school or college.
+Sensory
+aids: This
+technology enhances
+or
+supports
+sensory
+functions,
+particularly vision and hearing, thereby enabling improved interaction with the
+environment. The following aids are included: hearing aids, screen readers,
+Braille displays, Electronic white canes and magnifying devices for individuals
+with visual impairments.
+For example, screen readers (e.g., NVDA, VoiceOver) convert text on
+a
+computer into speech for students with visual difficulties.
+Communication aids: This technology assists individuals with speech or
+expressive difficulties, enabling more effective communication. The following
+iv.
+5.5.1
+nit 5: Applications and Impacts of Computi
+4
+SS
+aids
+are
+included:
+speech-generating
+devices,
+text-to-speech applications,
+communication boards, and mobile applications designed to support speech.
+For
+example,a
+child
+who
+cannot
+speak
+clearly
+may
+use
+a
+picture
+communication board to express needs and ideas.
+Cognitive and learning aids: These aids help people with memory, reading,
+writing,
+learning,
+and
+understanding.
+The
+most
+common
+aids
+include
+educational applications, spell-check tools, text-to-speech software, reminder
+applications, audiobooks, grammar checking tools, concept mapping tools, and
+digital planners.
+For example, A student with reading difficulty may use an audiobook to
+understand a lesson.
+Importance of Assistive technologies:
+These technologies have a profound impact across domains such as education,
+communication, healthcare, and personal independence.
+1.
+e
+ii.
+Equal Access to Education:
+They help students with disabilities learn better in the classroom.
+Tools like screen readers and speech-to-text programs make learning materials
+easier to access.
+Allows students to participate in online and physical learning equally.
+Improved Communication:
+They support people who have trouble speaking, hearing, or seeing.
+Communication devices and apps make it easier for users to share their thoughts
+clearly.
+These tools help students, teachers, and others interact more easily.
+Independence in Daily Life:
+They help people do tasks on their own, without always needing help.
+Mobility aids help people with physical disabilities move around safely.
+These technologies build confidence and help people become more self-reliant
+in their daily lives.
+Better Healthcare Support:
+Hospitals use assistive technologies for patient monitoring and rehabilitation.
+They help doctors keep track of patient conditions more accurately.
+Specialized assistive devices can also help people recover more effectively.
+Equal Opportunities in Employment:
+They allow people with disabilities to work efficiently in many different jobs.
+Workplace technologies help people do their jobs independently.
+These tools promote fairness and help make job opportunities more inclusive.
+>
+\
+SF
+5.5.2
+i.
+Unit 5: Applications and Impacts of Computin
+Social Inclusion:
+They help reduce barriers between people with and without disabilities.
+These technologies encourage people to take part in social, educational, and
+work activities.
+They help build a more inclusive and supportive society.
+Career Connection in Assistive Technologies:
+Assistive technologies are creating new and meaningful career opportunities in
+Pakistan. Students interested in computing, healthcare, design, and engineering can
+build successful careers in this growing field.
+Careers in Assistive Technologies:
+Assistive Software Developer: Creates software like screen readers and
+speech-to-text tools to help people with disabilities use computers easily.
+AI and Machine Learning Specialist: Develops smart systems
+that
+improve accessibility, such as voice assistants and automated recognition
+tools.
+Biomedical Engineer: Designs and develops assistive medical devices like
+artificial limbs, hearing aids, and other supportive equipment.
+UX/UI Designer (Accessibility Expert): Designs websites and apps that
+are simple, clear, and easy to use for all users, including people with
+disabilities.
+Rehabilitation Technologist: Helps patients learn how to use assistive
+devices properly to improve their daily life and independence.
+ii.
+Skills Required:
+Skill Area
+Description
+Programming
+Developing useful software and apps
+Design
+Making systems easy for all users
+Healthcare Knowledge
+Understanding users’ physical and learning needs
+Problem-Solving
+Creating solutions for real-life challenges
+Communication
+Working with teachers, doctors, students, and families
+Empathy
+Understanding and respecting the needs of all users
+<
+nit 5: Applications and Impacts of Computi
+4
+SS
+w
+GJ) Career Opportunities
+This unit explores how computing technologies such as Artificial Intelligence (AI), the
+Internet of Things (JoT), and data analytics are transforming daily life, from smart homes to
+hospitals
+and farms.
+These emerging
+fields
+offer some
+of the fastest-growing
+career
+opportunities in technology today.
+Artificial Intelligence Engineer
+IoT (internet of Things) Engineer
+Designs intelligent systems and
+Develops connected devices and sensor
+algorithms that let machines make
+networks used in smart homes,
+decisions, such as facial recognition or
+wearables, and smart cities.
+recommendation engines.
+Data Analytics Specialist
+Robotics / Smart Systems Engineer
+Analyzes data gathered from smart
+Combines AI, IoT, and hardware
+devices and sensors to support
+knowledge to design automated and
+automated decision-making.
+robotic systems.
+Machine Learning Engineer
+Technology
+Builds and trains models that allow
+Advises businesses, schools, and
+smart systems to improve their
+hospitals on adopting AI and JoT
+performance using real-world data.
+solutions to improve efficiency.
+Summary
+~
+Computing is applied across various sectors, including education, healthcare,
+banking, agriculture, industry, communication, and daily life.
+Artificial Intelligence enables machines to learn from data, recognize patterns,
+and
+make
+decisions.
+It
+is
+used
+in
+facial
+recognition,
+chatbots,
+video
+recommendations, and smart systems.
+AI works alongside IoT and Data Analytics. IoT collects data, Data Analytics
+examines it, and AI uses the insights to make informed decisions.
+~
+JoT devices connect to the internet, enabling them to collect, share, and use data
+automatically.
+(190)
+3
+A
+>
+o
+°
+°
+°
+©
+°
+o
+°
+°
+A
+°
+°
+ii)
+A
+Unit 5: Applications and Impacts of Computin
+The
+main components
+of IoT
+are
+sensors,
+actuators,
+connectivity,
+data
+processing, cloud computing, and user interface.
+IoT
+is implemented in smart
+cities, industry, healthcare, education, smart
+homes, and agriculture.
+In
+Pakistan,
+IoT
+can
+enhance
+traffic
+management,
+healthcare
+services,
+classroom administration, industrial production, and water-efficient agriculture.
+Data Analytics involves collecting, storing, cleaning, analyzing, and presenting
+data to extract valuable insights.
+Data Analytics supports schools, banks, hospitals, businesses, and government
+offices in making informed decisions.
+Information sources are divided into primary, secondary, and tertiary sources.
+Students should check information carefully before using
+it because not all
+online information is reliable.
+Computing has positive impacts, such as faster communication, easier learning,
+better healthcare, online banking, and improved farming.
+Computing also has negative impacts, including privacy risks, excessive screen
+time, job displacement, and overreliance on technology.
+Responsible use of computing means using technology safely, ethically, and
+wisely.
+Assistive
+technologies
+support
+individuals
+with
+disabilities
+in
+mobility,
+learning, communication, hearing, vision, and daily activities.
+These
+technologies
+promote
+equal
+access
+to
+education,
+healthcare,
+employment, and social participation.
+This unit helps students understand the connection between computing, daily
+life, society, career opportunities, and Pakistan’s future development.
+Encircle the correct answer
+A smartwatch records heart rate and sends
+it to
+a mobile phone. Which
+technology is mainly used here?
+(a) Word Processing
+(c) Printing Technology
+(b) Internet of Things
+(d) Analog Technology
+In a smart irrigation system, which device checks whether the soil is dry or wet?
+(a) Actuator
+(c) Monitor
+(b) Sensor
+(d) Smart hearing aid
+<
+Sk sy
+iii)
+iv)
+vi)
+vii)
+viii)
+ii)
+iii)
+Iv)
+nit 5: Applications and Impacts of Computi
+4 SS
+A school removes duplicate student records while preparing examination
+results. Which step of Data Analytics is this?
+(a) Data collection
+(c) Data cleaning
+(b) Data visualization
+(d) Data storage
+Which of the following is a primary source of information?
+(a) Textbook
+(c) Dictionary
+(b) Interview
+(d) Summary website
+A student uses an unknown website without an author name or references. This
+source is likely to be:
+(a) Reliable
+(b) Primary
+(c) Unreliable
+(d) Official
+Which technology supports people with hearing, vision, learning, or movement
+difficulties?
+(a) Gaming technology
+(c) Assistive technology
+(b) Chatboard technology
+(d) Antivirus technology
+Which of the following is an actuator in a smart water system?
+(a) Soil moisture sensor
+(c) Temperature sensor
+(b) Water valve
+(d) Camera sensor
+Which type of source usually provides summarized information for quick
+reference?
+(a) Primary source
+(b) Secondary source
+(c) Tertiary source
+(d) Unverified source
+Which method is used to present data through charts and graphs?
+(a) Data collection
+(c) Data cleaning
+(b) Data storage
+(d) Data visualization
+Which assistive technology converts on-screen text into speech?
+(a) Screen reader
+(c) Motion sensor
+(b) Smart meter
+(d) Water pump
+.
+Fill in the Blanks
+A
+detects changes such as temperature, movement, light, or soil
+moisture.
+An
+performs
+a physical action, such as opening
+a valve
+or
+switching on a
+fan.
+Correcting duplicate, missing, or incorrect records is called data
+An interview is an example of a
+source of information.
+technologies.
+»
+aX aA N
+Screen readers and hearing aids are examples of
+Unit 5: Applications and Impacts of Computin
+— al
+3. Provide short answers to the following questions.
+i)
+How does Artificial Intelligence help a mobile phone recognize a user’s face?
+ii) | What is the difference between a sensor and an actuator?
+iii)
+| How does cloud computing support students and teachers in Pakistan?
+iv) | What problems can occur if people become overdependent on technology?
+v)
+| Why are communication and problem-solving
+skills important
+for future
+computing careers?
+4. Provide detailed answers to the following questions.
+1)
+Explain how IoT components work together in a smart irrigation system for a
+farmer in Sindh. Include sensors, actuators, connectivity, data processing, and
+user interface in your answer.
+11)
+A college wants to improve its examination result system. Explain how Data
+Analytics can help from data collection to data visualization.
+iii)
+§Astudent finds information from a social media post and an official government
+website. Explain how the student should decide which source is more reliable.
+tv)
+Analyze the positive and negative impacts of computing.
+v)
+Discuss
+the career opportunities related
+to AI,
+IoT, Data Analytics, and
+Assistive Technologies in Pakistan. What skills should students develop for
+these careers?
+Activities
+1.
+Think of one smart device used in your home, school, or community. Does it
+use AI, IoT, or Data Analytics? Explain your answer in two or three sentences.
+2.
+Which smart city application is most needed in your city or town? Write one
+reason for your answer.
+3.
+Think about a farming problem in Pakistan. How can IoT help solve it?
+4.
+Choose one career from IoT or AI. Write two reasons why this career interests
+you and list three skills required for it.
+5.
+Do you enjoy reading, writing, checking facts, or organizing information?
+Choose one career from this section and explain why it may be suitable for you.
+6.
+Write one positive and one negative impact of computing that you have
+observed in your daily life.
+7.
+Identify one assistive technology used in schools or hospitals. Write how it
+helps people and which career is related to it.
