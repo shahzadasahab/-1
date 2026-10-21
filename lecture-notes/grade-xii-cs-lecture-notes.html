@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Grade XII Computer Science — Lecture Notes</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'local', scale: 1.02 },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+        window.mathjaxDone = true;
+      });
+    }
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {
+    --ink: #1a2330;
+    --muted: #4d5b6a;
+    --navy: #16324f;
+    --teal: #0e6b64;
+    --teal-d: #0a524d;
+    --gold: #a56b12;
+    --rose: #8b3d4a;
+    --line: #e4d9c8;
+    --sand: #f6f1e8;
+    --card: #fffdf9;
+    --wash: #e7f3f1;
+    --goldwash: #fbf3e3;
+    --rosewash: #f8eeee;
+    --navywash: #e8eef5;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Serif", "Liberation Serif", Georgia, serif;
+    color: var(--ink);
+    background: white;
+    font-size: 11pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  h1, h2, h3, h4, .sans, .chip, .kicker, .caption, .toc a, th, .badge, .foot, .meta {
+    font-family: Inter, "Noto Sans", "Liberation Sans", sans-serif;
+  }
+  h1 { font-size: 28pt; line-height: 1.05; margin: 0 0 8px; letter-spacing: -0.03em; }
+  h2 { font-size: 16.5pt; line-height: 1.15; margin: 0 0 8px; color: var(--navy); letter-spacing: -0.02em; }
+  h3 { font-size: 12.5pt; margin: 14px 0 6px; color: var(--teal-d); page-break-after: avoid; }
+  h4 { font-size: 11pt; margin: 10px 0 4px; color: var(--navy); page-break-after: avoid; }
+  p { margin: 0 0 8px; }
+  strong { font-weight: 700; }
+  code, pre, .mono { font-family: "JetBrains Mono", "Liberation Mono", ui-monospace, monospace; }
+  a { color: var(--teal-d); text-decoration: none; }
+
+  .sheet { max-width: 190mm; margin: 0 auto; }
+  .cover {
+    min-height: 255mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    page-break-after: always;
+    background:
+      radial-gradient(900px 280px at 100% 0%, #e7f3f1 0%, transparent 60%),
+      linear-gradient(180deg, #fffdf9 0%, #f4efe6 100%);
+    border: 1px solid var(--line);
+    padding: 16mm 14mm 12mm;
+  }
+  .kicker {
+    display: flex; align-items: center; gap: 8px;
+    color: var(--teal); font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; font-size: 9.5pt;
+  }
+  .kicker:before { content: ""; width: 28px; height: 3px; background: var(--gold); display: block; }
+  .lede { font-size: 12.5pt; color: var(--muted); max-width: 42em; }
+  .techrow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    border: 1px solid var(--line); background: white; color: var(--navy);
+    border-radius: 999px; padding: 4px 10px; font-size: 8.5pt; font-weight: 650;
+  }
+  .chip i { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); display: inline-block; }
+  .unitgrid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .unitcard {
+    flex: 1 1 46%;
+    display: flex; gap: 10px; align-items: flex-start;
+    background: white; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px;
+  }
+  .num {
+    flex: 0 0 auto; width: 28px; height: 28px; border-radius: 8px;
+    background: var(--navy); color: white; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 11pt;
+  }
+  .unitcard b { display: block; font-family: Inter, sans-serif; font-size: 10.5pt; color: var(--navy); }
+  .unitcard span { color: var(--muted); font-size: 9pt; }
+  .coverfoot { display: flex; justify-content: space-between; gap: 12px; align-items: flex-end; color: var(--muted); font-size: 9pt; }
+  .coverfoot strong { color: var(--navy); }
+
+  section.unit { page-break-before: always; }
+  #u1 { page-break-before: auto; }
+  .unithead {
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 12px;
+    border-bottom: 2px solid var(--navy); padding-bottom: 8px; margin-bottom: 10px;
+  }
+  .badge {
+    background: var(--navy); color: white; border-radius: 6px; padding: 3px 8px;
+    font-size: 8pt; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;
+  }
+  .slo {
+    display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px;
+  }
+  .slo span {
+    flex: 1 1 30%;
+    background: var(--navywash); border-radius: 8px; padding: 6px 8px;
+    font-family: Inter, sans-serif; font-size: 8.6pt; color: var(--navy);
+  }
+
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: stretch; margin: 8px 0 10px; }
+  .row > * { min-width: 0; }
+  .col { flex: 1 1 240px; }
+  .col-narrow { flex: 1 1 180px; }
+  .col-wide { flex: 2 1 320px; }
+
+  .card, .callout, .formula, .figure, pre, table, .qa { break-inside: avoid; page-break-inside: avoid; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 9px 11px;
+  }
+  .card h4 { margin-top: 0; }
+  .callout {
+    background: var(--goldwash); border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0; padding: 8px 10px; margin: 8px 0;
+  }
+  .callout.teal { background: var(--wash); border-left-color: var(--teal); }
+  .callout.rose { background: var(--rosewash); border-left-color: var(--rose); }
+  .callout .label {
+    font-family: Inter, sans-serif; font-size: 8pt; font-weight: 800;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 2px;
+  }
+  .callout.teal .label { color: var(--teal); }
+  .callout.rose .label { color: var(--rose); }
+
+  .figure {
+    background: white; border: 1px solid var(--line); border-radius: 12px; padding: 8px 8px 6px;
+    margin: 8px 0 12px;
+  }
+  .figure > svg { width: 100%; height: auto; display: block; }
+  mjx-container { max-width: 100%; }
+  mjx-container svg { width: auto !important; height: auto !important; max-width: 100%; display: inline; }
+  .caption { color: var(--muted); font-size: 8.4pt; margin-top: 4px; padding: 0 4px 2px; }
+  .caption b { color: var(--navy); }
+
+  .formula {
+    display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center;
+    background: #fbfaf6; border: 1px solid var(--line); border-radius: 10px;
+    padding: 6px 10px; margin: 6px 0;
+  }
+  .formula .eq { flex: 1 1 220px; }
+  .formula .mean { flex: 1 1 200px; color: var(--muted); font-size: 9.5pt; }
+
+  ul, ol { margin: 4px 0 8px; padding-left: 1.15em; }
+  li { margin: 2px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 9.4pt; }
+  th, td { border: 1px solid var(--line); padding: 4px 6px; vertical-align: top; text-align: left; }
+  th { background: var(--navy); color: white; font-weight: 650; }
+  tr:nth-child(even) td { background: #fbf8f3; }
+  pre {
+    background: #f4f0e7; border-left: 3px solid var(--teal);
+    border-radius: 0 8px 8px 0; padding: 8px 10px; margin: 6px 0 10px;
+    font-size: 8.4pt; line-height: 1.4; white-space: pre-wrap;
+  }
+  .qa { margin: 6px 0 8px; }
+  .qa .q { font-family: Inter, sans-serif; font-weight: 700; color: var(--navy); font-size: 10pt; }
+  .qa .a { margin-top: 2px; }
+
+  .steps { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 10px; }
+  .step {
+    flex: 1 1 120px; background: white; border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px;
+  }
+  .step b { display: block; font-family: Inter, sans-serif; color: var(--teal); font-size: 8pt; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  .small { font-size: 9.3pt; color: var(--muted); }
+  .toc { display: flex; flex-direction: column; gap: 4px; }
+  .toc a { display: flex; justify-content: space-between; gap: 8px; border-bottom: 1px dotted var(--line); padding: 3px 0; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<article class="cover">
+  <div>
+    <div class="kicker">Grade XII · Computer Science</div>
+    <h1>Lecture Notes</h1>
+    <p class="lede">A working set of notes for the six units: how people and computers meet, how algorithms and data structures are judged, how Python stores and files data, how numbers become decisions, how intelligent systems and security affect daily life, and how a small local problem becomes a tested digital product.</p>
+    <div class="techrow">
+      <span class="chip"><i></i>Inline SVG diagrams</span>
+      <span class="chip"><i></i>MathJax formulas</span>
+      <span class="chip"><i></i>Flexbox page layout</span>
+    </div>
+    <div class="unitgrid">
+      <div class="unitcard"><div class="num">1</div><div><b>Human–Computer Interaction</b><span>Usability, accessibility, Figma, testing</span></div></div>
+      <div class="unitcard"><div class="num">2</div><div><b>Computational Thinking</b><span>Correctness, Big O, linear and non-linear structures</span></div></div>
+      <div class="unitcard"><div class="num">3</div><div><b>Programming Fundamentals</b><span>Lists, tuples, sets, dictionaries, functions, files</span></div></div>
+      <div class="unitcard"><div class="num">4</div><div><b>Data and Analysis</b><span>SQLite, Pandas, charts, centre and spread</span></div></div>
+      <div class="unitcard"><div class="num">5</div><div><b>Applications and Impacts</b><span>Neural networks, protection, equity</span></div></div>
+      <div class="unitcard"><div class="num">6</div><div><b>Digital Entrepreneurship</b><span>Prototype, MVP, beachhead market</span></div></div>
+    </div>
+  </div>
+  <div>
+    <div class="callout teal">
+      <div class="label">How to use these notes</div>
+      Read a section, redraw its diagram from memory, then redo the worked numbers without looking. The short answers at the end of each unit are written in the form an examiner can mark.
+    </div>
+    <div class="coverfoot">
+      <div><strong>Student revision booklet.</strong> Original notes on the Grade XII syllabus. Diagrams and wording are drawn for study, not copied from the textbook pages. Formulas are set with MathJax and stored in the PDF as SVG.</div>
+    </div>
+  </div>
+</article>
+
+<section>
+  <div class="unithead">
+    <h2>How the booklet is built</h2>
+    <span class="badge">Map</span>
+  </div>
+  <div class="row">
+    <div class="col card">
+      <h4>What to memorise</h4>
+      <p>Definitions in one sentence, the name of each diagram, and the formula with what every symbol means. Boards reward a clean definition plus one local example.</p>
+    </div>
+    <div class="col card">
+      <h4>What to be able to do</h4>
+      <p>Fill a trace table, choose a data structure, slice a list, compute mean and variance, name a threat with its mitigation, and plan an MVP for one small user group.</p>
+    </div>
+    <div class="col card">
+      <h4>What the symbols mean</h4>
+      <p>Inline mathematics such as \(O(n)\) sits in the sentence. Display mathematics is set on its own line. A gold bar marks a result worth copying into a revision card.</p>
+    </div>
+  </div>
+  <nav class="toc card">
+    <a href="#u1"><span>Unit 1 · Human–Computer Interaction</span><span>Usability and Figma</span></a>
+    <a href="#u2"><span>Unit 2 · Computational Thinking and Algorithms</span><span>Trace tables and Big O</span></a>
+    <a href="#u3"><span>Unit 3 · Programming Fundamentals</span><span>Python collections and files</span></a>
+    <a href="#u4"><span>Unit 4 · Data and Analysis</span><span>Databases, charts, statistics</span></a>
+    <a href="#u5"><span>Unit 5 · Applications and Impacts of Computing</span><span>Networks, safety, equity</span></a>
+    <a href="#u6"><span>Unit 6 · Entrepreneurship in the Digital Age</span><span>Prototype to first users</span></a>
+    <a href="#key"><span>Quick key</span><span>Objective answers</span></a>
+  </nav>
+</section>
+
+<!-- UNIT 1 -->
+<section class="unit" id="u1">
+  <div class="unithead">
+    <h2>1 · Human–Computer Interaction</h2>
+    <span class="badge">Unit 1</span>
+  </div>
+  <p>Human–Computer Interaction (HCI) is the design of technology so that people can finish real tasks with little confusion. The same field is also called CHI (Computer–Human Interface) and MMI (Man–Machine Interaction). The unit joins three ideas: the <strong>user interface</strong> (what is on the screen), the <strong>user experience</strong> (how the whole task feels), and <strong>usability</strong> (whether the task is effective, efficient, and satisfying).</p>
+  <div class="slo">
+    <span>Explain fundamentals and importance of HCI</span>
+    <span>Apply accessibility: contrast, readability, colour, navigation</span>
+    <span>Analyse user needs before drawing an interface</span>
+    <span>Name common HCI problems and fixes</span>
+    <span>Design and prototype in Figma</span>
+    <span>Test and evaluate with real measures</span>
+  </div>
+
+  <h3>1.1 The interaction loop</h3>
+  <p>People and computers meet through the senses. A person acts; a device captures that action; the system computes; an output returns; the person decides what to do next. That return signal is feedback.</p>
+  <figure class="figure">
+    <svg viewBox="0 0 760 230" role="img" aria-label="Model of human computer interaction">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#16324f"/>
+        </marker>
+      </defs>
+      <rect x="16" y="48" width="150" height="120" rx="12" fill="#e8eef5" stroke="#16324f"/>
+      <text x="91" y="78" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#16324f">Human</text>
+      <text x="91" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#1a2330">sight · touch</text>
+      <text x="91" y="116" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#1a2330">hearing · voice</text>
+      <text x="91" y="132" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#1a2330">spatial movement</text>
+      <rect x="292" y="36" width="176" height="64" rx="10" fill="#fff" stroke="#0e6b64"/>
+      <text x="380" y="62" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#0e6b64">Input</text>
+      <text x="380" y="80" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#1a2330">keyboard, mouse, touch, mic</text>
+      <rect x="292" y="128" width="176" height="64" rx="10" fill="#fff" stroke="#a56b12"/>
+      <text x="380" y="154" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#a56b12">Output</text>
+      <text x="380" y="172" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#1a2330">screen, speakers, vibration</text>
+      <rect x="560" y="48" width="180" height="120" rx="12" fill="#e7f3f1" stroke="#0e6b64"/>
+      <text x="650" y="90" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#0a524d">Computer</text>
+      <text x="650" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#1a2330">process the action</text>
+      <text x="650" y="128" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#1a2330">update the interface</text>
+      <path d="M170 78 H286" fill="none" stroke="#16324f" stroke-width="1.6" marker-end="url(#arr)"/>
+      <path d="M468 68 H554" fill="none" stroke="#16324f" stroke-width="1.6" marker-end="url(#arr)"/>
+      <path d="M554 160 H468" fill="none" stroke="#16324f" stroke-width="1.6" marker-end="url(#arr)"/>
+      <path d="M292 160 H176" fill="none" stroke="#16324f" stroke-width="1.6" marker-end="url(#arr)"/>
+      <text x="380" y="222" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#4d5b6a">Feedback closes the loop: the person sees, hears, or feels the result and acts again.</text>
+    </svg>
+    <figcaption class="caption"><b>Figure 1.1.</b> The HCI model. Input carries intention inward. Output and feedback carry the system’s answer outward.</figcaption>
+  </figure>
+
+  <div class="row">
+    <div class="col card">
+      <h4>Traditional interaction</h4>
+      <p>Everyday devices and explicit controls. On a computer, the mouse and keyboard go in, and the monitor and speakers come out. On a phone, taps and swipes go in, and the screen, sound, or a short vibration comes out.</p>
+    </div>
+    <div class="col card">
+      <h4>Natural interaction</h4>
+      <p>The device reads behaviour that already feels human. Voice: “play the lesson.” Gesture and body: a camera watches a hand wave or a face to unlock a phone. The person is not hunting for a command name.</p>
+    </div>
+  </div>
+
+  <h3>1.2 Where HCI shows up</h3>
+  <p>An interface is a human-centred product, not only a technical one. The same design questions appear in healthcare (patient portals, telemedicine, assistive tools), banking (a clear and secure transfer), education (learning platforms and exam portals), and communication (social and collaboration apps).</p>
+
+  <h3>1.3 Seven parts of an HCI situation</h3>
+  <div class="row">
+    <div class="col card"><h4>User</h4><p><strong>End users</strong> operate the system, from novice to expert. <strong>Stakeholders</strong> care about the outcome: a client, a manager, an administrator.</p></div>
+    <div class="col card"><h4>Computer system</h4><p>The platform that joins input, processing, output, and feedback. Hardware and software together are the other side of the conversation.</p></div>
+    <div class="col card"><h4>User interaction</h4><p>The act that turns intention into a response: click, tap, type, swipe, or speak.</p></div>
+  </div>
+  <div class="row">
+    <div class="col card"><h4>Task</h4><p>The goal-sized action: book a ticket, search a product, mark attendance. Judge it by complexity, the skill it needs, and the time it should take.</p></div>
+    <div class="col card"><h4>Interface</h4><p>The medium. GUI, command line, touch, voice, or a natural interface built from gesture and space.</p></div>
+    <div class="col card"><h4>Environment and feedback</h4><p>The physical and social setting of use. Feedback is the system’s confirmation (“Payment successful”, a vibration) or the user’s own signal (a rating, a spoken correction).</p></div>
+  </div>
+
+  <h3>1.4 Styles of interaction</h3>
+  <table>
+    <thead><tr><th>Style</th><th>What the user does</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>Direct manipulation</td><td>Handles screen objects as if they were physical</td><td>Drag a file, pinch to zoom</td></tr>
+      <tr><td>Command-based</td><td>Types a precise instruction</td><td><span class="mono">dir</span>, <span class="mono">cd ..</span></td></tr>
+      <tr><td>Menu-driven</td><td>Picks from a prepared list</td><td>Start test, check result, download certificate</td></tr>
+      <tr><td>Form fill</td><td>Enters structured fields</td><td>Admission form, ticket booking</td></tr>
+      <tr><td>Conversational / voice</td><td>Uses ordinary language</td><td>A chatbot, “call Aslam”</td></tr>
+      <tr><td>Gesture, biometric, haptic</td><td>Moves, presents a body feature, or feels a tap</td><td>VR hand, fingerprint, wrist tap</td></tr>
+      <tr><td>Context-aware</td><td>Lets the system sense the situation</td><td>Lights on entry, a route that follows traffic</td></tr>
+      <tr><td>Multimodal</td><td>Combines two or more of the above</td><td>Speak a query, then tap a result</td></tr>
+    </tbody>
+  </table>
+
+  <h3>1.5 Families of interface</h3>
+  <figure class="figure">
+    <svg viewBox="0 0 760 168" role="img" aria-label="Five interface families">
+      <g font-family="Inter,sans-serif">
+        <rect x="8" y="16" width="140" height="120" rx="10" fill="#e8eef5" stroke="#16324f"/>
+        <text x="78" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#16324f">GUI</text>
+        <rect x="28" y="56" width="100" height="14" rx="3" fill="#fff" stroke="#16324f"/>
+        <rect x="28" y="78" width="46" height="36" rx="4" fill="#fff" stroke="#16324f"/>
+        <rect x="82" y="78" width="46" height="36" rx="4" fill="#fff" stroke="#16324f"/>
+        <text x="78" y="128" text-anchor="middle" font-size="10" fill="#4d5b6a">windows, icons</text>
+        <rect x="160" y="16" width="140" height="120" rx="10" fill="#1a2330"/>
+        <text x="230" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#f6f1e8">CLI</text>
+        <text x="176" y="70" font-size="11" fill="#b7e0c2" font-family="JetBrains Mono,monospace">$ ls</text>
+        <text x="176" y="88" font-size="11" fill="#d7de86" font-family="JetBrains Mono,monospace">notes.pdf</text>
+        <text x="230" y="128" text-anchor="middle" font-size="10" fill="#c9d0d6">typed commands</text>
+        <rect x="312" y="16" width="140" height="120" rx="10" fill="#fff" stroke="#0e6b64"/>
+        <text x="382" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#0e6b64">Touch</text>
+        <rect x="360" y="58" width="44" height="62" rx="6" fill="#e7f3f1" stroke="#0e6b64"/>
+        <circle cx="382" cy="108" r="3" fill="#0e6b64"/>
+        <text x="382" y="136" text-anchor="middle" font-size="10" fill="#4d5b6a">tap, swipe, pinch</text>
+        <rect x="464" y="16" width="140" height="120" rx="10" fill="#fbf3e3" stroke="#a56b12"/>
+        <text x="534" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#a56b12">VUI</text>
+        <ellipse cx="534" cy="84" rx="28" ry="18" fill="#fff" stroke="#a56b12"/>
+        <path d="M506 84 q10 -16 28 -16" fill="none" stroke="#a56b12"/>
+        <text x="534" y="136" text-anchor="middle" font-size="10" fill="#4d5b6a">spoken commands</text>
+        <rect x="616" y="16" width="136" height="120" rx="10" fill="#f8eeee" stroke="#8b3d4a"/>
+        <text x="684" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#8b3d4a">NUI</text>
+        <circle cx="664" cy="86" r="16" fill="none" stroke="#8b3d4a"/>
+        <circle cx="704" cy="86" r="16" fill="none" stroke="#8b3d4a"/>
+        <path d="M680 86 H688" stroke="#8b3d4a"/>
+        <text x="684" y="136" text-anchor="middle" font-size="10" fill="#4d5b6a">gesture, headset</text>
+      </g>
+    </svg>
+    <figcaption class="caption"><b>Figure 1.2.</b> Five interface families. A product often mixes them: a phone is touch first, and also voice and biometric.</figcaption>
+  </figure>
+
+  <h3>1.6 Why HCI matters</h3>
+  <p>Good design turns a complicated machine into an everyday tool. A clear phone screen lets a student reach a lesson. A crowded medical screen, or a site buried in advertisements, creates error and delay. The practical consequences are:</p>
+  <ol>
+    <li><strong>Productivity.</strong> Fewer steps and fewer mistakes.</li>
+    <li><strong>Inclusivity.</strong> Screen readers, captions, and voice let more people take part.</li>
+    <li><strong>Innovation.</strong> AR, VR, AI, and connected devices succeed only if people can operate them.</li>
+    <li><strong>Economic effect.</strong> Usable products are adopted and kept.</li>
+    <li><strong>Ethics.</strong> The design respects privacy, avoids needless bias, and supports well-being.</li>
+  </ol>
+
+  <h3>1.7 Accessibility</h3>
+  <p>Accessibility is the set of design choices that keep a system usable by people with different physical, sensory, and cognitive abilities. Five practices from this unit:</p>
+  <div class="row">
+    <div class="col card"><h4>Contrast</h4><p>Text and icons must separate from the background. Black text on white remains readable in sunlight; pale grey on white does not.</p></div>
+    <div class="col card"><h4>Readable type</h4><p>A plain face, a comfortable size, and open spacing. A school page in a large sans-serif such as Calibri is easier than a cramped decorative face.</p></div>
+    <div class="col card"><h4>Colour-blind friendly</h4><p>Never use colour as the only signal. A route marked only in red and green fails; the same route with a label or a pattern still works.</p></div>
+  </div>
+  <div class="row">
+    <div class="col card"><h4>Inclusive navigation</h4><p>Offer more than one path. Keyboard order, visible focus, and screen-reader names let a person who cannot use a mouse move with Tab.</p></div>
+    <div class="col card"><h4>Multimodal presentation</h4><p>Say the same fact in sight, sound, or touch. Captions serve a deaf student. A vibration serves a user who cannot look at the screen.</p></div>
+  </div>
+  <div class="formula">
+    <div class="eq">\[\text{contrast}=\frac{L_{\text{lighter}}+0.05}{L_{\text{darker}}+0.05}\]</div>
+    <div class="mean">Relative luminance \(L\) is a weighted brightness from 0 to 1. Designers treat about \(4.5:1\) as the usual minimum for body text and about \(3:1\) for large text. The formula is the working rule behind the textbook’s demand for high contrast.</div>
+  </div>
+  <figure class="figure">
+    <svg viewBox="0 0 760 120" role="img" aria-label="Contrast and redundant encoding">
+      <rect x="16" y="16" width="230" height="88" rx="8" fill="#ffffff" stroke="#16324f"/>
+      <text x="131" y="52" text-anchor="middle" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#111">Platform 2</text>
+      <text x="131" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#333">Black on white</text>
+      <rect x="262" y="16" width="230" height="88" rx="8" fill="#d9d4cc" stroke="#bfb6aa"/>
+      <text x="377" y="52" text-anchor="middle" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#cfc8be">Platform 2</text>
+      <text x="377" y="78" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#6d675f">Low contrast fails</text>
+      <rect x="508" y="16" width="236" height="88" rx="8" fill="#fff" stroke="#0e6b64"/>
+      <circle cx="548" cy="52" r="8" fill="#0e6b64"/>
+      <text x="566" y="56" font-family="Inter,sans-serif" font-size="13" fill="#0a524d">Route A — open</text>
+      <rect x="540" y="70" width="16" height="16" fill="none" stroke="#a56b12" stroke-width="2"/>
+      <text x="566" y="83" font-family="Inter,sans-serif" font-size="13" fill="#a56b12">Route B — delay</text>
+    </svg>
+    <figcaption class="caption"><b>Figure 1.3.</b> High contrast on the left, a failing pair in the middle, and colour plus a word and a shape on the right so meaning survives if colour is hard to see.</figcaption>
+  </figure>
+
+  <h3>1.8 Need analysis</h3>
+  <p>Need analysis finds the gap between the present situation and the desired one, before any polished screen is drawn. Designers collect evidence by interview, survey, observation, and questionnaire, then design for the goals, tasks, abilities, and preferences they actually heard.</p>
+  <div class="steps">
+    <div class="step"><b>1 · Users</b>Who will operate it, and who else is affected?</div>
+    <div class="step"><b>2 · Collect</b>Interview, watch, and survey. Do not guess.</div>
+    <div class="step"><b>3 · Analyse</b>Name problems, goals, and requirements.</div>
+    <div class="step"><b>4 · Prioritise</b>Decide what must ship first.</div>
+    <div class="step"><b>5 · Design</b>Propose an interface that meets those needs.</div>
+  </div>
+  <div class="callout">
+    <div class="label">Worked case · mobile banking</div>
+    Interviews and observation might show: fingerprint or face login, simple transfers and bill pay, a fast balance and history, large targets for older customers, and both English and a local language. The interface is then built from that list, not from the designer’s taste alone.
+  </div>
+
+  <h3>1.9 Problems, and the methods that answer them</h3>
+  <table>
+    <thead><tr><th>Problem</th><th>What the user feels</th><th>A direct improvement</th></tr></thead>
+    <tbody>
+      <tr><td>Interface complexity</td><td>Too many choices; checkout is hidden</td><td>Simpler navigation; one clear primary action</td></tr>
+      <tr><td>Poor feedback</td><td>A form freezes and never says whether it sent</td><td>A visible result: “Payment successful”</td></tr>
+      <tr><td>Inconsistency</td><td>Two different icons both mean search</td><td>One symbol and one placement for one action</td></tr>
+      <tr><td>Accessibility gaps</td><td>No captions, poor contrast, no screen reader</td><td>Captions, contrast, keyboard and reader support</td></tr>
+      <tr><td>Compatibility</td><td>Fine on a desktop, broken on a phone</td><td>Test across browsers, sizes, and older devices</td></tr>
+      <tr><td>Contextual neglect</td><td>No dark mode; unusable at night</td><td>Adapt to light, screen size, and slow networks</td></tr>
+      <tr><td>High cognitive load</td><td>Too many codes and steps held in memory</td><td>Shorter flows; show the next step on screen</td></tr>
+      <tr><td>Lack of testing</td><td>Failures appear only after release</td><td>Usability tests on realistic devices</td></tr>
+      <tr><td>Navigation barriers</td><td>A needed form is buried in menus</td><td>Plain labels and a shallow path</td></tr>
+      <tr><td>Trust deficiency</td><td>No security cue, so people hesitate to pay</td><td>Clear confirmation and honest security signals</td></tr>
+    </tbody>
+  </table>
+  <p>User-centred design (UCD) is the habit that ties the fixes together: start from user goals, prototype, test with real people, and change the design. Multimodal choices (touch, voice, gesture) and repeated testing after release keep the product honest.</p>
+
+  <h3>1.10 UI, UX, wireframes, prototypes</h3>
+  <div class="row">
+    <div class="col card">
+      <h4>UI components</h4>
+      <p>Buttons, menus, icons, text fields, images, navigation bars, checkboxes, radio buttons, and sliders. UI is the visual and interactive surface.</p>
+    </div>
+    <div class="col card">
+      <h4>UX</h4>
+      <p>The whole feeling of the task. A food app that opens quickly, searches cleanly, pays safely, and tracks the order has a strong UX even before its colours are admired.</p>
+    </div>
+  </div>
+  <p>A <strong>wireframe</strong> is the blueprint of layout and flow, drawn before final styling. A <strong>low-fidelity</strong> wireframe is a rough monochrome sketch of boxes and labels, fast to change. A <strong>high-fidelity</strong> prototype looks near the finished product: real type, colour, images, and often clicks. A <strong>prototype</strong> is an early interactive model given to target users so the team can learn, then revise, before full development.</p>
+  <figure class="figure">
+    <svg viewBox="0 0 760 150" role="img" aria-label="From sketch to released app">
+      <g font-family="Inter,sans-serif" font-size="11" fill="#1a2330">
+        <rect x="16" y="28" width="120" height="78" rx="8" fill="#fff" stroke="#16324f" stroke-dasharray="4 3"/>
+        <text x="76" y="20" text-anchor="middle" font-weight="700" fill="#16324f">1 Design</text>
+        <text x="76" y="62" text-anchor="middle">sketch</text>
+        <text x="76" y="78" text-anchor="middle">structure</text>
+        <rect x="176" y="28" width="120" height="78" rx="8" fill="#e7f3f1" stroke="#0e6b64"/>
+        <text x="236" y="20" text-anchor="middle" font-weight="700" fill="#0e6b64">2 Prototype</text>
+        <text x="236" y="62" text-anchor="middle">clickable</text>
+        <text x="236" y="78" text-anchor="middle">screens</text>
+        <rect x="336" y="28" width="120" height="78" rx="8" fill="#fbf3e3" stroke="#a56b12"/>
+        <text x="396" y="20" text-anchor="middle" font-weight="700" fill="#a56b12">3 Test</text>
+        <text x="396" y="62" text-anchor="middle">teachers and</text>
+        <text x="396" y="78" text-anchor="middle">students</text>
+        <rect x="496" y="28" width="120" height="78" rx="8" fill="#f8eeee" stroke="#8b3d4a"/>
+        <text x="556" y="20" text-anchor="middle" font-weight="700" fill="#8b3d4a">4 Improve</text>
+        <text x="556" y="70" text-anchor="middle">change it</text>
+        <rect x="616" y="28" width="128" height="78" rx="8" fill="#16324f"/>
+        <text x="680" y="20" text-anchor="middle" font-weight="700" fill="#16324f">5 Release</text>
+        <text x="680" y="70" text-anchor="middle" fill="#fff">final app</text>
+        <path d="M136 67 H172 M296 67 H332 M456 67 H492 M616 67 H616" stroke="#16324f" fill="none"/>
+      </g>
+    </svg>
+    <figcaption class="caption"><b>Figure 1.4.</b> Prototype path for a student attendance app: design the idea, let teachers and students try it, revise from their comments, then build the released app.</figcaption>
+  </figure>
+
+  <h3>1.11 Figma, in the order a student should work</h3>
+  <p>Figma is a browser tool for shared interface design and interactive prototypes. For a low-fidelity pass, ignore polish and draw structure.</p>
+  <ol>
+    <li>Create or open a file at the Figma site.</li>
+    <li>Press F, or choose the Frame tool, and drag a frame. A phone preset such as an iPhone frame is a sensible start. Make two frames when a flow needs two screens.</li>
+    <li>Use the right-hand panel for width, height, alignment, padding, fill, and corner radius.</li>
+    <li>Put text, rectangles, and simple shapes inside the frame. Duplicate a frame to grow the flow.</li>
+    <li>For the “E-Tutorial of HCI” exercise: a centred title in a plain sans-serif (Inter or Roboto, about 24 pt), a sign-up button with clearly rounded corners and a strong blue, and generous padding on a white ground.</li>
+    <li>Profile screen: name, batch, role, and buttons whose shape stays consistent while only the label changes (Sign up, Sign in, Sign out).</li>
+    <li>Switch to Prototype, link the sign-up button to the next frame, and play the flow in Presentation view.</li>
+  </ol>
+  <div class="callout teal">
+    <div class="label">Class build · attendance</div>
+    Low fidelity on paper: login, class choice, mark attendance, confirmation. Rectangles and lines only. High fidelity in Figma: colour (green present, red absent), real labels, a navigation bar. Prototype links: login → class → attendance → confirmation.
+  </div>
+
+  <h3>1.12 Testing and evaluation</h3>
+  <p><strong>Testing</strong> asks whether the product works and where people struggle. <strong>Evaluation</strong> judges quality: usability, accessibility, and satisfaction, during development and after release. Tools named in the unit include the System Usability Scale (SUS) and the Net Promoter Score (NPS).</p>
+  <div class="formula">
+    <div class="eq">\[\mathrm{SUS}=2.5\sum_{i=1}^{10} s_i\]</div>
+    <div class="mean">Ten statements, each scored 1 to 5. For odd items \(s_i=\text{score}-1\). For even items \(s_i=5-\text{score}\). The total runs from 0 to 100. A higher score means people found the system easier.</div>
+  </div>
+  <div class="formula">
+    <div class="eq">\[\mathrm{NPS}=\%\text{ promoters}-\%\text{ detractors}\]</div>
+    <div class="mean">On a 0–10 “would you recommend” question, 9–10 are promoters, 7–8 are passive and ignored in the subtraction, and 0–6 are detractors. NPS runs from \(-100\) to \(+100\).</div>
+  </div>
+  <table>
+    <thead><tr><th>Method</th><th>When and why</th></tr></thead>
+    <tbody>
+      <tr><td>User-centred evaluation</td><td>Real users reveal preference and behaviour</td></tr>
+      <tr><td>Formative study</td><td>Early and repeated, while the design can still change</td></tr>
+      <tr><td>Summative evaluation</td><td>At the end, to measure effectiveness against the goal</td></tr>
+      <tr><td>Expert review</td><td>A specialist checks the design against known rules</td></tr>
+      <tr><td>Surveys and interviews</td><td>Opinions and scores, including SUS and NPS</td></tr>
+      <tr><td>Accessibility evaluation</td><td>Can people with disabilities complete the same tasks?</td></tr>
+      <tr><td>Usability and task tests</td><td>Watch a realistic task; record time, success, and errors</td></tr>
+      <tr><td>Automated audits</td><td>Tools flag contrast failures, broken links, and code errors</td></tr>
+      <tr><td>Keyboard and screen-reader walkthrough</td><td>Navigate with assistive technology only</td></tr>
+      <tr><td>Prototype, A/B, compatibility, load</td><td>Try the mock-up; compare two versions; try devices and browsers; simulate many users at once</td></tr>
+    </tbody>
+  </table>
+
+  <h3>1.13 Answers worth learning</h3>
+  <div class="qa"><div class="q">What is accessibility in HCI?</div><div class="a">It is designing so that people with different bodies, senses, and ways of thinking can perceive, operate, and understand the system. Contrast, readable type, non-colour cues, keyboard and reader support, and more than one sensory channel are the practical tests.</div></div>
+  <div class="qa"><div class="q">Low-fidelity and high-fidelity wireframes</div><div class="a">Low fidelity is a fast structural sketch: placement of buttons and text, no colour. High fidelity is a detailed, often clickable design close to the final look. Use the first to decide flow, the second to judge appearance and interaction.</div></div>
+  <div class="qa"><div class="q">What fails when a system is not adaptable?</div><div class="a">Compatibility and context. A layout that ignores phone width, a slow connection, or a dark room blocks the task. The textbook calls the matching problems compatibility issues and contextual neglect.</div></div>
+  <div class="qa"><div class="q">Why does consistency matter?</div><div class="a">People predict the next click from the last one. The same icon, placement, and wording for the same action lowers memory load and errors. Inconsistency forces relearning on every screen.</div></div>
+  <div class="qa"><div class="q">UI and UX</div><div class="a">UI is the surface: buttons, type, colour, layout. UX is the experience of completing the job, including speed, clarity, trust, and satisfaction. A beautiful button that leads nowhere is good UI work and poor UX.</div></div>
+  <div class="qa"><div class="q">Role of a prototype</div><div class="a">It is an early model for learning, not the released product. Users try the flow, the team records confusion, and the final interface changes before expensive development.</div></div>
+</section>
+
+<!-- UNIT 2 -->
+<section class="unit" id="u2">
+  <div class="unithead">
+    <h2>2 · Computational Thinking and Algorithms</h2>
+    <span class="badge">Unit 2</span>
+  </div>
+  <p>An algorithm is a finite, ordered procedure that turns a valid input into the intended output. It can be written in structured steps before it is written in a programming language. This unit asks four questions of any algorithm: Is it correct? Is it clear? Is it efficient enough? Which data structure fits the relationships in the data?</p>
+  <div class="slo">
+    <span>Check correctness with a trace table or stepwise reasoning</span>
+    <span>Judge clarity: modularity and readability</span>
+    <span>Estimate efficiency with Big O thinking</span>
+    <span>Refine names, structure, and wasted work</span>
+    <span>Tell linear structures from trees and graphs</span>
+    <span>Trace retrieval in an array, a list, and a queue</span>
+  </div>
+
+  <h3>2.1 Correctness</h3>
+  <p>An algorithm is correct when every valid input produces the expected output. Two classroom methods are used.</p>
+  <div class="row">
+    <div class="col card">
+      <h4>Trace table</h4>
+      <p>A paper execution. Columns hold the line, each variable, input and output, and the condition just tested. It is a dry run for debugging logic that “runs” but answers wrongly, and for validating a small block. It becomes tedious after hundreds of iterations.</p>
+    </div>
+    <div class="col card">
+      <h4>Stepwise reasoning</h4>
+      <p>Also called logic verification. Inspect each stage: Does it start in a valid state? Are all cases covered? Are the conditions right? If a loop is correct at the start of an iteration, is it still correct at the end? Better for structure and for large designs; weaker at catching a single arithmetic slip.</p>
+    </div>
+  </div>
+
+  <h4>Worked trace · eligible heights</h4>
+  <p>Count soldiers whose height \(h\) satisfies \(1.57 \le h \le 1.91\). Heights: \(1.91,\ 2.01,\ 1.87,\ 1.57,\ 1.48\).</p>
+  <pre>SET total ← 0
+FOR EACH height IN [1.91, 2.01, 1.87, 1.57, 1.48] DO
+    IF height ≥ 1.57 AND height ≤ 1.91 THEN
+        total ← total + 1
+PRINT total</pre>
+  <table>
+    <thead><tr><th>Step</th><th>height</th><th>\(1.57\le h\le 1.91\)</th><th>total</th></tr></thead>
+    <tbody>
+      <tr><td>start</td><td>—</td><td>—</td><td>0</td></tr>
+      <tr><td>1</td><td>1.91</td><td>true</td><td>1</td></tr>
+      <tr><td>2</td><td>2.01</td><td>false</td><td>1</td></tr>
+      <tr><td>3</td><td>1.87</td><td>true</td><td>2</td></tr>
+      <tr><td>4</td><td>1.57</td><td>true (boundary included)</td><td>3</td></tr>
+      <tr><td>5</td><td>1.48</td><td>false</td><td>3</td></tr>
+    </tbody>
+  </table>
+  <p>Output is 3. The interesting checks are the two boundaries: \(1.57\) counts, \(1.48\) and \(2.01\) do not.</p>
+
+  <h4>Worked reasoning · sum from 1 to \(n\)</h4>
+  <pre>SET sum ← 0
+FOR i ← 1 TO n DO
+    sum ← sum + i
+PRINT sum</pre>
+  <p>Start from a valid state \(\mathrm{sum}=0\). Each integer from 1 through \(n\) is added once. When the loop ends, the variable holds the total. The closed form makes the edge cases obvious:</p>
+  <div class="formula">
+    <div class="eq">\[S(n)=\sum_{i=1}^{n} i=\frac{n(n+1)}{2}\]</div>
+    <div class="mean">Normal case: \(n=5\) gives \(S=15\). Edge case: \(n=0\) gives \(S=0\), because the loop body never runs. A negative \(n\) is outside the stated input and should be rejected before the loop.</div>
+  </div>
+  <div class="callout">
+    <div class="label">Same idea · a pass mark</div>
+    Count scores \(\ge 40\) out of 100 with the same pattern as the height counter. The trace column is the condition \(score \ge 40\), not a new kind of algorithm.
+  </div>
+
+  <h3>2.2 Clarity: modularity and readability</h3>
+  <p>A clear algorithm can be read, repaired, and extended by someone who did not write it. Speed is not a substitute for that.</p>
+  <p><strong>Modularity</strong> splits the work into functions or modules with one job each.</p>
+  <ul>
+    <li><strong>Single Responsibility Principle.</strong> One module, one reason to change. A function that both reads input and sorts and prints is doing three jobs.</li>
+    <li><strong>Loose coupling.</strong> A change inside one module should not force unrelated modules to change. The module can be reused.</li>
+    <li><strong>Abstraction.</strong> The caller of a sort does not need to know whether the body is bubble sort or selection sort.</li>
+  </ul>
+  <p>A single block that walks an array and divides by \(n\) is harder to test than two functions, \(\mathrm{calculateSum}(A,n)\) and \(\mathrm{findAverage}\), where the average is the sum divided by the count.</p>
+  <p><strong>Readability</strong> is how fast another person can see the intent without running the steps.</p>
+  <ul>
+    <li>Names: \(v=d/t\) hides the meaning; \(\mathrm{velocity}=\mathrm{distance}/\mathrm{time}\) shows it.</li>
+    <li>Self-documentation: structure and names should carry the idea, with few extra comments.</li>
+    <li>Simple control flow: shallow nesting, few tangled branches, one task per function.</li>
+    <li>Consistency: one style of indentation, spacing, and naming.</li>
+  </ul>
+
+  <h3>2.3 Efficiency and Big O</h3>
+  <p>Efficiency is time and memory as the input size \(n\) grows. Count the dominant steps, not every punctuation mark. Also watch the number of conditions (each is a decision; deep nesting and unpredictable branches cost clarity and sometimes time) and the number of repetitions (loops dominate).</p>
+  <div class="formula">
+    <div class="eq">\[T(n)\in O(f(n))\quad\text{when}\quad T(n)\le c\,f(n)\ \text{for large }n\]</div>
+    <div class="mean">Big O is an upper-growth label. It compares algorithms and warns what will happen when the input is no longer a classroom example. Constants and lower terms are dropped: \(3n+10\) is \(O(n)\).</div>
+  </div>
+  <figure class="figure">
+    <svg viewBox="0 0 760 230" role="img" aria-label="Growth curves for common Big O classes">
+      <line x1="48" y1="16" x2="48" y2="176" stroke="#16324f"/>
+      <line x1="48" y1="176" x2="470" y2="176" stroke="#16324f"/>
+      <text x="16" y="18" font-family="Inter,sans-serif" font-size="12" fill="#16324f">time</text>
+      <text x="456" y="196" font-family="Inter,sans-serif" font-size="12" fill="#16324f">n</text>
+      <path d="M48 118 H450" fill="none" stroke="#0e6b64" stroke-width="2.2"/>
+      <path d="M48 168 C 160 166, 280 140, 450 28" fill="none" stroke="#16324f" stroke-width="2.2"/>
+      <path d="M48 170 C 170 164, 280 130, 450 72" fill="none" stroke="#a56b12" stroke-width="2.2"/>
+      <path d="M48 172 Q 260 160 450 118" fill="none" stroke="#8b3d4a" stroke-width="2.2"/>
+      <path d="M48 174 Q 300 168 450 150" fill="none" stroke="#5c6b7a" stroke-width="2.2"/>
+      <g font-family="Inter,sans-serif" font-size="13">
+        <line x1="500" y1="36" x2="534" y2="36" stroke="#16324f" stroke-width="2.4"/>
+        <text x="544" y="40" fill="#16324f">O(n²) quadratic</text>
+        <line x1="500" y1="68" x2="534" y2="68" stroke="#a56b12" stroke-width="2.4"/>
+        <text x="544" y="72" fill="#a56b12">O(n log n)</text>
+        <line x1="500" y1="100" x2="534" y2="100" stroke="#8b3d4a" stroke-width="2.4"/>
+        <text x="544" y="104" fill="#8b3d4a">O(n) linear</text>
+        <line x1="500" y1="132" x2="534" y2="132" stroke="#5c6b7a" stroke-width="2.4"/>
+        <text x="544" y="136" fill="#5c6b7a">O(log n)</text>
+        <line x1="500" y1="164" x2="534" y2="164" stroke="#0e6b64" stroke-width="2.4"/>
+        <text x="544" y="168" fill="#0e6b64">O(1) constant</text>
+      </g>
+    </svg>
+    <figcaption class="caption"><b>Figure 2.1.</b> As \(n\) grows, a quadratic curve pulls away. Logarithmic and constant work stay comparatively flat. The sketch is qualitative: it shows shape, not a measured clock time.</figcaption>
+  </figure>
+  <table>
+    <thead><tr><th>Class</th><th>Growth</th><th>Typical source</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>\(O(1)\)</td><td>Independent of \(n\)</td><td>Direct address</td><td>Read \(A[0]\)</td></tr>
+      <tr><td>\(O(\log n)\)</td><td>Grows very slowly</td><td>Halve the problem each step</td><td>Binary search on sorted data</td></tr>
+      <tr><td>\(O(n)\)</td><td>Proportional to \(n\)</td><td>One loop over the items</td><td>Linear search of an unsorted list</td></tr>
+      <tr><td>\(O(n\log n)\)</td><td>A little above linear</td><td>Divide and conquer</td><td>Efficient general sorting</td></tr>
+      <tr><td>\(O(n^2)\)</td><td>Square of \(n\)</td><td>Nested loops over the same data</td><td>Compare every item with every other item</td></tr>
+    </tbody>
+  </table>
+  <p>A binary search of \(n\) sorted items needs about \(\lfloor \log_2 n\rfloor+1\) comparisons in the worst case. Doubling \(n\) adds only one comparison. Doubling \(n\) in a quadratic algorithm roughly quadruples the work.</p>
+  <p><strong>Short-circuiting</strong> stops a chain of conditions as soon as the answer is known. In \(h\ge 1.57\ \mathrm{AND}\ h\le 1.91\), a height of \(1.20\) fails the first test; the second test need not be asked. Nested conditions are a warning: they often mean a brute-force decision that is also hard to read.</p>
+  <p>Repetition grades from the unit: a single pass is a good \(O(n)\); halving is an excellent \(O(\log n)\); a loop inside a loop over the same collection is a poor \(O(n^2)\).</p>
+
+  <h3>2.4 Three questions before you “optimise”</h3>
+  <ol>
+    <li><strong>Does it scale?</strong> If \(n\) grows by 10, does the time grow by about 10, or by about 100? Quadratic work often becomes unusable.</li>
+    <li><strong>What is the bottleneck?</strong> Look at the deepest or most repeated loop. Can the same result be reached with fewer passes?</li>
+    <li><strong>Is the cost worth it?</strong> An \(O(\log n)\) algorithm that is hard to write and maintain can be the wrong choice for 50 items. A clear \(O(n)\) scan may be the better engineering decision.</li>
+  </ol>
+
+  <h3>2.5 Refinement</h3>
+  <div class="row">
+    <div class="col card">
+      <h4>Clearer</h4>
+      <ul>
+        <li>Replace \(c=t/n\) with \(\mathrm{average}=\mathrm{totalSum}/\mathrm{totalItems}\).</li>
+        <li>Split one block into modules.</li>
+        <li>Indent conditions and loops so the structure is visible.</li>
+        <li>Comment only the part whose purpose is not obvious. Say why, not what the next line already says.</li>
+      </ul>
+    </div>
+    <div class="col card">
+      <h4>Faster or lighter</h4>
+      <ul>
+        <li>Stop work that cannot change the answer. In bubble sort, the end of the list is settled after each pass, so the inner loop can shrink.</li>
+        <li>Pick the algorithm that fits: linear search for a short or unsorted list; binary search when the data is sorted and large.</li>
+        <li>Store a result instead of recomputing it.</li>
+        <li>Match the structure to the access pattern: array for index, hash table for key, tree or graph for relationships.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>2.6 Data structures</h3>
+  <p>A data structure is an organised way to store data so that access, change, and processing stay efficient. If each item has a single before-and-after neighbour, the structure is <strong>linear</strong>. If an item connects to many others, as a hierarchy or a network, it is <strong>non-linear</strong>.</p>
+  <figure class="figure">
+    <svg viewBox="0 0 760 250" role="img" aria-label="Linear and non-linear structures">
+      <text x="16" y="22" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#16324f">Linear · one next item</text>
+      <g font-family="JetBrains Mono,monospace" font-size="13">
+        <rect x="16" y="36" width="54" height="36" fill="#e8eef5" stroke="#16324f"/><text x="43" y="59" text-anchor="middle">10</text>
+        <rect x="78" y="36" width="54" height="36" fill="#e8eef5" stroke="#16324f"/><text x="105" y="59" text-anchor="middle">50</text>
+        <rect x="140" y="36" width="54" height="36" fill="#fff7e8" stroke="#a56b12"/><text x="167" y="59" text-anchor="middle">20</text>
+        <rect x="202" y="36" width="54" height="36" fill="#e8eef5" stroke="#16324f"/><text x="229" y="59" text-anchor="middle">70</text>
+        <text x="43" y="88" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#4d5b6a">0</text>
+        <text x="105" y="88" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#4d5b6a">1</text>
+        <text x="167" y="88" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#a56b12">2</text>
+        <text x="229" y="88" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#4d5b6a">3</text>
+      </g>
+      <text x="290" y="58" font-family="Inter,sans-serif" font-size="12" fill="#1a2330">A[2] = 20 by index, no scan</text>
+      <text x="16" y="124" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#0e6b64">Queue · FIFO · front leaves, rear arrives</text>
+      <g font-family="Inter,sans-serif" font-size="12">
+        <text x="16" y="156" fill="#0e6b64">dequeue</text>
+        <rect x="90" y="136" width="46" height="32" fill="#e7f3f1" stroke="#0e6b64"/><text x="113" y="156" text-anchor="middle">A</text>
+        <rect x="144" y="136" width="46" height="32" fill="#fff" stroke="#16324f"/><text x="167" y="156" text-anchor="middle">B</text>
+        <rect x="198" y="136" width="46" height="32" fill="#fff" stroke="#16324f"/><text x="221" y="156" text-anchor="middle">C</text>
+        <rect x="252" y="136" width="46" height="32" fill="#fbf3e3" stroke="#a56b12"/><text x="275" y="156" text-anchor="middle">D</text>
+        <text x="312" y="156" fill="#a56b12">enqueue</text>
+        <text x="90" y="184" text-anchor="middle" font-size="10" fill="#4d5b6a">front</text>
+        <text x="275" y="184" text-anchor="middle" font-size="10" fill="#4d5b6a">rear</text>
+      </g>
+      <text x="430" y="22" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#16324f">Tree · one parent, many children</text>
+      <g font-family="Inter,sans-serif" font-size="11" fill="#1a2330">
+        <rect x="560" y="32" width="88" height="26" rx="6" fill="#16324f"/><text x="604" y="49" text-anchor="middle" fill="#fff">Principal</text>
+        <path d="M604 58 V74 M520 74 H688 M520 74 V88 M604 74 V88 M688 74 V88" fill="none" stroke="#16324f"/>
+        <rect x="476" y="88" width="88" height="24" rx="4" fill="#e8eef5" stroke="#16324f"/><text x="520" y="104" text-anchor="middle">Vice</text>
+        <rect x="560" y="88" width="88" height="24" rx="4" fill="#e8eef5" stroke="#16324f"/><text x="604" y="104" text-anchor="middle">Admin</text>
+        <rect x="644" y="88" width="88" height="24" rx="4" fill="#e8eef5" stroke="#16324f"/><text x="688" y="104" text-anchor="middle">Dean</text>
+      </g>
+      <text x="430" y="140" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#8b3d4a">Graph · any node to any node</text>
+      <g fill="#8b3d4a" stroke="#8b3d4a">
+        <line x1="470" y1="176" x2="560" y2="168"/><line x1="560" y1="168" x2="640" y2="190"/>
+        <line x1="470" y1="176" x2="520" y2="220"/><line x1="520" y1="220" x2="640" y2="190"/>
+        <line x1="560" y1="168" x2="520" y2="220"/>
+        <circle cx="470" cy="176" r="5" fill="#8b3d4a"/>
+        <circle cx="560" cy="168" r="5"/>
+        <circle cx="640" cy="190" r="5"/>
+        <circle cx="520" cy="220" r="5"/>
+      </g>
+      <g font-family="Inter,sans-serif" font-size="10" fill="#1a2330">
+        <text x="448" y="170">LHR</text><text x="566" y="162">MTN</text><text x="646" y="188">KHI</text><text x="496" y="236">ISB</text>
+      </g>
+    </svg>
+    <figcaption class="caption"><b>Figure 2.2.</b> Array cells are addressed by index. A queue serves the oldest job first. A college chart is a tree. A road map is a graph: cities are vertices, roads are edges.</figcaption>
+  </figure>
+
+  <table>
+    <thead><tr><th>Structure</th><th>Idea</th><th>Use it when</th></tr></thead>
+    <tbody>
+      <tr><td>Array</td><td>Fixed sequence, index from 0, direct access</td><td>A known set of similar values, such as one class of grades</td></tr>
+      <tr><td>Linked list</td><td>Nodes holding a value and a link to the next node</td><td>Frequent insert and delete, such as a playlist</td></tr>
+      <tr><td>Stack</td><td>LIFO. Push on top, pop from top. \(O(1)\) at the top</td><td>Undo: the latest action reverses first</td></tr>
+      <tr><td>Queue</td><td>FIFO. Enqueue at the rear, dequeue at the front. Both \(O(1)\) in the usual circular or linked form</td><td>Printer jobs, a fair waiting line</td></tr>
+      <tr><td>Tree</td><td>Root plus parent–child branches, no cycles in the simple tree</td><td>An organisation chart, a family tree</td></tr>
+      <tr><td>Graph</td><td>Vertices plus edges, no forced hierarchy</td><td>Friendships, GPS roads, several routes between the same places</td></tr>
+    </tbody>
+  </table>
+  <p>Shared operations: <strong>insertion</strong>, <strong>deletion</strong>, <strong>traversal</strong> (visit each item), <strong>search</strong>, and <strong>sorting</strong> (ascending, descending, or chronological).</p>
+  <div class="callout teal">
+    <div class="label">Choosing in one line</div>
+    Next/previous logic → array or list. Parent/child → tree. First come, first served → queue. Reverse the order of arrival → stack. Many-to-many connections → graph.
+  </div>
+
+  <h3>2.7 Tracing retrieval</h3>
+  <p><strong>Array.</strong> Index \(i\) is a direct address. With base address \(B\) and element width \(w\),</p>
+  <div class="formula">
+    <div class="eq">\[\mathrm{address}(i)=B+i\cdot w\]</div>
+    <div class="mean">For \(A=[10,50,20,70,90,30]\), \(A[2]=20\). Forward traversal walks \(0\) to \(n-1\); backward walks \(n-1\) to \(0\). There is no search when the index is known. Cost \(O(1)\).</div>
+  </div>
+  <p><strong>Linked list.</strong> There is no index jump. A pointer starts at the head and follows links. To find position \(k\), take \(k\) steps. To search for a key, compare each node until a match or NULL. In the list \(56 \to 87 \to 23 \to \mathrm{NULL}\), key 87 is found (true) and key 97 is not (false). A search is \(O(n)\).</p>
+  <p><strong>Queue.</strong> Retrieval is not “find any item”. The contract is fairness: the element that arrived first leaves first. New work joins at the rear. You do not pull job C while A is still waiting, unless the structure is no longer a plain queue.</p>
+  <figure class="figure">
+    <svg viewBox="0 0 760 120" role="img" aria-label="Stack of books showing LIFO">
+      <g font-family="Inter,sans-serif">
+        <text x="16" y="22" font-size="13" font-weight="700" fill="#16324f">Stack of books · last placed, first removed</text>
+        <rect x="40" y="78" width="160" height="26" fill="#e8eef5" stroke="#16324f"/><text x="120" y="96" text-anchor="middle" font-size="12">1 put down first</text>
+        <rect x="48" y="52" width="144" height="26" fill="#e7f3f1" stroke="#0e6b64"/><text x="120" y="70" text-anchor="middle" font-size="12">2</text>
+        <rect x="56" y="26" width="128" height="26" fill="#fbf3e3" stroke="#a56b12"/><text x="120" y="44" text-anchor="middle" font-size="12">3 pop this first</text>
+        <text x="240" y="48" font-size="12" fill="#1a2330">PUSH adds a book on top.</text>
+        <text x="240" y="70" font-size="12" fill="#1a2330">POP removes the current top.</text>
+        <text x="240" y="92" font-size="12" fill="#1a2330">Order out is 3, then 2, then 1.</text>
+        <text x="520" y="48" font-size="12" fill="#1a2330">A queue of students is the opposite:</text>
+        <text x="520" y="70" font-size="12" fill="#1a2330">join at the rear (enqueue),</text>
+        <text x="520" y="92" font-size="12" fill="#1a2330">leave at the front (dequeue).</text>
+      </g>
+    </svg>
+    <figcaption class="caption"><b>Figure 2.3.</b> Classroom model of a stack. A line of students at a printer window is the classroom model of a queue.</figcaption>
+  </figure>
+
+  <h3>2.8 Answers worth learning</h3>
+  <div class="qa"><div class="q">What is a trace table for?</div><div class="a">It is a manual dry run that records how variables and conditions change line by line, so a logical error can be seen even when the algorithm does not crash.</div></div>
+  <div class="qa"><div class="q">Two aspects of clarity</div><div class="a">Modularity (small single-purpose parts, loose coupling, hidden detail) and readability (names, simple flow, consistent layout, light comments).</div></div>
+  <div class="qa"><div class="q">\(O(1)\) against \(O(n)\)</div><div class="a">\(O(1)\) does not grow with the collection: reading a known index. \(O(n)\) grows in proportion: scanning an unsorted list for a name. If the list doubles, the scan’s work roughly doubles; the index read does not.</div></div>
+  <div class="qa"><div class="q">Stack retrieval against queue retrieval</div><div class="a">A stack returns the newest item (LIFO, pop). A queue returns the oldest item (FIFO, dequeue). Both restrict where removal is allowed; neither is a general search.</div></div>
+  <div class="qa"><div class="q">Array against linked list</div><div class="a">An array stores neighbours in a fixed block and jumps by index, but inserting in the middle shifts elements. A linked list inserts and deletes by rewiring pointers, but reaching the \(k\)-th node costs \(k\) steps.</div></div>
+</section>
+
+<!-- UNIT 3 -->
+<section class="unit" id="u3">
+  <div class="unithead">
+    <h2>3 · Programming Fundamentals</h2>
+    <span class="badge">Unit 3</span>
+  </div>
+  <p>Python already knows several ways to hold a collection, and it lets the programmer wrap repeated work in a function and keep results in a file after the program stops. Variables disappear when the process ends. Files do not.</p>
+  <div class="slo">
+    <span>Use lists, tuples, sets, and dictionaries</span>
+    <span>Write functions and split a problem into them</span>
+    <span>Separate built-in functions from user-defined ones</span>
+    <span>Read and write text files safely</span>
+  </div>
+
+  <h3>3.1 Two layers of data</h3>
+  <p><strong>Primitive</strong> values are single items: integers, floats, strings, and booleans. <strong>Abstract</strong> structures are built from those values and add operations: lists, tuples, sets, dictionaries, and, in the wider computer-science sense, arrays and linked lists.</p>
+  <table>
+    <thead><tr><th></th><th>List</th><th>Tuple</th><th>Set</th><th>Dictionary</th></tr></thead>
+    <tbody>
+      <tr><td>Written with</td><td><span class="mono">[ ]</span></td><td><span class="mono">( )</span></td><td><span class="mono">{ }</span></td><td><span class="mono">{key: value}</span></td></tr>
+      <tr><td>Order</td><td>Kept</td><td>Kept</td><td>Not a position you can index</td><td>Keys kept in insertion order (Python 3.7+)</td></tr>
+      <tr><td>Change later</td><td>Yes</td><td>No</td><td>Yes, add and discard</td><td>Yes</td></tr>
+      <tr><td>Duplicates</td><td>Allowed</td><td>Allowed</td><td>Rejected</td><td>Keys unique; a repeated key keeps the last value</td></tr>
+      <tr><td>Typical job</td><td>A row of items you will edit</td><td>A fixed record</td><td>Membership, union, no duplicates</td><td>Look up a value by a name</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.2 Lists</h3>
+  <pre>marks = [12, 15, 14, 3, 33]
+names = ["Hassan", "Qasim", "Malika", "Asghar"]
+mixed = [1, "Python", 3.14]</pre>
+  <p>Indexing starts at 0 from the left and at \(-1\) from the right. For five items the positive indices are \(0,1,2,3,4\) and the negative indices are \(-5,-4,-3,-2,-1\).</p>
+  <figure class="figure">
+    <svg viewBox="0 0 760 110" role="img" aria-label="Positive and negative list indexes">
+      <g font-family="Inter,sans-serif" font-size="13">
+        <rect x="40" y="28" width="120" height="40" fill="#e8eef5" stroke="#16324f"/><text x="100" y="53" text-anchor="middle">apple</text>
+        <rect x="168" y="28" width="120" height="40" fill="#fff" stroke="#16324f"/><text x="228" y="53" text-anchor="middle">mango</text>
+        <rect x="296" y="28" width="120" height="40" fill="#fff" stroke="#16324f"/><text x="356" y="53" text-anchor="middle">banana</text>
+        <rect x="424" y="28" width="120" height="40" fill="#fff" stroke="#16324f"/><text x="484" y="53" text-anchor="middle">grape</text>
+        <rect x="552" y="28" width="120" height="40" fill="#fbf3e3" stroke="#a56b12"/><text x="612" y="53" text-anchor="middle">kiwi</text>
+        <text x="100" y="22" text-anchor="middle" font-size="11" fill="#16324f">0</text>
+        <text x="228" y="22" text-anchor="middle" font-size="11" fill="#16324f">1</text>
+        <text x="356" y="22" text-anchor="middle" font-size="11" fill="#16324f">2</text>
+        <text x="484" y="22" text-anchor="middle" font-size="11" fill="#16324f">3</text>
+        <text x="612" y="22" text-anchor="middle" font-size="11" fill="#a56b12">4</text>
+        <text x="100" y="86" text-anchor="middle" font-size="11" fill="#4d5b6a">−5</text>
+        <text x="228" y="86" text-anchor="middle" font-size="11" fill="#4d5b6a">−4</text>
+        <text x="356" y="86" text-anchor="middle" font-size="11" fill="#4d5b6a">−3</text>
+        <text x="484" y="86" text-anchor="middle" font-size="11" fill="#4d5b6a">−2</text>
+        <text x="612" y="86" text-anchor="middle" font-size="11" fill="#a56b12">−1</text>
+      </g>
+    </svg>
+    <figcaption class="caption"><b>Figure 3.1.</b> <span class="mono">fruits[0]</span> and <span class="mono">fruits[-5]</span> are both apple. <span class="mono">fruits[-1]</span> is kiwi.</figcaption>
+  </figure>
+  <div class="formula">
+    <div class="eq">\[\texttt{seq[start:stop:step]}\]</div>
+    <div class="mean">The slice begins at <span class="mono">start</span> (included) and stops before <span class="mono">stop</span>. Omitted start means the beginning; omitted stop means the end; omitted step means 1. A negative step walks backwards. Slicing returns a new list and leaves the original in place.</div>
+  </div>
+  <pre>nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+nums[2:6]    # [2, 3, 4, 5]
+nums[:4]     # [0, 1, 2, 3]
+nums[6:]     # [6, 7, 8, 9]
+nums[::2]    # [0, 2, 4, 6, 8]
+nums[::-1]   # reversed copy</pre>
+  <p>Traversal visits every element. A <span class="mono">for</span> loop can walk values directly, or walk indices with <span class="mono">range(len(nums))</span>. A <span class="mono">while</span> loop keeps its own index and stops when the index reaches the length.</p>
+  <table>
+    <thead><tr><th>Method or function</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td><span class="mono">len(a)</span></td><td>Number of items</td></tr>
+      <tr><td><span class="mono">append(x)</span></td><td>Add <span class="mono">x</span> at the end</td></tr>
+      <tr><td><span class="mono">insert(i, x)</span></td><td>Put <span class="mono">x</span> before index <span class="mono">i</span>. Index 0 inserts at the front</td></tr>
+      <tr><td><span class="mono">remove(x)</span></td><td>Delete the first matching value, or raise <span class="mono">ValueError</span></td></tr>
+      <tr><td><span class="mono">clear()</span></td><td>Delete every item</td></tr>
+      <tr><td><span class="mono">count(x)</span>, <span class="mono">index(x)</span></td><td>How many, and the first position</td></tr>
+      <tr><td><span class="mono">sort()</span>, <span class="mono">reverse()</span></td><td>Sort in place (pass <span class="mono">reverse=True</span> for descending); reverse in place</td></tr>
+    </tbody>
+  </table>
+  <p>Searching without a built-in maximum is a single scan: remember the largest value seen so far and replace it whenever a later item is greater. On \([45, 22, 89, 34, 60]\) the remembered value becomes 45, stays 45, becomes 89, and finishes at 89.</p>
+
+  <h3>3.3 Tuples</h3>
+  <p>A tuple is an ordered, immutable collection. After <span class="mono">point = (3, 4)</span>, the assignment <span class="mono">point[0] = 99</span> raises <span class="mono">TypeError</span>. You may still traverse a tuple with a loop, and if a tuple holds a mutable object such as a list, that inner object can change. Use a tuple for a record that must stay fixed, such as a coordinate or a dictionary key.</p>
+
+  <h3>3.4 Sets</h3>
+  <pre>primes = {2, 3, 5, 7, 3}   # {2, 3, 5, 7}  — the second 3 is dropped
+3 in primes                # True</pre>
+  <p><span class="mono">add</span> inserts one element. <span class="mono">remove</span> deletes and raises <span class="mono">KeyError</span> if the element is absent. <span class="mono">discard</span> deletes and stays quiet if it is already absent. Sets have no index, so traversal uses <span class="mono">for x in primes</span>, and the visit order is not a promise you should rely on.</p>
+  <div class="formula">
+    <div class="eq">\[A\cup B,\quad A\cap B,\quad A\setminus B\]</div>
+    <div class="mean">In Python: <span class="mono">A | B</span> (union, everything in either), <span class="mono">A &amp; B</span> (intersection, only the shared elements), <span class="mono">A - B</span> (in A but not in B). This is why a set is the right tool for “unique visitors” or “students in both clubs”.</div>
+  </div>
+
+  <h3>3.5 Dictionaries</h3>
+  <p>A dictionary stores pairs. The key is the word you look up; the value is the definition.</p>
+  <pre>person = {"name": "Asghar", "age": 30, "city": "Karachi"}
+person["age"]            # 30
+person["salary"]         # KeyError
+person.get("salary")     # None
+person.get("salary", 0)  # 0
+"name" in person         # True, membership tests keys
+person["job"] = "Engineer"
+del person["city"]</pre>
+  <p><span class="mono">keys()</span>, <span class="mono">values()</span>, and <span class="mono">items()</span> are live views: after a new pair is inserted, a view taken earlier reflects the change. Traversal has three shapes: over keys, over values, or over <span class="mono">(key, value)</span> pairs from <span class="mono">items()</span>.</p>
+  <p>A word-frequency counter is the standard combined exercise. Split a text into words, and for each word do <span class="mono">freq[word] = freq.get(word, 0) + 1</span>. The most frequent word is <span class="mono">max(freq, key=freq.get)</span>.</p>
+  <p>Useful built-ins across these structures: <span class="mono">len</span>, <span class="mono">sum</span>, <span class="mono">min</span>, <span class="mono">max</span>, <span class="mono">sorted</span> (returns a new list), and <span class="mono">range</span>.</p>
+
+  <h3>3.6 Functions</h3>
+  <p>Duplicate code is long, brittle, and easy to update in one place while forgetting another. A function writes the steps once. Define it with <span class="mono">def</span>, then call it by name.</p>
+  <figure class="figure">
+    <svg viewBox="0 0 760 150" role="img" aria-label="Parts of a Python function">
+      <rect x="16" y="20" width="728" height="110" rx="10" fill="#f7f4ee" stroke="#e4d9c8"/>
+      <text x="36" y="52" font-family="JetBrains Mono,monospace" font-size="16" fill="#1a2330">def add(a, b):</text>
+      <text x="36" y="80" font-family="JetBrains Mono,monospace" font-size="16" fill="#1a2330">    return a + b</text>
+      <text x="250" y="48" font-family="Inter,sans-serif" font-size="12" fill="#0e6b64">name: add</text>
+      <text x="400" y="48" font-family="Inter,sans-serif" font-size="12" fill="#a56b12">parameters: a, b</text>
+      <text x="250" y="84" font-family="Inter,sans-serif" font-size="12" fill="#16324f">body: the indented block</text>
+      <text x="520" y="84" font-family="Inter,sans-serif" font-size="12" fill="#8b3d4a">return sends  a result</text>
+      <text x="36" y="114" font-family="Inter,sans-serif" font-size="12" fill="#4d5b6a">Call: result = add(5, 3)  →  arguments 5 and 3  →  result is 8</text>
+    </svg>
+    <figcaption class="caption"><b>Figure 3.2.</b> Name, parameters, body, and return. Arguments are the actual values supplied at the call.</figcaption>
+  </figure>
+  <div class="row">
+    <div class="col card">
+      <h4>Built-in</h4>
+      <p>Already defined by Python: <span class="mono">len</span>, <span class="mono">range</span>, <span class="mono">sum</span>, <span class="mono">print</span>, <span class="mono">input</span>, <span class="mono">max</span>. You call them; you do not write their bodies.</p>
+    </div>
+    <div class="col card">
+      <h4>User-defined</h4>
+      <p>Written for this program. <span class="mono">check_even_odd(n)</span> prints Even or Odd from <span class="mono">n % 2 == 0</span>, so the test is not copied at every call site.</p>
+    </div>
+  </div>
+  <pre>def add(a, b):
+    return a + b
+def subtract(a, b):
+    return a - b
+def multiply(a, b):
+    return a * b
+def divide(a, b):
+    if b != 0:
+        return a / b
+    return "cannot divide by zero"</pre>
+  <p>The main program only reads two numbers and prints the four calls. Decomposition is the act of cutting the calculator into those four functions instead of one long script. Each function has a single responsibility and can be tested alone.</p>
+  <p><strong>Scope.</strong> A variable created inside a function (<span class="mono">result</span> in <span class="mono">add</span>) is local and invisible outside. A variable created outside every function is global and can be read from inside, unless the function assigns to that name, which would create a local unless <span class="mono">global</span> is declared. Prefer parameters and return values over shared globals.</p>
+
+  <h3>3.7 Files</h3>
+  <p>A text file stores characters a person can open in an editor (<span class="mono">.txt</span>, <span class="mono">.csv</span>, <span class="mono">.py</span>). A binary file stores bytes (<span class="mono">.jpg</span>, <span class="mono">.mp3</span>, <span class="mono">.dat</span>). The call is <span class="mono">file_object = open(path, mode)</span>. The default mode is <span class="mono">'r'</span>, text reading.</p>
+  <table>
+    <thead><tr><th>Mode</th><th>Action</th><th>If the file is missing</th></tr></thead>
+    <tbody>
+      <tr><td><span class="mono">r</span> / <span class="mono">rb</span></td><td>Read text / read bytes, from the start</td><td>Error</td></tr>
+      <tr><td><span class="mono">w</span> / <span class="mono">wb</span></td><td>Write, wiping any old content</td><td>Created</td></tr>
+      <tr><td><span class="mono">a</span> / <span class="mono">ab</span></td><td>Append at the end</td><td>Created</td></tr>
+      <tr><td><span class="mono">r+</span></td><td>Read and write, file must exist</td><td>Error</td></tr>
+    </tbody>
+  </table>
+  <p>After a read-mode open: <span class="mono">read()</span> returns the whole file as one string, <span class="mono">readline()</span> returns one line, <span class="mono">readlines()</span> returns a list of lines. <span class="mono">write(text)</span> stores a string; include <span class="mono">"\n"</span> when you want a new line. <span class="mono">close()</span> flushes the buffer and releases the file. Forgetting it can lose data or lock the file.</p>
+  <p>The <span class="mono">with</span> statement is a context manager. It opens the file for the block and closes it afterwards, including when an exception is raised. Think of it as a tap that shuts itself off.</p>
+  <pre>with open("grades.txt", "w") as f:
+    f.write("Alice: 88\n")
+    f.write("Bob: 75\n")
+with open("grades.txt", "a") as f:
+    f.write("David: 81\n")
+with open("grades.txt", "r") as f:
+    lines = f.readlines()</pre>
+  <p>The class average is the sum of the integer grades divided by <span class="mono">len(lines)</span>. Reading a huge file character by character after <span class="mono">read()</span> pulls the entire file into memory. Prefer <span class="mono">for line in new_file</span> when the file may be long.</p>
+  <p>An exception is an error during execution that interrupts the normal flow. Wrap file work in <span class="mono">try</span> / <span class="mono">except</span>:</p>
+  <ul>
+    <li><span class="mono">FileNotFoundError</span> — the path does not exist in read mode.</li>
+    <li><span class="mono">PermissionError</span> — the operating system refused access.</li>
+    <li><span class="mono">IOError</span> — a broader reading or writing failure.</li>
+  </ul>
+  <p>A small copy activity: open <span class="mono">abc.txt</span> for reading, open <span class="mono">xyz.txt</span> for writing, and write each character (or, better, each line) across.</p>
+
+  <h3>3.8 Answers worth learning</h3>
+  <div class="qa"><div class="q">List and tuple</div><div class="a">Both are ordered and may contain duplicates and mixed types. A list can be edited in place. A tuple cannot. Choose a list for a growing collection and a tuple for a fixed record.</div></div>
+  <div class="qa"><div class="q">Why <span class="mono">with</span>?</div><div class="a">It guarantees <span class="mono">close()</span>, so buffers are flushed and the file handle is released even if the block fails halfway.</div></div>
+  <div class="qa"><div class="q">Local and global</div><div class="a">Local names exist only inside the function that created them. Global names are created outside functions and are visible more widely. Passing arguments and returning results keeps functions independent.</div></div>
+  <div class="qa"><div class="q">Objective checks</div><div class="a">A list is mutable. A mixed list looks like <span class="mono">["apple", 42, 3.142, True]</span>. <span class="mono">fruits[-1]</span> is the last item. <span class="mono">"geek" in data</span> is <span class="mono">True</span> when that key exists. A set literal is <span class="mono">{1, 2, 3}</span>. A missing key used with <span class="mono">[]</span> raises <span class="mono">KeyError</span>. The unordered unindexed structure is the set. <span class="mono">max</span> returns the largest element. <span class="mono">clear()</span> empties a list. <span class="mono">len</span> counts elements. Square brackets create lists. Dictionaries store key–value pairs.</div></div>
+</section>
+
+<!-- UNIT 4 -->
+<section class="unit" id="u4">
+  <div class="unithead">
+    <h2>4 · Data and Analysis</h2>
+    <span class="badge">Unit 4</span>
+  </div>
+  <p>Data analysis examines, organises, and interprets data so that a person can decide. A school looks at results, a shop looks at sales, a hospital looks at records. Python is the bridge: it can read files and databases, arrange rows and columns, compute statistics, and draw the picture.</p>
+  <div class="slo">
+    <span>Connect a Python program to a database</span>
+    <span>Clean and reshape data, including missing values</span>
+    <span>Draw bar charts, histograms, scatter plots, and box plots</span>
+    <span>Compute centre and spread, and choose the right one</span>
+  </div>
+
+  <h3>4.1 From source to picture</h3>
+  <figure class="figure">
+    <svg viewBox="0 0 760 92" role="img" aria-label="Data analysis pipeline">
+      <g font-family="Inter,sans-serif" font-size="12">
+        <rect x="8" y="22" width="120" height="44" rx="8" fill="#e8eef5" stroke="#16324f"/><text x="68" y="48" text-anchor="middle">Sources</text>
+        <rect x="156" y="22" width="120" height="44" rx="8" fill="#e7f3f1" stroke="#0e6b64"/><text x="216" y="48" text-anchor="middle">Connect</text>
+        <rect x="304" y="22" width="120" height="44" rx="8" fill="#fff" stroke="#16324f"/><text x="364" y="48" text-anchor="middle">DataFrame</text>
+        <rect x="452" y="22" width="120" height="44" rx="8" fill="#fbf3e3" stroke="#a56b12"/><text x="512" y="48" text-anchor="middle">Statistics</text>
+        <rect x="600" y="22" width="148" height="44" rx="8" fill="#16324f"/><text x="674" y="48" text-anchor="middle" fill="#fff">Charts</text>
+        <path d="M128 44 H156 M276 44 H304 M424 44 H452 M572 44 H600" stroke="#16324f" fill="none"/>
+      </g>
+    </svg>
+    <figcaption class="caption"><b>Figure 4.1.</b> Raw sources are not yet a decision. Connectivity, a table, a summary number, and a chart are successive translations.</figcaption>
+  </figure>
+  <p>Sources include schools, businesses, websites, phones, sensors, files, and databases. <strong>Data connectivity</strong> is the communication that lets a program retrieve, store, update, and manage that data. Install the analysis libraries when they are not already present, for example <span class="mono">pip install pandas</span>.</p>
+
+  <h3>4.2 A database connection</h3>
+  <p>A <strong>database</strong> is an organised collection of related data. SQLite (<span class="mono">sqlite3</span>) is the lightweight engine built into Python, suitable for learning and small applications. MySQL is a server database used for larger sites. The pieces of a connection are:</p>
+  <div class="row">
+    <div class="col card"><h4>Driver</h4><p>Software that lets Python speak to the database system. For SQLite the driver is the <span class="mono">sqlite3</span> module.</p></div>
+    <div class="col card"><h4>Connection</h4><p>The object that opens, holds, commits, and closes the link. Create it before any query.</p></div>
+    <div class="col card"><h4>Cursor</h4><p>The object that executes SQL and fetches rows. It exists only after a connection.</p></div>
+    <div class="col card"><h4>SQL</h4><p>The language of CREATE, INSERT, SELECT, UPDATE, and DELETE.</p></div>
+  </div>
+  <pre>import sqlite3
+conn = sqlite3.connect("school.db")      # creates the file if needed
+cur = conn.cursor()
+cur.execute("CREATE TABLE students (id INTEGER, name TEXT, marks INTEGER)")
+cur.execute("INSERT INTO students VALUES (1, 'Ali', 85)")
+conn.commit()                            # make the insert permanent
+cur.execute("SELECT * FROM students")
+for row in cur.fetchall():
+    print(row)
+conn.close()</pre>
+  <p>Order that examiners like: import the library, open the connection, create the cursor, execute, commit when data changed, fetch, close. <span class="mono">fetchall()</span> returns every remaining row of the current result.</p>
+
+  <h3>4.3 DataFrames and cleaning</h3>
+  <p>A DataFrame is Pandas’ two-dimensional table: rows are records, columns are attributes, like a sheet or a database table. It exists so that filtering, sorting, and aggregation have a stable shape.</p>
+  <pre>df = pd.DataFrame(data, index=..., columns=..., dtype=...)</pre>
+  <p><span class="mono">pd.read_csv("file.csv")</span> and <span class="mono">pd.read_excel("students.xlsx", sheet_name="Sheet1")</span> load files. Check the path and the sheet name first. <span class="mono">df.head()</span> shows the first five rows.</p>
+  <p>New columns are ordinary arithmetic. If Math and Science are columns, <span class="mono">df["Total"] = df["Math"] + df["Science"]</span> and <span class="mono">df["Average"] = df["Total"] / 2</span> derive a result the raw marks did not state.</p>
+  <p>Missing data appears as <span class="mono">NaN</span> (not a number). <span class="mono">df.isnull()</span> is a table of True/False. <span class="mono">df.isnull().sum()</span> counts missing cells per column. <span class="mono">fillna</span> replaces them; a common choice is the column mean for a numeric mark and a label such as <span class="mono">"Not Assigned"</span> for a missing grade. <span class="mono">dropna()</span> deletes any row that still contains a gap. Cleaning matters because a mean or a chart quietly goes wrong when gaps are left in place or filled without a reason.</p>
+
+  <h3>4.4 Organising what you will show</h3>
+  <div class="row">
+    <div class="col card"><h4>Table</h4><p>Rows and columns for exact comparison. A student row with English, Math, Science, and an average is a table.</p></div>
+    <div class="col card"><h4>Frequency distribution</h4><p>Counts of values falling in ranges, such as marks 50–59, 60–69, 70–79. It shows where the crowd sits when listing every student would hide the pattern.</p></div>
+    <div class="col card"><h4>Graph</h4><p>A picture of trend, comparison, distribution, or relationship. Matplotlib (<span class="mono">import matplotlib.pyplot as plt</span>) is the library used in this unit.</p></div>
+  </div>
+  <table>
+    <thead><tr><th>Chart</th><th>Question it answers</th><th>Call</th></tr></thead>
+    <tbody>
+      <tr><td>Line</td><td>How a measure changes over time</td><td><span class="mono">plt.plot(years, marks, marker="o")</span></td></tr>
+      <tr><td>Bar</td><td>Compare separate categories</td><td><span class="mono">plt.bar(names, marks)</span></td></tr>
+      <tr><td>Histogram</td><td>Distribution of a continuous measure; bars touch because bins are adjacent ranges</td><td><span class="mono">plt.hist(scores, bins=...)</span></td></tr>
+      <tr><td>Scatter</td><td>Relationship of two numeric variables</td><td><span class="mono">plt.scatter(x, y)</span></td></tr>
+      <tr><td>Box plot</td><td>Centre, spread, and extreme values in one picture</td><td><span class="mono">plt.boxplot(data)</span></td></tr>
+    </tbody>
+  </table>
+  <p>A bar chart of subjects leaves gaps between bars because the categories are separate. A histogram of scores does not: the axis is one continuous scale cut into bins. A line of yearly percentages shows a trend. A scatter of rainfall against crop yield asks whether the two move together. Always label axes, give a title, and call <span class="mono">plt.figure()</span> when you want a fresh canvas, then <span class="mono">plt.show()</span>.</p>
+  <figure class="figure">
+    <svg viewBox="0 0 760 196" role="img" aria-label="Box plot with five-number summary">
+      <line x1="70" y1="90" x2="700" y2="90" stroke="#16324f"/>
+      <g font-family="Inter,sans-serif" font-size="12" fill="#4d5b6a">
+        <text x="110" y="148" text-anchor="middle">40 min</text>
+        <text x="250" y="148" text-anchor="middle">55 Q1</text>
+        <text x="390" y="148" text-anchor="middle">68 median</text>
+        <text x="530" y="148" text-anchor="middle">80 Q3</text>
+        <text x="660" y="148" text-anchor="middle">95 max</text>
+      </g>
+      <line x1="110" y1="70" x2="110" y2="110" stroke="#16324f" stroke-width="2"/>
+      <line x1="110" y1="90" x2="250" y2="90" stroke="#16324f" stroke-width="2"/>
+      <rect x="250" y="55" width="280" height="70" fill="#e7f3f1" stroke="#0e6b64" stroke-width="1.6"/>
+      <line x1="390" y1="55" x2="390" y2="125" stroke="#a56b12" stroke-width="3"/>
+      <line x1="530" y1="90" x2="660" y2="90" stroke="#16324f" stroke-width="2"/>
+      <line x1="660" y1="70" x2="660" y2="110" stroke="#16324f" stroke-width="2"/>
+      <text x="390" y="44" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#0e6b64">box = middle 50% of the data</text>
+      <text x="390" y="172" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#1a2330">IQR = Q3 − Q1 = 80 − 55 = 25</text>
+    </svg>
+    <figcaption class="caption"><b>Figure 4.2.</b> A box plot reports five numbers: minimum, first quartile \(Q_1\), median \(Q_2\), third quartile \(Q_3\), and maximum. The box is the middle half. Whiskers run toward the extremes.</figcaption>
+  </figure>
+
+  <h3>4.5 Centre</h3>
+  <p>A measure of central tendency is one number that stands for a whole set.</p>
+  <div class="formula">
+    <div class="eq">\[\bar{x}=\frac{1}{n}\sum_{i=1}^{n} x_i\]</div>
+    <div class="mean"><strong>Mean.</strong> Add every value and divide by how many there are. Scores 70, 80, and 90 give \(\bar{x}=(70+80+90)/3=80\). The mean uses every value, so one extreme salary or one very low mark pulls it.</div>
+  </div>
+  <p><strong>Median.</strong> Sort the values. If the count is odd, take the middle. If the count is even, average the two middle values. For \(35,10,15,70,95\), the ordered list is \(10,15,35,70,95\), so the median is 35. A few very high salaries do not move the median the way they move the mean. That is why pay in a company with a handful of huge salaries is often summarised by the median.</p>
+  <p><strong>Mode.</strong> The value that appears most often. Daily bottle sales \(20,28,20,30,20,25,20\) have mode 20. A set may have one mode, more than one, or none. Favourite fruit in a class is a mode question, because the data are categories, not amounts you should average.</p>
+  <table>
+    <thead><tr><th>Situation</th><th>Prefer</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Test scores without wild outliers</td><td>Mean</td><td>Every script contributes</td></tr>
+      <tr><td>Salaries with a few extreme highs</td><td>Median</td><td>The middle person is a fairer picture</td></tr>
+      <tr><td>Most common choice</td><td>Mode</td><td>Categories have no numeric middle</td></tr>
+    </tbody>
+  </table>
+
+  <h3>4.6 Spread</h3>
+  <div class="formula">
+    <div class="eq">\[\text{Range}=\max x-\min x\]</div>
+    <div class="mean">Notebook sales 120, 150, and 180 have range \(180-120=60\). Range is quick and brittle: one unusual day sets it.</div>
+  </div>
+  <div class="formula">
+    <div class="eq">\[\sigma^{2}=\frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^{2},\qquad \sigma=\sqrt{\sigma^{2}}\]</div>
+    <div class="mean"><strong>Variance</strong> is the average squared distance from the mean. Squaring stops negative deviations from cancelling positive ones. <strong>Standard deviation</strong> \(\sigma\) puts that distance back into the original units. This unit uses the \(1/n\) form.</div>
+  </div>
+  <p>Worked low-variance day: sales \(100,102,101,99,98\). The mean is \(500/5=100\). Squared deviations: \(0,4,1,1,4\), sum \(10\). Variance \(10/5=2\), so \(\sigma=\sqrt{2}\approx 1.41\) bottles. The shop’s trade is steady.</p>
+  <p>Worked high-variance day: \(50,80,100,130,140\). The mean is again 100. Squared deviations: \(2500,400,0,900,1600\), sum \(5400\). Variance \(5400/5=1080\), so \(\sigma=\sqrt{1080}\approx 32.9\). Same centre, very different reliability.</p>
+  <p>A <strong>deviation</strong> is \(x_i-\bar{x}\). Positive means above the mean, negative means below, zero means equal. If average sales are 100, a day of 105 deviates by \(+5\) and a day of 95 by \(-5\). Minimum and maximum are simply the smallest and largest values: in \(70,80,90,60,75\), min is 60 and max is 90.</p>
+  <div class="callout">
+    <div class="label">Why the mean can mislead</div>
+    Five students score 50, 52, 48, 51, and 99. The mean is 60, which suggests a comfortable pass. The median is 51, which shows that a typical student is near the pass line and one high score is doing the lifting. Report both, and show a chart.
+  </div>
+
+  <h3>4.7 Answers worth learning</h3>
+  <div class="qa"><div class="q">Data analysis, in one example</div><div class="a">It is examining organised data to support a decision. A school compares subject means and a histogram of marks to see whether the weakness is a few students or the whole class.</div></div>
+  <div class="qa"><div class="q">Why Python</div><div class="a">The language is readable, and libraries cover files, SQLite, tables (Pandas), and charts (Matplotlib), so one program can collect, clean, summarise, and present.</div></div>
+  <div class="qa"><div class="q">Connection object and cursor</div><div class="a">The connection opens and closes the link and commits changes. The cursor runs SQL and fetches rows. You cannot have a useful cursor before a connection.</div></div>
+  <div class="qa"><div class="q">Objective checks</div><div class="a">Analysis interprets data. The library in this unit is Pandas. A compiler is not a data source. The connector is an interface between program and database. Importing the library comes before execute, fetch, or close. A DataFrame is a two-dimensional table. A new figure starts with <span class="mono">plt.figure()</span>. Trends over time suit a line graph. A histogram shows the distribution of continuous data. The mean is the centre most pulled by extremes. CSV files are read with <span class="mono">read_csv</span>. The gaps are filled from the unit’s own sentences: files and databases; connectivity; SQLite; import.</div></div>
+</section>
+
+<!-- UNIT 5 -->
+<section class="unit" id="u5">
+  <div class="unithead">
+    <h2>5 · Applications and Impacts of Computing</h2>
+    <span class="badge">Unit 5</span>
+  </div>
+  <p>Modern systems learn patterns, and people share work across networks. This unit holds both facts together: a neural network is a mathematical model, and a collaboration tool is only fit for a college when identity, permission, privacy, and fair access are designed in.</p>
+  <div class="slo">
+    <span>Explain neural networks and deep learning</span>
+    <span>Name where those models are used</span>
+    <span>Describe secure collaboration and data protection</span>
+    <span>Match threats to mitigations</span>
+    <span>Distinguish equity from equal access</span>
+  </div>
+
+  <h3>5.1 Three nested ideas</h3>
+  <figure class="figure">
+    <svg viewBox="0 0 760 150" role="img" aria-label="Machine learning contains neural networks and deep learning">
+      <ellipse cx="380" cy="78" rx="340" ry="62" fill="#e8eef5" stroke="#16324f"/>
+      <ellipse cx="430" cy="78" rx="230" ry="46" fill="#e7f3f1" stroke="#0e6b64"/>
+      <ellipse cx="500" cy="78" rx="120" ry="30" fill="#fbf3e3" stroke="#a56b12"/>
+      <text x="120" y="74" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#16324f">Machine</text>
+      <text x="120" y="92" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#16324f">learning</text>
+      <text x="330" y="74" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#0e6b64">Neural</text>
+      <text x="330" y="92" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#0e6b64">network</text>
+      <text x="500" y="82" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#a56b12">Deep learning</text>
+    </svg>
+    <figcaption class="caption"><b>Figure 5.1.</b> A model learns from data and then predicts. A neural network is one kind of model. Deep learning is the method of training a neural network that has many hidden layers on a large set of examples.</figcaption>
+  </figure>
+  <p>Training has an order. The model is given examples, it adjusts internal numbers until patterns reduce error, and only then is it asked to decide. Face unlock is the classroom picture: features of a face are compared with a stored pattern, and the phone opens only on a match. The neural network is the model. Deep learning is the method that trained it on many faces.</p>
+  <p>The word <strong>deep</strong> means that data passes through several layers. Early layers pick up simple pieces, such as edges in a photo. Later layers combine those pieces into eyes, then a face, then a person. A photo gallery that finds “car” or “flower” is doing that kind of layered recognition.</p>
+
+  <h3>5.2 What one neuron computes</h3>
+  <p>A neuron, or node, is a small processing unit. It receives inputs, weights each one by importance, adds a bias so the result can shift, and passes the total through an activation function that decides how strongly the signal continues.</p>
+  <div class="formula">
+    <div class="eq">\[z=\sum_{i=1}^{n} w_i x_i+b,\qquad a=\sigma(z)\]</div>
+    <div class="mean">\(x_i\) is an input, \(w_i\) its weight, \(b\) the bias, \(z\) the weighted sum, and \(a\) the activation. A common smooth activation is the sigmoid \(\sigma(z)=1/(1+e^{-z})\), which squashes \(z\) into the range 0 to 1.</div>
+  </div>
+  <div class="formula">
+    <div class="eq">\[L=(y-\hat{y})^{2}\]</div>
+    <div class="mean">A loss compares the model’s answer \(\hat{y}\) with the true answer \(y\). Training changes weights and biases to make \(L\) smaller. The textbook’s “loss function” is this idea: a measure of how wrong the current answer is.</div>
+  </div>
+  <figure class="figure">
+    <svg viewBox="0 0 760 210" role="img" aria-label="Layered neural network">
+      <g font-family="Inter,sans-serif" font-size="12" fill="#1a2330">
+        <text x="48" y="20" text-anchor="middle" font-weight="700" fill="#16324f">Input</text>
+        <text x="230" y="20" text-anchor="middle" font-weight="700" fill="#0e6b64">Hidden</text>
+        <text x="430" y="20" text-anchor="middle" font-weight="700" fill="#0e6b64">Hidden</text>
+        <text x="640" y="20" text-anchor="middle" font-weight="700" fill="#a56b12">Output</text>
+        <g fill="#16324f">
+          <circle cx="48" cy="60" r="12"/><circle cx="48" cy="110" r="12"/><circle cx="48" cy="160" r="12"/>
+        </g>
+        <g fill="#0e6b64">
+          <circle cx="230" cy="50" r="12"/><circle cx="230" cy="95" r="12"/><circle cx="230" cy="140" r="12"/><circle cx="230" cy="185" r="12"/>
+          <circle cx="430" cy="70" r="12"/><circle cx="430" cy="120" r="12"/><circle cx="430" cy="170" r="12"/>
+        </g>
+        <g fill="#a56b12">
+          <circle cx="640" cy="90" r="12"/><circle cx="640" cy="145" r="12"/>
+        </g>
+        <g stroke="#c5bbaa" stroke-width="1" fill="none">
+          <path d="M60 60 H218 M60 60 L218 95 M60 60 L218 140 M60 110 H218 M60 110 L218 50 M60 110 L218 140 M60 110 L218 185 M60 160 L218 95 M60 160 L218 185 M60 160 L218 140"/>
+          <path d="M242 50 L418 70 M242 95 L418 70 M242 95 L418 120 M242 140 L418 120 M242 140 L418 170 M242 185 L418 170 M242 50 L418 120"/>
+          <path d="M442 70 L628 90 M442 120 L628 90 M442 120 L628 145 M442 170 L628 145 M442 70 L628 145"/>
+        </g>
+      </g>
+    </svg>
+    <figcaption class="caption"><b>Figure 5.2.</b> Input layer, two hidden layers, output layer. Every line is a weighted connection. Deep learning uses many hidden layers and usually needs a large collection of examples plus strong computers (often GPUs). Features can be learned from the data rather than hand-written.</figcaption>
+  </figure>
+  <p>Components to name in a diagram answer: input (image, sound, text, or numbers), neurons, hidden layers, weights, bias, activation, output prediction, and loss. Deep-learning components add: large data, many hidden layers, a deep network, automatic feature learning, repeated training, a learning rule that reduces error, high computing power, and large-scale uses.</p>
+
+  <h3>5.3 Uses, including in Pakistan</h3>
+  <p>The same family of models appears in image recognition (face unlock, cameras, photo search), speech recognition (a spoken alarm), natural language processing (translation, chatbots, grammar tools), healthcare images (X-ray, CT, MRI patterns that support a doctor), recommendation (the next revision video), autonomous vehicles (a pedestrian means slow down), fraud detection (a transaction that does not match past spending), and assistive tools (speech-to-text, captions, vision support).</p>
+  <p>Local applications follow the same list. Education: tutoring, automated quizzes, material matched to a weakness. Healthcare: image support where a specialist is far away. Agriculture: crop watch, weather, irrigation, yield. Banking: fraud, support, forecasting. Language: speech and translation for Urdu, Sindhi, and other regional languages. Public services: traffic and planning based on evidence. The National AI Policy 2025 is the policy context named in the unit: innovation, skills, ethical use, and digital growth. None of that works without skilled people, useful data, infrastructure, and ethical rules. The school subjects that prepare a student are programming, mathematics, data analysis, and responsible use.</p>
+
+  <h3>5.4 Secure collaboration</h3>
+  <p>Shared documents, online classes, and group files are useful only when the right people have the right access. Secure collaboration rests on five supports:</p>
+  <ol>
+    <li><strong>Identity verification (authentication).</strong> Prove who is asking, with a password, PIN, or one-time code. A banking app that asks for a password and then an OTP is authenticating.</li>
+    <li><strong>Access control.</strong> After identity is known, permissions decide read, comment, or edit. Students may have view-only; a group leader may edit.</li>
+    <li><strong>Accountability.</strong> Actions can be traced to a person, so changes are not anonymous.</li>
+    <li><strong>Data privacy.</strong> Personal and sensitive facts — including contact numbers, passwords, marks, and records — are collected and shown only for the right purpose, to the right people.</li>
+    <li><strong>Safe communication.</strong> Messages and files are protected from interception while they travel, not only while they sit on a disk.</li>
+  </ol>
+  <p><strong>Data protection</strong> keeps information safe from unauthorised access, misuse, loss, damage, or accidental deletion, and keeps it accurate and available to the people who are allowed to use it. Practical measures:</p>
+  <ul>
+    <li><strong>Encryption</strong> turns readable plaintext into ciphertext. Symmetric encryption uses one shared key for both directions. Asymmetric encryption uses a public key to encrypt and a private key to decrypt.</li>
+    <li><strong>Strong passwords</strong> mix letter cases, digits, and symbols, and are not shared. A name or a birth date is a weak password because other people can guess it.</li>
+    <li><strong>Backup and recovery.</strong> A second copy, on another disk or a cloud store, can be restored after a crash, a deletion, or an attack.</li>
+    <li><strong>Firewall and antivirus.</strong> A firewall filters network traffic by rule. Antivirus detects and removes viruses, worms, and spyware. A lab should scan removable drives.</li>
+    <li><strong>Two-factor authentication (2FA).</strong> Two different proofs, such as a password plus an OTP. Stealing only one of them is not enough.</li>
+    <li><strong>User awareness.</strong> Do not open unexpected attachments, do not share an OTP, and do not install cracked software.</li>
+  </ul>
+
+  <h3>5.5 Threats and what to do</h3>
+  <table>
+    <thead><tr><th>Threat</th><th>What it is</th><th>A suitable mitigation</th></tr></thead>
+    <tbody>
+      <tr><td>Malware</td><td>Software meant to damage, steal, or enter: virus, worm, spyware, ransomware, Trojan. Often rides in cracked software.</td><td>Updated antivirus, licensed software, scan removable media</td></tr>
+      <tr><td>Phishing</td><td>A fake message that imitates a bank or a college and asks for a password or OTP</td><td>Do not follow the link; check the sender; never share an OTP; awareness</td></tr>
+      <tr><td>Unauthorised access</td><td>Entry without permission, helped by weak or shared passwords and unlocked devices</td><td>Strong passwords, 2FA, lock screens</td></tr>
+      <tr><td>Data theft / identity theft</td><td>Copying data, or using someone’s identity (name, CNIC, email, bank details) as if it were yours</td><td>Encryption, least-privilege access, backups of evidence, awareness</td></tr>
+      <tr><td>Denial of service</td><td>A flood of fake requests so real users cannot reach a site, such as an exam portal</td><td>Firewall rules, monitoring of sudden traffic, provider-side filtering</td></tr>
+      <tr><td>Human error</td><td>Deleting a file, mailing the wrong department, a weak password</td><td>Training, confirmation steps, backups, limited permissions</td></tr>
+    </tbody>
+  </table>
+  <p>Signs worth noticing: a slow machine, missing files, unknown programs, repeated pop-ups, failed logins from unfamiliar places, urgent messages with odd grammar or unexpected attachments, records that move by themselves, and a sudden surge of network traffic. Unsafe downloads and shared passwords create the opening even when the software is capable.</p>
+  <div class="callout rose">
+    <div class="label">Hyderabad phishing note</div>
+    An email that looks like the college IT office and asks for a password and an OTP is phishing. Safe actions: do not reply and do not enter the codes; contact the college through a known phone number or by walking to the office; report the message. The college will not need both secrets by email.
+  </div>
+  <div class="callout teal">
+    <div class="label">Sukkur lab crash</div>
+    Lost mark files are a recovery problem. Regular backups on a separate disk or cloud store are the mitigation that restores them. Antivirus does not bring back a file that was never copied.
+  </div>
+
+  <h3>5.6 Equity and equal access</h3>
+  <div class="row">
+    <div class="col card">
+      <h4>Equal access</h4>
+      <p>Everyone is offered the same tools and the same chance to use them. One LMS for the whole class, so no group is left on a side channel, is equal access.</p>
+    </div>
+    <div class="col card">
+      <h4>Equity</h4>
+      <p>People who face an extra barrier receive the extra support that lets them participate. Captions for a deaf student, a recording for a student whose connection drops, a phone-friendly page for a student without a laptop.</p>
+    </div>
+  </div>
+  <figure class="figure">
+    <svg viewBox="0 0 760 140" role="img" aria-label="Equal access compared with equity">
+      <g font-family="Inter,sans-serif" font-size="12" fill="#1a2330">
+        <text x="180" y="20" text-anchor="middle" font-weight="700" fill="#16324f">Equal access · same resource</text>
+        <rect x="70" y="70" width="70" height="50" fill="#e8eef5" stroke="#16324f"/>
+        <rect x="160" y="70" width="70" height="50" fill="#e8eef5" stroke="#16324f"/>
+        <rect x="250" y="70" width="70" height="50" fill="#e8eef5" stroke="#16324f"/>
+        <text x="105" y="98" text-anchor="middle">LMS</text>
+        <text x="195" y="98" text-anchor="middle">LMS</text>
+        <text x="285" y="98" text-anchor="middle">LMS</text>
+        <text x="540" y="20" text-anchor="middle" font-weight="700" fill="#0e6b64">Equity · support that fits</text>
+        <rect x="430" y="78" width="70" height="42" fill="#e7f3f1" stroke="#0e6b64"/>
+        <rect x="515" y="60" width="70" height="60" fill="#e7f3f1" stroke="#0e6b64"/>
+        <rect x="600" y="40" width="70" height="80" fill="#fbf3e3" stroke="#a56b12"/>
+        <text x="465" y="102" text-anchor="middle">notes</text>
+        <text x="550" y="94" text-anchor="middle">captions</text>
+        <text x="635" y="84" text-anchor="middle">recording</text>
+      </g>
+    </svg>
+    <figcaption class="caption"><b>Figure 5.3.</b> Equal access gives each student the same portal. Equity adds the form of support a particular barrier requires. A fair class usually needs both.</figcaption>
+  </figure>
+  <p>Equity removes barriers of disability, language, distance, and cost; lets every student join the discussion; offers more than one way to learn (video, notes, audio, a worked demo); and keeps rules common so technology is not a private advantage. A rural Sindh lecture with one student who cannot hear the teacher clearly is an equity case: turn on captions. A missed live class because the connection failed is answered by a recording. Mobile-friendly pages help where the device is a phone.</p>
+  <p>Collaboration tools named in the unit: <strong>Google Docs</strong> (live writing and comments), <strong>Zoom</strong> (meetings and screen share), <strong>Microsoft Teams</strong> (meetings, files, class groups), <strong>Google Classroom or another LMS</strong> (lessons, assignments, quizzes), <strong>WhatsApp</strong> (short notices, only in an approved group), and <strong>email</strong> (formal notices and a written record).</p>
+
+  <h3>5.7 Answers worth learning</h3>
+  <div class="qa"><div class="q">Are neural networks and deep learning the same?</div><div class="a">No. A neural network is the model: layers of connected nodes. Deep learning is the method of training networks that have many hidden layers on large data so they can learn complex patterns.</div></div>
+  <div class="qa"><div class="q">Why 2FA improves security</div><div class="a">A stolen password is no longer enough. The account also demands a second, different proof, commonly an OTP sent to a registered phone.</div></div>
+  <div class="qa"><div class="q">Privacy in an online system</div><div class="a">Marks, passwords, and identity numbers are sensitive. Privacy limits who can see them and for what purpose, which prevents misuse and keeps trust in the portal.</div></div>
+  <div class="qa"><div class="q">College with weak internet, hearing difficulty, and no personal computer</div><div class="a">Equal access: one official class space and the same assignments for everyone, reachable on a shared lab machine or a phone. Equity: captions and a written summary for the student who cannot hear; a recording and downloadable notes for the student whose connection drops; a phone-friendly or lab-based route for the student without a computer.</div></div>
+  <div class="qa"><div class="q">Objective checks</div><div class="a">Networks are inspired by the human brain. Deep learning relates to neural networks and is a method of machine learning. The input layer receives outside data. Authentication verifies identity. Access control decides allowed actions. Google Docs is a collaboration tool. Face unlock uses face recognition. Banks use fraud detection. Phishing tricks users into revealing secrets. Backups restore lost data.</div></div>
+</section>
+
+<!-- UNIT 6 -->
+<section class="unit" id="u6">
+  <div class="unithead">
+    <h2>6 · Entrepreneurship in the Digital Age</h2>
+    <span class="badge">Unit 6</span>
+  </div>
+  <p>An entrepreneur is a person who notices a problem, proposes a solution, and tries to turn that solution into a product or service. Entrepreneurship is the process: plan, start, test, and improve, using creativity, teamwork, communication, and calculated risk. In the digital age the tools may be a phone, a form, a social-media page, or a small site. The point of the unit is to do the sequence, not only to recite it. A paper sketch is a valid classroom tool when a lab is unavailable.</p>
+  <div class="slo">
+    <span>Define entrepreneur and digital entrepreneurship with local examples</span>
+    <span>Turn one observed problem into an idea</span>
+    <span>Explain and compare prototype fidelities</span>
+    <span>Define an MVP and separate it from a prototype</span>
+    <span>Test the riskiest assumption and choose a beachhead market</span>
+  </div>
+
+  <h3>6.1 The journey</h3>
+  <figure class="figure">
+    <svg viewBox="0 0 760 118" role="img" aria-label="From problem to first customers">
+      <g font-family="Inter,sans-serif" font-size="12">
+        <rect x="8" y="28" width="130" height="58" rx="8" fill="#e8eef5" stroke="#16324f"/><text x="73" y="52" text-anchor="middle" font-weight="700" fill="#16324f">Problem</text><text x="73" y="70" text-anchor="middle">who is stuck?</text>
+        <rect x="158" y="28" width="130" height="58" rx="8" fill="#fff" stroke="#16324f"/><text x="223" y="52" text-anchor="middle" font-weight="700">Idea</text><text x="223" y="70" text-anchor="middle">a small fix</text>
+        <rect x="308" y="28" width="130" height="58" rx="8" fill="#e7f3f1" stroke="#0e6b64"/><text x="373" y="52" text-anchor="middle" font-weight="700" fill="#0e6b64">Prototype</text><text x="373" y="70" text-anchor="middle">how it looks</text>
+        <rect x="458" y="28" width="130" height="58" rx="8" fill="#fbf3e3" stroke="#a56b12"/><text x="523" y="52" text-anchor="middle" font-weight="700" fill="#a56b12">MVP</text><text x="523" y="70" text-anchor="middle">a real trial</text>
+        <rect x="608" y="28" width="140" height="58" rx="8" fill="#16324f"/><text x="678" y="52" text-anchor="middle" font-weight="700" fill="#fff">Beachhead</text><text x="678" y="70" text-anchor="middle" fill="#fff">first users</text>
+      </g>
+    </svg>
+    <figcaption class="caption"><b>Figure 6.1.</b> Problem, idea, prototype, minimum viable product, then a small first market. Skipping ahead to “an app for everyone” hides the riskiest guess.</figcaption>
+  </figure>
+  <p>Digital entrepreneurship uses those tools to start, test, and grow an idea quickly and cheaply. A WhatsApp catalogue, a Google Form, or a Facebook page can be enough for a first test. Failure at this stage is cheap, which is the reason to test early. Local starting points from the unit: fee-notice reminders for parents of first-year students; a photo catalogue for a shop that sells Ajrak, Sindhi caps, or clothes; a test-date reminder for Grade XI–XII; a canteen pre-order; a college-van update for one route; a single place for scattered exam notes.</p>
+  <p>Find the idea by watching home, college, and market. Ask what goes wrong, who suffers, how often, what people do today, and whether a simple digital step would help. Prefer a narrow problem. “Fix education” cannot be tested this term. “Remind Grade XII about practical-file day” can.</p>
+  <table>
+    <thead><tr><th>Move</th><th>Action</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>Observe</td><td>Notice a repeated annoyance</td><td>Practical files are forgotten</td></tr>
+      <tr><td>Talk</td><td>Ask the people who face it</td><td>Five classmates: how do you remember?</td></tr>
+      <tr><td>Select</td><td>Keep one narrow problem</td><td>Practical-file reminder</td></tr>
+      <tr><td>Suggest</td><td>A simple paper or digital fix</td><td>One form or three screens</td></tr>
+      <tr><td>Test early</td><td>Show it before building the final thing</td><td>Would you actually use this?</td></tr>
+    </tbody>
+  </table>
+
+  <h3>6.2 Prototypes</h3>
+  <p>A prototype is an early model of a product, service, site, or app, made so that people can see the idea and comment. It is not the finished product. It can be paper, cardboard, PowerPoint, Canva, Figma, or a sample service chart. It must be clear enough to react to. It does not need to be beautiful.</p>
+  <p><strong>Fidelity</strong> means closeness to the final product.</p>
+  <table>
+    <thead><tr><th>Type</th><th>What it is</th><th>Best for</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>Low-fidelity</td><td>Rough and fast, usually paper, no final colours</td><td>The first conversation about flow</td><td>Three hand-drawn homework screens</td></tr>
+      <tr><td>Mid-fidelity</td><td>Cleaner digital screens and navigation, not final art or live data</td><td>Testing whether people can move between screens</td><td>Clickable PowerPoint or Figma frames</td></tr>
+      <tr><td>High-fidelity</td><td>Realistic colour, sample data, some working parts</td><td>A later check, after the idea has already survived a rough test</td><td>A small working order form</td></tr>
+    </tbody>
+  </table>
+  <p>Start low. Building a full app before anyone has confirmed the need is the common student mistake.</p>
+  <figure class="figure">
+    <svg viewBox="0 0 760 118" role="img" aria-label="Design build test iterate cycle">
+      <defs>
+        <marker id="go" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 1.2 L 9 5 L 0 8.8 z" fill="#16324f"/>
+        </marker>
+      </defs>
+      <g font-family="Inter,sans-serif" font-size="14">
+        <rect x="16" y="18" width="150" height="48" rx="10" fill="#e8eef5" stroke="#16324f"/>
+        <text x="91" y="47" text-anchor="middle" font-weight="700" fill="#16324f">1 Design</text>
+        <rect x="206" y="18" width="150" height="48" rx="10" fill="#e7f3f1" stroke="#0e6b64"/>
+        <text x="281" y="47" text-anchor="middle" font-weight="700" fill="#0e6b64">2 Build</text>
+        <rect x="396" y="18" width="150" height="48" rx="10" fill="#fbf3e3" stroke="#a56b12"/>
+        <text x="471" y="47" text-anchor="middle" font-weight="700" fill="#a56b12">3 Test</text>
+        <rect x="586" y="18" width="158" height="48" rx="10" fill="#f8eeee" stroke="#8b3d4a"/>
+        <text x="665" y="47" text-anchor="middle" font-weight="700" fill="#8b3d4a">4 Iterate</text>
+        <path d="M166 42 H202 M356 42 H392 M546 42 H582" fill="none" stroke="#16324f" stroke-width="1.6" marker-end="url(#go)"/>
+        <path d="M665 66 V92 H91 V70" fill="none" stroke="#16324f" stroke-width="1.4" marker-end="url(#go)"/>
+        <text x="380" y="108" text-anchor="middle" font-size="12" fill="#4d5b6a">Then test the improved version again</text>
+      </g>
+    </svg>
+    <figcaption class="caption"><b>Figure 6.2.</b> Design the flow, build a visible sample, test it with users who are not coached, then change the sample. Iteration is that change. Negative feedback means the prototype is doing its job.</figcaption>
+  </figure>
+  <p>In <strong>design</strong>, decide what must be shown: for a homework helper, an add screen, a list screen, and a reminder. In <strong>build</strong>, make that visible with whatever tool is at hand. In <strong>test</strong>, stay quiet and watch. Useful questions: What do you think this does? What is confusing? What is missing? Would you use it, and why not? In <strong>iterate</strong>, change the design from repeated comments. One unusual request can wait. A button five people cannot find cannot.</p>
+  <div class="callout">
+    <div class="label">ClassBuddy, condensed</div>
+    Ten students are asked how often they forget a task. Suppose 7 of 10 forget at least one task a week, several want a reminder before leaving home, and some will not use a complicated app. The paper prototype then uses a large Add button, a morning reminder, and plain labels. Five classmates try to add one homework item. If they cannot find Add, enlarge it and centre it. If they want a subject and a due date, add those fields. If they need the whole week, add a weekly view. Test the second drawing on two or three new people.
+  </div>
+
+  <h3>6.3 The minimum viable product</h3>
+  <p>An MVP is the smallest <em>working</em> version that lets real users test the main promise. Minimum means extra features are left out. Viable means it actually solves the core problem. A drawing is not an MVP. A complete canteen app with accounts, payments, tracking, ratings, and discounts is far beyond an MVP. A Google Form, or a paper register, on which students choose a snack before break can be the MVP.</p>
+  <table>
+    <thead><tr><th></th><th>Prototype</th><th>MVP</th></tr></thead>
+    <tbody>
+      <tr><td>Purpose</td><td>Show how the idea may look or flow</td><td>Test whether people will use a solution</td></tr>
+      <tr><td>Working?</td><td>Maybe not; a sketch is allowed</td><td>Must work in a basic way</td></tr>
+      <tr><td>Users</td><td>A few people comment on the design</td><td>Early real users produce real use</td></tr>
+      <tr><td>Cost</td><td>Very low</td><td>Still low, but some making is required</td></tr>
+      <tr><td>Main question</td><td>Is the idea understandable?</td><td>Will users actually use it?</td></tr>
+      <tr><td>Canteen example</td><td>Paper screens of menu, name, confirmation</td><td>A form used for real orders for three days</td></tr>
+      <tr><td>Van example</td><td>A drawing of a tracking screen</td><td>A trial WhatsApp group for one route</td></tr>
+    </tbody>
+  </table>
+  <p>An MVP plan states: the problem, the first users, the one essential feature, the basic steps or screens, the low-cost tool, how early users will hear about it, how feedback will be collected, and how the team will improve. For the canteen case the feature list is menu, name, class, item, and quantity. Cost is a free form or printed slips. Marketing is a class announcement and a WhatsApp message. The test lasts three days. Feedback asks whether time was saved and whether the student would use it again. A likely improvement, once staff are heard, is to keep only five items, close orders about twenty minutes before break, and open a separate collection line.</p>
+
+  <h3>6.4 The riskiest assumption</h3>
+  <p>An assumption is a belief not yet tested. The riskiest one is the belief which, if false, collapses the idea. Test it first.</p>
+  <table>
+    <thead><tr><th>Idea</th><th>Risky belief</th><th>Early test</th></tr></thead>
+    <tbody>
+      <tr><td>Online tuition</td><td>Students will pay</td><td>Ask 20 students and offer one trial class</td></tr>
+      <tr><td>Canteen pre-order</td><td>Students will order before break</td><td>Run the form for a few days</td></tr>
+      <tr><td>Ajrak catalogue</td><td>Customers will order on WhatsApp</td><td>Share with about 30 existing customers and count orders</td></tr>
+      <tr><td>Van updates</td><td>Parents will check daily</td><td>One route, one trial group</td></tr>
+    </tbody>
+  </table>
+
+  <h3>6.5 Beachhead market</h3>
+  <p>A beachhead market is a small, specific, reachable group with a sharp need, willing to try the product first. “All students in Pakistan” and “all canteens in the city” are too broad. Better: Grade XII board students in one college; one college canteen at break; existing customers of one shop; parents on one van route. Focus is not a permanent limit. It is how the team learns before expanding.</p>
+  <p>Testing an MVP should be planned: how many users, how long, which counts, which comments. Counts show trial and repeat intent (for example, 32 of 40 tried the form, 30 of 40 would use it again). Comments explain confusion (the closing time was unclear; class name was forgotten). Act on repeated problems first.</p>
+
+  <h3>6.6 Ethics, and a project sheet</h3>
+  <p>Collect only what the test needs. Do not share phone numbers, photos, or private details without permission. Do not invent results or promise features the MVP does not have. Design for weak internet, small screens, low confidence with apps, and more than one language: large buttons, simple Urdu or Sindhi labels, and low data use are part of the product, not a decoration.</p>
+  <div class="row">
+    <div class="col card">
+      <h4>Project sheet</h4>
+      <ol>
+        <li>Problem statement, in one local sentence.</li>
+        <li>Target users.</li>
+        <li>Business idea.</li>
+        <li>Low-fidelity prototype: screens and flow.</li>
+        <li>Feedback from at least three users.</li>
+        <li>The change that feedback caused.</li>
+        <li>MVP: essential feature, cost, three-day-style test.</li>
+        <li>Riskiest assumption and how it will be tested.</li>
+        <li>Beachhead market and how those people will hear about it.</li>
+      </ol>
+    </div>
+    <div class="col card">
+      <h4>What a strong project shows</h4>
+      <ul>
+        <li>The problem is local and specific.</li>
+        <li>The prototype has a visible flow.</li>
+        <li>Feedback was collected and is quoted, not invented.</li>
+        <li>Changes are tied to that feedback.</li>
+        <li>The MVP is a small working trial, not a fantasy feature list.</li>
+        <li>The presentation can walk from problem to beachhead without changing the story.</li>
+      </ul>
+    </div>
+  </div>
+  <p>Ideas that fit a classroom: homework or practical-file reminders, a college notice organiser, canteen pre-order, a shop catalogue, van updates, lost and found, a notes folder, library availability, a tuition-class finder, or an order form for handmade crafts.</p>
+
+  <h3>6.7 Scenario skeletons</h3>
+  <div class="qa"><div class="q">Forgotten practical files</div><div class="a">Problem: the date is announced once, so absent or distracted students miss it. Idea: a subject-wise reminder with the item to bring. First prototype: low-fidelity paper screens (today’s list, add item, reminder). Feedback question: “What would you need to see the night before?”</div></div>
+  <div class="qa"><div class="q">Local craft shop</div><div class="a">Problem: customers want to see Ajrak and handmade pieces before travelling. Idea: a photo catalogue with a simple order note. First prototype: paper or a mid-fidelity Canva page of eight items. Feedback question: “Is the price and the cloth clear enough to ask for one?”</div></div>
+  <div class="qa"><div class="q">College van</div><div class="a">Problem: students and parents do not know whether the van is late or cancelled. Idea: one daily status message. First prototype: a paper of the message format. The MVP, not the prototype, is a trial group for a single route. Feedback question: “Did this change whether you waited at the stop?”</div></div>
+
+  <h3>6.8 Answers worth learning</h3>
+  <div class="qa"><div class="q">Entrepreneur, in simple words</div><div class="a">A person who finds a problem and works to turn a solution into something people can use, starting small and improving it after evidence.</div></div>
+  <div class="qa"><div class="q">Digital entrepreneurship</div><div class="a">Using phones, forms, social media, sites, or simple apps to test and deliver that solution. The tool can be ordinary. The test must be real.</div></div>
+  <div class="qa"><div class="q">Why prototype before the final product?</div><div class="a">Users reveal missing steps and confusing labels while change is still cheap. A polished build that nobody needs wastes the term.</div></div>
+  <div class="qa"><div class="q">Iteration</div><div class="a">Improving the prototype or MVP after feedback, then testing again. The cycle is design, build, test, iterate.</div></div>
+  <div class="qa"><div class="q">Two differences: prototype and MVP</div><div class="a">A prototype may be a non-working sketch whose question is “Do people understand this?”. An MVP must work in a basic way, and its question is “Will people use this?”.</div></div>
+  <div class="qa"><div class="q">Beachhead example</div><div class="a">For a study-notes organiser, the beachhead is Grade XII students preparing for board exams in one college, not every student in the country.</div></div>
+  <div class="qa"><div class="q">Objective checks</div><div class="a">An entrepreneur identifies problems and creates solutions. Digital entrepreneurship uses digital tools. A prototype is for testing and improving an idea. A paper sketch is low fidelity. The cycle is design, build, test, iterate. An MVP keeps only essential working features. The riskiest assumption is tested as early as possible. A beachhead is a small focused group of first users. Feedback shows what to improve. Paper and pencil are legitimate low-resource tools. Fill the blanks with: prototype; iteration; essential (or important); assumption; feedback.</div></div>
+</section>
+
+<section class="unit" id="key">
+  <div class="unithead">
+    <h2>Quick key</h2>
+    <span class="badge">Revision</span>
+  </div>
+  <p>Use this page after you have tried the questions, not before.</p>
+  <div class="row">
+    <div class="col card">
+      <h4>Unit 1</h4>
+      <p>Main goal of HCI: make systems user-friendly. Voice commands: voice interaction. Buttons, menus, and layouts: interface design. Wireframing: designing layout. A prototype: an early interactive model. Weak feedback: users feel confused. Harder to use: inconsistent design. High cognitive load: frustration and errors. Accessibility testing: usability for people with disabilities. Usability testing: find problems before release.</p>
+      <p>Blanks: complex technology; keyboard and mouse (or touch); colour plus labels or symbols; interactive; experience (or satisfaction).</p>
+    </div>
+    <div class="col card">
+      <h4>Unit 2</h4>
+      <p>Paper execution: trace table. Stepwise reasoning is also called logic verification. Breaking into independent parts: modularity. One task per module: Single Responsibility Principle. \(\mathrm{velocity}=\mathrm{distance}/\mathrm{time}\): naming, and it is also self-documenting. Efficiency: time and space. Short-circuiting: stop as soon as the result is known. Linked-list element: node. Graph edges: connections. Adding at the rear: enqueue.</p>
+      <p>Blanks: Single Responsibility Principle; time and space; Big O notation; stack; edges.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col card">
+      <h4>Unit 3</h4>
+      <p>Lists are mutable. Mixed list: square brackets. Last fruit: cherry. Key membership: True. Set: curly braces of values. Missing key: KeyError. Unordered and unindexed: set. Largest element: <span class="mono">max</span>. Automatic close: the <span class="mono">with</span> statement. Remove all list items: <span class="mono">clear()</span>.</p>
+      <p>Blanks: square; immutable; key–value; <span class="mono">with</span>; <span class="mono">len</span>.</p>
+    </div>
+    <div class="col card">
+      <h4>Unit 4</h4>
+      <p>Interpret data. Pandas. A compiler is not a source. Connector: interface. First step: import the library. DataFrame: two-dimensional table. New figure: <span class="mono">plt.figure()</span>. Trend: line graph. Histogram: distribution of continuous data. Most affected by extremes: mean.</p>
+      <p>Blanks: databases; connectivity; SQLite; import; <span class="mono">read_csv</span>.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col card">
+      <h4>Unit 5</h4>
+      <p>Human brain. Deep learning: both a neural-network method and a machine-learning method. Input layer. Authentication. Access control. Google Docs. Face recognition. Fraud detection. Phishing. Regular backups.</p>
+      <p>Blanks: data; deep; tutoring (or personalised learning); responsible (or controlled); needs.</p>
+    </div>
+    <div class="col card">
+      <h4>Unit 6</h4>
+      <p>Identifies problems and creates solutions. Digital tools. Test and improve the idea. Low-fidelity prototype. Design–build–test–iterate. Only essential working features. As early as possible. A small focused first group. Feedback shows what to improve. Paper and pencil.</p>
+      <p>Blanks: prototype; iteration; essential; assumption; feedback.</p>
+    </div>
+  </div>
+  <h3>Formula card</h3>
+  <div class="formula"><div class="eq">\[\text{contrast}=\dfrac{L_1+0.05}{L_2+0.05}\]</div><div class="mean">Lighter over darker. Body text is usually aimed at \(4.5:1\) or more.</div></div>
+  <div class="formula"><div class="eq">\[\mathrm{SUS}=2.5\sum s_i,\qquad \mathrm{NPS}=\%P-\%D\]</div><div class="mean">SUS items are rescaled to 0–4 before the \(2.5\). NPS ignores passives.</div></div>
+  <div class="formula"><div class="eq">\[S(n)=\dfrac{n(n+1)}{2},\qquad T(n)=O(f(n))\]</div><div class="mean">Closed sum, and the growth label used to compare algorithms.</div></div>
+  <div class="formula"><div class="eq">\[\mathrm{address}(i)=B+i w\]</div><div class="mean">Why an array index is \(O(1)\) when the width \(w\) is constant.</div></div>
+  <div class="formula"><div class="eq">\[\bar{x}=\dfrac{1}{n}\sum x_i,\quad \sigma^{2}=\dfrac{1}{n}\sum (x_i-\bar{x})^{2},\quad \sigma=\sqrt{\sigma^{2}}\]</div><div class="mean">Mean, population-style variance as used in the unit, and standard deviation.</div></div>
+  <div class="formula"><div class="eq">\[\mathrm{IQR}=Q_3-Q_1,\qquad z=\sum w_i x_i+b,\qquad \sigma(z)=\dfrac{1}{1+e^{-z}}\]</div><div class="mean">Box-plot spread, a neuron’s weighted input, and the sigmoid activation.</div></div>
+  <div class="callout teal">
+    <div class="label">One-sentence close</div>
+    Design for the person in front of the screen, prove an algorithm with a trace before you trust it, keep Python data in the structure that matches the question, summarise numbers with both a centre and a spread, protect collaboration with identity and backups, and test a small local product with a small local group before calling it a business.
+  </div>
+</section>
+
+</div>
+</body>
+</html>
