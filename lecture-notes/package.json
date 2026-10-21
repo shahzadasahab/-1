@@ -1,0 +1,11 @@
+{
+  "name": "lecture-notes",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pdf": "node render_pdf.mjs"
+  },
+  "dependencies": {
+    "puppeteer-core": "^25.15.0"
+  }
+}
