@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>VIBE CODING using Cursor AI</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #d8d2c6;
+    color: #1a1612;
+    font-family: Inter, "Noto Sans", sans-serif;
+    font-weight: 400;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .sheet {
+    width: 210mm;
+    height: 297mm;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+    background: #f3efe6;
+  }
+  .sheet:last-child { page-break-after: auto; break-after: auto; }
+
+  /* ---------- cover ---------- */
+  .cover {
+    background: #12100e;
+    color: #f4f0e6;
+    padding: 0;
+  }
+  .cover-rail {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 16mm;
+    background: #e23a12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cover-rail span {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 9pt;
+    letter-spacing: 0.28em;
+    font-weight: 500;
+    color: #1a1612;
+  }
+  .cover-main {
+    position: absolute;
+    left: 16mm; right: 0; top: 0; bottom: 0;
+    padding: 18mm 16mm 14mm 14mm;
+    display: flex;
+    flex-direction: column;
+  }
+  .eyebrow {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #e23a12;
+    font-weight: 500;
+  }
+  .cover h1 {
+    margin: 14mm 0 0;
+    font-family: "Noto Serif", "Liberation Serif", serif;
+    font-weight: 700;
+    font-size: 68pt;
+    line-height: 0.86;
+    letter-spacing: -0.03em;
+    color: #f7f3ea;
+  }
+  .cover h1 em {
+    display: block;
+    margin-top: 3mm;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 32pt;
+    letter-spacing: -0.02em;
+    color: #f4f0e6;
+  }
+  .cover-rule {
+    width: 28mm;
+    height: 1.6mm;
+    background: #e23a12;
+    margin: 8mm 0 6mm;
+    border: 0;
+  }
+  .cover-lead {
+    max-width: 128mm;
+    font-size: 12.5pt;
+    line-height: 1.45;
+    color: #e6dfd2;
+    margin: 0;
+  }
+  .tracklist {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10mm 12mm;
+    align-items: end;
+  }
+  .tracks { list-style: none; margin: 0; padding: 0; }
+  .tracks li {
+    display: flex;
+    gap: 4mm;
+    align-items: baseline;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 9pt;
+    letter-spacing: 0.04em;
+    color: #f4f0e6;
+    padding: 1.4mm 0;
+    border-top: 0.3mm solid #3a342c;
+  }
+  .tracks li span { color: #e23a12; }
+  .cover-meta {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8pt;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    color: #b7aa9c;
+    text-align: right;
+  }
+  .cover-meta strong {
+    display: block;
+    color: #f4f0e6;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    margin-bottom: 2mm;
+  }
+
+  /* ---------- interior chrome ---------- */
+  .page {
+    padding: 12mm 14mm 11mm 16mm;
+    display: flex;
+    flex-direction: column;
+    height: 297mm;
+  }
+  .page::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4.2mm;
+    background: #e23a12;
+  }
+  .runhead {
+    display: flex;
+    align-items: baseline;
+    gap: 3mm;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #5c534c;
+    padding-bottom: 3mm;
+    border-bottom: 0.35mm solid #1a1612;
+    margin-bottom: 7mm;
+  }
+  .runhead .num { color: #b4230f; font-weight: 600; }
+  .runhead .grow { margin-left: auto; letter-spacing: 0.18em; }
+  .kicker {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #b4230f;
+    margin: 0 0 2.5mm;
+    font-weight: 500;
+  }
+  h1.chap {
+    font-family: "Noto Serif", "Liberation Serif", serif;
+    font-weight: 700;
+    font-size: 26pt;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin: 0 0 5mm;
+    color: #1a1612;
+  }
+  p { margin: 0 0 3.2mm; font-size: 10.4pt; line-height: 1.46; }
+  p.lead { font-size: 11.4pt; line-height: 1.42; }
+  strong { font-weight: 650; }
+  em { font-style: italic; }
+  .runfoot {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 3mm;
+    border-top: 0.3mm solid #d5cbbd;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 7.6pt;
+    letter-spacing: 0.08em;
+    color: #6a6158;
+  }
+  .runfoot b { color: #1a1612; font-weight: 600; letter-spacing: 0.04em; }
+
+  /* ---------- contents ---------- */
+  .toc { list-style: none; margin: 0; padding: 0; }
+  .toc li {
+    display: grid;
+    grid-template-columns: 11mm 1fr;
+    column-gap: 3mm;
+    row-gap: 0.2mm;
+    align-items: baseline;
+    padding: 1.25mm 0 1.35mm;
+    border-bottom: 0.25mm solid #e0d8cc;
+  }
+  .toc .pn {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8.5pt;
+    color: #b4230f;
+    font-weight: 600;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+  .toc .nm {
+    font-family: "Noto Serif", serif;
+    font-size: 11.5pt;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+  }
+  .toc .ds {
+    font-size: 8.3pt;
+    line-height: 1.28;
+    color: #5c534c;
+  }
+  .contents h1.chap { font-size: 24pt; margin-bottom: 3.5mm; }
+  .contents .lead { margin-bottom: 3mm; }
+  .note-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3mm;
+    margin-top: 4mm;
+  }
+  .note {
+    background: #e7e1d6;
+    padding: 2.8mm 3mm 2.6mm;
+  }
+  .note h3 {
+    margin: 0 0 1.5mm;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 7.6pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #b4230f;
+    font-weight: 600;
+  }
+  .note p { margin: 0; font-size: 8.3pt; line-height: 1.35; }
+
+  /* ---------- shared blocks ---------- */
+  .quote {
+    margin: 4mm 0 5mm;
+    padding: 3.5mm 0 3.5mm 5mm;
+    border-left: 1.4mm solid #e23a12;
+  }
+  .quote p {
+    font-family: "Noto Serif", serif;
+    font-style: italic;
+    font-size: 13.5pt;
+    line-height: 1.32;
+    margin: 0;
+  }
+  .quote cite {
+    display: block;
+    margin-top: 2mm;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-style: normal;
+    font-size: 7.8pt;
+    letter-spacing: 0.08em;
+    color: #6a6158;
+  }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+  .card {
+    background: #fffdf8;
+    border: 0.3mm solid #1a1612;
+    padding: 4mm 4mm 3.5mm;
+  }
+  .card.ink { background: #1a1612; color: #f4f0e6; border-color: #1a1612; }
+  .card.moss { background: #234e3c; color: #f4f0e6; border-color: #234e3c; }
+  .card h3 {
+    margin: 0 0 2mm;
+    font-family: "Noto Serif", serif;
+    font-size: 13pt;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .card p { margin: 0; font-size: 9.3pt; line-height: 1.4; }
+  .card.ink p, .card.moss p { color: #f0ebe3; }
+  .jobs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3.5mm; margin-top: 5mm; }
+  .job {
+    padding-top: 2.5mm;
+    border-top: 0.7mm solid #1a1612;
+  }
+  .job h3 {
+    margin: 0 0 1.4mm;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.14em;
+  }
+  .job p { margin: 0; font-size: 9.2pt; line-height: 1.38; }
+
+  .loop { list-style: none; margin: 0; padding: 0; }
+  .loop li {
+    display: grid;
+    grid-template-columns: 14mm 1fr;
+    gap: 3mm;
+    padding: 2.3mm 0;
+    border-top: 0.25mm solid #ddd4c6;
+  }
+  .loop .n {
+    font-family: "Noto Serif", serif;
+    font-weight: 700;
+    font-size: 14pt;
+    color: #e23a12;
+    line-height: 1;
+    padding-top: 0.6mm;
+  }
+  .loop h2 {
+    margin: 0 0 0.6mm;
+    font-family: "Noto Serif", serif;
+    font-size: 12.5pt;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .loop p { margin: 0; font-size: 9.6pt; line-height: 1.38; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; margin-top: 4mm; }
+  .pair .lbl {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 7.5pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin: 0 0 1.5mm;
+    font-weight: 600;
+  }
+  .bad { background: #f6e4dc; padding: 3.2mm 3.4mm; }
+  .bad .lbl { color: #9e2408; }
+  .good { background: #dce8e1; padding: 3.2mm 3.4mm; }
+  .good .lbl { color: #234e3c; }
+  .pair p { margin: 0; font-size: 9pt; line-height: 1.38; }
+
+  .band { padding: 3.2mm 0 3.4mm; border-top: 0.35mm solid #1a1612; }
+  .band-h {
+    display: flex;
+    align-items: baseline;
+    gap: 3mm;
+    margin-bottom: 1.4mm;
+  }
+  .band-h .tag {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8pt;
+    letter-spacing: 0.16em;
+    color: #b4230f;
+    font-weight: 600;
+  }
+  .band-h h2 {
+    margin: 0;
+    font-family: "Noto Serif", serif;
+    font-size: 16pt;
+    letter-spacing: -0.02em;
+  }
+  .when {
+    font-family: "Noto Serif", serif;
+    font-style: italic;
+    font-size: 10.5pt;
+    margin: 0 0 1.4mm;
+  }
+  .band p { margin: 0; font-size: 9.7pt; line-height: 1.4; }
+
+  .modes { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; }
+  .mode { padding: 3.6mm 3.8mm 3.4mm; background: #fffdf8; border-top: 1.5mm solid #1a1612; }
+  .mode .who {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 7.6pt;
+    letter-spacing: 0.16em;
+    color: #b4230f;
+    font-weight: 600;
+  }
+  .mode h2 {
+    margin: 1mm 0 1.6mm;
+    font-family: "Noto Serif", serif;
+    font-size: 16pt;
+    letter-spacing: -0.02em;
+  }
+  .mode p { margin: 0 0 1.6mm; font-size: 9.3pt; line-height: 1.38; }
+  .mode p:last-child { margin: 0; }
+  .strip {
+    margin-top: 4mm;
+    background: #1a1612;
+    color: #f4f0e6;
+    padding: 4mm 4.5mm;
+  }
+  .strip h2 {
+    margin: 0 0 1.5mm;
+    font-family: "Noto Serif", serif;
+    font-size: 13pt;
+  }
+  .strip p { margin: 0; font-size: 9.4pt; line-height: 1.4; color: #f0ebe3; }
+
+  .anatomy { display: grid; grid-template-columns: 28mm 1fr; gap: 2mm 4mm; margin: 1mm 0 4mm; }
+  .anatomy .k {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #b4230f;
+    font-weight: 600;
+    padding-top: 0.8mm;
+  }
+  .anatomy p { margin: 0; font-size: 10pt; line-height: 1.35; padding-bottom: 2mm; border-bottom: 0.25mm solid #e0d8cc; }
+
+  pre, .code {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8pt;
+    line-height: 1.42;
+    background: #231f1b;
+    color: #f4f0e6;
+    padding: 3.2mm 3.6mm;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  .prompt-label {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 7.4pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #b4230f;
+    margin: 0 0 1.4mm;
+    font-weight: 600;
+  }
+  .stack { margin-bottom: 3.6mm; }
+
+  ul.clean, ol.clean { margin: 0 0 3mm; padding-left: 4.5mm; }
+  ul.clean li, ol.clean li { font-size: 10pt; line-height: 1.38; margin: 0 0 1.3mm; }
+
+  table.plain {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2mm 0 3.5mm;
+  }
+  table.plain th {
+    text-align: left;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 7.4pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #5c534c;
+    padding: 0 2mm 1.4mm 0;
+    border-bottom: 0.35mm solid #1a1612;
+  }
+  table.plain td {
+    font-size: 8.7pt;
+    line-height: 1.32;
+    vertical-align: top;
+    padding: 1.8mm 2.5mm 1.8mm 0;
+    border-bottom: 0.25mm solid #e0d8cc;
+  }
+  table.plain td.mono {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 7.8pt;
+  }
+
+  .keys { width: 100%; border-collapse: collapse; }
+  .keys td {
+    font-size: 8.6pt;
+    padding: 1.15mm 2mm 1.15mm 0;
+    border-bottom: 0.2mm solid #3a342c;
+    vertical-align: baseline;
+  }
+  .keys td:first-child { color: #d9d0c4; width: 42%; }
+  .keys td:last-child {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8pt;
+    color: #f4f0e6;
+    text-align: right;
+  }
+  .desk {
+    background: #12100e;
+    color: #f4f0e6;
+  }
+  .desk::before { background: #f4f0e6; }
+  .desk .runhead { color: #b7aa9c; border-bottom-color: #f4f0e6; }
+  .desk .runhead .num { color: #e23a12; }
+  .desk h1.chap { color: #f7f3ea; }
+  .desk .runfoot { border-top-color: #3a342c; color: #b7aa9c; }
+  .desk .runfoot b { color: #f4f0e6; }
+  .desk-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 6mm;
+    flex: 1;
+  }
+  .desk h2 {
+    margin: 0 0 2mm;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #e23a12;
+    font-weight: 600;
+  }
+  .if td:first-child { color: #f4f0e6; font-size: 8.5pt; }
+  .legend {
+    margin-top: 3mm;
+    font-size: 8pt;
+    line-height: 1.4;
+    color: #d9d0c4;
+  }
+  .iflist { list-style: none; margin: 0; padding: 0; }
+  .iflist li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+    padding: 1.35mm 0;
+    border-bottom: 0.2mm solid #3a342c;
+    font-size: 8.6pt;
+    line-height: 1.25;
+    color: #f4f0e6;
+  }
+  .iflist b {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-weight: 500;
+    color: #f4f0e6;
+    white-space: nowrap;
+  }
+  .mini {
+    margin-top: 4mm;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4mm;
+  }
+  .mini h2 { margin-bottom: 1.5mm; white-space: nowrap; }
+  .mini p { margin: 0; font-size: 8.6pt; line-height: 1.38; color: #f0ebe3; }
+
+  .pack { margin: 0; padding: 0; list-style: none; }
+  .pack li {
+    display: grid;
+    grid-template-columns: 8mm 1fr;
+    gap: 2.5mm;
+    margin-bottom: 2.6mm;
+  }
+  .pack .n {
+    font-family: "Noto Serif", serif;
+    font-weight: 700;
+    color: #e23a12;
+    font-size: 12pt;
+    line-height: 1.2;
+  }
+  .pack h2 {
+    margin: 0 0 1mm;
+    font-size: 10pt;
+    font-family: Inter, sans-serif;
+    font-weight: 650;
+  }
+  .pack pre { font-size: 7.55pt; line-height: 1.38; padding: 2.3mm 2.8mm; }
+
+  .fails td:nth-child(1) { width: 32%; font-weight: 600; }
+  .fails td:nth-child(2) { width: 34%; }
+  .fails td:nth-child(3) { width: 34%; }
+
+  .hour { list-style: none; margin: 0; padding: 0; }
+  .hour li {
+    display: grid;
+    grid-template-columns: 10mm 1fr;
+    gap: 3mm;
+    padding: 2.5mm 0;
+    border-top: 0.25mm solid #ddd4c6;
+  }
+  .hour .n {
+    font-family: "Noto Serif", serif;
+    font-weight: 700;
+    font-size: 14pt;
+    color: #e23a12;
+  }
+  .hour p { margin: 0; font-size: 10.2pt; line-height: 1.38; }
+  .colo {
+    margin-top: 5mm;
+    padding-top: 3.5mm;
+    border-top: 0.35mm solid #1a1612;
+  }
+  .colo h2 {
+    margin: 0 0 1.5mm;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .colo p { font-size: 8.6pt; line-height: 1.4; color: #3c342c; margin: 0 0 1.8mm; }
+</style>
+</head>
+<body>
+
+<!-- 01 COVER -->
+<section class="sheet cover">
+  <div class="cover-rail"><span>Field guide · October 2026</span></div>
+  <div class="cover-main">
+    <p class="eyebrow">A practical booklet</p>
+    <h1>VIBE<br>CODING<em>using Cursor AI</em></h1>
+    <hr class="cover-rule" />
+    <p class="cover-lead">Describe the behavior. Let the agent draft it. Run the result, read the diff, and steer with evidence. The typing can move. The responsibility does not.</p>
+    <div class="tracklist">
+      <ol class="tracks">
+        <li><span>01</span> Name the outcome</li>
+        <li><span>02</span> Point at the real code</li>
+        <li><span>03</span> Let Agent draft</li>
+        <li><span>04</span> Read the diff</li>
+        <li><span>05</span> Run it</li>
+        <li><span>06</span> Steer with the failure</li>
+      </ol>
+      <div class="cover-meta">
+        <strong>INDEPENDENT</strong>
+        Not a Cursor manual.<br>
+        Shortcuts checked against<br>
+        public docs, October 2026.<br><br>
+        Seventeen pages.<br>
+        The desk card is on 16.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 CONTENTS -->
+<section class="sheet contents">
+  <div class="page">
+    <header class="runhead"><span class="num">00</span><span>Contents</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">How to use this</p>
+    <h1 class="chap">Read it once.<br>Keep page 16.</h1>
+    <p class="lead">This is a field guide for people who already write software and want Cursor’s agent to take the first draft. It is not a tour of every setting.</p>
+    <ol class="toc">
+      <li><span class="pn">03</span><span class="nm">What it is</span><span class="ds">The sentence that named the style, and the three jobs you still do.</span></li>
+      <li><span class="pn">04</span><span class="nm">The loop</span><span class="ds">Six moves, and the only kind of follow-up that helps.</span></li>
+      <li><span class="pn">05</span><span class="nm">Three speeds</span><span class="ds">Tab, Agent, and Cloud Agents. When each one is the right handoff.</span></li>
+      <li><span class="pn">06</span><span class="nm">Four modes</span><span class="ds">Agent, Ask, Plan, Debug. Shift+Tab, and when to start a new chat.</span></li>
+      <li><span class="pn">07</span><span class="nm">Prompts that finish</span><span class="ds">Outcome, location, constraint, proof.</span></li>
+      <li><span class="pn">08</span><span class="nm">Context</span><span class="ds">@ mentions, screenshots, and the ring that shows the window filling up.</span></li>
+      <li><span class="pn">09</span><span class="nm">Rules and skills</span><span class="ds">What belongs in every chat, and what you invoke with /.</span></li>
+      <li><span class="pn">10</span><span class="nm">One session</span><span class="ds">A full pass on a small app: plan, then build.</span></li>
+      <li><span class="pn">11</span><span class="nm">Steering and rollback</span><span class="ds">Queue, interrupt, checkpoints, side chats.</span></li>
+      <li><span class="pn">12</span><span class="nm">Cloud Agents</span><span class="ds">Same loop, another machine, a branch you review later.</span></li>
+      <li><span class="pn">13</span><span class="nm">You still own the diff</span><span class="ds">Five checks before you keep the work.</span></li>
+      <li><span class="pn">14</span><span class="nm">When it goes wrong</span><span class="ds">Eight familiar failures, and the move that stops each one.</span></li>
+      <li><span class="pn">15</span><span class="nm">Prompt pack</span><span class="ds">Eight prompts you can paste and adapt.</span></li>
+      <li><span class="pn">16</span><span class="nm">Desk card</span><span class="ds">Keys, modes, and the if/then.</span></li>
+      <li><span class="pn">17</span><span class="nm">The next hour</span><span class="ds">One exercise on a repo you already know. Then the sources.</span></li>
+    </ol>
+    <div class="note-row">
+      <div class="note">
+        <h3>Do this</h3>
+        <p>Work a real change while you read pages 10 and 11. The loop only sticks if you steer once.</p>
+      </div>
+      <div class="note">
+        <h3>Skip this</h3>
+        <p>Pricing, admin consoles, and the full catalog of tools. Those move, and they are not the practice.</p>
+      </div>
+      <div class="note">
+        <h3>If a key does nothing</h3>
+        <p>Trust the current screen and cursor.com/docs. The names here match the docs as of October 2026.</p>
+      </div>
+    </div>
+    <footer class="runfoot"><span>Vibe coding using Cursor AI</span><b>02</b></footer>
+  </div>
+</section>
+
+<!-- 03 WHAT IT IS -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">01</span><span>The practice</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">What it is</p>
+    <h1 class="chap">Name the behavior.<br>Keep the blame.</h1>
+    <p class="lead">Vibe coding means you describe the outcome and let a model draft the code. You stay in the loop by running the result and correcting it, the way you would stop a take and point at the wrong note.</p>
+    <div class="quote">
+      <p>“There’s a new kind of coding I call ‘vibe coding’, where you fully give in to the vibes, embrace exponentials, and forget that the code even exists.”</p>
+      <cite>Andrej Karpathy · February 2025</cite>
+    </div>
+    <p>That sentence named the style. Karpathy was talking about agents in the editor, Cursor among them, and about going so fast he stopped reading. The Saturday version of that is real: a prototype, a spike, a script you will throw away. A repository other people ship is a different job. This booklet keeps the name and drops the part about not reading.</p>
+    <div class="split">
+      <article class="card">
+        <h3>Saturday</h3>
+        <p>Accept the draft, run it, throw it away if the feeling is wrong. Fine for a toy, a one-off script, or a sketch nobody else will maintain.</p>
+      </article>
+      <article class="card ink">
+        <h3>A repo you ship</h3>
+        <p>The agent still drafts. You decide the boundary, you read the diff, and you can explain the change without the chat open. That is the practice in the rest of these pages.</p>
+      </article>
+    </div>
+    <div class="jobs">
+      <div class="job">
+        <h3>DECIDE</h3>
+        <p>What should change, and what must not. If you cannot say it, Plan mode is the right place. Agent mode will guess.</p>
+      </div>
+      <div class="job">
+        <h3>CONSTRAIN</h3>
+        <p>Which files, which existing pattern, which command proves it. Constraints are how a vibe becomes a task.</p>
+      </div>
+      <div class="job">
+        <h3>VERIFY</h3>
+        <p>The diff, the test or the screen, and one sentence you could say out loud. A green compile is not that sentence.</p>
+      </div>
+    </div>
+    <footer class="runfoot"><span>The model drafts. You remain the person who can say why the line is there.</span><b>03</b></footer>
+  </div>
+</section>
+
+<!-- 04 THE LOOP -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">02</span><span>The loop</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">Six moves</p>
+    <h1 class="chap">Steer shorter<br>than you started.</h1>
+    <ol class="loop">
+      <li>
+        <span class="n">01</span>
+        <div>
+          <h2>Name the outcome</h2>
+          <p>One sentence a stranger could test. “Show this month’s total and ignore transfers,” not “improve the dashboard.”</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">02</span>
+        <div>
+          <h2>Point, or let it search</h2>
+          <p>@ a file when you know it. If you do not, say so. A wrong file is worse than no file. Agent can search the repo.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <div>
+          <h2>Let it draft</h2>
+          <p>Agent edits while you watch. There is no fixed cap on tool calls. Stop the run if it walks into the wrong directory.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">04</span>
+        <div>
+          <h2>Read before you admire</h2>
+          <p>Look at the diff as it lands. Reject files that are not the task. A tidy summary is not a review.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">05</span>
+        <div>
+          <h2>Run the thing</h2>
+          <p>Tests, the command you named, or the screen. Agent can drive the browser and check a page. Ask it to.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">06</span>
+        <div>
+          <h2>Steer with evidence</h2>
+          <p>The next message should be shorter. Paste the failure. Do not restate the essay. The chat already has it.</p>
+        </div>
+      </li>
+    </ol>
+    <div class="pair">
+      <div class="bad">
+        <p class="lbl">A second message that wanders</p>
+        <p>“That’s not quite right. Can you make it cleaner and also think about edge cases and maybe the design?”</p>
+      </div>
+      <div class="good">
+        <p class="lbl">A second message that steers</p>
+        <p>“Total is 2600. fixtures/march.ts has two Transfer rows. Expected 1840. Don’t edit the fixture.”</p>
+      </div>
+    </div>
+    <footer class="runfoot"><span>Evidence beats a second essay.</span><b>04</b></footer>
+  </div>
+</section>
+
+<!-- 05 THREE SPEEDS -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">03</span><span>Three speeds</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">Where the hands go</p>
+    <h1 class="chap">You are not always<br>handing over the wheel.</h1>
+    <p>Cursor gives you three speeds. Mixing them up is how a two-line edit becomes a tour of the repo.</p>
+
+    <article class="band">
+      <div class="band-h"><span class="tag">01</span><h2>Tab</h2></div>
+      <p class="when">You already know the shape. You want the keystrokes to disappear.</p>
+      <p>Tab is autocomplete. It watches recent edits, the code around the cursor, and linter errors, then suggests the next change in gray. Tab accepts it. Esc rejects it. Ctrl+Right on Windows and Linux, or Cmd+Right on Mac, takes the suggestion a word at a time. Press Tab again and it jumps to the place it thinks you should edit next, including another file, shown in a portal at the bottom of the editor. Snooze it from the Tab indicator at the bottom right when you need to type uninterrupted. Multi-line edits and a missing import are normal, not a special mode.</p>
+    </article>
+
+    <article class="band">
+      <div class="band-h"><span class="tag">02</span><h2>Agent</h2></div>
+      <p class="when">The change spans files, or you would otherwise spend the time hunting.</p>
+      <p>Open the panel with Ctrl+I on Windows and Linux, or Cmd+I on Mac. Speak in plain language. Agent searches, edits, runs the terminal, and can open a browser to check what it changed. Select code and press Ctrl+L or Ctrl+K (Cmd+L or Cmd+K on Mac) to open Agent with those lines attached. Inline edit used to live on Cmd+K. That path now sends the selection to Agent instead. Watch the diff. Click Stop if the direction is wrong. Review in the diff and reject hunks you do not want.</p>
+    </article>
+
+    <article class="band">
+      <div class="band-h"><span class="tag">03</span><h2>Cloud Agent</h2></div>
+      <p class="when">The task is described, and you want a branch more than a live pair.</p>
+      <p>A Cloud Agent runs the same kind of work on its own machine. It clones the repo, uses a development environment, and can open a pull request. You can run many at once, from the editor or from cursor.com/agents, and your laptop does not have to stay online. It can only finish what that machine can run. Page 12 is the decision.</p>
+    </article>
+    <footer class="runfoot"><span>Tab when you can see the line. Agent when you can see the task. Cloud when you can leave.</span><b>05</b></footer>
+  </div>
+</section>
+
+<!-- 06 FOUR MODES -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">04</span><span>Modes</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">Agent, Ask, Plan, Debug</p>
+    <h1 class="chap">Pick the mode<br>before you pick the words.</h1>
+    <p style="margin-bottom:4mm">Press Shift+Tab in the Agent panel to cycle modes, or use the mode picker. Each mode has its own context, so a switch starts a fresh window. Rules still apply in all four.</p>
+    <div class="modes">
+      <article class="mode">
+        <div class="who">Edits files</div>
+        <h2>Agent</h2>
+        <p>The default. Features, refactors, bug fixes, tests, shell commands. Use it when you know the task well enough to recognize a wrong file.</p>
+        <p>Most of a working day belongs here. Do not drop into it for a system you have not even located.</p>
+      </article>
+      <article class="mode">
+        <div class="who">Read only</div>
+        <h2>Ask</h2>
+        <p>Explanations and maps. It does not edit. Use it to trace a path before anyone touches it.</p>
+        <p>“Follow the export button to the file on disk. Cite the functions. Don’t change anything.”</p>
+      </article>
+      <article class="mode">
+        <div class="who">Plan, then you approve</div>
+        <h2>Plan</h2>
+        <p>For a change with more than one reasonable shape, or one that crosses several files. Agent researches, asks, and writes a plan you can edit. Nothing is built until you say so. Cursor will also suggest Plan when the prompt sounds large.</p>
+        <p>Plans save outside the repo by default. Use Save to workspace if the plan should live with the code. If the build drifts, revert and tighten the plan. That beats four corrective messages.</p>
+      </article>
+      <article class="mode">
+        <div class="who">Edits, after evidence</div>
+        <h2>Debug</h2>
+        <p>For a bug you cannot settle by reading. Use it when the failure shows up only at runtime and you need logs, a reproduction, or both, before a fix.</p>
+        <p>Bring the symptom and what you already tried. A Debug thread is still a place to say what must not change.</p>
+      </article>
+    </div>
+    <div class="strip">
+      <h2>One task, one chat.</h2>
+      <p>A thread about a tax calculation should not also redesign the navigation. When the job changes, start a new chat and carry the decision across in a few lines: what is already true, what is still wrong, what not to touch, and how you will know. Switching modes will not clean a muddy thread. It starts fresh context, and it drops the trail you actually needed.</p>
+    </div>
+    <footer class="runfoot"><span>Shift+Tab cycles modes. The picker shows the one you are in.</span><b>06</b></footer>
+  </div>
+</section>
+
+<!-- 07 PROMPTS -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">05</span><span>Prompts</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">A prompt that can finish</p>
+    <h1 class="chap">Four lines,<br>even inside a paragraph.</h1>
+    <div class="anatomy">
+      <div class="k">Outcome</div>
+      <p>What a stranger would observe. A number, a screen, a passing command. Not a mood.</p>
+      <div class="k">Location</div>
+      <p>A path, or “search, and do not invent a new module.” Naming the wrong file is a location too. Leave it off if you are unsure.</p>
+      <div class="k">Constraint</div>
+      <p>What stays: a fixture, a public API, a layout, a file you are not willing to restyle.</p>
+      <div class="k">Proof</div>
+      <p>The test command, the click, or the value you expect to see. The agent should run it, not describe it.</p>
+    </div>
+    <div class="pair">
+      <div class="bad">
+        <p class="lbl">Hard to finish</p>
+        <p>“Make the export better and fix the PDF. It feels off.”</p>
+      </div>
+      <div class="good">
+        <p class="lbl">Possible to finish</p>
+        <p>“In PdfExporter, page-two images are clipped. Keep Urdu font embedding. Add a check that a two-page document still has content on both pages. Don’t restyle the layout XML.”</p>
+      </div>
+    </div>
+    <p style="margin-top:4mm">Specific beats long. If you have six constraints, write a list. If you are still choosing the design, you are not ready for a build prompt. Switch to Plan and stop there.</p>
+    <p>Paste a screenshot when the bug is visual. Drag it into the chat, or paste with Ctrl+V or Cmd+V. Say what is wrong and what the screen should do. The microphone in the input will take a spoken prompt. Read the transcription before you send it. Spoken file names are easy to get wrong.</p>
+    <p>You can change models mid-chat from the model picker. A faster model is enough for a tight edit. A more capable one is worth it when the change crosses files or the plan itself is the hard part. The docs describe Cmd+/ on Mac as a way to cycle models.</p>
+    <footer class="runfoot"><span>If you cannot name the proof, you do not have a task yet.</span><b>07</b></footer>
+  </div>
+</section>
+
+<!-- 08 CONTEXT -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">06</span><span>Context</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">What the model can see</p>
+    <h1 class="chap">The repo is not<br>in its memory.</h1>
+    <p class="lead">Every chat has a fixed window. Cursor draws it as a ring next to the input. Click the ring and you get a split: system prompt, tools, rules, skills, MCP, subagents, the summary of older turns, and the live conversation.</p>
+    <p>When the window fills, older turns are compressed into a summary. That summary is a lossy copy. Do not keep a precious constraint only in message three of a long thread. Put standing constraints in a rule. Put the current proof in the latest message.</p>
+    <table class="plain">
+      <thead>
+        <tr><th>Attach this</th><th>When</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">@file or @folder</td><td>You know where the change lives. Type @ and keep typing. After a folder, type / to go deeper.</td></tr>
+        <tr><td class="mono">@Terminals</td><td>The interesting part is output already on screen. Attach it instead of describing it.</td></tr>
+        <tr><td class="mono">@Commit · @Branch</td><td>The question is about uncommitted work, or the whole branch against main.</td></tr>
+        <tr><td class="mono">@Browser</td><td>The proof is the running page. Agent can also drive the browser itself.</td></tr>
+        <tr><td class="mono">@Chats</td><td>A previous conversation has a decision you do not want to retype.</td></tr>
+        <tr><td>Nothing</td><td>You do not know the file. Say “search.” Agent can find files by name and by text. A confident wrong @ is an instruction to ignore the real one.</td></tr>
+      </tbody>
+    </table>
+    <div class="jobs">
+      <div class="job">
+        <h3>RULES</h3>
+        <p>Included on every turn they apply to. A vague always-on rule taxes every message. Keep those few and short. Page 09.</p>
+      </div>
+      <div class="job">
+        <h3>SKILLS</h3>
+        <p>Loaded when they match, or when you type /. Right place for a procedure you do not want in every chat.</p>
+      </div>
+      <div class="job">
+        <h3>MCP</h3>
+        <p>External tools and data. Useful, and they occupy the same window. Connect what this repo actually needs.</p>
+      </div>
+    </div>
+    <p style="margin-top:5mm">Paste a stack trace whole. Do not summarize an error you have in front of you. Images of a broken layout belong in the prompt, not in a prose recreation of the pixels.</p>
+    <footer class="runfoot"><span>One task per chat. Carry decisions forward, not transcripts.</span><b>08</b></footer>
+  </div>
+</section>
+
+<!-- 09 RULES AND SKILLS -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">07</span><span>Rules and skills</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">Standing instructions</p>
+    <h1 class="chap">Say it once.<br>Stop repeating it.</h1>
+    <p>Models do not keep a memory between chats. Rules and skills are how a project remembers. User rules follow you across repos. Team rules, on Team and Enterprise plans, follow the team. Project rules follow the repository, which is what you want for anything a teammate or a Cloud Agent should obey.</p>
+    <p style="margin-bottom:2mm">Project rules are <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">.mdc</span> files in <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">.cursor/rules</span>. A plain <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">.md</span> file in that folder is ignored. If you want plain markdown, use <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">AGENTS.md</span>.</p>
+    <table class="plain">
+      <thead>
+        <tr><th>alwaysApply</th><th>description</th><th>globs</th><th>Included</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">true</td><td class="mono">—</td><td class="mono">—</td><td>Every chat. Globs are ignored.</td></tr>
+        <tr><td class="mono">false</td><td class="mono">—</td><td>set</td><td>When a matching file is in context.</td></tr>
+        <tr><td class="mono">false</td><td>set</td><td class="mono">—</td><td>When the agent judges it relevant.</td></tr>
+        <tr><td class="mono">false</td><td class="mono">—</td><td class="mono">—</td><td>Only if you @ mention the rule.</td></tr>
+      </tbody>
+    </table>
+    <p class="prompt-label">A rule that earns its place</p>
+    <pre>---
+description: PDF export stays paginated and bilingual
+globs: app/src/main/java/**/PdfExporter.kt
+alwaysApply: false
+---
+When changing PDF export, keep Urdu font embedding.
+Paginate. Do not scale a page to fit.
+If you touch this file, add or update a check that a
+two-page document still has content on both pages.</pre>
+    <p style="margin-top:3.5mm">A skill is a folder with a <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">SKILL.md</span>. Project skills live in <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">.cursor/skills/</span> or <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">.agents/skills/</span>. The description is how Agent decides to use it. Type <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">/</span> to run one for a single message. In the Agents Window and the CLI, Option+Enter on Mac or Alt+Enter on Windows and Linux keeps that skill on as a mode for the whole session.</p>
+    <p>While you are building the habit, four built-ins matter: <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">/create-rule</span>, <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">/create-skill</span>, <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">/review</span>, and <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">/review-bugbot</span>. <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">/review-security</span> is the pass aimed at vulnerabilities. They are a second reader. Page 13 says what they do not replace.</p>
+    <footer class="runfoot"><span>Short rules. One concern each. Procedures live in skills.</span><b>09</b></footer>
+  </div>
+</section>
+
+<!-- 10 SESSION -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">08</span><span>One session</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">Ledger, a small expense list</p>
+    <h1 class="chap">Plan it, then<br>let it build.</h1>
+    <p>The home screen should show this month’s total above the transactions. Rows whose category is Transfer do not count. You have not decided where the number is computed. That is a Plan, not a build.</p>
+    <div class="stack">
+      <p class="prompt-label">1 · Plan mode · Shift+Tab until it says Plan</p>
+      <pre>Plan only. Do not edit yet.
+
+On the Ledger home screen, show this month’s total
+above the list. Exclude transactions whose category
+is Transfer. Use the existing transaction type.
+Do not add a new page or a new state library.
+
+Name the files you will change, where the total is
+computed, and how I can verify the number in the
+browser.</pre>
+    </div>
+    <p>Read the plan for three things: it names files that exist, the total has a home in current code, and it did not wander into a redesign. Edit the plan in place if the file list is wrong. Save it to the workspace if you want the decision in the repo.</p>
+    <div class="stack">
+      <p class="prompt-label">2 · Back in Agent · only after the plan is right</p>
+      <pre>Build the plan we just agreed.
+
+Add a test beside the other transaction tests.
+The March fixture includes Transfer rows.
+The total must exclude them.
+
+Run the test script. If a command fails, stop and
+quote the error. Do not edit the fixture to make
+the number match.</pre>
+    </div>
+    <p>Then watch the diff, not the narration. The next page is what you do when the number comes back wrong. That is the normal case, not a failure of the method.</p>
+    <footer class="runfoot"><span>Example continues on page 11.</span><b>10</b></footer>
+  </div>
+</section>
+
+<!-- 11 STEERING -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">09</span><span>Steering</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">The test failed, which is useful</p>
+    <h1 class="chap">Quote the number.<br>Freeze the fixture.</h1>
+    <div class="stack">
+      <p class="prompt-label">3 · Same chat · the failure is the prompt</p>
+      <pre>Failure:
+
+Expected 1840, got 2600.
+src/fixtures/march.ts has two Transfer rows,
+400 and 360. The total is still summing them.
+
+Exclude category === "Transfer" in the function
+the plan named. Do not edit the fixture.
+Do not reformat unrelated files.
+Run the same test again.</pre>
+    </div>
+    <p>This message works because it has the evidence, the invariant, and the same proof. It does not renegotiate the feature.</p>
+    <div class="split">
+      <article class="card">
+        <h3>While it runs</h3>
+        <p>In the editor, Enter queues your next note until the turn finishes. Ctrl+Enter, or Cmd+Enter on Mac, sends it now. Stop ends a turn that has gone into the wrong directory. On cursor.com/agents, and where the Agents Window has the newer control, Send now or a second Enter steers at the next tool call instead of cutting a command in half. Tab queues there. In the CLI, Enter steers at a safe boundary, and Enter again interrupts.</p>
+      </article>
+      <article class="card">
+        <h3>If you need a tangent</h3>
+        <p>Type /side or /btw so a side question does not knock the total out of the main thread. A side chat keeps its own transcript and can see the parent. Pull it back later with an @ mention if the answer mattered. A long-lived aim can be a /goal, for example “get the transaction tests green and leave the fixture unchanged.” As of October 2026, /goal was still rolling out. If it is missing, write the same sentence as a normal prompt and do not change the subject.</p>
+      </article>
+    </div>
+    <div class="strip" style="margin-top:4mm">
+      <h2>Checkpoints roll files back. Git keeps what you meant.</h2>
+      <p>Agent snapshots files before large edits. Restore Checkpoint, on an earlier message, returns the files to that point and leaves the conversation where it is. Checkpoints stay on your machine. They are not commits. If the turn went wide, restore, then rewrite the prompt. Do not spend four messages sanding a diff that started from the wrong plan. Commit when the sentence on page 13 is true.</p>
+    </div>
+    <footer class="runfoot"><span>Shorter messages. Same proof. Frozen fixtures.</span><b>11</b></footer>
+  </div>
+</section>
+
+<!-- 12 CLOUD -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">10</span><span>Cloud Agents</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">Leaving the laptop</p>
+    <h1 class="chap">The environment<br>is the product.</h1>
+    <p class="lead">A Cloud Agent is the same loop on a separate machine. It clones the repository, works on a branch, and can open a pull request for you to review. Start one from the editor or at cursor.com/agents. Several can run at once. The laptop can sleep.</p>
+    <p>It can use the browser, and it can use MCP servers that are available to it. It can also work across more than one repo when a task actually spans them. None of that helps if the machine cannot install dependencies, run the tests, or reach the service the code calls. Set the environment up before you expect finished work. The configuration can live in <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">.cursor/environment.json</span>, and a saved build is what later agents start from.</p>
+    <div class="split">
+      <article class="card moss">
+        <h3>Send it to the cloud</h3>
+        <p>The task is a feature or a fix you can describe completely. You want a branch and a pull request, not a partner looking over your shoulder. You are willing to review later, the way you would review anyone else’s pull request.</p>
+      </article>
+      <article class="card">
+        <h3>Keep it local</h3>
+        <p>You are still choosing the approach. You need to poke the interface every minute. The change is a few lines in a file you already have open. Tab or a local Agent is the faster loop.</p>
+      </article>
+    </div>
+    <p style="margin-top:4mm">For a body of work large enough to split, a Project lets a coordinating agent plan the job and hand pieces to other agents. Use that when you would otherwise write one enormous prompt. Do not use it to avoid deciding what the pieces are.</p>
+    <p>Rules in the repository travel with the repository, so a Cloud Agent sees them. Personal skills under your home directory stay on your machine unless you turn on sync for Cloud Agents you start yourself. Synced personal skills are still private to you. Anything a teammate’s agent should follow belongs in the repo: <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">.cursor/rules</span>, <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">AGENTS.md</span>, or <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">.cursor/skills</span>.</p>
+    <div class="quote">
+      <p>An agent that can edit but cannot run the software has not closed the loop. It has typed.</p>
+      <cite>Write the prompt as if you will not be at the keyboard to paste the error.</cite>
+    </div>
+    <footer class="runfoot"><span>Describe it completely, or stay local until you can.</span><b>12</b></footer>
+  </div>
+</section>
+
+<!-- 13 OWN THE DIFF -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">11</span><span>Review</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">You still own the diff</p>
+    <h1 class="chap">Five checks<br>before you keep it.</h1>
+    <p>Agent applies edits as it goes. Your review happens in the diff, not in the closing paragraph. Reject a hunk you did not ask for. For a pull request, a second pass is worth running. It is not a substitute for the list below.</p>
+    <ol class="loop">
+      <li>
+        <span class="n">01</span>
+        <div>
+          <h2>The behavior matches the sentence</h2>
+          <p>The thing you named is the thing that changed. Adjacent polish does not count as the task.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">02</span>
+        <div>
+          <h2>Surprise files are justified or gone</h2>
+          <p>A drive-by rename, a format of an untouched directory, a new helper “for later” — send it back. Restore the checkpoint if the turn went wide.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <div>
+          <h2>Tests were not softened</h2>
+          <p>A deleted assertion, a widened tolerance, or a fixture edited so the bug becomes the spec. If the test moved, read that hunk first.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">04</span>
+        <div>
+          <h2>Nothing secret got copied in</h2>
+          <p>No tokens, no pasted production URLs with credentials, no logs of real user data added “just for debugging.”</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">05</span>
+        <div>
+          <h2>You can say it in two sentences</h2>
+          <p>Close the chat. Explain the change out loud. If you need the transcript to do it, you are not done. Switch to Ask and have it explain the diff. Then decide.</p>
+        </div>
+      </li>
+    </ol>
+    <div class="strip">
+      <h2>A second reader, not an owner.</h2>
+      <p>Type /review and Cursor picks a review agent. /review-bugbot runs Bugbot against likely bugs and regressions. /review-security looks for vulnerabilities. Bugbot can also comment on pull requests. Use them after the five checks, especially on a branch you did not watch being written. They will miss things. They will also catch the sort of mistake a tired read skips. Neither one makes sentence five optional.</p>
+    </div>
+    <footer class="runfoot"><span>If you cannot explain it, you do not have it yet.</span><b>13</b></footer>
+  </div>
+</section>
+
+<!-- 14 FAILURES -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">12</span><span>Failures</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">When it goes wrong</p>
+    <h1 class="chap">Recognize the shape.<br>Change the prompt, not the volume.</h1>
+    <p>Turning the same instruction up louder rarely helps. Match the failure, then make one change.</p>
+    <table class="plain fails">
+      <thead>
+        <tr><th>What you see</th><th>What happened</th><th>The move</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A huge diff and a confident summary</td>
+          <td>The prompt had a mood and no boundary.</td>
+          <td>Restore the checkpoint. Add the file list and the proof. Build again.</td>
+        </tr>
+        <tr>
+          <td>The test changed so the run is green</td>
+          <td>The goal you implied was “passing,” not “correct.”</td>
+          <td>Say the fixture and the expected value are frozen. Re-run the original command.</td>
+        </tr>
+        <tr>
+          <td>It calls a helper that does not exist</td>
+          <td>It guessed an API from the shape of the name.</td>
+          <td>Paste the real signature, or switch to Ask and locate it before another edit.</td>
+        </tr>
+        <tr>
+          <td>Edits keep landing in the wrong package</td>
+          <td>The chat is stale, or two things share a name.</td>
+          <td>New chat. @ the directory. State what the other package is not for.</td>
+        </tr>
+        <tr>
+          <td>The same error, three times</td>
+          <td>It cannot see the failure you can see.</td>
+          <td>Paste the full output. Tell it to try once, then stop and report. No more blind edits.</td>
+        </tr>
+        <tr>
+          <td>It compiles. You still feel lost.</td>
+          <td>You skipped the read because the summary sounded finished.</td>
+          <td>Ask mode: “Explain this diff in ten lines. Don’t edit.” Then keep or restore.</td>
+        </tr>
+        <tr>
+          <td>A small fix rewrote the formatting of the file</td>
+          <td>You never said the untouched lines were out of scope.</td>
+          <td>Reject the noise. Add a short rule, or say it in the next prompt. /create-rule will draft one.</td>
+        </tr>
+        <tr>
+          <td>Plan mode built the wrong product, faithfully</td>
+          <td>The plan was vague and you approved it.</td>
+          <td>Revert. Edit the plan until the file list is something you would defend. Build once.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Agent can also split work out to subagents — research, shell, browser — each with its own window, reporting back to the chat. You can add your own under <span style="font-family:'JetBrains Mono',monospace;font-size:9pt">.cursor/agents/</span>. That is useful when one thread is doing too many jobs. It is not a fix for a prompt that never said what done means.</p>
+    <footer class="runfoot"><span>One change to the prompt. Then look at the new diff.</span><b>14</b></footer>
+  </div>
+</section>
+
+<!-- 15 PROMPT PACK -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">13</span><span>Prompt pack</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">Paste, then replace the brackets</p>
+    <h1 class="chap">Eight prompts.</h1>
+    <ol class="pack">
+      <li>
+        <span class="n">1</span>
+        <div>
+          <h2>Locate, in Ask mode</h2>
+          <pre>Trace how [symptom] happens, from the entry point
+to the line that decides it. Cite files and functions.
+Do not edit.</pre>
+        </div>
+      </li>
+      <li>
+        <span class="n">2</span>
+        <div>
+          <h2>Plan, and stop</h2>
+          <pre>Plan only. Do not edit.
+[One sentence outcome.]
+Leave alone: [files, APIs, or layout].
+Name the files you will change and the command
+or click that proves it.</pre>
+        </div>
+      </li>
+      <li>
+        <span class="n">3</span>
+        <div>
+          <h2>Build what you already agreed</h2>
+          <pre>Implement the plan we agreed.
+Run [command]. If it fails, stop and quote the
+error. Do not change tests to hide a failure.</pre>
+        </div>
+      </li>
+      <li>
+        <span class="n">4</span>
+        <div>
+          <h2>A screenshot is the bug report</h2>
+          <pre>The attached screen is wrong. It shows [what].
+It should [what instead]. Match the existing
+components. Do not restyle the page.</pre>
+        </div>
+      </li>
+      <li>
+        <span class="n">5</span>
+        <div>
+          <h2>Freeze the fixture</h2>
+          <pre>[paste the failure]
+The fixture and the expected value stay as they are.
+Fix production code only. Run [command] again.</pre>
+        </div>
+      </li>
+      <li>
+        <span class="n">6</span>
+        <div>
+          <h2>Hand a fresh chat the state</h2>
+          <pre>Goal: [...]
+Already true: [...]
+Still wrong: [...]
+Do not touch: [...]
+Proof: [command or click]</pre>
+        </div>
+      </li>
+      <li>
+        <span class="n">7</span>
+        <div>
+          <h2>Review the branch you are about to keep</h2>
+          <pre>/review
+Review this branch against the base. Rank findings
+by user-visible severity. Call out weakened tests
+and files that look unrelated to the task.</pre>
+        </div>
+      </li>
+      <li>
+        <span class="n">8</span>
+        <div>
+          <h2>Turn the last mistake into a rule</h2>
+          <pre>/create-rule
+We had to undo a change that reformatted files
+outside the task. Add a short project rule: only
+format files already being edited, and say so in
+the summary. Do not make it always-on unless it
+must apply to every chat.</pre>
+        </div>
+      </li>
+    </ol>
+    <footer class="runfoot"><span>Replace the brackets. Leave the constraints.</span><b>15</b></footer>
+  </div>
+</section>
+
+<!-- 16 DESK CARD -->
+<section class="sheet desk">
+  <div class="page">
+    <header class="runhead"><span class="num">14</span><span>Desk card</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker" style="color:#e23a12">Tear this page out, mentally</p>
+    <h1 class="chap">Keys, modes,<br>and the if.</h1>
+    <div class="desk-grid">
+      <div>
+        <h2>Keys · Windows/Linux · Mac</h2>
+        <table class="keys">
+          <tr><td>Open Agent</td><td>Ctrl+I · Cmd+I</td></tr>
+          <tr><td>Cycle modes</td><td>Shift+Tab</td></tr>
+          <tr><td>Selection into Agent</td><td>Ctrl+L / Ctrl+K · Cmd+L / Cmd+K</td></tr>
+          <tr><td>Accept a Tab suggestion</td><td>Tab</td></tr>
+          <tr><td>Reject a Tab suggestion</td><td>Esc</td></tr>
+          <tr><td>Accept one word of Tab</td><td>Ctrl+Right · Cmd+Right</td></tr>
+          <tr><td>Jump to the next edit</td><td>Tab again</td></tr>
+          <tr><td>Queue a follow-up</td><td>Enter, while it runs</td></tr>
+          <tr><td>Send the follow-up now</td><td>Ctrl+Enter · Cmd+Enter</td></tr>
+          <tr><td>Stop the turn</td><td>Stop button</td></tr>
+          <tr><td>Side chat</td><td>/side · /btw</td></tr>
+          <tr><td>Run a skill</td><td>/</td></tr>
+          <tr><td>Keep a skill on as a mode</td><td>Alt+Enter · Option+Enter</td></tr>
+          <tr><td>Find in this chat</td><td>Ctrl+F · Cmd+F</td></tr>
+          <tr><td>Cycle models (Mac docs)</td><td>Cmd+/</td></tr>
+        </table>
+        <p class="legend">On cursor.com/agents, Enter twice steers at the next tool call and Tab queues. In the editor, Enter queues and Ctrl+Enter or Cmd+Enter sends now. Page 11 has the longer version. Restore Checkpoint rolls files back and leaves the chat. Git is what you keep on purpose.</p>
+      </div>
+      <div>
+        <h2>If this is true</h2>
+        <ul class="iflist">
+          <li><span>You can see the line</span><b>Tab</b></li>
+          <li><span>You can see the task</span><b>Agent</b></li>
+          <li><span>Several designs would fit</span><b>Plan</b></li>
+          <li><span>You cannot find the code</span><b>Ask</b></li>
+          <li><span>It fails only at runtime</span><b>Debug</b></li>
+          <li><span>You want a pull request</span><b>Cloud</b></li>
+          <li><span>The chat changed jobs</span><b>New chat</b></li>
+          <li><span>The diff went wide</span><b>Checkpoint</b></li>
+        </ul>
+        <div class="mini">
+          <div>
+            <h2>A prompt</h2>
+            <p>Outcome.<br>Location, or “search.”<br>What must not change.<br>The proof you will run.</p>
+          </div>
+          <div>
+            <h2>A follow-up</h2>
+            <p>The evidence, pasted.<br>What stays frozen.<br>The same proof again.<br>No second feature in the same breath.</p>
+          </div>
+        </div>
+        <div class="mini">
+          <div>
+            <h2>To keep it</h2>
+            <p>Behavior matches the ask. No surprise files. Tests not weakened. No secrets. You can explain it with the chat closed.</p>
+          </div>
+          <div>
+            <h2>Second reader</h2>
+            <p>/review<br>/review-bugbot<br>/review-security<br>After the five checks. Not instead of them.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="runfoot"><span>October 2026 · if a key does nothing, trust cursor.com/docs</span><b>16</b></footer>
+  </div>
+</section>
+
+<!-- 17 NEXT HOUR -->
+<section class="sheet">
+  <div class="page">
+    <header class="runhead"><span class="num">15</span><span>The next hour</span><span class="grow">Vibe coding</span></header>
+    <p class="kicker">Do this on a repo you know</p>
+    <h1 class="chap">One hour.<br>One bug you can already see.</h1>
+    <ol class="hour">
+      <li><span class="n">1</span><p>Write three short project rules: how to run the tests, where new code should go, and what not to restyle. Keep each under eight lines. Use /create-rule if you want a draft, then cut it.</p></li>
+      <li><span class="n">2</span><p>Pick a bug you can reproduce without the agent. If you cannot show the failure, you cannot steer.</p></li>
+      <li><span class="n">3</span><p>Ask mode. “Trace this from the entry point to the line that decides it. Don’t edit.”</p></li>
+      <li><span class="n">4</span><p>Plan mode. “Plan the smallest fix. List the files. Do not edit yet.” Argue with the plan until the file list looks right.</p></li>
+      <li><span class="n">5</span><p>Build it. Name the command. If it fails, paste only the failure and what must stay frozen.</p></li>
+      <li><span class="n">6</span><p>Read the diff with the five checks on page 13. Delete anything that is not the fix. Commit when you can explain it in two sentences.</p></li>
+    </ol>
+    <div class="colo">
+      <h2>Sources and limits</h2>
+      <p>Product behavior in this booklet was checked in October 2026 against Cursor’s public documentation: Agent, Tab, Plan mode, prompting, rules, skills, and Cloud Agents, at cursor.com/docs. Shortcuts, mode names, and where a control lives all move. When this page and the product disagree, the product is right.</p>
+      <p>Andrej Karpathy named “vibe coding” in February 2025. The sentence on page 03 is his. The practice in the rest of the booklet — read the diff, freeze the fixture, keep the blame — is the part worth keeping after the prototype.</p>
+      <p>This is an independent field guide. It is not published by Cursor or Anysphere, and it is not affiliated with Karpathy. It leaves out pricing, enterprise administration, and the full tool catalog on purpose.</p>
+      <p>Rebuild the PDF from <span style="font-family:'JetBrains Mono',monospace;font-size:8pt">docs/vibe-coding/source.html</span> with <span style="font-family:'JetBrains Mono',monospace;font-size:8pt">docs/vibe-coding/build.sh</span>.</p>
+    </div>
+    <footer class="runfoot"><span>VIBE CODING using Cursor AI</span><b>17</b></footer>
+  </div>
+</section>
+
+</body>
+</html>
